@@ -3,4 +3,5 @@ db/*.sqlite3
 tmp/**/*
 .svn
 *.log
+.DS_store
 
