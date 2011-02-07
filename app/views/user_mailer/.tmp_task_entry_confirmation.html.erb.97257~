@@ -1,0 +1,5 @@
+<h2><%=@user.name%>,</h2>
+
+<p>TMS has received your task request.  It will be scheduled shortly.</p>
+
+<p>James Hughes</p>

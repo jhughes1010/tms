@@ -1,0 +1,50 @@
+<h1>Test Management System</h1>
+<p>
+    Demonstration Server
+</p>
+<hr><h2>Reports</h2>
+<p>
+        <a href="/main/project_active">Active Requests</a>
+</p>
+<p>
+    Past Due
+</p>
+<p>
+    Query by Device, Requester or Assignee
+</p>
+<p>
+    <a href="/main/pto_current">30 Day PTO Outlook</a>
+</p>
+<br>
+<h2>Maintenance</h2>
+<p>
+    <a href="/tasks/new">Task Entry</a>
+</p>
+<p>
+    Task Priority Editing
+</p>
+<p>
+	PTO Entry - Request
+</p>
+<%if @auth ==2%>
+<br>
+<h2> Raw Database Access </h2>
+<p>
+    <a href="/users">Users</a>
+</p>
+<p>
+    <a href="/devices">Devices</a>
+</p>
+<p>
+    <a href="/tasks">Projects and Tasks</a>
+</p>
+<p>
+    <a href="/ptos">PTO</a>
+</p>
+<%end%>
+<p>
+    <a href="/main/index">TMS Home</a>
+</p>
+<p>
+    <a href="/admin/logout">Logout</a>
+</p>

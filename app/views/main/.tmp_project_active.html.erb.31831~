@@ -1,0 +1,62 @@
+<h1>Active Tasks</h1>
+<hr>
+<table>
+    <tr>
+        <th>
+            Requester
+        </th>
+        <th>
+            Assignee
+        </th>
+        <th>
+            Taskname
+        </th>
+        <th>
+            Scd
+        </th>
+        <th>
+            Priority
+        </th>
+        <th>
+            Type
+        </th>
+        <!--<th>
+        </th>
+        <th>
+        </th>
+        <th>
+        </th> -->
+    </tr>
+    <% @tasks.each do |task| %>
+    <%r_id = task.requester-1 %>
+    <%a_id = task.assignee-1 %>
+    <tr>
+        <td>
+            <%= @users[r_id].fullname %>
+        </td>
+        <td>
+            <%= @users[a_id].fullname %>
+        </td>
+        <td>
+            <%= task.taskname %>
+        </td>
+        <td>
+            <%= task.scd %>
+        </td>
+        <td>
+            <%= task.priority %>
+        </td>
+        <td>
+            <%= task.type %>
+        </td>
+        <!--   <td><%= link_to 'Show', task %></td>
+        <td><%= link_to 'Edit', edit_task_path(task) %></td>
+        <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td> -->
+    </tr>
+    <% end %>
+</table>
+<br/>
+<!-- <%= link_to 'New Task', new_task_path %> -->
+<p>
+    <a href="/main/index">TMS Home</a>
+</p>

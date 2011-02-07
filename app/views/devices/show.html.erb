@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @device.name %>
+</p>
+
+<p>
+  <b>Friendly:</b>
+  <%= @device.friendly %>
+</p>
+
+<p>
+  <b>Gdpw:</b>
+  <%= @device.gdpw %>
+</p>
+
+<p>
+  <b>Productline:</b>
+  <%= @device.productline %>
+</p>
+
+
+<%= link_to 'Edit', edit_device_path(@device) %> |
+<%= link_to 'Back', devices_path %>

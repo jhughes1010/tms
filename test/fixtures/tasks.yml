@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  requester: 1
+  assignee: 1
+  taskname: MyString
+  scd: 2010-12-13
+  acd: 2010-12-13
+  priority: 1
+  type: 1
+
+two:
+  requester: 1
+  assignee: 1
+  taskname: MyString
+  scd: 2010-12-13
+  acd: 2010-12-13
+  priority: 1
+  type: 1

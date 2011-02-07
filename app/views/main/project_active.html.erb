@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<h1>
+			Active Tasks: 
+		</h1>
+		
+
+		<p>
+			<%= @today.to_s(:long) %>: 
+			<%= @tasks.count%> tasks listed
+		</p>
+		<hr>
+		<%= render 'grid' %>
+		<!-- <%= link_to 'New Task', new_task_path %> -->
+		<p>
+			<a href="/main/index">TMS Home</a><br>
+		</p>
+	</body>
+</html>

@@ -1,0 +1,53 @@
+<h1>Near Term PTO</h1>
+<p>
+	<%=@outlook %> day outlook: 
+    <%= @start.to_s(:long) %> to <%=@stop.to_s(:long) %>
+</p>
+<hr>
+<table>
+    <tr>
+        <th>
+            User
+        </th>
+        <th>
+            Start
+        </th>
+        <th>
+            End
+        </th>
+        <th>
+            Comments
+        </th>
+        <th>
+        </th>
+        <th>
+        </th>
+        <th>
+        </th>
+    </tr>
+    <% @ptos.each do |pto| %>
+    <%emp_id = pto.user_id-1 %>
+    <tr>
+        <td>
+            <%= @users[emp_id].fullname %>
+        </td>
+        <td>
+            <%= pto.start %>
+        </td>
+        <td>
+            <%= pto.end %>
+        </td>
+        <td>
+            <%= pto.comments %>
+        </td>
+        <!--<td><%= link_to 'Show', pto %></td>
+        <td><%= link_to 'Edit', edit_pto_path(pto) %></td>
+        <td><%= link_to 'Destroy', pto, :confirm => 'Are you sure?', :method => :delete %></td> -->
+    </tr>
+    <% end %>
+</table>
+<br/>
+<!-- <%= link_to 'New Pto', new_pto_path %> -->
+<p>
+    <a href="/main/index">TMS Home</a>
+</p>

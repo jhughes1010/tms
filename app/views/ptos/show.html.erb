@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @pto.user_id %>
+</p>
+
+<p>
+  <b>Start:</b>
+  <%= @pto.start %>
+</p>
+
+<p>
+  <b>End:</b>
+  <%= @pto.end %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%= @pto.comments %>
+</p>
+
+
+<%= link_to 'Edit', edit_pto_path(@pto) %> |
+<%= link_to 'Back', ptos_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  friendly: MyString
+  gdpw: 1
+  productline: MyString
+
+two:
+  name: MyString
+  friendly: MyString
+  gdpw: 1
+  productline: MyString

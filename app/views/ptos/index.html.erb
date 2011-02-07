@@ -1,0 +1,30 @@
+<h1>Listing ptos</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Start</th>
+    <th>End</th>
+    <th>Comments</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @ptos.each do |pto| %>
+  <tr>
+    <td><%= pto.user_id %></td>
+    <td><%= pto.start %></td>
+    <td><%= pto.end %></td>
+    <td><%= pto.comments %></td>
+    <td><%= link_to 'Show', pto %></td>
+    <td><%= link_to 'Edit', edit_pto_path(pto) %></td>
+    <td><%= link_to 'Destroy', pto, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Pto', new_pto_path %>
+<p><a href="/main/index">TMS Home</a></p>
