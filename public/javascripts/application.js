@@ -4,4 +4,4 @@ $(function() {
   $("#task_tcd").datepicker({ dateFormat: 'yy-mm-dd' });
   $("#task_scd").datepicker({ dateFormat: 'yy-mm-dd' });
   $("#task_acd").datepicker({ dateFormat: 'yy-mm-dd' });
-});
+	});
