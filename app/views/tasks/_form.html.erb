@@ -48,12 +48,14 @@
 <div class="field">
 	<%= f.label :scd, 'Scheduled Completion Date' %>
 	<br/>
-	<%= f.date_select :scd %>
+	<!-- <%= f.date_select :scd %> -->
+		<%= f.text_field :scd%>
 </div>
 <div class="field">
 	<%= f.label :acd, 'Actual Completion Date' %>
 	<br/>
-	<%= f.date_select :acd %>
+	<!-- <%= f.date_select :acd %> -->
+		<%= f.text_field :acd%>
 </div>
 <%end %>
 <div class="field">
