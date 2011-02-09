@@ -1,6 +1,7 @@
 <h1>Active Tasks - Past Due for <%=@full_name%></h1>
 <p>
-    <%= @today.to_s(:long) %>
+	<%= @today.to_s(:long) %>: 
+	<%= @tasks.count%> tasks listed
 </p>
 <hr>
 				<%= render 'grid' %>

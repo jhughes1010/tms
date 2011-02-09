@@ -1,14 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html>
-	<head>
-		<title></title>
-	</head>
-	<body>
 		<h1>
 			Active Tasks for <%=@full_name%>
 		</h1>
 		<p>
-			<%= @today.to_s(:long) %>
+			<%= @today.to_s(:long) %>: 
+			<%= @tasks.count%> tasks listed
 		</p>
 		<hr>
 		<%= render 'grid' %>
@@ -16,5 +11,3 @@
 		<p>
 			<a href="/main/index">TMS Home</a><br>
 		</p>
-	</body>
-</html>
