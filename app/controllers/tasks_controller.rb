@@ -52,7 +52,8 @@ class TasksController < ApplicationController
     @full_name=session[:user_fullname]
     @task = Task.new(params[:task])
     #deliver the mail
-    UserMailer.task_entry_confirmation(@full_name).deliver
+    UserMailer.task_entry_confirmation(session[:user_id]).deliver
+    UserMailer.task_entry_confirmation(1).deliver
     
     respond_to do |format|
       if @task.save
