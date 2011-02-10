@@ -1,29 +1,25 @@
 <%= form_for(@task) do |f| %>
-	<% if @task.errors.any? %>
-	<div id="error_explanation">
-		<h2><%= pluralize(@task.errors.count, "error") %>prohibited this task from being saved:</h2>
-		<ul>
-			<% @task.errors.full_messages.each do |msg| %>
-			<li>
-				<%= msg %>
-			</li>
-			<% end %>
-		</ul>
-	</div>
-	<% end %>
-	<div class="field">
+<% if @task.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(@task.errors.count, "error") %>prohibited this task from being saved:</h2>
+	<ul>
+		<% @task.errors.full_messages.each do |msg| %>
+		<li>
+			<%= msg %>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+<div class="field">
 	<%if !@task.requester %>
 	<%@task.requester=@user_id%>
+	<%@task.tcd = Date.today.next_month %>
 	<%end %>
 	<%= f.select(:requester,@requesters) %>
 </div>
-
-
 <%if @auth==2 %>
 <div class="field">
-<!--    <%= f.label :assignee %>
-<br/>
-<%= f.text_field :assignee %> -->
 <%= f.select(:assignee,@assignees) %>
 </div>
 <%end %>
@@ -40,7 +36,6 @@
 <div class="field">
 	<%= f.label :tcd, 'Target Completion Date' %>
 	<br/>
-	<!-- <%= f.date_select :tcd %> -->
 	<%= f.text_field :tcd%>
 </div>
 
@@ -48,14 +43,12 @@
 <div class="field">
 	<%= f.label :scd, 'Scheduled Completion Date' %>
 	<br/>
-	<!-- <%= f.date_select :scd %> -->
-		<%= f.text_field :scd%>
+	<%= f.text_field :scd%>
 </div>
 <div class="field">
 	<%= f.label :acd, 'Actual Completion Date' %>
 	<br/>
-	<!-- <%= f.date_select :acd %> -->
-		<%= f.text_field :acd%>
+	<%= f.text_field :acd%>
 </div>
 <%end %>
 <div class="field">
