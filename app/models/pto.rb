@@ -4,6 +4,6 @@ class Pto < ActiveRecord::Base
   end
   
   def self.upcoming_range(st,fi)
-    find(:all, :order =>"start,user_id", :conditions => ["(start >= ? or end >= ?) and start < ?", st, st, fi])
+    find(:all, :order =>"start,user_id", :conditions => ["(start >= ? OR end >= ?) AND start < ?", st, st, fi])
   end
 end
