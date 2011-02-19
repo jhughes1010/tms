@@ -1,4 +1,6 @@
 TMS::Application.routes.draw do
+    resources :sessions, :constraints => { :protocol => "https" }
+  
   get "resource/index"
 
   get "admin/login"
