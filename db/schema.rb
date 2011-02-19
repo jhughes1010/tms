@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110117195350) do
+ActiveRecord::Schema.define(:version => 20110219033523) do
 
   create_table "devices", :force => true do |t|
     t.string   "name"
@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20110117195350) do
   create_table "ptos", :force => true do |t|
     t.integer  "user_id"
     t.date     "start"
-    t.date     "end"
+    t.date     "finish"
     t.string   "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
