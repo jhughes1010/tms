@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
     find(:all, :order =>"fullname").map {|u| [u.fullname, u.id]}
   end
   def self.assignee_list
-    find(:all, :order =>"fullname", :conditions => "department = 3210").map {|u| [u.fullname, u.id]}
+    find(:all, :order =>"fullname", :conditions => "department = '3210'").map {|u| [u.fullname, u.id]}
   end
   private
     def password_non_blank
