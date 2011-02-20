@@ -1,8 +1,8 @@
 TMS::Application.routes.draw do
     #resources :sessions, :constraints => { :protocol => "https" }
     # beginning of routes.rb 
-    match "*path" => redirect("https://high-frost-719.heroku.com/%{path}"), :constraints => { :protocol => "http://" }
-    match "*path" => redirect("https://high-frost-719.heroku.com/%{path}"), :constraints => { :subdomain => "" }
+    #match "*path" => redirect("https://high-frost-719.heroku.com/%{path}"), :constraints => { :protocol => "http://" }
+    #match "*path" => redirect("https://high-frost-719.heroku.com/%{path}"), :constraints => { :subdomain => "" }
   
   get "resource/index"
 
