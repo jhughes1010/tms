@@ -3,8 +3,8 @@
 <head>
 	<title>TMS - Test Management System</title>
 	<%= stylesheet_link_tag "tms", :media => "all" %>
-	<%= stylesheet_link_tag "reset", :media="screen" %>
-	<%= stylesheet_link_tag "menu", :media="screen" %>
+	<%= stylesheet_link_tag "reset", :media=>"screen" %>
+	<%= stylesheet_link_tag "menu", :media=>"screen" %>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 	<%= csrf_meta_tag %>
 	<%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "application" %>
@@ -16,9 +16,208 @@
 <body>
 	<div id="banner">
 		<%=@page_title||"Serial Interface Business Unit" %>
-		
+		<ul class="menu"><!-- BEGIN MENU -->
+
+
+	        <li><a href="#" class="drop">Home</a><!-- Begin Home Item -->
+
+
+	            <div class="dropdown_2columns"><!-- Begin 2 columns container -->
+
+
+	                <div class="col_2 firstcolumn">
+
+	                    <h2>Welcome !</h2>
+	                    <p>Hi and welcome here ! This is a showcase of the possibilities of this awesome Mega Drop Down Menu.</p>             
+	                    <p>This item comes with a large range of prepared typographic stylings such as headings, lists, etc.</p>  
+
+	                    <h2 class="pusher">Cross Browser Support</h2>
+
+	                    <div class="col_1 firstcolumn">
+	                    <img src="img/browsers.png" width="125" height="48" alt="" />
+	                    </div>
+
+	                    <div class="col_1">
+	                    <p>This mega menu has been tested in all major browsers.</p>
+	                    </div>
+
+	                    <h2 class="pusher">Compatible Browsers</h2>
+
+	                    <div class="col_1 firstcolumn">
+	                        <ul class="plus">
+	                            <li>Internet Explorer</li>
+	                            <li>Firefox</li>
+	                            <li>Opera</li>
+	                        </ul>
+	                    </div>
+
+	                    <div class="col_1">
+	                        <ul class="plus">
+	                            <li>Chrome</li>
+	                            <li>Safari</li>
+	                            <li>What else ?</li>
+	                        </ul>
+	                    </div>
+
+	                </div>
+
+
+	            </div><!-- End 2 columns container -->
+
+
+	        </li><!-- End Home Item -->
+
+	        <li><a href="#" class="drop">TMS</a><!-- Begin 3 columns Item -->
+
+
+	            <div class="dropdown_3columns"><!-- Begin 3 columns container -->
+
+
+	                <div class="col_3 firstcolumn">
+	                    <h2>My Task Reports</h2>
+
+	                    <div class="col_1 firstcolumn">
+
+	                        <ul class="greybox">
+	                            <li><a href="/main/project_my_active">Active Requests</a></li>
+	                            <li><a href="#">Not Accepted</a></li>
+	                            
+	                        </ul>   
+
+	                    </div>
+
+	                    <div class="col_1">
+
+	                        <ul class="greybox">
+	                            <li><a href="/main/project_my_active_past_due">Past Due</a></li>
+	                        </ul>   
+
+	                    </div>
+
+	                    <div class="col_1">
+
+	                        <ul class="greybox">
+								<li><a href="#">Completed</a></li>
+	                        </ul>   
+
+	                    </div>
+					</div>
+					<div class="col_3 firstcolumn">
+						<h2>General Reports</h2>
+
+	                    <div class="col_1 firstcolumn">
+
+	                        <ul class="greybox">
+	                            <li><a href="/main/project_active">Active Requests</a></li>
+	                            <li><a href="#">Not Accepted</a></li>
+	                            
+	                        </ul>   
+
+	                    </div>
+
+	                    <div class="col_1">
+
+	                        <ul class="greybox">
+	                            <li><a href="/main/project_active_past_due">Past Due</a></li>
+								<li><a href="/main/project_unassigned">Unassigned Tasks</a></l1>
+	                        </ul>   
+
+	                    </div>
+
+	                    <div class="col_1">
+
+	                        <ul class="greybox">
+								<li><a href="/main/project_completed">Completed Tasks</a></li>
+								<li><a href="/main/pto_current">30 Day PTO Outlook</a></li>
+	                        </ul>   
+
+	                    </div>
+	                </div>
+					<div class="col_3 firstcolumn">
+						<h2>Entry</h2>
+
+	                    <div class="col_1 firstcolumn">
+
+	                        <ul class="greybox">
+	                            <li><a href="/tasks/new">Task Entry</a></li>                           
+	                        </ul>   
+
+	                    </div>
+
+	                    <div class="col_1">
+
+	                        <ul class="greybox">
+	                            <li><a href="#">PTO Entry</a></li>
+	                        </ul>   
+
+	                    </div>
+
+	                    <div class="col_1">
+
+	                        <ul class="greybox">
+	                        </ul>   
+
+	                    </div>
+	                </div>
+
+	            </div><!-- End 3 columns container -->
+	
+
+
+	        </li><!-- End 3 columns Item -->
+
+	        <li class="right"><a href="#" class="drop">Contact</a><!-- Begin Contact Item -->
+
+
+	            <div class="dropdown_2columns align_right last"><!-- Begin right aligned container -->
+
+
+	                <div class="col_2 firstcolumn">
+
+	                    <h2>Contact Us</h2>
+
+	                    <form action="post"><!-- Begin contact form -->
+
+	                        <fieldset>
+
+	                            <p><label>Name</label><input type="text" size="30" /></p>
+	                            <p><label>Email</label><input type="text" size="30" /></p>
+	                            <p><label>Subject</label><input type="text" size="30" /></p>
+	                            <p><label>Message</label><textarea cols="30" rows="10"></textarea></p>		
+
+	                            <button type="submit" class="submit">Send</button>
+
+	                        </fieldset>		
+
+	                    </form><!-- End contact form -->
+
+	                </div>
+
+	                <div class="col_2 firstcolumn">
+
+	                    <h2>Find us on social networks</h2>
+	                    <ul class="social">
+	                        <li><a href="#"><img src='img/twitter.png' alt="" /><span>Twitter</span></a></li>
+	                        <li><a href="#"><img src='img/facebook.png' alt="" /><span>Facebook</span></a></li>
+	                        <li><a href="#"><img src='img/flickr.png' alt="" /><span>Flickr</span></a></li>
+	                        <li><a href="#"><img src='img/rss.png' alt="" /><span>RSS Feed</span></a></li>
+	                        <li><a href="#"><img src='img/technorati.png' alt="" /><span>Technorati</span></a></li>
+	                        <li><a href="#"><img src='img/delicious.png' alt="" /><span>Delicious</span></a></li>
+	                    </ul>
+
+	                </div>
+
+
+	            </div><!-- End right aligned container -->
+
+
+	        </li><!-- End Contact Item -->
+
+
+	    </ul><!-- END MENU -->
 	</div>
 	<div id="columns">
+		<!--
 		<div id="side">
 			<h3>Reports</h3>
 
@@ -58,10 +257,10 @@
 			<!-- <h2>Documentation</h2>
 			<p>
 			<a href="\doc\app\AdminController.html">Code Documentation</a>
-			</p> --><%end %>
+			</p> <%end %>
 			<h3>Logout</h3>
 			<a href="/admin/logout">Logout</a>
-		</div>
+		</div> -->
 		<div id="main">
 			<%if flash[:notice] -%>
 			<div id="notice">

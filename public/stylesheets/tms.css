@@ -94,11 +94,11 @@ h1 {
 }
 
 #columns {
-  background: #3399ff;
+  /*background: #3399ff; */
 }
 
 #main {
-  margin-left: 13em;
+  /* margin-left: 13em; */
   padding-top: 4ex;
   padding-left: 2em;
   background: white;
