@@ -50,6 +50,7 @@
 
 
 	                <div class="col_3 firstcolumn">
+						<h1>Test Management System</h1>
 	                    <h2>My Task Reports</h2>
 
 	                    <div class="col_1 firstcolumn">
@@ -135,8 +136,36 @@
 
 	                    </div>
 	                </div>
+					<%if @auth ==2 %>
+					<div class="col_3 firstcolumn">
+						<h2>Administration</h2>
+
+	                    <div class="col_1 firstcolumn">
+
+	                        <ul class="greybox">
+	                            <li><a href="/tasks">Projects and Tasks</a></li>                           
+	                        </ul>   
+
+	                    </div>
+
+	                    <div class="col_1">
+
+	                        <ul class="greybox">
+	                            <li><a href="#">PTO Entry</a></li>
+	                        </ul>   
+
+	                    </div>
+
+	                    <div class="col_1">
+
+	                        <ul class="greybox">
+	                        </ul>   
+
+	                    </div>
+	                					
 
 	            </div><!-- End 3 columns container -->
+	<%end%>
 	
 
 
