@@ -1,4 +1,5 @@
 class ResourceController < ApplicationController
+    require "fastercsv"
   def index
   end
   def import
@@ -7,15 +8,16 @@ class ResourceController < ApplicationController
     #filenames
     import_file = "import/test_engineering.csv"
     #Get forecast data
-    f=File.open(import_file)
-    text = f.readlines
-    f.close
+    #f=File.open(import_file)
+    #text = f.readlines
+    #f.close
     puts
     puts "============================================="
     puts "CSV importer for Resource Allocation database"
     puts "============================================="
-    #import and stack data    
-    text.each do |x|  
+    #import and stack data   
+    arr_of_arrs = FasterCSV.read(import_file) 
+    arr_of_arrs.each do |x|  
       stack_data(x) if header == 1
       header = 1 if header == 0
     end
