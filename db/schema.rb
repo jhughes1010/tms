@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110219033523) do
+ActiveRecord::Schema.define(:version => 20110302021128) do
 
   create_table "devices", :force => true do |t|
     t.string   "name"
@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(:version => 20110219033523) do
   end
 
   create_table "tasks", :force => true do |t|
-    t.integer  "requester"
-    t.integer  "assignee"
+    t.integer  "requester_id"
+    t.integer  "assignee_id"
     t.string   "taskname"
     t.date     "scd"
     t.date     "acd"

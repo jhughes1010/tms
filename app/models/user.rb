@@ -1,6 +1,10 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
+  has_one :task
+
+  
+
   validates_presence_of   :name
   validates_uniqueness_of :name
   
@@ -35,6 +39,10 @@ class User < ActiveRecord::Base
   def self.assignee_list
     find(:all, :order =>"fullname", :conditions => "department = '3210'").map {|u| [u.fullname, u.id]}
   end
+  def self.get_te
+  self.group("id").having("department = 3210").order("fullname")
+  end
+  
   private
     def password_non_blank
     errors.add(:password, "missing password") if hashed_password.blank?

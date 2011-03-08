@@ -19,15 +19,23 @@ h1 {
 }
 
 /* Styles for products/index */
-
+#product-list2 table {
+		background-color:black;
+		border: 3px solid yellow;
+		padding: 5px;
+		color:yellow;
+		width:90%;
+		font-size: 90%
+		
+}
 #product-list table {
-        border-collapse: collapse;
+        #border-collapse: collapse;
 		width:100%;
 		font-size: 100%
 		
 }
 
-#product-list table tr td th {
+#product-list2 table tr td th {
         padding: 5px;
         vertical-align: top;
 		text-align: left;

@@ -39,12 +39,6 @@
             </th> -->
         </tr>
         <% @tasks.each do |task| %>
-        <%r_id = task.requester %>
-        <% requester = User.find(r_id) %>
-        <%a_id = task.assignee %>
-        <%if (a_id) %>
-        <% assignee = User.find(a_id) %>
-        <%end %>
         <%if @supress_overdue_color %>
         <tr class="<%= cycle('list-line-odd','list-line-even')%>">
             <%else %>
@@ -60,13 +54,11 @@
                 <td>
                 <%=task.id %>
                 <td>
-                    <%= requester.fullname %>
+                    <%= task.requester.fullname %>
                 </td>
                 <td>
-                    <% if (a_id) %>
-                    <%= assignee.fullname %>
-                    <%else %>
-                    UNASSIGNED<%end %>
+
+                    <%= task.assignee ? task.assignee.fullname : "UNASSIGNED" %>
                 </td>
                 <td>
                     <%= task.priority %>
@@ -94,4 +86,4 @@
             </tr>
             <% end %>
             </table>
-        </div>
+

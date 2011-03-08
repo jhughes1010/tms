@@ -20,6 +20,7 @@ class MainController < ApplicationController
     @today.to_s(:long)
     @users=User.all
     @tasks=Task.all_active
+    @te = User.get_te
   end
 
   def project_active_past_due
