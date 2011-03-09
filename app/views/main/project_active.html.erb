@@ -19,8 +19,10 @@
 	<div id="accordion">
 		<%@te.each do |t|%>
 		<%@tasks=Task.all_my_active(t.id)%>
-		<h3><a href="#"><%=t.fullname%></a></h3>
+		<%if @tasks.count !=0%>
+		<h3><a href="#"><%=t.fullname + ": "+@tasks.count.to_s + " active tasks"%></a></h3>
 		<div><%= render 'grid' %></div>
+		<%end%>
 
 		<%end%>
 	</div>
