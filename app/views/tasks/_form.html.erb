@@ -12,15 +12,15 @@
 </div>
 <% end %>
 <div class="field">
-	<%if !@task.requester %>
-	<%@task.requester=@user_id%>
+	<%if !@task.requester_id %>
+	<%@task.requester_id=@user_id%>
 	<%@task.tcd = Date.today.next_month %>
 	<%end %>
-	<%= f.select(:requester,@requesters) %>
+	<%= f.select(:requester_id,@requesters) %>
 </div>
 <%if @auth==2 %>
 <div class="field">
-<%= f.select(:assignee,@assignees) %>
+<%= f.select(:assignee_id,@assignees) %>
 </div>
 <%end %>
 <div class="field">
