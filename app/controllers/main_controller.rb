@@ -18,7 +18,7 @@ class MainController < ApplicationController
     @auth = session[:user_auth]
     @today=Date.today
     @today.to_s(:long)
-    @users=User.all
+    #@users=User.all_order_by_fullname
     @tasks=Task.all_active
     @te = User.get_te
   end
