@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
     find(:all, :order =>"fullname", :conditions => "department = '3210'").map {|u| [u.fullname, u.id]}
   end
   def self.get_te
-  self.group("id").having("department = 3210").order("fullname")
+  self.group("id").having("department = '3210'").order("fullname")
   end
   
   private
