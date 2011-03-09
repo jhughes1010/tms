@@ -3,11 +3,11 @@
 </p>
 <p>
     <b>Requester:</b>
-    <%= @task.requester %>
+    <%= @task.requester.fullname %>
 </p>
 <p>
     <b>Assignee:</b>
-    <%= @task.assignee %>
+    <%= @task.assignee ? @task.assignee.fullname : "UNASSIGNED" %>
 </p>
 <p>
     <b>Taskname:</b>

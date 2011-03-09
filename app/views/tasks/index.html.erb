@@ -47,10 +47,10 @@
             <%= task.id %>
         </td>        
 		<td>
-            <%= task.requester %>
+            <%= task.requester.fullname %>
         </td>
         <td>
-            <%= task.assignee %>
+            <%= task.assignee ? task.assignee.fullname : "UNASSIGNED" %>
         </td>
         <td>
             <%= task.complete %>
