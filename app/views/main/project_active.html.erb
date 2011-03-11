@@ -21,7 +21,7 @@
 		<%@tasks=Task.all_my_active(t.id)%>
 		<%if @tasks.count !=0%>
 		<h3><a href="#"><%=t.fullname + ": "+@tasks.count.to_s + " active tasks"%></a></h3>
-		<div><%= render 'grid' %></div>
+		<div><%= render 'grid_no_assignee' %></div>
 		<%end%>
 
 		<%end%>

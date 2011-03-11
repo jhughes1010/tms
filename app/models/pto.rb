@@ -1,4 +1,6 @@
 class Pto < ActiveRecord::Base
+  belongs_to :user
+  
   def self.all_by_date
     find(:all, :order =>"start")
   end
