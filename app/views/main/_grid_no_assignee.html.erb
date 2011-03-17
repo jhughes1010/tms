@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<div id="product-list">
+			<table>
+				<tr>
+					<th>
+						ID
+					</th>
+					<th>
+						Requester
+					</th>
+					<th>
+						Priority
+					</th>
+					<th>
+						Device
+					</th>
+					<th>
+						Test Point
+					</th>
+					<th>
+						Platform
+					</th>
+					<th>
+						Taskname
+					</th>
+					<th>
+						Sch Comp Date
+					</th>
+					<th>
+						Category
+					</th>
+					<th></th><!-- <th>
+			</th>
+			<th>
+			</th> -->
+				</tr><% @tasks.each do |task| %><%if @supress_overdue_color %>
+				<tr class="<%= cycle('list-line-odd','list-line-even')%>">
+					<%else %><%if(task.scd) %><%if (task.scd >= @today) %>
+				</tr>
+				<tr class="<%= cycle('list-line-odd','list-line-even')%>">
+					<%else %>
+				</tr>
+				<tr class="<%= cycle('list-line-odd_past_due','list-line-even_past_due')%>">
+					<%end %><%end %><%end %>
+					<td>
+						<%=task.id %>
+					</td>
+					<td>
+						<%= task.requester.fullname %>
+					</td>
+					<td>
+						<%= task.priority %>
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>
+						<%= task.taskname %>
+					</td>
+					<td>
+						<%= task.scd %>
+					</td>
+					<td>
+						<%= task.category %>
+					</td>
+					<td>
+						<%= link_to 'Show', task %>
+					</td><!-- <td><%= link_to 'Edit', edit_task_path(task) %></td>
+				<td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %></td> -->
+				</tr><% end %>
+			</table>
+		</div>
+	</body>
+</html>
