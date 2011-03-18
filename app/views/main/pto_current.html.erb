@@ -1,53 +1,56 @@
 <h1>Near Term PTO</h1>
 <p>
 	<%=@outlook %> day outlook: 
-    <%= @start.to_s(:long) %> to <%=@stop.to_s(:long) %>
+	<%= @start.to_s(:long) %> to <%=@stop.to_s(:long) %>
 </p>
 <hr>
+<div id="product-list">
 <table>
-    <tr>
-        <th>
-            User
-        </th>
-        <th>
-            Start
-        </th>
-        <th>
-            End
-        </th>
-        <th>
-            Comments
-        </th>
-        <th>
-        </th>
-        <th>
-        </th>
-        <th>
-        </th>
-    </tr>
-    <% @ptos.each do |pto| %>
-    <%emp_id = pto.user_id-1 %>
-    <tr>
-        <td>
-            <%= @users[emp_id].fullname %>
-        </td>
-        <td>
-            <%= pto.start.to_s(:short) %>
-        </td>
-        <td>
-            <%= pto.finish.to_s(:short) %>
-        </td>
-        <td>
-            <%= pto.comments %>
-        </td>
-        <!--<td><%= link_to 'Show', pto %></td>
-        <td><%= link_to 'Edit', edit_pto_path(pto) %></td>
-        <td><%= link_to 'Destroy', pto, :confirm => 'Are you sure?', :method => :delete %></td> -->
-    </tr>
-    <% end %>
+	<tr>
+		<th>
+			User
+		</th>
+		<th>
+			Start
+		</th>
+		<th>
+			End
+		</th>
+		<th>
+			Comments
+		</th>
+		<th>
+		</th>
+		<th>
+		</th>
+		<th>
+		</th>
+	</tr>
+	<% @ptos.each do |pto| %>
+	<%#emp_id = pto.user_id-1 %>
+	<tr>
+		<td>
+			<%#= @users[emp_id].fullname %>
+			<%=pto.user.fullname%>
+		</td>
+		<td>
+			<%= pto.start.to_s(:short) %>
+		</td>
+		<td>
+			<%= pto.finish.to_s(:short) %>
+		</td>
+		<td>
+			<%= pto.comments %>
+		</td>
+		<!--<td><%= link_to 'Show', pto %></td>
+		<td><%= link_to 'Edit', edit_pto_path(pto) %></td>
+		<td><%= link_to 'Destroy', pto, :confirm => 'Are you sure?', :method => :delete %></td> -->
+	</tr>
+	<% end %>
 </table>
+</div>
 <br/>
 <!-- <%= link_to 'New Pto', new_pto_path %> -->
 <p>
-    <a href="/main/index">TMS Home</a>
+	<a href="/main/index">TMS Home</a>
 </p>
