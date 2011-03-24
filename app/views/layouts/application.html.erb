@@ -171,9 +171,62 @@
 
 					</li><!-- End 3 columns Item -->
 					<li><a href="#" class="drop">Resource Allocation</a><!-- Begin 3 columns Item -->
-						</li>
-						<li><a href="#" class="drop">Costing Data</a><!-- Begin 3 columns Item -->
-							</li>
+						<div class="dropdown_3columns"><!-- Begin 3 columns container -->
+
+
+							<div class="col_3 firstcolumn">
+								<h1>Quarterly Resource Review</h1>
+								<h2>Resource Reports</h2>
+
+								<div class="col_1 firstcolumn">
+
+									<ul class="greybox">
+										<li><a href="#">Key Projects</a></li>
+
+
+									</ul>   
+
+								</div>
+
+								<div class="col_1">
+
+									<ul class="greybox">
+										<li><a href="#">Other Projects</a></li>
+									</ul>   
+
+								</div>
+
+								<div class="col_1">
+
+									<ul class="greybox">
+										<li><a href="#">Completed</a></li>
+									</ul>   
+
+								</div>
+							</div>
+							<h2>Database Functions</h2>
+							<div class="col_1 firstcolumn">
+
+								<ul class="greybox">
+									<li><a href="/resource/import">Import Data</a></li>
+
+
+								</ul>   
+
+							</div>
+
+							<div class="col_1">
+
+								<ul class="greybox">
+									<li><a href="#">Clear Data</a></li>
+								</ul>   
+
+							</div>
+							
+						</div>
+					</li>
+					<li><a href="#" class="drop">Costing Data</a><!-- Begin 3 columns Item -->
+					</li>
 
 
 <!--	        <li class="right"><a href="#" class="drop">Contact</a><!-- Begin Contact Item 
@@ -228,14 +281,14 @@
 </div>
 <div id="columns">
 
-<div id="main">
-	<%if flash[:notice] -%>
-	<div id="notice">
-		<%=flash[:notice] %>
+	<div id="main">
+		<%if flash[:notice] -%>
+		<div id="notice">
+			<%=flash[:notice] %>
+		</div>
+		<%end %>
+		<%= yield :layout %>
 	</div>
-	<%end %>
-	<%= yield :layout %>
-</div>
 </div>
 </body>
 </html>

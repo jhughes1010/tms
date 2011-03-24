@@ -23,18 +23,10 @@ class ResourceController < ApplicationController
     end
   end 
   def stack_data(line)
-    record=line.split(",")
-    print_record(record)
-    #columns 5-7,11-25 need data stacking with individual record edits or create as necessary
-    update_record(record)
+    puts line
+    write_record(line)
   end
-  def print_record(record)
-    print "Record:" 
-    for f in record
-      print f + " "
-    end
-    puts
-  end 
+
   def update_record(record)
     #write new record to database
     4.upto(24){
