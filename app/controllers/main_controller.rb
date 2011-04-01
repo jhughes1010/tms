@@ -64,10 +64,12 @@ class MainController < ApplicationController
     @auth = session[:user_auth]
     @user_id=session[:user_id]
     @full_name=session[:user_fullname]
+    
     @today=Date.today
     @today.to_s(:long)
     @users=User.all
     @tasks=Task.all_my_active(@user_id)
+    @tasks_assigned=Task.all_my_active_by_me(@used_id)
   end
   def project_my_active_past_due
     @auth = session[:user_auth]

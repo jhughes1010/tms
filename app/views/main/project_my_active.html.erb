@@ -7,6 +7,12 @@
 		</p>
 		<hr>
 		<%= render 'grid' %>
+		<br><br>
+		<h1>
+			Active Tasks assigned by <%=@full_name%>
+			</h1>
+			<%=@tasks=@tasks_assigned%>
+			<%= render 'grid'%>
 		<!-- <%= link_to 'New Task', new_task_path %> -->
 		<p>
 			<a href="/main/index">TMS Home</a><br>

@@ -31,4 +31,7 @@ class Task < ActiveRecord::Base
   def self.all_active_assigned_to(u)
     find(:all, :order =>"assignee_id, priority", :conditions => ["requester = ? AND complete = ?",u,false])
   end
+  def self.all_my_active_by_me(user_id)
+    find(:all, :order =>"assignee_id, priority", :conditions => ["complete = ? AND requester_id = ?",false, user_id])
+  end
 end
