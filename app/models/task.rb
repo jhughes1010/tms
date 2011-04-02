@@ -26,7 +26,7 @@ class Task < ActiveRecord::Base
   end
   def self.all_unassigned
     date=Date.today
-    find(:all, :order =>"priority" , :conditions => "assignee_id IS NULL")
+    find(:all, :order =>"id" , :conditions => "assignee_id IS NULL")
   end
   def self.all_active_assigned_to(u)
     find(:all, :order =>"assignee_id, priority", :conditions => ["requester = ? AND complete = ?",u,false])
