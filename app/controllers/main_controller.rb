@@ -69,7 +69,7 @@ class MainController < ApplicationController
     @today.to_s(:long)
     @users=User.all
     @tasks=Task.all_my_active(@user_id)
-    @tasks_assigned=Task.all_my_active_by_me(@used_id)
+    @tasks_by_me=Task.all_my_active_by_me(@used_id)
   end
   def project_my_active_past_due
     @auth = session[:user_auth]

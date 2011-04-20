@@ -27,15 +27,20 @@ class ResourceController < ApplicationController
     write_record(line)
   end
 
-  def update_record(record)
+  def write_record(record)
     #write new record to database
     4.upto(24){
       |x|
-      print Date.today
+      print Date.today - 3.months
       0.upto(3){
         |y|
         print record[y] + " "
       }
+      if x < 7
+          print ":Actual   "
+      else
+          print ":Forecast "
+        end
       puts record[x]
     }
   end
