@@ -23,7 +23,7 @@ class ResourceController < ApplicationController
     end
   end 
   def stack_data(line)
-    puts line
+    #puts line
     write_record(line)
   end
 
@@ -31,7 +31,9 @@ class ResourceController < ApplicationController
     #write new record to database
     4.upto(24){
       |x|
-      print Date.today - 3.months
+      date = Date.today
+      date_start = date.at_beginning_of_month - 3.months
+      print date_start
       0.upto(3){
         |y|
         print record[y] + " "
@@ -40,9 +42,17 @@ class ResourceController < ApplicationController
           print ":Actual   "
       else
           print ":Forecast "
-        end
+          date_current=date_start.months_since(x)
+       new_to_db(date_current,record[0], record[1],record[2],record[3],record[x])  
+            end
       puts record[x]
+
     }
+  end
+  def new_to_db(date,dept,name,project,function,time)
+    #delete database
+    print date
+    
   end
 end
 
