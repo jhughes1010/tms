@@ -1,6 +1,16 @@
 class ResourceController < ApplicationController
     require "fastercsv"
   def index
+    @project_totals = Array.new(17,0)
+    @date = Date.today
+    @date_start = @date.at_beginning_of_month
+        total = Resource.sapphire(@date_start)
+    0.upto(15){
+      |x|
+
+    @project_totals[x] = total[x].forecast   
+     }
+
   end
   def import
     #initial variables
@@ -13,6 +23,7 @@ class ResourceController < ApplicationController
     puts "============================================="
     #import and stack data   
     #delete database
+    Resource.delete_all
     arr_of_arrs = FasterCSV.read(import_file) 
     arr_of_arrs.each do |x|  
       stack_data(x) if header == 1
@@ -24,6 +35,7 @@ class ResourceController < ApplicationController
   #
   def stack_data(line)
     #puts line
+    #set_nil_to_zero(line)
     write_record(line)
   end
   #
@@ -35,20 +47,20 @@ class ResourceController < ApplicationController
       |x|
       date = Date.today
       date_start = date.at_beginning_of_month - 3.months
-      print date_start
-      print " "
+      #print date_start
+      #print " "
       0.upto(3){
         |y|
-        print record[y] + " "
+        #print record[y] + " " if record[y]
       }
       if x < 7
-          print ":Actual   "
+          #print ":Actual   "
       else
-          print ":Forecast "
+          #print ":Forecast "
           date_current=date_start.months_since(x-4)
        new_to_db(date_current,record[0], record[1],record[2],record[3],record[x])  
             end
-      puts record[x]
+      #puts record[x]
 
     }
   end
@@ -56,8 +68,18 @@ class ResourceController < ApplicationController
   #
   #
   def new_to_db(date,dept,name,project,function,time)
-    print date
-    print " "
+    #print date
+    #print " "
+    record = Resource.new
+    record.date = date
+    record.name = name
+    record.department = dept
+    record.project = project
+    record.function = function
+    record.actual = 0
+    record.forecast = time
+    
+    record.save
     
   end
 end

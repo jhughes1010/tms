@@ -4,4 +4,5 @@ tmp/**/*
 .svn
 *.log
 .DS_store
+.csv
 

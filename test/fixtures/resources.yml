@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  date: 2011-05-20
+  department: MyString
+  name: MyString
+  project: MyString
+  function: MyString
+  actual: 9.99
+  forecast: 9.99
+
+two:
+  date: 2011-05-20
+  department: MyString
+  name: MyString
+  project: MyString
+  function: MyString
+  actual: 9.99
+  forecast: 9.99

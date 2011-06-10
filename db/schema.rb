@@ -10,55 +10,67 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110302021128) do
+ActiveRecord::Schema.define(:version => 20110521023503) do
 
   create_table "devices", :force => true do |t|
-    t.string   "name"
-    t.string   "friendly"
-    t.integer  "gdpw"
-    t.string   "productline"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "name"
+    t.string    "friendly"
+    t.integer   "gdpw"
+    t.string    "productline"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "ptos", :force => true do |t|
-    t.integer  "user_id"
-    t.date     "start"
-    t.date     "finish"
-    t.string   "comments"
+    t.integer   "user_id"
+    t.date      "start"
+    t.date      "finish"
+    t.string    "comments"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+  end
+
+  create_table "resources", :force => true do |t|
+    t.date     "date"
+    t.string   "department"
+    t.string   "name"
+    t.string   "project"
+    t.string   "function"
+    t.decimal  "actual"
+    t.decimal  "forecast"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "tasks", :force => true do |t|
-    t.integer  "requester_id"
-    t.integer  "assignee_id"
-    t.string   "taskname"
-    t.date     "scd"
-    t.date     "acd"
-    t.integer  "priority"
-    t.integer  "category"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "complete"
-    t.date     "tcd"
-    t.text     "description"
-    t.string   "operation"
-    t.boolean  "accepted"
-    t.integer  "device"
-    t.string   "platform"
+    t.integer   "requester_id"
+    t.integer   "assignee_id"
+    t.string    "taskname"
+    t.date      "scd"
+    t.date      "acd"
+    t.integer   "priority"
+    t.integer   "category"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.boolean   "complete"
+    t.date      "tcd"
+    t.text      "description"
+    t.string    "operation"
+    t.boolean   "accepted"
+    t.integer   "device"
+    t.string    "platform"
   end
 
   create_table "users", :force => true do |t|
-    t.string   "fullname"
-    t.string   "name"
-    t.string   "hashed_password"
-    t.string   "salt"
-    t.string   "department"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "email"
-    t.integer  "auth_level"
+    t.string    "fullname"
+    t.string    "name"
+    t.string    "hashed_password"
+    t.string    "salt"
+    t.string    "department"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "email"
+    t.integer   "auth_level"
   end
 
 end
