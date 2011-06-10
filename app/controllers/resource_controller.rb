@@ -1,17 +1,25 @@
 class ResourceController < ApplicationController
     require "fastercsv"
   def index
+    #Project Totals
     @project_totals = Array.new(17,0)
     @date = Date.today
     @date_start = @date.at_beginning_of_month
         total = Resource.sapphire(@date_start)
-    0.upto(15){
+    0.upto(14){
       |x|
 
     @project_totals[x] = total[x].forecast   
+    @project_totals[15] += total[x].forecast  
      }
+     @project_totals[16] = @project_totals[15]/12
+     #Department Totals and contributor details
+     subs = Resource.sapphire_sub(@date_start)
 
   end
+  #
+  #
+  #
   def import
     #initial variables
     header = 0
