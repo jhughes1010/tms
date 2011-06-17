@@ -4,6 +4,6 @@ tmp/**/*
 .svn
 *.log
 .DS_store
-.csv
-.numbers
+*.csv
+*.numbers
 
