@@ -1,4 +1,4 @@
-[	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 	<html>
 		<head>
 			<title></title>
@@ -34,11 +34,8 @@
 						<th>
 							Category
 						</th>
-						<th></th><!-- <th>
-				</th>
-				<th>
-				</th> -->
-					</tr><% @tasks.each do |task| %><%if @supress_overdue_color %>
+					</tr>
+					<% @tasks.each do |task| %><%if @supress_overdue_color %>
 					<tr class="<%= cycle('list-line-odd','list-line-even')%>">
 						<%else %><%if(task.scd) %><%if (task.scd >= @today) %>
 					</tr>
