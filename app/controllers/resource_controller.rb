@@ -4,7 +4,7 @@
       #Project Totals
       @project_totals = Array.new(17,0)
       #@group_totals = Array.new(17,0)
-    
+
       @date = Date.today
       @date_start = @date.at_beginning_of_month
           total = Resource.sapphire(@date_start)
@@ -15,8 +15,8 @@
       @project_totals[15] += total[x].forecast  
        }
        @project_totals[16] = @project_totals[15]/12
-       #Department Totals and contributor details
-       #subs = Resource.sapphire_sub(@date_start)
+       #Department Totals
+
 
     end
     #
@@ -88,9 +88,9 @@
       record.function = function
       record.actual = 0
       record.forecast = time
-    
+
       record.save
-    
+
     end
   end
 
