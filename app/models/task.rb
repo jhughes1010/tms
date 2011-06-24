@@ -3,7 +3,7 @@ class Task < ActiveRecord::Base
   belongs_to :assignee, :class_name=>"User"
   
   scope :grouped, group(:assignee_id)
-  
+
   
   def self.all_active
     find(:all, :order =>"assignee_id, priority", :conditions => ["complete = ?",false])
@@ -32,6 +32,6 @@ class Task < ActiveRecord::Base
     find(:all, :order =>"assignee_id, priority", :conditions => ["requester = ? AND complete = ?",u,false])
   end
   def self.all_my_active_by_me(user_id)
-    find(:all, :order =>"assignee_id, priority", :conditions => ["complete = ? AND requester_id = ?",false, user_id])
+    self.where("complete = ? AND requester_id = ?",false, user_id).order("assignee_id, priority")
   end
 end

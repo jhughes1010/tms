@@ -1,7 +1,10 @@
   class ResourceController < ApplicationController
       require "fastercsv"
     def index
+      #Work through projects
+      #...
       #Project Totals
+      @project = "Sapphire"
       @project_totals = Array.new(17,0)
       #@group_totals = Array.new(17,0)
 
