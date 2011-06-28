@@ -1,294 +1,213 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html>
-<head>
-	<title>TMS - Test Management System</title>
-	<%= stylesheet_link_tag "tms", :media => "all" %>
-	<%= stylesheet_link_tag "reset", :media=>"screen" %>
-	<%= stylesheet_link_tag "menu", :media=>"screen" %>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-	<%= csrf_meta_tag %>
-	<%= stylesheet_link_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "application" %>
-	<%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "//ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js" %>
-	<%= javascript_include_tag :defaults %>
-
-	<link href='/images/favicon.ico' rel='shortcut icon' />  
-
-
-</head>
-<body>
-	<div id="banner">
-		<%=@page_title||"Serial Interface Business Unit" %>
-		<ul class="menu"><!-- BEGIN MENU -->
-
-
-			<li><a href="#" class="drop">Home</a><!-- Begin Home Item -->
-
-
-				<div class="dropdown_2columns"><!-- Begin 2 columns container -->
-
-
-					<div class="col_2 firstcolumn">
-
-						<h2>Welcome !</h2>
-						<p>Please contact james.hughes@atmel.com with any questions.</p>             
-
-
-
-
-					</div>
-
-
-				</div><!-- End 2 columns container -->
-
-
-			</li><!-- End Home Item -->
-
-			<li><a href="#" class="drop">TMS</a><!-- Begin 3 columns Item -->
-
-
-				<div class="dropdown_3columns"><!-- Begin 3 columns container -->
-
-
-					<div class="col_3 firstcolumn">
-						<h1>Test Management System</h1>
-						<h2>My Task Reports</h2>
-
-						<div class="col_1 firstcolumn">
-
-							<ul class="greybox">
-								<li><a href="/main/project_my_active">Active Requests</a></li>
-								<li><a href="#">Not Accepted</a></li>
-
-							</ul>   
-
+	<head>
+		<title>
+			TMS - Test Management System
+		</title><%= stylesheet_link_tag "tms", :media => "all" %><%= stylesheet_link_tag "reset", :media=>"screen" %><%= stylesheet_link_tag "menu", :media=>"screen" %>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8">
+</script><%= csrf_meta_tag %><%= stylesheet_link_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "application" %><%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "//ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js" %><%= javascript_include_tag :defaults %>
+		<link href='/images/favicon.ico' rel='shortcut icon'>
+	</head>
+	<body>
+		<div id="banner">
+			<%=@page_title||"Serial Interface Business Unit" %>
+			<ul class="menu">
+				<!-- BEGIN MENU -->
+				<li>
+					<a href="#" class="drop">Home</a><!-- Begin Home Item -->
+					<div class="dropdown_2columns">
+						<!-- Begin 2 columns container -->
+						<div class="col_2 firstcolumn">
+							<h2>
+								Welcome !
+							</h2>
+							<p>
+								Please contact james.hughes@atmel.com with any questions.
+							</p>
 						</div>
-
-						<div class="col_1">
-
-							<ul class="greybox">
-								<li><a href="/main/project_my_active_past_due">Past Due</a></li>
-							</ul>   
-
-						</div>
-
-						<div class="col_1">
-
-							<ul class="greybox">
-								<li><a href="#">Completed</a></li>
-							</ul>   
-
-						</div>
-					</div>
-					<div class="col_3 firstcolumn">
-						<h2>General Reports</h2>
-
-						<div class="col_1 firstcolumn">
-
-							<ul class="greybox">
-								<li><a href="/main/project_active">Active Requests</a></li>
-								<li><a href="#">Not Accepted</a></li>
-
-							</ul>   
-
-						</div>
-
-						<div class="col_1">
-
-							<ul class="greybox">
-								<li><a href="/main/project_active_past_due">Past Due</a></li>
-								<li><a href="/main/project_unassigned">Unassigned Tasks</a></l1>
-								</ul>   
-
-							</div>
-
-							<div class="col_1">
-
+					</div><!-- End 2 columns container -->
+				</li><!-- End Home Item -->
+				<li>
+					<a href="#" class="drop">TMS</a><!-- Begin 3 columns Item -->
+					<div class="dropdown_3columns">
+						<!-- Begin 3 columns container -->
+						<div class="col_3 firstcolumn">
+							<h1>
+								Test Management System
+							</h1>
+							<h2>
+								My Task Reports
+							</h2>
+							<div class="col_1 firstcolumn">
 								<ul class="greybox">
-									<li><a href="/main/project_completed">Completed Tasks</a></li>
-									<li><a href="/main/pto_current">30 Day PTO Outlook</a></li>
-								</ul>   
-
+									<li>
+										<a href="/main/project_my_active">Active Requests</a>
+									</li>
+									<li>
+										<a href="#">Not Accepted</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col_1">
+								<ul class="greybox">
+									<li>
+										<a href="/main/project_my_active_past_due">Past Due</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col_1">
+								<ul class="greybox">
+									<li>
+										<a href="#">Completed</a>
+									</li>
+								</ul>
 							</div>
 						</div>
 						<div class="col_3 firstcolumn">
-							<h2>Entry</h2>
-
+							<h2>
+								General Reports
+							</h2>
 							<div class="col_1 firstcolumn">
-
 								<ul class="greybox">
-									<li><a href="/tasks/new">Task Entry</a></li>                           
-								</ul>   
-
+									<li>
+										<a href="/main/project_active">Active Requests</a>
+									</li>
+									<li>
+										<a href="#">Not Accepted</a>
+									</li>
+								</ul>
 							</div>
-
 							<div class="col_1">
-
 								<ul class="greybox">
-									<li><a href="#">PTO Entry</a></li>
-								</ul>   
-
+									<li>
+										<a href="/main/project_active_past_due">Past Due</a>
+									</li>
+									<li>
+										<a href="/main/project_unassigned">Unassigned Tasks</a>
+									</li>
+								</ul>
 							</div>
-
 							<div class="col_1">
-
 								<ul class="greybox">
-								</ul>   
-
+									<li>
+										<a href="/main/project_completed">Completed Tasks</a>
+									</li>
+									<li>
+										<a href="/main/pto_current">30 Day PTO Outlook</a>
+									</li>
+								</ul>
 							</div>
 						</div>
-						<%if @auth ==2 %>
 						<div class="col_3 firstcolumn">
-							<h2>Administration</h2>
-
+							<h2>
+								Entry
+							</h2>
 							<div class="col_1 firstcolumn">
-
 								<ul class="greybox">
-									<li><a href="#">Priority Management</a></li>                           
-								</ul>   
-
+									<li>
+										<a href="/tasks/new">Task Entry</a>
+									</li>
+								</ul>
 							</div>
-
 							<div class="col_1">
-
 								<ul class="greybox">
-									<li><a href="#">PTO Entry</a></li>
-								</ul>   
-
+									<li>
+										<a href="#">PTO Entry</a>
+									</li>
+								</ul>
 							</div>
-
 							<div class="col_1">
-
-								<ul class="greybox">
-								</ul>   
-
+								<ul class="greybox"></ul>
 							</div>
-							<%end%>    					
-
-						</div><!-- End 3 columns container -->
-
-
-
-
-					</li><!-- End 3 columns Item -->
-					<li><a href="#" class="drop">Resource Allocation</a><!-- Begin 3 columns Item -->
-						<div class="dropdown_3columns"><!-- Begin 3 columns container -->
-
-
-							<div class="col_3 firstcolumn">
-								<h1>Quarterly Resource Review</h1>
-								<h2>Resource Reports</h2>
-
-								<div class="col_1 firstcolumn">
-
-									<ul class="greybox">
-										<li><a href="/resource/index">Key Projects</a></li>
-
-
-									</ul>   
-
-								</div>
-
-								<div class="col_1">
-
-									<ul class="greybox">
-										<li><a href="#">Other Projects</a></li>
-									</ul>   
-
-								</div>
-
-								<div class="col_1">
-
-									<ul class="greybox">
-										<li><a href="#">Completed</a></li>
-									</ul>   
-
-								</div>
-							</div>
-							<h2>Database Functions</h2>
+						</div><%if @auth ==2 %>
+						<div class="col_3 firstcolumn">
+							<h2>
+								Administration
+							</h2>
 							<div class="col_1 firstcolumn">
-
 								<ul class="greybox">
-									<li><a href="/resource/import">Import Data</a></li>
-
-
-								</ul>   
-
+									<li>
+										<a href="#">Priority Management</a>
+									</li>
+								</ul>
 							</div>
-
 							<div class="col_1">
-
 								<ul class="greybox">
-									<li><a href="#">Clear Data</a></li>
-								</ul>   
-
+									<li>
+										<a href="#">PTO Entry</a>
+									</li>
+								</ul>
 							</div>
-							
+							<div class="col_1">
+								<ul class="greybox"></ul>
+							</div>
+						</div><%end%>
+					</div><!-- End 3 columns container -->
+				</li><!-- End 3 columns Item -->
+				<li>
+					<a href="#" class="drop">Resource Allocation</a><!-- Begin 3 columns Item -->
+					<div class="dropdown_3columns">
+						<!-- Begin 3 columns container -->
+						<div class="col_3 firstcolumn">
+							<h1>
+								Quarterly Resource Review
+							</h1>
+							<h2>
+								Resource Reports
+							</h2>
+							<div class="col_1 firstcolumn">
+								<ul class="greybox">
+									<li>
+										<a href="/resource/index">Key Projects</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col_1">
+								<ul class="greybox">
+									<li>
+										<a href="#">Other Projects</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col_1">
+								<ul class="greybox">
+									<li>
+										<a href="#">Completed</a>
+									</li>
+								</ul>
+							</div>
 						</div>
-					</li>
-					<li><a href="#" class="drop">Costing Data</a><!-- Begin 3 columns Item -->
-					</li>
-
-
-<!--	        <li class="right"><a href="#" class="drop">Contact</a><!-- Begin Contact Item 
-
-
-<div class="dropdown_2columns align_right last"><!-- Begin right aligned container 
-
-
-<div class="col_2 firstcolumn">
-
-<h2>Contact Us</h2>
-
-<form action="post"><!-- Begin contact form
-
-<fieldset>
-
-<p><label>Name</label><input type="text" size="30" /></p>
-<p><label>Email</label><input type="text" size="30" /></p>
-<p><label>Subject</label><input type="text" size="30" /></p>
-<p><label>Message</label><textarea cols="30" rows="10"></textarea></p>		
-
-<button type="submit" class="submit">Send</button>
-
-</fieldset>		
-
-</form><!-- End contact form 
-
-</div>
-
-<div class="col_2 firstcolumn">
-
-<h2>Find us on social networks</h2>
-<ul class="social">
-<li><a href="#"><img src='img/twitter.png' alt="" /><span>Twitter</span></a></li>
-<li><a href="#"><img src='img/facebook.png' alt="" /><span>Facebook</span></a></li>
-<li><a href="#"><img src='img/flickr.png' alt="" /><span>Flickr</span></a></li>
-<li><a href="#"><img src='img/rss.png' alt="" /><span>RSS Feed</span></a></li>
-<li><a href="#"><img src='img/technorati.png' alt="" /><span>Technorati</span></a></li>
-<li><a href="#"><img src='img/delicious.png' alt="" /><span>Delicious</span></a></li>
-</ul>
-
-</div>
-
-
-</div><!-- End right aligned container 
-
-
-</li><!-- End Contact Item -->
-
-
-</ul><!-- END MENU -->
-</div>
-<div id="columns">
-
-	<div id="main">
-		<%if flash[:notice] -%>
-		<div id="notice">
-			<%=flash[:notice] %>
+						<h2>
+							Database Functions
+						</h2>
+						<div class="col_1 firstcolumn">
+							<ul class="greybox">
+								<li>
+									<a href="/resource/import">Import Data</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col_1">
+							<ul class="greybox">
+								<li>
+									<a href="#">Clear Data</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#" class="drop">Costing Data</a><!-- Begin 3 columns Item -->
+				</li>
+			</ul><!-- END MENU -->
 		</div>
-		<%end %>
-		<%= yield :layout %>
-	</div>
-</div>
-</body>
+		<div id="columns">
+			<div id="main">
+				<%if flash[:notice] -%>
+				<div id="notice">
+					<%=flash[:notice] %>
+				</div><%end %><%= yield :layout %>
+			</div>
+		</div>
+	</body>
 </html>
