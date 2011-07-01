@@ -1,0 +1,49 @@
+<h1>Listing can_mains</h1>
+
+<table>
+  <tr>
+    <th>Can</th>
+    <th>Internal</th>
+    <th>Sort</th>
+    <th>Mark</th>
+    <th>Ft</th>
+    <th>Assy loc</th>
+    <th>Device tab</th>
+    <th>Inactive</th>
+    <th>Customer</th>
+    <th>Interface</th>
+    <th>Mfg</th>
+    <th>I2w addr</th>
+    <th>Comments</th>
+    <th>Fw version</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @can_mains.each do |can_main| %>
+  <tr>
+    <td><%= can_main.can %></td>
+    <td><%= can_main.internal %></td>
+    <td><%= can_main.sort %></td>
+    <td><%= can_main.mark %></td>
+    <td><%= can_main.ft %></td>
+    <td><%= can_main.assy_loc %></td>
+    <td><%= can_main.device_tab %></td>
+    <td><%= can_main.inactive %></td>
+    <td><%= can_main.customer %></td>
+    <td><%= can_main.interface %></td>
+    <td><%= can_main.mfg_id %></td>
+    <td><%= can_main.i2w_addr %></td>
+    <td><%= can_main.comments %></td>
+    <td><%= can_main.fw_version %></td>
+    <td><%= link_to 'Show', can_main %></td>
+    <td><%= link_to 'Edit', edit_can_main_path(can_main) %></td>
+    <td><%= link_to 'Destroy', can_main, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Can main', new_can_main_path %>

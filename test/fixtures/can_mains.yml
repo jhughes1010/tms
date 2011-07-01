@@ -1,0 +1,33 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  can: MyString
+  internal: false
+  sort: false
+  mark: false
+  ft: false
+  assy_loc: false
+  device_tab: false
+  inactive: false
+  customer: MyString
+  interface: MyString
+  mfg_id: MyString
+  i2w_addr: MyString
+  comments: MyText
+  fw_version: MyString
+
+two:
+  can: MyString
+  internal: false
+  sort: false
+  mark: false
+  ft: false
+  assy_loc: false
+  device_tab: false
+  inactive: false
+  customer: MyString
+  interface: MyString
+  mfg_id: MyString
+  i2w_addr: MyString
+  comments: MyText
+  fw_version: MyString
