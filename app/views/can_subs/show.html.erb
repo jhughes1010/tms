@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Can main:</b>
+  <%= @can_sub.can_main_id %>
+</p>
+
+<p>
+  <b>Cpn:</b>
+  <%= @can_sub.cpn %>
+</p>
+
+<p>
+  <b>Mpn:</b>
+  <%= @can_sub.mpn %>
+</p>
+
+<p>
+  <b>Package:</b>
+  <%= @can_sub.package %>
+</p>
+
+<p>
+  <b>Comment:</b>
+  <%= @can_sub.comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_can_sub_path(@can_sub) %> |
+<%= link_to 'Back', can_subs_path %>

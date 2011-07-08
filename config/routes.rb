@@ -1,4 +1,6 @@
 TMS::Application.routes.draw do
+  resources :can_subs
+
   resources :can_mains
 
   resources :resources

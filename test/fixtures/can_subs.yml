@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  can_main_id: 1
+  cpn: MyString
+  mpn: MyString
+  package: 
+  comment: MyText
+
+two:
+  can_main_id: 1
+  cpn: MyString
+  mpn: MyString
+  package: 
+  comment: MyText

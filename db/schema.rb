@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110701161335) do
+ActiveRecord::Schema.define(:version => 20110708114047) do
 
   create_table "can_mains", :force => true do |t|
     t.string   "can"
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(:version => 20110701161335) do
     t.string   "i2w_addr"
     t.text     "comments"
     t.string   "fw_version"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "can_subs", :force => true do |t|
+    t.integer  "can_main_id"
+    t.string   "cpn"
+    t.string   "mpn"
+    t.string   "package"
+    t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
