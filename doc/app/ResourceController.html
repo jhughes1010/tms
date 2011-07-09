@@ -69,7 +69,21 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
+					<li><a href="#method-i-import">#import</a></li>
+					
+					<li><a href="#method-i-import_project">#import_project</a></li>
+					
 					<li><a href="#method-i-index">#index</a></li>
+					
+					<li><a href="#method-i-new_to_db">#new_to_db</a></li>
+					
+					<li><a href="#method-i-new_toproject_db">#new_toproject_db</a></li>
+					
+					<li><a href="#method-i-stack_data">#stack_data</a></li>
+					
+					<li><a href="#method-i-write_project_record">#write_project_record</a></li>
+					
+					<li><a href="#method-i-write_record">#write_record</a></li>
 					
 				</ul>
 			</div>
@@ -115,6 +129,18 @@
 				
 					<li><a href="./ApplicationHelper.html">ApplicationHelper</a></li>
 				
+					<li><a href="./CanMain.html">CanMain</a></li>
+				
+					<li><a href="./CanMainsController.html">CanMainsController</a></li>
+				
+					<li><a href="./CanMainsHelper.html">CanMainsHelper</a></li>
+				
+					<li><a href="./CanSub.html">CanSub</a></li>
+				
+					<li><a href="./CanSubsController.html">CanSubsController</a></li>
+				
+					<li><a href="./CanSubsHelper.html">CanSubsHelper</a></li>
+				
 					<li><a href="./Device.html">Device</a></li>
 				
 					<li><a href="./DevicesController.html">DevicesController</a></li>
@@ -131,9 +157,15 @@
 				
 					<li><a href="./PtosHelper.html">PtosHelper</a></li>
 				
+					<li><a href="./Resource.html">Resource</a></li>
+				
 					<li><a href="./ResourceController.html">ResourceController</a></li>
 				
 					<li><a href="./ResourceHelper.html">ResourceHelper</a></li>
+				
+					<li><a href="./ResourcesController.html">ResourcesController</a></li>
+				
+					<li><a href="./ResourcesHelper.html">ResourcesHelper</a></li>
 				
 					<li><a href="./Task.html">Task</a></li>
 				
@@ -176,6 +208,106 @@
 			<h3 class="section-header">Public Instance Methods</h3>
 
 		
+			<div id="import-method" class="method-detail ">
+				<a name="method-i-import"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">import</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="import-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/controllers/resource_controller.rb, line 28</span>
+28:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import</span>
+29:       <span class="ruby-comment cmt">#initial variables</span>
+30:       <span class="ruby-identifier">header</span> = <span class="ruby-value">0</span>
+31:       <span class="ruby-comment cmt">#filenames</span>
+32:       <span class="ruby-identifier">import_file</span> = <span class="ruby-value str">&quot;import/test_engineering.csv&quot;</span>
+33:       <span class="ruby-identifier">puts</span>
+34:       <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;=============================================&quot;</span>
+35:       <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;CSV importer for Resource Allocation database&quot;</span>
+36:       <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;Resource List Import tool&quot;</span>
+37:       <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;=============================================&quot;</span>
+38:       <span class="ruby-comment cmt">#import and stack data   </span>
+39:       <span class="ruby-comment cmt">#delete database</span>
+40:       <span class="ruby-constant">Resource</span>.<span class="ruby-identifier">delete_all</span>
+41:       <span class="ruby-identifier">arr_of_arrs</span> = <span class="ruby-constant">FasterCSV</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">import_file</span>) 
+42:       <span class="ruby-identifier">arr_of_arrs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>  
+43:         <span class="ruby-identifier">stack_data</span>(<span class="ruby-identifier">x</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">header</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+44:         <span class="ruby-identifier">header</span> = <span class="ruby-value">1</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">header</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+45:       <span class="ruby-keyword kw">end</span>
+46:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="import-project-method" class="method-detail ">
+				<a name="method-i-import_project"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">import_project</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="import-project-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/controllers/resource_controller.rb, line 47</span>
+47:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">import_project</span>
+48:       <span class="ruby-comment cmt">#initial variables</span>
+49:       <span class="ruby-identifier">header</span> = <span class="ruby-value">0</span>
+50:       <span class="ruby-comment cmt">#filenames</span>
+51:       <span class="ruby-identifier">import_file</span> = <span class="ruby-value str">&quot;import/test_engineering.csv&quot;</span>
+52:       <span class="ruby-identifier">puts</span>
+53:       <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;=============================================&quot;</span>
+54:       <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;CSV importer for Resource Allocation database&quot;</span>
+55:       <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;Project List Import tool&quot;</span>
+56:       <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;=============================================&quot;</span>
+57:       <span class="ruby-comment cmt">#import and stack data   </span>
+58:       <span class="ruby-comment cmt">#delete database</span>
+59:       <span class="ruby-constant">Resource</span>.<span class="ruby-identifier">delete_all</span>
+60:       <span class="ruby-identifier">arr_of_arrs</span> = <span class="ruby-constant">FasterCSV</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">import_file</span>) 
+61:       <span class="ruby-identifier">arr_of_arrs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>  
+62:         <span class="ruby-identifier">write_project_record</span>(<span class="ruby-identifier">x</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">header</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+63:         <span class="ruby-identifier">header</span> = <span class="ruby-value">1</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">header</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+64:       <span class="ruby-keyword kw">end</span>
+65:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
 			<div id="index-method" class="method-detail ">
 				<a name="method-i-index"></a>
 
@@ -196,9 +328,241 @@
 					<div class="method-source-code"
 						id="index-source">
 <pre>
-   <span class="ruby-comment cmt"># File app/controllers/resource_controller.rb, line 2</span>
-2:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">index</span>
-3:   <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File app/controllers/resource_controller.rb, line 3</span>
+ 3:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">index</span>
+ 4:       <span class="ruby-comment cmt">#Work through projects</span>
+ 5:       <span class="ruby-comment cmt">#...</span>
+ 6:       <span class="ruby-comment cmt">#Project Totals</span>
+ 7:       <span class="ruby-ivar">@project</span> = <span class="ruby-value str">&quot;Sapphire&quot;</span>
+ 8:       <span class="ruby-ivar">@project_totals</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">17</span>,<span class="ruby-value">0</span>)
+ 9:       <span class="ruby-comment cmt">#@group_totals = Array.new(17,0)</span>
+10: 
+11:       <span class="ruby-ivar">@date</span> = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+12:       <span class="ruby-ivar">@date_start</span> = <span class="ruby-ivar">@date</span>.<span class="ruby-identifier">at_beginning_of_month</span>
+13:           <span class="ruby-identifier">total</span> = <span class="ruby-constant">Resource</span>.<span class="ruby-identifier">sapphire</span>(<span class="ruby-ivar">@date_start</span>)
+14:       <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-value">14</span>){
+15:         <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+16: 
+17:       <span class="ruby-ivar">@project_totals</span>[<span class="ruby-identifier">x</span>] = <span class="ruby-identifier">total</span>[<span class="ruby-identifier">x</span>].<span class="ruby-identifier">forecast</span>   
+18:       <span class="ruby-ivar">@project_totals</span>[<span class="ruby-value">15</span>] <span class="ruby-operator">+=</span> <span class="ruby-identifier">total</span>[<span class="ruby-identifier">x</span>].<span class="ruby-identifier">forecast</span>  
+19:        }
+20:        <span class="ruby-ivar">@project_totals</span>[<span class="ruby-value">16</span>] = <span class="ruby-ivar">@project_totals</span>[<span class="ruby-value">15</span>]<span class="ruby-operator">/</span><span class="ruby-value">12</span>
+21:        <span class="ruby-comment cmt">#Department Totals</span>
+22: 
+23: 
+24:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="new-to-db-method" class="method-detail ">
+				<a name="method-i-new_to_db"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new_to_db</span><span
+						class="method-args">(date,dept,name,project,function,time)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-to-db-source">
+<pre>
+     <span class="ruby-comment cmt"># File app/controllers/resource_controller.rb, line 109</span>
+109:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new_to_db</span>(<span class="ruby-identifier">date</span>,<span class="ruby-identifier">dept</span>,<span class="ruby-identifier">name</span>,<span class="ruby-identifier">project</span>,<span class="ruby-identifier">function</span>,<span class="ruby-identifier">time</span>)
+110:       <span class="ruby-identifier">record</span> = <span class="ruby-constant">Resource</span>.<span class="ruby-identifier">new</span>
+111:       <span class="ruby-identifier">record</span>.<span class="ruby-identifier">date</span> = <span class="ruby-identifier">date</span>
+112:       <span class="ruby-identifier">record</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>
+113:       <span class="ruby-identifier">record</span>.<span class="ruby-identifier">department</span> = <span class="ruby-identifier">dept</span>
+114:       <span class="ruby-identifier">record</span>.<span class="ruby-identifier">project</span> = <span class="ruby-identifier">project</span>
+115:       <span class="ruby-identifier">record</span>.<span class="ruby-identifier">function</span> = <span class="ruby-identifier">function</span>
+116:       <span class="ruby-identifier">record</span>.<span class="ruby-identifier">actual</span> = <span class="ruby-value">0</span>
+117:       <span class="ruby-identifier">record</span>.<span class="ruby-identifier">forecast</span> = <span class="ruby-identifier">time</span>
+118:       <span class="ruby-identifier">record</span>.<span class="ruby-identifier">save</span>
+119:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="new-toproject-db-method" class="method-detail ">
+				<a name="method-i-new_toproject_db"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">new_toproject_db</span><span
+						class="method-args">(project,tapeout,key,dr1,dr2,dr3,dr4,dr5)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="new-toproject-db-source">
+<pre>
+     <span class="ruby-comment cmt"># File app/controllers/resource_controller.rb, line 120</span>
+120:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new_toproject_db</span>(<span class="ruby-identifier">project</span>,<span class="ruby-identifier">tapeout</span>,<span class="ruby-identifier">key</span>,<span class="ruby-identifier">dr1</span>,<span class="ruby-identifier">dr2</span>,<span class="ruby-identifier">dr3</span>,<span class="ruby-identifier">dr4</span>,<span class="ruby-identifier">dr5</span>)
+121:       <span class="ruby-identifier">record</span> = <span class="ruby-constant">Project</span>.<span class="ruby-identifier">new</span>
+122:       <span class="ruby-identifier">record</span>.<span class="ruby-identifier">project</span> = <span class="ruby-identifier">project</span>
+123:       <span class="ruby-identifier">record</span>.<span class="ruby-identifier">tapeout</span> = <span class="ruby-identifier">tapeout</span>
+124:       <span class="ruby-identifier">record</span>.<span class="ruby-identifier">key</span> = <span class="ruby-identifier">key</span>
+125:       <span class="ruby-identifier">record</span>.<span class="ruby-identifier">dr1</span> = <span class="ruby-identifier">dr1</span>
+126:       <span class="ruby-identifier">record</span>.<span class="ruby-identifier">dr2</span> = <span class="ruby-identifier">dr2</span>
+127:       <span class="ruby-identifier">record</span>.<span class="ruby-identifier">dr3</span> = <span class="ruby-identifier">dr3</span>
+128:       <span class="ruby-identifier">record</span>.<span class="ruby-identifier">dr4</span> = <span class="ruby-identifier">dr4</span>
+129:       <span class="ruby-identifier">record</span>.<span class="ruby-identifier">dr5</span> = <span class="ruby-identifier">dr5</span>
+130:       <span class="ruby-identifier">record</span>.<span class="ruby-identifier">save</span>
+131:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="stack-data-method" class="method-detail ">
+				<a name="method-i-stack_data"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">stack_data</span><span
+						class="method-args">(line)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="stack-data-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/controllers/resource_controller.rb, line 69</span>
+69:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stack_data</span>(<span class="ruby-identifier">line</span>)
+70:       <span class="ruby-comment cmt">#puts line</span>
+71:       <span class="ruby-comment cmt">#set_nil_to_zero(line)</span>
+72:       <span class="ruby-identifier">write_record</span>(<span class="ruby-identifier">line</span>)
+73:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="write-project-record-method" class="method-detail ">
+				<a name="method-i-write_project_record"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">write_project_record</span><span
+						class="method-args">(record)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="write-project-record-source">
+<pre>
+     <span class="ruby-comment cmt"># File app/controllers/resource_controller.rb, line 100</span>
+100:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">write_project_record</span>(<span class="ruby-identifier">record</span>)
+101:       <span class="ruby-comment cmt">#write new record to database</span>
+102:          <span class="ruby-identifier">new_to_project_db</span>(<span class="ruby-identifier">date_current</span>,<span class="ruby-identifier">record</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">record</span>[<span class="ruby-value">1</span>],<span class="ruby-identifier">record</span>[<span class="ruby-value">2</span>],<span class="ruby-identifier">record</span>[<span class="ruby-value">3</span>],<span class="ruby-identifier">record</span>[<span class="ruby-value">4</span>],<span class="ruby-identifier">record</span>[<span class="ruby-value">5</span>],<span class="ruby-identifier">record</span>[<span class="ruby-value">6</span>],<span class="ruby-identifier">record</span>[<span class="ruby-value">7</span>])
+103:         <span class="ruby-identifier">puts</span> <span class="ruby-identifier">record</span>
+104:       }
+105:     <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="write-record-method" class="method-detail ">
+				<a name="method-i-write_record"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">write_record</span><span
+						class="method-args">(record)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="write-record-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/controllers/resource_controller.rb, line 77</span>
+77:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">write_record</span>(<span class="ruby-identifier">record</span>)
+78:       <span class="ruby-comment cmt">#write new record to database</span>
+79:       <span class="ruby-value">4</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-value">24</span>){
+80:         <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+81:         <span class="ruby-identifier">date</span> = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+82:         <span class="ruby-identifier">date_start</span> = <span class="ruby-identifier">date</span>.<span class="ruby-identifier">at_beginning_of_month</span> <span class="ruby-operator">-</span> <span class="ruby-value">3</span>.<span class="ruby-identifier">months</span>
+83:         <span class="ruby-comment cmt">#print date_start</span>
+84:         <span class="ruby-comment cmt">#print &quot; &quot;</span>
+85:         <span class="ruby-value">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-value">3</span>){
+86:           <span class="ruby-operator">|</span><span class="ruby-identifier">y</span><span class="ruby-operator">|</span>
+87:           <span class="ruby-comment cmt">#print record[y] + &quot; &quot; if record[y]</span>
+88:         }
+89:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">7</span>
+90:             <span class="ruby-comment cmt">#print &quot;:Actual   &quot;</span>
+91:         <span class="ruby-keyword kw">else</span>
+92:             <span class="ruby-comment cmt">#print &quot;:Forecast &quot;</span>
+93:             <span class="ruby-identifier">date_current</span>=<span class="ruby-identifier">date_start</span>.<span class="ruby-identifier">months_since</span>(<span class="ruby-identifier">x</span><span class="ruby-operator">-</span><span class="ruby-value">4</span>)
+94:          <span class="ruby-identifier">new_to_db</span>(<span class="ruby-identifier">date_current</span>,<span class="ruby-identifier">record</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">record</span>[<span class="ruby-value">1</span>],<span class="ruby-identifier">record</span>[<span class="ruby-value">2</span>],<span class="ruby-identifier">record</span>[<span class="ruby-value">3</span>],<span class="ruby-identifier">record</span>[<span class="ruby-identifier">x</span>])  
+95:               <span class="ruby-keyword kw">end</span>
+96:         <span class="ruby-comment cmt">#puts record[x]</span>
+97: 
+98:       }
+99:     <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

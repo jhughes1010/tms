@@ -5,7 +5,7 @@
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
-	<title>Module: AdminHelper</title>
+	<title>Class: Resource</title>
 
 	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
 
@@ -19,7 +19,7 @@
 		charset="utf-8"></script>
 
 </head>
-<body class="module">
+<body class="class">
 
 	<div id="metadata">
 		<div id="home-metadata">
@@ -38,8 +38,8 @@
 				<div class="section-body">
 					<ul>
 					
-						<li><a href="./app/helpers/admin_helper_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-							class="thickbox" title="app/helpers/admin_helper.rb">app/helpers/admin_helper.rb</a></li>
+						<li><a href="./app/models/resource_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="app/models/resource.rb">app/models/resource.rb</a></li>
 					
 					</ul>
 				</div>
@@ -52,11 +52,29 @@
 
 			<!-- Parent Class -->
 			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link">ActiveRecord::Base</p>
+				
+			</div>
+			
 
 			<!-- Namespace Contents -->
 			
 
 			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-sapphire">::sapphire</a></li>
+					
+					<li><a href="#method-c-sapphire_sub">::sapphire_sub</a></li>
+					
+				</ul>
+			</div>
 			
 
 			<!-- Included Modules -->
@@ -160,7 +178,7 @@
 	</div>
 
 	<div id="documentation">
-		<h1 class="module">AdminHelper</h1>
+		<h1 class="class">Resource</h1>
 
 		<div id="description">
 			
@@ -174,6 +192,81 @@
 
 		<!-- Methods -->
 		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="sapphire-method" class="method-detail ">
+				<a name="method-c-sapphire"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">sapphire</span><span
+						class="method-args">(date)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="sapphire-source">
+<pre>
+   <span class="ruby-comment cmt"># File app/models/resource.rb, line 3</span>
+3:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">sapphire</span>(<span class="ruby-identifier">date</span>)
+4:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value str">&quot;project = 'Sapphire' AND date &gt;= ? AND date &lt; ?&quot;</span> , <span class="ruby-identifier">date</span>, <span class="ruby-identifier">date</span> <span class="ruby-value">15</span>.<span class="ruby-identifier">months</span>).<span class="ruby-identifier">order</span>(<span class="ruby-value str">&quot;date&quot;</span>).<span class="ruby-identifier">select</span>(<span class="ruby-value str">&quot;sum (forecast) as forecast&quot;</span>).<span class="ruby-identifier">group</span>(<span class="ruby-value str">&quot;date&quot;</span>)
+5:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="sapphire-sub-method" class="method-detail ">
+				<a name="method-c-sapphire_sub"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">sapphire_sub</span><span
+						class="method-args">(date)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="sapphire-sub-source">
+<pre>
+   <span class="ruby-comment cmt"># File app/models/resource.rb, line 6</span>
+6:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">sapphire_sub</span>(<span class="ruby-identifier">date</span>)
+7:     <span class="ruby-comment cmt">#find(:all, :conditions =&gt;[&quot;project = 'Sapphire' AND date &gt;= ? AND date &lt; ?&quot; , date, date +15.months], :order =&gt;&quot;date&quot;, :select =&gt; &quot;sum (forecast) as forecast&quot;, :group =&gt; &quot;department, date&quot;)</span>
+8:     <span class="ruby-comment cmt">#find(:all, :conditions =&gt;[&quot;project = 'Sapphire' AND department = 'Test Engineering' AND date &gt;= ? AND date &lt; ?&quot; , date, date +15.months], :order =&gt;&quot;date&quot;, :select =&gt; &quot;sum (forecast) as forecast&quot;, :group =&gt; &quot;date&quot;)</span>
+9:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
 
 	</div>
 

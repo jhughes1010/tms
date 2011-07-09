@@ -69,6 +69,8 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
+					<li><a href="#method-i-email_user_task_report">#email_user_task_report</a></li>
+					
 					<li><a href="#method-i-index">#index</a></li>
 					
 					<li><a href="#method-i-project_active">#project_active</a></li>
@@ -76,6 +78,10 @@
 					<li><a href="#method-i-project_active_past_due">#project_active_past_due</a></li>
 					
 					<li><a href="#method-i-project_completed">#project_completed</a></li>
+					
+					<li><a href="#method-i-project_my_active">#project_my_active</a></li>
+					
+					<li><a href="#method-i-project_my_active_past_due">#project_my_active_past_due</a></li>
 					
 					<li><a href="#method-i-project_unassigned">#project_unassigned</a></li>
 					
@@ -125,6 +131,18 @@
 				
 					<li><a href="./ApplicationHelper.html">ApplicationHelper</a></li>
 				
+					<li><a href="./CanMain.html">CanMain</a></li>
+				
+					<li><a href="./CanMainsController.html">CanMainsController</a></li>
+				
+					<li><a href="./CanMainsHelper.html">CanMainsHelper</a></li>
+				
+					<li><a href="./CanSub.html">CanSub</a></li>
+				
+					<li><a href="./CanSubsController.html">CanSubsController</a></li>
+				
+					<li><a href="./CanSubsHelper.html">CanSubsHelper</a></li>
+				
 					<li><a href="./Device.html">Device</a></li>
 				
 					<li><a href="./DevicesController.html">DevicesController</a></li>
@@ -141,9 +159,15 @@
 				
 					<li><a href="./PtosHelper.html">PtosHelper</a></li>
 				
+					<li><a href="./Resource.html">Resource</a></li>
+				
 					<li><a href="./ResourceController.html">ResourceController</a></li>
 				
 					<li><a href="./ResourceHelper.html">ResourceHelper</a></li>
+				
+					<li><a href="./ResourcesController.html">ResourcesController</a></li>
+				
+					<li><a href="./ResourcesHelper.html">ResourcesHelper</a></li>
 				
 					<li><a href="./Task.html">Task</a></li>
 				
@@ -186,6 +210,50 @@
 			<h3 class="section-header">Public Instance Methods</h3>
 
 		
+			<div id="email-user-task-report-method" class="method-detail ">
+				<a name="method-i-email_user_task_report"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">email_user_task_report</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="email-user-task-report-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/controllers/main_controller.rb, line 50</span>
+50:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">email_user_task_report</span>
+51:     <span class="ruby-ivar">@users</span>=<span class="ruby-constant">User</span>.<span class="ruby-identifier">all</span>
+52:     <span class="ruby-comment cmt">#loop through users</span>
+53:     <span class="ruby-ivar">@users</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">u</span><span class="ruby-operator">|</span>
+54:       <span class="ruby-comment cmt">#u=1</span>
+55:       <span class="ruby-comment cmt">#get 3 queries for report</span>
+56:       <span class="ruby-ivar">@active</span> = <span class="ruby-constant">Task</span>.<span class="ruby-identifier">all_active_assigned_to</span>(<span class="ruby-identifier">u</span>)
+57:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@active</span>.<span class="ruby-identifier">count</span> <span class="ruby-operator">&gt;</span><span class="ruby-value">0</span>
+58: 
+59:         <span class="ruby-comment cmt">##UserMailer.daily_report(u,@active).deliver</span>
+60:       <span class="ruby-keyword kw">end</span>
+61:     <span class="ruby-keyword kw">end</span>
+62:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
 			<div id="index-method" class="method-detail ">
 				<a name="method-i-index"></a>
 
@@ -210,7 +278,8 @@
 2:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">index</span>
 3:     <span class="ruby-ivar">@full_name</span>=<span class="ruby-identifier">session</span>[<span class="ruby-value">:user_fullname</span>]
 4:     <span class="ruby-ivar">@auth</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:user_auth</span>]
-5:   <span class="ruby-keyword kw">end</span></pre>
+5:     <span class="ruby-comment cmt">#email_user_task_report</span>
+6:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -241,14 +310,15 @@
 					<div class="method-source-code"
 						id="project-active-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/main_controller.rb, line 16</span>
-16:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">project_active</span>
-17:     <span class="ruby-ivar">@auth</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:user_auth</span>]
-18:     <span class="ruby-ivar">@today</span>=<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
-19:     <span class="ruby-ivar">@today</span>.<span class="ruby-identifier">to_s</span>(<span class="ruby-value">:long</span>)
-20:     <span class="ruby-ivar">@users</span>=<span class="ruby-constant">User</span>.<span class="ruby-identifier">all</span>
-21:     <span class="ruby-ivar">@tasks</span>=<span class="ruby-constant">Task</span>.<span class="ruby-identifier">all_active</span>
-22:   <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File app/controllers/main_controller.rb, line 17</span>
+17:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">project_active</span>
+18:     <span class="ruby-ivar">@auth</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:user_auth</span>]
+19:     <span class="ruby-ivar">@today</span>=<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+20:     <span class="ruby-ivar">@today</span>.<span class="ruby-identifier">to_s</span>(<span class="ruby-value">:long</span>)
+21:     <span class="ruby-comment cmt">#@users=User.all_order_by_fullname</span>
+22:     <span class="ruby-ivar">@tasks</span>=<span class="ruby-constant">Task</span>.<span class="ruby-identifier">all_active</span>
+23:     <span class="ruby-ivar">@te</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">get_te</span>
+24:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -279,14 +349,14 @@
 					<div class="method-source-code"
 						id="project-active-past-due-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/main_controller.rb, line 24</span>
-24:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">project_active_past_due</span>
-25:     <span class="ruby-ivar">@auth</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:user_auth</span>]
-26:     <span class="ruby-ivar">@today</span>=<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
-27:     <span class="ruby-ivar">@today</span>.<span class="ruby-identifier">to_s</span>(<span class="ruby-value">:long</span>)
-28:     <span class="ruby-ivar">@users</span>=<span class="ruby-constant">User</span>.<span class="ruby-identifier">all</span>
-29:     <span class="ruby-ivar">@tasks</span>=<span class="ruby-constant">Task</span>.<span class="ruby-identifier">all_active_past_due</span>
-30:   <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File app/controllers/main_controller.rb, line 26</span>
+26:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">project_active_past_due</span>
+27:     <span class="ruby-ivar">@auth</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:user_auth</span>]
+28:     <span class="ruby-ivar">@today</span>=<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+29:     <span class="ruby-ivar">@today</span>.<span class="ruby-identifier">to_s</span>(<span class="ruby-value">:long</span>)
+30:     <span class="ruby-ivar">@users</span>=<span class="ruby-constant">User</span>.<span class="ruby-identifier">all</span>
+31:     <span class="ruby-ivar">@tasks</span>=<span class="ruby-constant">Task</span>.<span class="ruby-identifier">all_active_past_due</span>
+32:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -317,15 +387,100 @@
 					<div class="method-source-code"
 						id="project-completed-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/main_controller.rb, line 32</span>
-32:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">project_completed</span>
-33:     <span class="ruby-ivar">@supress_overdue_color</span> = <span class="ruby-keyword kw">true</span>
-34:     <span class="ruby-ivar">@auth</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:user_auth</span>]
-35:     <span class="ruby-ivar">@today</span>=<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
-36:     <span class="ruby-ivar">@today</span>.<span class="ruby-identifier">to_s</span>(<span class="ruby-value">:long</span>)
-37:     <span class="ruby-ivar">@users</span>=<span class="ruby-constant">User</span>.<span class="ruby-identifier">all</span>
-38:     <span class="ruby-ivar">@tasks</span>=<span class="ruby-constant">Task</span>.<span class="ruby-identifier">all_completed</span>
-39:   <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File app/controllers/main_controller.rb, line 34</span>
+34:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">project_completed</span>
+35:     <span class="ruby-ivar">@supress_overdue_color</span> = <span class="ruby-keyword kw">true</span>
+36:     <span class="ruby-ivar">@auth</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:user_auth</span>]
+37:     <span class="ruby-ivar">@today</span>=<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+38:     <span class="ruby-ivar">@today</span>.<span class="ruby-identifier">to_s</span>(<span class="ruby-value">:long</span>)
+39:     <span class="ruby-ivar">@users</span>=<span class="ruby-constant">User</span>.<span class="ruby-identifier">all</span>
+40:     <span class="ruby-ivar">@tasks</span>=<span class="ruby-constant">Task</span>.<span class="ruby-identifier">all_completed</span>
+41:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="project-my-active-method" class="method-detail ">
+				<a name="method-i-project_my_active"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">project_my_active</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="project-my-active-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/controllers/main_controller.rb, line 63</span>
+63:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">project_my_active</span>
+64:     <span class="ruby-ivar">@auth</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:user_auth</span>]
+65:     <span class="ruby-ivar">@user_id</span>=<span class="ruby-identifier">session</span>[<span class="ruby-value">:user_id</span>]
+66:     <span class="ruby-ivar">@full_name</span>=<span class="ruby-identifier">session</span>[<span class="ruby-value">:user_fullname</span>]
+67:     
+68:     <span class="ruby-ivar">@today</span>=<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+69:     <span class="ruby-ivar">@today</span>.<span class="ruby-identifier">to_s</span>(<span class="ruby-value">:long</span>)
+70:     <span class="ruby-ivar">@users</span>=<span class="ruby-constant">User</span>.<span class="ruby-identifier">all</span>
+71:     <span class="ruby-comment cmt">#tasks assigned to me</span>
+72:     <span class="ruby-ivar">@tasks</span>=<span class="ruby-constant">Task</span>.<span class="ruby-identifier">all_my_active</span>(<span class="ruby-ivar">@user_id</span>)
+73:     <span class="ruby-comment cmt">#tasks assigned by me</span>
+74:     <span class="ruby-ivar">@tasks_by_me</span>=<span class="ruby-constant">Task</span>.<span class="ruby-identifier">all_my_active_by_me</span>(<span class="ruby-ivar">@user_id</span>)
+75: 
+76:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="project-my-active-past-due-method" class="method-detail ">
+				<a name="method-i-project_my_active_past_due"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">project_my_active_past_due</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="project-my-active-past-due-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/controllers/main_controller.rb, line 77</span>
+77:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">project_my_active_past_due</span>
+78:     <span class="ruby-ivar">@auth</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:user_auth</span>]
+79:     <span class="ruby-ivar">@user_id</span>=<span class="ruby-identifier">session</span>[<span class="ruby-value">:user_id</span>]
+80:     <span class="ruby-ivar">@full_name</span>=<span class="ruby-identifier">session</span>[<span class="ruby-value">:user_fullname</span>]
+81:     <span class="ruby-ivar">@today</span>=<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+82:     <span class="ruby-ivar">@today</span>.<span class="ruby-identifier">to_s</span>(<span class="ruby-value">:long</span>)
+83:     <span class="ruby-ivar">@users</span>=<span class="ruby-constant">User</span>.<span class="ruby-identifier">all</span>
+84:     <span class="ruby-ivar">@tasks</span>=<span class="ruby-constant">Task</span>.<span class="ruby-identifier">all_my_active_past_due</span>(<span class="ruby-ivar">@user_id</span>)
+85:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -356,14 +511,14 @@
 					<div class="method-source-code"
 						id="project-unassigned-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/main_controller.rb, line 41</span>
-41:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">project_unassigned</span>
-42:     <span class="ruby-ivar">@auth</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:user_auth</span>]
-43:     <span class="ruby-ivar">@today</span>=<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
-44:     <span class="ruby-ivar">@today</span>.<span class="ruby-identifier">to_s</span>(<span class="ruby-value">:long</span>)
-45:     <span class="ruby-ivar">@users</span>=<span class="ruby-constant">User</span>.<span class="ruby-identifier">all</span>
-46:     <span class="ruby-ivar">@tasks</span>=<span class="ruby-constant">Task</span>.<span class="ruby-identifier">all_unassigned</span>
-47:   <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File app/controllers/main_controller.rb, line 43</span>
+43:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">project_unassigned</span>
+44:     <span class="ruby-ivar">@auth</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:user_auth</span>]
+45:     <span class="ruby-ivar">@today</span>=<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+46:     <span class="ruby-ivar">@today</span>.<span class="ruby-identifier">to_s</span>(<span class="ruby-value">:long</span>)
+47:     <span class="ruby-ivar">@users</span>=<span class="ruby-constant">User</span>.<span class="ruby-identifier">all</span>
+48:     <span class="ruby-ivar">@tasks</span>=<span class="ruby-constant">Task</span>.<span class="ruby-identifier">all_unassigned</span>
+49:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -394,15 +549,15 @@
 					<div class="method-source-code"
 						id="pto-current-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/main_controller.rb, line 7</span>
- 7:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pto_current</span>
- 8:     <span class="ruby-ivar">@auth</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:user_auth</span>]
- 9:     <span class="ruby-ivar">@users</span>=<span class="ruby-constant">User</span>.<span class="ruby-identifier">all</span>
-10:     <span class="ruby-ivar">@outlook</span> = <span class="ruby-value">30</span>
-11:     <span class="ruby-ivar">@start</span>=<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
-12:     <span class="ruby-ivar">@stop</span> = <span class="ruby-ivar">@start</span><span class="ruby-operator">+</span> <span class="ruby-ivar">@outlook</span>
-13:     <span class="ruby-ivar">@ptos</span>=<span class="ruby-constant">Pto</span>.<span class="ruby-identifier">upcoming_range</span>(<span class="ruby-ivar">@start</span>,<span class="ruby-ivar">@stop</span>)
-14:   <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File app/controllers/main_controller.rb, line 8</span>
+ 8:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">pto_current</span>
+ 9:     <span class="ruby-ivar">@auth</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:user_auth</span>]
+10:     <span class="ruby-ivar">@users</span>=<span class="ruby-constant">User</span>.<span class="ruby-identifier">all</span>
+11:     <span class="ruby-ivar">@outlook</span> = <span class="ruby-value">30</span>
+12:     <span class="ruby-ivar">@start</span>=<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+13:     <span class="ruby-ivar">@stop</span> = <span class="ruby-ivar">@start</span><span class="ruby-operator">+</span> <span class="ruby-ivar">@outlook</span>
+14:     <span class="ruby-ivar">@ptos</span>=<span class="ruby-constant">Pto</span>.<span class="ruby-identifier">upcoming_range</span>(<span class="ruby-ivar">@start</span>,<span class="ruby-ivar">@stop</span>)
+15:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

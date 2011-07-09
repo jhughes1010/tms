@@ -5,7 +5,7 @@
 <head>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
-	<title>Class: DevicesController</title>
+	<title>Class: CanSubsController</title>
 
 	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
 
@@ -38,8 +38,8 @@
 				<div class="section-body">
 					<ul>
 					
-						<li><a href="./app/controllers/devices_controller_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-							class="thickbox" title="app/controllers/devices_controller.rb">app/controllers/devices_controller.rb</a></li>
+						<li><a href="./app/controllers/can_subs_controller_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="app/controllers/can_subs_controller.rb">app/controllers/can_subs_controller.rb</a></li>
 					
 					</ul>
 				</div>
@@ -188,7 +188,7 @@
 	</div>
 
 	<div id="documentation">
-		<h1 class="class">DevicesController</h1>
+		<h1 class="class">CanSubsController</h1>
 
 		<div id="description">
 			
@@ -220,7 +220,7 @@
 				<div class="method-description">
 					
 					<p>
-POST /devices POST /devices.xml
+POST /can_subs POST /can_subs.xml
 </p>
 					
 
@@ -228,17 +228,17 @@ POST /devices POST /devices.xml
 					<div class="method-source-code"
 						id="create-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/devices_controller.rb, line 42</span>
+    <span class="ruby-comment cmt"># File app/controllers/can_subs_controller.rb, line 42</span>
 42:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">create</span>
-43:     <span class="ruby-ivar">@device</span> = <span class="ruby-constant">Device</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:device</span>])
+43:     <span class="ruby-ivar">@can_sub</span> = <span class="ruby-constant">CanSub</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:can_sub</span>])
 44: 
 45:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
-46:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@device</span>.<span class="ruby-identifier">save</span>
-47:         <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span>(<span class="ruby-ivar">@device</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'Device was successfully created.'</span>) }
-48:         <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@device</span>, <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:created</span>, <span class="ruby-value">:location</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@device</span> }
+46:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@can_sub</span>.<span class="ruby-identifier">save</span>
+47:         <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span>(<span class="ruby-ivar">@can_sub</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'Can sub was successfully created.'</span>) }
+48:         <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@can_sub</span>, <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:created</span>, <span class="ruby-value">:location</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@can_sub</span> }
 49:       <span class="ruby-keyword kw">else</span>
 50:         <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;new&quot;</span> }
-51:         <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@device</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:unprocessable_entity</span> }
+51:         <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@can_sub</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:unprocessable_entity</span> }
 52:       <span class="ruby-keyword kw">end</span>
 53:     <span class="ruby-keyword kw">end</span>
 54:   <span class="ruby-keyword kw">end</span></pre>
@@ -266,7 +266,7 @@ POST /devices POST /devices.xml
 				<div class="method-description">
 					
 					<p>
-DELETE /devices/1 DELETE /devices/1.xml
+DELETE /can_subs/1 DELETE /can_subs/1.xml
 </p>
 					
 
@@ -274,13 +274,13 @@ DELETE /devices/1 DELETE /devices/1.xml
 					<div class="method-source-code"
 						id="destroy-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/devices_controller.rb, line 74</span>
+    <span class="ruby-comment cmt"># File app/controllers/can_subs_controller.rb, line 74</span>
 74:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">destroy</span>
-75:     <span class="ruby-ivar">@device</span> = <span class="ruby-constant">Device</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
-76:     <span class="ruby-ivar">@device</span>.<span class="ruby-identifier">destroy</span>
+75:     <span class="ruby-ivar">@can_sub</span> = <span class="ruby-constant">CanSub</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+76:     <span class="ruby-ivar">@can_sub</span>.<span class="ruby-identifier">destroy</span>
 77: 
 78:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
-79:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">devices_url</span>) }
+79:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">can_subs_url</span>) }
 80:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">head</span> <span class="ruby-value">:ok</span> }
 81:     <span class="ruby-keyword kw">end</span>
 82:   <span class="ruby-keyword kw">end</span></pre>
@@ -308,7 +308,7 @@ DELETE /devices/1 DELETE /devices/1.xml
 				<div class="method-description">
 					
 					<p>
-GET /devices/1/edit
+GET /can_subs/1/edit
 </p>
 					
 
@@ -316,9 +316,9 @@ GET /devices/1/edit
 					<div class="method-source-code"
 						id="edit-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/devices_controller.rb, line 36</span>
+    <span class="ruby-comment cmt"># File app/controllers/can_subs_controller.rb, line 36</span>
 36:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">edit</span>
-37:     <span class="ruby-ivar">@device</span> = <span class="ruby-constant">Device</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+37:     <span class="ruby-ivar">@can_sub</span> = <span class="ruby-constant">CanSub</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 38:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
@@ -344,7 +344,7 @@ GET /devices/1/edit
 				<div class="method-description">
 					
 					<p>
-GET /devices GET /devices.xml
+GET /can_subs GET /can_subs.xml
 </p>
 					
 
@@ -352,13 +352,13 @@ GET /devices GET /devices.xml
 					<div class="method-source-code"
 						id="index-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/devices_controller.rb, line 4</span>
+    <span class="ruby-comment cmt"># File app/controllers/can_subs_controller.rb, line 4</span>
  4:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">index</span>
- 5:     <span class="ruby-ivar">@devices</span> = <span class="ruby-constant">Device</span>.<span class="ruby-identifier">all</span>
+ 5:     <span class="ruby-ivar">@can_subs</span> = <span class="ruby-constant">CanSub</span>.<span class="ruby-identifier">all</span>
  6: 
  7:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
  8:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment cmt"># index.html.erb</span>
- 9:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@devices</span> }
+ 9:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@can_subs</span> }
 10:     <span class="ruby-keyword kw">end</span>
 11:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
@@ -385,7 +385,7 @@ GET /devices GET /devices.xml
 				<div class="method-description">
 					
 					<p>
-GET /devices/new GET /devices/new.xml
+GET /can_subs/new GET /can_subs/new.xml
 </p>
 					
 
@@ -393,13 +393,13 @@ GET /devices/new GET /devices/new.xml
 					<div class="method-source-code"
 						id="new-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/devices_controller.rb, line 26</span>
+    <span class="ruby-comment cmt"># File app/controllers/can_subs_controller.rb, line 26</span>
 26:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">new</span>
-27:     <span class="ruby-ivar">@device</span> = <span class="ruby-constant">Device</span>.<span class="ruby-identifier">new</span>
+27:     <span class="ruby-ivar">@can_sub</span> = <span class="ruby-constant">CanSub</span>.<span class="ruby-identifier">new</span>
 28: 
 29:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
 30:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment cmt"># new.html.erb</span>
-31:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@device</span> }
+31:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@can_sub</span> }
 32:     <span class="ruby-keyword kw">end</span>
 33:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
@@ -426,7 +426,7 @@ GET /devices/new GET /devices/new.xml
 				<div class="method-description">
 					
 					<p>
-GET /devices/1 GET /devices/1.xml
+GET /can_subs/1 GET /can_subs/1.xml
 </p>
 					
 
@@ -434,13 +434,13 @@ GET /devices/1 GET /devices/1.xml
 					<div class="method-source-code"
 						id="show-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/devices_controller.rb, line 15</span>
+    <span class="ruby-comment cmt"># File app/controllers/can_subs_controller.rb, line 15</span>
 15:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">show</span>
-16:     <span class="ruby-ivar">@device</span> = <span class="ruby-constant">Device</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+16:     <span class="ruby-ivar">@can_sub</span> = <span class="ruby-constant">CanSub</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 17: 
 18:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
 19:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment cmt"># show.html.erb</span>
-20:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@device</span> }
+20:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@can_sub</span> }
 21:     <span class="ruby-keyword kw">end</span>
 22:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
@@ -467,7 +467,7 @@ GET /devices/1 GET /devices/1.xml
 				<div class="method-description">
 					
 					<p>
-PUT /devices/1 PUT /devices/1.xml
+PUT /can_subs/1 PUT /can_subs/1.xml
 </p>
 					
 
@@ -475,17 +475,17 @@ PUT /devices/1 PUT /devices/1.xml
 					<div class="method-source-code"
 						id="update-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/controllers/devices_controller.rb, line 58</span>
+    <span class="ruby-comment cmt"># File app/controllers/can_subs_controller.rb, line 58</span>
 58:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update</span>
-59:     <span class="ruby-ivar">@device</span> = <span class="ruby-constant">Device</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+59:     <span class="ruby-ivar">@can_sub</span> = <span class="ruby-constant">CanSub</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 60: 
 61:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
-62:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@device</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:device</span>])
-63:         <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span>(<span class="ruby-ivar">@device</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'Device was successfully updated.'</span>) }
+62:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@can_sub</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:can_sub</span>])
+63:         <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span>(<span class="ruby-ivar">@can_sub</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'Can sub was successfully updated.'</span>) }
 64:         <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">head</span> <span class="ruby-value">:ok</span> }
 65:       <span class="ruby-keyword kw">else</span>
 66:         <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;edit&quot;</span> }
-67:         <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@device</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:unprocessable_entity</span> }
+67:         <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@can_sub</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:unprocessable_entity</span> }
 68:       <span class="ruby-keyword kw">end</span>
 69:     <span class="ruby-keyword kw">end</span>
 70:   <span class="ruby-keyword kw">end</span></pre>

@@ -117,6 +117,18 @@
 				
 					<li><a href="./ApplicationHelper.html">ApplicationHelper</a></li>
 				
+					<li><a href="./CanMain.html">CanMain</a></li>
+				
+					<li><a href="./CanMainsController.html">CanMainsController</a></li>
+				
+					<li><a href="./CanMainsHelper.html">CanMainsHelper</a></li>
+				
+					<li><a href="./CanSub.html">CanSub</a></li>
+				
+					<li><a href="./CanSubsController.html">CanSubsController</a></li>
+				
+					<li><a href="./CanSubsHelper.html">CanSubsHelper</a></li>
+				
 					<li><a href="./Device.html">Device</a></li>
 				
 					<li><a href="./DevicesController.html">DevicesController</a></li>
@@ -133,9 +145,15 @@
 				
 					<li><a href="./PtosHelper.html">PtosHelper</a></li>
 				
+					<li><a href="./Resource.html">Resource</a></li>
+				
 					<li><a href="./ResourceController.html">ResourceController</a></li>
 				
 					<li><a href="./ResourceHelper.html">ResourceHelper</a></li>
+				
+					<li><a href="./ResourcesController.html">ResourcesController</a></li>
+				
+					<li><a href="./ResourcesHelper.html">ResourcesHelper</a></li>
 				
 					<li><a href="./Task.html">Task</a></li>
 				
@@ -198,10 +216,10 @@
 					<div class="method-source-code"
 						id="all-by-date-source">
 <pre>
-   <span class="ruby-comment cmt"># File app/models/pto.rb, line 2</span>
-2:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all_by_date</span>
-3:     <span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;start&quot;</span>)
-4:   <span class="ruby-keyword kw">end</span></pre>
+   <span class="ruby-comment cmt"># File app/models/pto.rb, line 4</span>
+4:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all_by_date</span>
+5:     <span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;start&quot;</span>)
+6:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -232,10 +250,11 @@
 					<div class="method-source-code"
 						id="upcoming-range-source">
 <pre>
-   <span class="ruby-comment cmt"># File app/models/pto.rb, line 6</span>
-6:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">upcoming_range</span>(<span class="ruby-identifier">st</span>,<span class="ruby-identifier">fi</span>)
-7:     <span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;start,user_id&quot;</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;(start &gt;= ? or end &gt;= ?) and start &lt; ?&quot;</span>, <span class="ruby-identifier">st</span>, <span class="ruby-identifier">st</span>, <span class="ruby-identifier">fi</span>])
-8:   <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File app/models/pto.rb, line 8</span>
+ 8:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">upcoming_range</span>(<span class="ruby-identifier">st</span>,<span class="ruby-identifier">fi</span>)
+ 9:     <span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;start,user_id&quot;</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;(start &gt;= ? OR finish &gt;= ?) AND start &lt; ?&quot;</span>, <span class="ruby-identifier">st</span>, <span class="ruby-identifier">st</span>, <span class="ruby-identifier">fi</span>])
+10:     <span class="ruby-comment cmt">#find(:all, :order =&gt;&quot;start,user_id&quot;, :conditions =&gt; [&quot;start &gt;= ?&quot;, st])</span>
+11:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

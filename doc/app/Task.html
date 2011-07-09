@@ -71,9 +71,17 @@
 					
 					<li><a href="#method-c-all_active">::all_active</a></li>
 					
+					<li><a href="#method-c-all_active_assigned_to">::all_active_assigned_to</a></li>
+					
 					<li><a href="#method-c-all_active_past_due">::all_active_past_due</a></li>
 					
 					<li><a href="#method-c-all_completed">::all_completed</a></li>
+					
+					<li><a href="#method-c-all_my_active">::all_my_active</a></li>
+					
+					<li><a href="#method-c-all_my_active_by_me">::all_my_active_by_me</a></li>
+					
+					<li><a href="#method-c-all_my_active_past_due">::all_my_active_past_due</a></li>
 					
 					<li><a href="#method-c-all_unassigned">::all_unassigned</a></li>
 					
@@ -121,6 +129,18 @@
 				
 					<li><a href="./ApplicationHelper.html">ApplicationHelper</a></li>
 				
+					<li><a href="./CanMain.html">CanMain</a></li>
+				
+					<li><a href="./CanMainsController.html">CanMainsController</a></li>
+				
+					<li><a href="./CanMainsHelper.html">CanMainsHelper</a></li>
+				
+					<li><a href="./CanSub.html">CanSub</a></li>
+				
+					<li><a href="./CanSubsController.html">CanSubsController</a></li>
+				
+					<li><a href="./CanSubsHelper.html">CanSubsHelper</a></li>
+				
 					<li><a href="./Device.html">Device</a></li>
 				
 					<li><a href="./DevicesController.html">DevicesController</a></li>
@@ -137,9 +157,15 @@
 				
 					<li><a href="./PtosHelper.html">PtosHelper</a></li>
 				
+					<li><a href="./Resource.html">Resource</a></li>
+				
 					<li><a href="./ResourceController.html">ResourceController</a></li>
 				
 					<li><a href="./ResourceHelper.html">ResourceHelper</a></li>
+				
+					<li><a href="./ResourcesController.html">ResourcesController</a></li>
+				
+					<li><a href="./ResourcesHelper.html">ResourcesHelper</a></li>
 				
 					<li><a href="./Task.html">Task</a></li>
 				
@@ -202,10 +228,44 @@
 					<div class="method-source-code"
 						id="all-active-source">
 <pre>
-   <span class="ruby-comment cmt"># File app/models/task.rb, line 2</span>
-2:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all_active</span>
-3:     <span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;assignee, priority&quot;</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;complete = ?&quot;</span>,<span class="ruby-keyword kw">false</span>])
-4:   <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File app/models/task.rb, line 8</span>
+ 8:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all_active</span>
+ 9:     <span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;assignee_id, priority&quot;</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;complete = ?&quot;</span>,<span class="ruby-keyword kw">false</span>])
+10:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="all-active-assigned-to-method" class="method-detail ">
+				<a name="method-c-all_active_assigned_to"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">all_active_assigned_to</span><span
+						class="method-args">(u)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="all-active-assigned-to-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/task.rb, line 31</span>
+31:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all_active_assigned_to</span>(<span class="ruby-identifier">u</span>)
+32:     <span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;assignee_id, priority&quot;</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;requester = ? AND complete = ?&quot;</span>,<span class="ruby-identifier">u</span>,<span class="ruby-keyword kw">false</span>])
+33:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -236,11 +296,11 @@
 					<div class="method-source-code"
 						id="all-active-past-due-source">
 <pre>
-   <span class="ruby-comment cmt"># File app/models/task.rb, line 6</span>
-6:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all_active_past_due</span>
-7:     <span class="ruby-identifier">date</span>=<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
-8:     <span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;assignee, priority, scd&quot;</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;scd &lt; ? and complete = ?&quot;</span>, <span class="ruby-identifier">date</span>, <span class="ruby-keyword kw">false</span>])
-9:   <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File app/models/task.rb, line 15</span>
+15:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all_active_past_due</span>
+16:     <span class="ruby-identifier">date</span>=<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+17:     <span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;assignee_id, priority, scd&quot;</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;scd &lt; ? and complete = ?&quot;</span>, <span class="ruby-identifier">date</span>, <span class="ruby-keyword kw">false</span>])
+18:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -271,11 +331,114 @@
 					<div class="method-source-code"
 						id="all-completed-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/models/task.rb, line 10</span>
-10:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all_completed</span>
-11:     <span class="ruby-identifier">date</span>=<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
-12:     <span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;assignee, scd&quot;</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;complete = ?&quot;</span>,  <span class="ruby-keyword kw">true</span>])
+    <span class="ruby-comment cmt"># File app/models/task.rb, line 23</span>
+23:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all_completed</span>
+24:     <span class="ruby-identifier">date</span>=<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+25:     <span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;assignee_id, scd&quot;</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;complete = ?&quot;</span>,  <span class="ruby-keyword kw">true</span>])
+26:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="all-my-active-method" class="method-detail ">
+				<a name="method-c-all_my_active"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">all_my_active</span><span
+						class="method-args">(user_id)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="all-my-active-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/task.rb, line 11</span>
+11:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all_my_active</span>(<span class="ruby-identifier">user_id</span>)
+12:     <span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;assignee_id, priority&quot;</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;complete = ? AND assignee_id = ?&quot;</span>,<span class="ruby-keyword kw">false</span>, <span class="ruby-identifier">user_id</span>])
 13:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="all-my-active-by-me-method" class="method-detail ">
+				<a name="method-c-all_my_active_by_me"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">all_my_active_by_me</span><span
+						class="method-args">(user_id)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="all-my-active-by-me-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/task.rb, line 34</span>
+34:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all_my_active_by_me</span>(<span class="ruby-identifier">user_id</span>)
+35:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value str">&quot;complete = ? AND requester_id = ?&quot;</span>,<span class="ruby-keyword kw">false</span>, <span class="ruby-identifier">user_id</span>).<span class="ruby-identifier">order</span>(<span class="ruby-value str">&quot;assignee_id, priority&quot;</span>)
+36:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="all-my-active-past-due-method" class="method-detail ">
+				<a name="method-c-all_my_active_past_due"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">all_my_active_past_due</span><span
+						class="method-args">(user_id)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="all-my-active-past-due-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/task.rb, line 19</span>
+19:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all_my_active_past_due</span>(<span class="ruby-identifier">user_id</span>)
+20:     <span class="ruby-identifier">date</span>=<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+21:     <span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;assignee_id, priority, scd&quot;</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;scd &lt; ? and complete = ? and assignee_id = ?&quot;</span>, <span class="ruby-identifier">date</span>, <span class="ruby-keyword kw">false</span>,<span class="ruby-identifier">user_id</span>])
+22:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -306,11 +469,11 @@
 					<div class="method-source-code"
 						id="all-unassigned-source">
 <pre>
-    <span class="ruby-comment cmt"># File app/models/task.rb, line 14</span>
-14:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all_unassigned</span>
-15:     <span class="ruby-identifier">date</span>=<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
-16:     <span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;priority&quot;</span> , <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;assignee IS NULL&quot;</span>)
-17:   <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File app/models/task.rb, line 27</span>
+27:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all_unassigned</span>
+28:     <span class="ruby-identifier">date</span>=<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+29:     <span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;id&quot;</span> , <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;assignee_id IS NULL&quot;</span>)
+30:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
