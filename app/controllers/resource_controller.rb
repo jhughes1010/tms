@@ -1,10 +1,11 @@
   class ResourceController < ApplicationController
-      require "fastercsv"
+      require "csv"
     def index
       #Work through projects
-      #...
+      @key_projects = Project.k_proj
+      
       #Project Totals
-      @project = "Sapphire"
+
       @project_totals = Array.new(17,0)
       #@group_totals = Array.new(17,0)
 
@@ -38,7 +39,7 @@
       #import and stack data   
       #delete database
       Resource.delete_all
-      arr_of_arrs = FasterCSV.read(import_file) 
+      arr_of_arrs = CSV.read(import_file) 
       arr_of_arrs.each do |x|  
         stack_data(x) if header == 1
         header = 1 if header == 0
@@ -54,13 +55,12 @@
       puts "CSV importer for Resource Allocation database"
       puts "Project List Import tool"
       puts "============================================="
-      #import and stack data   
       #delete database
-      Resource.delete_all
-      arr_of_arrs = FasterCSV.read(import_file) 
+      Project.delete_all
+      arr_of_arrs = CSV.read(import_file) 
       arr_of_arrs.each do |x|  
-        write_project_record(x) if header == 1
-        header = 1 if header == 0
+      write_project_record(x) if header == 1
+      header = 1 if header == 0
       end
     end 
     #
@@ -97,11 +97,10 @@
 
       }
     end
+    #Write the project.csv file to the project.db
     def write_project_record(record)
-      #write new record to database
-         #new_to_project_db(date_current,record[0], record[1],record[2],record[3],record[4],record[5],record[6],record[7])
-        puts record
-      }
+         new_to_project_db(record[0], record[1],record[2],record[3],record[4],record[5],record[6],record[7])
+        puts record[0]
     end
     #
     #
@@ -117,11 +116,16 @@
       record.forecast = time
       record.save
     end
-    def new_to_project_db(project,tapeout,key,dr1,dr2,dr3,dr4,dr5)
+    def new_to_project_db(project,key,tapeout,dr1,dr2,dr3,dr4,dr5)
       record = Project.new
       record.project = project
       record.tapeout = tapeout
-      record.key = key
+      if key == "Y"
+        record.key = true
+        else
+          record.key = false
+          end
+           
       record.dr1 = dr1
       record.dr2 = dr2
       record.dr3 = dr3

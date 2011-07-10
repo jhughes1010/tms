@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  project: MyString
+  key: false
+  tapeout: 2011-07-09
+  dr1: 2011-07-09
+  dr2: 2011-07-09
+  dr3: 2011-07-09
+  dr4: 2011-07-09
+  dr5: 2011-07-09
+
+two:
+  project: MyString
+  key: false
+  tapeout: 2011-07-09
+  dr1: 2011-07-09
+  dr2: 2011-07-09
+  dr3: 2011-07-09
+  dr4: 2011-07-09
+  dr5: 2011-07-09

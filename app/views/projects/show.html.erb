@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Project:</b>
+  <%= @project.project %>
+</p>
+
+<p>
+  <b>Key:</b>
+  <%= @project.key %>
+</p>
+
+<p>
+  <b>Tapeout:</b>
+  <%= @project.tapeout %>
+</p>
+
+<p>
+  <b>Dr1:</b>
+  <%= @project.dr1 %>
+</p>
+
+<p>
+  <b>Dr2:</b>
+  <%= @project.dr2 %>
+</p>
+
+<p>
+  <b>Dr3:</b>
+  <%= @project.dr3 %>
+</p>
+
+<p>
+  <b>Dr4:</b>
+  <%= @project.dr4 %>
+</p>
+
+<p>
+  <b>Dr5:</b>
+  <%= @project.dr5 %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

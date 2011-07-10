@@ -1,4 +1,6 @@
-<h1><%= @project%></h1>
+<% @key_projects.each do |k| %>
+<h1><%= k.project%></h1>
+<h2><%= k.tapeout%></h2>
 <div id="product-list">
     <h3>Project Totals</h3>
 	<hr>
@@ -66,16 +68,5 @@
     </table>
 <br>
 <br>
-<h4>Test Engineering</h4>
-<hr>
-<table>
-    <tr>
-        <%for i in (0..16) %>
-        <td>
-            <%= sprintf("%5.2f",@project_totals[i])%>
-        </td>
-        <%end %>
-    </tr>
-</table>
 	<hr>
- 
+ <%end%>
