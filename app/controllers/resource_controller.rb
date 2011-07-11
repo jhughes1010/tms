@@ -3,25 +3,21 @@
     def index
       #Work through projects
       @key_projects = Project.k_proj
-      
+      @project="SinbadEE"
+      #project_totals(@project)
+    end
+    def project_totals(project)
       #Project Totals
-
-      @project_totals = Array.new(17,0)
-      #@group_totals = Array.new(17,0)
-
       @date = Date.today
+      @project_totals = Array.new(17,0)
       @date_start = @date.at_beginning_of_month
-          total = Resource.sapphire(@date_start)
+          total = Resource.project_total(@date_start,project)
       0.upto(14){
         |x|
-
-      @project_totals[x] = total[x].forecast   
-      @project_totals[15] += total[x].forecast  
-       }
-       @project_totals[16] = @project_totals[15]/12
-       #Department Totals
-
-
+        @project_totals[x] = total[x].forecast   
+        @project_totals[15] += total[x].forecast  
+      }
+      @project_totals[16] = @project_totals[15]/12
     end
     #
     #

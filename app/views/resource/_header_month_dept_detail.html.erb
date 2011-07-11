@@ -1,0 +1,16 @@
+<%month = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec" ]%><%mn = date.month-1%>
+
+	<hr>
+			<tr><th width="10%"><b>Name</b></th><th width="10%"><b>Task</b></th>
+				<%for i in (0..14)%>
+					<th>
+						<b><%=month[(mn+i)%12]%></b>
+					</th>
+				<%end%>
+				<th>
+					<b>Man Mo</b>
+				</th>
+				<th>
+					<b>Man Yr</b>
+				</th>
+			</tr>

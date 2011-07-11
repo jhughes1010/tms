@@ -2,15 +2,36 @@
 <h1><%= k.project%></h1>
 <h2><%= k.tapeout%></h2>
 <div id="product-list">
-    <h3>Project Totals</h3>
+    <b>Project Totals</b>
 	<hr>
     <table>
-        <%= render :partial => "month_header", :locals => {:date => @date} %>
+	<% @resource.project_totals(k.project) %>
+        <%= render :partial => "header_month", :locals => {:date => @date} %>
  		<%= render :partial => "project_totals", :locals => {:pt => @project_totals} %>
     </table>
+<hr><br><br>
+<!--Department Totals -->
+<b>Department Totals</b>
 <table>
-	</table>
+    <%= render :partial => "header_month_dept_summary", :locals => {:date => @date} %>
+	<%= render :partial => "project_department_totals", :locals => {:pt => @project_totals, :department => "Layout Engineering"} %>
+	<%= render :partial => "project_department_totals", :locals => {:pt => @project_totals, :department => "Design Engineering"} %>
+	<%= render :partial => "project_department_totals", :locals => {:pt => @project_totals, :department => "Product/Test Engineering"} %>
+	<%= render :partial => "project_department_totals", :locals => {:pt => @project_totals, :department => "Applications Engineering"} %>
+</table>
+
+
+<!--Department Details -->
+<hr><br><br>
+<b>Department Details</b>
+<table>
+    <%= render :partial => "header_month_dept_detail", :locals => {:date => @date} %>
+	<%= render :partial => "project_department_detail", :locals => {:pt => @project_totals, :department => "Layout Engineering"} %>
+	<%= render :partial => "project_department_detail", :locals => {:pt => @project_totals, :department => "Design Engineering"} %>
+	<%= render :partial => "project_department_detail", :locals => {:pt => @project_totals, :department => "Product/Test Engineering"} %>
+	<%= render :partial => "project_department_detail", :locals => {:pt => @project_totals, :department => "Applications Engineering"} %>
+</table>
 <br>
 <br>
-	<hr>
+	<hr><br><br><br><br><br>
  <%end%>

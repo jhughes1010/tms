@@ -1,7 +1,7 @@
 class Resource < ActiveRecord::Base
   
-  def self.sapphire(date)
-    self.where("project = 'Sapphire' AND date >= ? AND date < ?" , date, date +15.months).order("date").select("sum (forecast) as forecast").group("date")
+  def self.project_total(date,project)
+    self.where("project = ? AND date >= ? AND date < ?" ,project, date, date +15.months).order("date").select("sum (forecast) as forecast").group("date")
   end
   def self.sapphire_sub(date)
     #find(:all, :conditions =>["project = 'Sapphire' AND date >= ? AND date < ?" , date, date +15.months], :order =>"date", :select => "sum (forecast) as forecast", :group => "department, date")
