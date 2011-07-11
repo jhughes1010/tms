@@ -5,7 +5,6 @@
     <b>Project Totals</b>
 	<hr>
     <table>
-	<% @resource.project_totals(k.project) %>
         <%= render :partial => "header_month", :locals => {:date => @date} %>
  		<%= render :partial => "project_totals", :locals => {:pt => @project_totals} %>
     </table>
@@ -22,7 +21,7 @@
 
 
 <!--Department Details -->
-<hr><br><br>
+<hr><br><br><br><br>
 <b>Department Details</b>
 <table>
     <%= render :partial => "header_month_dept_detail", :locals => {:date => @date} %>
@@ -33,5 +32,5 @@
 </table>
 <br>
 <br>
-	<hr><br><br><br><br><br>
+	<hr><br><br><br><br><br><br><br><br><br><br><br>
  <%end%>

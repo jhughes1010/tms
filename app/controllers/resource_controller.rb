@@ -4,7 +4,7 @@
       #Work through projects
       @key_projects = Project.k_proj
       @project="SinbadEE"
-      #project_totals(@project)
+      project_totals(@project)
     end
     def project_totals(project)
       #Project Totals
