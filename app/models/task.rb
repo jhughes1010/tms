@@ -1,10 +1,10 @@
 class Task < ActiveRecord::Base
   belongs_to :requester, :class_name=>"User"
   belongs_to :assignee, :class_name=>"User"
-  
+
   scope :grouped, group(:assignee_id)
 
-  
+
   def self.all_active
     find(:all, :order =>"assignee_id, priority", :conditions => ["complete = ?",false])
   end

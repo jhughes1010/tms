@@ -1,0 +1,26 @@
+<% @key_projects.each do |k| %>	
+<tr>
+	<td>	
+		<a href="key_project_summary?p_id=<%=k.id%>"<%= k.project %> >			
+		<%= k.project %>
+	</td>
+	<td>				
+		<%= k.tapeout %>
+	</td>
+	<td>				
+		<%= k.dr1 %>
+	</td>
+	<td>				
+		<%= k.dr2 %>
+	</td>
+	<td>				
+		<%= k.dr3 %>
+	</td>
+	<td>				
+		<%= k.dr4 %>
+	</td>
+	<td>				
+		<%= k.dr5 %>
+	</td>
+</tr>
+<% end %>

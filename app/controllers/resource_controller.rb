@@ -1,133 +1,171 @@
-  class ResourceController < ApplicationController
-      require "csv"
-    def index
-      #Work through projects
-      @key_projects = Project.k_proj
-      @project="SinbadEE"
-      project_totals(@project)
-    end
-    def project_totals(project)
-      #Project Totals
-      @date = Date.today
-      @project_totals = Array.new(17,0)
-      @date_start = @date.at_beginning_of_month
-          total = Resource.project_total(@date_start,project)
-      0.upto(14){
-        |x|
-        @project_totals[x] = total[x].forecast   
-        @project_totals[15] += total[x].forecast  
-      }
-      @project_totals[16] = @project_totals[15]/12
-    end
-    #
-    #
-    #
-    def import
-      #initial variables
-      header = 0
-      #filenames
-      import_file = "import/test_engineering.csv"
-      puts
-      puts "============================================="
-      puts "CSV importer for Resource Allocation database"
-      puts "Resource List Import tool"
-      puts "============================================="
-      #import and stack data   
-      #delete database
-      Resource.delete_all
-      arr_of_arrs = CSV.read(import_file) 
-      arr_of_arrs.each do |x|  
-        stack_data(x) if header == 1
-        header = 1 if header == 0
-      end
-    end 
-    def import_project
-      #initial variables
-      header = 0
-      #filenames
-      import_file = "import/project_list.csv"
-      puts
-      puts "============================================="
-      puts "CSV importer for Resource Allocation database"
-      puts "Project List Import tool"
-      puts "============================================="
-      #delete database
-      Project.delete_all
-      arr_of_arrs = CSV.read(import_file) 
-      arr_of_arrs.each do |x|  
-      write_project_record(x) if header == 1
-      header = 1 if header == 0
-      end
-    end 
-    #
-    #
-    #
-    def stack_data(line)
-      #puts line
-      #set_nil_to_zero(line)
-      write_record(line)
-    end
-    #
-    #
-    #
-    def write_record(record)
-      #write new record to database
-      4.upto(24){
-        |x|
-        date = Date.today
-        date_start = date.at_beginning_of_month - 3.months
-        #print date_start
-        #print " "
-        0.upto(3){
-          |y|
-          #print record[y] + " " if record[y]
-        }
-        if x < 7
-            #print ":Actual   "
-        else
-            #print ":Forecast "
-            date_current=date_start.months_since(x-4)
-         new_to_db(date_current,record[0], record[1],record[2],record[3],record[x])  
-              end
-        #puts record[x]
-
-      }
-    end
-    #Write the project.csv file to the project.db
-    def write_project_record(record)
-         new_to_project_db(record[0], record[1],record[2],record[3],record[4],record[5],record[6],record[7])
-        puts record[0]
-    end
-    #
-    #
-    #
-    def new_to_db(date,dept,name,project,function,time)
-      record = Resource.new
-      record.date = date
-      record.name = name
-      record.department = dept
-      record.project = project
-      record.function = function
-      record.actual = 0
-      record.forecast = time
-      record.save
-    end
-    def new_to_project_db(project,key,tapeout,dr1,dr2,dr3,dr4,dr5)
-      record = Project.new
-      record.project = project
-      record.tapeout = tapeout
-      if key == "Y"
-        record.key = true
-        else
-          record.key = false
-          end
-           
-      record.dr1 = dr1
-      record.dr2 = dr2
-      record.dr3 = dr3
-      record.dr4 = dr4
-      record.dr5 = dr5
-      record.save
+class ResourceController < ApplicationController
+  require "csv"
+  def index
+    #Work through projects
+    @key_projects = Project.k_proj
+    @project="SinbadEE"
+    @project_totals = project_totals(@project)
+  end
+  #Key Project Index
+  def key_projects
+    @key_projects = Project.k_proj
+  end
+  #Key Project Summary
+  def key_project_summary
+    if params[:p_id]
+      p=params[:p_id].to_i
+      @key_projects = Project.find(p)
+      @project_totals = project_totals(@key_projects.project)
+      #Get Department Details
+      @layout = department_totals(@key_projects.project,"Layout")
+      #department_totals(@key_project.project,"Design")
+      #department_totals(@key_project.project,"PE")
+      #department_totals(@key_project.project,"Firmware")
+      #department_totals(@key_project.project,"Applications")
     end
   end
+  def project_totals(project)
+    #Project Totals
+    @date = Date.today
+    project_totals = Array.new(17,0)
+    @date_start = @date.at_beginning_of_month
+    total = Resource.project_total(@date_start,project)
+    0.upto(14){
+      |x|
+      project_totals[x] = total[x].forecast
+      project_totals[15] += total[x].forecast
+      puts project_totals[x]
+    }
+    project_totals[16] = project_totals[15]/12
+    project_totals
+  end
+  def department_totals(project,department)
+    #Department Totals
+    @date = Date.today
+    dept_totals = Array.new(17,0)
+    @date_start = @date.at_beginning_of_month
+    #total = Resource.department_total(@date_start,project, department)
+    #unless total.nil
+    #0.upto(14){
+    #  |x|
+      #unless  total[x].forecast.nil
+      #dept_totals[x] = total[x].forecast
+      #end
+      #dept_totals[15] += total[x].forecast  if  total[x].forecast
+      #puts project_totals[x]
+    #}
+    #dept_totals[16] = dept_totals[15]/12
+    dept_totals
+    #end
+  end
+  #
+  #
+  #
+  def import
+    #initial variables
+    header = 0
+    #filenames
+    import_file = "import/test_engineering.csv"
+    puts
+    puts "============================================="
+    puts "CSV importer for Resource Allocation database"
+    puts "Resource List Import tool"
+    puts "============================================="
+    #import and stack data
+    #delete database
+    Resource.delete_all
+    arr_of_arrs = CSV.read(import_file)
+    arr_of_arrs.each do |x|
+      stack_data(x) if header == 1
+      header = 1 if header == 0
+    end
+  end
+  def import_project
+    #initial variables
+    header = 0
+    #filenames
+    import_file = "import/project_list.csv"
+    puts
+    puts "============================================="
+    puts "CSV importer for Resource Allocation database"
+    puts "Project List Import tool"
+    puts "============================================="
+    #delete database
+    Project.delete_all
+    arr_of_arrs = CSV.read(import_file)
+    arr_of_arrs.each do |x|
+      write_project_record(x) if header == 1
+      header = 1 if header == 0
+    end
+  end
+  #
+  #
+  #
+  def stack_data(line)
+    #puts line
+    #set_nil_to_zero(line)
+    write_record(line)
+  end
+  #
+  #
+  #
+  def write_record(record)
+    #write new record to database
+    4.upto(24){
+      |x|
+      date = Date.today
+      date_start = date.at_beginning_of_month - 3.months
+      #print date_start
+      #print " "
+      0.upto(3){
+        |y|
+        #print record[y] + " " if record[y]
+      }
+      if x < 7
+        #print ":Actual   "
+      else
+        #print ":Forecast "
+        date_current=date_start.months_since(x-4)
+        new_to_db(date_current,record[0], record[1],record[2],record[3],record[x])
+      end
+      #puts record[x]
 
+    }
+  end
+  #Write the project.csv file to the project.db
+  def write_project_record(record)
+    new_to_project_db(record[0], record[1],record[2],record[3],record[4],record[5],record[6],record[7])
+    puts record[0]
+  end
+  #
+  #
+  #
+  def new_to_db(date,dept,name,project,function,time)
+    record = Resource.new
+    record.date = date
+    record.name = name
+    record.department = dept
+    record.project = project
+    record.function = function
+    record.actual = 0
+    record.forecast = time
+    record.save
+  end
+  def new_to_project_db(project,key,tapeout,dr1,dr2,dr3,dr4,dr5)
+    record = Project.new
+    record.project = project
+    record.tapeout = tapeout
+    if key == "Y"
+      record.key = true
+    else
+      record.key = false
+    end
+
+    record.dr1 = dr1
+    record.dr2 = dr2
+    record.dr3 = dr3
+    record.dr4 = dr4
+    record.dr5 = dr5
+    record.save
+  end
+end

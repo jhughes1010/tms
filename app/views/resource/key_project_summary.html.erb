@@ -1,0 +1,17 @@
+<div id="product-list">
+    <b>Project Totals</b>
+	<hr>
+    <table>
+        <%= render :partial => "header_month", :locals => {:date => @date} %>
+ 		<%= render :partial => "project_totals", :locals => {:pt => @project_totals} %>
+    </table>
+<hr><br><br>
+<!--Department Totals -->
+<b>Department Totals</b>
+<table>
+    <%= render :partial => "header_month_dept_summary", :locals => {:date => @date} %>
+	<%= render :partial => "project_department_totals", :locals => {:pt => @layout, :department => "Layout Engineering"} %>
+	<%= render :partial => "project_department_totals", :locals => {:pt => @project_totals, :department => "Design Engineering"} %>
+	<%= render :partial => "project_department_totals", :locals => {:pt => @project_totals, :department => "Product/Test Engineering"} %>
+	<%= render :partial => "project_department_totals", :locals => {:pt => @project_totals, :department => "Applications Engineering"} %>
+</table>
