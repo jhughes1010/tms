@@ -59,12 +59,12 @@ class MainController < ApplicationController
         ##UserMailer.daily_report(u,@active).deliver
       end
     end
-  end  
+  end
   def project_my_active
     @auth = session[:user_auth]
     @user_id=session[:user_id]
     @full_name=session[:user_fullname]
-    
+
     @today=Date.today
     @today.to_s(:long)
     @users=User.all

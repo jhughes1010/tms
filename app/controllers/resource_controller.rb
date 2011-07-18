@@ -16,12 +16,14 @@ class ResourceController < ApplicationController
       p=params[:p_id].to_i
       @key_projects = Project.find(p)
       @project_totals = project_totals(@key_projects.project)
-      #Get Department Details
+      #Get Department Totals
       @layout = department_totals(@key_projects.project,"Layout")
-      #department_totals(@key_project.project,"Design")
-      #department_totals(@key_project.project,"PE")
-      #department_totals(@key_project.project,"Firmware")
-      #department_totals(@key_project.project,"Applications")
+      @design = department_totals(@key_projects.project,"Design")
+      @pe = department_totals(@key_projects.project,"PE")
+      @firmware = department_totals(@key_projects.project,"Firmware")
+      @application = department_totals(@key_projects.project,"Applications")
+      #Get Department Details
+      
     end
   end
   def project_totals(project)
@@ -29,14 +31,18 @@ class ResourceController < ApplicationController
     @date = Date.today
     project_totals = Array.new(17,0)
     @date_start = @date.at_beginning_of_month
+    dummy = Resource.project_detail(@date_start,project)
+    count = dummy.count
     total = Resource.project_total(@date_start,project)
-    0.upto(14){
-      |x|
-      project_totals[x] = total[x].forecast
-      project_totals[15] += total[x].forecast
-      puts project_totals[x]
-    }
-    project_totals[16] = project_totals[15]/12
+    unless count < 15
+      0.upto(14){
+        |x|
+        project_totals[x] = total[x].forecast
+        project_totals[15] += total[x].forecast
+        puts project_totals[x]
+      }
+      project_totals[16] = project_totals[15]/12
+    end
     project_totals
   end
   def department_totals(project,department)
@@ -44,17 +50,17 @@ class ResourceController < ApplicationController
     @date = Date.today
     dept_totals = Array.new(17,0)
     @date_start = @date.at_beginning_of_month
-    #total = Resource.department_total(@date_start,project, department)
-    #unless total.nil
-    #0.upto(14){
-    #  |x|
-      #unless  total[x].forecast.nil
-      #dept_totals[x] = total[x].forecast
-      #end
-      #dept_totals[15] += total[x].forecast  if  total[x].forecast
-      #puts project_totals[x]
-    #}
-    #dept_totals[16] = dept_totals[15]/12
+    dummy = Resource.department_detail(@date_start,project, department)
+    count = dummy.count
+    puts count
+    total = Resource.department_total(@date_start,project, department)
+    unless count < 15
+      0.upto(14){
+        |x|
+        dept_totals[15] += total[x].forecast  if  total[x].forecast
+      }
+      dept_totals[16] = dept_totals[15]/12
+    end
     dept_totals
     #end
   end

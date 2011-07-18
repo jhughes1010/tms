@@ -11,7 +11,8 @@
 <table>
     <%= render :partial => "header_month_dept_summary", :locals => {:date => @date} %>
 	<%= render :partial => "project_department_totals", :locals => {:pt => @layout, :department => "Layout Engineering"} %>
-	<%= render :partial => "project_department_totals", :locals => {:pt => @project_totals, :department => "Design Engineering"} %>
-	<%= render :partial => "project_department_totals", :locals => {:pt => @project_totals, :department => "Product/Test Engineering"} %>
-	<%= render :partial => "project_department_totals", :locals => {:pt => @project_totals, :department => "Applications Engineering"} %>
+	<%= render :partial => "project_department_totals", :locals => {:pt => @design, :department => "Design Engineering"} %>
+	<%= render :partial => "project_department_totals", :locals => {:pt => @layout, :department => "Product/Test Engineering"} %>
+	<%= render :partial => "project_department_totals", :locals => {:pt => @layout, :department => "Firmware Engineering"} %>
+	<%= render :partial => "project_department_totals", :locals => {:pt => @layout, :department => "Applications Engineering"} %>
 </table>
