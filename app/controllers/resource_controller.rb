@@ -20,9 +20,12 @@ class ResourceController < ApplicationController
       @layout = department_totals(@key_projects.project,"Layout")
       @design = department_totals(@key_projects.project,"Design")
       @pe = department_totals(@key_projects.project,"PE")
-      @firmware = department_totals(@key_projects.project,"Firmware")
+      #@firmware = department_totals(@key_projects.project,"Firmware")
       @application = department_totals(@key_projects.project,"Applications")
       #Get Department Details
+      @all_details = Resource.project_detail_name(Date.today.at_beginning_of_month,@key_projects.project)
+      puts "Here it is"
+      puts @all_details.count
       
     end
   end
@@ -57,6 +60,7 @@ class ResourceController < ApplicationController
     unless count < 15
       0.upto(14){
         |x|
+        dept_totals[x] = total[x].forecast
         dept_totals[15] += total[x].forecast  if  total[x].forecast
       }
       dept_totals[16] = dept_totals[15]/12
@@ -71,7 +75,7 @@ class ResourceController < ApplicationController
     #initial variables
     header = 0
     #filenames
-    import_file = "import/test_engineering.csv"
+    import_file = "import/resource_data.csv"
     puts
     puts "============================================="
     puts "CSV importer for Resource Allocation database"
@@ -117,22 +121,22 @@ class ResourceController < ApplicationController
   #
   def write_record(record)
     #write new record to database
-    4.upto(24){
+    11.upto(25){
       |x|
       date = Date.today
       date_start = date.at_beginning_of_month - 3.months
       #print date_start
       #print " "
-      0.upto(3){
+      0.upto(4){
         |y|
-        #print record[y] + " " if record[y]
+        print record[y] + " " if record[y]
       }
-      if x < 7
-        #print ":Actual   "
+      if x < 8
+        print ":Actual   "
       else
-        #print ":Forecast "
-        date_current=date_start.months_since(x-4)
-        new_to_db(date_current,record[0], record[1],record[2],record[3],record[x])
+        print ":Forecast "
+        date_current=date_start.months_since(x-8)
+        new_to_db(date_current,record[0], record[1],record[2],record[3],record[4],record[x])
       end
       #puts record[x]
 
@@ -142,11 +146,12 @@ class ResourceController < ApplicationController
   def write_project_record(record)
     new_to_project_db(record[0], record[1],record[2],record[3],record[4],record[5],record[6],record[7])
     puts record[0]
+    puts record[2]
   end
   #
   #
   #
-  def new_to_db(date,dept,name,project,function,time)
+  def new_to_db(date,dept,name,overbook,project,function,time)
     record = Resource.new
     record.date = date
     record.name = name

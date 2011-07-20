@@ -1,18 +1,62 @@
-<div id="product-list">
-    <b>Project Totals</b>
-	<hr>
-    <table>
-        <%= render :partial => "header_month", :locals => {:date => @date} %>
- 		<%= render :partial => "project_totals", :locals => {:pt => @project_totals} %>
-    </table>
-<hr><br><br>
-<!--Department Totals -->
-<b>Department Totals</b>
-<table>
-    <%= render :partial => "header_month_dept_summary", :locals => {:date => @date} %>
-	<%= render :partial => "project_department_totals", :locals => {:pt => @layout, :department => "Layout Engineering"} %>
-	<%= render :partial => "project_department_totals", :locals => {:pt => @design, :department => "Design Engineering"} %>
-	<%= render :partial => "project_department_totals", :locals => {:pt => @layout, :department => "Product/Test Engineering"} %>
-	<%= render :partial => "project_department_totals", :locals => {:pt => @layout, :department => "Firmware Engineering"} %>
-	<%= render :partial => "project_department_totals", :locals => {:pt => @layout, :department => "Applications Engineering"} %>
-</table>
+
+		<div id="product-list">
+			<b>Project Totals for <%= @key_projects.project %></b><br>
+			Tapeout Date: <%= @key_projects.tapeout%>
+			<hr>
+			<table>
+				<%= render :partial => "header_month", :locals => {:date => @date} %>
+				<%= render :partial => "project_totals", :locals => {:pt => @project_totals} %>
+			</table>
+			<hr>
+			<br>
+			<br>
+			<!--Department Totals -->
+			<b>Department Totals</b>
+			<table>
+				<%= render :partial => "header_month_dept_summary", :locals => {:date => @date} %>
+				<%= render :partial => "project_department_totals", :locals => {:pt => @layout, :department => "Layout Engineering"} %>
+				<%= render :partial => "project_department_totals", :locals => {:pt => @design, :department => "Design Engineering"} %>
+				<%= render :partial => "project_department_totals", :locals => {:pt => @pe, :department => "Product/Test Engineering"} %>
+				<%= render :partial => "project_department_totals", :locals => {:pt => @application, :department => "Applications Engineering"} %>
+			</table>
+			<hr>
+			<br>
+			<br>
+			<br>
+			<br>
+						<b>Resource Details</b>
+						<%if @all_details.nil? == false%>
+			<%tmp = @all_details[0].department%>
+			<table>
+				<%= render :partial => "header_month_dept_all", :locals => {:date => @date} %>
+				<% @all_details.each do |k| %>
+				<%if tmp != k.department%>
+				<tr><td>-----</td></tr>
+				<% end %>
+				
+				<tr>
+					<td>
+						<%=k.department%>
+						<%tmp=k.department%>
+					</td>
+						<td>
+							<%=k.name%>
+						</td>
+											<td>
+						<%=k.function%>
+					</td>
+					<% for i in (0..14)%>
+					<td>
+						<%cell = Resource.get_month(k.project,k.department,k.name,k.function,i)%>
+						<% if cell.empty? ==true%>
+							-
+							<% else %>
+							<%= cell[0].forecast%>
+							<% end %>
+						</td>
+						<% end %>
+				</tr><%end%>
+			</table>
+			<% end %>
+		</div>
+
