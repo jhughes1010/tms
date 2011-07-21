@@ -25,7 +25,7 @@
 			<br>
 			<br>
 						<b>Resource Details</b>
-						<%if @all_details.nil? == false%>
+						
 			<%tmp = @all_details[0].department%>
 			<table>
 				<%= render :partial => "header_month_dept_all", :locals => {:date => @date} %>
@@ -57,6 +57,6 @@
 						<% end %>
 				</tr><%end%>
 			</table>
-			<% end %>
+			
 		</div>
 

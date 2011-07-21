@@ -24,8 +24,8 @@ class ResourceController < ApplicationController
       @application = department_totals(@key_projects.project,"Applications")
       #Get Department Details
       @all_details = Resource.project_detail_name(Date.today.at_beginning_of_month,@key_projects.project)
-      puts "Here it is"
-      puts @all_details.count
+      #puts "Here it is"
+      #puts @all_details.count
       
     end
   end
@@ -36,6 +36,8 @@ class ResourceController < ApplicationController
     @date_start = @date.at_beginning_of_month
     dummy = Resource.project_detail(@date_start,project)
     count = dummy.count
+    puts count
+    puts dummy
     total = Resource.project_total(@date_start,project)
     unless count < 15
       0.upto(14){
@@ -153,6 +155,9 @@ class ResourceController < ApplicationController
   #
   def new_to_db(date,dept,name,overbook,project,function,time)
     record = Resource.new
+    if time.nil?
+      time = 0
+    end
     record.date = date
     record.name = name
     record.department = dept
