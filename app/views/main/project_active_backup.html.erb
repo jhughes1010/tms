@@ -22,3 +22,29 @@
 		</div>
 	</body>
 </html>
+
+=================
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<h1>
+			Active Tasks:
+		</h1>
+		<p>
+			<%= @today.to_s(:long) %>: <%= @tasks.count%> tasks listed
+		</p>
+		<hr>
+		<div id="accordion">
+			<% @tasks.each_pair |assignee_id, tasks| do%>
+			<%= render :partial => "task" , :collection => tasks, :locals => {:assignee_id => assignee_id}%>
+			<% end %>
+			
+			<div>
+				<%= render 'grid_no_assignee' %>
+			</div><%end%><%end%>
+		</div>
+	</body>
+</html>
