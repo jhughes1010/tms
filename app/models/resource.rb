@@ -7,7 +7,7 @@ class Resource < ActiveRecord::Base
     self.where("project = ? AND date >= ? AND date < ?" ,project, date, date +15.months).order("date")
   end
   def self.project_detail_name(date,project)
-    self.where("project = ? AND date >= ? AND date < ?" ,project, date, date +15.months).order("date").group("department", "name", "function").order("project", "department","name","function", "date").select("project, department, name, function, date")
+    self.where("project = ? AND date >= ? AND date < ?" ,project, date, date +15.months).order("date").group("project", "department", "name", "function").order("project", "department","name","function", "date").select("project, department, name, function, date")
   end
   def self.department_total(date,project,department)
     self.where("project = ? AND department LIKE ? AND date >= ? AND date < ?" ,project, "%#{department}%", date, date +15.months).order("date").select("sum (forecast) as forecast").group("date")
