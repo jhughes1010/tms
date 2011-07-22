@@ -12,10 +12,10 @@
 		</p>
 		<hr>
 		<div id="accordion">
-			<% @tasks.each_pair |assignee_id, tasks| do%>
-			<%= render :partial => "task" , :collection => tasks, :locals => {:assignee_id => assignee_id}%>
-			<% end %>
-			
+			<%@te.each do |t|%><%@tasks=Task.all_my_active(t.id)%><%if @tasks.count !=0%>
+			<h3>
+				<a href="#"><%=t.fullname + ": "+@tasks.count.to_s + " active tasks"%></a>
+			</h3>
 			<div>
 				<%= render 'grid_no_assignee' %>
 			</div><%end%><%end%>

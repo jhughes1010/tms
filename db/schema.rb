@@ -13,32 +13,32 @@
 ActiveRecord::Schema.define(:version => 20110710022325) do
 
   create_table "can_mains", :force => true do |t|
-    t.string    "can"
-    t.boolean   "internal"
-    t.boolean   "sort"
-    t.boolean   "mark"
-    t.boolean   "ft"
-    t.boolean   "assy_loc"
-    t.boolean   "device_tab"
-    t.boolean   "inactive"
-    t.string    "customer"
-    t.string    "interface"
-    t.string    "mfg_id"
-    t.string    "i2w_addr"
-    t.text      "comments"
-    t.string    "fw_version"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.string   "can"
+    t.boolean  "internal"
+    t.boolean  "sort"
+    t.boolean  "mark"
+    t.boolean  "ft"
+    t.boolean  "assy_loc"
+    t.boolean  "device_tab"
+    t.boolean  "inactive"
+    t.string   "customer"
+    t.string   "interface"
+    t.string   "mfg_id"
+    t.string   "i2w_addr"
+    t.text     "comments"
+    t.string   "fw_version"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "can_subs", :force => true do |t|
-    t.integer   "can_main_id"
-    t.string    "cpn"
-    t.string    "mpn"
-    t.string    "package"
-    t.text      "comment"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.integer  "can_main_id"
+    t.string   "cpn"
+    t.string   "mpn"
+    t.string   "package"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "devices", :force => true do |t|
@@ -73,15 +73,15 @@ ActiveRecord::Schema.define(:version => 20110710022325) do
   end
 
   create_table "resources", :force => true do |t|
-    t.date      "date"
-    t.string    "department"
-    t.string    "name"
-    t.string    "project"
-    t.string    "function"
-    t.decimal   "actual"
-    t.decimal   "forecast"
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
+    t.date     "date"
+    t.string   "department"
+    t.string   "name"
+    t.string   "project"
+    t.string   "function"
+    t.decimal  "actual"
+    t.decimal  "forecast"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "tasks", :force => true do |t|

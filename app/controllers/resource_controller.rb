@@ -19,7 +19,7 @@ class ResourceController < ApplicationController
       #Get Department Totals
       @layout = department_totals(@key_projects.project,"Layout")
       @design = department_totals(@key_projects.project,"Design")
-      @pe = department_totals(@key_projects.project,"PE")
+      @pe = department_totals(@key_projects.project,"Product")
       #@firmware = department_totals(@key_projects.project,"Firmware")
       @application = department_totals(@key_projects.project,"Applications")
       #Get Department Details
