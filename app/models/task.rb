@@ -34,4 +34,8 @@ class Task < ActiveRecord::Base
   def self.all_my_active_by_me(user_id)
     self.where("complete = ? AND requester_id = ?",false, user_id).order("assignee_id, priority")
   end
+  def self.all_active2
+    self.where(:complete => false).group_by(&:assignee_id)
+  end
+
 end

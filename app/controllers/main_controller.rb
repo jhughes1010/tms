@@ -22,6 +22,7 @@ class MainController < ApplicationController
     @tasks=Task.all_active
     @te = User.get_te
     #@tasks = Task.where(:complete => false).group_by(&:assignee_id)
+    @tsk = Task.all_active2
   end
 
   def project_active_past_due
