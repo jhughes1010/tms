@@ -13,15 +13,15 @@
 
   <div class="field">
     <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
+	<%= f.select(:user_id,@assignees) %>
   </div>
   <div class="field">
     <%= f.label :start %><br />
-    <%= f.date_select :start %>
+    <%= f.text_field :start %>
   </div>
   <div class="field">
     <%= f.label :finish %><br />
-    <%= f.date_select :finish %>
+    <%= f.text_field :finish %>
   </div>
   <div class="field">
     <%= f.label :comments %><br />

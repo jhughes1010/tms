@@ -25,7 +25,7 @@ class PtosController < ApplicationController
   # GET /ptos/new.xml
   def new
     @pto = Pto.new
-
+    @assignees=User.assignee_list
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @pto }
@@ -35,6 +35,7 @@ class PtosController < ApplicationController
   # GET /ptos/1/edit
   def edit
     @pto = Pto.find(params[:id])
+    @assignees=User.assignee_list
   end
 
   # POST /ptos

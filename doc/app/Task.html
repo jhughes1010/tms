@@ -71,6 +71,8 @@
 					
 					<li><a href="#method-c-all_active">::all_active</a></li>
 					
+					<li><a href="#method-c-all_active2">::all_active2</a></li>
+					
 					<li><a href="#method-c-all_active_assigned_to">::all_active_assigned_to</a></li>
 					
 					<li><a href="#method-c-all_active_past_due">::all_active_past_due</a></li>
@@ -150,6 +152,12 @@
 					<li><a href="./MainController.html">MainController</a></li>
 				
 					<li><a href="./MainHelper.html">MainHelper</a></li>
+				
+					<li><a href="./Project.html">Project</a></li>
+				
+					<li><a href="./ProjectsController.html">ProjectsController</a></li>
+				
+					<li><a href="./ProjectsHelper.html">ProjectsHelper</a></li>
 				
 					<li><a href="./Pto.html">Pto</a></li>
 				
@@ -232,6 +240,40 @@
  8:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all_active</span>
  9:     <span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span><span class="ruby-value str">&quot;assignee_id, priority&quot;</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value str">&quot;complete = ?&quot;</span>,<span class="ruby-keyword kw">false</span>])
 10:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="all-active--method" class="method-detail ">
+				<a name="method-c-all_active2"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">all_active2</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="all-active--source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/task.rb, line 37</span>
+37:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">all_active2</span>
+38:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value str">&quot;complete = 'f' AND assignee_id IS NOT NULL&quot;</span>).<span class="ruby-identifier">group_by</span>(&amp;<span class="ruby-value">:assignee_id</span>)
+39:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

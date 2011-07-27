@@ -69,9 +69,17 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#method-c-sapphire">::sapphire</a></li>
+					<li><a href="#method-c-department_detail">::department_detail</a></li>
 					
-					<li><a href="#method-c-sapphire_sub">::sapphire_sub</a></li>
+					<li><a href="#method-c-department_total">::department_total</a></li>
+					
+					<li><a href="#method-c-get_month">::get_month</a></li>
+					
+					<li><a href="#method-c-project_detail">::project_detail</a></li>
+					
+					<li><a href="#method-c-project_detail_name">::project_detail_name</a></li>
+					
+					<li><a href="#method-c-project_total">::project_total</a></li>
 					
 				</ul>
 			</div>
@@ -139,6 +147,12 @@
 				
 					<li><a href="./MainHelper.html">MainHelper</a></li>
 				
+					<li><a href="./Project.html">Project</a></li>
+				
+					<li><a href="./ProjectsController.html">ProjectsController</a></li>
+				
+					<li><a href="./ProjectsHelper.html">ProjectsHelper</a></li>
+				
 					<li><a href="./Pto.html">Pto</a></li>
 				
 					<li><a href="./PtosController.html">PtosController</a></li>
@@ -196,13 +210,13 @@
 			<h3 class="section-header">Public Class Methods</h3>
 
 		
-			<div id="sapphire-method" class="method-detail ">
-				<a name="method-c-sapphire"></a>
+			<div id="department-detail-method" class="method-detail ">
+				<a name="method-c-department_detail"></a>
 
 				<div class="method-heading">
 				
-					<span class="method-name">sapphire</span><span
-						class="method-args">(date)</span>
+					<span class="method-name">department_detail</span><span
+						class="method-args">(date,project,department)</span>
 					<span class="method-click-advice">click to toggle source</span>
 				
 				</div>
@@ -214,12 +228,12 @@
 
 					
 					<div class="method-source-code"
-						id="sapphire-source">
+						id="department-detail-source">
 <pre>
-   <span class="ruby-comment cmt"># File app/models/resource.rb, line 3</span>
-3:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">sapphire</span>(<span class="ruby-identifier">date</span>)
-4:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value str">&quot;project = 'Sapphire' AND date &gt;= ? AND date &lt; ?&quot;</span> , <span class="ruby-identifier">date</span>, <span class="ruby-identifier">date</span> <span class="ruby-value">15</span>.<span class="ruby-identifier">months</span>).<span class="ruby-identifier">order</span>(<span class="ruby-value str">&quot;date&quot;</span>).<span class="ruby-identifier">select</span>(<span class="ruby-value str">&quot;sum (forecast) as forecast&quot;</span>).<span class="ruby-identifier">group</span>(<span class="ruby-value str">&quot;date&quot;</span>)
-5:   <span class="ruby-keyword kw">end</span></pre>
+    <span class="ruby-comment cmt"># File app/models/resource.rb, line 16</span>
+16:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">department_detail</span>(<span class="ruby-identifier">date</span>,<span class="ruby-identifier">project</span>,<span class="ruby-identifier">department</span>)
+17:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value str">&quot;project = ? AND department LIKE ? AND date &gt;= ? AND date &lt; ?&quot;</span> ,<span class="ruby-identifier">project</span>, <span class="ruby-node">&quot;%#{department}%&quot;</span>, <span class="ruby-identifier">date</span>, <span class="ruby-identifier">date</span> <span class="ruby-value">15</span>.<span class="ruby-identifier">months</span>).<span class="ruby-identifier">order</span>(<span class="ruby-value str">&quot;date&quot;</span>)
+18:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>
@@ -230,13 +244,13 @@
 			</div>
 
 		
-			<div id="sapphire-sub-method" class="method-detail ">
-				<a name="method-c-sapphire_sub"></a>
+			<div id="department-total-method" class="method-detail ">
+				<a name="method-c-department_total"></a>
 
 				<div class="method-heading">
 				
-					<span class="method-name">sapphire_sub</span><span
-						class="method-args">(date)</span>
+					<span class="method-name">department_total</span><span
+						class="method-args">(date,project,department)</span>
 					<span class="method-click-advice">click to toggle source</span>
 				
 				</div>
@@ -248,13 +262,150 @@
 
 					
 					<div class="method-source-code"
-						id="sapphire-sub-source">
+						id="department-total-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/resource.rb, line 12</span>
+12:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">department_total</span>(<span class="ruby-identifier">date</span>,<span class="ruby-identifier">project</span>,<span class="ruby-identifier">department</span>)
+13:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value str">&quot;project = ? AND department LIKE ? AND date &gt;= ? AND date &lt; ?&quot;</span> ,<span class="ruby-identifier">project</span>, <span class="ruby-node">&quot;%#{department}%&quot;</span>, <span class="ruby-identifier">date</span>, <span class="ruby-identifier">date</span> <span class="ruby-value">15</span>.<span class="ruby-identifier">months</span>).<span class="ruby-identifier">order</span>(<span class="ruby-value str">&quot;date&quot;</span>).<span class="ruby-identifier">select</span>(<span class="ruby-value str">&quot;sum (forecast) as forecast&quot;</span>).<span class="ruby-identifier">group</span>(<span class="ruby-value str">&quot;date&quot;</span>)
+14:   
+15:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-month-method" class="method-detail ">
+				<a name="method-c-get_month"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">get_month</span><span
+						class="method-args">(project,department,name,function,date_offset)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="get-month-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/resource.rb, line 19</span>
+19:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_month</span>(<span class="ruby-identifier">project</span>,<span class="ruby-identifier">department</span>,<span class="ruby-identifier">name</span>,<span class="ruby-identifier">function</span>,<span class="ruby-identifier">date_offset</span>)
+20:     <span class="ruby-identifier">date</span>=<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>.<span class="ruby-identifier">beginning_of_month</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">date_offset</span>.<span class="ruby-identifier">months</span>
+21:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value str">&quot;project = ? AND department = ? AND name = ? AND function = ? AND date = ?&quot;</span> ,<span class="ruby-identifier">project</span>, <span class="ruby-identifier">department</span>,<span class="ruby-identifier">name</span>,<span class="ruby-identifier">function</span>, <span class="ruby-identifier">date</span>)
+22:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="project-detail-method" class="method-detail ">
+				<a name="method-c-project_detail"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">project_detail</span><span
+						class="method-args">(date,project)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="project-detail-source">
 <pre>
    <span class="ruby-comment cmt"># File app/models/resource.rb, line 6</span>
-6:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">sapphire_sub</span>(<span class="ruby-identifier">date</span>)
-7:     <span class="ruby-comment cmt">#find(:all, :conditions =&gt;[&quot;project = 'Sapphire' AND date &gt;= ? AND date &lt; ?&quot; , date, date +15.months], :order =&gt;&quot;date&quot;, :select =&gt; &quot;sum (forecast) as forecast&quot;, :group =&gt; &quot;department, date&quot;)</span>
-8:     <span class="ruby-comment cmt">#find(:all, :conditions =&gt;[&quot;project = 'Sapphire' AND department = 'Test Engineering' AND date &gt;= ? AND date &lt; ?&quot; , date, date +15.months], :order =&gt;&quot;date&quot;, :select =&gt; &quot;sum (forecast) as forecast&quot;, :group =&gt; &quot;date&quot;)</span>
-9:   <span class="ruby-keyword kw">end</span></pre>
+6:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">project_detail</span>(<span class="ruby-identifier">date</span>,<span class="ruby-identifier">project</span>)
+7:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value str">&quot;project = ? AND date &gt;= ? AND date &lt; ?&quot;</span> ,<span class="ruby-identifier">project</span>, <span class="ruby-identifier">date</span>, <span class="ruby-identifier">date</span> <span class="ruby-value">15</span>.<span class="ruby-identifier">months</span>).<span class="ruby-identifier">order</span>(<span class="ruby-value str">&quot;date&quot;</span>)
+8:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="project-detail-name-method" class="method-detail ">
+				<a name="method-c-project_detail_name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">project_detail_name</span><span
+						class="method-args">(date,project)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="project-detail-name-source">
+<pre>
+    <span class="ruby-comment cmt"># File app/models/resource.rb, line 9</span>
+ 9:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">project_detail_name</span>(<span class="ruby-identifier">date</span>,<span class="ruby-identifier">project</span>)
+10:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value str">&quot;project = ? AND date &gt;= ? AND date &lt; ?&quot;</span> ,<span class="ruby-identifier">project</span>, <span class="ruby-identifier">date</span>, <span class="ruby-identifier">date</span> <span class="ruby-value">15</span>.<span class="ruby-identifier">months</span>).<span class="ruby-identifier">group</span>(<span class="ruby-value str">&quot;project&quot;</span>, <span class="ruby-value str">&quot;department&quot;</span>, <span class="ruby-value str">&quot;name&quot;</span>, <span class="ruby-value str">&quot;function&quot;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-value str">&quot;project&quot;</span>, <span class="ruby-value str">&quot;department&quot;</span>,<span class="ruby-value str">&quot;name&quot;</span>,<span class="ruby-value str">&quot;function&quot;</span>).<span class="ruby-identifier">select</span>(<span class="ruby-value str">&quot;project, department, name, function&quot;</span>)
+11:   <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="project-total-method" class="method-detail ">
+				<a name="method-c-project_total"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">project_total</span><span
+						class="method-args">(date,project)</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					
+					
+
+					
+					<div class="method-source-code"
+						id="project-total-source">
+<pre>
+   <span class="ruby-comment cmt"># File app/models/resource.rb, line 3</span>
+3:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">project_total</span>(<span class="ruby-identifier">date</span>,<span class="ruby-identifier">project</span>)
+4:     <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value str">&quot;project = ? AND date &gt;= ? AND date &lt; ?&quot;</span> ,<span class="ruby-identifier">project</span>, <span class="ruby-identifier">date</span>, <span class="ruby-identifier">date</span> <span class="ruby-value">15</span>.<span class="ruby-identifier">months</span>).<span class="ruby-identifier">order</span>(<span class="ruby-value str">&quot;date&quot;</span>).<span class="ruby-identifier">select</span>(<span class="ruby-value str">&quot;sum (forecast) as forecast&quot;</span>).<span class="ruby-identifier">group</span>(<span class="ruby-value str">&quot;date&quot;</span>)
+5:   <span class="ruby-keyword kw">end</span></pre>
 					</div>
 					
 				</div>

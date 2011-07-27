@@ -1,5 +1,34 @@
-<h3>
-	<a href="#"><%=task.assignee.fullname %></a>
-	#iterate tasks
-	<%= task.taskname %>
-</h3>
+<%if @supress_overdue_color %>
+				<tr class="<%= cycle('list-line-odd','list-line-even')%>">
+					<%else %><%if(task.scd) %><%if (task.scd >= @today) %>
+				</tr>
+				<tr class="<%= cycle('list-line-odd','list-line-even')%>">
+					<%else %>
+				</tr>
+				<tr class="<%= cycle('list-line-odd_past_due','list-line-even_past_due')%>">
+					<%end %><%end %><%end %>
+					<td>
+						<%= link_to task.id,task %>
+					</td>
+					<td>
+						<%= task.requester.fullname %>
+					</td>
+					<td>
+						<%= task.assignee ? task.assignee.fullname : "UNASSIGNED" %>
+					</td>
+					<td>
+						<%= task.priority %>
+					</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>
+						<%= task.taskname %>
+					</td>
+					<td>
+						<%= task.scd %>
+					</td>
+					<td>
+						<%= task.category %>
+					</td>
+				</tr>

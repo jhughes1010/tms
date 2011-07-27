@@ -15,13 +15,13 @@ class MainController < ApplicationController
   end
 
   def project_active
+    @users=User.all
     @auth = session[:user_auth]
     @today=Date.today
     @today.to_s(:long)
     #@users=User.all_order_by_fullname
     @tasks=Task.all_active
     @te = User.get_te
-    #@tasks = Task.where(:complete => false).group_by(&:assignee_id)
     @tsk = Task.all_active2
   end
 

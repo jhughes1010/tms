@@ -12,13 +12,18 @@
 		</p>
 		<hr>
 		<div id="accordion">
-			<%@te.each do |t|%><%@tasks=Task.all_my_active(t.id)%><%if @tasks.count !=0%>
-			<h3>
-				<a href="#"><%=t.fullname + ": "+@tasks.count.to_s + " active tasks"%></a>
-			</h3>
-			<div>
-				<%= render 'grid_no_assignee' %>
-			</div><%end%><%end%>
-		</div>
+			<% @tsk.each_pair do |assignee_id, tasks| %>
+			<% u = User.find(assignee_id.to_i)%>
+			<h3><a href="#"><%= u.fullname %>: <%= tasks.count%> tasks listed</a></h3>
+			<div id="product-list">
+				<table>
+				<%= render :partial => "task_header"%>
+				<%= render :partial => "task" , :collection => tasks, :locals => {:assignee_id => assignee_id}%>
+				</table>
+			</div>
+			<% end %>
+			
+			</div>
+		
 	</body>
 </html>

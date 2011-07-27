@@ -149,6 +149,12 @@
 				
 					<li><a href="./MainHelper.html">MainHelper</a></li>
 				
+					<li><a href="./Project.html">Project</a></li>
+				
+					<li><a href="./ProjectsController.html">ProjectsController</a></li>
+				
+					<li><a href="./ProjectsHelper.html">ProjectsHelper</a></li>
+				
 					<li><a href="./Pto.html">Pto</a></li>
 				
 					<li><a href="./PtosController.html">PtosController</a></li>
@@ -235,7 +241,7 @@ POST /tasks POST /tasks.xml
 54:     <span class="ruby-comment cmt">#deliver the mail</span>
 55:     <span class="ruby-constant">UserMailer</span>.<span class="ruby-identifier">task_entry_confirmation</span>(<span class="ruby-identifier">session</span>[<span class="ruby-value">:user_id</span>],<span class="ruby-ivar">@task</span>).<span class="ruby-identifier">deliver</span>
 56:     <span class="ruby-constant">UserMailer</span>.<span class="ruby-identifier">task_entry_confirmation</span>(<span class="ruby-value">1</span>,<span class="ruby-ivar">@task</span>).<span class="ruby-identifier">deliver</span>
-57:     
+57: 
 58:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
 59:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@task</span>.<span class="ruby-identifier">save</span>
 60:         <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span>(<span class="ruby-ivar">@task</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'Task was successfully created.'</span>) }
@@ -282,7 +288,7 @@ DELETE /tasks/1 DELETE /tasks/1.xml
 87:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">destroy</span>
 88:     <span class="ruby-ivar">@task</span> = <span class="ruby-constant">Task</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 89:     <span class="ruby-ivar">@task</span>.<span class="ruby-identifier">destroy</span>
-90:     
+90: 
 91:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
 92:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">tasks_url</span>) }
 93:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">head</span> <span class="ruby-value">:ok</span> }
@@ -362,7 +368,7 @@ GET /tasks GET /tasks.xml
     <span class="ruby-comment cmt"># File app/controllers/tasks_controller.rb, line 4</span>
  4:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">index</span>
  5:     <span class="ruby-ivar">@tasks</span> = <span class="ruby-constant">Task</span>.<span class="ruby-identifier">all</span>
- 6:     
+ 6: 
  7:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
  8:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment cmt"># index.html.erb</span>
  9:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@tasks</span> }
@@ -408,8 +414,8 @@ GET /tasks/new GET /tasks/new.xml
 31:     <span class="ruby-ivar">@requesters</span>=<span class="ruby-constant">User</span>.<span class="ruby-identifier">requester_list</span>
 32:     <span class="ruby-ivar">@assignees</span>=<span class="ruby-constant">User</span>.<span class="ruby-identifier">assignee_list</span>
 33:     <span class="ruby-ivar">@task</span> = <span class="ruby-constant">Task</span>.<span class="ruby-identifier">new</span>
-34:     
-35:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span> 
+34: 
+35:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
 36:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment cmt"># new.html.erb</span>
 37:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@task</span> }
 38:     <span class="ruby-keyword kw">end</span>
@@ -450,7 +456,7 @@ GET /tasks/1 GET /tasks/1.xml
 15:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">show</span>
 16:     <span class="ruby-ivar">@auth</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:user_auth</span>]
 17:     <span class="ruby-ivar">@task</span> = <span class="ruby-constant">Task</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
-18:     
+18: 
 19:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
 20:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment cmt"># show.html.erb</span>
 21:       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@task</span> }
@@ -491,7 +497,7 @@ PUT /tasks/1 PUT /tasks/1.xml
     <span class="ruby-comment cmt"># File app/controllers/tasks_controller.rb, line 71</span>
 71:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">update</span>
 72:     <span class="ruby-ivar">@task</span> = <span class="ruby-constant">Task</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
-73:     
+73: 
 74:     <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
 75:       <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@task</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:task</span>])
 76:         <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span>(<span class="ruby-ivar">@task</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'Task was successfully updated.'</span>) }
