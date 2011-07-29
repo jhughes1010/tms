@@ -12,7 +12,7 @@ class CostController < ApplicationController
     puts "============================================="
     #import and stack data
     #delete database
-    Resource.delete_all
+    Costing.delete_all
     arr_of_arrs = CSV.read(import_file)
     arr_of_arrs.each do |x|
       write_csv_data(x) if header == 1
@@ -21,7 +21,8 @@ class CostController < ApplicationController
 end
 
 def write_csv_data(record)
-  #new_to_costing_db(record[0], record[1],record[2],record[3],record[4],record[5],record[6],record[7])
+  column_array= [10,3,4,5]
+  new_to_costing_db(record, column_array)
   record.each do |x|
     print x
     print "--"
@@ -32,19 +33,12 @@ end
 #
 #
 #
-def new_to_costing_db(date,dept,name,overbook,project,function,time)
-  record = Resource.new
-  if time.nil?
-    time = 0
-  end
-  record.date = date
-  record.name = name
-  record.department = dept
-  record.project = project
-  record.function = function
-  record.actual = 0
-  record.forecast = time
-  record.save
+def new_to_costing_db(record, column_array)
+  #create new record and write data fields
+  r = Costing.new
+  r.device = record[column_array[0]]
+  puts record[column_array[0]]
+  r.save
 end
 
 

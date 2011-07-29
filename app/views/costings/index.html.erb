@@ -1,7 +1,8 @@
-<h1>Listing costings</h1>
+<h1>Cost data</h1>
 
 <table>
   <tr>
+	<th><b>Device</th>
     <th></th>
     <th></th>
     <th></th>
@@ -9,6 +10,7 @@
 
 <% @costings.each do |costing| %>
   <tr>
+	<td><%= costing.device %></td>
     <td><%= link_to 'Show', costing %></td>
     <td><%= link_to 'Edit', edit_costing_path(costing) %></td>
     <td><%= link_to 'Destroy', costing, :confirm => 'Are you sure?', :method => :delete %></td>
