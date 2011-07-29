@@ -1,4 +1,6 @@
 TMS::Application.routes.draw do
+  get "cost/import"
+
   resources :costings
 
   resources :projects
