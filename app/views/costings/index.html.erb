@@ -1,0 +1,21 @@
+<h1>Listing costings</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @costings.each do |costing| %>
+  <tr>
+    <td><%= link_to 'Show', costing %></td>
+    <td><%= link_to 'Edit', edit_costing_path(costing) %></td>
+    <td><%= link_to 'Destroy', costing, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Costing', new_costing_path %>
