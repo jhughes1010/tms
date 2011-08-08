@@ -1,0 +1,2 @@
+class CanController < ApplicationController
+end
