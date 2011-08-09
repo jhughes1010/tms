@@ -4,7 +4,7 @@ class CanController < ApplicationController
     #initial variables
     header = 0
     #filenames
-    import_file = "import/can_main.csv"
+    import_file = "import/can.csv"
     puts
     puts "============================================="
     puts "CSV importer for CAN master database"
@@ -15,13 +15,14 @@ class CanController < ApplicationController
     Can_main.delete_all
     arr_of_arrs = CSV.read(import_file)
     arr_of_arrs.each do |x|
-      write_csv_data(x) if header == 1
+      puts x
+      #write_csv_data(x) if header == 1
       header = 1 if header == 0
     end
   end
 
   def write_csv_data(record)
-    column_array= [0,1,2,3,4,5,6,7,8,9,10,11,12,13]
+    column_array= [1,3]
     new_to_can_db(record, column_array)
     #record.each do |x|
     #print x
