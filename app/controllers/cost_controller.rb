@@ -21,7 +21,7 @@ class CostController < ApplicationController
 end
 
 def write_csv_data(record)
-  column_array= [10,3,4,5]
+  column_array= [2,4,7,10,18,21,24,26,28,34,36,38,47,51,56,57,58,59,60,61,62,63,65,66,67,70,72,73,74,77,80,81,84]
   new_to_costing_db(record, column_array)
   #record.each do |x|
     #print x
