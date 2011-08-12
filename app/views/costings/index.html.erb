@@ -3,6 +3,39 @@
 <table>
   <tr>
 	<th><b>Device</th>
+	<th><b>PC</th>
+	<th><b>RfWafer</th>
+	<th><b>Wafer</th>
+	<th><b>ProbeMat</th>
+	<th><b>Plant</th>
+	<th><b>PlantOhGroup</th>
+	<th><b>AsmMat</th>
+	<th><b>AsmOhGroup</th>
+	<th><b>AsmInfoRec</th>
+	<!-- <th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th>
+	<th><b>Device</th> -->
     <th></th>
     <th></th>
     <th></th>
@@ -11,6 +44,39 @@
 <% @costings.each do |costing| %>
   <tr>
 	<td><%= costing.device %></td>
+	<td><%= costing.pc %></td>
+	<td><%= costing.rfwafer %></td>
+	<td><%= costing.wafer %></td>
+	<td><%= costing.probemat %></td>
+	<td><%= costing.plant %></td>
+	<td><%= costing.pohgroup %></td>
+	<td><%= costing.asmmat %></td>
+	<td><%= costing.asmohgroup %></td>
+	<td><%= costing.asminforec %></td>
+	<!-- <td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td>
+	<td><%= costing.device %></td> -->
     <td><%= link_to 'Show', costing %></td>
     <td><%= link_to 'Edit', edit_costing_path(costing) %></td>
     <td><%= link_to 'Destroy', costing, :confirm => 'Are you sure?', :method => :delete %></td>

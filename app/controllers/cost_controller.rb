@@ -1,5 +1,9 @@
 class CostController < ApplicationController
   require "csv"
+  def clear
+    Costing.delete_all
+    
+  end
   def import
     #initial variables
     header = 0
@@ -21,7 +25,7 @@ class CostController < ApplicationController
 end
 
 def write_csv_data(record)
-  column_array= [2,4,7,10,18,21,24,26,28,34,36,38,47,51,56,57,58,59,60,61,62,63,65,66,67,70,72,73,74,77,80,81,84]
+  column_array= [2,4,7,10,18,19,21,24,25,27,34,36,38,47,51,56,57,58,59,60,61,62,63,65,66,67,70,72,73,74,77,80,81,84]
   new_to_costing_db(record, column_array)
   #record.each do |x|
     #print x
@@ -37,6 +41,25 @@ def new_to_costing_db(record, column_array)
   #create new record and write data fields
   r = Costing.new
   r.device = record[column_array[0]]
+  r.pc = record[column_array[1]]
+  r.rfwafer = record[column_array[2]]
+  r.wafer = record[column_array[3]]
+  r.probemat = record[column_array[4]]
+  r.plant = record[column_array[5]]
+  r.pohgroup = record[column_array[6]]
+  r.asmmat = record[column_array[7]]
+  r.asmohgroup = record[column_array[8]]
+  r.asminforec = record[column_array[9]]
+  #r.tsmat = record[column_array[10]]
+  #r.tsohgroup = record[column_array[11]]
+  #r.tstinforec = record[column_array[12]]
+  #r.fginforec = record[column_array[13]]
+  #r.rwcost = record[column_array[14]]
+  #r.pcostwafer = record[column_array[15]]
+  #r.grossdie = record[column_array[16]]
+  #r.sortyield = record[column_array[17]]
+  #r.netgooddie = record[column_array[18]]
+  #r.probe_time = record[column_array[19]]
   #puts record[column_array[0]]
   r.save
 end
