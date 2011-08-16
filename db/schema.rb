@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110729110419) do
+ActiveRecord::Schema.define(:version => 20110810114453) do
 
   create_table "can_mains", :force => true do |t|
     t.string   "can"
@@ -31,6 +31,25 @@ ActiveRecord::Schema.define(:version => 20110729110419) do
     t.datetime "updated_at"
   end
 
+  create_table "can_masters", :force => true do |t|
+    t.string    "can"
+    t.boolean   "internal"
+    t.boolean   "sort"
+    t.boolean   "mark"
+    t.boolean   "ft"
+    t.boolean   "assy_loc"
+    t.boolean   "device_tab"
+    t.boolean   "inactive"
+    t.string    "customer"
+    t.string    "interface"
+    t.string    "mfg_id"
+    t.string    "i2w_addr"
+    t.text      "comments"
+    t.string    "fw_version"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+  end
+
   create_table "can_subs", :force => true do |t|
     t.integer  "can_main_id"
     t.string   "cpn"
@@ -45,6 +64,39 @@ ActiveRecord::Schema.define(:version => 20110729110419) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "device"
+    t.string   "pc"
+    t.string   "rfwafer"
+    t.string   "wafer"
+    t.string   "probemat"
+    t.string   "plant"
+    t.string   "pohgroup"
+    t.string   "asmmat"
+    t.string   "asmohgroup"
+    t.string   "asminforec"
+    t.string   "tsmat"
+    t.string   "tsohgroup"
+    t.string   "tstinforec"
+    t.string   "fginforec"
+    t.float    "rwcost"
+    t.float    "wafercost"
+    t.float    "pcostwafer"
+    t.integer  "grossdie"
+    t.float    "sortyield"
+    t.integer  "netgooddie"
+    t.float    "probe_time"
+    t.float    "probe_overhead"
+    t.float    "diecost"
+    t.float    "asm_ohcost"
+    t.float    "asm_subcon"
+    t.float    "asm_yield"
+    t.float    "asm_cost"
+    t.float    "tst_ohcost"
+    t.float    "tst_subcon"
+    t.float    "tst_yield"
+    t.float    "tst_cost"
+    t.float    "fg_subcon"
+    t.float    "fg_yield"
+    t.float    "fg_stdcost"
   end
 
   create_table "devices", :force => true do |t|

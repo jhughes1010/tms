@@ -2,7 +2,7 @@ class CostingsController < ApplicationController
   # GET /costings
   # GET /costings.xml
   def index
-    @costings = Costing.all
+    @costings = Costing.find(:all, :limit => 10)
 
     respond_to do |format|
       format.html # index.html.erb
