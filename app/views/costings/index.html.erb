@@ -1,6 +1,6 @@
 <h1>Cost data</h1>
 
-<table>
+<table border="1" cellspacing="5" cellpadding="5">
   <tr>
 	<th><b>Device</th>
 	<th><b>PC</th>
@@ -12,30 +12,30 @@
 	<th><b>AsmMat</th>
 	<th><b>AsmOhGroup</th>
 	<th><b>AsmInfoRec</th>
-	<!-- <th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th>
-	<th><b>Device</th> -->
+	<th><b>Tsmat</th>
+	<th><b>Tsohgroup</th>
+	<th><b>TstInfoRec</th>
+	<th><b>FgInfoRec</th>
+	<th><b>RwCost</th>
+	<th><b>WaferCost</th>
+	<th><b>PCostWafer</th>
+	<th><b>GrossDie</th>
+	<th><b>SortYield</th>
+	<th><b>NetGoodDie</th>
+	<th><b>ProbeTime</th>
+	<th><b>ProbeOverhead</th>
+	<th><b>DieCost</th>
+	<th><b>AsmOhCost</th>
+	<th><b>AsmSubcon</th>
+	<th><b>AsmYield</th>
+	<th><b>AsmCost</th>
+	<th><b>TstOhCost</th>
+	<th><b>TstSubcon</th>
+	<th><b>TstYield</th>
+	<th><b>TstCost</th>
+	<th><b>FgSubcon</th>
+	<th><b>FgYield</th>
+	<th><b>FGStdCost</th>
     <th></th>
     <th></th>
     <th></th>
@@ -53,30 +53,30 @@
 	<td><%= costing.asmmat %></td>
 	<td><%= costing.asmohgroup %></td>
 	<td><%= costing.asminforec %></td>
-	<!-- <td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td>
-	<td><%= costing.device %></td> -->
+	<td><%= costing.tsmat %></td>
+	<td><%= costing.tsohgroup %></td>
+	<td><%= costing.tstinforec %></td>
+	<td><%= costing.fginforec %></td>
+	<td><%= costing.rwcost %></td>
+	<td><%= costing.wafercost %></td>
+	<td><%= costing.pcostwafer %></td>
+	<td><%= costing.grossdie %></td>
+	<td><%= costing.sortyield %></td>
+	<td><%= costing.netgooddie %></td>
+	<td><%= costing.probe_time %></td>
+	<td><%= costing.probe_overhead %></td>
+	<td><%= costing.diecost %></td>
+	<td><%= costing.asm_ohcost %></td>
+	<td><%= costing.asm_subcon %></td>
+	<td><%= costing.asm_yield %></td>
+	<td><%= costing.asm_cost %></td>
+	<td><%= costing.tst_ohcost %></td>
+	<td><%= costing.tst_subcon %></td>
+	<td><%= costing.tst_yield %></td>
+	<td><%= costing.tst_cost %></td>
+	<td><%= costing.fg_subcon %></td>
+	<td><%= costing.fg_yield %></td>
+	<td><%= costing.fg_stdcost %></td>
     <td><%= link_to 'Show', costing %></td>
     <td><%= link_to 'Edit', edit_costing_path(costing) %></td>
     <td><%= link_to 'Destroy', costing, :confirm => 'Are you sure?', :method => :delete %></td>
