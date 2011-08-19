@@ -32,6 +32,7 @@ class MainController < ApplicationController
       end
     end
   end
+  
   def project_active
     @users=User.all
     @auth = session[:user_auth]
