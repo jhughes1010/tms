@@ -25,7 +25,7 @@ class CostController < ApplicationController
 end
 
 def write_csv_data(record)
-  column_array= [2,4,7,10,18,19,21,24,25,27,34,36,38,47,51,56,57,58,59,60,61,62,63,65,66,67,70,72,73,74,77,80,81,84]
+  column_array= [2,4,7,10,18,19,21,24,26,28,34,36,38,47,51,56,57,58,59,60,61,62,63,65,66,67,70,72,73,74,77,80,81,84]
   new_to_costing_db(record, column_array)
   #record.each do |x|
     #print x
@@ -60,20 +60,20 @@ def new_to_costing_db(record, column_array)
   r.grossdie = record[column_array[17]]
   r.sortyield = record[column_array[18]]
   r.netgooddie = record[column_array[19]]
-  r.probe_time = record[column_array[19]]
-  r.probe_overhead = record[column_array[20]]
-  r.diecost = record[column_array[21]]
-  r.asm_ohcost = record[column_array[22]]
-  r.asm_subcon = record[column_array[23]]
-  r.asm_yield = record[column_array[24]]
-  r.asm_cost = record[column_array[25]]
-  r.tst_ohcost = record[column_array[26]]
-  r.tst_subcon = record[column_array[27]]
-  r.tst_yield = record[column_array[28]]
-  r.tst_cost = record[column_array[29]]
-  r.fg_subcon = record[column_array[30]]
-  r.fg_yield = record[column_array[31]]
-  r.fg_stdcost = record[column_array[32]]
+  r.probe_time = record[column_array[20]]
+  r.probe_overhead = record[column_array[21]]
+  r.diecost = record[column_array[22]]
+  r.asm_ohcost = record[column_array[23]]
+  r.asm_subcon = record[column_array[24]]
+  r.asm_yield = record[column_array[25]]
+  r.asm_cost = record[column_array[26]]
+  r.tst_ohcost = record[column_array[27]]
+  r.tst_subcon = record[column_array[28]]
+  r.tst_yield = record[column_array[29]]
+  r.tst_cost = record[column_array[30]]
+  r.fg_subcon = record[column_array[31]]
+  r.fg_yield = record[column_array[32]]
+  r.fg_stdcost = record[column_array[33]]
   #puts record[column_array[0]]
   r.save
 end
