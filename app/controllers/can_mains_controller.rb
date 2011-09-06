@@ -2,7 +2,7 @@ class CanMainsController < ApplicationController
   # GET /can_mains
   # GET /can_mains.xml
   def index
-    @can_mains = CanMain.all
+    @can_mains = CanMain.can
 
     respond_to do |format|
       format.html # index.html.erb
