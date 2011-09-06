@@ -1,8 +1,8 @@
 class Costing < ActiveRecord::Base
   def self.search(params)
-    scoped
+    results = scoped
     results = self.where("device like ?", "%" + params[:device] + "%") if params[:device]
-    #products.where("price >= ?", params[:price_gt]) if params[:price_gt]
+    results = self.where("pc like ?", "%" + params[:pc] + "%") if params[:pc]
     #products.where("price <= ?", params[:price_lt]) if params[:price_lt]
     results
   end
