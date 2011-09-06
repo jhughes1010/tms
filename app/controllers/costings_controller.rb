@@ -3,6 +3,7 @@ class CostingsController < ApplicationController
   # GET /costings.xml
   def index
     @costings = Costing.search(params)
+    #@costings = Costing.first(10)
 
     respond_to do |format|
       format.html # index.html.erb

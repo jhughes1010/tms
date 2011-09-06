@@ -34,7 +34,7 @@ class CostController < ApplicationController
       column_array= [2,4,7,10,18,19,21,24,26,28,34,36,38,47,51,56,57,58,59,60,61,62,63,65,66,67,70,72,73,74,77,80,81,84]
       new_to_costing_db(record, column_array)
       #record.each do |x|
-      >>>>>>> 7aaceb2de644e10f520791a0b42f06f9fa5d900d
+      # >>>>>>> 7aaceb2de644e10f520791a0b42f06f9fa5d900d
       #print x
       #print "--"
       #end
