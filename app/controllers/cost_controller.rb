@@ -63,10 +63,11 @@ class CostController < ApplicationController
     r.tst_cost = record[column_array[30]]
     r.fg_subcon = record[column_array[31]]
     r.fg_yield = record[column_array[32]]
-    r.fg_stdcost = record[column_array[33]
+    r.fg_stdcost = record[column_array[33]]
     r.save
   end
   # Web report output
   def result
+    @cost = Costing.search(params)
   end
 end
