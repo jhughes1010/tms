@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<h2>
+			Die Cost Information
+		</h2>
+		<table width="30%">
+			<tr>
+				<td>
+					Internal Device
+				</td>
+				<td>
+					<%=c.wafer%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Wafer Cost
+				</td>
+				<td>
+					<%=c.wafercost%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					GDPW
+				</td>
+				<td>
+					<%=c.grossdie%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Model Sort Yield
+				</td>
+				<td>
+					<%=c.sortyield%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Net Die Per Wafer
+				</td>
+				<td>
+					<%=c.netgooddie%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Probe Hours
+				</td>
+				<td>
+					<%=c.probe_time%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Probe Cost
+				</td>
+				<td>
+					<%=c.pcostwafer%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Probe OH charge per Wafer
+				</td>
+				<td>
+					<%=c.probe_overhead%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Final Cost of Die
+				</td>
+				<td>
+					<%=c.diecost%>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
