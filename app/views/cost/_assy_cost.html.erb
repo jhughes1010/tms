@@ -5,79 +5,44 @@
 	</head>
 	<body>
 		<h2>
-			Die Cost Information
+			Assembly Cost Information
 		</h2>
 		<table width="30%">
 			<tr>
 				<td>
-					Internal Device
+					Package Type
 				</td>
 				<td>
-					<%=c.wafer%>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Wafer Cost
-				</td>
-				<td>
-					<%=c.wafercost%>
+					<%=c.asmmat%>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					GDPW
+					Assembly Cost
 				</td>
 				<td>
-					<%=c.grossdie%>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Model Sort Yield
-				</td>
-				<td>
-					<%=c.sortyield%>
+					<%=c.asm_cost%>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					Net Die Per Wafer
+					Assembly Yield
 				</td>
 				<td>
-					<%=c.netgooddie%>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Probe Hours
-				</td>
-				<td>
-					<%=c.probe_time%>
+					<%=c.asm_yield%>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					Probe Cost
+					Assembly OH Charge per Unit
 				</td>
 				<td>
-					<%=c.pcostwafer%>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Probe OH charge per Wafer
-				</td>
-				<td>
-					<%=c.probe_overhead%>
+					<%=c.asm_ohcost%>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					Final Cost of Die
-				</td>
-				<td>
-					<%=c.diecost%>
+					Final Cost of Assembly
 				</td>
 			</tr>
 		</table>

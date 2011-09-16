@@ -6,12 +6,9 @@ Device: <%= c.device %><br>
 <hr>
 <%= render :partial => 'die_cost', :locals => {:c => c} %>
 <hr>
-<h2>Assembly Cost Information</h2>
 <%= render :partial => 'assy_cost', :locals => {:c => c} %>
 <hr>
-<h2>Test Cost Information</h2>
 <%= render :partial => 'test_cost', :locals => {:c => c} %>
-<br>
 <hr>
 <hr>
 <%end%>

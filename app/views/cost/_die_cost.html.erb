@@ -1,9 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html>
-	<head>
-		<title></title>
-	</head>
-	<body>
+
 		<h2>
 			Die Cost Information
 		</h2>
@@ -13,7 +8,7 @@
 					Internal Device
 				</td>
 				<td>
-					<%=c.wafer%>
+					<%=c.wafer[0..4]%>
 				</td>
 			</tr>
 			<tr>
@@ -21,7 +16,7 @@
 					Wafer Cost
 				</td>
 				<td>
-					<%=c.wafercost%>
+					$<%=sprintf("%7.2f",c.wafercost)%>
 				</td>
 			</tr>
 			<tr>
@@ -37,7 +32,7 @@
 					Model Sort Yield
 				</td>
 				<td>
-					<%=c.sortyield%>
+					<%=c.sortyield%>%
 				</td>
 			</tr>
 			<tr>
@@ -61,7 +56,7 @@
 					Probe Cost
 				</td>
 				<td>
-					<%=c.pcostwafer%>
+					$<%=sprintf("%5.2f",c.pcostwafer)%>
 				</td>
 			</tr>
 			<tr>
@@ -69,7 +64,7 @@
 					Probe OH charge per Wafer
 				</td>
 				<td>
-					<%=c.probe_overhead%>
+					$<%=sprintf("%5.2f",c.probe_overhead)%>
 				</td>
 			</tr>
 			<tr>
@@ -77,9 +72,7 @@
 					Final Cost of Die
 				</td>
 				<td>
-					<%=c.diecost%>
+					$<%=sprintf("%5.2f",c.diecost)%>
 				</td>
 			</tr>
 		</table>
-	</body>
-</html>
