@@ -10,5 +10,10 @@ Device: <%= c.device %><br>
 <hr>
 <%= render :partial => 'test_cost', :locals => {:c => c} %>
 <hr>
+<%= render :partial => 'misc_cost', :locals => {:c => c} %>
+<hr>
+<%= render :partial => 'summary_cost', :locals => {:c => c} %>
+
+<hr>
 <hr>
 <%end%>
