@@ -3,6 +3,7 @@
 <table width="95%">
   <tr>
     <th>Project</th>
+	<th>Owner</th>
     <th>Key</th>
     <th>Tapeout</th>
     <th>Dr1</th>
@@ -18,6 +19,7 @@
 <% @projects.each do |project| %>
   <tr>
     <td><%= project.project %></td>
+    <td><%= project.owner %></td>
     <td><%= project.key %></td>
     <td><%= project.tapeout %></td>
     <td><%= project.dr1 %></td>
