@@ -4,6 +4,6 @@ class Project < ActiveRecord::Base
     self.order("tapeout").where("key = 't'")
   end
   def self.all_proj
-    self.order("owner, tapeout")
+    self.order("owner, tapeout, key DESC")
   end
 end
