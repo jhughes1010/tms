@@ -1,6 +1,6 @@
 class CreateCostings < ActiveRecord::Migration
   def self.up
-    create_table :costings do |t|
+    create_table( :costings, :force => true) do |t|
 
       t.timestamps
     end
