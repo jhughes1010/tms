@@ -250,3 +250,11 @@ h1 {
   font-size: 12px;
   list-style: square;
 }
+
+#report-list .list-line-even {
+  background:   #cccccc;
+}
+
+#report-list .list-line-odd {
+  background:   #aaaaaa;
+}

@@ -1,5 +1,5 @@
 <h1>Listing projects</h1>
-
+<div id="report-list">
 <table width="95%">
   <tr>
     <th>Project</th>
@@ -17,7 +17,7 @@
   </tr>
 
 <% @projects.each do |project| %>
-  <tr>
+  <tr class="<%= cycle('list-line-odd','list-line-even')%>">
     <td><%= project.project %></td>
     <td><%= project.owner %></td>
     <td><%= project.key %></td>
@@ -33,7 +33,7 @@
   </tr>
 <% end %>
 </table>
-
+</div>
 <br />
 
 <%= link_to 'New Project', new_project_path %>
