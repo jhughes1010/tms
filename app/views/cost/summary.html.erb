@@ -1,0 +1,15 @@
+<h1>Query Result</h1>
+<hr>
+<table width="30%">
+	<tr>
+		<th>
+			<b>Catalog</b>
+		</th>
+		<th>
+			<b>Internal Device<b>
+		</th>	
+		</tr>
+<% @cost.each do |c|%>
+<%= render :partial => 'tbl_overview', :locals => {:c => c} %>
+<%end%>
+</table>
