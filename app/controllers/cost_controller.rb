@@ -67,8 +67,9 @@ class CostController < ApplicationController
     r.save
   end
   # Web report output
+  # result/1/
   def result
-    #@cost = Costing.search(params)
+    @cost = Costing.find(params[:id])
   end
   def summary
     @cost = Costing.search(params)
