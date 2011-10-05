@@ -1,21 +1,17 @@
 class MainController < ApplicationController
+  before_filter :set_useful_globals
+
   def index
-    @full_name=session[:user_fullname]
-    @auth = session[:user_auth]
-    #email_user_task_report
   end
 
   def pto_current
-    @auth = session[:user_auth]
-    @users=User.all
     @outlook = 30
     @start=Date.today
     @stop = @start+ @outlook
     @ptos=Pto.upcoming_range(@start,@stop)
   end
+  
   def project_auto_priority
-    @users=User.all
-    @auth = session[:user_auth]
     unless @auth == 1
       @today=Date.today
       @today.to_s(:long)
@@ -27,47 +23,30 @@ class MainController < ApplicationController
         tasks.each do |t|
           t.priority=priority
           t.save
-          priority +=3  
+          priority +=3
         end
       end
     end
   end
-  
+
   def project_active
-    @users=User.all
-    @auth = session[:user_auth]
-    @today=Date.today
-    @today.to_s(:long)
-    #@users=User.all_order_by_fullname
-    @tasks=Task.all_active
-    @te = User.get_te
-    @tsk = Task.all_active2
+    @total_task_count=Task.all_active.count
+    @tasks = Task.all_active2
   end
 
   def project_active_past_due
-    @auth = session[:user_auth]
-    @today=Date.today
-    @today.to_s(:long)
-    @users=User.all
     @tasks=Task.all_active_past_due
   end
 
   def project_completed
     @supress_overdue_color = true
-    @auth = session[:user_auth]
-    @today=Date.today
-    @today.to_s(:long)
-    @users=User.all
     @tasks=Task.all_completed
   end
 
   def project_unassigned
-    @auth = session[:user_auth]
-    @today=Date.today
-    @today.to_s(:long)
-    @users=User.all
     @tasks=Task.all_unassigned
   end
+  
   def email_user_task_report
     @users=User.all
     #loop through users
@@ -81,6 +60,7 @@ class MainController < ApplicationController
       end
     end
   end
+  
   def project_my_active
     @auth = session[:user_auth]
     @user_id=session[:user_id]
@@ -95,6 +75,7 @@ class MainController < ApplicationController
     @tasks_by_me=Task.all_my_active_by_me(@user_id)
 
   end
+  
   def project_my_active_past_due
     @auth = session[:user_auth]
     @user_id=session[:user_id]
@@ -103,5 +84,15 @@ class MainController < ApplicationController
     @today.to_s(:long)
     @users=User.all
     @tasks=Task.all_my_active_past_due(@user_id)
+  end
+  
+  protected
+  
+  def set_useful_globals
+    @auth = session[:user_auth]
+    @user_id=session[:user_id]
+    @full_name=session[:user_fullname]
+    @today=Date.today
+    @today.to_s(:long)
   end
 end

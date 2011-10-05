@@ -8,11 +8,11 @@
 			Active Tasks:
 		</h1>
 		<p>
-			<%= @today.to_s(:long) %>: <%= @tasks.count%> tasks listed
+			<%= @today.to_s(:long) %>: <%= @total_task_count%> tasks listed
 		</p>
 		<hr>
 		<div id="accordion">
-			<% @tsk.each_pair do |assignee_id, tasks| %>
+			<% @tasks.each_pair do |assignee_id, tasks| %>
 			<% u = User.find(assignee_id.to_i)%>
 			<h3><a href="#"><%= u.fullname %>: <%= tasks.count%> tasks listed</a></h3>
 			<div id="product-list">
