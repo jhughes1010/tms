@@ -46,4 +46,23 @@ class Task < ActiveRecord::Base
     t = self.where("priority IS NULL")
     t.group_by(&:assignee_id)
   end
+  #
+  # new section for 10-04-2011
+  #**
+  #rework and refactor all queries
+  def self.get_tasks(params)
+    #param definitions
+    #a_id: single id filter
+    #complete: complete filter
+    #category: category filter
+    #sort_order: sort_by assignee, requester, ...
+    results = scoped
+    results = results.where("assignee_id like ?", "%" + params[:a_id] + "%") if params[:a_id]
+    results = results.where("complete like ?", "%" + params[:complete] + "%") if params[:complete]
+    results = results.where("category like ?", "%" + params[:category] + "%") if params[:category]
+    results = results.order("assignee_id, category, priority") if params[:sort_order]=='assignee'
+    results = results.order("requester_id, category, priority") if params[:sort_order]=='requester'
+    results
+  end
+
 end
