@@ -1,0 +1,60 @@
+#product-list
+  %b
+    Project Totals for #{@key_projects.project}
+  %br
+    %table
+      %tr
+        %th DR1
+        %th DR2
+        %th DR3
+        %th DR4
+        %th DR5
+      %tr
+        %td C #{@key_projects.dr1}
+        %td C #{@key_projects.dr2}
+        %td C #{@key_projects.dr3}
+        %td C #{@key_projects.dr4}
+        %td C #{@key_projects.dr5}
+    %hr
+      %table
+        = render :partial => "header_month", :locals => {:date => @date}
+        = render :partial => "project_totals", :locals => {:pt => @project_totals}
+      %hr
+        %br
+          %br
+            / Department Totals
+            %b Department Totals
+            %table
+              = render :partial => "header_month_dept_summary", :locals => {:date => @date}
+              = render :partial => "project_department_totals", :locals => {:pt => @layout, :department => "Layout Engineering"}
+              = render :partial => "project_department_totals", :locals => {:pt => @design, :department => "Design Engineering"}
+              = render :partial => "project_department_totals", :locals => {:pt => @pe, :department => "Product/Test Engineering"}
+              = render :partial => "project_department_totals", :locals => {:pt => @application, :department => "Applications Engineering"}
+            %hr
+              %br
+                %br
+                  %br
+                    %br
+                      %b Resource Details
+                      - tmp = @all_details[0].department
+                      %table
+                        = render :partial => "header_month_dept_all", :locals => {:date => @date}
+                        - @all_details.each do |k|
+                          - if tmp != k.department
+                            %tr
+                              %td -----
+                          %tr
+                            %td
+                              = k.department
+                              - tmp=k.department
+                            %td
+                              = k.name
+                            %td
+                              = k.function
+                            - for i in (0..14)
+                              %td
+                                - cell = Resource.get_month(k.project,k.department,k.name,k.function,i)
+                                - if cell.empty? ==true
+                                  \-
+                                - else
+                                  = cell[0].forecast

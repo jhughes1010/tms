@@ -92,7 +92,8 @@ class ResourceController < ApplicationController
       header = 1 if header == 0
     end
   end
-  def import_project
+  #no longer needed as projects are in the database
+  def dnu_import_project
     #initial variables
     header = 0
     #filenames

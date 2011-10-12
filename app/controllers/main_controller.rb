@@ -19,7 +19,7 @@ class MainController < ApplicationController
       @tsk = Task.all_active3
       #Spread out priority numbers
       @tsk.each_pair do |assignee_id, tasks|
-        priority=1
+        priority=2
         tasks.each do |t|
           t.priority=priority
           t.save
