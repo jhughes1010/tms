@@ -3,32 +3,7 @@ class MainController < ApplicationController
 
   def index
   end
-
-  def pto_current
-    @outlook = 30
-    @start=Date.today
-    @stop = @start+ @outlook
-    @ptos=Pto.upcoming_range(@start,@stop)
-  end
   
-  def project_auto_priority
-    unless @auth == 1
-      @today=Date.today
-      @today.to_s(:long)
-      @te = User.get_te
-      @tsk = Task.all_active3
-      #Spread out priority numbers
-      @tsk.each_pair do |assignee_id, tasks|
-        priority=2
-        tasks.each do |t|
-          t.priority=priority
-          t.save
-          priority +=3
-        end
-      end
-    end
-  end
-
   def project_active
     @total_task_count=Task.all_active.count
     @tasks = Task.all_active2
@@ -62,28 +37,39 @@ class MainController < ApplicationController
   end
   
   def project_my_active
-    @auth = session[:user_auth]
-    @user_id=session[:user_id]
-    @full_name=session[:user_fullname]
-
-    @today=Date.today
-    @today.to_s(:long)
     @users=User.all
-    #tasks assigned to me
     @tasks=Task.all_my_active(@user_id)
-    #tasks assigned by me
     @tasks_by_me=Task.all_my_active_by_me(@user_id)
-
   end
   
   def project_my_active_past_due
-    @auth = session[:user_auth]
-    @user_id=session[:user_id]
-    @full_name=session[:user_fullname]
-    @today=Date.today
-    @today.to_s(:long)
     @users=User.all
     @tasks=Task.all_my_active_past_due(@user_id)
+  end
+
+  def pto_current
+    @outlook = 30
+    @start=@today
+    @stop = @start+ @outlook
+    @ptos=Pto.upcoming_range(@start,@stop)
+  end
+  
+  def project_auto_priority
+    unless @auth == 1
+      #@today=Date.today
+      #@today.to_s(:long)
+      @te = User.get_te
+      @tsk = Task.all_active3
+      #Spread out priority numbers
+      @tsk.each_pair do |assignee_id, tasks|
+        priority=2
+        tasks.each do |t|
+          t.priority=priority
+          t.save
+          priority +=3
+        end
+      end
+    end
   end
   
   protected
