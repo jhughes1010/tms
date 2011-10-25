@@ -77,7 +77,7 @@ class ResourceController < ApplicationController
     #initial variables
     header = 0
     #filenames
-    import_file = "import/resource_data.csv"
+    import_file = "import/2011q3.csv"
     puts
     puts "============================================="
     puts "CSV importer for Resource Allocation database"
@@ -132,13 +132,16 @@ class ResourceController < ApplicationController
       #print " "
       0.upto(4){
         |y|
-        print record[y] + " " if record[y]
+        #print record[y] + " " if record[y]
       }
       if x < 8
         print ":Actual   "
       else
-        print ":Forecast "
+        #print ":Forecast "
         date_current=date_start.months_since(x-8)
+        if record[x].nil?
+          record[x]=0
+        end
         new_to_db(date_current,record[0], record[1],record[2],record[3],record[4],record[x])
       end
       #puts record[x]

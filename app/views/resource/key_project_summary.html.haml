@@ -10,11 +10,11 @@
         %th DR4
         %th DR5
       %tr
-        %td C #{@key_projects.dr1}
-        %td C #{@key_projects.dr2}
-        %td C #{@key_projects.dr3}
-        %td C #{@key_projects.dr4}
-        %td C #{@key_projects.dr5}
+        %td #{@key_projects.dr1}
+        %td #{@key_projects.dr2}
+        %td #{@key_projects.dr3}
+        %td #{@key_projects.dr4}
+        %td #{@key_projects.dr5}
     %hr
       %table
         = render :partial => "header_month", :locals => {:date => @date}
@@ -55,6 +55,6 @@
                               %td
                                 - cell = Resource.get_month(k.project,k.department,k.name,k.function,i)
                                 - if cell.empty? ==true
-                                  \-
+                                  \0.0
                                 - else
                                   = cell[0].forecast
