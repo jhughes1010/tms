@@ -84,6 +84,21 @@ h1 {
 #product-list .list-line-odd_past_due {
   background:   #E56E94;
 }
+#product-list .dr1 {
+	background: #006000;
+}
+#product-list .dr2 {
+	background: #008000;
+}
+#product-list .dr3 {
+	background: #00A000;
+}
+#product-list .dr4 {
+	background: #00C000;
+}
+#product-list .dr5 {
+	background: #00FF00;
+}
 /* START:mainlayout */
 /* Styles for main page */
 
