@@ -15,18 +15,15 @@ class ResourceController < ApplicationController
     if params[:p_id]
       p=params[:p_id].to_i
       @key_projects = Project.find(p)
+      @dr_month = find_dr_offset(@key_projects)
       @project_totals = project_totals(@key_projects.project)
       #Get Department Totals
       @layout = department_totals(@key_projects.project,"Layout")
       @design = department_totals(@key_projects.project,"Design")
       @pe = department_totals(@key_projects.project,"Product")
-      #@firmware = department_totals(@key_projects.project,"Firmware")
       @application = department_totals(@key_projects.project,"Applications")
       #Get Department Details
       @all_details = Resource.project_detail_name(Date.today.at_beginning_of_month,@key_projects.project)
-      #puts "Here it is"
-      #puts @all_details.count
-      
     end
   end
   def project_totals(project)
@@ -187,5 +184,33 @@ class ResourceController < ApplicationController
     record.dr4 = dr4
     record.dr5 = dr5
     record.save
+  end
+
+  def find_dr_offset(project)
+    dr_month_array = Array.new(5)
+    today = Date.today
+    beginning_of_month = today.beginning_of_month
+    dr5_m = project.dr5.beginning_of_month if project.dr5 != nil
+    dr4_m = project.dr4.beginning_of_month if project.dr4 != nil
+    dr3_m = project.dr3.beginning_of_month if project.dr3 != nil
+    dr2_m = project.dr2.beginning_of_month if project.dr2 != nil
+    dr1_m = project.dr1.beginning_of_month if project.dr1 != nil
+
+    0.upto(14) {
+      |m|
+      projected_date = beginning_of_month.months_since(m)
+      if dr5_m == projected_date
+        dr_month_array[4]=m
+      elsif dr4_m == projected_date
+        dr_month_array[3]=m
+      elsif dr3_m == projected_date
+        dr_month_array[2]=m
+      elsif dr2_m == projected_date
+        dr_month_array[1]=m
+      elsif dr1_m == projected_date
+        dr_month_array[0]=m
+      end
+    }
+    dr_month_array
   end
 end

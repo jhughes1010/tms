@@ -1,7 +1,12 @@
-<tr><td width="20%"><%=department%>
+		<div id ="product-list">
+			<tr><td width="20%"><%=department%>
 	</td>
     <%for i in (0..16) %>
-    <td>
+		<% if @dr_month[4] == i%>
+		<td class = "dr5">
+			<% else %>
+			<td>
+		<% end %>
         <%= sprintf("%5.1f",pt[i])%>
     </td>
     <%end %>

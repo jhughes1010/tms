@@ -53,18 +53,38 @@
       - if tmp != k.department
         %tr
           %td -----
-        %tr
-          %td
-            = k.department
-            - tmp=k.department
-          %td
-            = k.name
-          %td
-            = k.function
-            - for i in (0..14)
-          %td
-            - cell = Resource.get_month(k.project,k.department,k.name,k.function,i)
-              - if cell.empty? ==true
-                \0.0
-              - else
+      %tr
+        %td
+          = k.department
+          - tmp=k.department
+        %td
+          = k.name
+        %td
+          = k.function
+        - for i in (0..14)
+ 
+
+          - cell = Resource.get_month(k.project,k.department,k.name,k.function,i)
+          - if cell.empty? ==true
+            %td -
+          - else
+            - if cell[0].forecast <= 0
+              - cell[0].forecast = 'no'
+            - if @dr_month[4] == i
+              %td
+                .dr5 #{cell[0].forecast}
+            - elsif @dr_month[3] == i
+              %td
+                .dr4 #{cell[0].forecast}
+            - elsif @dr_month[2] == i
+              %td
+                .dr3 #{cell[0].forecast}
+            - elsif @dr_month[1] == i
+              %td
+                .dr2 #{cell[0].forecast}
+            - elsif @dr_month[0] == i
+              %td
+                .dr1 #{cell[0].forecast}
+            - else
+              %td
                 = cell[0].forecast
