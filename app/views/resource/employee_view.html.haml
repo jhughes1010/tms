@@ -1,8 +1,9 @@
-%h1 Individual Employee Query
-%hr
-= @resources.count
-records found
-%table
-  - @resources.each_pair do |project_name, usage|
-    %tr
-      = render :partial => "employee_details", :locals => {:usage => usage}
+#product-list
+  %h1 Individual Employee Query
+  %hr
+  = @resources.count
+  records found
+  %table
+    - @resources.each_pair do |project_name, usage|
+      %tr
+        = render :partial => "employee_details", :locals => {:usage => usage}

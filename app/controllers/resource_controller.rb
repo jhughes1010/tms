@@ -27,7 +27,7 @@ class ResourceController < ApplicationController
     end
   end
   def employee_view
-    start_date = Date.today.beginning_of_month
+    start_date = Date.today.beginning_of_month.months_ago(1)
     employee_name = "James Hughes"
     @resources = Resource.tasks_by(employee_name, start_date)
   end
