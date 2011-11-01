@@ -1,0 +1,9 @@
+%td
+  = usage[0].name
+%td
+  = usage[0].project
+%td
+  = usage[0].function
+- for i in (0..14)
+  %td
+    = usage[i].forecast if usage[i]

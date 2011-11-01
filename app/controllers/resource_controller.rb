@@ -26,6 +26,11 @@ class ResourceController < ApplicationController
       @all_details = Resource.project_detail_name(Date.today.at_beginning_of_month,@key_projects.project)
     end
   end
+  def employee_view
+    start_date = Date.today.beginning_of_month
+    employee_name = "James Hughes"
+    @resources = Resource.tasks_by(employee_name, start_date)
+  end
   def project_totals(project)
     #Project Totals
     @date = Date.today
@@ -33,8 +38,8 @@ class ResourceController < ApplicationController
     @date_start = @date.at_beginning_of_month
     dummy = Resource.project_detail(@date_start,project)
     count = dummy.count
-    puts count
-    puts dummy
+    #puts count
+    #puts dummy
     total = Resource.project_total(@date_start,project)
     unless count < 15
       0.upto(14){

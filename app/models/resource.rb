@@ -20,4 +20,11 @@ class Resource < ActiveRecord::Base
     date=Date.today.beginning_of_month + date_offset.months
     self.where("project = ? AND department = ? AND name = ? AND function = ? AND date = ?" ,project, department,name,function, date)
   end
+  def self.tasks_by(employee_name, date)
+    t = self.where("name = ? AND date >= ? AND date < ?", employee_name, date, date+15.months).order("function, date")
+    #self.where("project = ? AND department LIKE ? AND date >= ? AND date < ?" ,project, "%#{department}%", date, date +15.months).order("date")
+    #self.where("name = 'James Hughes'")
+    #t = self.where("complete = 'f' AND assignee_id IS NOT NULL AND priority < 99 ").order("assignee_id, category, priority, scd")
+    t.group_by(&:function)
+  end
 end
