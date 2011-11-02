@@ -58,7 +58,9 @@
           = k.department
           - tmp=k.department
         %td
-          = k.name
+          -# %a{ :href => 'http://www.mozilla.com/en-US/firefox/' }Employee name
+          %a{ :href => "employee_view?name=#{k.name}" }
+            = k.name
         %td
           = k.function
         - for i in (0..14)

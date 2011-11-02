@@ -1,5 +1,8 @@
 class ResourceController < ApplicationController
   require "csv"
+  
+  before_filter :set_useful_globals
+  
   def index
     #Work through projects
     @key_projects = Project.k_proj
@@ -27,15 +30,34 @@ class ResourceController < ApplicationController
     end
   end
   def employee_view
+    employee_name = params[:name]
     start_date = Date.today.beginning_of_month.months_ago(1)
-    employee_name = "James Hughes"
     @resources = Resource.tasks_by(employee_name, start_date)
   end
+  def project_totals_wip(project)
+    #Project Totals
+    #project_totals = Array.new(17,0)
+    @date_start = @today.at_beginning_of_month
+    #dummy = Resource.project_detail(@date_start,project)
+    #count = dummy.count
+    #puts count
+    #puts dummy
+    total = Resource.project_total(@date_start,project)
+    unless count < 15
+      0.upto(14){
+        |x|
+        project_totals[x] = total[x].forecast
+        project_totals[15] += total[x].forecast
+        puts project_totals[x]
+      }
+      project_totals[16] = project_totals[15]/12
+    end
+    project_totals
+  end  
   def project_totals(project)
     #Project Totals
-    @date = Date.today
     project_totals = Array.new(17,0)
-    @date_start = @date.at_beginning_of_month
+    @date_start = @today.at_beginning_of_month
     dummy = Resource.project_detail(@date_start,project)
     count = dummy.count
     #puts count
@@ -128,7 +150,7 @@ class ResourceController < ApplicationController
     #write new record to database
     11.upto(25){
       |x|
-      date = Date.today
+      date = @today
       date_start = date.at_beginning_of_month - 3.months
       #print date_start
       #print " "
@@ -193,8 +215,8 @@ class ResourceController < ApplicationController
 
   def find_dr_offset(project)
     dr_month_array = Array.new(5)
-    today = Date.today
-    beginning_of_month = today.beginning_of_month
+    #today = Date.today
+    beginning_of_month = @today.beginning_of_month
     dr5_m = project.dr5.beginning_of_month if project.dr5 != nil
     dr4_m = project.dr4.beginning_of_month if project.dr4 != nil
     dr3_m = project.dr3.beginning_of_month if project.dr3 != nil
@@ -217,5 +239,15 @@ class ResourceController < ApplicationController
       end
     }
     dr_month_array
+  end
+  
+  protected
+  
+  def set_useful_globals
+    @auth = session[:user_auth]
+    @user_id=session[:user_id]
+    @full_name=session[:user_fullname]
+    @today=Date.today.months_ago(1)
+    @today.to_s(:long)
   end
 end

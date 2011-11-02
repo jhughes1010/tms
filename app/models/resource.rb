@@ -1,7 +1,7 @@
 class Resource < ActiveRecord::Base
 
   def self.project_total(date,project)
-    self.where("project = ? AND date >= ? AND date < ?" ,project, date, date +15.months).order("date").select("sum (forecast) as forecast").group("date")
+    self.where("project = ? AND date >= ? AND date < ?" ,project, date, date +15.months).order("date").select("date, sum (forecast) as forecast").group("date")
   end
   def self.project_detail(date,project)
     self.where("project = ? AND date >= ? AND date < ?" ,project, date, date +15.months).order("date")
