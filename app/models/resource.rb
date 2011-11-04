@@ -16,15 +16,15 @@ class Resource < ActiveRecord::Base
   def self.department_detail(date,project,department)
     self.where("project = ? AND department LIKE ? AND date >= ? AND date < ?" ,project, "%#{department}%", date, date +15.months).order("date")
   end
-  def self.get_month(project,department,name,function,date_offset)
-    date=Date.today.beginning_of_month + date_offset.months
+  def self.get_month(project,department,name,function,today,date_offset)
+    date=today.beginning_of_month + date_offset.months
     self.where("project = ? AND department = ? AND name = ? AND function = ? AND date = ?" ,project, department,name,function, date)
   end
   def self.tasks_by(employee_name, date)
-    t = self.where("name = ? AND date >= ? AND date < ?", employee_name, date, date+15.months).order("function, date")
+    t = self.where("name = ? AND date >= ? AND date < ?", employee_name, date, date+15.months).order("project, function, date")
     #self.where("project = ? AND department LIKE ? AND date >= ? AND date < ?" ,project, "%#{department}%", date, date +15.months).order("date")
     #self.where("name = 'James Hughes'")
     #t = self.where("complete = 'f' AND assignee_id IS NOT NULL AND priority < 99 ").order("assignee_id, category, priority, scd")
-    t.group_by(&:function)
+    t.group_by(&:project)
   end
 end

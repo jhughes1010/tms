@@ -26,12 +26,12 @@ class ResourceController < ApplicationController
       @pe = department_totals(@key_projects.project,"Product")
       @application = department_totals(@key_projects.project,"Applications")
       #Get Department Details
-      @all_details = Resource.project_detail_name(Date.today.at_beginning_of_month,@key_projects.project)
+      @all_details = Resource.project_detail_name(@today.at_beginning_of_month,@key_projects.project)
     end
   end
   def employee_view
     employee_name = params[:name]
-    start_date = Date.today.beginning_of_month.months_ago(1)
+    start_date = @today.beginning_of_month
     @resources = Resource.tasks_by(employee_name, start_date)
   end
   def project_totals_wip(project)
@@ -76,7 +76,7 @@ class ResourceController < ApplicationController
   end
   def department_totals(project,department)
     #Department Totals
-    @date = Date.today
+    @date = @today
     dept_totals = Array.new(17,0)
     @date_start = @date.at_beginning_of_month
     dummy = Resource.department_detail(@date_start,project, department)

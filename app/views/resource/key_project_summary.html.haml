@@ -66,7 +66,7 @@
         - for i in (0..14)
  
 
-          - cell = Resource.get_month(k.project,k.department,k.name,k.function,i)
+          - cell = Resource.get_month(k.project,k.department,k.name,k.function,@today,i)
           - if cell.empty? ==true
             %td -
           - else
