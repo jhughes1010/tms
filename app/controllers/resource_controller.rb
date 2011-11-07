@@ -1,8 +1,8 @@
 class ResourceController < ApplicationController
   require "csv"
-  
+
   before_filter :set_useful_globals
-  
+
   def index
     #Work through projects
     @key_projects = Project.k_proj
@@ -53,7 +53,7 @@ class ResourceController < ApplicationController
       project_totals[16] = project_totals[15]/12
     end
     project_totals
-  end  
+  end
   def project_totals(project)
     #Project Totals
     project_totals = Array.new(17,0)
@@ -139,25 +139,18 @@ class ResourceController < ApplicationController
   #
   #
   def stack_data(line)
-    #puts line
-    #set_nil_to_zero(line)
     write_record(line)
+    update_record(line)
   end
   #
   #
   #
   def write_record(record)
     #write new record to database
-    11.upto(25){
+    date_start = @today.at_beginning_of_month - 3.months
+    8.upto(25){
       |x|
-      date = @today
-      date_start = date.at_beginning_of_month - 3.months
-      #print date_start
-      #print " "
-      0.upto(4){
-        |y|
-        #print record[y] + " " if record[y]
-      }
+      #work through forecast data
       if x < 8
         print ":Actual   "
       else
@@ -168,16 +161,22 @@ class ResourceController < ApplicationController
         end
         new_to_db(date_current,record[0], record[1],record[2],record[3],record[4],record[x])
       end
-      #puts record[x]
-
     }
   end
-  #Write the project.csv file to the project.db
-  def write_project_record(record)
-    new_to_project_db(record[0], record[1],record[2],record[3],record[4],record[5],record[6],record[7])
-    puts record[0]
-    puts record[2]
+
+  def update_record  (record)
+    date_start = @today.at_beginning_of_month - 3.months
+    0.upto(2){
+      |m|
+      date_current=date_start.months_since(m)
+      find_record_enter_actual(date_current,record[0], record[1],record[3],record[4],record[m+5])
+    }
   end
+
+  #Write the project.csv file to the project.db
+  #def write_project_record(record)
+  # new_to_project_db(record[0], record[1],record[2],record[3],record[4],record[5],record[6],record[7])
+  #end
   #
   #
   #
@@ -195,6 +194,26 @@ class ResourceController < ApplicationController
     record.forecast = time
     record.save
   end
+  def find_record_enter_actual(date,dept,name,project,function,time)
+    record = Resource.update_actual(date,dept,name,project,function)
+    puts record.count
+    puts record[0].id
+    puts record[0].name
+    #id = record[0].id
+    #r = Resource.find(id)
+    #if time.nil?
+      #time = 0
+    #end
+    #r.actual = 3 #time
+    #r.save
+
+  end
+
+  #
+  #
+  #
+  #
+  #
   def new_to_project_db(project,key,tapeout,dr1,dr2,dr3,dr4,dr5)
     record = Project.new
     record.project = project
@@ -240,9 +259,9 @@ class ResourceController < ApplicationController
     }
     dr_month_array
   end
-  
+
   protected
-  
+
   def set_useful_globals
     @auth = session[:user_auth]
     @user_id=session[:user_id]

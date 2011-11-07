@@ -27,4 +27,9 @@ class Resource < ActiveRecord::Base
     #t = self.where("complete = 'f' AND assignee_id IS NOT NULL AND priority < 99 ").order("assignee_id, category, priority, scd")
     t.group_by(&:project)
   end
+  def self.update_actual(date,dept,name,project,function)
+    self.where("date = ? AND department = ? and name = ? AND project = ? AND function = ?",date,dept,name,project,function)
+    
+  end
+  
 end
