@@ -1,0 +1,28 @@
+#product-list
+  %h1 Actual vs. Forecast for Last Quarter
+  %table
+    %tr
+      %th Project
+      %th Department
+      %th Actual
+      %th Forecast
+      %th Variance
+    %colgroup
+      -@avf.each do |a|
+        - kp_flag = false
+        - @key_projects.each do |kp|
+          - if kp.project == a.project
+            - kp_flag = true
+        -# unless a.actual == 0 && a.forecast ==0  || kp_flag == false
+        - unless kp_flag == false
+          %tr
+            %td
+              = a.department
+            %td 
+              = a.project
+            %td
+              = sprintf("%5.1f",a.actual)
+            %td
+              = sprintf("%5.1f",a.forecast)
+            %td  
+              = sprintf("%5.1f",a.actual - a.forecast)

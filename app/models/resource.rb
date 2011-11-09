@@ -28,8 +28,11 @@ class Resource < ActiveRecord::Base
     t.group_by(&:project)
   end
   def self.update_actual(date,dept,name,project,function)
-    self.where("date = ? AND department = ? and name = ? AND project = ? AND function = ?",date,dept,name,project,function)
-    
+    self.where("date = ? AND department = ? and name = ? AND project = ? AND function = ?",date,dept,name,project,function).first
   end
+  def self.avf(start, span)
+    self.where("date >= ? AND date < ?" ,start, start +span.months).order("department, project, date").select("department,project,date, sum (forecast) as forecast, sum (actual) as actual").group("project, department")   
+  end
+  
   
 end

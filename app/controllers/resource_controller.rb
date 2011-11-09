@@ -34,6 +34,12 @@ class ResourceController < ApplicationController
     start_date = @today.beginning_of_month
     @resources = Resource.tasks_by(employee_name, start_date)
   end
+  def actual
+    start_date = @today.beginning_of_month.months_ago(3)
+    @key_projects = Project.k_proj
+    @avf = Resource.avf(start_date,3)
+  end
+  
   def project_totals_wip(project)
     #Project Totals
     #project_totals = Array.new(17,0)
@@ -196,17 +202,14 @@ class ResourceController < ApplicationController
   end
   def find_record_enter_actual(date,dept,name,project,function,time)
     record = Resource.update_actual(date,dept,name,project,function)
-    puts record.count
-    puts record[0].id
-    puts record[0].name
-    #id = record[0].id
-    #r = Resource.find(id)
-    #if time.nil?
-      #time = 0
-    #end
-    #r.actual = 3 #time
-    #r.save
-
+    #puts record.count
+    puts record.id
+    puts record.name
+    if time.nil?
+      time = 0
+    end
+    record.actual = time
+    record.save
   end
 
   #
