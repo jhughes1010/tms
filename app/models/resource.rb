@@ -28,7 +28,7 @@ class Resource < ActiveRecord::Base
     self.where("date = ? AND department = ? and name = ? AND project = ? AND function = ?",date,dept,name,project,function).first
   end
   def self.avf(start, span)
-    self.where("date >= ? AND date < ?" ,start, start +span.months).order("department, project, date").select("department,project,date, sum (forecast) as forecast, sum (actual) as actual").group("project, department")   
+    self.where("date >= ? AND date < ?" ,start, start +span.months).order("department, project").select("department,project, sum (forecast) as forecast, sum (actual) as actual").group("project, department")   
   end
   
   
