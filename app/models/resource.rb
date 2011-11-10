@@ -22,9 +22,6 @@ class Resource < ActiveRecord::Base
   end
   def self.tasks_by(employee_name, date)
     t = self.where("name = ? AND date >= ? AND date < ?", employee_name, date, date+15.months).order("project, function, date")
-    #self.where("project = ? AND department LIKE ? AND date >= ? AND date < ?" ,project, "%#{department}%", date, date +15.months).order("date")
-    #self.where("name = 'James Hughes'")
-    #t = self.where("complete = 'f' AND assignee_id IS NOT NULL AND priority < 99 ").order("assignee_id, category, priority, scd")
     t.group_by(&:project)
   end
   def self.update_actual(date,dept,name,project,function)

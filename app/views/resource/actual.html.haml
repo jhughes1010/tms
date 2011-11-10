@@ -8,13 +8,19 @@
       %th Forecast
       %th Variance
     %colgroup
+      - prior_department = "none"
       -@avf.each do |a|
         - kp_flag = false
+
         - @key_projects.each do |kp|
           - if kp.project == a.project
             - kp_flag = true
-        -# unless a.actual == 0 && a.forecast ==0  || kp_flag == false
-        - unless kp_flag == false
+        - unless a.actual == 0 && a.forecast ==0  || kp_flag == false
+          - unless prior_department == a.department
+            %tr
+              %td
+                \-
+          - prior_department = a.department
           %tr
             %td
               = a.department
