@@ -46,7 +46,7 @@
   %br
   %br
   %b Resource Details
-  - if @all_details != nil
+  - if @all_details[0]
     = puts @all_details
     - tmp = @all_details[0].department
     %table
@@ -72,7 +72,7 @@
             - if cell.empty? ==true
               %td -
             - else
-              - if cell[0].forecast <= 0
+              - unless cell[0].forecast
                 - cell[0].forecast = 'no'
               - if @dr_month[4] == i
                 %td
