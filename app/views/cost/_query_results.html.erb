@@ -1,0 +1,14 @@
+				<tr>
+					<td>
+						<%=h query_results.device%>
+					</td>
+					<td>
+						<%=h query_results.wafer[0..4]%>
+					</td>
+					<td>
+						<%=h sprintf("%5.3f",query_results.fg_stdcost)%>
+					</td>
+					<td>
+						<%= link_to 'Show', query_results %>
+					</td>
+				</tr>

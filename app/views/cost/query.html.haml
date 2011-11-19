@@ -1,0 +1,23 @@
+%h1 Query Costing Database
+-form_tag do
+  %p
+    = label_tag(:device, "Device:")
+    = text_field_tag(:device)
+  %p
+    = label_tag(:tab, "Tab:")
+    = text_field_tag(:tab)
+  %p
+    = label_tag(:pc, "Product Family:")
+    = text_field_tag(:pc)
+  = submit_tag("Search")
+
+-if request.post?
+  %hr
+  Results
+  = @cost.count
+  %table{:style=>"border: 1px; width: 50%"}
+    = render :partial => 'query_results_header'
+    = render :partial => 'query_results', :collection => @cost  
+
+
+
