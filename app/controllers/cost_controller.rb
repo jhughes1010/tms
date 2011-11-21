@@ -71,7 +71,7 @@ class CostController < ApplicationController
   def result
     @cost = Costing.find(params[:id])
   end
-  def summary
+  def query
     @cost = Costing.search(params)
   end
 end
