@@ -72,6 +72,7 @@ class CostController < ApplicationController
     @cost = Costing.find(params[:id])
   end
   def query
+    @dev = params[:device]
     @cost = Costing.search(params)
   end
 end
