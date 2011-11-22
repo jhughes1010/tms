@@ -3,7 +3,9 @@
 						<%=h query_results.device%>
 					</td>
 					<td>
+						<% if query_results.wafer %>
 						<%=h query_results.wafer[0..4]%>
+						<% end %>
 					</td>
 					<td>
 						<%=h sprintf("%5.3f",query_results.fg_stdcost)%>

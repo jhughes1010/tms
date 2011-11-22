@@ -30,4 +30,5 @@ gem 'fastercsv'
 # group :development, :test do
 #   gem 'webrat'
 gem 'pdfkit'
+gem "haml"
 # end
