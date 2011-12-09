@@ -1,4 +1,7 @@
 class TasksController < ApplicationController
+  
+  before_filter :set_useful_globals
+  
   # GET /tasks
   # GET /tasks.xml
   def index
@@ -13,7 +16,7 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.xml
   def show
-    @auth = session[:user_auth]
+    #@auth = session[:user_auth]
     @task = Task.find(params[:id])
 
     respond_to do |format|
@@ -25,9 +28,9 @@ class TasksController < ApplicationController
   # GET /tasks/new
   # GET /tasks/new.xml
   def new
-    @full_name=session[:user_fullname]
-    @user_id=session[:user_id]
-    @auth=session[:auth_level]
+    #@full_name=session[:user_fullname]
+    #@user_id=session[:user_id]
+    #@auth=session[:user_auth]
     @requesters=User.requester_list
     @assignees=User.assignee_list
     @task = Task.new
@@ -40,7 +43,7 @@ class TasksController < ApplicationController
 
   # GET /tasks/1/edit
   def edit
-    @auth = session[:user_auth]
+    #@auth = session[:user_auth]
     @requesters=User.requester_list
     @assignees=User.assignee_list
     @task = Task.find(params[:id])
@@ -49,7 +52,7 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.xml
   def create
-    @full_name=session[:user_fullname]
+    #@full_name=session[:user_fullname]
     @task = Task.new(params[:task])
     #deliver the mail
     UserMailer.task_entry_confirmation(session[:user_id],@task).deliver
@@ -92,5 +95,15 @@ class TasksController < ApplicationController
       format.html { redirect_to(tasks_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  protected
+  
+  def set_useful_globals
+    @auth = session[:user_auth]
+    @user_id=session[:user_id]
+    @full_name=session[:user_fullname]
+    @today=Date.today
+    @today.to_s(:long)
   end
 end
