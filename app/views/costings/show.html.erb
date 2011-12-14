@@ -32,5 +32,50 @@ Device: <%= @costing.device %><br>
 		<%= render :partial => 'die_cost', :locals => {:c => @costing} %>
 		</div>
 </div>
+
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">Summary</a></li>
+		<li><a href="#tabs-2">Wafer - Die</a></li>
+		<li><a href="#tabs-3">Assy</a></li>
+		<li><a href="#tabs-4">Final Test</a></li>
+		<li><a href="#tabs-5">Wafer Test</a></li>
+		<li><a href="#tabs-6">Finishing</a></li>
+	</ul>
+	<div id="tabs-1">
+		<p>
+		<%= render :partial => 'summary_cost', :locals => {:c => @costing} %>			
+		</p>
+	</div>
+	<div id="tabs-2">
+		<p>		
+		<%= render :partial => 'die_cost', :locals => {:c => @costing} %>
+			</p>
+	</div>
+	<div id="tabs-3">
+		<p>
+					<%= render :partial => 'assy_cost', :locals => {:c => @costing} %>
+		</p>
+
+	</div>
+	<div id="tabs-4">
+		<p>
+		<%= render :partial => 'test_cost', :locals => {:c => @costing} %>
+		</p>
+
+	</div>
+	<div id="tabs-5">
+		<p>
+			<%= render :partial => 'die_cost', :locals => {:c => @costing} %>
+		</p>
+
+	</div>
+	<div id="tabs-6">
+		<p>
+			<%= render :partial => 'die_cost', :locals => {:c => @costing} %>
+		</p>
+
+	</div>	
+</div>
 <!-- <%= link_to 'Edit', edit_costing_path(@costing) %> |
 <%= link_to 'Back', costings_path %> -->

@@ -8,5 +8,6 @@ jQuery(function() {
   jQuery("#pto_finish").datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true });
   jQuery( "#accordion" ).accordion({ autoHeight: false },{ collapsible: true });
   jQuery( "#cost_accordian" ).accordion({ autoHeight: false },{ collapsible: true },{ animated: 'bounceslide' });
+  jQuery( "#tabs" ).tabs({event: "mouseover"});
 
 	});
