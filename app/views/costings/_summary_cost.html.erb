@@ -1,38 +1,59 @@
+<%untested_die = c.wafercost/c.grossdie%>
+<%die_cpx = c.tst_cost - untested_die%>
+<%assembly = c.asm_cost%>
+<%die_ft = c.tst_ohcost%>
+<%die_backend = c.tst_ohcost%>
+<%die_overhead = c.tst_ohcost%>
 
-		<h2>
-			Summary Cost Information
-		</h2>
 		<table width="40%">
 			<tr>
+				<th>
+					<b>Cetegory</b>
+				</th>
+				<th>
+					<b>Cost</b>
+				</th>
+				<th>
+					<b>Percentage</b>
+				</th>					
+			<tr>
 				<td>
-					Die Cost
+					Untested Die
 				</td>
 				<td>
-					<%=c.tst_cost%>
+					<%=sprintf("%6.4f",untested_die)%>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					Assembly Cost
+					Die Wafer Sort
 				</td>
 				<td>
-					<%=c.tst_yield%>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					Test Cost
-				</td>
-				<td>
-					<%=c.tst_ohcost%>
+					<%=sprintf("%6.4f",die_cpx)%>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					Misc Backend Cost
+					Assembly
 				</td>
 				<td>
-					<%=c.tst_ohcost%>
+					<%=sprintf("%6.4f",assembly)%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					 Final Test
+				</td>
+				<td>
+					<%=sprintf("%6.4f",die_ft)%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Misc Backend
+				</td>
+				<td>
+					<%=sprintf("%6.4f",die_backend)%>
 				</td>
 			</tr>
 			<tr>
@@ -40,7 +61,7 @@
 					Overhead Cost
 				</td>
 				<td>
-					<%=c.tst_ohcost%>
+					<%=sprintf("%6.4f",die_overhead)%>
 				</td>
 			</tr>
 		</table>
