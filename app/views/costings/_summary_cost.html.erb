@@ -1,14 +1,15 @@
-<%untested_die = c.wafercost/c.grossdie%>
-<%die_cpx = c.tst_cost - untested_die%>
-<%assembly = c.asm_cost%>
-<%die_ft = c.tst_ohcost%>
-<%die_backend = c.tst_ohcost%>
-<%die_overhead = c.tst_ohcost%>
+<%untested_die = c.wafercost/c.netgooddie%>
+<%die_sort = c.diecost - untested_die%>
+<%assembly = c.asm_cost - c.diecost%>
+<%die_ft = c.tst_cost - c.asm_cost%>
+<%die_backend = c.fg_stdcost - c.fg_stdcost%>
+<%die_overhead = c.tst_cost - c.fg_stdcost%>
+<%total = c.tst_cost%>
 
-		<table width="40%">
+		<table width="40%", font-size="80%">
 			<tr>
 				<th>
-					<b>Cetegory</b>
+					<b>Category</b>
 				</th>
 				<th>
 					<b>Cost</b>
@@ -23,13 +24,19 @@
 				<td>
 					<%=sprintf("%6.4f",untested_die)%>
 				</td>
+				<td>
+					<%=sprintf("%04.1f%",(untested_die/total)*100)%>
+				</td>
 			</tr>
 			<tr>
 				<td>
 					Die Wafer Sort
 				</td>
 				<td>
-					<%=sprintf("%6.4f",die_cpx)%>
+					<%=sprintf("%6.4f",die_sort)%>
+				</td>
+				<td>
+					<%=sprintf("%04.1f%",(die_sort/total)*100)%>
 				</td>
 			</tr>
 			<tr>
@@ -39,6 +46,9 @@
 				<td>
 					<%=sprintf("%6.4f",assembly)%>
 				</td>
+				<td>
+					<%=sprintf("%04.1f%",(assembly/total)*100)%>
+				</td>
 			</tr>
 			<tr>
 				<td>
@@ -46,6 +56,9 @@
 				</td>
 				<td>
 					<%=sprintf("%6.4f",die_ft)%>
+				</td>
+				<td>
+					<%=sprintf("%04.1f%",(die_ft/total)*100)%>
 				</td>
 			</tr>
 			<tr>
@@ -55,6 +68,9 @@
 				<td>
 					<%=sprintf("%6.4f",die_backend)%>
 				</td>
+				<td>
+					<%=sprintf("%04.1f%",(die_backend/total)*100)%>
+				</td>
 			</tr>
 			<tr>
 				<td>
@@ -62,6 +78,17 @@
 				</td>
 				<td>
 					<%=sprintf("%6.4f",die_overhead)%>
+				</td>
+				<td>
+					<%=sprintf("%04.1f%",(die_overhead/total)*100)%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Total Cost
+				</td>
+				<td>
+					<%=sprintf("%6.4f",total)%>
 				</td>
 			</tr>
 		</table>
