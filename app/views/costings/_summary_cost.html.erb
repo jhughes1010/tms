@@ -1,11 +1,3 @@
-<%untested_die = c.wafercost/c.netgooddie%>
-<%die_sort = c.diecost - untested_die%>
-<%assembly = c.asm_cost - c.diecost%>
-<%die_ft = c.tst_cost - c.asm_cost%>
-<%die_backend = c.fg_stdcost - c.fg_stdcost%>
-<%die_overhead = c.tst_cost - c.fg_stdcost%>
-<%total = c.tst_cost%>
-
 		<table width="40%", font-size="80%">
 			<tr>
 				<th>
@@ -22,10 +14,10 @@
 					Untested Die
 				</td>
 				<td>
-					<%=sprintf("%6.4f",untested_die)%>
+					<%=sprintf("$%6.4f",cv[:untested_die])%>
 				</td>
 				<td>
-					<%=sprintf("%04.1f%",(untested_die/total)*100)%>
+					<%=sprintf("%04.1f%",(cv[:untested_die]/cv[:total])*100)%>
 				</td>
 			</tr>
 			<tr>
@@ -33,10 +25,10 @@
 					Die Wafer Sort
 				</td>
 				<td>
-					<%=sprintf("%6.4f",die_sort)%>
+					<%=sprintf("$%6.4f",cv[:die_sort])%>
 				</td>
 				<td>
-					<%=sprintf("%04.1f%",(die_sort/total)*100)%>
+					<%=sprintf("%04.1f%",(cv[:die_sort]/cv[:total])*100)%>
 				</td>
 			</tr>
 			<tr>
@@ -44,10 +36,10 @@
 					Assembly
 				</td>
 				<td>
-					<%=sprintf("%6.4f",assembly)%>
+					<%=sprintf("$%6.4f",cv[:assembly])%>
 				</td>
 				<td>
-					<%=sprintf("%04.1f%",(assembly/total)*100)%>
+					<%=sprintf("%04.1f%",(cv[:assembly]/cv[:total])*100)%>
 				</td>
 			</tr>
 			<tr>
@@ -55,10 +47,10 @@
 					 Final Test
 				</td>
 				<td>
-					<%=sprintf("%6.4f",die_ft)%>
+					<%=sprintf("$%6.4f",cv[:die_ft])%>
 				</td>
 				<td>
-					<%=sprintf("%04.1f%",(die_ft/total)*100)%>
+					<%=sprintf("%04.1f%",(cv[:die_ft]/cv[:total])*100)%>
 				</td>
 			</tr>
 			<tr>
@@ -66,10 +58,10 @@
 					Misc Backend
 				</td>
 				<td>
-					<%=sprintf("%6.4f",die_backend)%>
+					<%=sprintf("$%6.4f",cv[:die_backend])%>
 				</td>
 				<td>
-					<%=sprintf("%04.1f%",(die_backend/total)*100)%>
+					<%=sprintf("%04.1f%",(cv[:die_backend]/cv[:total])*100)%>
 				</td>
 			</tr>
 			<tr>
@@ -77,18 +69,36 @@
 					Overhead Cost
 				</td>
 				<td>
-					<%=sprintf("%6.4f",die_overhead)%>
+					<%=sprintf("$%6.4f",cv[:die_overhead])%>
 				</td>
 				<td>
-					<%=sprintf("%04.1f%",(die_overhead/total)*100)%>
+					<%=sprintf("%04.1f%",(cv[:die_overhead]/cv[:total])*100)%>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					Total Cost
+					<b>Total Cost</b>
 				</td>
 				<td>
-					<%=sprintf("%6.4f",total)%>
+					<b><%=sprintf("$%6.4f",cv[:total])%></b>
 				</td>
 			</tr>
 		</table>
+		<hr>
+		<table table width="25%", font-size="80%">
+			<tr>
+				<td>
+					Total Manufacturing Costs
+					</td>
+					<td>
+						<%=sprintf("$%6.4f",c.fg_stdcost-c.tst_ohcost-c.asm_ohcost)%>
+					</td>
+					</tr>
+					<tr>
+						<td>Total Standard Cost
+							</td>
+						<td>
+							<%=sprintf("$%6.4f",c.fg_stdcost)%>
+							</td>
+							</tr>
+			</table>

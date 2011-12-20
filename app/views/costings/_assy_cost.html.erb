@@ -1,11 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html>
-	<head>
-		<title></title>
-	</head>
-	<body>
+
 		<h2>
-			Assembly Cost Information
+			<b>Assembly Cost Information</b>
 		</h2>
 		<table width="40%">
 			<tr>
@@ -21,7 +16,7 @@
 					Assembly Cost
 				</td>
 				<td>
-					<%=c.asm_cost%>
+					<%=sprintf("$%6.4f",@calculated_values[:assembly]-c.asm_ohcost)%>
 				</td>
 			</tr>
 			<tr>
@@ -29,7 +24,7 @@
 					Assembly Yield
 				</td>
 				<td>
-					<%=c.asm_yield%>
+					<%=sprintf("%4.1f%",c.asm_yield)%>
 				</td>
 			</tr>
 			<tr>
@@ -37,16 +32,14 @@
 					Assembly OH Charge per Unit
 				</td>
 				<td>
-					<%=c.asm_ohcost%>
+					<%=sprintf("$%5.4f",c.asm_ohcost)%>
 				</td>
 			</tr>
 			<tr>
 				<td>
 					<b>Final Cost of Assembly</b></td>
 					<td>
-					$<b><%=sprintf("%5.4f",c.asm_cost-c.diecost)%></b>
+					$<b><%=sprintf("$%5.4f",@calculated_values[:assembly])%></b>
 				</td>
 			</tr>
 		</table>
-	</body>
-</html>

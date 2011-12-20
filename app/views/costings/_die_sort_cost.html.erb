@@ -1,13 +1,5 @@
-<%untested_die = c.wafercost/c.netgooddie%>
-<%die_sort = c.diecost - untested_die%>
-<%assembly = c.asm_cost - c.diecost%>
-<%die_ft = c.tst_cost - c.asm_cost%>
-<%die_backend = c.fg_stdcost - c.fg_stdcost%>
-<%die_overhead = c.tst_cost - c.fg_stdcost%>
-<%total = c.tst_cost%>
-
 		<h2>
-			Wafer Sort Cost Information
+			<b>Wafer Sort Cost Information</b>
 		</h2>
 		<table width="40%">
 			<tr>
@@ -47,7 +39,7 @@
 					Probe Hours
 				</td>
 				<td>
-					<%=sprintf("$%4.2f",c.probe_time)%>
+					<%=sprintf("%4.1f",c.probe_time)%>
 				</td>
 			</tr>
 			<tr>
@@ -63,15 +55,15 @@
 					Probe OH Charge per Wafer
 				</td>
 				<td>
-					<%=sprintf("$%6.4f",c.probe_overhead)%>
+					<%=sprintf("$%5.2f",c.probe_overhead)%>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					Sort Cost per die (NDPW)
+					<b>Sort Cost per die (NDPW)</b>
 				</td>
 				<td>
-					<%=sprintf("$%6.4f",die_sort)%>
+					<b><%=sprintf("$%6.4f",cv[:die_sort])%></b>
 				</td>
 			</tr>
 		</table>

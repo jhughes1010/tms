@@ -1,11 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html>
-	<head>
-		<title></title>
-	</head>
-	<body>
 		<h2>
-			Test Cost Information
+			<b>Final Test Cost Information</b>
 		</h2>
 		<table width="40%">
 			<tr>
@@ -13,7 +7,7 @@
 					Test Cost
 				</td>
 				<td>
-					<%=c.tst_cost%>
+					<%=sprintf("$%5.4f",@calculated_values[:die_ft]-c.tst_ohcost)%>
 				</td>
 			</tr>
 			<tr>
@@ -21,7 +15,7 @@
 					Test Yield
 				</td>
 				<td>
-					<%=c.tst_yield%>
+					<%=sprintf("%4.1f%",c.tst_yield)%>
 				</td>
 			</tr>
 			<tr>
@@ -29,16 +23,14 @@
 					Test OH Charge per Unit
 				</td>
 				<td>
-					<%=c.tst_ohcost%>
+					<%=sprintf("$%5.4f",c.tst_ohcost)%>
 				</td>
 				</tr>
 				<td>
-					Final Cost of Package Test
+					<b>Final Cost of Package Test</b>
 				</td>
 				<td>
-					<b>$<%=sprintf("%5.4f",c.tst_cost-c.asm_cost)%></b>
+					<b><%=sprintf("$%5.4f",@calculated_values[:die_ft])%></b>
 				</td>
 			</tr>
 		</table>
-	</body>
-</html>
