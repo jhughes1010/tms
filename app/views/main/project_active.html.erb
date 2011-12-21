@@ -15,7 +15,7 @@
 			<% @tasks.each_pair do |assignee_id, tasks| %>
 			<% u = User.find(assignee_id.to_i)%>
 			<h3><a href="#"><%= u.fullname %>: <%= tasks.count%> tasks listed</a></h3>
-			<div id="product-list">
+			<div id="product-list2">
 				<table>
 				<%= render :partial => "task_header"%>
 				<%= render :partial => "task" , :collection => tasks, :locals => {:assignee_id => assignee_id}%>
