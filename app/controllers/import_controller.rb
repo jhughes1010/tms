@@ -36,13 +36,16 @@ class ImportController < ApplicationController
       r = Project.new
       r.key = true
       r.project = record[column_array[2]]
-      r.dr1 = record[column_array[7]]
-      puts record[column_array[7]]
-      r.dr2 = record[column_array[8]]
-      r.dr3 = record[column_array[9]]
-      r.dr4 = record[column_array[10]]
-      r.dr5 = record[column_array[11]]
+      r.dr1 = format_date(record[column_array[7]])
+      r.dr2 = format_date(record[column_array[8]])
+      r.dr3 = format_date(record[column_array[9]])
+      r.dr4 = format_date(record[column_array[10]])
+      r.dr5 = format_date(record[column_array[11]])
       r.save
     end
-
+    def format_date(date)
+      date = Date.strptime(date, "%m/%d/%Y")
+      puts date
+      date
+    end
 end
