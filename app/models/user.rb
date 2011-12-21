@@ -2,7 +2,7 @@ require 'digest/sha1'
 
 class User < ActiveRecord::Base
   has_one :task
-  has_one :pto
+  has_many :pto
 
   
 
