@@ -29,7 +29,7 @@ class Task < ActiveRecord::Base
     find(:all, :order =>"id" , :conditions => "assignee_id IS NULL")
   end
   def self.all_active_assigned_to(u)
-    find(:all, :order =>"assignee_id, priority", :conditions => ["requester = ? AND complete = ?",u,false])
+    find(:all, :order =>"assignee_id, priority", :conditions => ["requester_id = ? AND complete = ?",u,false])
   end
   def self.all_my_active_by_me(user_id)
     self.where("complete = ? AND requester_id = ?",false, user_id).order("assignee_id, priority")

@@ -1,6 +1,7 @@
-<h1>Daily Test Request Report</h1>
-<h2>Open Tasks</h2>
+<h1>Test Request Report</h1>
+<h2>Open Tasks assigned by <%=@user.fullname%></h2>
  <% @active.each do |a| %>
+ <%=a.assignee.fullname if a.assignee %>:
  <%=a.taskname%><br>
 <%end%>
 <h2>Tasks Needing Acceptance</h2>

@@ -20,12 +20,12 @@ class UserMailer < ActionMailer::Base
   def pto_entry_confirmation(user_id, pto)
     @pto = pto
     @user = User.find(user_id)
-    name = @user.fullname
+    @name = @user.fullname
     email = @user.email
     #name="James Hughes"
     #email="james.hughes@atmel.com"**
     #attachments["rails.png"] = File.read("#{Rails.root}/public/images/rails.png")
-    mail(:to => "#{name} <#{email}>", :subject => "TMS - New PTO Entry Confirmation")
+    mail(:to => "#{@name} <#{email}>", :subject => "TMS - New PTO Entry Confirmation")
   end
   def daily_report(user_id, list)
     #test case
@@ -35,6 +35,6 @@ class UserMailer < ActionMailer::Base
     #email="james.hughes@atmel.com"
     email=@user.email
     #send mail
-    mail(:to => "#{name} <#{email}>", :subject => "TMS - My Weekly Task Summary")
+    mail(:to => "#{name} <#{email}>", :subject => "TMS - My Task Summary: " + name)
   end
 end
