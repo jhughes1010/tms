@@ -1,0 +1,8 @@
+<div class="demo">
+	<ul id="sortable">
+		<% @tasks.each do |task| %>
+		<li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span><%= task.requester.fullname %>-<%= task.assignee ? task.assignee.fullname : "UNASSIGNED" %>:<%=task.taskname%></li>
+
+		<% end %>
+		</div>
+	</ul>

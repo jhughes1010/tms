@@ -16,4 +16,9 @@ jQuery(function() {
   jQuery( "#accordion" ).accordion({ autoHeight: false },{ collapsible: true });
 
 
+  jQuery( "#sortable" ).sortable();
+  jQuery( "#sortable" ).disableSelection();
+
+
+
 	});

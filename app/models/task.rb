@@ -8,6 +8,10 @@ class Task < ActiveRecord::Base
   def self.all_active
     find(:all, :order =>"assignee_id, priority", :conditions => ["complete = ?",false])
   end
+  def self.all_active_by_requester
+    # Need to filter User.department = 3371
+    self.where("complete = ?",false).order("requester_id, assignee_id, category, priority")
+  end
   def self.all_my_active(user_id)
     find(:all, :order =>"assignee_id, priority", :conditions => ["complete = ? AND assignee_id = ?",false, user_id])
   end

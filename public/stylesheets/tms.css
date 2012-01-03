@@ -20,12 +20,12 @@ h1 {
 
 /* Styles for products/index */
 #product-list2 table {
-		background-color:black;
-		border: 3px solid yellow;
+		/*background-color:black;
+		border: 3px solid yellow;*/
 		padding: 5px;
-		color:yellow;
+		/*color:yellow;*/
 		width:90%;
-		font-size: 100%
+		font-size: 80%
 		
 }
 #product-list table {

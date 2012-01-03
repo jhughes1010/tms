@@ -55,23 +55,7 @@ class MainController < ApplicationController
     @ptos=Pto.upcoming_range(@start,@stop)
   end
   
-  def project_auto_priority
-    unless @auth == 1
-      #@today=Date.today
-      #@today.to_s(:long)
-      @te = User.get_te
-      @tsk = Task.all_active3
-      #Spread out priority numbers
-      @tsk.each_pair do |assignee_id, tasks|
-        priority=2
-        tasks.each do |t|
-          t.priority=priority
-          t.save
-          priority +=3
-        end
-      end
-    end
-  end
+
   
   protected
   
