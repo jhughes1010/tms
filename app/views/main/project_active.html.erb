@@ -1,29 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html>
-	<head>
-		<title></title>
-	</head>
-	<body>
-		<h1>
-			Active Tasks:
-		</h1>
-		<p>
-			<%= @today.to_s(:long) %>: <%= @total_task_count%> tasks listed
-		</p>
-		<hr>
+
+<div class="page-header">
+  <h1>Active Projects <small>ordered by assignee and priority</small></h1>
+</div>
 		<div id="accordion">
 			<% @tasks.each_pair do |assignee_id, tasks| %>
 			<% u = User.find(assignee_id.to_i)%>
-			<h3><a href="#"><%= u.fullname %>: <%= tasks.count%> tasks listed</a></h3>
-			<div id="product-list2">
-				<table>
+			<h3><a href="#"></a><%= u.fullname %></h3>
+			<div>
+				<table class="bordered-table">
 				<%= render :partial => "task_header"%>
 				<%= render :partial => "task" , :collection => tasks, :locals => {:assignee_id => assignee_id}%>
-				</table>
-			</div>
+				</table>	
+				</div>
 			<% end %>
 			
 			</div>
-		
-	</body>
-</html>

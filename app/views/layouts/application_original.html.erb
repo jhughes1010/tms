@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>
+			TMS - Test Management System
+		</title>
+				<%= stylesheet_link_tag "tms", :media => "all" %>
+				<%= stylesheet_link_tag "reset", :media=>"screen" %>
+				<!-- <%= stylesheet_link_tag "menu", :media=>"screen" %> -->
+				<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+				<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8">
+		</script> -->
+		<%= csrf_meta_tag %><%= stylesheet_link_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/ui-darkness/jquery-ui.css", "application" %>
+		<%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "//ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js" %>
+		<%= javascript_include_tag :defaults %>
+		<link href='/images/favicon.ico' rel='shortcut icon'>
+	</head>
+	<body>
+		<div class="topbar">
+	      <div class="fill">
+	        <div class="container">
+	          <a class="brand" href="#">TMS and such</a>
+	          <ul class="nav">
+	            <li class="active"><a href="#">Home</a></li>
+	            <li><a href="#about">TMS</a></li>
+	            <li><a href="#contact">PTO</a></li>
+	          </ul>
+	        </div>
+	      </div>
+	    </div>
+		<div id="banner">
+			<%=@page_title||"Memory BU - Colorado Springs" %>
+			<ul class="menu">
+				<!-- BEGIN MENU -->
+				<li>
+					<a href="#" class="drop">Home</a><!-- Begin Home Item -->
+					<div class="dropdown_2columns">
+						<!-- Begin 2 columns container -->
+						<div class="col_2 firstcolumn">
+							<h2>
+								Welcome !
+							</h2>
+							<p>
+								Please contact james.hughes@atmel.com with any questions.
+							</p>
+						</div>
+						<div class="col_1">
+							<ul class="greybox">
+								<li>
+									<a href="/admin/logout">Logout</a>
+								</li>
+							</ul>
+						</div>
+					</div><!-- End 2 columns container -->
+				</li><!-- End Home Item -->
+				<li>
+					<a href="#" class="drop">TMS</a><!-- Begin 3 columns Item -->
+					<div class="dropdown_3columns">
+						<!-- Begin 3 columns container -->
+						<div class="col_3 firstcolumn">
+							<h1>
+								Test Management System
+							</h1>
+							<h2>
+								My Task Reports
+							</h2>
+							<div class="col_1 firstcolumn">
+								<ul class="greybox">
+									<li>
+										<a href="/main/project_my_active">Active Requests</a>
+									</li>
+									<li>
+										<a href="#">Not Accepted</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col_1">
+								<ul class="greybox">
+									<li>
+										<a href="/main/project_my_active_past_due">Past Due</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col_1">
+								<ul class="greybox">
+									<li>
+										<a href="#">Completed</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col_3 firstcolumn">
+							<h2>
+								General Reports
+							</h2>
+							<div class="col_1 firstcolumn">
+								<ul class="greybox">
+									<li>
+										<a href="/main/project_active">Active Requests</a>
+									</li>
+									<li>
+										<a href="#">Not Accepted</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col_1">
+								<ul class="greybox">
+									<li>
+										<a href="/main/project_active_past_due">Past Due</a>
+									</li>
+									<li>
+										<a href="/main/project_unassigned">Unassigned Tasks</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col_1">
+								<ul class="greybox">
+									<li>
+										<a href="/main/project_completed">Completed Tasks</a>
+									</li>
+									<li>
+										<a href="/main/pto_current">30 Day PTO Outlook</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col_3 firstcolumn">
+							<h2>
+								Entry
+							</h2>
+							<div class="col_1 firstcolumn">
+								<ul class="greybox">
+									<li>
+										<a href="/tasks/new">Task Entry</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col_1">
+								<ul class="greybox">
+									<li>
+										<a href="/ptos/new">PTO Entry</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col_1">
+								<ul class="greybox"></ul>
+							</div>
+						</div><%if @auth ==2 %>
+						<div class="col_3 firstcolumn">
+							<h2>
+								Administration
+							</h2>
+							<div class="col_1 firstcolumn">
+								<ul class="greybox">
+									<li>
+										<a href="/priority">Priority Management</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col_1">
+								<ul class="greybox">
+									<li>
+										<a href="#">PTO Entry</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col_1">
+								<ul class="greybox"></ul>
+							</div>
+						</div><%end%>
+					</div><!-- End 3 columns container -->
+				</li><!-- End 3 columns Item -->
+				<li>
+					<a href="#" class="drop">Resource Allocation</a><!-- Begin 3 columns Item -->
+					<div class="dropdown_3columns">
+						<!-- Begin 3 columns container -->
+						<div class="col_3 firstcolumn">
+							<h1>
+								Quarterly Resource Review
+							</h1>
+							<h2>
+								Resource Reports
+							</h2>
+							<div class="col_1 firstcolumn">
+								<ul class="greybox">
+									<li>
+										<a href="/resource/key_projects">Key Projects</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col_1">
+								<ul class="greybox">
+									<li>
+										<a href="/projects">All Projects</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col_1">
+								<ul class="greybox">
+									<li>
+										<a href="/resource/actual">Actual vs. Fcst</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<h2>
+							Database Functions
+						</h2>
+						<div class="col_1 firstcolumn">
+							<ul class="greybox">
+								<li>
+									<a href="/resource/import">Import Data</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col_1">
+							<ul class="greybox">
+								<li>
+									<a href="#">Clear Data</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li>
+					<a href="#" class="drop">Costing Data</a><!-- Begin 3 columns Item -->
+				</li>
+				<li>
+					<a href="#" class="drop">CAN DB</a><!-- Begin 3 columns Item -->
+					<div class="dropdown_3columns">
+						<!-- Begin 3 columns container -->
+						<div class="col_3 firstcolumn">
+							<h1>
+								Crypto CAN Database
+							</h1>
+							<h2>
+								Entry
+							</h2>
+							<div class="col_1 firstcolumn">
+								<ul class="greybox">
+									<li>
+										<a href="/can_mains/new">Enter CAN</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col_1">
+								<ul class="greybox">
+									<li>
+										<a href="#">Sub</a>
+									</li>
+								</ul>
+							</div>
+							<div class="col_1">
+								<ul class="greybox">
+									<li>
+										<a href="#">???</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<h2>
+							Reports
+						</h2>
+						<div class="col_1 firstcolumn">
+							<ul class="greybox">
+								<li>
+									<a href="/can_mains">Main CAN Table</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col_1">
+							<ul class="greybox">
+								<li>
+									<a href="/can_subs">Sub CAN Table</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+
+			</ul><!-- END MENU -->
+		</div>
+			<div id="main">
+				<%if flash[:notice] -%>
+				<div id="notice">
+					<%=flash[:notice] %>
+				</div><%end %><%= yield :layout %>
+			</div>
+		</div>
+	</body>
+</html>

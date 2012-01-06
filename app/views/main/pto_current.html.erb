@@ -1,7 +1,9 @@
-<h1>Near Term PTO</h1>
+<div class="page-header">
+  <h1>Near Term PTO <small>	<%=@outlook %> day outlook: 
+	<%= @start.to_s(:long) %> to <%=@stop.to_s(:long) %></small></h1>
+</div>
 <p>
-	<%=@outlook %> day outlook: 
-	<%= @start.to_s(:long) %> to <%=@stop.to_s(:long) %>
+
 </p>
 <hr>
 <div id="product-list">
