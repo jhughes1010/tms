@@ -6,18 +6,17 @@
 		</title>
 				<%= stylesheet_link_tag "tms", :media => "all" %>
 				<%= stylesheet_link_tag "reset", :media=>"screen" %>
-				<!-- <%= stylesheet_link_tag "menu", :media=>"screen" %> -->
-				<link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
+				<%= stylesheet_link_tag "bootstrap.min", :media=>"screen" %>
 				<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8">
 		</script> -->
 		<%= csrf_meta_tag %>
-		<!-- <%= stylesheet_link_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/ui-darkness/jquery-ui.css", "application" %> -->
+		<%= stylesheet_link_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/ui-lightness/jquery-ui.css", "application" %>
 		<%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "//ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js" %>
 		<%= javascript_include_tag :defaults %>
 		<link href='/images/favicon.ico' rel='shortcut icon'>
 	</head>
 	<body>
-		<div class="topbar">
+		<div class="topbar" padding-top: 1600px;>
 	      <div class="fill">
 	        <div class="container">
 	          <a class="brand" href="#">Memory BU tools</a>
@@ -26,6 +25,7 @@
 	            <li><a href="/main/project_active">TMS</a></li> 
 	           <li><a href="/main/pto_current">PTO</a></li>
 	          </ul>
+	<p class="pull-right">Logged in as <a href="#"><username><%=@full_name%></a></p>
 	        </div>
 	      </div>
 	      </div>
@@ -45,6 +45,7 @@
 		      </footer>
 
 	    </div>
+	</div>
 
 	</body>
 </html>

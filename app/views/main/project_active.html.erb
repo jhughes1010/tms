@@ -5,7 +5,7 @@
 		<div id="accordion">
 			<% @tasks.each_pair do |assignee_id, tasks| %>
 			<% u = User.find(assignee_id.to_i)%>
-			<h3><a href="#"></a><%= u.fullname %></h3>
+			<h3><a href="#"><%= u.fullname %></a></h3>
 			<div>
 				<table class="bordered-table">
 				<%= render :partial => "task_header"%>
