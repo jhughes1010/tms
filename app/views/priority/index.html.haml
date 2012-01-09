@@ -1,0 +1,11 @@
+= render :partial =>"pill_navigation",:locals => {:active => "Priority_management"}
+= render :partial =>"page_header",:locals => {:title => "Priorities", :description => "tools to reorder tasks"}
+
+%p
+  Project
+  %a{:href => "/priority/project_auto_priority"} Auto-priority
+  with spacing of 3 (sort by category and priority)
+%p
+  Project
+  %a{:href => "/priority/project_manual_priority"} manual-priority 
+  with spacing of 1 (sort by requester, category, and current priority)

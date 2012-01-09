@@ -5,7 +5,7 @@ class MainController < ApplicationController
   end
   
   def project_active
-    @total_task_count=Task.all_active.count
+    #@total_task_count=Task.all_active.count
     @tasks = Task.all_active2
   end
 
