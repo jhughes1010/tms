@@ -1,11 +1,11 @@
 <ul class="pills">
-  <li class="active"><a href="/main/pto_current">Next 30 days</a></li>
-  <li><a href="/main/pto_current_90">Next 90 days</a></li>
+  <li><a href="/main/pto_current">Next 30 days</a></li>
+  <li class="active"><a href="/main/pto_current_90">Next 90 days</a></li>
   <li><a href="/ptos/new">PTO Entry</a></li>
 </ul>
 <div class="page-header">
 
-  <h1>Near Term PTO <small>	<%=@outlook %> day outlook: 
+  <h1>Long Term PTO <small>	<%=@outlook %> day outlook: 
 	<%= @start.to_s(:long) %> to <%=@stop.to_s(:long) %></small></h1>
 </div>
 <p>

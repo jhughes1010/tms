@@ -55,7 +55,12 @@ class MainController < ApplicationController
     @ptos=Pto.upcoming_range(@start,@stop)
   end
   
-
+  def pto_current_90
+    @outlook = 90
+    @start=@today
+    @stop = @start+ @outlook
+    @ptos=Pto.upcoming_range(@start,@stop)
+  end
   
   protected
   
