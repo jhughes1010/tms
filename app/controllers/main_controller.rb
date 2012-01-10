@@ -5,8 +5,11 @@ class MainController < ApplicationController
   end
   
   def project_active
-    #@total_task_count=Task.all_active.count
     @tasks = Task.all_active2
+  end
+
+  def project_active_by_requester
+    @tasks = Task.all_active_by_requester
   end
 
   def project_active_past_due

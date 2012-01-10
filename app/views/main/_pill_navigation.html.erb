@@ -4,17 +4,23 @@
 		<%else%>
 		<li>
 			<%end%>
-	<a href="#">Active - By assignee</a></li>
+	<a href="/main/project_active">Active - By assignee</a></li>
   <%if active == "By_requester"%>
 	<li class="active">
 		<%else%>
 		<li>
 			<%end%>
-	<a href="#">Active - By requester</a></li>
+	<a href="/main/project_active_by_requester">Active - By requester</a></li>
   <%if active == "Priority_management"%>
 	<li class="active">
 		<%else%>
 		<li>
 			<%end%>
 	<a href="/priority/index">Priority management</a></li>
+	<%if active == "New_task"%>
+	<li class="active">
+		<%else%>
+		<li>
+			<%end%>
+	<a href="/tasks/new">New Task</a></li>
 </ul>

@@ -42,6 +42,12 @@ class Task < ActiveRecord::Base
     t = self.where("complete = 'f' AND assignee_id IS NOT NULL ").order("assignee_id, category, priority")
     t.group_by(&:assignee_id)
   end
+ 
+  def self.all_active_by_requester
+    t = self.where("complete = 'f' AND requester_id IS NOT NULL ").order("requester_id, category, priority")
+    t.group_by(&:requester_id)
+  end
+  
   def self.all_active3
     t = self.where("complete = 'f' AND assignee_id IS NOT NULL AND priority < 99 ").order("assignee_id, category, priority, scd")
     t.group_by(&:assignee_id)
