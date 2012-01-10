@@ -12,6 +12,7 @@
 </div>
 <% end %>
 <div class="field">
+	<%= f.label :requester_id, "Requester" %>
 	<%if !@task.requester_id %>
 	<%@task.requester_id=@user_id%>
 	<%@task.tcd = Date.today.next_month %>
@@ -20,6 +21,7 @@
 </div>
 <%if @auth==2 %>
 <div class="field">
+		<%= f.label :assignee_id, "Assignee" %>
 <%= f.select(:assignee_id,@assignees) %>
 </div>
 <%end %>
@@ -42,36 +44,36 @@
 <%if @auth==2 %>
 <div class="field">
 	<%= f.label :scd, 'Scheduled Completion Date' %>
-	<br/>
+
 	<%= f.text_field :scd%>
 </div>
 <div class="field">
 	<%= f.label :acd, 'Actual Completion Date' %>
-	<br/>
+
 	<%= f.text_field :acd%>
 </div>
 
 <div class="field">
 	<%= f.label :priority %>
-	<br/>
+
 	<%= f.text_field :priority %>
 </div>
 <%end%>
 <div class="field">
 <%= f.label :category %>
-<br/>
+
 <%= f.text_field :category %>
 </div>
 Category Legend: 1= Important & Urgent, 2= Important & Not_Urgent, 4 = Not Important & Not Urgent"
 <br><br>
 <div class="field">
 	<%= f.label :complete %>
-	<br/>
+
 	<%= f.check_box :complete %>
 </div>
 <div class="field">
 	<%= f.label :accepted %>
-	<br/>
+
 	<%= f.check_box :accepted %>
 </div>
 <div class="actions">

@@ -11,6 +11,12 @@
 		<li>
 			<%end%>
 	<a href="/main/project_active_by_requester">Active - By requester</a></li>
+  <%if active == "Unassigned_task"%>
+	<li class="active">
+		<%else%>
+		<li>
+			<%end%>
+	<a href="/main/project_unassigned">Unassigned Tasks</a></li>
   <%if active == "Priority_management"%>
 	<li class="active">
 		<%else%>
