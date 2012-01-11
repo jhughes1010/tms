@@ -1,0 +1,77 @@
+		<h2>
+			Die Cost Information
+		</h2>
+		<table width="30%">
+			<tr>
+				<td>
+					Internal Device
+				</td>
+				<td>
+					<%=c.wafer[0..4]%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Wafer Cost
+				</td>
+				<td>
+					$<%=sprintf("%7.2f",c.wafercost)%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					GDPW
+				</td>
+				<td>
+					<%=c.grossdie%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Model Sort Yield
+				</td>
+				<td>
+					<%=c.sortyield%>%
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Net Die Per Wafer
+				</td>
+				<td>
+					<%=c.netgooddie%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Probe Hours
+				</td>
+				<td>
+					<%=c.probe_time%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Probe Cost
+				</td>
+				<td>
+					$<%=sprintf("%5.2f",c.pcostwafer)%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Probe OH charge per Wafer
+				</td>
+				<td>
+					$<%=sprintf("%5.2f",c.probe_overhead)%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Final Cost of Die</b>
+				</td>
+				<td>
+					<b>$<%=sprintf("%5.4f",c.diecost)%></b>
+				</td>
+			</tr>
+		</table>

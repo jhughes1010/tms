@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<h2>
+			Test Cost Information
+		</h2>
+		<table width="30%">
+			<tr>
+				<td>
+					Test Cost
+				</td>
+				<td>
+					<%=c.tst_cost%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Test Yield
+				</td>
+				<td>
+					<%=c.tst_yield%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Test OH Charge per Unit
+				</td>
+				<td>
+					<%=c.tst_ohcost%>
+				</td>
+				</tr>
+				<td>
+					Final Cost of Package Test
+				</td>
+				<td>
+					<b>$<%=sprintf("%5.4f",c.tst_cost-c.asm_cost)%></b>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

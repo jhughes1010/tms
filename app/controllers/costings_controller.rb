@@ -2,7 +2,8 @@ class CostingsController < ApplicationController
   # GET /costings
   # GET /costings.xml
   def index
-    @costings = Costing.all
+    @costings = Costing.search(params)
+    #@costings = Costing.first(10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,6 +15,18 @@ class CostingsController < ApplicationController
   # GET /costings/1.xml
   def show
     @costing = Costing.find(params[:id])
+
+
+    c=@costing
+    @calculated_values=Hash.new
+    
+    @calculated_values[:untested_die] = c.wafercost/c.netgooddie
+    @calculated_values[:die_sort] = c.diecost - @calculated_values[:untested_die]
+    @calculated_values[:assembly] = c.asm_cost - c.diecost
+    @calculated_values[:die_ft] = c.tst_cost - c.asm_cost
+    @calculated_values[:die_backend] = c.fg_subcon
+    @calculated_values[:die_overhead] = c.tst_ohcost + c.asm_ohcost
+    @calculated_values[:total] = c.fg_stdcost
 
     respond_to do |format|
       format.html # show.html.erb

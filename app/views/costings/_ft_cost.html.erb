@@ -1,0 +1,36 @@
+		<h2>
+			<b>Final Test Cost Information</b>
+		</h2>
+		<table width="40%">
+			<tr>
+				<td>
+					Test Cost
+				</td>
+				<td>
+					<%=sprintf("$%5.4f",@calculated_values[:die_ft]-c.tst_ohcost)%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Test Yield
+				</td>
+				<td>
+					<%=sprintf("%4.1f%",c.tst_yield)%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Test OH Charge per Unit
+				</td>
+				<td>
+					<%=sprintf("$%5.4f",c.tst_ohcost)%>
+				</td>
+				</tr>
+				<td>
+					<b>Final Cost of Package Test</b>
+				</td>
+				<td>
+					<b><%=sprintf("$%5.4f",@calculated_values[:die_ft])%></b>
+				</td>
+			</tr>
+		</table>

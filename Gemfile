@@ -30,4 +30,6 @@ gem 'haml'
 # and rake tasks are available in development mode:
 # group :development, :test do
 #   gem 'webrat'
+gem 'pdfkit'
+gem "haml"
 # end

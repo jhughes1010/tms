@@ -1,5 +1,55 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
+<h1>Device Cost Analysis</h1>
+<hr>
+Family: <%= @costing.pc%><br>
+CPN ID: <%= @costing.device %><br>
+Internal Device ID: <%=@costing.wafer[0..4]%>
 
+<div id="tabs">
+	<ul>
+		<li><a href="#tabs-1">Summary</a></li>
+		<li><a href="#tabs-2">Wafer</a></li>
+		<li><a href="#tabs-3">Wafer Test</a></li>
+		<li><a href="#tabs-4">Assy</a></li>
+		<li><a href="#tabs-5">Final Test</a></li>
+		<li><a href="#tabs-6">Misc Backend</a></li>
+	</ul>
+	<div id="tabs-1">
+		<p>
+		<%= render :partial => 'summary_cost', :locals => {:c => @costing, :cv => @calculated_values} %>			
+		</p>
+	</div>
+	<div id="tabs-2">
+		<p>		
+		<%= render :partial => 'die_cost', :locals => {:c => @costing, :cv => @calculated_values} %>
+			</p>
+	</div>
+	<div id="tabs-3">
+		<p>
+			<%= render :partial => 'die_sort_cost', :locals => {:c => @costing, :cv => @calculated_values} %>
+		</p>
 
-<%= link_to 'Edit', edit_costing_path(@costing) %> |
-<%= link_to 'Back', costings_path %>
+	</div>
+	<div id="tabs-4">
+		<p>
+					<%= render :partial => 'assy_cost', :locals => {:c => @costing, :cv => @calculated_values} %>
+		</p>
+
+	</div>
+	<div id="tabs-5">
+		<p>
+		<%= render :partial => 'ft_cost', :locals => {:c => @costing, :cv => @calculated_values} %>
+		</p>
+
+	</div>
+
+	<div id="tabs-6">
+		<p>
+			<%= render :partial => 'misc_backend', :locals => {:c => @costing, :cv => @calculated_values} %>
+		</p>
+
+	</div>	
+</div>
+
+<!-- <%= link_to 'Edit', edit_costing_path(@costing) %> |
+<%= link_to 'Back', costings_path %> -->

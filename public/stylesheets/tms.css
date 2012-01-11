@@ -103,12 +103,12 @@ h1 {
 /* Styles for main page */
 
 #banner {
-  background: #99ccff;
+  background: #000000;
   padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 2px solid;
   font: small-caps 40px/40px "Times New Roman", serif;
-  color: #0066cc;
+  color: #ccff00;
   text-align: center;
 }
 

@@ -1,0 +1,45 @@
+
+		<h2>
+			<b>Assembly Cost Information</b>
+		</h2>
+		<table width="40%">
+			<tr>
+				<td>
+					Package Type
+				</td>
+				<td>
+					<%=c.asmmat%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Assembly Cost
+				</td>
+				<td>
+					<%=sprintf("$%6.4f",@calculated_values[:assembly]-c.asm_ohcost)%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Assembly Yield
+				</td>
+				<td>
+					<%=sprintf("%4.1f%",c.asm_yield)%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Assembly OH Charge per Unit
+				</td>
+				<td>
+					<%=sprintf("$%5.4f",c.asm_ohcost)%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Final Cost of Assembly</b></td>
+					<td>
+					$<b><%=sprintf("$%5.4f",@calculated_values[:assembly])%></b>
+				</td>
+			</tr>
+		</table>

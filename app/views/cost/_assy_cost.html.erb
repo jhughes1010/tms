@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<h2>
+			Assembly Cost Information
+		</h2>
+		<table width="30%">
+			<tr>
+				<td>
+					Package Type
+				</td>
+				<td>
+					<%=c.asmmat%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Assembly Cost
+				</td>
+				<td>
+					<%=c.asm_cost%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Assembly Yield
+				</td>
+				<td>
+					<%=c.asm_yield%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Assembly OH Charge per Unit
+				</td>
+				<td>
+					<%=c.asm_ohcost%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Final Cost of Assembly</b></td>
+					<td>
+					$<b><%=sprintf("%5.4f",c.asm_cost-c.diecost)%></b>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>

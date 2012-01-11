@@ -1,0 +1,55 @@
+		<h2>
+			<b>Die Cost Information</b>
+		</h2>
+		<table width="40%">
+			<tr>
+				<td>
+					Internal Device
+				</td>
+				<td>
+					<%=c.wafer[0..4]%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Wafer Cost
+				</td>
+				<td>
+					$<%=sprintf("%7.2f",c.wafercost)%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					GDPW
+				</td>
+				<td>
+					<%=c.grossdie%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Model Sort Yield
+				</td>
+				<td>
+					<%=c.sortyield%>%
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Net Die Per Wafer
+				</td>
+				<td>
+					<%=c.netgooddie%>
+				</td>
+			</tr>
+				<tr>
+				<td>
+					<b>Untested Die Cost</b>
+				</td>
+				<td>
+					<b><%=sprintf("$%6.4f",cv[:untested_die])%></b>
+				</td>
+				
+				</tr>
+				
+		</table>

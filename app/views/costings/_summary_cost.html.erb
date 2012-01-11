@@ -1,0 +1,104 @@
+		<table width="40%", font-size="80%">
+			<tr>
+				<th>
+					<b>Category</b>
+				</th>
+				<th>
+					<b>Cost</b>
+				</th>
+				<th>
+					<b>Percentage</b>
+				</th>					
+			<tr>
+				<td>
+					Untested Die
+				</td>
+				<td>
+					<%=sprintf("$%6.4f",cv[:untested_die])%>
+				</td>
+				<td>
+					<%=sprintf("%04.1f%",(cv[:untested_die]/cv[:total])*100)%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Die Wafer Sort
+				</td>
+				<td>
+					<%=sprintf("$%6.4f",cv[:die_sort])%>
+				</td>
+				<td>
+					<%=sprintf("%04.1f%",(cv[:die_sort]/cv[:total])*100)%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Assembly
+				</td>
+				<td>
+					<%=sprintf("$%6.4f",cv[:assembly])%>
+				</td>
+				<td>
+					<%=sprintf("%04.1f%",(cv[:assembly]/cv[:total])*100)%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					 Final Test
+				</td>
+				<td>
+					<%=sprintf("$%6.4f",cv[:die_ft])%>
+				</td>
+				<td>
+					<%=sprintf("%04.1f%",(cv[:die_ft]/cv[:total])*100)%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Misc Backend
+				</td>
+				<td>
+					<%=sprintf("$%6.4f",cv[:die_backend])%>
+				</td>
+				<td>
+					<%=sprintf("%04.1f%",(cv[:die_backend]/cv[:total])*100)%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Overhead Cost
+				</td>
+				<td>
+					<%=sprintf("$%6.4f",cv[:die_overhead])%>
+				</td>
+				<td>
+					<%=sprintf("%04.1f%",(cv[:die_overhead]/cv[:total])*100)%>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b>Total Cost</b>
+				</td>
+				<td>
+					<b><%=sprintf("$%6.4f",cv[:total])%></b>
+				</td>
+			</tr>
+		</table>
+		<hr>
+		<table table width="25%", font-size="80%">
+			<tr>
+				<td>
+					Total Manufacturing Costs
+					</td>
+					<td>
+						<%=sprintf("$%6.4f",c.fg_stdcost-c.tst_ohcost-c.asm_ohcost)%>
+					</td>
+					</tr>
+					<tr>
+						<td>Total Standard Cost
+							</td>
+						<td>
+							<%=sprintf("$%6.4f",c.fg_stdcost)%>
+							</td>
+							</tr>
+			</table>

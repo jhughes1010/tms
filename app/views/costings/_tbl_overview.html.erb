@@ -1,0 +1,14 @@
+				<tr>
+					<td>
+						<%=c.device%>
+					</td>
+					<td>
+						<%=c.wafer[0..4]%>
+					</td>
+					<td>
+						<%=sprintf("%5.3f",c.fg_stdcost)%>
+					</td>
+					<td>
+						<%= link_to 'Show', c %>
+					</td>
+				</tr>
