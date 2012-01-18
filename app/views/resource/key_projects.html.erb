@@ -1,4 +1,6 @@
-<h1>Key Projects Listing</h1><%= Date.today.to_s(:long)%>
+<%=render :partial =>"pill_navigation",:locals => {:active => "By_assignee"} %>
+<%= render :partial =>"page_header",:locals => {:title => "Key Projects", :description => "Resource Review"} %>
+
 <div id="report-list">
 <table width="100%">
 	<%= render :partial => 'header_key_project' %>
