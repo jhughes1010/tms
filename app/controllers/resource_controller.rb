@@ -107,7 +107,7 @@ class ResourceController < ApplicationController
     #initial variables
     header = 0
     #filenames
-    import_file = "import/2011q3.csv"
+    import_file = "import/2011q4.csv"
     puts
     puts "============================================="
     puts "CSV importer for Resource Allocation database"
@@ -269,7 +269,7 @@ class ResourceController < ApplicationController
     @auth = session[:user_auth]
     @user_id=session[:user_id]
     @full_name=session[:user_fullname]
-    @today=Date.today.months_ago(1)
+    @today=Date.today
     @today.to_s(:long)
   end
 end
