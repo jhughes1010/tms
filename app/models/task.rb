@@ -39,8 +39,9 @@ class Task < ActiveRecord::Base
     self.where("complete = ? AND requester_id = ?",false, user_id).order("assignee_id, priority")
   end
   def self.all_active2
-    t = self.where("complete = 'f' AND assignee_id IS NOT NULL ").order("assignee_id, category, priority")
-    t.group_by(&:assignee_id)
+    #t=self.joins('INNER JOIN users ON users.id = tasks.assignee_id').where("tasks.assignee_id = 2").select('users.fullname, tasks.assignee_id')
+    t = self.where("tasks.complete = 'f' AND tasks.assignee_id IS NOT NULL").order("users.fullname, tasks.category, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*')
+    t.group_by(&:fullname)
   end
  
   def self.all_active_by_requester
