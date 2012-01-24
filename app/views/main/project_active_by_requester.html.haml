@@ -1,11 +1,10 @@
 = render :partial =>"pill_navigation",:locals => {:active => "By_requester"}
 = render :partial =>"page_header",:locals => {:title => "Active Projects", :description => "ordered by requester and priority"}
 #accordion
-  - @tasks.each_pair do |requester_id, tasks|
-    - u = User.find(requester_id.to_i)
+  - @tasks.each_pair do |fullname, tasks|
     %h3
-      %a{:href => "#"}= u.fullname
+      %a{:href => "#"}= tasks[0].fullname
     %div
       %table.bordered-table
         = render :partial => "task_header"
-        = render :partial => "task" , :collection => tasks, :locals => {:requester_id => requester_id}
+        = render :partial => "task" , :collection => tasks
