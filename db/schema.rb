@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120113105214) do
+ActiveRecord::Schema.define(:version => 20120125111818) do
 
   create_table "can_mains", :force => true do |t|
     t.string    "can"
@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(:version => 20120113105214) do
     t.timestamp "created_at"
     t.timestamp "updated_at"
     t.string    "owner"
+    t.string    "long_name"
   end
 
   create_table "ptos", :force => true do |t|
@@ -144,22 +145,22 @@ ActiveRecord::Schema.define(:version => 20120113105214) do
   end
 
   create_table "tasks", :force => true do |t|
-    t.integer  "requester_id"
-    t.integer  "assignee_id"
-    t.string   "taskname"
-    t.date     "scd"
-    t.date     "acd"
-    t.integer  "priority"
-    t.integer  "category"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "complete"
-    t.date     "tcd"
-    t.text     "description"
-    t.string   "operation"
-    t.boolean  "accepted"
-    t.string   "device"
-    t.string   "platform"
+    t.integer   "requester_id"
+    t.integer   "assignee_id"
+    t.string    "taskname"
+    t.date      "scd"
+    t.date      "acd"
+    t.integer   "priority"
+    t.integer   "category"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.boolean   "complete"
+    t.date      "tcd"
+    t.text      "description"
+    t.string    "operation"
+    t.boolean   "accepted"
+    t.string    "device"
+    t.string    "platform"
   end
 
   create_table "users", :force => true do |t|

@@ -18,13 +18,13 @@ class ImportController < ApplicationController
       Project.delete_all
       arr_of_arrs = CSV.read(import_file)
       arr_of_arrs.each do |x|
-        write_csv_data(x) if header >=8
+        write_csv_data(x) if header >=1
         header += 1
       end
     end
 
     def write_csv_data(record)
-      unless record[3] == "Baseline Plan"
+      if record[3] == "Current Plan"
         puts record
       column_array= [0,1,2,3,4,5,6,7,8,9,10,11]
       new_to_costing_db(record, column_array)
@@ -36,11 +36,28 @@ class ImportController < ApplicationController
       r = Project.new
       r.key = true
       r.project = record[column_array[2]]
+      r.long_name = record[column_array[0]]
       r.dr1 = format_date(record[column_array[7]])
       r.dr2 = format_date(record[column_array[8]])
       r.dr3 = format_date(record[column_array[9]])
       r.dr4 = format_date(record[column_array[10]])
       r.dr5 = format_date(record[column_array[11]])
+      
+      if record[column_array[0]]["_SE_"]
+        r.owner = "Ng"
+      elsif 
+        record[column_array[0]]["_CP_"]
+        r.owner = "Weiner"
+      elsif 
+        record[column_array[0]]["_DF_"]
+        r.owner = "Manea"
+      elsif 
+        record[column_array[0]]["_BF_"]
+        r.owner = "Manea"
+      elsif 
+        record[column_array[0]]["_AP_"]
+        r.owner = "Manea"
+      end
       r.save
     end
     def format_date(date)
