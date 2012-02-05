@@ -13,6 +13,54 @@
 		<%= stylesheet_link_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/ui-lightness/jquery-ui.css", "application" %>
 		<%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "//ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js" %>
 		<%= javascript_include_tag :defaults %>
+		
+<!-- Insert of GoogleChart Demo starts here -->		
+     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+     <script type="text/javascript">
+       google.load('visualization', '1', {packages: ['corechart']});
+     </script>
+     <script type="text/javascript">
+       function drawVisualization() {
+		 //Data from controller
+		var js_data=@chart_title.to_json
+         // Some raw data (not necessarily accurate)
+         var data = google.visualization.arrayToDataTable([
+           ['Month', 'Design', 'Layout', 'Product', 'Applications', 'Average'],
+           ['2012/05', 165, 938, 522, 998, 614.6],
+           ['2012/06', 135, 1120, 599, 1268, 682],
+           ['2012/07', 157, 1167, 587, 807, 623],
+           ['2012/08', 139, 1110, 615, 968, 609.4],
+           ['2012/05', 165, 938, 522, 998, 614.6],
+           ['2012/06', 135, 1120, 599, 1268, 682],
+           ['2012/07', 157, 1167, 587, 807, 623],
+           ['2012/08', 139, 1110, 615, 968, 609.4],
+           ['2012/05', 165, 938, 522, 998, 614.6],
+           ['2012/06', 135, 1120, 599, 1268, 682],
+           ['2012/07', 157, 1167, 587, 807, 623],
+           ['2012/08', 139, 1110, 615, 968, 609.4],
+           ['2012/05', 165, 938, 522, 998, 614.6],
+           ['2012/06', 135, 1120, 599, 1268, 682],
+           ['2012/07', 157, 1167, 587, 807, 623],
+           ['2012/08', 139, 1110, 615, 968, 609.4],
+           ['2012/09', 136, 691, 629, 1026, 569.6]
+         ]);
+
+         var options = {
+           title : js_data,
+           vAxis: {title: "man-month"},
+           hAxis: {title: "Month"},
+           seriesType: "bars",
+		   isStacked: "true",
+           series: {4: {type: "line"}}
+         };
+
+         var chart = new google.visualization.ComboChart(document.getElementById('chart_div'));
+         chart.draw(data, options);
+       }
+       google.setOnLoadCallback(drawVisualization);
+     </script>
+<!-- End of GoogleChart Demo -->			
+		
 		<link href='/images/favicon.ico' rel='shortcut icon'>
 	</head>
 	<body>

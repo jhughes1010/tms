@@ -1,5 +1,6 @@
 class ResourceController < ApplicationController
   require "csv"
+  require 'google_chart'
 
   before_filter :set_useful_globals
 
@@ -262,6 +263,30 @@ class ResourceController < ApplicationController
     }
     dr_month_array
   end
+
+ def graph
+   @chart_title = "Memory BU Resource Forecast"
+   
+   #pc = GoogleChart::PieChart.new("400x400", "Food and Drinks Consumed Christmas 2007")
+   #pc.data "Laney", 10, '00AF33' 
+   #pc.data "Christmas Ham", 20, '4BB74C'
+   #pc.data "Milk (not including egg nog)",	8, 'EE2C2C'
+   #pc.data "Cookies", 25, 'CC3232'
+   #pc.data "Roasted Chestnuts", 5, '33FF33'
+   #pc.data "Chocolate", 3, '66FF66'
+   #pc.data "Various Other Beverages", 15, '9AFF9A'
+   #pc.data "Various Other Foods", 9, 'C1FFC1'
+   #pc.data "Snacks",	5, 'CCFFCC'
+   #@link = pc.to_url
+   
+   #GoogleChart::BarChart.new('800x200', 'My Chart', :vertical) do |bc|
+    #bc.data 'Design', [5,4,3,1,3,5], '0000ff'
+    #bc.data 'PE-TE', [1,2,3,4,5,6], 'ff0000'
+    #bc.data 'Applications', [6,5,4,4,5,6], '00ff00'
+    #@link2 = bc.to_url
+  #end
+
+ end
 
   protected
 
