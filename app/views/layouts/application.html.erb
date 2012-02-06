@@ -22,31 +22,13 @@
      <script type="text/javascript">
        function drawVisualization() {
 		 //Data from controller
-		var js_data=@chart_title.to_json
+		var js_char_title = '<%= @chart_title%>'
+	    var js_data = <%= @data.to_json.html_safe %>
          // Some raw data (not necessarily accurate)
-         var data = google.visualization.arrayToDataTable([
-           ['Month', 'Design', 'Layout', 'Product', 'Applications', 'Average'],
-           ['2012/05', 165, 938, 522, 998, 614.6],
-           ['2012/06', 135, 1120, 599, 1268, 682],
-           ['2012/07', 157, 1167, 587, 807, 623],
-           ['2012/08', 139, 1110, 615, 968, 609.4],
-           ['2012/05', 165, 938, 522, 998, 614.6],
-           ['2012/06', 135, 1120, 599, 1268, 682],
-           ['2012/07', 157, 1167, 587, 807, 623],
-           ['2012/08', 139, 1110, 615, 968, 609.4],
-           ['2012/05', 165, 938, 522, 998, 614.6],
-           ['2012/06', 135, 1120, 599, 1268, 682],
-           ['2012/07', 157, 1167, 587, 807, 623],
-           ['2012/08', 139, 1110, 615, 968, 609.4],
-           ['2012/05', 165, 938, 522, 998, 614.6],
-           ['2012/06', 135, 1120, 599, 1268, 682],
-           ['2012/07', 157, 1167, 587, 807, 623],
-           ['2012/08', 139, 1110, 615, 968, 609.4],
-           ['2012/09', 136, 691, 629, 1026, 569.6]
-         ]);
+         var data = google.visualization.arrayToDataTable(js_data);
 
          var options = {
-           title : js_data,
+           title : js_char_title,
            vAxis: {title: "man-month"},
            hAxis: {title: "Month"},
            seriesType: "bars",

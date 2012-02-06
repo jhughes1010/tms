@@ -26,6 +26,23 @@ class ResourceController < ApplicationController
       @design = department_totals(@key_projects.project,"Design")
       @pe = department_totals(@key_projects.project,"Product")
       @application = department_totals(@key_projects.project,"Applications")
+      #Prepare GoogleCharts data
+      @chart_title = "Memory BU Resource Forecast for " + @key_projects.project
+
+      @data = mda(16,5)
+      @data[0][0] = 'Month'     
+      @data[0][1] = 'Layout'     
+      @data[0][2] = 'Design'     
+      @data[0][3] = 'PE-TE'     
+      @data[0][4] = 'Applications'
+      1.upto(15){
+        |m|
+      @data[m][0] = @today.months_since(m-1).month.to_s + '-' + (@today.months_since(m-1).year-2000).to_s
+      @data[m][1] = (@layout[m-1]*100).round / 100.0 
+      @data[m][2] = (@design[m-1]*100).round / 100.0
+      @data[m][3] = (@pe[m-1]*100).round / 100.0
+      @data[m][4] = (@application[m-1]*100).round / 100.0
+      } 
       #Get Department Details
       @all_details = Resource.project_detail_name(@today.at_beginning_of_month,@key_projects.project)
     end
@@ -265,7 +282,27 @@ class ResourceController < ApplicationController
   end
 
  def graph
-   @chart_title = "Memory BU Resource Forecast"
+   @chart_title = "Memory BU Resource Forecast for 2012"
+   @data = [
+          ['Month', 'Design', 'Layout', 'Product', 'Applications', 'Average'],
+          ['2012/05', 165, 938, 522, 998, 614.6],
+          ['2012/06', 135, 1120, 599, 1268, 682],
+          ['2012/07', 157, 1167, 587, 807, 623],
+          ['2012/08', 139, 1110, 615, 968, 609.4],
+          ['2012/05', 165, 938, 522, 998, 614.6],
+          ['2012/06', 135, 1120, 599, 1268, 682],
+          ['2012/07', 157, 1167, 587, 807, 623],
+          ['2012/08', 139, 1110, 615, 968, 609.4],
+          ['2012/05', 165, 938, 522, 998, 614.6],
+          ['2012/06', 135, 1120, 599, 1268, 682],
+          ['2012/07', 157, 1167, 587, 807, 623],
+          ['2012/08', 139, 1110, 615, 968, 609.4],
+          ['2012/05', 165, 938, 522, 998, 614.6],
+          ['2012/06', 135, 1120, 599, 1268, 682],
+          ['2012/07', 157, 1167, 587, 807, 623],
+          ['2012/08', 139, 1110, 615, 968, 609.4],
+          ['2012/09', 136, 691, 629, 1026, 569.6]
+        ]
    
    #pc = GoogleChart::PieChart.new("400x400", "Food and Drinks Consumed Christmas 2007")
    #pc.data "Laney", 10, '00AF33' 
@@ -294,7 +331,15 @@ class ResourceController < ApplicationController
     @auth = session[:user_auth]
     @user_id=session[:user_id]
     @full_name=session[:user_fullname]
-    @today=Date.today
+    @today=Date.today-14
     @today.to_s(:long)
   end
+  # ========================================
+  # = mda - make a multi-dimensional array =
+  # ========================================
+    def mda(width,height)
+      a = Array.new(width)
+      a.map! { Array.new(height,0) }
+      return a
+    end
 end
