@@ -1,5 +1,7 @@
+= render :partial =>"pill_navigation",:locals => {:active => "Forecast"}
+= render :partial =>"page_header",:locals => {:title => "Forecast Report", :description => "15 month forward looking data"}
 #product-list
-  #chart_div{:style => "width: 900px; height: 600px;"}
+
   %b
     Project Totals for #{@key_projects.project}
   %br
@@ -26,6 +28,7 @@
         .dr4 #{@key_projects.dr4}
       %td
         .dr5 #{@key_projects.dr5}
+  #chart_div{:style => "width: 900px; height: 400px;"}
   %hr
   %table
     = render :partial => "header_month", :locals => {:date => @date}

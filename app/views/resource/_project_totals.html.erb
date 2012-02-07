@@ -1,7 +1,19 @@
 <tr>
 					<th width="20%">All Departments</th>
     <%for i in (0..16) %>
-    <td>
+  	<% if @dr_month[4] == i%>
+		<td class = "dr5">
+	<% elsif @dr_month[3] == i%>
+		<td class = "dr4">
+	<% elsif @dr_month[2] == i%>
+		<td class = "dr3">
+	<% elsif @dr_month[1] == i%>
+		<td class = "dr2">
+	<% elsif @dr_month[0] == i%>
+		<td class = "dr1">
+	<% else %>
+		<td>
+	<% end %>
         <%= sprintf("%5.1f",@project_totals[i])%>
     </td>
     <%end %>
