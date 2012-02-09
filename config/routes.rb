@@ -1,4 +1,6 @@
 TMS::Application.routes.draw do
+  get "import_resource/import"
+
   get "import/npi"
 
   get "cost/import"

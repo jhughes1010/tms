@@ -32,6 +32,8 @@ class Resource < ActiveRecord::Base
   def self.avf(start, span)
     self.where("date >= ? AND date < ?" ,start, start +span.months).order("department, project").select("department,project, sum (forecast) as forecast, sum (actual) as actual").group("project, department")   
   end
-  
+  def self.remove_forecast(date)
+    self.delete_all(["date >= ?",date])
+  end
   
 end

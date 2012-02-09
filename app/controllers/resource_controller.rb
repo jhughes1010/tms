@@ -176,7 +176,9 @@ class ResourceController < ApplicationController
     puts "============================================="
     #import and stack data
     #delete database
-    Resource.delete_all
+    #Resource.delete_all
+    @removal_date = @today.months_ago(3).beginning_of_month
+    Resource.remove_forecast(@removal_date)
     arr_of_arrs = CSV.read(import_file)
     arr_of_arrs.each do |x|
       stack_data(x) if header == 1
@@ -184,26 +186,7 @@ class ResourceController < ApplicationController
     end
   end
   #no longer needed as projects are in the database
-  def dnu_import_project
-    #initial variables
-    header = 0
-    #filenames
-    import_file = "import/project_list.csv"
-    puts
-    puts "============================================="
-    puts "CSV importer for Resource Allocation database"
-    puts "Project List Import tool"
-    puts "============================================="
-    #delete database
-    Project.delete_all
-    arr_of_arrs = CSV.read(import_file)
-    arr_of_arrs.each do |x|
-      write_project_record(x) if header == 1
-      header = 1 if header == 0
-    end
-  end
-  #
-  #
+  
   #
   def stack_data(line)
     write_record(line)
