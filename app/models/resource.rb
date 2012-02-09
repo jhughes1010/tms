@@ -11,7 +11,9 @@ class Resource < ActiveRecord::Base
   end
   def self.department_total(date,project,department)
     self.where("project = ? AND department LIKE ? AND date >= ? AND date < ?" ,project, "%#{department}%", date, date +15.months).order("date").select("sum (forecast) as forecast").group("date")
-  
+  end
+  def self.department_actual_total(date,project,department)
+    self.where("project = ? AND department LIKE ? AND date < ?" ,project, "%#{department}%", date).order("date").select("sum (actual) as actual").group("date")
   end
   def self.department_detail(date,project,department)
     self.where("project = ? AND department LIKE ? AND date >= ? AND date < ?" ,project, "%#{department}%", date, date +15.months).order("date")
