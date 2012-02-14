@@ -48,7 +48,7 @@ class ResourceController < ApplicationController
       @data[0][2] = 'Design'
       @data[0][3] = 'PE-TE'
       @data[0][4] = 'Applications'
-      
+
       #load_forecast_to_array(@layout,1)
       #load_forecast_to_array(@design,2)
       #load_forecast_to_array(@pe,3)
@@ -80,11 +80,11 @@ class ResourceController < ApplicationController
   end
   def load_forecast_to_array(department, index)
     m=1
-    department.each do {|d|
-    @data[actuals_month_count + m][index] = (d[m-1]*100).round / 100.0 
-  }
+    department.each do |d|
+      @data[actuals_month_count + m][index] = (d[m-1]*100).round / 100.0
+    end
   end
-    
+
   def employee_view
     employee_name = params[:name]
     start_date = @today.beginning_of_month
@@ -198,7 +198,7 @@ class ResourceController < ApplicationController
     end
   end
   #no longer needed as projects are in the database
-  
+
   #
   def stack_data(line)
     write_record(line)
