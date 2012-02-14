@@ -36,7 +36,7 @@ class ResourceController < ApplicationController
 
 
       #Determine maximum count on actuals for chart width
-      actuals_month_count = 3
+      actuals_month_count = 6
 
 
       #Prepare GoogleCharts data
@@ -48,6 +48,11 @@ class ResourceController < ApplicationController
       @data[0][2] = 'Design'
       @data[0][3] = 'PE-TE'
       @data[0][4] = 'Applications'
+      
+      #load_forecast_to_array(@layout,1)
+      #load_forecast_to_array(@design,2)
+      #load_forecast_to_array(@pe,3)
+      #load_forecast_to_array(@application,4)
       1.upto(15){
         |m|
         @data[actuals_month_count + m][0] = @today.months_since(m-1).month.to_s + '-' + (@today.months_since(m-1).year-2000).to_s
@@ -73,6 +78,13 @@ class ResourceController < ApplicationController
       @all_details = Resource.project_detail_name(@today.at_beginning_of_month,@key_projects.project)
     end
   end
+  def load_forecast_to_array(department, index)
+    m=1
+    department.each do {|d|
+    @data[actuals_month_count + m][index] = (d[m-1]*100).round / 100.0 
+  }
+  end
+    
   def employee_view
     employee_name = params[:name]
     start_date = @today.beginning_of_month
@@ -357,7 +369,7 @@ class ResourceController < ApplicationController
     @auth = session[:user_auth]
     @user_id=session[:user_id]
     @full_name=session[:user_fullname]
-    @today=Date.today-14
+    @today=Date.today.months_ago(1)
     @today.to_s(:long)
   end
   # ========================================
