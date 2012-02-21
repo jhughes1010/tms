@@ -36,18 +36,19 @@ class ResourceController < ApplicationController
 
 
       #Determine maximum count on actuals for chart width
-      actuals_month_count = 6
+      actuals_month_count = 12
 
 
       #Prepare GoogleCharts data
       @chart_title = "Memory BU Resource Forecast for " + @key_projects.project
 
-      @data = mda(actuals_month_count + 16,5)
+      @data = mda(actuals_month_count + 16,6)
       @data[0][0] = 'Month'
       @data[0][1] = 'Layout'
       @data[0][2] = 'Design'
       @data[0][3] = 'PE-TE'
       @data[0][4] = 'Applications'
+      @data[0][5] = 'DR1 baseline'
 
       #load_forecast_to_array(@layout,1)
       #load_forecast_to_array(@design,2)
@@ -69,6 +70,7 @@ class ResourceController < ApplicationController
         @data[m][2] = (@design_actuals[m-1]*100).round / 100.0
         @data[m][3] = (@pe_actuals[m-1]*100).round / 100.0
         @data[m][4] = (@application_actuals[m-1]*100).round / 100.0
+        @data[m][5] = 2
 
       }
       puts @data
