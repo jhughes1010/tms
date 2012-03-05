@@ -1,12 +1,14 @@
-Get Actuals and forecast department totals for project
+Get actuals department totals for project
+Get forecast department totals for project
 
 Determine earliest actuals entry
 
 dimension array
 
-copy ActiveRecord results to actuals and forecast hashes
+copy ActiveRecord active results to hash
+copy ActiveRecord forecast results to hash
 
 copy actuals to array
-
 copy forecast to array
 
+send array to .js
