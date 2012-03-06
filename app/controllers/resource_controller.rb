@@ -70,10 +70,26 @@ class ResourceController < ApplicationController
         @data[m][2] = (@design_actuals[m-1]*100).round / 100.0
         @data[m][3] = (@pe_actuals[m-1]*100).round / 100.0
         @data[m][4] = (@application_actuals[m-1]*100).round / 100.0
-        @data[m][5] = 2
+        #@data[m][5] = 2
 
       }
-      puts @data
+      @data[1][5] = 2;
+      @data[2][5] = 3.5;
+      @data[3][5] = 5.1;
+      @data[4][5] = 6;
+      @data[5][5] = 7.9;
+      @data[6][5] = 8.1;
+      @data[7][5] = 9.2;
+      @data[8][5] = 5.2;
+      @data[9][5] = 6.2;
+      @data[10][5] = 4.5;
+      @data[11][5] = 4;
+      @data[12][5] = 1.7;
+      @data[13][5] = 2.0;
+      @data[14][5] = 1.4;
+      @data[15][5] = 1.2;
+      
+      #puts @data
 
 
       #Get Department Details
