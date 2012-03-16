@@ -39,7 +39,9 @@
 			<%= pto.start.to_s(:short) %>
 		</td>
 		<td>
+			<% if(pto.finish != pto.start) %>
 			<%= pto.finish.to_s(:short) %>
+			<% end %>
 		</td>
 		<td>
 			<%= pto.comments %>
