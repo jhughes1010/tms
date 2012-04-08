@@ -14,10 +14,10 @@
 					Untested Die
 				</td>
 				<td>
-					<%=sprintf("$%6.4f",cv[:untested_die])%>
+					<%=sprintf("$%6.4f",c.untested_die_cost)%>
 				</td>
 				<td>
-					<%=sprintf("%04.1f%",(cv[:untested_die]/cv[:total])*100)%>
+					<%=sprintf("%04.1f%",c.untested_die_cost_percentage*100)%>
 				</td>
 			</tr>
 			<tr>
@@ -25,10 +25,10 @@
 					Die Wafer Sort
 				</td>
 				<td>
-					<%=sprintf("$%6.4f",cv[:die_sort])%>
+					<%=sprintf("$%6.4f",c.die_sort_cost)%>
 				</td>
 				<td>
-					<%=sprintf("%04.1f%",(cv[:die_sort]/cv[:total])*100)%>
+					<%=sprintf("%04.1f%",c.die_sort_cost_percentage*100)%>
 				</td>
 			</tr>
 			<tr>
@@ -36,10 +36,10 @@
 					Assembly
 				</td>
 				<td>
-					<%=sprintf("$%6.4f",cv[:assembly])%>
+					<%=sprintf("$%6.4f",c.die_assembly_cost)%>
 				</td>
 				<td>
-					<%=sprintf("%04.1f%",(cv[:assembly]/cv[:total])*100)%>
+					<%=sprintf("%04.1f%",c.die_assembly_cost_percentage*100)%>
 				</td>
 			</tr>
 			<tr>
@@ -47,10 +47,10 @@
 					 Final Test
 				</td>
 				<td>
-					<%=sprintf("$%6.4f",cv[:die_ft])%>
+					<%=sprintf("$%6.4f",c.die_ft_cost)%>
 				</td>
 				<td>
-					<%=sprintf("%04.1f%",(cv[:die_ft]/cv[:total])*100)%>
+					<%=sprintf("%04.1f%",c.die_ft_cost_percentage*100)%>
 				</td>
 			</tr>
 			<tr>
@@ -58,10 +58,10 @@
 					Misc Backend
 				</td>
 				<td>
-					<%=sprintf("$%6.4f",cv[:die_backend])%>
+					<%=sprintf("$%6.4f",c.die_backend_cost)%>
 				</td>
 				<td>
-					<%=sprintf("%04.1f%",(cv[:die_backend]/cv[:total])*100)%>
+					<%=sprintf("%04.1f%",c.die_backend_cost_percentage*100)%>
 				</td>
 			</tr>
 			<tr>
@@ -69,10 +69,10 @@
 					Overhead Cost
 				</td>
 				<td>
-					<%=sprintf("$%6.4f",cv[:die_overhead])%>
+					<%=sprintf("$%6.4f",c.die_overhead_cost)%>
 				</td>
 				<td>
-					<%=sprintf("%04.1f%",(cv[:die_overhead]/cv[:total])*100)%>
+					<%=sprintf("%04.1f%",c.die_overhead_cost_percentage*100)%>
 				</td>
 			</tr>
 			<tr>
@@ -80,7 +80,7 @@
 					<b>Total Cost</b>
 				</td>
 				<td>
-					<b><%=sprintf("$%6.4f",cv[:total])%></b>
+					<b><%=sprintf("$%6.4f",c.total_cost)%></b>
 				</td>
 			</tr>
 		</table>
