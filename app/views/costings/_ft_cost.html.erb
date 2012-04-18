@@ -7,7 +7,7 @@
 					Test Cost
 				</td>
 				<td>
-					<%=sprintf("$%5.4f",@calculated_values[:die_ft]-c.tst_ohcost)%>
+					<%=sprintf("$%5.4f",c.die_ft_cost-c.tst_ohcost)%>
 				</td>
 			</tr>
 			<tr>
@@ -30,7 +30,7 @@
 					<b>Final Cost of Package Test</b>
 				</td>
 				<td>
-					<b><%=sprintf("$%5.4f",@calculated_values[:die_ft])%></b>
+					<b><%=sprintf("$%5.4f",c.die_ft_cost)%></b>
 				</td>
 			</tr>
 		</table>

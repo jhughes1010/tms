@@ -16,7 +16,7 @@
 					Assembly Cost
 				</td>
 				<td>
-					<%=sprintf("$%6.4f",@calculated_values[:assembly]-c.asm_ohcost)%>
+					<%=sprintf("$%6.4f",c.die_assembly_cost-c.asm_ohcost)%>
 				</td>
 			</tr>
 			<tr>
@@ -39,7 +39,7 @@
 				<td>
 					<b>Final Cost of Assembly</b></td>
 					<td>
-					$<b><%=sprintf("$%5.4f",@calculated_values[:assembly])%></b>
+					$<b><%=sprintf("$%5.4f",c.die_assembly_cost)%></b>
 				</td>
 			</tr>
 		</table>

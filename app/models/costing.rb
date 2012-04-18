@@ -1,5 +1,5 @@
 class Costing < ActiveRecord::Base
-  attr_accessor :untested_die_cost, :die_sort_cost, :die_assembly_cost
+  attr_accessor :untested_die_cost, :untested_die_cost_percentage, :die_sort_cost, :die_sort_cost_percentage, :die_assembly_cost, :die_assembly_cost_percentage, :die_ft_cost, :die_ft_cost_percentage, :die_backend_cost, :die_backend_cost_percentage, :die_overhead_cost, :die_overhead_cost_percentage, :total_cost
 
   def self.search(params)
     results = scoped

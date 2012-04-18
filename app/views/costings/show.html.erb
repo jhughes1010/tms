@@ -16,36 +16,36 @@ Internal Device ID: <%=@costing.wafer[0..4]%>
 	</ul>
 	<div id="tabs-1">
 		<p>
-		<%= render :partial => 'summary_cost', :locals => {:c => @costing, :cv => @calculated_values} %>			
+		<%= render :partial => 'summary_cost', :locals => {:c => @costing} %>			
 		</p>
 	</div>
 	<div id="tabs-2">
 		<p>		
-		<%= render :partial => 'die_cost', :locals => {:c => @costing, :cv => @calculated_values} %>
+		<%= render :partial => 'die_cost', :locals => {:c => @costing} %>
 			</p>
 	</div>
 	<div id="tabs-3">
 		<p>
-			<%= render :partial => 'die_sort_cost', :locals => {:c => @costing, :cv => @calculated_values} %>
+			<%= render :partial => 'die_sort_cost', :locals => {:c => @costing} %>
 		</p>
 
 	</div>
 	<div id="tabs-4">
 		<p>
-					<%= render :partial => 'assy_cost', :locals => {:c => @costing, :cv => @calculated_values} %>
+					<%= render :partial => 'assy_cost', :locals => {:c => @costing} %>
 		</p>
 
 	</div>
 	<div id="tabs-5">
 		<p>
-		<%= render :partial => 'ft_cost', :locals => {:c => @costing, :cv => @calculated_values} %>
+		<%= render :partial => 'ft_cost', :locals => {:c => @costing} %>
 		</p>
 
 	</div>
 
 	<div id="tabs-6">
 		<p>
-			<%= render :partial => 'misc_backend', :locals => {:c => @costing, :cv => @calculated_values} %>
+			<%= render :partial => 'misc_backend', :locals => {:c => @costing} %>
 		</p>
 
 	</div>	
