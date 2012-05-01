@@ -9,7 +9,7 @@ class ImportController < ApplicationController
       #initial variables
       header = 0
       #filenames
-      import_file = "import/2011Q4_KeyProjects.csv"
+      import_file = "import/2012Q1_KeyProjects.csv"
       puts
       puts "============================================="
       puts "CSV importer for Costing database"
