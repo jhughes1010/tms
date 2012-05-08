@@ -348,7 +348,7 @@ class ResourceController < ApplicationController
     @auth = session[:user_auth]
     @user_id=session[:user_id]
     @full_name=session[:user_fullname]
-    @today=Date.today.months_ago(0)
+    @today=Date.today.months_ago(1)
     @today.to_s(:long)
   end
   # ========================================
