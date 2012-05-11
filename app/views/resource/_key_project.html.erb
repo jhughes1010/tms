@@ -10,8 +10,11 @@
 	<td>				
 		<%= k.owner %>
 	</td>	
-	<td>				
-		
+	<td>					
+		<%= number_with_precision(k.forecast, :precision => 1)%>
+		--
+		<%= number_with_precision(((k.forecast/@kp_total)*100), :precision => 1)%>	
+		%
 	</td>
 		<td>				
 		<%= k.dr1 %>

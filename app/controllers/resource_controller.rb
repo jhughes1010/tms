@@ -6,13 +6,15 @@ class ResourceController < ApplicationController
 
   def index
     #Work through projects
-    @key_projects = Project.k_proj
-    @project="SinbadEE"
-    @project_totals = project_totals(@project)
+    @key_projects = Project.k_proj(@today)
+    #@project="SinbadEE"
+    #@project_totals = project_totals(@project)
   end
   #Key Project Index
   def key_projects
-    @key_projects = Project.k_proj
+    @key_projects = Project.k_proj(@today)
+    key_projects_total_hours = Resource.total_forecast_man_hours(@today)
+    @kp_total = key_projects_total_hours[0].forecast
   end
   #Key Project Summary
   def key_project_summary
@@ -348,7 +350,7 @@ class ResourceController < ApplicationController
     @auth = session[:user_auth]
     @user_id=session[:user_id]
     @full_name=session[:user_fullname]
-    @today=Date.today.months_ago(1)
+    @today=Date.today.months_ago(2)
     @today.to_s(:long)
   end
   # ========================================

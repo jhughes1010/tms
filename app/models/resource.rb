@@ -35,5 +35,8 @@ class Resource < ActiveRecord::Base
   def self.remove_forecast(date)
     self.delete_all(["date >= ?",date])
   end
+  def   self.total_forecast_man_hours(date)
+    self.where("date >= ? AND date < ?" ,date, date +15.months).select("sum (forecast) as forecast")      
+  end
   
 end
