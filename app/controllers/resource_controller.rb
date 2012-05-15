@@ -16,6 +16,34 @@ class ResourceController < ApplicationController
     key_projects_total_hours = Resource.total_forecast_man_hours(@today)
     @kp_total = key_projects_total_hours[0].forecast
   end
+
+  def key_project_summary_new
+    if params[:p_id]
+      p=params[:p_id].to_i
+      @project = Project.find(p)     
+      #Get Project Start Month (earliest date to graph)
+      first_record = Resource.project_first(@project.project)
+      @first = first_record[0].date
+      #Get project end month (last forecast date to graph)
+      last_record = Resource.project_last(@project.project)
+      @last = last_record[0].date
+      #Calculate project duration
+      @duration = (@last.year*12 + @last.month) - (@first.year * 12 + @first.month) +1
+      #Create empty array
+      @chart_data = mda(@duration,7)
+      
+      #Get actuals data by department
+      #Load actuals into array 
+      
+      #Get forecast data by department
+      #Load forecast into array
+
+
+
+    end
+    #
+  end
+
   #Key Project Summary
   def key_project_summary
     if params[:p_id]
@@ -90,7 +118,7 @@ class ResourceController < ApplicationController
       #@data[13][5] = 2.0;
       #@data[14][5] = 1.4;
       #@data[15][5] = 1.2;
-      
+
       #puts @data
 
 

@@ -6,6 +6,12 @@ class Resource < ActiveRecord::Base
   def self.project_detail(date,project)
     self.where("project = ? AND date >= ? AND date < ?" ,project, date, date +15.months).order("date")
   end
+  def self.project_first(project)
+    self.where("project = ?", project).order("date").limit(1)
+  end
+  def self.project_last(project)
+    self.where("project = ?", project).order("date DESC").limit(1)
+  end
   def self.project_detail_name(date,project)
     self.where("project = ? AND date >= ? AND date < ?" ,project, date, date +15.months).group("project", "department", "name", "function").order("project", "department","name","function").select("project, department, name, function")
   end
