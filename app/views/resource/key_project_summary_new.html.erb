@@ -8,3 +8,9 @@ End Date:
 <br>
 Duration:
 <%= @duration%>
+<br>
+<% @quarterly_rollup.each do |key, value|%>
+<%= key %>
+<%= "     %.1f" % value %>
+<br>
+<%end%>	

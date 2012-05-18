@@ -42,7 +42,8 @@
     = render :partial => "header_month_dept_summary", :locals => {:date => @date}
     = render :partial => "project_department_totals", :locals => {:pt => @layout, :department => "Layout Engineering"} if @layout
     = render :partial => "project_department_totals", :locals => {:pt => @design, :department => "Design Engineering"} if @design
-    = render :partial => "project_department_totals", :locals => {:pt => @pe, :department => "Product/Test Engineering"} if @pe
+    = render :partial => "project_department_totals", :locals => {:pt => @pe, :department => "Product Engineering"} if @pe
+    = render :partial => "project_department_totals", :locals => {:pt => @te, :department => "Test Engineering"} if @te
     = render :partial => "project_department_totals", :locals => {:pt => @application, :department => "Applications Engineering"} if @application
   %hr
   %br

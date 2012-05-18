@@ -1,9 +1,12 @@
 class MainController < ApplicationController
+
+  require "csv"
+
   before_filter :set_useful_globals
 
   def index
   end
-  
+
   def project_active
     @tasks = Task.all_active2
   end
@@ -24,7 +27,7 @@ class MainController < ApplicationController
   def project_unassigned
     @tasks=Task.all_unassigned
   end
-  
+
   def email_user_task_report
     @users=User.all
     #loop through users
@@ -39,13 +42,13 @@ class MainController < ApplicationController
       end
     end
   end
-  
+
   def project_my_active
     @users=User.all
     @tasks=Task.all_my_active(@user_id)
     @tasks_by_me=Task.all_my_active_by_me(@user_id)
   end
-  
+
   def project_my_active_past_due
     @users=User.all
     @tasks=Task.all_my_active_past_due(@user_id)
@@ -57,16 +60,34 @@ class MainController < ApplicationController
     @stop = @start+ @outlook
     @ptos=Pto.upcoming_range(@start,@stop)
   end
-  
+
   def pto_current_90
     @outlook = 90
     @start=@today
     @stop = @start+ @outlook
     @ptos=Pto.upcoming_range(@start,@stop)
   end
-  
+
+  def export_to_csv
+    @tasks = Task.all_active
+    csv_string = CSV.generate do |csv|
+      # header row
+      csv << ["ID", "Requester","Assignee","Priority", "Category","Device","Test Point","Platform","Task Name", "Sch Comp Date", "Duration"]
+
+      # data rows
+      @tasks.each do |task|
+        csv << [task.id, task.requester, task.assignee, task.priority, task.category, task.device, task.operation, task.platform, task.taskname, task.scd, task.duration]
+      end
+    end
+
+    # send it to the browsah
+    send_data csv_string,
+    :type => 'text/csv; charset=iso-8859-1; header=present',
+    :disposition => "attachment; filename=tasks.csv"
+  end
+
   protected
-  
+
   def set_useful_globals
     @auth = session[:user_auth]
     @user_id=session[:user_id]

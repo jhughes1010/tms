@@ -17,6 +17,9 @@
 						<%= task.assignee ? task.assignee.fullname : "UNASSIGNED" %>
 					</td>
 					<td>
+						<%= task.category %>
+					</td>
+					<td>
 						<%= task.priority %>
 					</td>
 					<td><%= task.device %></td>
@@ -29,6 +32,6 @@
 						<%= task.scd %>
 					</td>
 					<td>
-						<%= task.category %>
+						<%= task.duration %>
 					</td>
 				</tr>

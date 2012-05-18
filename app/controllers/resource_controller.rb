@@ -10,6 +10,9 @@ class ResourceController < ApplicationController
     #@project="SinbadEE"
     #@project_totals = project_totals(@project)
   end
+  def rule_check
+    @projects = Project.not_k_proj(@today)
+  end
   #Key Project Index
   def key_projects
     @key_projects = Project.k_proj(@today)
@@ -20,23 +23,36 @@ class ResourceController < ApplicationController
   def key_project_summary_new
     if params[:p_id]
       p=params[:p_id].to_i
-      @project = Project.find(p)     
+      @project = Project.find(p)
       #Get Project Start Month (earliest date to graph)
-      first_record = Resource.project_first(@project.project)
-      @first = first_record[0].date
+      @first = Resource.project_first(@project.project)
+
       #Get project end month (last forecast date to graph)
-      last_record = Resource.project_last(@project.project)
-      @last = last_record[0].date
+      @last = Resource.project_last(@project.project)
+
       #Calculate project duration
       @duration = (@last.year*12 + @last.month) - (@first.year * 12 + @first.month) +1
+
       #Create empty array
       @chart_data = mda(@duration,7)
-      
+
       #Get actuals data by department
-      #Load actuals into array 
-      
+      #Load actuals into array
+
       #Get forecast data by department
       #Load forecast into array
+
+
+
+      @project_totals = Resource.project_total(@today,@project.project)
+      @quarterly_rollup = Hash.new(0)
+      @project_totals.each do |q|
+        hash_tag = q.date.year.to_s
+        hash_tag += "-" + ((q.date.month/4)+1).to_s
+        puts "Date: #{hash_tag} - MM #{q.forecast}"
+        @quarterly_rollup[hash_tag] += (q.forecast)
+      end
+
 
 
 
@@ -55,6 +71,7 @@ class ResourceController < ApplicationController
       @layout = department_totals(@key_projects.project,"Layout")
       @design = department_totals(@key_projects.project,"Design")
       @pe = department_totals(@key_projects.project,"Product")
+      @te = department_totals(@key_projects.project,"Test")
       @application = department_totals(@key_projects.project,"Applications")
 
 
@@ -62,6 +79,7 @@ class ResourceController < ApplicationController
       @layout_actuals = department_actual_totals(@key_projects.project,"Layout")
       @design_actuals = department_actual_totals(@key_projects.project,"Design")
       @pe_actuals = department_actual_totals(@key_projects.project,"Product")
+      @te_actuals = department_actual_totals(@key_projects.project,"Test")
       @application_actuals = department_actual_totals(@key_projects.project,"Applications")
 
 
@@ -72,13 +90,14 @@ class ResourceController < ApplicationController
       #Prepare GoogleCharts data
       @chart_title = "Memory BU Resource Forecast for " + @key_projects.project
 
-      @data = mda(actuals_month_count + 16,6)
+      @data = mda(actuals_month_count + 16,7)
       @data[0][0] = 'Month'
       @data[0][1] = 'Layout'
       @data[0][2] = 'Design'
-      @data[0][3] = 'PE-TE'
-      @data[0][4] = 'Applications'
-      @data[0][5] = 'DR1 baseline'
+      @data[0][3] = 'PE'
+      @data[0][4] = 'TE'
+      @data[0][5] = 'Applications'
+      @data[0][6] = 'DR1 baseline'
 
       #load_forecast_to_array(@layout,1)
       #load_forecast_to_array(@design,2)
@@ -90,7 +109,8 @@ class ResourceController < ApplicationController
         @data[actuals_month_count + m][1] = (@layout[m-1]*100).round / 100.0
         @data[actuals_month_count + m][2] = (@design[m-1]*100).round / 100.0
         @data[actuals_month_count + m][3] = (@pe[m-1]*100).round / 100.0
-        @data[actuals_month_count + m][4] = (@application[m-1]*100).round / 100.0
+        @data[actuals_month_count + m][4] = (@te[m-1]*100).round / 100.0
+        @data[actuals_month_count + m][5] = (@application[m-1]*100).round / 100.0
       }
       1.upto(actuals_month_count){
         |m|
@@ -99,7 +119,8 @@ class ResourceController < ApplicationController
         @data[m][1] = (@layout_actuals[m-1]*100).round / 100.0
         @data[m][2] = (@design_actuals[m-1]*100).round / 100.0
         @data[m][3] = (@pe_actuals[m-1]*100).round / 100.0
-        @data[m][4] = (@application_actuals[m-1]*100).round / 100.0
+        @data[m][4] = (@te_actuals[m-1]*100).round / 100.0
+        @data[m][5] = (@application_actuals[m-1]*100).round / 100.0
         #@data[m][5] = 2
 
       }
@@ -378,7 +399,7 @@ class ResourceController < ApplicationController
     @auth = session[:user_auth]
     @user_id=session[:user_id]
     @full_name=session[:user_fullname]
-    @today=Date.today.months_ago(2)
+    @today=Date.today.months_ago(1)
     @today.to_s(:long)
   end
   # ========================================

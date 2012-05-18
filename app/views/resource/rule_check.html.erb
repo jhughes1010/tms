@@ -1,0 +1,15 @@
+<h1>Rule Check</h1>
+<h2>Not on NPI list</h2>
+<p>
+	<table>
+<% @projects.each do |p|%>
+<tr>
+	<td>
+<%= p.department%>
+</td><td>
+<%= p.project%>
+</td>
+<tr>
+<p>
+<% end %>
+</table>	

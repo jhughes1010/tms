@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120125111818) do
+ActiveRecord::Schema.define(:version => 20120518104523) do
 
   create_table "can_mains", :force => true do |t|
     t.string    "can"
@@ -161,6 +161,7 @@ ActiveRecord::Schema.define(:version => 20120125111818) do
     t.boolean   "accepted"
     t.string    "device"
     t.string    "platform"
+    t.integer   "duration"
   end
 
   create_table "users", :force => true do |t|
