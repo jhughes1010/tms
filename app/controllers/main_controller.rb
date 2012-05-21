@@ -76,7 +76,8 @@ class MainController < ApplicationController
 
       # data rows
       @tasks.each do |task|
-        csv << [task.id, task.requester, task.assignee, task.priority, task.category, task.device, task.operation, task.platform, task.taskname, task.scd, task.duration]
+        t = task.assignee ? task.assignee.fullname : "UNASSIGNED" 
+        csv << [task.id, task.requester.fullname, t, task.priority, task.category, task.device, task.operation, task.platform, task.taskname, task.scd, task.duration]
       end
     end
 
