@@ -1,16 +1,34 @@
-key_project_summary_new
+<h1><%= @project.long_name %>: <%= @project.project %></h1>
 <br>
-Start Date:
+Data start:
 <%= @first%>
 <br>
-End Date:
+Data end:
 <%= @last%>
 <br>
-Duration:
-<%= @duration%>
+Data span:
+<%= @duration%> months
 <br>
+<h2>Project Forecast</h2>
 <% @quarterly_rollup.each do |key, value|%>
 <%= key %>
 <%= "     %.1f" % value %>
 <br>
 <%end%>	
+<h2>Project Actuals</h2>
+<% @quarterly_rollup_actuals.each do |key, value|%>
+<%= key %>
+<%= "     %.1f" % value %>
+<br>
+<%end%>
+<h2>Department Forecast</h2>
+<% @department_totals.group_by(&:date).each do |key, value|%>
+<%= key %>::
+<br>
+<% value.each do |r| %>
+<%= r.department%>
+<%= "%.1f" % r.forecast %>
+<br>
+<% end %>
+<br>
+<%end%>

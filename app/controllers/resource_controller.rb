@@ -41,6 +41,7 @@ class ResourceController < ApplicationController
 
       #Get forecast data by department
       #Load forecast into array
+      
 
 
 
@@ -53,12 +54,26 @@ class ResourceController < ApplicationController
         @quarterly_rollup[hash_tag] += (q.forecast)
       end
 
-
+      @project_totals_actuals = Resource.project_total_actuals(@today,@project.project)
+      @quarterly_rollup_actuals = Hash.new(0)
+      @project_totals_actuals.each do |q|
+        hash_tag = q.date.year.to_s
+        hash_tag += "-" + ((q.date.month/4)+1).to_s
+        puts "Date: #{hash_tag} - MM #{q.actual}"
+        @quarterly_rollup_actuals[hash_tag] += (q.actual)
+      end
+      
+      @department_totals = Resource.project_department_total(@today, @project.project)
 
 
     end
     #
   end
+  
+  def phong
+    @actuals = Resource.all_actuals  
+  end
+  
 
   #Key Project Summary
   def key_project_summary
@@ -207,19 +222,20 @@ class ResourceController < ApplicationController
   end
   def department_actual_totals(project,department)
     #Department Totals
+    offset = 12
     @date = @today
     dept_totals = Array.new(36,0)
     @date_start = @date.at_beginning_of_month
 
     total = Resource.department_actual_total(@date_start,project, department)
-    puts department
+    puts "Department" + department
     puts total
     unless total.empty?
-      0.upto(11){
+      0.upto(2){
         |x|
-        puts total[x]
-        unless total[x].nil?
-          dept_totals[x] = total[x].actual
+        puts total[x + offset]
+        unless total[x + offset].nil?
+          dept_totals[x] = total[x + offset].actual
         end
       }
     end
@@ -252,7 +268,7 @@ class ResourceController < ApplicationController
     #initial variables
     header = 0
     #filenames
-    import_file = "import/2012q1.csv"
+    import_file = "import/2011q4.csv"
     puts
     puts "============================================="
     puts "CSV importer for Resource Allocation database"
@@ -260,7 +276,7 @@ class ResourceController < ApplicationController
     puts "============================================="
     #import and stack data
     #delete database
-    Resource.delete_all
+    #Resource.delete_all
     @removal_date = @today.months_ago(3).beginning_of_month
     Resource.remove_forecast(@removal_date)
     arr_of_arrs = CSV.read(import_file)
@@ -273,6 +289,7 @@ class ResourceController < ApplicationController
 
   #
   def stack_data(line)
+    line[6].rstrip!
     write_record(line)
     update_record(line)
   end
@@ -399,7 +416,7 @@ class ResourceController < ApplicationController
     @auth = session[:user_auth]
     @user_id=session[:user_id]
     @full_name=session[:user_fullname]
-    @today=Date.today.months_ago(1)
+    @today=Date.today.months_ago(4)
     @today.to_s(:long)
   end
   # ========================================

@@ -44,25 +44,27 @@ class ImportController < ApplicationController
       r.dr5 = format_date(record[column_array[11]])
       
       if record[column_array[0]]["_SE_"]
-        r.owner = "Ng"
+        r.owner = "Serial"
       elsif 
         record[column_array[0]]["_CP_"]
-        r.owner = "Weiner"
+        r.owner = "Crypto"
       elsif 
         record[column_array[0]]["_DF_"]
-        r.owner = "Manea"
+        r.owner = "DataFlash"
       elsif 
         record[column_array[0]]["_BF_"]
-        r.owner = "Manea"
+        r.owner = "BIOSFlash"
       elsif 
         record[column_array[0]]["_AP_"]
-        r.owner = "Manea"
+        r.owner = "Analog"
       end
       r.save
     end
     def format_date(date)
-      date = Date.strptime(date, "%m/%d/%Y")
-      puts date
+      #puts "Imported Date:" + date
+      unless date.nil?
+        date = Date.strptime(date, "%m/%d/%Y")
+      end
       date
     end
 end

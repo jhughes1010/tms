@@ -1,17 +1,26 @@
 class Resource < ActiveRecord::Base
 
   def self.project_total(date,project)
-    self.where("project = ? AND date >= ? AND date < ?" ,project, date, date +15.months).order("date").select("date, sum (forecast) as forecast").group("date")
+    self.where("project = ? AND date >= ? AND date < ? AND forecast > 0" ,project, date, date +15.months).order("date").select("date, sum (forecast) as forecast").group("date")
   end
+
+  def self.project_department_total(date,project)
+    self.where("project = ? AND date >= ? AND date < ? AND forecast > 0" ,project, date, date +15.months).order("date, department").select("department, date, sum (forecast) as forecast").group("date, department")
+  end
+
+  def self.project_total_actuals(date,project)
+    self.where("project = ? AND date < ? AND actual > 0" ,project, date).order("date").select("date, department, sum (actual) as actual").group("date")
+  end
+
   def self.project_detail(date,project)
     self.where("project = ? AND date >= ? AND date < ?" ,project, date, date +15.months).order("date")
   end
   def self.project_first(project)
-    first_record = self.where("project = ?", project).order("date").limit(1)
+    first_record = self.where("project = ? AND actual > 0", project).order("date").limit(1)
     first_record[0].date
   end
   def self.project_last(project)
-    last_record = self.where("project = ?", project).order("date DESC").limit(1)
+    last_record = self.where("project = ? AND forecast > 0", project).order("date DESC").limit(1)
     last_record[0].date
   end
   def self.project_detail_name(date,project)
@@ -46,5 +55,14 @@ class Resource < ActiveRecord::Base
   def   self.total_forecast_man_hours(date)
     self.where("date >= ? AND date < ?" ,date, date +15.months).select("sum (forecast) as forecast")      
   end
+
+
+  def   self.all_actuals
+    date = Time.parse('2011-01-01')
+    self.where("actual > 0 AND date >= ? AND date < ?" ,date, date +12.months).select("project, department, sum (actual) as actual").group("project").order("project")     
+    #self.where("actual > 0 AND date >= ? AND date < ?" ,date, date +12.months).select("project, department, sum (actual) as actual").group("project, department").order("project, department")     
+    #self.where("actual > 0 AND date >= ? AND date < ?" ,date, date +12.months).select("project, department, date, sum (actual) as actual").group("project, department, date").order("project, department, date")     
+  end  
+  
   
 end
