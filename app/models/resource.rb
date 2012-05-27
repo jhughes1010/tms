@@ -59,9 +59,9 @@ class Resource < ActiveRecord::Base
 
   def   self.all_actuals
     date = Time.parse('2011-01-01')
-    self.where("actual > 0 AND date >= ? AND date < ?" ,date, date +12.months).select("project, department, sum (actual) as actual").group("project").order("project")     
+    #self.where("actual > 0 AND date >= ? AND date < ?" ,date, date +12.months).select("project, department, sum (actual) as actual").group("project").order("project")     
     #self.where("actual > 0 AND date >= ? AND date < ?" ,date, date +12.months).select("project, department, sum (actual) as actual").group("project, department").order("project, department")     
-    #self.where("actual > 0 AND date >= ? AND date < ?" ,date, date +12.months).select("project, department, date, sum (actual) as actual").group("project, department, date").order("project, department, date")     
+    self.where("actual > 0 AND date >= ? AND date < ?" ,date, date +12.months).select("project, department, date, sum (actual) as actual").group("project, department, date").order("project, department, date")     
   end  
   
   

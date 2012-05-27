@@ -1,9 +1,11 @@
 = render :partial =>"pill_navigation",:locals => {:active => "Forecast"}
-= render :partial =>"page_header",:locals => {:title => "Resource Report", :description => "Project resource data"}
+= render :partial =>"page_header",:locals => {:title => "#{@key_projects.project} - #{@key_projects.long_name}", :description => "Resource Report"}
+#img_div{:style => "position: fixed; top: 0; right: 0; z-index: 10; border: 1px solid #b9b9b9"}
+  Image will be placed here
 #product-list
 
   %b
-    Project Totals for #{@key_projects.project}
+    Current DR milestones
   %br
   %table
     %tr
@@ -28,6 +30,8 @@
         .dr4 #{@key_projects.dr4}
       %td
         .dr5 #{@key_projects.dr5}
+  %button{:onclick => "saveAsImg(document.getElementById('chart_div2'));"} Save as PNG Image
+  %button{:onclick => "toImg(document.getElementById('chart_div2'), document.getElementById('img_div'));"} Convert to image
   #chart_div2{:style => "width: 900px; height: 400px;"}
   %hr
   %table
