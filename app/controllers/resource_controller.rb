@@ -103,7 +103,7 @@ class ResourceController < ApplicationController
 
 
       #Prepare GoogleCharts data
-      @chart_title = "Memory BU Resource Forecast for " + @key_projects.project
+      @chart_title = "Memory BU Resource Forecast for " + @key_projects.long_name + "-" + @key_projects.project 
 
       @data = mda(actuals_month_count + 16,7)
       @data[0][0] = 'Month'

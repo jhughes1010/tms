@@ -39,7 +39,7 @@
   <td><%= can_main.fw_version %></td>
   <td><%= link_to 'Show', can_main %></td>
   <td><%= link_to 'Edit', edit_can_main_path(can_main) %></td>
-  <% if(@auth >=2) %>
+  <% if(@auth >= 2) %>
   <td><%= link_to 'Destroy', can_main, :confirm => 'Are you sure?', :method => :delete %></td>
   <% end %>
   </tr>
