@@ -70,7 +70,7 @@ class ResourceController < ApplicationController
     #
   end
   
-  def phong
+  def phuong
     @actuals = Resource.all_actuals  
   end
   
