@@ -1,6 +1,7 @@
 class ResourceController < ApplicationController
   require "csv"
   require 'google_chart'
+  require 'finance'
 
   before_filter :set_useful_globals
 
@@ -71,7 +72,11 @@ class ResourceController < ApplicationController
   end
   
   def phuong
+    @base_year = Date.new( 2011, 1, 1)
     @actuals = Resource.all_actuals  
+    @npi_actuals_quarerly = Finance.new
+    @npi_forecast_quarerly = Finance.new
+    
   end
   
 
