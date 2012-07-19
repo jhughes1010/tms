@@ -13,6 +13,8 @@ class ResourceController < ApplicationController
   end
   def rule_check
     @projects = Project.not_k_proj(@today)
+    @overbooked_forecast = Resource.overbooked
+    #@underbooked_forecast = Resource.overbooked
   end
   #Key Project Index
   def key_projects
@@ -42,7 +44,7 @@ class ResourceController < ApplicationController
 
       #Get forecast data by department
       #Load forecast into array
-      
+
 
 
 
@@ -63,22 +65,22 @@ class ResourceController < ApplicationController
         puts "Date: #{hash_tag} - MM #{q.actual}"
         @quarterly_rollup_actuals[hash_tag] += (q.actual)
       end
-      
+
       @department_totals = Resource.project_department_total(@today, @project.project)
 
 
     end
     #
   end
-  
+
   def phuong
     @base_year = Date.new( 2011, 1, 1)
-    @actuals = Resource.all_actuals  
+    @actuals = Resource.all_actuals
     @npi_actuals_quarerly = Finance.new
     @npi_forecast_quarerly = Finance.new
-    
+
   end
-  
+
 
   #Key Project Summary
   def key_project_summary
@@ -108,7 +110,7 @@ class ResourceController < ApplicationController
 
 
       #Prepare GoogleCharts data
-      @chart_title = "Memory BU Resource Forecast for " + @key_projects.long_name + "-" + @key_projects.project 
+      @chart_title = "Memory BU Resource Forecast for " + @key_projects.long_name + "-" + @key_projects.project
 
       @data = mda(actuals_month_count + 16,7)
       @data[0][0] = 'Month'
@@ -273,7 +275,7 @@ class ResourceController < ApplicationController
     #initial variables
     header = 0
     #filenames
-    import_file = "import/2012q1.csv"
+    import_file = "import/2012q2.csv"
     puts
     puts "============================================="
     puts "CSV importer for Resource Allocation database"
@@ -281,11 +283,12 @@ class ResourceController < ApplicationController
     puts "============================================="
     #import and stack data
     #delete database
-    #Resource.delete_all
+    Resource.delete_all
     @removal_date = @today.months_ago(3).beginning_of_month
     Resource.remove_forecast(@removal_date)
     arr_of_arrs = CSV.read(import_file)
     arr_of_arrs.each do |x|
+      #puts x
       stack_data(x) if header == 1
       header = 1 if header == 0
     end
@@ -294,28 +297,34 @@ class ResourceController < ApplicationController
 
   #
   def stack_data(line)
-    line[6].rstrip!
-    write_record(line)
-    update_record(line)
+    #puts "==="
+    #puts line[4]
+    #puts "==="
+    unless line[4].nil?
+      line[4].rstrip!
+      write_record(line)
+      update_record(line)
+    end
   end
   #
   #
   #
   def write_record(record)
+    puts record
     #write new record to database
     date_start = @today.at_beginning_of_month - 3.months
-    11.upto(28){
+    9.upto(26){
       |x|
       #work through forecast data
-      if x < 8
-        print ":Actual   "
+      if x < 6
+        #+print+ ":Actual   "
       else
         #print ":Forecast "
-        date_current=date_start.months_since(x-11)
+        date_current=date_start.months_since(x-9)
         if record[x].nil?
           record[x]=0
         end
-        new_to_db(date_current,record[0], record[5],record[6],record[7],record[x])
+        new_to_db(date_current,record[0], record[3],record[4],record[5],record[x])
       end
     }
   end
@@ -325,7 +334,7 @@ class ResourceController < ApplicationController
     0.upto(2){
       |m|
       date_current=date_start.months_since(m)
-      find_record_enter_actual(date_current,record[0], record[5],record[6],record[7],record[m+8])
+      find_record_enter_actual(date_current,record[0], record[3],record[4],record[5],record[m+6])
     }
   end
 
@@ -421,7 +430,7 @@ class ResourceController < ApplicationController
     @auth = session[:user_auth]
     @user_id=session[:user_id]
     @full_name=session[:user_fullname]
-    @today=Date.today.months_ago(1)
+    @today=Date.today.months_ago(0)
     @today.to_s(:long)
   end
   # ========================================

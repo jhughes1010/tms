@@ -47,22 +47,27 @@ class Resource < ActiveRecord::Base
     self.where("date = ? AND department = ? and name = ? AND project = ? AND function = ?",date,dept,name,project,function).first
   end
   def self.avf(start, span)
-    self.where("date >= ? AND date < ?" ,start, start +span.months).order("department, project").select("department,project, sum (forecast) as forecast, sum (actual) as actual").group("project, department")   
+    self.where("date >= ? AND date < ?" ,start, start +span.months).order("department, project").select("department,project, sum (forecast) as forecast, sum (actual) as actual").group("project, department")
   end
   def self.remove_forecast(date)
     self.delete_all(["date >= ?",date])
   end
   def   self.total_forecast_man_hours(date)
-    self.where("date >= ? AND date < ?" ,date, date +15.months).select("sum (forecast) as forecast")      
+    self.where("date >= ? AND date < ?" ,date, date +15.months).select("sum (forecast) as forecast")
   end
 
 
   def   self.all_actuals
     date = Time.parse('2011-01-01')
-    #self.where("actual > 0 AND date >= ? AND date < ?" ,date, date +12.months).select("project, department, sum (actual) as actual").group("project").order("project")     
-    #self.where("actual > 0 AND date >= ? AND date < ?" ,date, date +12.months).select("project, department, sum (actual) as actual").group("project, department").order("project, department")     
-    self.where("actual > 0 AND date >= ? AND date < ?" ,date, date +12.months).select("project, department, date, sum (actual) as actual").group("project, department, date").order("project, department, date")     
-  end  
+    #self.where("actual > 0 AND date >= ? AND date < ?" ,date, date +12.months).select("project, department, sum (actual) as actual").group("project").order("project")
+    #self.where("actual > 0 AND date >= ? AND date < ?" ,date, date +12.months).select("project, department, sum (actual) as actual").group("project, department").order("project, department")
+    self.where("actual > 0 AND date >= ? AND date < ?" ,date, date +12.months).select("project, department, date, sum (actual) as actual").group("project, department, date").order("project, department, date")
+  end
   
-  
+  def self.overbooked
+    t = self.select("department, name, date, sum(forecast) as forecast").group("name,date").where("forecast > 1").order("department, name, date")
+    t.group_by(&:department)
+  end
+
+
 end
