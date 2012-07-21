@@ -65,8 +65,8 @@ class Resource < ActiveRecord::Base
   end
   
   def self.overbooked
-    t = self.select("department, name, date, sum(forecast) as forecast").group("name,date").where("forecast > 1").order("department, name, date")
-    t.group_by(&:department)
+    t = self.select("department, name, date, sum(forecast) as forecast").where("forecast > 1").group("name,date").order("department, name, date")
+    #t.group_by(&:department)
   end
 
 

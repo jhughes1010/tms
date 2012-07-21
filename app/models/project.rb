@@ -16,7 +16,7 @@ class Project < ActiveRecord::Base
     proj << p.project
     end
     #proj = ["AT30LD2001","ATSHA204"]
-  t = Resource.select("project, department").where("project NOT IN (?)",proj).group("department, project").order("department, project")
+  t = Resource.select("project, department, name").where("project NOT IN (?)",proj).group("department, project").order("department, project")
   t.group_by(&:department)
   end
   

@@ -1,0 +1,13 @@
+%h1 Rule Check
+%h2 Not on NPI list
+Showing up on this list is not necessarily a bad thing, just looking for typos on entries you know are on the key project list.
+
+- @projects.each_pair do |dept, data|
+  %h3
+    Department #{dept}: #{data.count} entries
+  %table
+    = render( :partial => "not_key", :collection => data)
+%h2 Employee over-allocated in given month
+%p
+  %table
+    = render( :partial => "overbooked", :collection => @overbooked_forecast)
