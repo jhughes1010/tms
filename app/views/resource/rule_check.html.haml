@@ -11,3 +11,8 @@ Showing up on this list is not necessarily a bad thing, just looking for typos o
 %p
   %table
     = render( :partial => "overbooked", :collection => @overbooked_forecast)
+
+%h2 Review team name fields
+%p
+  %table
+    = render( :partial => "team_names", :collection => @team_names)

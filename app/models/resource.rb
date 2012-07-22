@@ -69,5 +69,7 @@ class Resource < ActiveRecord::Base
     #t.group_by(&:department)
   end
 
-
+  def self.team_names
+    t = self.select("department, team").group("department, team")
+  end
 end

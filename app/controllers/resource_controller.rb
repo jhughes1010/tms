@@ -14,6 +14,7 @@ class ResourceController < ApplicationController
   def rule_check
     @projects = Project.not_k_proj(@today)
     @overbooked_forecast = Resource.overbooked
+    @team_names = Resource.team_names
     #@underbooked_forecast = Resource.overbooked
   end
   #Key Project Index
@@ -324,7 +325,7 @@ class ResourceController < ApplicationController
         if record[x].nil?
           record[x]=0
         end
-        new_to_db(date_current,record[0], record[3],record[4],record[5],record[x])
+        new_to_db(date_current,record[0],record[1], record[3],record[4],record[5],record[x])
       end
     }
   end
@@ -345,7 +346,7 @@ class ResourceController < ApplicationController
   #
   #
   #
-  def new_to_db(date,dept,name,project,function,time)
+  def new_to_db(date, dept, group, name, project, function, time)
     record = Resource.new
     if time.nil?
       time = 0
@@ -353,6 +354,7 @@ class ResourceController < ApplicationController
     record.date = date
     record.name = name
     record.department = dept
+    record.group = group
     record.project = project
     record.function = function
     record.actual = 0
