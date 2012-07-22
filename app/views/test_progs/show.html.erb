@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Engineer:</b>
+  <%= @test_prog.engineer %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @test_prog.status %>
+</p>
+
+<p>
+  <b>Prog name:</b>
+  <%= @test_prog.prog_name %>
+</p>
+
+<p>
+  <b>Operation:</b>
+  <%= @test_prog.operation %>
+</p>
+
+<p>
+  <b>Date received:</b>
+  <%= @test_prog.date_received %>
+</p>
+
+<p>
+  <b>Comments:</b>
+  <%= @test_prog.comments %>
+</p>
+
+
+<%= link_to 'Edit', edit_test_prog_path(@test_prog) %> |
+<%= link_to 'Back', test_progs_path %>

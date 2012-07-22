@@ -1,0 +1,26 @@
+%h1 Memory BU
+%h2 Production release candidates and engineering experiments
+%table
+  %tr
+    %th Engineer
+    %th Status
+    %th Prog name
+    %th Operation
+    %th Date received
+    %th Comments
+    %th
+    %th
+    %th
+  - @test_progs.each do |test_prog|
+    %tr
+      %td= test_prog.engineer
+      %td= test_prog.status
+      %td= test_prog.prog_name
+      %td= test_prog.operation
+      %td= test_prog.date_received
+      %td= test_prog.comments
+      %td= link_to 'Show', test_prog
+      %td= link_to 'Edit', edit_test_prog_path(test_prog)
+      %td= link_to 'Destroy', test_prog, :confirm => 'Are you sure?', :method => :delete
+%br/
+= link_to 'New Test prog', new_test_prog_path

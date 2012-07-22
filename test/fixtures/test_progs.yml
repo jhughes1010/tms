@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  engineer: MyString
+  status: MyString
+  prog_name: MyString
+  operation: MyString
+  date_received: MyString
+  comments: MyString
+
+two:
+  engineer: MyString
+  status: MyString
+  prog_name: MyString
+  operation: MyString
+  date_received: MyString
+  comments: MyString

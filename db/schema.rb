@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120722015210) do
+ActiveRecord::Schema.define(:version => 20120722113437) do
 
   create_table "can_mains", :force => true do |t|
     t.string    "can"
@@ -164,6 +164,17 @@ ActiveRecord::Schema.define(:version => 20120722015210) do
     t.string    "platform"
     t.integer   "duration"
     t.string    "family"
+  end
+
+  create_table "test_progs", :force => true do |t|
+    t.string   "engineer"
+    t.string   "status"
+    t.string   "prog_name"
+    t.string   "operation"
+    t.string   "date_received"
+    t.string   "comments"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

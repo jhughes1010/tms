@@ -1,4 +1,6 @@
 TMS::Application.routes.draw do
+  resources :test_progs
+
   get "import_resource/import"
 
   get "import/npi"
