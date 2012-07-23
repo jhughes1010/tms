@@ -171,7 +171,7 @@ ActiveRecord::Schema.define(:version => 20120722120755) do
     t.string   "status"
     t.string   "prog_name"
     t.string   "operation"
-    t.date     "date_received", :limit => 255
+    t.date     "date_received"
     t.string   "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
