@@ -1,8 +1,12 @@
 class TestProgsController < ApplicationController
   # GET /test_progs
   # GET /test_progs.xml
+
+  before_filter :set_useful_globals
+
   def index
-    @test_progs = TestProg.all
+    #@test_progs = TestProg.all
+    @test_progs = TestProg.live
 
     respond_to do |format|
       format.html # index.html.erb
@@ -79,5 +83,14 @@ class TestProgsController < ApplicationController
       format.html { redirect_to(test_progs_url) }
       format.xml  { head :ok }
     end
+  end
+  protected
+
+  def set_useful_globals
+    @auth = session[:user_auth]
+    @user_id=session[:user_id]
+    @full_name=session[:user_fullname]
+    @today=Date.today
+    @today.to_s(:long)
   end
 end

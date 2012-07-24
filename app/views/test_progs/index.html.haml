@@ -9,17 +9,19 @@
     %th Comments
     %th
     %th
-    %th
+    - if @auth > 1
+      %th
   - @test_progs.each do |test_prog|
     %tr
       %td= test_prog.engineer
-      %td= test_prog.status
-      %td= test_prog.prog_name
+      %td= test_prog.status.upcase
+      %td= test_prog.prog_name.upcase
       %td= test_prog.operation
       %td= test_prog.date_received
       %td= test_prog.comments
       %td= link_to 'Show', test_prog
       %td= link_to 'Edit', edit_test_prog_path(test_prog)
-      %td= link_to 'Destroy', test_prog, :confirm => 'Are you sure?', :method => :delete
+      - if @auth > 1
+        %td= link_to 'Destroy', test_prog, :confirm => 'Are you sure?', :method => :delete
 %br/
 = link_to 'New Test prog', new_test_prog_path
