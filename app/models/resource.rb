@@ -63,7 +63,7 @@ class Resource < ActiveRecord::Base
     #self.where("actual > 0 AND date >= ? AND date < ?" ,date, date +12.months).select("project, department, sum (actual) as actual").group("project, department").order("project, department")
     self.where("actual > 0 AND date >= ? AND date < ?" ,date, date +12.months).select("project, department, date, sum (actual) as actual").group("project, department, date").order("project, department, date")
   end
-  
+
   def self.overbooked
     t = self.select("department, name, date, sum(forecast) as forecast").where("forecast > 1").group("name,date").order("department, name, date")
     #t.group_by(&:department)
@@ -71,5 +71,25 @@ class Resource < ActiveRecord::Base
 
   def self.team_names
     t = self.select("department, team").group("department, team")
+  end
+  
+  def self.forward_look_key(date, dept, team)
+    proj = Array.new
+    kp = Project.k_proj(date)
+    kp.each do |p|
+      proj << p.project
+    end
+    t = self.select("department, team, date, sum(forecast) as forecast").where("project IN (?) AND department = ? AND team LIKE ?",proj, dept, team).group("date").order("date")
+    #t.group_by(&:department)
+  end
+  
+  def self.forward_look_other(date)
+    proj = Array.new
+    kp = Project.k_proj(date)
+    kp.each do |p|
+      proj << p.project
+    end
+    t = self.select("department, team, date, sum(forecast) as forecast").where("project NOT IN (?)",proj).group("department, team, date").order("department, date")
+    t.group_by(&:department)    
   end
 end

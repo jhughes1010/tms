@@ -11,6 +11,13 @@ class ResourceController < ApplicationController
     #@project="SinbadEE"
     #@project_totals = project_totals(@project)
   end
+  
+  def availability
+    @key = Resource.forward_look_key(@today)
+    @others = Resource.forward_look_other(@today)
+  end
+  
+  
   def rule_check
     @projects = Project.not_k_proj(@today)
     @overbooked_forecast = Resource.overbooked
@@ -354,7 +361,7 @@ class ResourceController < ApplicationController
     record.date = date
     record.name = name
     record.department = dept
-    record.group = group
+    #jh record.group = group
     record.project = project
     record.function = function
     record.actual = 0

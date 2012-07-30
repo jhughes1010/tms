@@ -1,0 +1,17 @@
+%h1 Forecast Availability Report
+%p
+- @key.each_pair do | dept, date|
+  = dept
+  %p
+  - date.each do |d|
+    = sprintf("Date #{d.date}: %.1f",d.forecast)
+    %p
+  %p
+%p
+- @others.each_pair do | dept, date|
+  = dept
+  %p
+  - date.each do |d|
+    = sprintf("Date #{d.date}: %.1f",d.forecast)
+    %p
+  %p
