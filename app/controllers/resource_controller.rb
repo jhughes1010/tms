@@ -353,7 +353,7 @@ class ResourceController < ApplicationController
   #
   #
   #
-  def new_to_db(date, dept, group, name, project, function, time)
+  def new_to_db(date, dept, team, name, project, function, time)
     record = Resource.new
     if time.nil?
       time = 0
@@ -361,7 +361,7 @@ class ResourceController < ApplicationController
     record.date = date
     record.name = name
     record.department = dept
-    #jh record.group = group
+    record.team = team
     record.project = project
     record.function = function
     record.actual = 0
