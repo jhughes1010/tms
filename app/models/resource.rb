@@ -27,13 +27,13 @@ class Resource < ActiveRecord::Base
     self.where("project = ? AND date >= ? AND date < ?" ,project, date, date +15.months).group("project", "department", "name", "function").order("project", "department","name","function").select("project, department, name, function")
   end
   def self.department_total(date,project,department)
-    self.where("project = ? AND department LIKE ? AND date >= ? AND date < ?" ,project, "%#{department}%", date, date +15.months).order("date").select("date, sum (forecast) as forecast").group("date")
+    self.where("project = ? AND department IN (?) AND date >= ? AND date < ?" ,project, department, date, date +15.months).order("date").select("date, sum (forecast) as forecast").group("date")
   end
   def self.department_actual_total(date,project,department)
     self.where("project = ? AND department LIKE ? AND date < ?" ,project, "%#{department}%", date).order("date").select("date, sum (actual) as actual").group("date")
   end
   def self.department_detail(date,project,department)
-    self.where("project = ? AND department LIKE ? AND date >= ? AND date < ?" ,project, "%#{department}%", date, date +15.months).order("date")
+    self.where("project = ? AND department IN (?) AND date >= ? AND date < ?" ,project, department, date, date +15.months).order("date")
   end
   def self.get_month(project,department,name,function,today,date_offset)
     date=today.beginning_of_month + date_offset.months

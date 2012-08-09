@@ -11,13 +11,13 @@ class ResourceController < ApplicationController
     #@project="SinbadEE"
     #@project_totals = project_totals(@project)
   end
-  
+
   def availability
     @key = Resource.forward_look_key(@today)
     @others = Resource.forward_look_other(@today)
   end
-  
-  
+
+
   def rule_check
     @projects = Project.not_k_proj(@today)
     @overbooked_forecast = Resource.overbooked
@@ -98,19 +98,19 @@ class ResourceController < ApplicationController
       @dr_month = find_dr_offset(@key_projects)
       @project_totals = project_totals(@key_projects.project)
       #Get Department Totals - Forecast
-      @layout = department_totals(@key_projects.project,"Layout")
-      @design = department_totals(@key_projects.project,"Design")
-      @pe = department_totals(@key_projects.project,"Product")
-      @te = department_totals(@key_projects.project,"Test")
-      @application = department_totals(@key_projects.project,"Applications")
+      @layout = department_totals(@key_projects.project,["3101","1370","1390"])
+      @design = department_totals(@key_projects.project,["3101","1370","1390"])
+      @pe = department_totals(@key_projects.project,["3371","1340"])
+      @te = department_totals(@key_projects.project,["3371","1340"])
+      @application = department_totals(@key_projects.project,"3209")
 
 
       #Get Department Totals - Actuals
       @layout_actuals = department_actual_totals(@key_projects.project,"Layout")
       @design_actuals = department_actual_totals(@key_projects.project,"Design")
-      @pe_actuals = department_actual_totals(@key_projects.project,"Product")
-      @te_actuals = department_actual_totals(@key_projects.project,"Test")
-      @application_actuals = department_actual_totals(@key_projects.project,"Applications")
+      @pe_actuals = department_actual_totals(@key_projects.project,"3371")
+      @te_actuals = department_actual_totals(@key_projects.project,"3371")
+      @application_actuals = department_actual_totals(@key_projects.project,"3209")
 
 
       #Determine maximum count on actuals for chart width
@@ -227,8 +227,10 @@ class ResourceController < ApplicationController
     unless count < 15
       0.upto(14){
         |x|
-        project_totals[x] = total[x].forecast
-        project_totals[15] += total[x].forecast
+        unless total[x].nil?
+          project_totals[x] = total[x].forecast
+          project_totals[15] += total[x].forecast
+        end
         puts project_totals[x]
       }
       project_totals[16] = project_totals[15]/12
@@ -439,7 +441,7 @@ class ResourceController < ApplicationController
     @auth = session[:user_auth]
     @user_id=session[:user_id]
     @full_name=session[:user_fullname]
-    @today=Date.today.months_ago(0)
+    @today=Date.today.months_ago(1)
     @today.to_s(:long)
   end
   # ========================================
