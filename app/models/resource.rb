@@ -11,7 +11,9 @@ class Resource < ActiveRecord::Base
   def self.project_total_actuals(date,project)
     self.where("project = ? AND date < ? AND actual > 0" ,project, date).order("date").select("date, department, sum (actual) as actual").group("date")
   end
-
+  def self.project_detail(date,project)
+    self.where("project = ? AND date >= ? AND date < ?" ,project, date, date +15.months).order("date")
+  end
   def self.project_detail(date,project)
     self.where("project = ? AND date >= ? AND date < ?" ,project, date, date +15.months).order("date")
   end
@@ -28,6 +30,14 @@ class Resource < ActiveRecord::Base
   end
   def self.department_total(date,project,department)
     self.where("project = ? AND department IN (?) AND date >= ? AND date < ?" ,project, department, date, date +15.months).order("date").select("date, sum (forecast) as forecast").group("date")
+  end
+  def self.department_total_include(date,project,department,team)
+    self.where("project = ? AND department IN (?) AND team = ? AND date >= ? AND date < ?" ,project, department, team, date, date +15.months).order("date").select("date, sum (forecast) as forecast").group("date")
+    #self.where("department IN (?) AND team = ? AND date >= ? AND date < ?" , department, team, date, date +15.months).order("date").select("date, sum (forecast) as forecast").group("date")
+  end
+  def self.department_total_not_include(date,project,department,team)
+    self.where("project = ? AND department IN (?) AND team IS NOT ? AND date >= ? AND date < ?" ,project, department, team, date, date +15.months).order("date").select("date, sum (forecast) as forecast").group("date")
+    #self.where("department IN (?) AND team = ? AND date >= ? AND date < ?" , department, team, date, date +15.months).order("date").select("date, sum (forecast) as forecast").group("date")
   end
   def self.department_actual_total(date,project,department)
     self.where("project = ? AND department LIKE ? AND date < ?" ,project, "%#{department}%", date).order("date").select("date, sum (actual) as actual").group("date")

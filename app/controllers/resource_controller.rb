@@ -97,11 +97,27 @@ class ResourceController < ApplicationController
       @key_projects = Project.find(p)
       @dr_month = find_dr_offset(@key_projects)
       @project_totals = project_totals(@key_projects.project)
+      @date = @today.beginning_of_month
       #Get Department Totals - Forecast
-      @layout = department_totals(@key_projects.project,["3101","1370","1390"])
-      @design = department_totals(@key_projects.project,["3101","1370","1390"])
-      @pe = department_totals(@key_projects.project,["3371","1340"])
-      @te = department_totals(@key_projects.project,["3371","1340"])
+      ###@layout = department_totals(@key_projects.project,["3101","1370","1390"])
+
+
+
+      layout = Resource.department_total_include(@date, @key_projects.project,["3101","1370","1390"],"layout")
+      @layout = department_totals2(layout)
+
+      design = Resource.department_total_not_include(@date, @key_projects.project,["3101","1370","1390"],"layout")
+      @design = department_totals2(design)
+
+      pe = Resource.department_total_not_include(@date, @key_projects.project,["3371","1340"],"test")
+      @pe = department_totals2(pe)
+      
+      te = Resource.department_total_include(@date, @key_projects.project,["3371","1340"],"test")
+      @te = department_totals2(te)
+
+      #@design = department_totals(@key_projects.project,["3101","1370","1390"])
+      #@pe = department_totals(@key_projects.project,["3371","1340"])
+      #@te = department_totals(@key_projects.project,["3371","1340"])
       @application = department_totals(@key_projects.project,"3209")
 
 
@@ -278,6 +294,30 @@ class ResourceController < ApplicationController
     dept_totals
     #end
   end
+  def department_totals2(data)
+    #Department Totals
+    dept_totals = Array.new(17,0)
+    #count = data.count
+    #puts count
+    #total = Resource.department_total(@date_start,project, department)
+    #unless count < 15
+    unless data[0].nil?
+      0.upto(14){
+        |x|
+        puts 'James '+x.to_s
+        unless data[x].forecast.blank?
+          dept_totals[x] = data[x].forecast
+        end
+        dept_totals[15] += data[x].forecast  if  data[x].forecast
+      }
+    end
+
+    dept_totals[16] = dept_totals[15]/12
+    #end
+    dept_totals
+    #end
+  end
+
   #
   #
   #
@@ -363,7 +403,7 @@ class ResourceController < ApplicationController
     record.date = date
     record.name = name
     record.department = dept
-    record.team = team
+    record.team = team.downcase
     record.project = project
     record.function = function
     record.actual = 0
@@ -443,6 +483,7 @@ class ResourceController < ApplicationController
     @full_name=session[:user_fullname]
     @today=Date.today.months_ago(1)
     @today.to_s(:long)
+    #@today.beginning_of_month
   end
   # ========================================
   # = mda - make a multi-dimensional array =
