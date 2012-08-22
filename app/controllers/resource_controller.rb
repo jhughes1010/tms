@@ -116,21 +116,11 @@ class ResourceController < ApplicationController
       @application = department_totals(project_name,"3209")
 
       #Get Department Totals - Actuals
-      #layout = Resource.department_total_actual_include(@date, project_name,["3101","1370","1390"],"layout")
-      #@layout_actuals = department_actual_totals2(layout)
-      @layout_actuals = get_department_actuals(@date, project_name,["3101","1370","1390"],"layout")
-
-      design = Resource.department_total_actual_not_include(@date, project_name,["3101","1370","1390"],"layout")
-      @design_actuals = department_actual_totals2(design)
-
-      #pe = Resource.department_total_actual_not_include(@date, project_name,["3371","1340"],"test")
-      #@pe_actuals = department_actual_totals2(pe)
-      @pe_actuals = get_department_actuals(@date, project_name,["3371","1340"],"test")
-      
-      te = Resource.department_total_actual_include(@date, project_name,["3371","1340"],"test")
-      @te_actuals = department_actual_totals2(te)
-
-      @application_actuals = department_actual_totals(project_name,"3209")
+      @layout_actuals = get_department_actuals(@date, project_name,["3101","1370","1390"],"layout","include")
+      @design_actuals = get_department_actuals(@date, project_name, [ "3101", "1370", "1390"], "layout", "exclude")
+      @pe_actuals = get_department_actuals(@date, project_name,["3371","1340"],"test","exclude")
+      @te_actuals = get_department_actuals(@date, project_name,["3371","1340"],"test","include")
+      @application_actuals = get_department_actuals(@date, project_name, "3209", "void", "exclude")
       
       #Determine maximum count on actuals for chart width
       actuals_month_count = 3
@@ -242,27 +232,27 @@ class ResourceController < ApplicationController
     end
     project_totals
   end
-  def department_actual_totals(project,department)
+#  def department_actual_totals(project,department)
     #Department Totals
-    offset = 12
-    @date = @today
-    dept_totals = Array.new(36,0)
-    @date_start = @date.at_beginning_of_month
+#    offset = 12
+#    @date = @today
+#    dept_totals = Array.new(36,0)
+#    @date_start = @date.at_beginning_of_month
 
-    total = Resource.department_actual_total(@date_start,project, department)
-    puts "Department" + department
-    puts total
-    unless total.empty?
-      0.upto(2){
-        |x|
-        puts total[x + offset]
-        unless total[x + offset].nil?
-          dept_totals[x] = total[x + offset].actual
-        end
-      }
-    end
-    dept_totals
-  end
+#    total = Resource.department_actual_total(@date_start,project, department)
+#    puts "Department" + department
+#    puts total
+#    unless total.empty?
+#      0.upto(2){
+#        |x|
+#        puts total[x + offset]
+#        unless total[x + offset].nil?
+#          dept_totals[x] = total[x + offset].actual
+#        end
+#      }
+#    end
+#    dept_totals
+#  end
 
   def department_totals(project,department)
     #Department Totals
@@ -322,8 +312,9 @@ class ResourceController < ApplicationController
     dept_totals
     #end
   end
-  def get_department_actuals(date,project,department,team)
-    a = Resource.department_total_actual_include(date, project, department, team)
+  def get_department_actuals( date,project, department, team, filter)
+    a = Resource.department_total_actual_include(date, project, department, team) if filter == "include"
+    a = Resource.department_total_actual_not_include(date, project, department, team) if filter == "exclude"
     department_actual_totals2(a)
   end
   #
