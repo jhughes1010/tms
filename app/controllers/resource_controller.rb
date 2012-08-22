@@ -95,54 +95,49 @@ class ResourceController < ApplicationController
     if params[:p_id]
       p=params[:p_id].to_i
       @key_projects = Project.find(p)
+      project_name = @key_projects.project
+      project_name_long = @key_projects.long_name
       @dr_month = find_dr_offset(@key_projects)
       @project_totals = project_totals(@key_projects.project)
       @date = @today.beginning_of_month
       #Get Department Totals - Forecast
-      layout = Resource.department_total_include(@date, @key_projects.project,["3101","1370","1390"],"layout")
+      layout = Resource.department_total_include(@date, project_name,["3101","1370","1390"],"layout")
       @layout = department_totals2(layout)
 
-      design = Resource.department_total_not_include(@date, @key_projects.project,["3101","1370","1390"],"layout")
+      design = Resource.department_total_not_include(@date, project_name,["3101","1370","1390"],"layout")
       @design = department_totals2(design)
 
-      pe = Resource.department_total_not_include(@date, @key_projects.project,["3371","1340"],"test")
+      pe = Resource.department_total_not_include(@date, project_name,["3371","1340"],"test")
       @pe = department_totals2(pe)
       
-      te = Resource.department_total_include(@date, @key_projects.project,["3371","1340"],"test")
+      te = Resource.department_total_include(@date, project_name,["3371","1340"],"test")
       @te = department_totals2(te)
 
-      @application = department_totals(@key_projects.project,"3209")
+      @application = department_totals(project_name,"3209")
 
       #Get Department Totals - Actuals
-      layout = Resource.department_total_actual_include(@date, @key_projects.project,["3101","1370","1390"],"layout")
-      @layout_actuals = department_actual_totals2(layout)
+      #layout = Resource.department_total_actual_include(@date, project_name,["3101","1370","1390"],"layout")
+      #@layout_actuals = department_actual_totals2(layout)
+      @layout_actuals = get_department_actuals(@date, project_name,["3101","1370","1390"],"layout")
 
-      design = Resource.department_total_actual_not_include(@date, @key_projects.project,["3101","1370","1390"],"layout")
+      design = Resource.department_total_actual_not_include(@date, project_name,["3101","1370","1390"],"layout")
       @design_actuals = department_actual_totals2(design)
 
-      pe = Resource.department_total_actual_not_include(@date, @key_projects.project,["3371","1340"],"test")
-      @pe_actuals = department_actual_totals2(pe)
+      #pe = Resource.department_total_actual_not_include(@date, project_name,["3371","1340"],"test")
+      #@pe_actuals = department_actual_totals2(pe)
+      @pe_actuals = get_department_actuals(@date, project_name,["3371","1340"],"test")
       
-      te = Resource.department_total_actual_include(@date, @key_projects.project,["3371","1340"],"test")
+      te = Resource.department_total_actual_include(@date, project_name,["3371","1340"],"test")
       @te_actuals = department_actual_totals2(te)
 
-      @application_actuals = department_actual_totals(@key_projects.project,"3209")
+      @application_actuals = department_actual_totals(project_name,"3209")
       
-      
-      #Get Department Totals - Actuals
-      #@layout_actuals = department_actual_totals(@key_projects.project,"Layout")
-      #@design_actuals = department_actual_totals(@key_projects.project,"Design")
-      #@pe_actuals = department_actual_totals(@key_projects.project,"3371")
-      #@te_actuals = department_actual_totals(@key_projects.project,"3371")
-      #@application_actuals = department_actual_totals(@key_projects.project,"3209")
-
-
       #Determine maximum count on actuals for chart width
       actuals_month_count = 3
 
 
       #Prepare GoogleCharts data
-      @chart_title = "Memory BU Resource Forecast for " + @key_projects.long_name + "-" + @key_projects.project
+      @chart_title = "Memory BU Resource Forecast for " + project_name_long + ": " + project_name
 
       @data = mda(actuals_month_count + 16,7)
       @data[0][0] = 'Month'
@@ -178,21 +173,7 @@ class ResourceController < ApplicationController
         #@data[m][5] = 2
 
       }
-      #@data[1][5] = 2;
-      #@data[2][5] = 3.5;
-      #@data[3][5] = 5.1;
-      #@data[4][5] = 6;
-      #@data[5][5] = 7.9;
-      #@data[6][5] = 8.1;
-      #@data[7][5] = 9.2;
-      #@data[8][5] = 5.2;
-      #@data[9][5] = 6.2;
-      #@data[10][5] = 4.5;
-      #@data[11][5] = 4;
-      #@data[12][5] = 1.7;
-      #@data[13][5] = 2.0;
-      #@data[14][5] = 1.4;
-      #@data[15][5] = 1.2;
+
 
       #puts @data
 
@@ -306,25 +287,17 @@ class ResourceController < ApplicationController
   def department_totals2(data)
     #Department Totals
     dept_totals = Array.new(17,0)
-    #count = data.count
-    #puts count
-    #total = Resource.department_total(@date_start,project, department)
-    #unless count < 15
     unless data[0].nil?
       0.upto(14){
         |x|
-        puts 'James '+x.to_s
         unless data[x].forecast.blank?
           dept_totals[x] = data[x].forecast
         end
         dept_totals[15] += data[x].forecast  if  data[x].forecast
       }
     end
-
     dept_totals[16] = dept_totals[15]/12
-    #end
     dept_totals
-    #end
   end
   def department_actual_totals2(data)
     #Department Totals
@@ -348,6 +321,10 @@ class ResourceController < ApplicationController
     #end
     dept_totals
     #end
+  end
+  def get_department_actuals(date,project,department,team)
+    a = Resource.department_total_actual_include(date, project, department, team)
+    department_actual_totals2(a)
   end
   #
   #
