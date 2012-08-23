@@ -31,8 +31,8 @@ class Resource < ActiveRecord::Base
   def self.department_total(date,project,department)
     self.where("project = ? AND department IN (?) AND date >= ? AND date < ?" ,project, department, date, date +15.months).order("date").select("date, sum (forecast) as forecast").group("date")
   end
-  
-  
+
+
   def self.department_total_include(date,project,department,team)
     self.where("project = ? AND department IN (?) AND team = ? AND date >= ? AND date < ?" ,project, department, team, date, date +15.months).order("date").select("date, sum (forecast) as forecast").group("date")
     #self.where("department IN (?) AND team = ? AND date >= ? AND date < ?" , department, team, date, date +15.months).order("date").select("date, sum (forecast) as forecast").group("date")
@@ -41,8 +41,8 @@ class Resource < ActiveRecord::Base
     self.where("project = ? AND department IN (?) AND team IS NOT ? AND date >= ? AND date < ?" ,project, department, team, date, date +15.months).order("date").select("date, sum (forecast) as forecast").group("date")
     #self.where("department IN (?) AND team = ? AND date >= ? AND date < ?" , department, team, date, date +15.months).order("date").select("date, sum (forecast) as forecast").group("date")
   end
-  
-  
+
+
   def self.department_total_actual_include(date,project,department,team)
     self.where("project = ? AND department IN (?) AND team = ? AND date < ?" ,project, department, team, date).order("date").select("date, sum (actual) as actual").group("date")
     #self.where("department IN (?) AND team = ? AND date >= ? AND date < ?" , department, team, date, date +15.months).order("date").select("date, sum (forecast) as forecast").group("date")
@@ -51,8 +51,8 @@ class Resource < ActiveRecord::Base
     self.where("project = ? AND department IN (?) AND team IS NOT ? AND date < ?" ,project, department, team, date).order("date").select("date, sum (actual) as actual").group("date")
     #self.where("department IN (?) AND team = ? AND date >= ? AND date < ?" , department, team, date, date +15.months).order("date").select("date, sum (forecast) as forecast").group("date")
   end
-  
-  
+
+
   def self.department_actual_total(date,project,department)
     self.where("project = ? AND department LIKE ? AND date < ?" ,project, "%#{department}%", date).order("date").select("date, sum (actual) as actual").group("date")
   end
@@ -82,10 +82,16 @@ class Resource < ActiveRecord::Base
 
 
   def   self.all_actuals
-    date = Time.parse('2011-01-01')
+    date = Time.parse('2012-01-01')
+    proj = Array.new
+    kp = Project.k_proj(date)
+    kp.each do |p|
+      proj << p.project
+    end
+
     #self.where("actual > 0 AND date >= ? AND date < ?" ,date, date +12.months).select("project, department, sum (actual) as actual").group("project").order("project")
-    #self.where("actual > 0 AND date >= ? AND date < ?" ,date, date +12.months).select("project, department, sum (actual) as actual").group("project, department").order("project, department")
-    self.where("actual > 0 AND date >= ? AND date < ?" ,date, date +12.months).select("project, department, date, sum (actual) as actual").group("project, department, date").order("project, department, date")
+    #self.where("project IN (?) AND actual > 0 AND date >= ? AND date < ?" , proj , date, date +12.months).select("project, department, sum (actual) as actual").group("project, department").order("project, department")
+    self.where("project IN (?) AND actual > 0 AND date >= ? AND date < ?" , proj , date, date +12.months).select("project, department, date, sum (actual) as actual").group("project, department, date").order("project, department, date")
   end
 
   def self.overbooked
@@ -96,7 +102,7 @@ class Resource < ActiveRecord::Base
   def self.team_names
     t = self.select("department, team").group("department, team")
   end
-  
+
   def self.forward_look_key(date, dept, team)
     proj = Array.new
     kp = Project.k_proj(date)
@@ -106,7 +112,7 @@ class Resource < ActiveRecord::Base
     t = self.select("department, team, date, sum(forecast) as forecast").where("date >= ? AND project IN (?) AND department = ? AND team LIKE ?",date, proj, dept, team).group("department, date").order("date")
     #t.group_by(&:department)
   end
-  
+
   def self.forward_look_other(date, dept, team)
     proj = Array.new
     kp = Project.k_proj(date)
@@ -116,6 +122,6 @@ class Resource < ActiveRecord::Base
     t = Hash.new(0)
     t = self.select("department, team, date, sum(forecast) as forecast").where("date >= ? AND project NOT IN (?)",date, proj).group("date, department").order("department")
     #t = self.select("department, team, date, sum(forecast) as forecast").where("project NOT IN (?)",proj).group("department, team, date").order("department, date")
-    #t.group_by(&:department)    
+    #t.group_by(&:department)
   end
 end

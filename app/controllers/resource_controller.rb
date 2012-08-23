@@ -82,10 +82,13 @@ class ResourceController < ApplicationController
   end
 
   def phuong
+    @npi_actuals = Finance.new
+    npi_forecast = Finance.new
+    
     @base_year = Date.new( 2011, 1, 1)
     @actuals = Resource.all_actuals
-    @npi_actuals_quarerly = Finance.new
-    @npi_forecast_quarerly = Finance.new
+    @npi_actuals_quarerly = @npi_actuals.group_actuals_by_quarter( @actuals)
+    #@npi_forecast_quarerly = Finance.new
 
   end
 
@@ -332,7 +335,7 @@ class ResourceController < ApplicationController
     puts "============================================="
     #import and stack data
     #delete database
-    Resource.delete_all
+    #Resource.delete_all
     @removal_date = @today.months_ago(3).beginning_of_month
     Resource.remove_forecast(@removal_date)
     arr_of_arrs = CSV.read(import_file)
