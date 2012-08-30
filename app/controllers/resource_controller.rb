@@ -1,7 +1,7 @@
 class ResourceController < ApplicationController
   require "csv"
   require 'google_chart'
-  require 'finance'
+  #require 'finance'
 
   before_filter :set_useful_globals
 
@@ -82,12 +82,12 @@ class ResourceController < ApplicationController
   end
 
   def phuong
-    @npi_actuals = Finance.new
-    npi_forecast = Finance.new
+    #@npi_actuals = Finance.new
+    #@npi_forecast = Finance.new
     
-    @base_year = Date.new( 2011, 1, 1)
+    #@base_year = Date.new( 2011, 1, 1)
     @actuals = Resource.all_actuals
-    @npi_actuals_quarerly = @npi_actuals.group_actuals_by_quarter( @actuals)
+    @npi_actuals_quarerly = group_actuals_by_quarter( @actuals)
     #@npi_forecast_quarerly = Finance.new
 
   end
@@ -474,7 +474,19 @@ class ResourceController < ApplicationController
     }
     dr_month_array
   end
-
+# ====Finance stuff =====
+def group_actuals_by_quarter( dataset)
+  quarter_data = Hash.new(0)
+  dataset.each do |d|
+    hash_tag = d.project + ", "
+    hash_tag += d.department + ", "
+    hash_tag += d.date.year.to_s
+    hash_tag += "-" + ((d.date.month/4)+1).to_s
+    quarter_data[hash_tag] += d.actual
+    puts hash_tag
+  end  
+  quarter_data
+end
 
 
   protected

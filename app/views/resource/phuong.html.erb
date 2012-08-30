@@ -9,3 +9,14 @@
 <p>
 <% end %>
 </table>
+
+
+<h1>Quarterly Rollup</h1>
+<table>
+<%@npi_actuals_quarerly.each do |key, value|%>
+<tr>
+<td><%= key %>,
+<%= "%.1f" %value %></td>
+<p>
+<% end %>
+</table>

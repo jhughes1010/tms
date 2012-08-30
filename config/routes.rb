@@ -23,6 +23,8 @@ TMS::Application.routes.draw do
     #match "*path" => redirect("https://high-frost-719.heroku.com/%{path}"), :constraints => { :subdomain => "" }
   
   get "resource/index"
+  
+  get "resource/key_projects"
 
   get "admin/login"
 

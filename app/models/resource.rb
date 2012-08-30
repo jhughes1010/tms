@@ -91,7 +91,8 @@ class Resource < ActiveRecord::Base
 
     #self.where("actual > 0 AND date >= ? AND date < ?" ,date, date +12.months).select("project, department, sum (actual) as actual").group("project").order("project")
     #self.where("project IN (?) AND actual > 0 AND date >= ? AND date < ?" , proj , date, date +12.months).select("project, department, sum (actual) as actual").group("project, department").order("project, department")
-    self.where("project IN (?) AND actual > 0 AND date >= ? AND date < ?" , proj , date, date +12.months).select("project, department, date, sum (actual) as actual").group("project, department, date").order("project, department, date")
+    self.where("project NOT IN (?) AND actual > 0 AND date >= ? AND date < ?" , proj , date, date +12.months).select("project, department, date, sum (actual) as actual").group("project, department, date").order("project, department, date")
+    #self.where("project IN (?) AND actual > 0 AND date >= ? AND date < ?" , proj , date, date +12.months).select("project, department, date, sum (actual) as actual").group("project, department, date").order("project, department, date")
   end
 
   def self.overbooked
