@@ -107,14 +107,16 @@
 	        </div>
 	      </div>
 	      </div>
-				    <div class="container">
+				    <div class="container-fluid">
 
-		      <div class="content">
+		     
 				<%if flash[:notice] -%>
 				<div id="notice">
 					<%=flash[:notice] %>
-				</div><%end %><%= yield :layout %>
-		      </div>
+				</div>
+				<%end %>
+				<%= yield :layout %>
+		    
 
 		      <footer>
 		        <p>&copy; James Hughes 2012</p>
