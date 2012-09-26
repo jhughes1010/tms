@@ -145,9 +145,33 @@ class ResourceController < ApplicationController
       #load_forecast_to_array(@design,2)
       #load_forecast_to_array(@pe,3)
       #load_forecast_to_array(@application,4)
+
+      #horrible coding!!!
+      dr5_month = @key_projects.dr5.month.to_s
+      dr5_year = @key_projects.dr5.year.to_s
+      dr4_month = @key_projects.dr4.month.to_s
+      dr4_year = @key_projects.dr4.year.to_s
+      dr3_month = @key_projects.dr3.month.to_s
+      dr3_year = @key_projects.dr3.year.to_s
+      dr2_month = @key_projects.dr2.month.to_s
+      dr2_year = @key_projects.dr2.year.to_s
+      dr1_month = @key_projects.dr1.month.to_s
+      dr1_year = @key_projects.dr1.year.to_s
+
       1.upto(15){
         |m|
-        @data[actuals_month_count + m][0] = @today.months_since(m-1).month.to_s + '-' + (@today.months_since(m-1).year-2000).to_s
+        month = @today.months_since(m-1).month.to_s
+        year = (@today.months_since(m-1).year - 2000 ).to_s
+        x_string = month + '-' + year
+        year = (@today.months_since(m-1).year).to_s
+        
+        x_string = "DR5" if ((dr5_month == month) && (dr5_year == year))
+        x_string = "DR4" if ((dr4_month == month) && (dr4_year == year))
+        x_string = "DR3" if ((dr3_month == month) && (dr3_year == year))
+        x_string = "DR2" if ((dr2_month == month) && (dr2_year == year))
+        x_string = "DR1" if ((dr1_month == month) && (dr1_year == year))
+      
+        @data[actuals_month_count + m][0] = x_string
         @data[actuals_month_count + m][1] = (@layout[m-1]*100).round / 100.0
         @data[actuals_month_count + m][2] = (@design[m-1]*100).round / 100.0
         @data[actuals_month_count + m][3] = (@pe[m-1]*100).round / 100.0
@@ -157,6 +181,18 @@ class ResourceController < ApplicationController
       1.upto(actuals_month_count){
         |m|
         offset = actuals_month_count + 1 - m
+
+        month = @today.months_ago(offset).month.to_s
+        year = (@today.months_ago(offset).year-2000 ).to_s
+        x_string = month + '-' + year
+        year = (@today.months_ago(offset).year ).to_s
+
+        x_string = "DR5" if ((dr5_month == month) && (dr5_year == year))
+        x_string = "DR4" if ((dr4_month == month) && (dr4_year == year))
+        x_string = "DR3" if ((dr3_month == month) && (dr3_year == year))
+        x_string = "DR2" if ((dr2_month == month) && (dr2_year == year))
+        x_string = "DR1" if ((dr1_month == month) && (dr1_year == year))
+
         @data[m][0] = @today.months_ago(offset).month.to_s + '-' + (@today.months_ago(offset).year-2000).to_s
         @data[m][1] = (@layout_actuals[m-1]*100).round / 100.0
         @data[m][2] = (@design_actuals[m-1]*100).round / 100.0
@@ -235,27 +271,6 @@ class ResourceController < ApplicationController
     end
     project_totals
   end
-#  def department_actual_totals(project,department)
-    #Department Totals
-#    offset = 12
-#    @date = @today
-#    dept_totals = Array.new(36,0)
-#    @date_start = @date.at_beginning_of_month
-
-#    total = Resource.department_actual_total(@date_start,project, department)
-#    puts "Department" + department
-#    puts total
-#    unless total.empty?
-#      0.upto(2){
-#        |x|
-#        puts total[x + offset]
-#        unless total[x + offset].nil?
-#          dept_totals[x] = total[x + offset].actual
-#        end
-#      }
-#    end
-#    dept_totals
-#  end
 
   def department_totals(project,department)
     #Department Totals
