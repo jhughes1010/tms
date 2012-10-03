@@ -102,7 +102,8 @@ class ResourceController < ApplicationController
       project_name_long = @key_projects.long_name
       @dr_month = find_dr_offset(@key_projects)
       @project_totals = project_totals(@key_projects.project)
-      @date = @today.beginning_of_month
+      @date = @today
+      puts @date
       #Get Department Totals - Forecast
       layout = Resource.department_total_include(@date, project_name,["3101","1370","1390"],"layout")
       @layout = department_totals2(layout)
@@ -193,7 +194,7 @@ class ResourceController < ApplicationController
         x_string = "DR2" if ((dr2_month == month) && (dr2_year == year))
         x_string = "DR1" if ((dr1_month == month) && (dr1_year == year))
 
-        @data[m][0] = @today.months_ago(offset).month.to_s + '-' + (@today.months_ago(offset).year-2000).to_s
+        @data[m][0] = x_string
         @data[m][1] = (@layout_actuals[m-1]*100).round / 100.0
         @data[m][2] = (@design_actuals[m-1]*100).round / 100.0
         @data[m][3] = (@pe_actuals[m-1]*100).round / 100.0
@@ -510,7 +511,10 @@ end
     @auth = session[:user_auth]
     @user_id=session[:user_id]
     @full_name=session[:user_fullname]
-    @today=Date.today.months_ago(1)
+    now = Date.today.beginning_of_month
+    now_month = (now.month) - 1
+    now_offset = now_month.modulo(3)
+    @today=now.months_ago(now_offset)
     @today.to_s(:long)
     #@today.beginning_of_month
   end
