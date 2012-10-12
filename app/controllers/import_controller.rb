@@ -9,12 +9,13 @@ class ImportController < ApplicationController
       #initial variables
       header = 0
       #filenames
-      import_file = "import/2012Q2_KeyProjects.csv"
+      import_file = "import/2012Q3_KeyProjects.csv"
       puts
       puts "============================================="
       puts "CSV importer for Costing database"
       puts "Costing List Import tool"
       puts "============================================="
+      puts import_file
       Project.delete_all
       arr_of_arrs = CSV.read(import_file)
       arr_of_arrs.each do |x|

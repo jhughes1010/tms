@@ -1,6 +1,6 @@
 class TestProg < ActiveRecord::Base
   def self.live
-    self.order("engineer, date_received")
+    self.order("operation, date_received")
   end
 
 end
