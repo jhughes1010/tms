@@ -343,7 +343,7 @@ class ResourceController < ApplicationController
     #initial variables
     header = 0
     #filenames
-    import_file = "import/2012q2.csv"
+    import_file = "import/2012q3.csv"
     puts
     puts "============================================="
     puts "CSV importer for Resource Allocation database"
@@ -351,7 +351,7 @@ class ResourceController < ApplicationController
     puts "============================================="
     #import and stack data
     #delete database
-    #Resource.delete_all
+    Resource.delete_all
     @removal_date = @today.months_ago(3).beginning_of_month
     Resource.remove_forecast(@removal_date)
     arr_of_arrs = CSV.read(import_file)
