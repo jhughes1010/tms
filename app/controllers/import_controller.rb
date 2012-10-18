@@ -66,6 +66,9 @@ class ImportController < ApplicationController
       unless date.nil?
         date = Date.strptime(date, "%m/%d/%Y")
       end
+      if date.nil?
+        date = Date.today.next_year(10)
+      end
       date
     end
 end
