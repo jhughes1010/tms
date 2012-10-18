@@ -1,0 +1,22 @@
+<h1>Key Projects - Actuals</h1>
+<table>
+<%@forecast.each do |a|%>
+<tr>
+<td><%= a.project %></td>
+<td><%= a.department %></td>
+<td><%= a.date %></td>
+<td><%= "%.1f" %a.forecast %></td>
+<p>
+<% end %>
+</table>
+
+
+<h1>Quarterly Rollup</h1>
+<table>
+<%@npi_forecast_quarerly.each do |key, value|%>
+<tr>
+<td><%= key %>,
+<%= "%.1f" %value %></td>
+<p>
+<% end %>
+</table>
