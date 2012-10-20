@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120722120755) do
+ActiveRecord::Schema.define(:version => 20121020022750) do
 
   create_table "can_mains", :force => true do |t|
     t.string    "can"
@@ -171,10 +171,11 @@ ActiveRecord::Schema.define(:version => 20120722120755) do
     t.string   "status"
     t.string   "prog_name"
     t.string   "operation"
-    t.date     "date_received"
+    t.date     "date_received", :limit => 255
     t.string   "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "crs_number"
   end
 
   create_table "users", :force => true do |t|
