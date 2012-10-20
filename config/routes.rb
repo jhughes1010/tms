@@ -1,4 +1,6 @@
 TMS::Application.routes.draw do
+  get "sas/index"
+
   resources :test_progs
 
   get "import_resource/import"
