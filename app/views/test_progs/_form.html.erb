@@ -24,6 +24,10 @@
     <%= f.text_field :prog_name %>
   </div>
   <div class="field">
+    <%= f.label :CRS_number %><br />
+    <%= f.text_field :crs_number %>
+  </div>
+  <div class="field">
     <%= f.label :operation %><br />
 	<%= f.select(:operation, %w{ Other CP1 CP2 Combined Final_Test Engineering })%> 
  </div>
