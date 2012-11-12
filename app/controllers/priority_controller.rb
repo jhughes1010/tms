@@ -8,28 +8,32 @@ class PriorityController < ApplicationController
 
   def project_auto_priority
     unless @auth == 1
-      #@today=Date.today
-      #@today.to_s(:long)
       @te = User.get_te
       @tsk = Task.all_active3
       #Spread out priority numbers
       @tsk.each_pair do |assignee_id, tasks|
         priority=2
+        first_record_flag = 1
         #get scd and duration for first entry for date completion estimates
-        date_complete = @today
+        date_complete = Date.new
         tasks.each do |t|
-          puts t.duration.class
-          #is duration invalid?
-          if t.duration.nil?
-            t.duration = 0
+          #update record
+          if first_record_flag == 0
+            #is duration invalid?
+            t.duration = 0 if t.duration.nil?
+            duration = t.duration*7
+            t.scd = date_complete.next_day( duration )
+          elsif
+            first_record_flag = 0
+            date_complete = t.scd
           end
-          duration = t.duration*7
-          t.scd = date_complete.next_day( duration )
           t.priority=priority
           t.save
           #update variables for next record
           date_complete = t.scd
+          priority = t.priority
           priority +=3
+
         end
       end
     end

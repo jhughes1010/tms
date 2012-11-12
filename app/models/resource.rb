@@ -125,4 +125,9 @@ class Resource < ActiveRecord::Base
     #t = self.select("department, team, date, sum(forecast) as forecast").where("project NOT IN (?)",proj).group("department, team, date").order("department, date")
     #t.group_by(&:department)
   end
+  
+  #Testing
+  def self.test
+    date = Time.new
+    self.select("department, forecast, actuals")
 end
