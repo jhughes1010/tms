@@ -125,9 +125,10 @@ class Resource < ActiveRecord::Base
     #t = self.select("department, team, date, sum(forecast) as forecast").where("project NOT IN (?)",proj).group("department, team, date").order("department, date")
     #t.group_by(&:department)
   end
-  
+
   #Testing
   def self.test
-    date = Time.new
-    self.select("department, forecast, actuals")
+    today = Date.today
+    self.find_by_sql ["SELECT department, date, project, CASE WHEN date > ? THEN forecast WHEN date <= ? THEN actual END AS months FROM resources WHERE name = 'James Hughes' ORDER by date, project", today, today]
+  end
 end

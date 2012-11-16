@@ -16,7 +16,9 @@ class ResourceController < ApplicationController
     @key = Resource.forward_look_key(@today)
     @others = Resource.forward_look_other(@today)
   end
-
+  def test
+    @test = Resource.test
+  end
 
   def rule_check
     @projects = Project.not_k_proj(@today)
@@ -84,7 +86,7 @@ class ResourceController < ApplicationController
   def phuong
     #@npi_actuals = Finance.new
     #@npi_forecast = Finance.new
-    
+
     #@base_year = Date.new( 2011, 1, 1)
     @actuals = Resource.all_actuals
     @npi_actuals_quarerly = group_actuals_by_quarter( @actuals)
@@ -113,7 +115,7 @@ class ResourceController < ApplicationController
 
       pe = Resource.department_total_not_include(@date, project_name,["3371","1340"],"test")
       @pe = department_totals2(pe)
-      
+
       te = Resource.department_total_include(@date, project_name,["3371","1340"],"test")
       @te = department_totals2(te)
 
@@ -125,7 +127,7 @@ class ResourceController < ApplicationController
       @pe_actuals = get_department_actuals(@date, project_name,["3371","1340"],"test","exclude")
       @te_actuals = get_department_actuals(@date, project_name,["3371","1340"],"test","include")
       @application_actuals = get_department_actuals(@date, project_name, "3209", "void", "exclude")
-      
+
       #Determine maximum count on actuals for chart width
       actuals_month_count = 3
 
@@ -165,13 +167,13 @@ class ResourceController < ApplicationController
         year = (@today.months_since(m-1).year - 2000 ).to_s
         x_string = month + '-' + year
         year = (@today.months_since(m-1).year).to_s
-        
+
         x_string = "DR5" if ((dr5_month == month) && (dr5_year == year))
         x_string = "DR4" if ((dr4_month == month) && (dr4_year == year))
         x_string = "DR3" if ((dr3_month == month) && (dr3_year == year))
         x_string = "DR2" if ((dr2_month == month) && (dr2_year == year))
         x_string = "DR1" if ((dr1_month == month) && (dr1_year == year))
-      
+
         @data[actuals_month_count + m][0] = x_string
         @data[actuals_month_count + m][1] = (@layout[m-1]*100).round / 100.0
         @data[actuals_month_count + m][2] = (@design[m-1]*100).round / 100.0
@@ -490,19 +492,19 @@ class ResourceController < ApplicationController
     }
     dr_month_array
   end
-# ====Finance stuff =====
-def group_actuals_by_quarter( dataset)
-  quarter_data = Hash.new(0)
-  dataset.each do |d|
-    hash_tag = d.project + ", "
-    hash_tag += d.department + ", "
-    hash_tag += d.date.year.to_s
-    hash_tag += "-" + ((d.date.month/4)+1).to_s
-    quarter_data[hash_tag] += d.actual
-    puts hash_tag
-  end  
-  quarter_data
-end
+  # ====Finance stuff =====
+  def group_actuals_by_quarter( dataset)
+    quarter_data = Hash.new(0)
+    dataset.each do |d|
+      hash_tag = d.project + ", "
+      hash_tag += d.department + ", "
+      hash_tag += d.date.year.to_s
+      hash_tag += "-" + ((d.date.month/4)+1).to_s
+      quarter_data[hash_tag] += d.actual
+      puts hash_tag
+    end
+    quarter_data
+  end
 
 
   protected
