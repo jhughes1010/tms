@@ -15,7 +15,7 @@ class PriorityController < ApplicationController
         priority=2
         first_record_flag = 1
         #get scd and duration for first entry for date completion estimates
-        date_complete = Date.new
+        date_complete = Date.today
         tasks.each do |t|
           #update record
           if first_record_flag == 0

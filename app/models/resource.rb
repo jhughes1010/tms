@@ -129,6 +129,6 @@ class Resource < ActiveRecord::Base
   #Testing
   def self.test
     today = Date.today
-    self.find_by_sql ["SELECT department, date, project, CASE WHEN date > ? THEN forecast WHEN date <= ? THEN actual END AS months FROM resources WHERE name = 'James Hughes' ORDER by date, project", today, today]
+    self.find_by_sql ["SELECT department, date, project, SUM(CASE WHEN date > ? THEN forecast WHEN date <= ? THEN actual END AS months) FROM resources WHERE name = 'James Hughes' ORDER by date, project", today, today]
   end
 end

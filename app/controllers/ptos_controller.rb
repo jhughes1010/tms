@@ -52,9 +52,10 @@ class PtosController < ApplicationController
         format.xml  { render :xml => @pto.errors, :status => :unprocessable_entity }
       end
     end
-    #deliver the mail
-    UserMailer.pto_entry_confirmation(session[:user_id],@pto).deliver
-    UserMailer.pto_entry_confirmation(1,@pto).deliver
+    #deliver the mail to requester
+    UserMailer.pto_entry_confirmation(session[:user_id], session[:user_id], @pto).deliver
+    #deliver the mail to James
+    UserMailer.pto_entry_confirmation(1, session[:user_id], @pto).deliver
   end
 
   # PUT /ptos/1

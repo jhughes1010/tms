@@ -17,14 +17,14 @@ class UserMailer < ActionMailer::Base
     #attachments["rails.png"] = File.read("#{Rails.root}/public/images/rails.png")
     mail(:to => "#{name} <#{email}>", :subject => "TMS - New Task Entry Confirmation")
   end
-  def pto_entry_confirmation(user_id, pto)
+  def pto_entry_confirmation(user_id, regarding_id, pto)
     @pto = pto
     @user = User.find(user_id)
     @name = @user.fullname
     email = @user.email
-    #name="James Hughes"
-    #email="james.hughes@atmel.com"**
-    #attachments["rails.png"] = File.read("#{Rails.root}/public/images/rails.png")
+    #Determine who the request was made by
+    @regarding = User.find(regarding_id)
+    @regarding_name = @regarding.fullname
     mail(:to => "#{@name} <#{email}>", :subject => "TMS - New PTO Entry Confirmation")
   end
   def daily_report(user_id, list)
