@@ -9,7 +9,7 @@ class ImportController < ApplicationController
       #initial variables
       header = 0
       #filenames
-      import_file = "import/2012Q3_KeyProjects.csv"
+      import_file = "import/2012Q4_KeyProjects.csv"
       puts
       puts "============================================="
       puts "CSV importer for Costing database"
@@ -25,9 +25,9 @@ class ImportController < ApplicationController
     end
 
     def write_csv_data(record)
-      if record[3] == "Current Plan"
+      if record[5] == "Current Plan"
         puts record
-      column_array= [0,1,2,3,4,5,6,7,8,9,10,11]
+      column_array= [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14]
       new_to_costing_db(record, column_array)
     end
     end
@@ -36,13 +36,13 @@ class ImportController < ApplicationController
       #create new record and write data fields
       r = Project.new
       r.key = true
-      r.project = record[column_array[2]]
+      r.project = record[column_array[3]]
       r.long_name = record[column_array[0]]
-      r.dr1 = format_date(record[column_array[7]])
-      r.dr2 = format_date(record[column_array[8]])
-      r.dr3 = format_date(record[column_array[9]])
-      r.dr4 = format_date(record[column_array[10]])
-      r.dr5 = format_date(record[column_array[11]])
+      r.dr1 = format_date(record[column_array[10]])
+      r.dr2 = format_date(record[column_array[11]])
+      r.dr3 = format_date(record[column_array[12]])
+      r.dr4 = format_date(record[column_array[13]])
+      r.dr5 = format_date(record[column_array[14]])
       
       if record[column_array[0]]["_SE_"]
         r.owner = "Serial"
@@ -62,13 +62,13 @@ class ImportController < ApplicationController
       r.save
     end
     def format_date(date)
-      #puts "Imported Date:" + date
       unless date.nil?
         date = Date.strptime(date, "%m/%d/%Y")
       end
       if date.nil?
         date = Date.today.next_year(10)
       end
+      puts "Imported Date:" + date.to_s
       date
     end
 end
