@@ -72,35 +72,86 @@ class ImportController < ApplicationController
     date
   end
   def setup
-    #initial variables
-    header = 0
-    #filenames
-    import_file = "import/pv_acp.txt"
     puts
     puts "============================================="
     puts "CSV importer for ProberVision_setup.txt database"
     puts "setup.txt List Import tool"
     puts "============================================="
-    puts import_file
     Setup.delete_all
-    arr_of_arrs = IO.readlines(import_file)
-    arr_of_arrs.each do |x|
-      y = x.split
-      write_csv_data_setup(y) if header >=1
-      header += 1
+    import_setup("ACP","import/pv_acp.txt")
+    import_setup("MEMP","import/pv_memp.txt")
+  end
+  def import_setup(location, path)
+    puts location
+    file = IO.readlines( path )
+    header = 0
+    file.each do |f|
+      write_csv_data_setup( f, location ) if header = 1
+      header = 1
     end
   end
-  def write_csv_data_setup(record)
-    temp = record[0].split('_')
-    puts temp[0].class
-    unless temp[0].nil?
-      puts temp[0]
+  def write_csv_data_setup(line, location )
+    #Split line into individual components
+    record = line.split()
+    unless record.nil?
+      unless record[0].nil?
+        device = record[0].split('_')
+        unless device[0].include? "---"
+          unless device[0].include? "***"
+            puts "#{location}:#{device[0]} #{device[1]} #{record[2]} #{record[10]} #{record[11]} #{record[12]} "
+            #write record
+            r = Setup.new
+            r.location = location
+            r.device = device[0]
+            r.tab = device[1]
+            r.platform = record[2]
+            r.cp1 = record[10]
+            r.cp2 = record[11]
+            r.cp3 = record[12]
+            r.save
+          end
+        end
+
+      end
     end
-    #puts temp[1] unless temp[1].nil?
-    if record[0] == "Current Plan"
-      puts record[0]
-      column_array= [0,1,2,3,4,5]
-      #new_to_costing_db(record, column_array)
+  end
+  def device
+    puts
+    puts "============================================="
+    puts "CSV importer for ProberVision_setup.txt database"
+    puts "setup.txt List Import tool"
+    puts "============================================="
+    Device.delete_all
+    import_device("2W","import/2w.txt")
+    #import_setup("MEMP","import/3w.txt")
+  end
+  def import_device(family, path)
+    puts family
+    file = IO.readlines( path )
+    header = 0
+    file.each do |f|
+      write_csv_data_device( f, family ) if header = 1
+      header = 1
     end
+  end
+  def write_csv_data_device(line, family )
+    #Split line into individual components
+    record = line.strip()
+    unless record.nil?
+      #unless record[0].nil?
+        #device = record[0].split('_')
+        #unless device[0].include? "---"
+          #unless device[0].include? "***"
+            puts "#{family}:#{record}"
+            #write record
+            r = Device.new
+            r.productline = family
+            r.name = record
+            r.save
+          end
+        #end
+
+      #end
+    #end
   end
 end
