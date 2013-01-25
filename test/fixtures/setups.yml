@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  location: MyString
+  family: MyString
+  device: MyString
+  tab: MyString
+  platform: MyString
+  cp1: MyString
+  cp2: MyString
+  cp3: MyString
+
+two:
+  location: MyString
+  family: MyString
+  device: MyString
+  tab: MyString
+  platform: MyString
+  cp1: MyString
+  cp2: MyString
+  cp3: MyString

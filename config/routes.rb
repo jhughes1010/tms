@@ -1,4 +1,6 @@
 TMS::Application.routes.draw do
+  resources :setups
+
   get "sas/index"
 
   resources :test_progs

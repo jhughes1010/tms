@@ -1,0 +1,37 @@
+<h1>Listing setups</h1>
+
+<table>
+  <tr>
+    <th>Location</th>
+    <th>Family</th>
+    <th>Device</th>
+    <th>Tab</th>
+    <th>Platform</th>
+    <th>Cp1</th>
+    <th>Cp2</th>
+    <th>Cp3</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @setups.each do |setup| %>
+  <tr>
+    <td><%= setup.location %></td>
+    <td><%= setup.family %></td>
+    <td><%= setup.device %></td>
+    <td><%= setup.tab %></td>
+    <td><%= setup.platform %></td>
+    <td><%= setup.cp1 %></td>
+    <td><%= setup.cp2 %></td>
+    <td><%= setup.cp3 %></td>
+    <td><%= link_to 'Show', setup %></td>
+    <td><%= link_to 'Edit', edit_setup_path(setup) %></td>
+    <td><%= link_to 'Destroy', setup, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Setup', new_setup_path %>
