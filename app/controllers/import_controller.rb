@@ -122,7 +122,7 @@ class ImportController < ApplicationController
     puts "setup.txt List Import tool"
     puts "============================================="
     Device.delete_all
-    import_device("2W","import/2w.txt")
+    import_device("2W","import/2wire.txt")
     #import_setup("MEMP","import/3w.txt")
   end
   def import_device(family, path)
@@ -138,20 +138,16 @@ class ImportController < ApplicationController
     #Split line into individual components
     record = line.strip()
     unless record.nil?
-      #unless record[0].nil?
-        #device = record[0].split('_')
-        #unless device[0].include? "---"
-          #unless device[0].include? "***"
-            puts "#{family}:#{record}"
-            #write record
-            r = Device.new
-            r.productline = family
-            r.name = record
-            r.save
-          end
-        #end
+      puts "#{family}:#{record}"
+      #write record
+      r = Device.new
+      r.productline = family
+      r.name = record
+      r.save
+    end
+    #end
 
-      #end
+    #end
     #end
   end
 end

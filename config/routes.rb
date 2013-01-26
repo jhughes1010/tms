@@ -1,4 +1,6 @@
 TMS::Application.routes.draw do
+  resources :targets
+
   resources :setups
 
   get "sas/index"

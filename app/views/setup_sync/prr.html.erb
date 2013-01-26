@@ -1,0 +1,31 @@
+<h1>PRR</h1>
+Program Release Report
+<p>
+<table>
+<%@device_setups.each do |s|%>
+<tr>
+	<td>
+<%=s.platform %>
+	</td>
+		<td>
+<%=s.device %>
+		</td>
+			<td>
+		<%=s.tab %>
+			</td>
+				<td>
+			<%=s.location %>
+				</td>
+					<td>
+				<%=s.cp1 %>
+					</td>
+						<td>
+					<%=s.cp2 %>
+						</td>
+							<td>
+						<%=s.cp3 %>
+							</td>
+						
+				<tr>
+<%end%>
+</table>

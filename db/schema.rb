@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130125113143) do
+ActiveRecord::Schema.define(:version => 20130125184945) do
 
   create_table "can_mains", :force => true do |t|
     t.string    "can"
@@ -155,6 +155,20 @@ ActiveRecord::Schema.define(:version => 20130125113143) do
     t.string   "cp1"
     t.string   "cp2"
     t.string   "cp3"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "targets", :force => true do |t|
+    t.string   "family"
+    t.string   "device"
+    t.string   "tab"
+    t.string   "mag_cp1"
+    t.string   "mag_cp2"
+    t.string   "mag_x64_cp1"
+    t.string   "mag_x64_cp2"
+    t.string   "mav_cp1"
+    t.string   "mav_cp2"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

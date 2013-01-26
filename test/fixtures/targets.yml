@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  family: MyString
+  device: MyString
+  tab: MyString
+  mag_cp1: MyString
+  mag_cp2: MyString
+  mag_x64_cp1: MyString
+  mag_x64_cp2: MyString
+  mav_cp1: MyString
+  mav_cp2: MyString
+
+two:
+  family: MyString
+  device: MyString
+  tab: MyString
+  mag_cp1: MyString
+  mag_cp2: MyString
+  mag_x64_cp1: MyString
+  mag_x64_cp2: MyString
+  mav_cp1: MyString
+  mav_cp2: MyString

@@ -1,0 +1,53 @@
+<%= form_for(@target) do |f| %>
+  <% if @target.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@target.errors.count, "error") %> prohibited this target from being saved:</h2>
+
+      <ul>
+      <% @target.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :family %><br />
+    <%= f.text_field :family %>
+  </div>
+  <div class="field">
+    <%= f.label :device %><br />
+    <%= f.text_field :device %>
+  </div>
+  <div class="field">
+    <%= f.label :tab %><br />
+    <%= f.text_field :tab %>
+  </div>
+  <div class="field">
+    <%= f.label :mag_cp1 %><br />
+    <%= f.text_field :mag_cp1 %>
+  </div>
+  <div class="field">
+    <%= f.label :mag_cp2 %><br />
+    <%= f.text_field :mag_cp2 %>
+  </div>
+  <div class="field">
+    <%= f.label :mag_x64_cp1 %><br />
+    <%= f.text_field :mag_x64_cp1 %>
+  </div>
+  <div class="field">
+    <%= f.label :mag_x64_cp2 %><br />
+    <%= f.text_field :mag_x64_cp2 %>
+  </div>
+  <div class="field">
+    <%= f.label :mav_cp1 %><br />
+    <%= f.text_field :mav_cp1 %>
+  </div>
+  <div class="field">
+    <%= f.label :mav_cp2 %><br />
+    <%= f.text_field :mav_cp2 %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

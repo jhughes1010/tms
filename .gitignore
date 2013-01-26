@@ -6,4 +6,5 @@ tmp/**/*
 .DS_store
 *.csv
 *.numbers
+import/*.*
 
