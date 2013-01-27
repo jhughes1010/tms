@@ -4,7 +4,7 @@ class SetupSyncController < ApplicationController
   def prr
     @wire2 = Device.get_family("2W")
     @list = @wire2.map {|i| i.name }
-    @device_setups = Setup.get_setups(@list)
+    @device_setups = Setup.get_setups_magnum(@list)
     #@device_setups = Setup.get_setups(["35815", "35833"])
   end
   

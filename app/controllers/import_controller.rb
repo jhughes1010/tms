@@ -83,14 +83,18 @@ class ImportController < ApplicationController
   end
   def import_setup(location, path)
     puts location
+    #
+    @wire2 = Device.get_family("2W")
+    list = @wire2.map {|i| i.name }
+    #
     file = IO.readlines( path )
     header = 0
     file.each do |f|
-      write_csv_data_setup( f, location ) if header = 1
+      write_csv_data_setup( f, location, list ) if header == 1
       header = 1
     end
   end
-  def write_csv_data_setup(line, location )
+  def write_csv_data_setup(line, location, list )
     #Split line into individual components
     record = line.split()
     unless record.nil?
@@ -98,17 +102,35 @@ class ImportController < ApplicationController
         device = record[0].split('_')
         unless device[0].include? "---"
           unless device[0].include? "***"
-            puts "#{location}:#{device[0]} #{device[1]} #{record[2]} #{record[10]} #{record[11]} #{record[12]} "
-            #write record
-            r = Setup.new
-            r.location = location
-            r.device = device[0]
-            r.tab = device[1]
-            r.platform = record[2]
-            r.cp1 = record[10]
-            r.cp2 = record[11]
-            r.cp3 = record[12]
-            r.save
+            if list.include?(device[0])
+              puts "#{location}:#{device[0]} #{device[1]} #{record[2]} #{record[10]} #{record[11]} #{record[12]} "
+              #write record
+              r = Setup.new
+              r.location = location
+              r.device = device[0]
+              r.tab = device[1]
+              r.platform = record[2]
+              #uppercase
+              record[10] = record[10].upcase unless record[10].nil?
+              record[11] = record[11].upcase unless record[11].nil?
+              record[12] = record[12].upcase unless record[12].nil?
+              unless record[10].nil?
+                record[10] = record[10].split(".ZIP")[0]
+                #record[10] = temp[0]
+              end
+              r.cp1 = record[10]
+              unless record[11].nil?
+                record[11] = record[11].split(".ZIP")[0]
+                record[11] = record[10] if record[11].include? "SAME"
+              end
+              r.cp2 = record[11]
+              unless record[12].nil?
+                record[12] = record[12].split(".ZIP")[0]
+                record[12] = record[11] if record[12].include? "SAME"
+              end
+              r.cp3 = record[12]
+              r.save
+            end
           end
         end
 
@@ -130,7 +152,7 @@ class ImportController < ApplicationController
     file = IO.readlines( path )
     header = 0
     file.each do |f|
-      write_csv_data_device( f, family ) if header = 1
+      write_csv_data_device( f, family ) if header == 1
       header = 1
     end
   end

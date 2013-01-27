@@ -57,6 +57,7 @@ class SetupsController < ApplicationController
   # PUT /setups/1.xml
   def update
     @setup = Setup.find(params[:id])
+    @setup.mag_x64_cp1.upcase!
 
     respond_to do |format|
       if @setup.update_attributes(params[:setup])
