@@ -107,10 +107,10 @@ class ResourceController < ApplicationController
       @date = @today
       puts @date
       #Get Department Totals - Forecast
-      layout = Resource.department_total_include(@date, project_name,["3101","1370","1390"],"layout")
+      layout = Resource.department_total_include(@date, project_name,["3101","1370","1390","2610"],"layout")
       @layout = department_totals2(layout)
 
-      design = Resource.department_total_not_include(@date, project_name,["3101","1370","1390"],"layout")
+      design = Resource.department_total_not_include(@date, project_name,["3101","1370","1390","2610"],"layout")
       @design = department_totals2(design)
 
       pe = Resource.department_total_not_include(@date, project_name,["3371","1340"],"test")
@@ -122,8 +122,8 @@ class ResourceController < ApplicationController
       @application = department_totals(project_name,"3209")
 
       #Get Department Totals - Actuals
-      @layout_actuals = get_department_actuals(@date, project_name,["3101","1370","1390"],"layout","include")
-      @design_actuals = get_department_actuals(@date, project_name, [ "3101", "1370", "1390"], "layout", "exclude")
+      @layout_actuals = get_department_actuals(@date, project_name,["3101","1370","1390","2610"],"layout","include")
+      @design_actuals = get_department_actuals(@date, project_name, [ "3101", "1370", "1390","2610"], "layout", "exclude")
       @pe_actuals = get_department_actuals(@date, project_name,["3371","1340"],"test","exclude")
       @te_actuals = get_department_actuals(@date, project_name,["3371","1340"],"test","include")
       @application_actuals = get_department_actuals(@date, project_name, "3209", "void", "exclude")
@@ -345,7 +345,7 @@ class ResourceController < ApplicationController
     #initial variables
     header = 0
     #filenames
-    import_file = "import/2012q3.csv"
+    import_file = "import/2012q4.csv"
     puts
     puts "============================================="
     puts "CSV importer for Resource Allocation database"

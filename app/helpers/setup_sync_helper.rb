@@ -3,7 +3,7 @@ module SetupSyncHelper
     flag =0
     flag =1
     if (flag)
-      "<td style="background-color: green;">"
+      "<td>"
     else
       "<td>"
     end
