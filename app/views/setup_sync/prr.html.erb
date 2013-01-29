@@ -2,13 +2,7 @@
 Program Release Report
 <p>
 	<%= @targets[0].mag_cp1%>
-<table>
-	<tr>
-		<%=highlight(1,@targets)%>
-		HELLO
-	</td>
-	</tr>
-			
+<table>	
 <%@device_setups.each do |s|%>
 <tr>
 	<td>
@@ -23,13 +17,13 @@ Program Release Report
 				<td>
 			<%=s.location %>
 				</td>
-					<td>
+					<%= raw highlight(1, s, @targets) %>
 				<%=s.cp1 %>
 					</td>
-						<td>
-					<%=s.cp2 %>
+					<%= raw highlight(2, s, @targets) %>
+				<%=s.cp2 %>
 						</td>
-							<td>
+								<%= raw highlight(3, s, @targets) %>
 						<%=s.cp3 %>
 							</td>
 						
