@@ -1,7 +1,7 @@
 <h1>PRR</h1>
 Program Release Report
 <p>
-	<%= @targets[0].mag_cp1%>
+
 <table>	
 <%@device_setups.each do |s|%>
 <tr>
@@ -20,7 +20,7 @@ Program Release Report
 					<%= raw highlight(1, s, @targets) %>
 				<%=s.cp1 %>
 					</td>
-					<%= raw highlight(2, s, @targets) %>
+					<%= raw highlight_new(2, s, @targets, @targets_device, @targets_device_tab) %>
 				<%=s.cp2 %>
 						</td>
 								<%= raw highlight(3, s, @targets) %>
