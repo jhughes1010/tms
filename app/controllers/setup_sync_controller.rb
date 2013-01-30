@@ -7,7 +7,7 @@ class SetupSyncController < ApplicationController
     @list = @wire2.map {|i| i.name }
     @device_setups = Setup.get_setups_magnum(@list)
     #specific program queries
-    @targets = Target.defaults("2W")
+    @targets_default = Target.defaults("2W")
     @targets_device = Target.device("2W")
     @targets_device_tab = Target.device_tab("2W")
   end

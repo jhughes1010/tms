@@ -17,13 +17,13 @@ Program Release Report
 				<td>
 			<%=s.location %>
 				</td>
-					<%= raw highlight(1, s, @targets) %>
+					<%= raw highlight_new(1, s, @targets_default, @targets_device, @targets_device_tab) %>
 				<%=s.cp1 %>
 					</td>
-					<%= raw highlight_new(2, s, @targets, @targets_device, @targets_device_tab) %>
+					<%= raw highlight_new(2, s, @targets_default, @targets_device, @targets_device_tab) %>
 				<%=s.cp2 %>
 						</td>
-								<%= raw highlight(3, s, @targets) %>
+								<%= raw highlight_new(3, s, @targets_default, @targets_device, @targets_device_tab) %>
 						<%=s.cp3 %>
 							</td>
 						
