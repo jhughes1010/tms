@@ -2,14 +2,15 @@ class SetupSyncController < ApplicationController
   def index
   end
   def prr
+    @family = params[:family]
     #Create product family array and get all devices from setup.txt that match
-    @wire2 = Device.get_family("2W")
-    @list = @wire2.map {|i| i.name }
+    devices = Device.get_family(@family)
+    @list = devices.map {|i| i.name }
     @device_setups = Setup.get_setups_magnum(@list)
     #specific program queries
-    @targets_default = Target.defaults("2W")
-    @targets_device = Target.device("2W")
-    @targets_device_tab = Target.device_tab("2W")
+    @targets_default = Target.defaults(@family)
+    @targets_device = Target.device(@family)
+    @targets_device_tab = Target.device_tab(@family)
   end
   
 end
