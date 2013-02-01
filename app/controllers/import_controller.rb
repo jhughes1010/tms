@@ -84,9 +84,17 @@ class ImportController < ApplicationController
   def import_setup(location, path)
     puts location
     #
-    @wire2 = Device.get_family("2W")
-    list = @wire2.map {|i| i.name }
+    wire2 = Device.get_family("2W")
+    list = wire2.map {|i| i.name }
     #
+    wire3 = Device.get_family("3W")
+    list2 = wire3.map {|i| i.name }
+    #
+    spi = Device.get_family("SPI")
+    list3 = spi.map {|i| i.name }
+    #
+    list = list.concat(list2)
+    list = list.concat(list3)
     file = IO.readlines( path )
     header = 0
     file.each do |f|
@@ -145,6 +153,8 @@ class ImportController < ApplicationController
     puts "============================================="
     Device.delete_all
     import_device("2W","import/2wire.txt")
+    import_device("3W","import/3wire.txt")
+    import_device("SPI","import/spi.txt")
     #import_setup("MEMP","import/3w.txt")
   end
   def import_device(family, path)
