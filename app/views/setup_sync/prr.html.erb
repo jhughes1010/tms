@@ -1,7 +1,12 @@
 <h1>Program Release Report</h1>
 <h2><%= @family%> Products</h2>
 <p>
+	<% form_tag "/setup_sync/prr?family=#{@family}" do %>
+	    <%=label_tag 'device' %>
+	    <%=text_field_tag 'device'%>
 
+	    <div><%= submit_tag 'Run Filter' %></div>
+	<% end -%>
 <table>	
 <%@device_setups.each do |s|%>
 <tr>
