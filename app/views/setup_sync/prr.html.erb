@@ -3,7 +3,7 @@
 <p>
 	<% form_tag "/setup_sync/prr?family=#{@family}" do %>
 	    <%=label_tag 'device' %>
-	    <%=text_field_tag 'device'%>
+	<%= select_tag(:device,options_from_collection_for_select(@devices,"name","name")) %>
 
 	    <div><%= submit_tag 'Run Filter' %></div>
 	<% end -%>

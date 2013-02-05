@@ -160,10 +160,8 @@ class ImportController < ApplicationController
   def import_device(family, path)
     puts family
     file = IO.readlines( path )
-    header = 0
     file.each do |f|
-      write_csv_data_device( f, family ) if header == 1
-      header = 1
+      write_csv_data_device( f, family )
     end
   end
   def write_csv_data_device(line, family )
