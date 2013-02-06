@@ -36,10 +36,10 @@ module SetupSyncHelper
             flag =3 if (record.cp2 == d.mag_x64_cp2)
           end
           #cp3 conditions
-            if (position == 3)
-              flag =3 if (record.cp3 == d.mav_cp3)
-              flag =3 if (record.cp3 == d.mag_cp3)
-              flag =3 if (record.cp3 == d.mag_x64_cp3)
+          if (position == 3)
+            flag =3 if (record.cp3 == d.mav_cp3)
+            flag =3 if (record.cp3 == d.mag_cp3)
+            flag =3 if (record.cp3 == d.mag_x64_cp3)
             #nothing here yet
           end
         end
@@ -68,7 +68,7 @@ module SetupSyncHelper
           if (position == 3)
             flag =3 if (record.cp3 == d.mav_cp3)
             flag =3 if (record.cp3 == d.mag_cp3)
-            flag =3 if (record.cp3 == d.mag_x64_cp3)         
+            flag =3 if (record.cp3 == d.mag_x64_cp3)
           end
           #end
         end
@@ -96,7 +96,7 @@ module SetupSyncHelper
         if (position == 3)
           flag =3 if (record.cp3 == d.mav_cp3)
           flag =3 if (record.cp3 == d.mag_cp3)
-          flag =3 if (record.cp3 == d.mag_x64_cp3)         
+          flag =3 if (record.cp3 == d.mag_x64_cp3)
 
         end
       end

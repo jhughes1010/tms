@@ -8,4 +8,7 @@ class Target < ActiveRecord::Base
   def self.device_tab( family )
     t = self.where("family in (?) AND tab != 'all'", family)
   end
+  def self.sorted
+    t = self.order("family, device, tab")
+  end
 end
