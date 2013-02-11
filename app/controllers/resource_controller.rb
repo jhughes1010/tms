@@ -343,9 +343,9 @@ class ResourceController < ApplicationController
   #
   def import
     #initial variables
-    header = 0
+    #header = 0
     #filenames
-    import_file = "import/2012q4.csv"
+    #import_file = "import/2012q4.csv"
     puts
     puts "============================================="
     puts "CSV importer for Resource Allocation database"
@@ -354,13 +354,24 @@ class ResourceController < ApplicationController
     #import and stack data
     #delete database
     Resource.delete_all
-    @removal_date = @today.months_ago(3).beginning_of_month
-    Resource.remove_forecast(@removal_date)
-    arr_of_arrs = CSV.read(import_file)
-    arr_of_arrs.each do |x|
-      #puts x
-      stack_data(x) if header == 1
-      header = 1 if header == 0
+    import_file = ["import/2011q4.csv","import/2012q1.csv","import/2012q2.csv","import/2012q3.csv"]
+    now = @today
+    import_file.each_with_index do |f, index|
+      @today = now.months_ago(((import_file.size-1)-index)*3)
+      puts "Today is #{@today}"
+      header = 0
+      @removal_date = @today.months_ago(3).beginning_of_month
+      Resource.remove_forecast(@removal_date)
+      puts "Reading #{f} #{index}"
+      arr_of_arrs = CSV.read(f)
+      arr_of_arrs.each do |x|
+        #puts x
+        stack_data(x) if header != 0
+        #header = 1 if header == 0
+        header += 1
+        #break if header == 10
+        puts header if header%20 == 0
+      end
     end
   end
   #no longer needed as projects are in the database
@@ -380,7 +391,7 @@ class ResourceController < ApplicationController
   #
   #
   def write_record(record)
-    puts record
+    #puts record
     #write new record to database
     date_start = @today.at_beginning_of_month - 3.months
     9.upto(26){
