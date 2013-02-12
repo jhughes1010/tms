@@ -1,4 +1,6 @@
 class SetupSyncController < ApplicationController
+  before_filter :set_useful_globals
+  
   def index
   end
   def prr
@@ -16,6 +18,15 @@ class SetupSyncController < ApplicationController
     @targets_default = Target.defaults(@family)
     @targets_device = Target.device(@family)
     @targets_device_tab = Target.device_tab(@family)
+  end
+  protected
+
+  def set_useful_globals
+    @auth = session[:user_auth]
+    @user_id=session[:user_id]
+    @full_name=session[:user_fullname]
+    @today=Date.today
+    @today.to_s(:long)
   end
 
 end

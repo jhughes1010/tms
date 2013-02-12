@@ -93,8 +93,12 @@ class ImportController < ApplicationController
     spi = Device.get_family("SPI")
     list3 = spi.map {|i| i.name }
     #
+    cp = Device.get_family("CP")
+    list4 = cp.map {|i| i.name }
+    #
     list = list.concat(list2)
     list = list.concat(list3)
+    list = list.concat(list4)
     file = IO.readlines( path )
     header = 0
     file.each do |f|
