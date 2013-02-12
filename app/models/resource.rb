@@ -94,6 +94,10 @@ class Resource < ActiveRecord::Base
     self.where("project NOT IN (?) AND actual > 0 AND date >= ? AND date < ?" , proj , date, date +12.months).select("project, department, date, sum (actual) as actual").group("project, department, date").order("project, department, date")
     #self.where("project IN (?) AND actual > 0 AND date >= ? AND date < ?" , proj , date, date +12.months).select("project, department, date, sum (actual) as actual").group("project, department, date").order("project, department, date")
   end
+  def self.actuals
+    #self.where("project IN ( 'AT24CM02','AT25M02')").select("project, department, date, sum (actual) as actual").group("project, department, date").order("project, department, date")    
+    self.select("project, department, team, date, sum (actual) as actual").group("project, department, team").order("project, department, team")    
+  end
 
   def self.overbooked
     t = self.select("department, name, date, sum(forecast) as forecast").where("forecast > 1").group("name,date").order("department, name, date")
