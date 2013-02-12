@@ -155,7 +155,7 @@ class ImportController < ApplicationController
     import_device("2W","import/2wire.txt")
     import_device("3W","import/3wire.txt")
     import_device("SPI","import/spi.txt")
-    #import_setup("MEMP","import/3w.txt")
+    import_device("CP","import/CP.txt")
   end
   def import_device(family, path)
     puts family
