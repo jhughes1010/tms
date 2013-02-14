@@ -25,6 +25,7 @@ class PriorityController < ApplicationController
             t.scd = date_complete.next_day( duration )
           elsif
             first_record_flag = 0
+            t.scd = @today if t.scd.nil?
             date_complete = t.scd
           end
           t.priority=priority
