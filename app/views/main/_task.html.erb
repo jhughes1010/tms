@@ -8,9 +8,7 @@
 				<tr class="<%= cycle('list-line-odd_past_due','list-line-even_past_due')%>">
 					<%end %><%end %><%end %>
 					<td>
-						<button class="btn btn-info" type="button">
-						<%= link_to task.id,task %>
-						</button>
+						<%= link_to task.id,task, :class =>'btn btn-info'%>
 					</td>
 					<td>
 						<%= task.requester.fullname %>
