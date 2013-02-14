@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>
@@ -91,26 +91,24 @@
 		<link href='/images/favicon.ico' rel='shortcut icon'>
 	</head>
 	<body>
-		<div class="topbar" padding-top: 1600px;>
-	      <div class="fill">
-	        <div class="container">
-	          <a class="brand" href="#">Memory BU tools</a>
-	          <ul class="nav">
-	            <li class="active"><a href="/main/index">Home</a></li>
+		<div class="navbar">
+		  <div class="navbar-inner">
+		    <a class="brand" href="#">Memory BU tools</a>
+		    <ul class="nav">
+				<li class="active"><a href="/main/index">Home</a></li>
 	            <li><a href="/main/project_active">TMS</a></li> 
 	            <!-- <li><a href="/sas/">SAS</a></li> -->
 	            <li><a href="/resource/key_projects">Resource Allocations</a></li>
-		            <li><a href="/cost/query">Device Costing</a></li>
-			            <li><a href="/can_mains">CAN Db</a></li>
-			            <li><a href="/test_progs">Test Prog</a></li>
-			<li><a href="/setup_sync">SETUP</a></li>
-				           <li><a href="/main/pto_current">PTO</a></li>
-	          </ul>
-	<p class="pull-right">Logged in as <a href="#"><username><%=@full_name%></a></p>
-	        </div>
-	      </div>
-	      </div>
-				    <div class="container-fluid">
+		        <li><a href="/cost/query">Device Costing</a></li>
+			    <li><a href="/can_mains">CAN Db</a></li>
+			    <li><a href="/test_progs">Test Prog</a></li>
+			    <li><a href="/setup_sync">SETUP</a></li>
+				<li><a href="/main/pto_current">PTO</a></li>
+		    </ul>
+			<p class="pull-right">Logged in as <a href="#"><username><%=@full_name%></a></p>
+		  </div>
+		</div>
+		<div class="container-fluid">
 
 		     
 				<%if flash[:notice] -%>
