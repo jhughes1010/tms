@@ -1,6 +1,6 @@
 <h1>Listing ptos</h1>
 
-<table>
+<table class="table">
   <tr>
     <th>User</th>
     <th>Start</th>
@@ -17,9 +17,9 @@
     <td><%= pto.start %></td>
     <td><%= pto.finish %></td>
     <td><%= pto.comments %></td>
-    <td><%= link_to 'Show', pto %></td>
-    <td><%= link_to 'Edit', edit_pto_path(pto) %></td>
-    <td><%= link_to 'Destroy', pto, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', pto,:class =>'btn btn-info' %></td>
+    <td><%= link_to 'Edit', edit_pto_path(pto),:class =>'btn btn-warning' %></td>
+    <td><%= link_to 'Destroy', pto, :confirm => 'Are you sure?', :method => :delete,:class =>'btn btn-danger' %></td>
   </tr>
 <% end %>
 </table>

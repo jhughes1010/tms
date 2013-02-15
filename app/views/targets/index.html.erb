@@ -1,6 +1,6 @@
 <h1>Listing targets</h1>
 
-<table width="100%">
+<table class="table">
   <tr>
     <th>Family</th>
     <th>Device</th>
@@ -33,9 +33,9 @@
     <td><%= target.mav_cp1 %></td>
     <td><%= target.mav_cp2 %></td>
     <td><%= target.mav_cp3 %></td>
-    <td><%= link_to 'Show', target %></td>
-    <td><%= link_to 'Edit', edit_target_path(target) %></td>
-    <td><%= link_to 'Destroy', target, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', target,:class =>'btn btn-info' %></td>
+    <td><%= link_to 'Edit', edit_target_path(target),:class =>'btn btn-warning' %></td>
+    <td><%= link_to 'Destroy', target, :confirm => 'Are you sure?', :method => :delete,:class =>'btn btn-danger' %></td>
   </tr>
 <% end %>
 </table>
