@@ -1,32 +1,6 @@
-<ul class="pills">
-  <%if active == "By_assignee"%>
-	<li class="active">
-		<%else%>
-		<li>
-			<%end%>
-	<a href="/main/project_active">Active - By assignee</a></li>
-  <%if active == "By_requester"%>
-	<li class="active">
-		<%else%>
-		<li>
-			<%end%>
-	<a href="/main/project_active_by_requester">Active - By requester</a></li>
-  <%if active == "Unassigned_task"%>
-	<li class="active">
-		<%else%>
-		<li>
-			<%end%>
-	<a href="/main/project_unassigned">Unassigned Tasks</a></li>
-  <%if active == "Priority_management"%>
-	<li class="active">
-		<%else%>
-		<li>
-			<%end%>
-	<a href="/priority/index">Priority management</a></li>
-	<%if active == "New_task"%>
-	<li class="active">
-		<%else%>
-		<li>
-			<%end%>
-	<a href="/tasks/new">New Task</a></li>
-</ul>
+<div class="btn-group">
+  <a button class="btn btn-primary" href="/main/project_active">By Assignee</a>
+  <a button class="btn btn-primary" href="/main/project_active_by_requester">By Requester</a>
+  <a button class="btn btn-primary" href="/main/project_unassigned">Unassigned</a>
+  <a button class="btn btn-primary" href="/priority/index">Priority Management</a>
+</div>

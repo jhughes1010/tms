@@ -6,7 +6,7 @@
 		<body>
 			<div id="product-list">
 				<hr>
-				<table class="zebra-striped">
+				<table class="table">
 					<tr>
 						<th>
 							ID
@@ -51,7 +51,7 @@
 					<tr class="<%= cycle('list-line-odd_past_due','list-line-even_past_due')%>">
 						<%end %><%end %><%end %>
 						<td>
-							<%= link_to task.id,task %>
+							<%= link_to task.id,task, :class =>'btn btn-info'%>
 						</td>
 						<td>
 							<%= task.requester.fullname %>
