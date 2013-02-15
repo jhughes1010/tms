@@ -1,5 +1,7 @@
 <h1>Program Release Report</h1>
 <h2><%= @family%> Products</h2>
+This report is refreshed once daily
+<hr>
 <p>
 	<% form_tag "/setup_sync/prr?family=#{@family}" do %>
 	    <%=label_tag 'device' %>
@@ -7,7 +9,7 @@
 
 	    <div><%= submit_tag 'Run Filter' %></div>
 	<% end -%>
-<table width="75%">	
+<table class="table">	
 	<tr>
 		<th>
 			Probe Setup

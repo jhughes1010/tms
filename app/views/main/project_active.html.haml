@@ -5,6 +5,6 @@
     %h3
       %a{:href => "#"}= tasks[0].fullname
     %div
-      %table{:width => "100%"}
+      %table{:class => "table"}
         = render :partial => "task_header"
         = render :partial => "task" , :collection => tasks
