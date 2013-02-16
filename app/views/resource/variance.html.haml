@@ -1,0 +1,28 @@
+%h1 All Projects - Variance Report
+Date: #{@today}
+%table.table
+  %tr
+    %th
+      Project Name
+    %th
+      Department
+    %th
+      Team
+    %th
+      Date
+    %th
+      Actual
+    %th
+      Forecast
+    %th
+      Variance(a-f)
+  - @variance.each do |a|
+    %tr
+      %td= a.project
+      %td= a.department
+      %td= a.team
+      %td= a.date
+      %td= "%.1f" %a.actual
+      %td= "%.1f" %a.forecast
+      %td= "%.1f" %(a.actual - a.forecast)
+    %p

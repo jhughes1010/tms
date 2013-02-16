@@ -93,9 +93,13 @@ class ResourceController < ApplicationController
     #@npi_forecast_quarerly = Finance.new
 
   end
-  
-  def actuals
-     @actuals = Resource.actuals
+
+  def variance
+    @variance = Resource.variance(@today)
+    respond_to do |format|
+      format.html
+      format.csv { render text: @variance.to_csv }
+    end
   end
 
 
@@ -358,14 +362,15 @@ class ResourceController < ApplicationController
     #import and stack data
     #delete database
     Resource.delete_all
-    import_file = ["import/2011q1.csv", "import/2011q2.csv", "import/2011q3.csv", "import/2011q4.csv", "import/2012q1.csv", "import/2012q2.csv", "import/2012q3.csv", "import/2012q4.csv"]
-    #import_file = ["import/2012q3.csv", "import/2012q4.csv"]
+    #import_file = ["import/2011q1.csv", "import/2011q2.csv", "import/2011q3.csv", "import/2011q4.csv", "import/2012q1.csv", "import/2012q2.csv", "import/2012q3.csv", "import/2012q4.csv"]
+    import_file = ["import/2012q2.csv", "import/2012q3.csv"]
+    #import_file = ["import/2012q3.csv"]
     now = @today
     import_file.each_with_index do |f, index|
       @today = now.months_ago(((import_file.size-1)-index)*3)
       puts "Today is #{@today}"
       header = 0
-      @removal_date = @today.months_ago(2).beginning_of_month
+      @removal_date = @today.months_ago(3).beginning_of_month
       Resource.remove_forecast(@removal_date)
       puts "Reading #{f} #{index}"
       arr_of_arrs = CSV.read(f)
@@ -374,7 +379,7 @@ class ResourceController < ApplicationController
         stack_data(x) if header != 0
         #header = 1 if header == 0
         header += 1
-        #break if header == 2
+        #break if header == 5
         puts header if header%20 == 0
       end
     end
@@ -434,6 +439,9 @@ class ResourceController < ApplicationController
   def new_to_db(date, dept, team, name, project, function, time)
     record = Resource.new
     if time.nil?
+      time = 0
+    end
+    if (time.to_f <= 0.05)
       time = 0
     end
     record.date = date

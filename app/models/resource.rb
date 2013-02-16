@@ -94,9 +94,8 @@ class Resource < ActiveRecord::Base
     self.where("project NOT IN (?) AND actual > 0 AND date >= ? AND date < ?" , proj , date, date +12.months).select("project, department, date, sum (actual) as actual").group("project, department, date").order("project, department, date")
     #self.where("project IN (?) AND actual > 0 AND date >= ? AND date < ?" , proj , date, date +12.months).select("project, department, date, sum (actual) as actual").group("project, department, date").order("project, department, date")
   end
-  def self.actuals
-    #self.where("project IN ( 'AT24CM02','AT25M02')").select("project, department, date, sum (actual) as actual").group("project, department, date").order("project, department, date")    
-    self.select("project, department, team, date, sum (actual) as actual").group("project, department, team").order("project, department, team")    
+  def self.variance(today)
+    self.select("project, department, team, date, sum (actual) as actual, date, sum (forecast) as forecast").group("project, department, team, date").order("project, department, team, date").where("date < ?", today)
   end
 
   def self.overbooked
@@ -134,5 +133,13 @@ class Resource < ActiveRecord::Base
   def self.test
     today = Date.today
     self.find_by_sql ["SELECT department, date, project, SUM(CASE WHEN date > ? THEN forecast WHEN date <= ? THEN actual END AS months) FROM resources WHERE name = 'James Hughes' ORDER by date, project", today, today]
+  end
+  def self.to_csv
+    CSV.generate do |csv|
+      csv << column_names
+      all.each do |variance|
+        csv << variance.attributes.values_at(*column_name)
+      end
+    end
   end
 end
