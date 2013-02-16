@@ -1,0 +1,50 @@
+.btn-group
+  %a.btn.btn-primary{:button => "", :href => "/setup_sync/prr?family=2W"} 2 Wire
+  %a.btn.btn-primary{:button => "", :href => "/setup_sync/prr?family=3W"} 3 Wire
+  %a.btn.btn-primary{:button => "", :href => "/setup_sync/prr?family=SPI"} SPI
+  %a.btn.btn-primary{:button => "", :href => "/setup_sync/prr?family=CP"} Crypto
+  %a.btn.btn-primary{:button => "", :href => "/targets"} Target
+%h2 Program Release Report
+%h3
+  = @family
+  Products
+This report is refreshed once daily
+%hr/
+%p
+  - form_tag "/setup_sync/prr?family=#{@family}" do
+    = label_tag 'device'
+    = select_tag(:device,options_from_collection_for_select(@devices,"name","name"))
+    %div= submit_tag 'Run Filter'
+  %table.table
+    %tr
+      %th
+        Probe Setup
+      %th
+        Device
+      %th
+        Tab
+      %th
+        Location
+      %th
+        CP1
+      %th
+        CP2
+      %th
+        CP3
+    - @device_setups.each do |s|
+      %tr
+        %td
+          = s.platform
+        %td
+          = s.device
+        %td
+          = s.tab
+        %td
+          = s.location
+        = raw highlight_new(1, s, @targets_default, @targets_device, @targets_device_tab)
+        = s.cp1
+        = raw highlight_new(2, s, @targets_default, @targets_device, @targets_device_tab)
+        = s.cp2
+        = raw highlight_new(3, s, @targets_default, @targets_device, @targets_device_tab)
+        = s.cp3
+      %tr

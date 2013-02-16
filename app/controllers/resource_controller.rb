@@ -362,8 +362,8 @@ class ResourceController < ApplicationController
     #import and stack data
     #delete database
     Resource.delete_all
-    #import_file = ["import/2011q1.csv", "import/2011q2.csv", "import/2011q3.csv", "import/2011q4.csv", "import/2012q1.csv", "import/2012q2.csv", "import/2012q3.csv", "import/2012q4.csv"]
-    import_file = ["import/2012q2.csv", "import/2012q3.csv"]
+    import_file = ["import/2011q1.csv", "import/2011q2.csv", "import/2011q3.csv", "import/2011q4.csv", "import/2012q1.csv", "import/2012q2.csv", "import/2012q3.csv", "import/2012q4.csv"]
+    #import_file = ["import/2012q2.csv", "import/2012q3.csv"]
     #import_file = ["import/2012q3.csv"]
     now = @today
     import_file.each_with_index do |f, index|
