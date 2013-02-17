@@ -7,4 +7,5 @@
     %div
       %table{:class => "table"}
         = render :partial => "task_header"
-        = render :partial => "task" , :collection => tasks
+        = render :partial => "task" , :collection => tasks    
+      =link_to "Reorder Tasks", "/priority/project_manual_priority?id=#{tasks[0].assignee_id}"

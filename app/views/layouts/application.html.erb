@@ -10,7 +10,7 @@
 				<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8">
 		</script> -->
 		<%= csrf_meta_tag %>
-		<%= stylesheet_link_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/excite-bike/jquery-ui.css", "application" %>
+		<%= stylesheet_link_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/ui-darkness/jquery-ui.css", "application" %>
 		<%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" %>
 		<%= javascript_include_tag :defaults %>
 		<!-- Insert of Get image Demo starts here -->		
@@ -95,15 +95,15 @@
 		  <div class="navbar-inner">
 		    <a class="brand" href="#">Memory BU tools</a>
 		    <ul class="nav">
-				<li class="active"><a href="/main/index">Home</a></li>
-	            <li><a href="/main/project_active">TMS</a></li> 
-	            <!-- <li><a href="/sas/">SAS</a></li> -->
-	            <li><a href="/resource/key_projects">Resource Allocations</a></li>
-		        <li><a href="/cost/query">Device Costing</a></li>
-			    <li><a href="/can_mains">CAN Db</a></li>
-			    <li><a href="/test_progs">Test Prog</a></li>
-			    <li><a href="/setup_sync">SETUP</a></li>
-				<li><a href="/main/pto_current">PTO</a></li>
+				<li class="<%= 'active' if params[:controller] == 'admin' %>" ><a href="/main/index">Home</a></li>
+	            <li class="<%= 'active' if params[:controller] == 'main' %>" ><a href="/main/project_active">TMS</a></li> 
+	            <li class="<%= 'active' if params[:controller] == 'sas' %>" ><a href="/sas/">SAS</a></li>
+	            <li class="<%= 'active' if params[:controller] == 'resource' %>" ><a href="/resource/key_projects">Resource Allocations</a></li>
+		        <li class="<%= 'active' if params[:controller] == 'cost' %>" ><a href="/cost/query">Device Costing</a></li>
+			    <li class="<%= 'active' if params[:controller] == 'can_mains' %>" ><a href="/can_mains">CAN Db</a></li>
+			    <li class="<%= 'active' if params[:controller] == 'test_progs' %>" ><a href="/test_progs">Test Prog</a></li>
+			    <li class="<%= 'active' if params[:controller] == 'setup_sync' %>" ><a href="/setup_sync">SETUP</a></li>
+				<li class="<%= 'active' if params[:controller] == 'pto' %>" ><a href="/main/pto_current">PTO</a></li>
 		    </ul>
 			<p class="pull-right">Logged in as <a href="#"><username><%=@full_name%></a></p>
 		  </div>

@@ -1,0 +1,10 @@
+%h2 Manual Priority for tasks				
+%ul#sortable
+  - @tasks.each do |t|
+    .category{:id => t.id}
+      %li.ui-state-default
+        = link_to t.id,t, :class =>'btn btn-info'
+        #{t.assignee.fullname} :
+        #{t.requester.fullname} :
+        #{t.taskname} :
+        #{t.description.truncate(50)}

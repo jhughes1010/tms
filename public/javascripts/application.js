@@ -19,7 +19,11 @@ jQuery(function() {
   jQuery( "#cost_accordian" ).accordion({ heightStyle: 'content' },{ collapsible: true });
   jQuery( "#tabs" ).tabs({event: "mouseover"});
 
-  jQuery( "#sortable" ).sortable();
-  jQuery( "#sortable" ).disableSelection();
-
+  jQuery( "#sortable" ).sortable({
+      update: function(event, ui){
+        var itm_arr = jQuery("#sortable").sortable('toArray');
+        var pobj = {categories: itm_arr};
+        jQuery.post("/priority/reorder", pobj);
+      }
+    });
 	});
