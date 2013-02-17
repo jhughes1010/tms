@@ -15,8 +15,8 @@ jQuery(function() {
   jQuery("#project_dr4").datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true });
   jQuery("#project_dr5").datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true });
 
-  jQuery( "#accordion" ).accordion({ autoHeight: false },{ collapsible: true, active: false });
-  jQuery( "#cost_accordian" ).accordion({ autoHeight: false },{ collapsible: true },{ animated: 'bounceslide' });
+  jQuery( "#accordion" ).accordion({ heightStyle: 'content' },{ collapsible: true, active: false });
+  jQuery( "#cost_accordian" ).accordion({ heightStyle: 'content' },{ collapsible: true });
   jQuery( "#tabs" ).tabs({event: "mouseover"});
 
   jQuery( "#sortable" ).sortable();

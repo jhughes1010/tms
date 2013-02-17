@@ -43,7 +43,7 @@
 <div class="field">
 	<%= f.label :operation %>
 	<br/>
-	<%= f.select( :operation, %w{CPx FT QA Fuse Engineering}) %>
+	<%= f.select( :operation, %w{CPx FT QA Fuse Engineering Software_Tool}) %>
 </div>
 <div class="field">
 	<%= f.label :platform %>
@@ -55,39 +55,34 @@
 	<br/>
 	<%= f.text_area :description %>
 </div>
-<div class = "row">
 <div class="field">
 	<%= f.label :tcd, 'Target Completion Date' %>
 	<br/>
 	<%= f.text_field :tcd%>
-</div></div>
+</div>
 
 <%if @auth==2 %>
-<div class = "row">
 <div class="field">
 	<%= f.label :scd, 'Scheduled Completion Date' %>
 	<br/>
 	<%= f.text_field :scd%>
 	<br/>
-</div></div>
-<div class = "row">
+</div>
 <div class="field">
 	<%= f.label :acd, 'Actual Completion Date' %>
 	<br/>
 	<%= f.text_field :acd%>
-</div></div>
-<div class = "row">
+</div>
 <div class="field">
 	<%= f.label :duration %>
 	<br/>
 	<%= f.text_field :duration %>
-</div></div>
-<div class = "row">
+</div>
 <div class="field">
 	<%= f.label :priority %>
 	<br/>
 	<%= f.text_field :priority %>
-</div></div>
+</div>
 <%end%>
 <div class="field">
 <%= f.label :category %>
