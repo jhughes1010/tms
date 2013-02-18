@@ -130,9 +130,9 @@ class Resource < ActiveRecord::Base
   end
 
   #Testing
-  def self.test
-    today = Date.today
-    self.find_by_sql ["SELECT department, date, project, SUM(CASE WHEN date > ? THEN forecast WHEN date <= ? THEN actual END AS months) FROM resources WHERE name = 'James Hughes' ORDER by date, project", today, today]
+  def self.project_total_new_method(date, project)
+    #self.find_by_sql ["SELECT department, date, project, SUM(CASE WHEN date >= ? THEN forecast ELSE actual END) AS forecast FROM resources WHERE project = ? GROUP BY department, date ORDER by department, date", date, project]
+    self.find_by_sql ["SELECT department, date, project, SUM(CASE WHEN date >= ? THEN forecast ELSE actual END) AS actual FROM resources WHERE project = ? GROUP BY date ORDER by date", date, project]
   end
   def self.to_csv
     CSV.generate do |csv|

@@ -7,11 +7,9 @@ module SetupSyncHelper
     flag = check_default(flag, targets, record, position)
     flag = check_engineering( flag, record, position)
     if (flag == 3)
-      '<td bgcolor="#67e667">'
-    elsif (flag == 2)
-      '<td bgcolor="#ffff73">'
+      '<td> <span class="label label-success">'
     elsif (flag == 1)
-      '<td bgcolor="#ff8373">'
+      '<td> <span class="label label-important">'
     else
       '<td>'
     end

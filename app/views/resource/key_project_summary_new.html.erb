@@ -9,6 +9,13 @@ Data end:
 Data span:
 <%= @duration%> months
 <br>
+<h2>Project overview</h2>
+<% @resources.each do |m|%>
+<%=m.department%> :
+<%=m.date%> :
+<%=m.forecast%> :
+<p>
+<% end %>
 <h2>Project Forecast</h2>
 <% @quarterly_rollup.each do |key, value|%>
 <%= key %>

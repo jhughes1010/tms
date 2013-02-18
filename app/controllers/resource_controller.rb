@@ -54,10 +54,13 @@ class ResourceController < ApplicationController
 
       #Get forecast data by department
       #Load forecast into array
+      
+      #Get actuals and forecast by department
+      @resources = Resource.project_total_new_method(@today, @project.project)
 
 
 
-
+      
       @project_totals = Resource.project_total(@today,@project.project)
       @quarterly_rollup = Hash.new(0)
       @project_totals.each do |q|
@@ -66,7 +69,7 @@ class ResourceController < ApplicationController
         puts "Date: #{hash_tag} - MM #{q.forecast}"
         @quarterly_rollup[hash_tag] += (q.forecast)
       end
-
+      
       @project_totals_actuals = Resource.project_total_actuals(@today,@project.project)
       @quarterly_rollup_actuals = Hash.new(0)
       @project_totals_actuals.each do |q|
@@ -75,7 +78,7 @@ class ResourceController < ApplicationController
         puts "Date: #{hash_tag} - MM #{q.actual}"
         @quarterly_rollup_actuals[hash_tag] += (q.actual)
       end
-
+      
       @department_totals = Resource.project_department_total(@today, @project.project)
 
 
