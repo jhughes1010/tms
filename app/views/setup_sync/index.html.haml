@@ -1,10 +1,10 @@
 %h1 ProberVision Setup Utilities
 .btn-group
-  %a.btn.btn-primary{:button => "", :href => "/setup_sync/prr?family=2W"} 2 Wire
-  %a.btn.btn-primary{:button => "", :href => "/setup_sync/prr?family=3W"} 3 Wire
-  %a.btn.btn-primary{:button => "", :href => "/setup_sync/prr?family=SPI"} SPI
-  %a.btn.btn-primary{:button => "", :href => "/setup_sync/prr?family=CP"} Crypto
-  %a.btn.btn-primary{:button => "", :href => "/targets"} Target
+  %a.btn.btn-info{:button => "", :href => "/setup_sync/prr?family=2W"} 2 Wire
+  %a.btn.btn-info{:button => "", :href => "/setup_sync/prr?family=3W"} 3 Wire
+  %a.btn.btn-info{:button => "", :href => "/setup_sync/prr?family=SPI"} SPI
+  %a.btn.btn-info{:button => "", :href => "/setup_sync/prr?family=CP"} Crypto
+  %a.btn.btn-info{:button => "", :href => "/targets"} Target
 - if @auth == 2
   %li
     %a{:href => "/import/setup"} Import setup.txt (ACP and MEMP)

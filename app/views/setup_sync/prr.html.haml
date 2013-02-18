@@ -9,14 +9,14 @@
   = @family
   Products
 This report is refreshed once daily
-%a{"data-toggle" => "tooltip", :href => "#", :title => "Program"} hover over me
+/%a{"data-toggle" => "tooltip", :href => "#", :title => "Program"} hover over me
 %hr/
 %p
   - form_tag "/setup_sync/prr?family=#{@family}" do
     = label_tag 'device'
     = select_tag(:device,options_from_collection_for_select(@devices,"name","name"))
     %div= submit_tag 'Run Filter'
-  %table.table
+  %table.table.table-hover
     %tr
       %th
         Probe Setup
