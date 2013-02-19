@@ -14,6 +14,7 @@
 <hr>
 <div id="product-list">
 <table class = "table table-hover">
+	<thead>
 	<tr>
 		<th>
 			<b>User</b>
@@ -28,6 +29,8 @@
 			<b>Comments</b>
 		</th>
 	</tr>
+	</thead>
+	<tbody>
 	<% @ptos.each do |pto| %>
 	<%#emp_id = pto.user_id-1 %>
 	<tr>
@@ -49,6 +52,7 @@
 		<td><%= link_to 'Destroy', pto, :confirm => 'Are you sure?', :method => :delete %></td> -->
 	</tr>
 	<% end %>
+	</tbody>
 </table>
 </div>
 <br/>

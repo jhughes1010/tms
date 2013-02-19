@@ -17,35 +17,37 @@ This report is refreshed once daily
     = select_tag(:device,options_from_collection_for_select(@devices,"name","name"))
     %div= submit_tag 'Run Filter'
   %table.table.table-hover
-    %tr
-      %th
-        Probe Setup
-      %th
-        Device
-      %th
-        Tab
-      %th
-        Location
-      %th
-        CP1
-      %th
-        CP2
-      %th
-        CP3
-    - @device_setups.each do |s|
+    %thead
       %tr
-        %td
-          = s.platform
-        %td
-          = s.device
-        %td
-          = s.tab
-        %td
-          = s.location
-        = raw highlight_new(1, s, @targets_default, @targets_device, @targets_device_tab)
-        = s.cp1
-        = raw highlight_new(2, s, @targets_default, @targets_device, @targets_device_tab)
-        = s.cp2
-        = raw highlight_new(3, s, @targets_default, @targets_device, @targets_device_tab)
-        = s.cp3
-      %tr
+        %th
+          Probe Setup
+        %th
+          Device
+        %th
+          Tab
+        %th
+          Location
+        %th
+          CP1
+        %th
+          CP2
+        %th
+          CP3
+    %tbody
+      - @device_setups.each do |s|
+        %tr
+          %td
+            = s.platform
+          %td
+            = s.device
+          %td
+            = s.tab
+          %td
+            = s.location
+          = raw highlight_new(1, s, @targets_default, @targets_device, @targets_device_tab)
+          = s.cp1
+          = raw highlight_new(2, s, @targets_default, @targets_device, @targets_device_tab)
+          = s.cp2
+          = raw highlight_new(3, s, @targets_default, @targets_device, @targets_device_tab)
+          = s.cp3
+        %tr

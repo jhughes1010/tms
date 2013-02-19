@@ -1,29 +1,31 @@
 %h2 Production release candidates and engineering experiments
-%table{:class => "table"}
-  %tr
-    %th Engineer
-    %th Status
-    %th Prog name
-    %th CRS
-    %th Operation
-    %th Date received
-    %th Comments
-    %th
-    %th
-    - if @auth > 1
-      %th
-  - @test_progs.each do |test_prog|
+%table{:class => "table table-hover"}
+  %thead
     %tr
-      %td= test_prog.engineer
-      %td= test_prog.status.upcase
-      %td= test_prog.prog_name.upcase
-      %td= test_prog.crs_number
-      %td= test_prog.operation
-      %td= test_prog.date_received
-      %td= test_prog.comments
-      %td= link_to 'Show', test_prog, :class =>'btn btn-info'
-      %td= link_to 'Edit', edit_test_prog_path(test_prog), :class =>'btn btn-warning'
+      %th Engineer
+      %th Status
+      %th Prog name
+      %th CRS
+      %th Operation
+      %th Date received
+      %th Comments
+      %th
+      %th
       - if @auth > 1
-        %td= link_to 'Destroy', test_prog, :confirm => 'Are you sure?', :method => :delete, :class =>'btn btn-danger'
+        %th
+  %tbody  
+    - @test_progs.each do |test_prog|
+      %tr
+        %td= test_prog.engineer
+        %td= test_prog.status.upcase
+        %td= test_prog.prog_name.upcase
+        %td= test_prog.crs_number
+        %td= test_prog.operation
+        %td= test_prog.date_received
+        %td= test_prog.comments
+        %td= link_to 'Show', test_prog, :class =>'btn btn-info'
+        %td= link_to 'Edit', edit_test_prog_path(test_prog), :class =>'btn btn-warning'
+        - if @auth > 1
+          %td= link_to 'Destroy', test_prog, :confirm => 'Are you sure?', :method => :delete, :class =>'btn btn-danger'
 %br/
 = link_to 'New Test prog', new_test_prog_path

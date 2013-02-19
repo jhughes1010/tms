@@ -9,6 +9,7 @@
 	<%= @start.to_s(:long) %> to <%=@stop.to_s(:long) %></small></h1>
 </div>
 <table class="table table-hover">
+	<thead>
 	<tr>
 		<th>
 			<b>User</b>
@@ -23,6 +24,8 @@
 			<b>Comments</b>
 		</th>
 	</tr>
+	</thead>
+	<tbody>
 	<% @ptos.each do |pto| %>
 	<%#emp_id = pto.user_id-1 %>
 	<tr>
@@ -43,6 +46,7 @@
 		</td>
 	</tr>
 	<% end %>
+	</tbody>
 </table>
 <br/>
 <!-- <%= link_to 'New Pto', new_pto_path %> -->
