@@ -39,7 +39,7 @@ class Task < ActiveRecord::Base
     self.where("complete = ? AND requester_id = ?",false, user_id).order("assignee_id, priority")
   end
   def self.all_active2
-    t = self.where("tasks.complete = 'f' AND tasks.assignee_id IS NOT NULL AND category < '5'").order("users.fullname, tasks.category, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*')
+    t = self.where("tasks.complete = 'f' AND tasks.assignee_id IS NOT NULL AND category < '5'").order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*')
     t.group_by(&:fullname)
   end
  
@@ -49,7 +49,7 @@ class Task < ActiveRecord::Base
   end
 
   def self.all_active_manual_sort(id)
-    t = self.where("tasks.complete = 'f' AND tasks.assignee_id = ?", id).order("users.fullname, tasks.category, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*')
+    t = self.where("tasks.complete = 'f' AND tasks.assignee_id = ?", id).order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*')
   end
   
   def self.all_active3

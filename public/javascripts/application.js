@@ -20,6 +20,7 @@ jQuery(function() {
   jQuery( "#tabs" ).tabs({event: "mouseover"});
 
   jQuery( "#sortable" ).sortable({
+	axis: 'y',
       update: function(event, ui){
         var itm_arr = jQuery("#sortable").sortable('toArray');
         var pobj = {categories: itm_arr};
