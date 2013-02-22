@@ -44,7 +44,7 @@ class Task < ActiveRecord::Base
   end
  
   def self.all_active_by_requester
-    t = self.where("tasks.complete = 'f' AND tasks.requester_id IS NOT NULL").order("users.fullname, tasks.category, tasks.priority").joins('INNER JOIN users ON users.id = tasks.requester_id').select('users.fullname, tasks.*')
+    t = self.where("tasks.complete = 'f' AND tasks.requester_id IS NOT NULL").order("users.fullname, tasks.assignee_id, tasks.priority").joins('INNER JOIN users ON users.id = tasks.requester_id').select('users.fullname, tasks.*')
     t.group_by(&:fullname)
   end
 
@@ -52,10 +52,10 @@ class Task < ActiveRecord::Base
     t = self.where("tasks.complete = 'f' AND tasks.assignee_id = ?", id).order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*')
   end
   
-  def self.all_active3
-    t = self.where("complete = 'f' AND assignee_id IS NOT NULL AND priority < 99 ").order("assignee_id, category, priority, scd")
-    t.group_by(&:assignee_id)
-  end
+  # def self.all_active3
+  #   t = self.where("complete = 'f' AND assignee_id IS NOT NULL AND priority < 99 ").order("assignee_id, category, priority, scd")
+  #   t.group_by(&:assignee_id)
+  # end
   def self.all_active_no_priority
     t = self.where("priority IS NULL")
     t.group_by(&:assignee_id)
