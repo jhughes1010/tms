@@ -17,7 +17,7 @@ jQuery(function() {
 
   jQuery( "#accordion" ).accordion({ heightStyle: 'content' },{ collapsible: true, active: false });
   jQuery( "#cost_accordian" ).accordion({ heightStyle: 'content' },{ collapsible: true });
-  jQuery( "#tabs" ).tabs({event: "mouseover"});
+  jQuery( "#tabs" ).tabs({event: "mouseover", heightStyle: "fill" });
 
   jQuery( "#sortable" ).sortable({
 	axis: 'y',

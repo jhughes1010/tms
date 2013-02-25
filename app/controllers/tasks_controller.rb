@@ -54,9 +54,6 @@ class TasksController < ApplicationController
   def create
     #@full_name=session[:user_fullname]
     @task = Task.new(params[:task])
-    #deliver the mail
-    UserMailer.task_entry_confirmation(session[:user_id],@task).deliver
-    UserMailer.task_entry_confirmation(1,@task).deliver
 
     respond_to do |format|
       if @task.save
@@ -67,6 +64,9 @@ class TasksController < ApplicationController
         format.xml  { render :xml => @task.errors, :status => :unprocessable_entity }
       end
     end
+    #deliver the mail
+    UserMailer.task_entry_confirmation(session[:user_id],@task).deliver
+    UserMailer.task_entry_confirmation(1,@task).deliver
   end
 
   # PUT /tasks/1
