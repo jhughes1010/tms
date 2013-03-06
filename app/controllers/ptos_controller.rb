@@ -1,4 +1,6 @@
 class PtosController < ApplicationController
+  before_filter :set_useful_globals
+  
   # GET /ptos
   # GET /ptos.xml
   def index
@@ -85,4 +87,19 @@ class PtosController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  protected
+
+  def set_useful_globals
+    @auth = session[:user_auth]
+    @user_id=session[:user_id]
+    @full_name=session[:user_fullname]
+    now = Date.today.beginning_of_month
+    now_month = (now.month) - 1
+    now_offset = now_month.modulo(3)
+    @today=now.months_ago(now_offset)
+    @today.to_s(:long)
+    #@today.beginning_of_month
+  end
+  
 end
