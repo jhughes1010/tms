@@ -109,18 +109,21 @@ module SetupSyncHelper
         flag =2 if record.cp1.include?("NONE")
         flag =2 if record.cp1.include?("SPTR")
         flag =2 if record.cp1.include?("NOT_ALLOWED")
+        flag =2 if record.cp1.include?("CHECK_PCARD")
       end
       #cp2 *conditions*
       if (position == 2)
         flag =2 if record.cp2.include?("NONE")
         flag =2 if record.cp2.include?("SPTR")
         flag =2 if record.cp2.include?("NOT_ALLOWED")
+        flag =2 if record.cp2.include?("CHECK_PCARD")
       end
       #cp3 conditions
       if (position == 3)
         flag =2 if record.cp3.include?("NONE")
         flag =2 if record.cp3.include?("SPTR")
         flag =2 if record.cp3.include?("NOT_ALLOWED")
+        flag =2 if record.cp3.include?("CHECK_PCARD")
       end
     end
     flag
