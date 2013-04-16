@@ -8,8 +8,9 @@ Date: #{@today}
       Project Name
     %th
       Department
-    %th
-      Team
+    /
+      %th
+        Team
     %th
       Date
     %th
@@ -22,7 +23,7 @@ Date: #{@today}
     %tr
       %td= a.project
       %td= a.department
-      %td= a.team
+      -# %td= a.team
       %td= a.date
       %td= "%.1f" %a.actual
       %td= "%.1f" %a.forecast

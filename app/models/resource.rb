@@ -95,7 +95,8 @@ class Resource < ActiveRecord::Base
     #self.where("project IN (?) AND actual > 0 AND date >= ? AND date < ?" , proj , date, date +12.months).select("project, department, date, sum (actual) as actual").group("project, department, date").order("project, department, date")
   end
   def self.variance(today)
-    self.select("project, department, team, date, sum (actual) as actual, date, sum (forecast) as forecast").group("project, department, team, date").order("project, department, team, date").where("date < ?", today)
+    # original does not include forecast data self.select("project, department, team, date, sum (actual) as actual, date, sum (forecast) as forecast").group("project, department, team, date").order("project, department, team, date").where("date < ?", today)
+    self.select("project, department, team, date, sum (actual) as actual, date, sum (forecast) as forecast").group("project, department, date").order("project, department, date")
   end
 
   def self.overbooked

@@ -8,7 +8,9 @@
 %h3
   = @family
   Products
-This report is refreshed once daily
+  - if request.post?
+    Filtered for 
+    = params[:device].upcase
 /%a{"data-toggle" => "tooltip", :href => "#", :title => "Program"} hover over me
 %hr/
 %p
