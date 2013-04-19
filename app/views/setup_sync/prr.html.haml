@@ -46,10 +46,10 @@
             = s.tab
           %td
             = s.location
-          = raw highlight_new(1, s, @targets_default, @targets_device, @targets_device_tab)
+          = raw highlight_new(1, s, @targets_default, @targets_device, @targets_device_tab, @wildcard)
           = s.cp1
-          = raw highlight_new(2, s, @targets_default, @targets_device, @targets_device_tab)
+          = raw highlight_new(2, s, @targets_default, @targets_device, @targets_device_tab, @wildcard)
           = s.cp2
-          = raw highlight_new(3, s, @targets_default, @targets_device, @targets_device_tab)
+          = raw highlight_new(3, s, @targets_default, @targets_device, @targets_device_tab, @wildcard)
           = s.cp3
         %tr

@@ -44,7 +44,7 @@ class Task < ActiveRecord::Base
   end
  
   def self.all_active_by_requester
-    t = self.where("tasks.complete = 'f' AND tasks.requester_id IS NOT NULL").order("users.fullname, tasks.assignee_id, tasks.priority").joins('INNER JOIN users ON users.id = tasks.requester_id').select('users.fullname, tasks.*')
+    t = self.where("tasks.complete = 'f' AND tasks.requester_id IS NOT NULL").order("users.fullname, tasks.id").joins('INNER JOIN users ON users.id = tasks.requester_id').select('users.fullname, tasks.*')
     t.group_by(&:fullname)
   end
 

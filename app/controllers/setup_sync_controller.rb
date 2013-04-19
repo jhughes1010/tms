@@ -18,6 +18,7 @@ class SetupSyncController < ApplicationController
     @targets_default = Target.defaults(@family)
     @targets_device = Target.device(@family)
     @targets_device_tab = Target.device_tab(@family)
+    @wildcard = Target.wildcard(@family)
   end
   protected
 
