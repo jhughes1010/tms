@@ -3,7 +3,7 @@ module SetupSyncHelper
     flag =1
     #check to device-tab matches
     flag = check_device_tab(flag, td_tab, record, position)
-    flag = check_wildcard(flag, targets_device, td_tab, record, position)
+    #flag = check_wildcard(flag, targets_device, td_tab, record, position)
     flag = check_device(flag, targets_device, record, position)
     flag = check_default(flag, targets, record, position)
     flag = check_engineering( flag, record, position)
