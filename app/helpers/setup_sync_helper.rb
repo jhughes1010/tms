@@ -1,4 +1,17 @@
 module SetupSyncHelper
+  def highlight(flag)
+    if ( flag == 1)
+      '<span class="label label-important">'
+    elsif( flag == 2)
+      '<span class="label label-warning">'
+    elsif( flag == 3)
+      '<span class="label label-success">'
+    else
+      
+    end
+  end
+
+  #old code - refactored to model
   def highlight_new( position, record, targets, targets_device, td_tab, wildcard)
     flag =1
     #check to device-tab matches
