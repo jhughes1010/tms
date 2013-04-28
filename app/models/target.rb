@@ -16,6 +16,19 @@ class Target < ActiveRecord::Base
   def self.sorted
     t = self.order("family, device, tab")
   end
+  
+  def cp1_tests
+    [self.cp1_mag, self.cp1_mav, self.mag_64]
+  end
+
+  def cp2_tests
+    [self.cp1_mag, self.cp1_mav, self.mag_64]
+  end
+
+  def cp3_tests
+    [self.cp1_mag, self.cp1_mav, self.mag_64]
+  end
+  
   private
   def programs_uppercase
     self.mav_cp1.upcase!
