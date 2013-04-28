@@ -1,3 +1,5 @@
+require "SetupTester.rb"
+
 class Setup < ActiveRecord::Base
 
   #attr_reader :match_cp1, :match_cp2, :match_cp3
@@ -13,20 +15,23 @@ class Setup < ActiveRecord::Base
   end
 
   def set_match_flags
-    self.cp1_match_flag = set_flag_for_wafer_sort_operation(self.cp1, :cp1_match_flag=, :cp1_tests)
-    #self.cp2_match_flag = set_flag_for_wafer_sort_operation(self.cp2, :cp2_match_flag=, :cp2_tests)
-    #self.cp3_match_flag = set_flag_for_wafer_sort_operation(self.cp3, :cp3_match_flag=, :cp3_tests)
+
+    #        [ getter, setter, Target tests ]
+    tests = [ [:cp1, :cp1_match_flag=, :cp1_tests],
+    [:cp2, :cp2_match_flag=, :cp2_tests],
+    [:cp3, :cp3_match_flag=, :cp3_tests] ]
+    tests.each { |t| set_flag_for_wafer_sort_operation(t[0], t[1], t[2]) }
   end
 
   def set_flag_for_wafer_sort_operation(test_program_name, flag, tests)
     targets = Target.find_by_family(self.family)
-    setupTester = SetupTester.new(self, targets, operation, tests)
+    setupTester = SetupTester.new(self, targets, test_program_name, tests)
     if setupTester.engineering?
-      self.send(:flag_setter, 2)
+      self.send( flag, 2)
     #elsif setupTester.match?
-      #self.send(:flag_setter, 3)
-    #else
-      #self.send(:flag_setter, 2)
+      #self.send(flag, 3)
+    else
+      self.send( flag, 1)
     end
   end
 end

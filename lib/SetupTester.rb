@@ -7,8 +7,10 @@ class SetupTester
   end
 
   def engineering?
+    puts "Hello Engineering World"
     possible = %w(NONE SPTR NOT_ALLOWED CHECK_PCARD)
     possible.include?(@operation)
+    true
   end
 
   def match?

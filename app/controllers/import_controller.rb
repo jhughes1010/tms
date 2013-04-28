@@ -115,9 +115,10 @@ class ImportController < ApplicationController
         unless device[0].include? "---"
           unless device[0].include? "***"
             if list.include?(device[0])
-              puts "#{location}:#{device[0]} #{device[1]} #{record[2]} #{record[10]} #{record[11]} #{record[12]} "
+              #puts "#{location}:#{device[0]} #{device[1]} #{record[2]} #{record[10]} #{record[11]} #{record[12]} "
               #write record
               r = Setup.new
+              r.family = "3W"
               r.location = location
               r.device = device[0]
               r.tab = device[1]
@@ -172,7 +173,7 @@ class ImportController < ApplicationController
     #Split line into individual components
     record = line.strip()
     unless record.nil?
-      puts "#{family}:#{record}"
+      #puts "#{family}:#{record}"
       #write record
       r = Device.new
       r.productline = family
