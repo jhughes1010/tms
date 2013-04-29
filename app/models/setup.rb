@@ -28,10 +28,12 @@ class Setup < ActiveRecord::Base
     setupTester = SetupTester.new(self, targets, test_program_name, tests)
     if setupTester.engineering?
       self.send( flag, 2)
+      puts "ENG"
     #elsif setupTester.match?
       #self.send(flag, 3)
     else
       self.send( flag, 1)
+      puts "DEFAULT"
     end
   end
 end

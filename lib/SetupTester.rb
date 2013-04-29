@@ -1,16 +1,16 @@
 class SetupTester
-  def initialize(setup, targets, operation, tests)
+  def initialize(setup, targets, test_program_name, tests)
     @setup = setup
     @targets = targets
-    @operation = operation
+    @test_program_name = test_program_name
     @tests = tests
   end
 
   def engineering?
-    puts "Hello Engineering World"
     possible = %w(NONE SPTR NOT_ALLOWED CHECK_PCARD)
-    possible.include?(@operation)
-    true
+    possible.include?(@test_program_name)
+    puts @test_program_name
+    #puts possible
   end
 
   def match?
