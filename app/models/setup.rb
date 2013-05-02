@@ -2,7 +2,6 @@ require "SetupTester.rb"
 
 class Setup < ActiveRecord::Base
 
-  #attr_reader :match_cp1, :match_cp2, :match_cp3
   before_save :set_match_flags
 
   def self.get_setups_magnum(part)
@@ -24,16 +23,17 @@ class Setup < ActiveRecord::Base
   end
 
   def set_flag_for_wafer_sort_operation(test_program_name, flag, tests)
-    targets = Target.find_by_family(self.family)
+    targets = Target.find_all_by_family(self.family)
     setupTester = SetupTester.new(self, targets, test_program_name, tests)
     if setupTester.engineering?
       self.send( flag, 2)
-      puts "ENG"
-    #elsif setupTester.match?
-      #self.send(flag, 3)
+      #puts "ENG"
+    elsif setupTester.match?
+      self.send(flag, 3)
+      puts "MATCH"
     else
       self.send( flag, 1)
-      puts "DEFAULT"
+      #puts "DEFAULT"
     end
   end
 end

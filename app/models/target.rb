@@ -18,15 +18,15 @@ class Target < ActiveRecord::Base
   end
   
   def cp1_tests
-    [self.cp1_mag, self.cp1_mav, self.mag_64]
+    [self.mag_cp1, self.mav_cp1, self.mag_x64_cp1]
   end
 
   def cp2_tests
-    [self.cp1_mag, self.cp1_mav, self.mag_64]
+    [self.mag_cp2, self.mav_cp2, self.mag_x64_cp2]
   end
 
   def cp3_tests
-    [self.cp1_mag, self.cp1_mav, self.mag_64]
+    [self.mag_cp3, self.mav_cp3, self.mag_x64_cp3]
   end
   
   private

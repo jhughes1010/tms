@@ -9,7 +9,7 @@ class ImportController < ApplicationController
     #initial variables
     header = 0
     #filenames
-    import_file = "import/2012Q4_KeyProjects.csv"
+    import_file = "import/2013Q1_KeyProjects.csv"
     puts
     puts "============================================="
     puts "CSV importer for Costing database"
@@ -38,7 +38,7 @@ class ImportController < ApplicationController
     r.key = true
     r.project = record[column_array[3]]
     r.long_name = record[column_array[0]]
-    r.dr1 = format_date(record[column_array[10]])
+    r.dr1 = format_date(record[column_array[9]])
     r.dr2 = format_date(record[column_array[11]])
     r.dr3 = format_date(record[column_array[12]])
     r.dr4 = format_date(record[column_array[13]])
@@ -118,7 +118,8 @@ class ImportController < ApplicationController
               #puts "#{location}:#{device[0]} #{device[1]} #{record[2]} #{record[10]} #{record[11]} #{record[12]} "
               #write record
               r = Setup.new
-              r.family = "3W"
+              d = Device.find_by_name(device[0])
+              r.family = d.productline
               r.location = location
               r.device = device[0]
               r.tab = device[1]
