@@ -15,17 +15,29 @@ class SetupTester
 
   def match?
     #current approach
-    device_and_tab? || device? || default?
+    #device_and_tab? || device? || default?
     #thinking about this
-    #the special program cases need to be processed in a heirchical order and  
+    #the special program cases need to be processed in a hierarchical order and
     #if a targets table entry exists, then no other case can be considered for compare
-#    if device_and_tab_match_exists?
-#      device_and_tab?
-#    elsif device_match_exists?
-#      device?
-#    elsif default_match_exists?
-#      defaults?
-#    end
+    if device_and_tab_match_exists?
+      device_and_tab?
+    elsif device_match_exists?
+      device?
+    elsif default_match_exists?
+      default?
+    end
+  end
+
+  def device_and_tab_match_exists?
+    target = @targets.select { |t| t.device == @setup.device && t.tab == @setup.tab }.first
+  end
+  
+  def device_match_exists?
+    target = @targets.select { |t| t.device == @setup.device }.first    
+  end
+  
+  def default_match_exists?
+    target = @targets.select { |t| t.device == "default"  }.first
   end
 
   def device_and_tab?

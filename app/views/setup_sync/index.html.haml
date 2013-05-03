@@ -5,6 +5,9 @@
   %a.btn.btn-info{:button => "", :href => "/setup_sync/prr?family=SPI"} SPI
   %a.btn.btn-info{:button => "", :href => "/setup_sync/prr?family=CP"} Crypto
   %a.btn.btn-info{:button => "", :href => "/targets"} Target
+.btn-group
+  %a.btn.btn-info{:button => "", :href => "/setup_sync/report?report=EPRO"} EPRO Entries
+  %a.btn.btn-info{:button => "", :href => "/setup_sync/report?report=RED"} RED Report
 %p
   This data is manually update once per day
 - if @auth == 2
@@ -16,9 +19,9 @@
     %a.btn.dropdown-toggle.btn-warning{"data-toggle" => "dropdown", :href => "#"}
       Import Functions
       %span.caret
-    %ul.dropdown-menu
-      %li
-        %a{:href => "/import/setup"} Import setup.txt (ACP and MEMP)
-      %li
-        %a{:href => "/import/device"} Import device files
-      / dropdown menu links
+      %ul.dropdown-menu
+        %li
+          %a{:href => "/import/setup"} Import setup.txt (ACP and MEMP)
+        %li
+          %a{:href => "/import/device"} Import device files
+        / dropdown menu links

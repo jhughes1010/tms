@@ -1,0 +1,47 @@
+.btn-group
+  %a.btn.btn-info{:button => "", :href => "/setup_sync/prr?family=2W"} 2 Wire
+  %a.btn.btn-info{:button => "", :href => "/setup_sync/prr?family=3W"} 3 Wire
+  %a.btn.btn-info{:button => "", :href => "/setup_sync/prr?family=SPI"} SPI
+  %a.btn.btn-info{:button => "", :href => "/setup_sync/prr?family=CP"} Crypto
+  %a.btn.btn-info{:button => "", :href => "/targets"} Target
+%h2 Red Report
+%hr/
+%p
+  %table.table.table-hover
+    %thead
+      %tr
+        %th
+          Probe Setup
+        %th
+          Device
+        %th
+          Tab
+        %th
+          Location
+        %th
+          CP1
+        %th
+          CP2
+        %th
+          CP3
+    %tbody
+      - @device_setups.each do |s|
+        %tr
+          %td
+            = s.platform
+          %td
+            = s.device
+          %td
+            = s.tab
+          %td
+            = s.location
+          %td
+            = raw highlight(s.cp1_match_flag)
+            = s.cp1
+          %td
+            = raw highlight(s.cp2_match_flag)
+            = s.cp2
+          %td
+            = raw highlight(s.cp3_match_flag)
+            = s.cp3
+        %tr
