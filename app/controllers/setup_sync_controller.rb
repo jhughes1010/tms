@@ -16,10 +16,11 @@ class SetupSyncController < ApplicationController
   def report
     @report = params[:report]
 
-      if @report == "RED"
-            @device_setups = Setup.get_setups_red
-      elsif @report == "EPRO"
-      end
+    if @report == "RED"
+      @device_setups = Setup.get_setups_red
+    elsif @report == "EPRO"
+      @device_setups = Setup.get_setups_epro
+    end
   end
   protected
 

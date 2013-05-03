@@ -11,6 +11,10 @@ class Setup < ActiveRecord::Base
     t = self.where("device in (?) AND platform NOT IN ('EPRO','dualEPRO','quadEPRO')", part).order("device, tab, platform,  location ")
   end
 
+  def self.get_setups_epro
+    t = self.where("platform IN ('EPRO','dualEPRO','quadEPRO')").order("device, tab, platform,  location ")
+  end
+
   # model methods supporting business logic
   def test_programs
     [self.cp1, self.cp2, self.cp3]
