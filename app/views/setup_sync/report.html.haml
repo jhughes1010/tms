@@ -8,7 +8,9 @@
   %a.btn.btn-info{:button => "", :href => "/setup_sync/report?report=EPRO"} EPRO Entries
   %a.btn.btn-info{:button => "", :href => "/setup_sync/report?report=RED"} RED Report
 
-%h2 Red Report
+%h2
+  = "#{@report} "
+  Report
 %hr/
 %p
   %table.table.table-hover
