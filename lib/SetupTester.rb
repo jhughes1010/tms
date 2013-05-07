@@ -21,6 +21,8 @@ class SetupTester
     #if a targets table entry exists, then no other case can be considered for compare
     if device_and_tab_match_exists?
       device_and_tab?
+    elsif device_and_tab_wildcard_exists?
+      device_and_tab_wildcard?
     elsif device_match_exists?
       device?
     elsif default_match_exists?
@@ -31,17 +33,34 @@ class SetupTester
   def device_and_tab_match_exists?
     target = @targets.select { |t| t.device == @setup.device && t.tab == @setup.tab }.first
   end
-  
-  def device_match_exists?
-    target = @targets.select { |t| t.device == @setup.device }.first    
+
+  def device_and_tab_wildcard_exists?
+    target = @targets.select { |t|
+      match_device = %r(^#{t.device.gsub("_",".")}$).match(@setup.device).to_s
+      match_tab = %r(^#{t.tab.gsub("_",".")}$).match(@setup.tab).to_s
+      match_device == @setup.device && match_tab == @setup.tab
+    }.first
   end
-  
+
+  def device_match_exists?
+    target = @targets.select { |t| t.device == @setup.device && t.tab == "all" }.first
+  end
+
   def default_match_exists?
     target = @targets.select { |t| t.device == "default"  }.first
   end
 
   def device_and_tab?
     target = @targets.select { |t| t.device == @setup.device && t.tab == @setup.tab }.first
+    target && target.send(@tests).include?(@test_program_name)
+  end
+
+  def device_and_tab_wildcard?
+    target = @targets.select { |t|
+      match_device = %r(^#{t.device.gsub("_",".")}$).match(@setup.device).to_s
+      match_tab = %r(^#{t.tab.gsub("_",".")}$).match(@setup.tab).to_s
+      match_device == @setup.device && match_tab == @setup.tab
+    }.first
     target && target.send(@tests).include?(@test_program_name)
   end
 
