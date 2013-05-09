@@ -36,9 +36,11 @@ class SetupTester
 
   def device_and_tab_wildcard_exists?
     target = @targets.select { |t|
-      match_device = %r(^#{t.device.gsub("_",".")}$).match(@setup.device).to_s
-      match_tab = %r(^#{t.tab.gsub("_",".")}$).match(@setup.tab).to_s
-      match_device == @setup.device && match_tab == @setup.tab
+      if t.device.include?("_") || t.tab.include?("_")
+        match_device = %r(^#{t.device.gsub("_",".")}$).match(@setup.device).to_s
+        match_tab = %r(^#{t.tab.gsub("_",".")}$).match(@setup.tab).to_s
+      end
+        match_device == @setup.device && match_tab == @setup.tab
     }.first
   end
 
