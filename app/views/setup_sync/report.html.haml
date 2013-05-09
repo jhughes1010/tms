@@ -17,6 +17,8 @@
     %thead
       %tr
         %th
+          Family
+        %th
           Probe Setup
         %th
           Device
@@ -33,6 +35,8 @@
     %tbody
       - @device_setups.each do |s|
         %tr
+          %td
+            = s.family
           %td
             = s.platform
           %td

@@ -1,6 +1,9 @@
+
+
 class Target < ActiveRecord::Base
   before_save :programs_uppercase
-  
+  after_save :update_setup_match_cases
+
   def self.defaults( family )
     t = self.where("family in (?) AND device = 'default'", family).limit(1)
   end
@@ -16,7 +19,7 @@ class Target < ActiveRecord::Base
   def self.sorted
     t = self.order("family, device, tab")
   end
-  
+
   def cp1_tests
     [self.mag_cp1, self.mav_cp1, self.mag_x64_cp1]
   end
@@ -28,7 +31,14 @@ class Target < ActiveRecord::Base
   def cp3_tests
     [self.mag_cp3, self.mav_cp3, self.mag_x64_cp3]
   end
-  
+
+  def update_setup_match_cases
+    setup = Setup.find_all_by_family(self.family)
+    setup.each {|s|
+      s.update_attribute(:updated_at,Time.now)
+    }
+  end
+
   private
   def programs_uppercase
     self.family.upcase!
@@ -41,6 +51,6 @@ class Target < ActiveRecord::Base
     self.mag_cp3.upcase!
     self.mag_x64_cp1.upcase!
     self.mag_x64_cp2.upcase!
-    self.mag_x64_cp3.upcase!    
+    self.mag_x64_cp3.upcase!
   end
 end
