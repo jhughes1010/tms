@@ -96,9 +96,13 @@ class ImportController < ApplicationController
     cp = Device.get_family("CP")
     list4 = cp.map {|i| i.name }
     #
+    ts = Device.get_family("TS")
+    list5 = ts.map {|i| i.name }
+    #
     list = list.concat(list2)
     list = list.concat(list3)
     list = list.concat(list4)
+    list = list.concat(list5)
     file = IO.readlines( path )
     header = 0
     file.each do |f|
@@ -162,6 +166,7 @@ class ImportController < ApplicationController
     import_device("3W","import/3wire.txt")
     import_device("SPI","import/spi.txt")
     import_device("CP","import/CP.txt")
+    import_device("TS","import/TS.txt")
   end
   def import_device(family, path)
     puts family
