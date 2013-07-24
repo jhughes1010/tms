@@ -5,7 +5,8 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.xml
   def index
-    @tasks = Task.all
+    #@tasks = Task.all
+    @tasks = Task.all_active
 
     respond_to do |format|
       format.html # index.html.erb

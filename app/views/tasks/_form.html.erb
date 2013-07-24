@@ -46,6 +46,11 @@
 	<%= f.select( :operation, %w{CPx FT QA Fuse Engineering Software_Tool}) %>
 </div>
 <div class="field">
+	<%= f.label :request_type %>
+	<br/>
+	<%= f.select( :request_type, %w{Choose Cost_Reduction Capacity New_Device Coverage Engineering }) %>
+</div>
+<div class="field">
 	<%= f.label :platform %>
 	<br/>
 	<%= f.select( :platform, %w{Magnum Maverick Eagle EPRO BitMapR Other}) %>
