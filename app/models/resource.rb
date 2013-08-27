@@ -17,14 +17,7 @@ class Resource < ActiveRecord::Base
   def self.project_detail(date,project)
     self.where("project = ? AND date >= ? AND date < ?" ,project, date, date +15.months).order("date")
   end
-  def self.project_first(project)
-    first_record = self.where("project = ? AND actual > 0", project).order("date").limit(1)
-    first_record[0].date
-  end
-  def self.project_last(project)
-    last_record = self.where("project = ? AND forecast > 0", project).order("date DESC").limit(1)
-    last_record[0].date
-  end
+
   def self.project_detail_name(date,project)
     self.where("project = ? AND date >= ? AND date < ?" ,project, date, date +15.months).group("project", "department", "name", "function").order("project", "department","name","function").select("project, department, name, function")
   end
@@ -142,5 +135,16 @@ class Resource < ActiveRecord::Base
         csv << variance.attributes.values_at(*column_name)
       end
     end
+  end
+  def self.detail(project, date)
+    self.find_by_sql ["SELECT department, name, date, function, project, (CASE WHEN date >= ? THEN forecast ELSE actual END) AS actual FROM resources WHERE project = ? ORDER by department, name, project, date", date, project]
+  end
+  def self.project_first(project)
+    first_record = self.where("project = ?", project).order("date").limit(1)
+    first_record[0].date
+  end
+  def self.project_last(project)
+    last_record = self.where("project = ?", project).order("date DESC").limit(1)
+    last_record[0].date
   end
 end

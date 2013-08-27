@@ -37,53 +37,20 @@ class ResourceController < ApplicationController
     if params[:p_id]
       p=params[:p_id].to_i
       @project = Project.find(p)
-      #Get Project Start Month (earliest date to graph)
-      @first = Resource.project_first(@project.project)
-
-      #Get project end month (last forecast date to graph)
-      @last = Resource.project_last(@project.project)
-
-      #Calculate project duration
-      @duration = (@last.year*12 + @last.month) - (@first.year * 12 + @first.month) +1
-
-      #Create empty array
-      @chart_data = mda(@duration,7)
-
-      #Get actuals data by department
-      #Load actuals into array
-
-      #Get forecast data by department
-      #Load forecast into array
       
-      #Get actuals and forecast by department
-      @resources = Resource.project_total_new_method(@today, @project.project)
-
-
-
+      #Get Project start month and end month to bound graph and datasets
+      @start = Resource.project_first(@project.project)
+      @finish = Resource.project_last(@project.project)
+      @duration = (@finish.month - @start.month) + 12 * (@finish.year - @start.year) + 1
       
-      @project_totals = Resource.project_total(@today,@project.project)
-      @quarterly_rollup = Hash.new(0)
-      @project_totals.each do |q|
-        hash_tag = q.date.year.to_s
-        hash_tag += "-" + ((q.date.month/4)+1).to_s
-        puts "Date: #{hash_tag} - MM #{q.forecast}"
-        @quarterly_rollup[hash_tag] += (q.forecast)
-      end
+      #Query database for details, department totals, and project totals
+      @project_details = Resource.detail(@project.project, @today)
+      ##@project_department_summary = Resource.department_summary(@project.project)
+      ##@project_summary = Resource.summary(@project.project, @today)
       
-      @project_totals_actuals = Resource.project_total_actuals(@today,@project.project)
-      @quarterly_rollup_actuals = Hash.new(0)
-      @project_totals_actuals.each do |q|
-        hash_tag = q.date.year.to_s
-        hash_tag += "-" + ((q.date.month/4)+1).to_s
-        puts "Date: #{hash_tag} - MM #{q.actual}"
-        @quarterly_rollup_actuals[hash_tag] += (q.actual)
-      end
-      
-      @department_totals = Resource.project_department_total(@today, @project.project)
-
-
+      #load array with project_department_summary for graph
+      ##@graph_array = ???(@project_department_summary)
     end
-    #
   end
 
   def phuong
