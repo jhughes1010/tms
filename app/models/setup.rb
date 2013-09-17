@@ -17,6 +17,10 @@ class Setup < ActiveRecord::Base
     t = self.where("platform IN ('EPRO','dualEPRO','quadEPRO')").order("family, device, tab, platform,  location ")
   end
   
+  def self.get_setups_x_flow
+    t = self.where("tab LIKE 'X%'").order("family, device, tab, platform, location ")
+  end
+  
   # model methods supporting business logic
   def test_programs
     [self.cp1, self.cp2, self.cp3]

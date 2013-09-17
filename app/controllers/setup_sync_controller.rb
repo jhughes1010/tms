@@ -20,6 +20,8 @@ class SetupSyncController < ApplicationController
       @device_setups = Setup.get_setups_red
     elsif @report == "EPRO"
       @device_setups = Setup.get_setups_epro
+    elsif @report == "x_flow"
+      @device_setups = Setup.get_setups_x_flow
     end
   end
   protected
