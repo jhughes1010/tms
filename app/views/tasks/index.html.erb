@@ -1,5 +1,5 @@
 <h1>Listing tasks</h1>
-<table>
+<table class="table table-hover">
     <tr>
         <th>
             ID
@@ -18,6 +18,9 @@
         </th>
         <th>
             Family
+        </th>
+        <th>
+            Device
         </th>
         <th>
             Request Type
@@ -71,6 +74,9 @@
             <%= task.family %>
         </td>
         <td>
+            <%= task.device %>
+        </td>
+        <td>
             <%= task.request_type %>
         </td>
         <td>
@@ -94,15 +100,10 @@
         <td>
             <%= task.duration %>
         </td>
-       <td>
-            <%= link_to 'Show', task %>
-        </td>
-        <td>
-            <%= link_to 'Edit', edit_task_path(task) %>
-        </td>
-        <td>
-            <%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete %>
-        </td>
+	    <td><%= link_to 'Show', task,:class =>'btn btn-info' %></td>
+	    <td><%= link_to 'Edit', edit_pto_path(task),:class =>'btn btn-warning' %></td>
+	    <td><%= link_to 'Destroy', task, :confirm => 'Are you sure?', :method => :delete,:class =>'btn btn-danger' %></td>
+
     </tr>
     <% end %>
 </table>
