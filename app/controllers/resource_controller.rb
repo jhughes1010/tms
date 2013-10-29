@@ -102,8 +102,8 @@ class ResourceController < ApplicationController
       #Get Department Totals - Actuals
       @layout_actuals = get_department_actuals(@date, project_name,["3101","1370","1390","2610"],"layout","include")
       @design_actuals = get_department_actuals(@date, project_name, [ "3101", "1370", "1390","2610"], "layout", "exclude")
-      @pe_actuals = get_department_actuals(@date, project_name,["3371","1340"],"test","exclude")
-      @te_actuals = get_department_actuals(@date, project_name,["3371","1340"],"test","include")
+      @pe_actuals = get_department_actuals(@date, project_name,["3371","1340","3213"],"test","exclude")
+      @te_actuals = get_department_actuals(@date, project_name,["3371","1340","3213"],"test","include")
       @application_actuals = get_department_actuals(@date, project_name, "3209", "void", "exclude")
 
       #Determine maximum count on actuals for chart width
