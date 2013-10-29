@@ -91,10 +91,10 @@ class ResourceController < ApplicationController
       design = Resource.department_total_not_include(@date, project_name,["3101","1370","1390","2610"],"layout")
       @design = department_totals2(design)
 
-      pe = Resource.department_total_not_include(@date, project_name,["3371","1340"],"test")
+      pe = Resource.department_total_not_include(@date, project_name,["3371","1340","3213"],"test")
       @pe = department_totals2(pe)
 
-      te = Resource.department_total_include(@date, project_name,["3371","1340"],"test")
+      te = Resource.department_total_include(@date, project_name,["3371","1340","3213"],"test")
       @te = department_totals2(te)
 
       @application = department_totals(project_name,"3209")
