@@ -9,7 +9,10 @@ Data end:
 Duration:
 <%= @duration%>
 <br>
-Record Count:
-<%= @project_details.count%>
+<h2>Project Summary</h2>
+<% @project_summary.each do |month| %>
+<%= month.date %>
+<%= month.date.month %>
+<%= month.forecast %>
 <br>
-<h2>Department Details</h2>
+<% end %>

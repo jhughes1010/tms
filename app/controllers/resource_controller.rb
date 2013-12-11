@@ -44,9 +44,9 @@ class ResourceController < ApplicationController
       @duration = (@finish.month - @start.month) + 12 * (@finish.year - @start.year) + 1
       
       #Query database for details, department totals, and project totals
-      @project_details = Resource.detail(@project.project, @today)
-      ##@project_department_summary = Resource.department_summary(@project.project)
-      ##@project_summary = Resource.summary(@project.project, @today)
+      @project_summary = Resource.summary(@project.project, @today)
+      #@project_details = Resource.detail(@project.project, @today)
+      #@project_department_summary = Resource.department_summary(@project.project)
       
       #load array with project_department_summary for graph
       ##@graph_array = ???(@project_department_summary)
