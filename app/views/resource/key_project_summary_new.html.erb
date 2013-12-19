@@ -10,9 +10,21 @@ Duration:
 <%= @duration%>
 <br>
 <h2>Project Summary</h2>
+<table border="1" width="100%">
+	<tr>
 <% @project_summary.each do |month| %>
-<%= month.date %>
+<td>
 <%= month.date.month %>
-<%= month.forecast %>
-<br>
+</td>
 <% end %>
+</tr>
+<tr>
+<% @project_summary.each do |month| %>
+<td>
+<%= number_with_precision(month.forecast, :precision => 1) %>
+</td>
+<% end %>
+</tr>
+</table>
+<h2>Department Summary</h2>
+<h2>Employee Summary</h2>
