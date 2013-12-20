@@ -1,7 +1,12 @@
 class Resource < ActiveRecord::Base
 
   def self.summary(project, date)
-    self.where("project = ?" ,project).order("date").select("date, sum (forecast) as forecast").group("date")
+    summary = self.where("project = ? AND forecast > 0" ,project).order("date").select("date, sum (forecast) as forecast").group("date")
+    resource = Hash.new(0)
+    summary.each do |f|
+      resource[f.date] = f.forecast
+    end
+    resource
   end
 
   def self.project_total(date,project)
