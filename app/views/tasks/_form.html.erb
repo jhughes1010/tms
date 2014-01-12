@@ -96,6 +96,7 @@
 </div>
 Category Legend: 1= Important & Urgent, 2= Important & Not_Urgent, 4 = Not Important & Not Urgent"
 <br><br>
+<%if @auth==2 %>
 <div class="field">
 	<%= f.label :complete %>
 
@@ -106,6 +107,7 @@ Category Legend: 1= Important & Urgent, 2= Important & Not_Urgent, 4 = Not Impor
 
 	<%= f.check_box :accepted %>
 </div>
+<% end %>
 <div class="actions">
 	<%= f.submit %>
 </div>

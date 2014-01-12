@@ -9,19 +9,22 @@ Data end:
 Duration:
 <%= @duration%>
 <br>
+Record Count:
+<%= @project_summary.count%>
+<br>
 <h2>Project Summary</h2>
 <table border="1" width="100%">
 	<tr>
-<% @project_summary.each do |month| %>
+<% @project_summary.each do |month, value| %>
 <td>
-
+	<%= month%>
 </td>
 <% end %>
 </tr>
 <tr>
-<% @project_summary.each do |month| %>
+<% @project_summary.each do |month, value| %>
 <td>
-<%= number_with_precision(month.forecast, :precision => 1) %>
+	<%= number_with_precision(value, :precision => 1)%>
 </td>
 <% end %>
 </tr>
