@@ -1,0 +1,8 @@
+<!-- Date output and header, requires <table wrapper -->
+<tr>
+<% @project_summary.each do |month, value| %>
+<td>
+	<%= month.strftime("%b-%y")%>
+</td>
+<% end %>
+</tr>

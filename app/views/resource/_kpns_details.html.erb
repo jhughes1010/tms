@@ -1,0 +1,8 @@
+<!-- Date output and header, requires <table wrapper -->
+<tr>
+<% @project_summary.each do |month, value| %>
+<td>
+	<%= number_with_precision(value, :precision => 1)%>
+</td>
+<% end %>
+</tr>
