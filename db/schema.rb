@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130724103104) do
+ActiveRecord::Schema.define(:version => 20140120120101) do
 
   create_table "can_mains", :force => true do |t|
     t.string    "can"
@@ -160,6 +160,7 @@ ActiveRecord::Schema.define(:version => 20130724103104) do
     t.integer  "cp1_match_flag"
     t.integer  "cp2_match_flag"
     t.integer  "cp3_match_flag"
+    t.string   "parallelism"
   end
 
   create_table "targets", :force => true do |t|

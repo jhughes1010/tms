@@ -1,11 +1,17 @@
 <!-- Date output and header, requires <table wrapper -->
 <tr>
+<td>
+	Department
+</td>
 <% @project_summary.each do |month, value| %>
 <td>
-	<%= number_with_precision(value, :precision => 1)%>
+	<%= month.strftime("%b-%y")%>
 </td>
 <% end %>
 <td>
-	<%= @project_summary.map(&:forecast).reduce(:+) %>
+	Total MM
+</td>
+<td>
+	Total MY
 </td>
 </tr>

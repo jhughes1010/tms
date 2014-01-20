@@ -128,6 +128,7 @@ class ImportController < ApplicationController
               r.device = device[0]
               r.tab = device[1]
               r.platform = record[2]
+              r.parallelism = record[6].downcase
               #uppercase
               record[10] = record[10].upcase unless record[10].nil?
               record[11] = record[11].upcase unless record[11].nil?

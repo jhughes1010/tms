@@ -46,7 +46,11 @@
       - @device_setups.each do |s|
         %tr
           %td
-            = s.platform
+            - if s.platform.start_with?("HD")
+              MAG
+            - else
+              MAV
+            = s.platform+"_"+s.parallelism
           %td
             = s.device
           %td
