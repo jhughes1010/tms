@@ -41,13 +41,7 @@
           %td
             = s.family
           %td
-            - if s.platform.start_with?("HD")
-              MAG
-            - elsif s.platform.include?("EPRO")
-              EPRO
-            - else
-              MAV
-            = s.platform+"_"+s.parallelism
+            = s.vendor+"_"+s.platform+"_"+s.parallelism
           %td
             = s.device
           %td

@@ -128,6 +128,13 @@ class ImportController < ApplicationController
               r.device = device[0]
               r.tab = device[1]
               r.platform = record[2]
+                if record[2].start_with?("HD")
+                  r.vendor ="MAG"
+                elsif record[2].include?("EPRO")
+                  r.vendor ="EPRO"
+                else
+                  r.vendor ="MAV"
+                end
               r.parallelism = record[6].downcase
               #uppercase
               record[10] = record[10].upcase unless record[10].nil?
