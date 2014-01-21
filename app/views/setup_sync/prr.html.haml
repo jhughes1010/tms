@@ -48,6 +48,8 @@
           %td
             - if s.platform.start_with?("HD")
               MAG
+            - elsif s.platform.include?("EPRO")
+              EPRO
             - else
               MAV
             = s.platform+"_"+s.parallelism
