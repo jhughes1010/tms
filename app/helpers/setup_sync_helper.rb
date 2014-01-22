@@ -1,7 +1,7 @@
 module SetupSyncHelper
   def highlight(flag)
     if ( flag == 1) #no match
-      '<span class="label label-important">'
+      '<span class="label label-danger">'
     elsif( flag == 2) #engineering match
       '<span class="label label-warning">'
     elsif( flag == 3) #matches a target table entry
