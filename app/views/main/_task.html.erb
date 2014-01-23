@@ -1,14 +1,7 @@
-<%if @supress_overdue_color %>
-				<tr class="<%= cycle('list-line-odd','list-line-even')%>">
-					<%else %><%if(task.scd) %><%if (task.scd >= @today) %>
-				</tr>
-				<tr class="<%= cycle('list-line-odd','list-line-even')%>">
-					<%else %>
-				</tr>
-				<tr class="<%= cycle('list-line-odd_past_due','list-line-even_past_due')%>">
-					<%end %><%end %><%end %>
+
+				<tr><small>
 					<td>
-						<%= link_to task.id,task, :class =>'btn btn-info btn-custom btn-small'%>
+						<%= link_to task.id,task, :class =>'label label-primary'%>
 					</td>
 					<td>
 						<%= task.requester.fullname %>
@@ -35,5 +28,5 @@
 					</td>
 					<td>
 						<%= task.duration %>
-					</td>
+					</td></small>
 				</tr>

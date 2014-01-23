@@ -3,7 +3,7 @@
   - @tasks.each do |t|
     .category{:id => t.id}
       %li.ui-state-default
-        = link_to t.id,t, :class =>'btn btn-info btn-custom'
+        = link_to t.id,t, :class =>'label label-info'
         #{t.assignee.fullname} :
         #{t.requester.fullname} :
         #{t.device} :
