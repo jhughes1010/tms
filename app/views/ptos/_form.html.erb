@@ -1,4 +1,4 @@
-<%= form_for(@pto) do |f| %>
+<%= form_for(@pto, :html => { :class => "form-horizontal" }) do |f| %>
   <% if @pto.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@pto.errors.count, "error") %> prohibited this pto from being saved:</h2>
