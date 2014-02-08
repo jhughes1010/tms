@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140208145710) do
+ActiveRecord::Schema.define(:version => 20140208165814) do
 
   create_table "can_mains", :force => true do |t|
     t.string    "can"
@@ -164,6 +164,8 @@ ActiveRecord::Schema.define(:version => 20140208145710) do
     t.float    "total_std_cost"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "sas_type"
+    t.boolean  "sent"
   end
 
   create_table "setups", :force => true do |t|

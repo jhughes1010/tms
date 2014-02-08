@@ -44,7 +44,7 @@
       %td= target.mav_cp2
       %td= target.mav_cp3
       %td
-        = target.cr3
+        = raw checkbox(target.cr3)
         %i.icon-search
       %td= link_to 'Show', target,:class =>'btn btn-info'
       %td= link_to 'Edit', edit_target_path(target),:class =>'btn btn-warning'

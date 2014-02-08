@@ -13,13 +13,21 @@
   
   	<%@sa.date = Date.today %>
 
+    <div class="field">
+      <%= f.label :sas_type %><br />
+	  	<%= f.select( :sas_type, %w{Abnormal RMA Obsolete}) %>
+    </div>
+    <div class="field">
+      <%= f.label :sent %><br />
+	<%= f.check_box :sent %>
+    </div>
   <div class="field">
     <%= f.label :lot_number %><br />
     <%= f.text_field :lot_number %>
   </div>
   <div class="field">
     <%= f.label :location %><br />
-    <%= f.text_field :location %>
+	<%= f.select( :sas_type, %w{Probe ATP ASESH ASEK UTL AIC }) %>
   </div>
   <div class="field">
     <%= f.label :plant %><br />

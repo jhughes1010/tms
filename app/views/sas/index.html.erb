@@ -1,22 +1,24 @@
 <h1>Listing SAS</h1>
 
-<table>
+<table  class="table table-hover">
   <tr>
-    <th>Lot number</th>
-    <th>Location</th>
-    <th>Plant</th>
-    <th>Profit center</th>
-    <th>Sap matid</th>
-    <th>Lts matid</th>
-    <th>Quantity</th>
-    <th>Standard cost</th>
-    <th>Total</th>
-    <th>Date</th>
-    <th>Reserve</th>
-    <th>Rma</th>
-    <th>Customer number</th>
-    <th>Customer details</th>
-    <th>Total std cost</th>
+    <th><b>SAS Type</b></th>
+    <th><b>Sent</b></th>
+    <th><b>Lot number</b></th>
+    <th><b>Location</b></th>
+    <th><b>Plant</b></th>
+    <th><b>Profit center</b></th>
+    <th><b>Sap matid</b></th>
+    <th><b>Lts matid</b></th>
+    <th><b>Quantity</b></th>
+    <th><b>Standard cost</b></th>
+    <th><b>Total</b></th>
+    <th><b>Date</b></th>
+    <th><b>Reserve</b></th>
+    <th><b>RMA</b></th>
+    <th><b>Customer number</b></th>
+    <th><b>Customer details</b></th>
+    <th><b>Total std cost</b></th>
     <th></th>
     <th></th>
     <th></th>
@@ -24,6 +26,8 @@
 
 <% @sas.each do |sa| %>
   <tr>
+    <td><%= sa.sas_type %></td>
+    <td><%=raw checkbox(sa.sent)%></span></td>
     <td><%= sa.lot_number %></td>
     <td><%= sa.location %></td>
     <td><%= sa.plant %></td>
@@ -33,7 +37,7 @@
     <td><%= sa.quantity %></td>
     <td><%= sa.standard_cost %></td>
     <td><%= sa.total %></td>
-    <td><%= sa.date %></td>
+    <td><%= sa.date.to_s(:short) %></td>
     <td><%= sa.reserve %></td>
     <td><%= sa.rma %></td>
     <td><%= sa.customer_number %></td>
