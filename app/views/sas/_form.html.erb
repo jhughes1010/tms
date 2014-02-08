@@ -1,0 +1,77 @@
+<%= form_for(@sa) do |f| %>
+  <% if @sa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sa.errors.count, "error") %> prohibited this sa from being saved:</h2>
+
+      <ul>
+      <% @sa.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :lot_number %><br />
+    <%= f.text_field :lot_number %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :plant %><br />
+    <%= f.text_field :plant %>
+  </div>
+  <div class="field">
+    <%= f.label :profit_center %><br />
+    <%= f.text_field :profit_center %>
+  </div>
+  <div class="field">
+    <%= f.label :sap_matid %><br />
+    <%= f.text_field :sap_matid %>
+  </div>
+  <div class="field">
+    <%= f.label :lts_matid %><br />
+    <%= f.text_field :lts_matid %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br />
+    <%= f.text_field :quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :standard_cost %><br />
+    <%= f.text_field :standard_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :total %><br />
+    <%= f.text_field :total %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.datetime_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :reserve %><br />
+    <%= f.text_field :reserve %>
+  </div>
+  <div class="field">
+    <%= f.label :rma %><br />
+    <%= f.text_field :rma %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_number %><br />
+    <%= f.text_field :customer_number %>
+  </div>
+  <div class="field">
+    <%= f.label :customer_details %><br />
+    <%= f.text_field :customer_details %>
+  </div>
+  <div class="field">
+    <%= f.label :total_std_cost %><br />
+    <%= f.text_field :total_std_cost %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,4 +1,6 @@
 TMS::Application.routes.draw do
+  resources :sas
+
   resources :targets
 
   resources :setups

@@ -1,0 +1,51 @@
+<h1>Listing sas</h1>
+
+<table>
+  <tr>
+    <th>Lot number</th>
+    <th>Location</th>
+    <th>Plant</th>
+    <th>Profit center</th>
+    <th>Sap matid</th>
+    <th>Lts matid</th>
+    <th>Quantity</th>
+    <th>Standard cost</th>
+    <th>Total</th>
+    <th>Date</th>
+    <th>Reserve</th>
+    <th>Rma</th>
+    <th>Customer number</th>
+    <th>Customer details</th>
+    <th>Total std cost</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sas.each do |sa| %>
+  <tr>
+    <td><%= sa.lot_number %></td>
+    <td><%= sa.location %></td>
+    <td><%= sa.plant %></td>
+    <td><%= sa.profit_center %></td>
+    <td><%= sa.sap_matid %></td>
+    <td><%= sa.lts_matid %></td>
+    <td><%= sa.quantity %></td>
+    <td><%= sa.standard_cost %></td>
+    <td><%= sa.total %></td>
+    <td><%= sa.date %></td>
+    <td><%= sa.reserve %></td>
+    <td><%= sa.rma %></td>
+    <td><%= sa.customer_number %></td>
+    <td><%= sa.customer_details %></td>
+    <td><%= sa.total_std_cost %></td>
+    <td><%= link_to 'Show', sa %></td>
+    <td><%= link_to 'Edit', edit_sa_path(sa) %></td>
+    <td><%= link_to 'Destroy', sa, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sa', new_sa_path %>
