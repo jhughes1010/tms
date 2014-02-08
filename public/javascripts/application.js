@@ -5,6 +5,8 @@ jQuery(function() {
   jQuery("#task_scd").datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true });
   jQuery("#task_acd").datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true });
 
+  jQuery("#sa_date").datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true });
+
   jQuery("#test_prog_date_received").datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true });
 
   jQuery("#pto_start").datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true });

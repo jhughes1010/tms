@@ -10,6 +10,8 @@
       </ul>
     </div>
   <% end %>
+  
+  	<%@sa.date = Date.today %>
 
   <div class="field">
     <%= f.label :lot_number %><br />
@@ -49,7 +51,7 @@
   </div>
   <div class="field">
     <%= f.label :date %><br />
-    <%= f.datetime_select :date %>
+    <%= f.text_field :date %>
   </div>
   <div class="field">
     <%= f.label :reserve %><br />
@@ -72,6 +74,6 @@
     <%= f.text_field :total_std_cost %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Create SAS" %>
   </div>
 <% end %>
