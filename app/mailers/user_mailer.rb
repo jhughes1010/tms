@@ -1,6 +1,7 @@
 # app/mailers/user_mailer.rb
 class UserMailer < ActionMailer::Base
-  default :from => "james.hughes@atmel.com"
+  default :from => "james.hughes@atmel.com", :cc => "jhughes1010@gmail.com, james.hughes@atmel.com"
+
 
   def registration_confirmation(user)
     @user = user
@@ -36,5 +37,18 @@ class UserMailer < ActionMailer::Base
     email=@user.email
     #send mail
     mail(:to => "#{name} <#{email}>", :subject => "TMS - My Task Summary: " + name)
+  end
+  def sas_mail(user_id, sas_id)
+    @sa = Sa.find(sas_id)
+    @user = User.find(user_id)
+    name = @user.fullname
+    email = @user.email
+    #resolve BP contact info
+    @bp_name = "Lori Hughes"
+    @bp_email = "lorilynn1988@gmail.com"
+
+    #attachments["rails.png"] = File.read("#{Rails.root}/public/images/rails.png")
+    
+    mail(:to => "#{@bp_name} <#{@bp_email}>", :subject => "SAS - report of scrap incident")
   end
 end

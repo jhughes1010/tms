@@ -4,5 +4,9 @@ class SasFrontController < ApplicationController
 
   def reports
   end
+  
+  def mail
+    UserMailer.sas_mail(1,1).deliver
+  end
 
 end

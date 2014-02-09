@@ -2,6 +2,7 @@
 
 <table  class="table table-hover">
   <tr>
+     <th><b>ID</b></th>	  
     <th><b>SAS Type</b></th>
     <th><b>Sent</b></th>
     <th><b>Lot number</b></th>
@@ -21,13 +22,13 @@
     <th><b>Total std cost</b></th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @sas.each do |sa| %>
   <tr>
+    <td><%= link_to sa.id, sa %></td>
     <td><%= sa.sas_type %></td>
-    <td><%=raw checkbox(sa.sent)%></span></td>
+    <td><%=raw checkbox_mail(sa.sent)%></span></td>
     <td><%= sa.lot_number %></td>
     <td><%= sa.location %></td>
     <td><%= sa.plant %></td>
@@ -43,9 +44,8 @@
     <td><%= sa.customer_number %></td>
     <td><%= sa.customer_details %></td>
     <td><%= sa.total_std_cost %></td>
-    <td><%= link_to 'Show', sa %></td>
-    <td><%= link_to 'Edit', edit_sa_path(sa) %></td>
-    <td><%= link_to 'Destroy', sa, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to raw('<span class="glyphicon glyphicon-edit"></span>'), edit_sa_path(sa) %></td>
+    <td><%= link_to raw('<span class="glyphicon glyphicon-remove"></span>'), sa, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

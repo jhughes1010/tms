@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
+<p>
+  <b>Send Status:</b>
+  <%= @sa.sent %>
+</p>
 
 <p>
   <b>Lot number:</b>
@@ -79,7 +83,11 @@
 <%= link_to 'Edit', edit_sa_path(@sa) %> |
 <%= link_to 'Back', sas_path %>
 
+
+<%- if (!@sa.sent) %>
+
 <h4>Please review the entered data and then click the send mail button below</h4>
 
 <a href="/sas_front/mail"><button type="button" class="btn btn-primary">Send Mail to planner</button></a>
 
+<%end%>
