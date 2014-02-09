@@ -27,7 +27,7 @@
   </div>
   <div class="field">
     <%= f.label :location %><br />
-	<%= f.select( :sas_type, %w{Probe ATP ASESH ASEK UTL AIC }) %>
+	<%= f.select( :location, %w{Probe ATP ASESH ASEK UTL AIC }) %>
   </div>
   <div class="field">
     <%= f.label :plant %><br />
@@ -80,6 +80,10 @@
   <div class="field">
     <%= f.label :total_std_cost %><br />
     <%= f.text_field :total_std_cost %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br />
+    <%= f.text_field :comment %>
   </div>
   <div class="actions">
     <%= f.submit "Create SAS" %>

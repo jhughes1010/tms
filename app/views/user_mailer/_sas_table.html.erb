@@ -1,0 +1,48 @@
+<%-if @sa.sas_type == 'Abnormal'%>
+<table>
+	<tr>
+		<td><%= @sa.lot_number%></td>
+		<td><%= @sa.location%></td>
+		<td><%= @sa.plant%></td>
+		<td><%= @sa.profit_center%></td>
+		<td><%= @sa.sap_matid%></td>
+		<td><%= @sa.lts_matid%></td>
+		<td><%= @sa.quantity%></td>
+		<td><%= @sa.standard_cost%></td>
+		<td><%= @sa.total%></td>
+		<td><%= @sa.date%></td>
+		<td><%= @sa.comment%></td>
+	</tr>
+</table>
+<%- elsif @sa.sas_type == 'RMA'%>
+<table>
+	<tr>
+		<td><%= @sa.rma%></td>
+		<td><%= @sa.location%></td>
+		<td><%= @sa.profit_center%></td>
+		<td><%= @sa.customer_number%></td>
+		<td><%= @sa.customer_details%></td>		
+		<td><%= @sa.quantity%></td>
+		<td><%= @sa.sap_matid%></td>
+		<td><%= @sa.total%></td>
+	    <td><%= @sa.standard_cost%></td>
+		<td><%= @sa.comment%></td>
+	</tr>
+</table>
+<%- else %>
+<table>
+	<tr>
+		<td><%= @sa.lot_number%></td>
+		<td><%= @sa.location%></td>
+		<td><%= @sa.profit_center%></td>
+		<td><%= @sa.sap_matid%></td>
+		<td><%= @sa.lts_matid%></td>
+		<td><%= @sa.quantity%></td>
+		<td></td>
+		<td><%= @sa.standard_cost%></td>
+		<td><%= @sa.total%></td>
+		<td><%= @sa.reserve%></td>
+		<td><%= @sa.comment%></td>
+	</tr>
+</table>
+<%end%>

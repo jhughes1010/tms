@@ -20,6 +20,7 @@
     <th><b>Customer number</b></th>
     <th><b>Customer details</b></th>
     <th><b>Total std cost</b></th>
+    <th><b>Comments</b></th>
     <th></th>
     <th></th>
   </tr>
@@ -44,6 +45,7 @@
     <td><%= sa.customer_number %></td>
     <td><%= sa.customer_details %></td>
     <td><%= sa.total_std_cost %></td>
+    <td><%= sa.comment %></td>
     <td><%= link_to raw('<span class="glyphicon glyphicon-edit"></span>'), edit_sa_path(sa) %></td>
     <td><%= link_to raw('<span class="glyphicon glyphicon-remove"></span>'), sa, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

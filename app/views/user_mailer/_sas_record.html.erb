@@ -1,13 +1,6 @@
-<p id="notice"><%= notice %></p>
-<p>
-  <b>SAS Type:</b>
-  <%= @sa.sas_type %>
-</p>
 
-<p>
-  <b>Send Status:</b>
-  <%= @sa.sent %>
-</p>
+<p><b>SAS ID:</b> <%= @sa.id %></p>
+<p><b>SAS type:</b> <%= @sa.sas_type %></p>
 
 <p>
   <b>Lot number:</b>
@@ -83,20 +76,7 @@
   <b>Total std cost:</b>
   <%= @sa.total_std_cost %>
 </p>
-
 <p>
-  <b>Comment:</b>
+  <b>Comments:</b>
   <%= @sa.comment %>
 </p>
-
-<%= link_to 'Edit', edit_sa_path(@sa) %> |
-<%= link_to 'Back', sas_path %>
-
-
-<%- if (!@sa.sent) %>
-
-<h4>Please review the entered data and then click the send mail button below</h4>
-
-<a href="/sas_front/<%=@sa.id%>/mail"><button type="button" class="btn btn-primary">Send Mail to planner</button></a>
-
-<%end%>

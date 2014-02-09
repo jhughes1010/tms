@@ -40,15 +40,16 @@ class UserMailer < ActionMailer::Base
   end
   def sas_mail(user_id, sas_id)
     @sa = Sa.find(sas_id)
+    #nothing about the user is in play yet
     @user = User.find(user_id)
     name = @user.fullname
     email = @user.email
     #resolve BP contact info
     @bp_name = "Lori Hughes"
     @bp_email = "lorilynn1988@gmail.com"
-
-    #attachments["rails.png"] = File.read("#{Rails.root}/public/images/rails.png")
-    
     mail(:to => "#{@bp_name} <#{@bp_email}>", :subject => "SAS - report of scrap incident")
+    #open record and mark :sent as true
+    @sa.sent = true
+    @sa.save
   end
 end

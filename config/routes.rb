@@ -55,6 +55,12 @@ TMS::Application.routes.draw do
   get "main/index"
 
   resources :ptos
+  
+  resources :sas_front do
+    member do
+      get 'mail'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

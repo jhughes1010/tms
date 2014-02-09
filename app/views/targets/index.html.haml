@@ -47,7 +47,8 @@
         = raw checkbox(target.cr3)
         %i.icon-search
       %td= link_to 'Show', target,:class =>'btn btn-info'
-      %td= link_to 'Edit', edit_target_path(target),:class =>'btn btn-warning'
-      %td= link_to 'Destroy', target, :confirm => 'Are you sure?', :method => :delete,:class =>'btn btn-danger'
+      %td= link_to raw('<span class="glyphicon glyphicon-edit"></span>'), edit_target_path(target)
+      %td= link_to raw('<span class="glyphicon glyphicon-remove"></span>'), target, :confirm => 'Are you sure?', :method => :delete
+ 	  
 %br/
 = link_to 'New Target', new_target_path, :class =>'btn btn-primary'
