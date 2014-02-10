@@ -1,4 +1,7 @@
-<%= form_for(@sa) do |f| %>
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-11">
+    <%= form_for(@sa) do |f| %>
   <% if @sa.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@sa.errors.count, "error") %> prohibited this sa from being saved:</h2>
@@ -88,4 +91,6 @@
   <div class="actions">
     <%= f.submit "Create SAS" %>
   </div>
+</div>
+</div>
 <% end %>
