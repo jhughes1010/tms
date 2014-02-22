@@ -83,26 +83,30 @@ class ImportController < ApplicationController
   end
   def import_setup(location, path)
     puts location
-    #
-    wire2 = Device.get_family("2W")
-    list = wire2.map {|i| i.name }
-    #
-    wire3 = Device.get_family("3W")
-    list2 = wire3.map {|i| i.name }
-    #
-    spi = Device.get_family("SPI")
-    list3 = spi.map {|i| i.name }
-    #
-    cp = Device.get_family("CP")
-    list4 = cp.map {|i| i.name }
-    #
-    ts = Device.get_family("TS")
-    list5 = ts.map {|i| i.name }
-    #
-    list = list.concat(list2)
-    list = list.concat(list3)
-    list = list.concat(list4)
-    list = list.concat(list5)
+    # device_list = Device.get_family(["2w","3W","SPI","CP","TS"])
+    device_list = Device.get_family(["2w","3W","SPI"])
+    list = device_list.map {|i| i.name }
+    puts list
+    # #
+    # wire2 = Device.get_family("2W")
+    # list = wire2.map {|i| i.name }
+    # #
+    # wire3 = Device.get_family("3W")
+    # list2 = wire3.map {|i| i.name }
+    # #
+    # spi = Device.get_family("SPI")
+    # list3 = spi.map {|i| i.name }
+    # #
+    # cp = Device.get_family("CP")
+    # list4 = cp.map {|i| i.name }
+    # #
+    # ts = Device.get_family("TS")
+    # list5 = ts.map {|i| i.name }
+    # #
+    # list = list.concat(list2)
+    # list = list.concat(list3)
+    # list = list.concat(list4)
+    # list = list.concat(list5)
     file = IO.readlines( path )
     header = 0
     file.each do |f|
