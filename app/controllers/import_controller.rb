@@ -83,30 +83,8 @@ class ImportController < ApplicationController
   end
   def import_setup(location, path)
     puts location
-    # device_list = Device.get_family(["2w","3W","SPI","CP","TS"])
-    device_list = Device.get_family(["2w","3W","SPI"])
+    device_list = Device.get_family(["2w","3W","SPI","CP","TS"])
     list = device_list.map {|i| i.name }
-    puts list
-    # #
-    # wire2 = Device.get_family("2W")
-    # list = wire2.map {|i| i.name }
-    # #
-    # wire3 = Device.get_family("3W")
-    # list2 = wire3.map {|i| i.name }
-    # #
-    # spi = Device.get_family("SPI")
-    # list3 = spi.map {|i| i.name }
-    # #
-    # cp = Device.get_family("CP")
-    # list4 = cp.map {|i| i.name }
-    # #
-    # ts = Device.get_family("TS")
-    # list5 = ts.map {|i| i.name }
-    # #
-    # list = list.concat(list2)
-    # list = list.concat(list3)
-    # list = list.concat(list4)
-    # list = list.concat(list5)
     file = IO.readlines( path )
     header = 0
     file.each do |f|
@@ -123,7 +101,6 @@ class ImportController < ApplicationController
         unless device[0].include? "---"
           unless device[0].include? "***"
             if list.include?(device[0])
-              #puts "#{location}:#{device[0]} #{device[1]} #{record[2]} #{record[10]} #{record[11]} #{record[12]} "
               #write record
               r = Setup.new
               d = Device.find_by_name(device[0])
