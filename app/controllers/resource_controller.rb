@@ -334,7 +334,7 @@ class ResourceController < ApplicationController
     Resource.delete_all
     #import_file = ["import/2011q1.csv", "import/2011q2.csv", "import/2011q3.csv", "import/2011q4.csv", "import/2012q1.csv", "import/2012q2.csv", "import/2012q3.csv", "import/2012q4.csv"]
     #import_file = ["import/2012q2.csv", "import/2012q3.csv"]
-    import_file = ["import/2013q2.csv"]
+    import_file = ["import/2013q4.csv"]
     now = @today
     import_file.each_with_index do |f, index|
       @today = now.months_ago(((import_file.size-1)-index)*3)
@@ -359,12 +359,17 @@ class ResourceController < ApplicationController
   #
   def stack_data(line)
     #puts "==="
-    #puts line[4]
+    #puts line[0].to_i(10)
     #puts "==="
-    unless line[4].nil?
-      line[4].rstrip!
-      write_record(line)
-      update_record(line)
+    unless line[0].nil?
+      unless line[0].to_i(10) == 0
+        line[5].rstrip!
+        if line[6].nil?
+          line[6] = "none"
+        end
+        write_record(line)
+        update_record(line)
+      end
     end
   end
   #
@@ -374,18 +379,18 @@ class ResourceController < ApplicationController
     #puts record
     #write new record to database
     date_start = @today.at_beginning_of_month - 3.months
-    9.upto(26){
+    11.upto(28){
       |x|
       #work through forecast data
       if x < 6
         #+print+ ":Actual   "
       else
         #print ":Forecast "
-        date_current=date_start.months_since(x-9)
+        date_current=date_start.months_since(x-11)
         if record[x].nil?
           record[x]=0
         end
-        new_to_db(date_current,record[0],record[1], record[3],record[4],record[5],record[x])
+        new_to_db(date_current, record[0],record[1], record[3], record[4], record[5], record[6],record[x])
       end
     }
   end
@@ -395,7 +400,7 @@ class ResourceController < ApplicationController
     0.upto(2){
       |m|
       date_current=date_start.months_since(m)
-      find_record_enter_actual(date_current,record[0], record[3],record[4],record[5],record[m+6])
+      find_record_enter_actual(date_current,record[0], record[3],record[5],record[6],record[m+8])
     }
   end
 
@@ -406,7 +411,7 @@ class ResourceController < ApplicationController
   #
   #
   #
-  def new_to_db(date, dept, team, name, project, function, time)
+  def new_to_db(date, dept, team, name, product_line, project, function, time)
     record = Resource.new
     if time.nil?
       time = 0
