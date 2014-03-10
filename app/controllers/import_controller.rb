@@ -83,7 +83,7 @@ class ImportController < ApplicationController
   end
   def import_setup(location, path)
     puts location
-    device_list = Device.get_family(["2w","3W","SPI","CP","TS"])
+    device_list = Device.get_family(["2W","3W","SPI","CP","TS"])
     list = device_list.map {|i| i.name }
     file = IO.readlines( path )
     header = 0
