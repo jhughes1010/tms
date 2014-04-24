@@ -1,6 +1,6 @@
 # app/mailers/user_mailer.rb
 class UserMailer < ActionMailer::Base
-  default :from => "james.hughes@atmel.com"  # , :cc => "jhughes1010@gmail.com, james.hughes@atmel.com"
+  default :from => "memory_bu_tools@atmel.com"  # , :cc => "jhughes1010@gmail.com, james.hughes@atmel.com"
 
 
   def registration_confirmation(user)

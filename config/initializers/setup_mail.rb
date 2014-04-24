@@ -11,8 +11,7 @@
 ActionMailer::Base.smtp_settings = {
   :address => "ussmtp01.corp.atmel.com",
   :port => 25, # default is 25 but you can use also 26
-  :domain => 'atmel.com',
-  :user_name => "mem_bu_tools"
+  :domain => 'atmel.com'
 }
 
 ActionMailer::Base.default_url_options[:host] = "10.95.114.17:3000"
