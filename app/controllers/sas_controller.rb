@@ -24,6 +24,7 @@ class SasController < ApplicationController
   # GET /sas/new
   # GET /sas/new.xml
   def new
+    @entry = params[:entry]
     @sa = Sa.new
 
     respond_to do |format|

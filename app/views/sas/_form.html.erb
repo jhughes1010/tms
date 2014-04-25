@@ -1,3 +1,4 @@
+
     <%= form_for(@sa) do |f| %>
   <% if @sa.errors.any? %>
     <div id="error_explanation">
@@ -12,11 +13,15 @@
   <% end %>
   
   	<%@sa.date = Date.today %>
-
-    <div class="field">
-      <%= f.label :sas_type %><br />
-	  	<%= f.select( :sas_type, %w{Abnormal RMA Obsolete}) %>
-    </div>
+    
+    <% if @entry %>
+        <% @sa.sas_type = @entry %>
+    <% else %>
+        <div class="field">
+            <%= f.label :sas_type %><br />
+	  	    <%= f.select( :sas_type, %w{Abnormal Obsolete}) %>
+        </div>
+    <% end %>
     <div class="field">
       <%= f.label :sent %><br />
 	<%= f.check_box :sent %>
