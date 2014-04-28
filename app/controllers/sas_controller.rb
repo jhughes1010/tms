@@ -26,6 +26,7 @@ class SasController < ApplicationController
   def new
     @entry = params[:entry]
     @sa = Sa.new
+    @mask = Sa.mask_set(@entry)
 
     respond_to do |format|
       format.html # new.html.erb

@@ -13,23 +13,21 @@
   <% end %>
   
   	<%@sa.date = Date.today %>
-    
-    <% if @entry %>
-        <% @sa.sas_type = @entry %>
-    <% else %>
-        <div class="field">
-            <%= f.label :sas_type %><br />
-	  	    <%= f.select( :sas_type, %w{Abnormal Obsolete}) %>
-        </div>
-    <% end %>
+    #decide which fields to make available    
+    <div class="field">
+        <%= f.label :sas_type %><br />
+	    <%= f.select( :sas_type, %w{Abnormal Obsolete}) %>
+    </div>
     <div class="field">
       <%= f.label :sent %><br />
 	<%= f.check_box :sent %>
     </div>
+    <% if @mask[:lot_number] == true%>
   <div class="field">
     <%= f.label :lot_number %><br />
     <%= f.text_field :lot_number %>
   </div>
+  <% end %>
   <div class="field">
     <%= f.label :location %><br />
 	<%= f.select( :location, %w{Probe ATP ASESH ASEK UTL AIC }) %>
