@@ -12,8 +12,7 @@
     </div>
   <% end %>
   
-  	<%@sa.date = Date.today %>
-    #decide which fields to make available    
+  	<%@sa.date = Date.today %>  
     <div class="field">
         <%= f.label :sas_type %><br />
 	    <%= f.select( :sas_type, %w{Abnormal Obsolete}) %>
@@ -23,71 +22,101 @@
 	<%= f.check_box :sent %>
     </div>
     <% if @mask[:lot_number] == true%>
-  <div class="field">
-    <%= f.label :lot_number %><br />
-    <%= f.text_field :lot_number %>
-  </div>
-  <% end %>
-  <div class="field">
-    <%= f.label :location %><br />
-	<%= f.select( :location, %w{Probe ATP ASESH ASEK UTL AIC }) %>
-  </div>
-  <div class="field">
-    <%= f.label :plant %><br />
-    <%= f.text_field :plant %>
-  </div>
+      <div class="field">
+          <%= f.label :lot_number %><br />
+          <%= f.text_field :lot_number %>
+      </div>
+    <% end %>
+    <% if @mask[:location] == true%>
+      <div class="field">
+          <%= f.label :location %><br />
+	      <%= f.select( :location, %w{Probe ATP ASESH ASEK UTL AIC }) %>
+      </div>
+    <% end %>
+    <% if @mask[:plant] == true%>
+      <div class="field">
+          <%= f.label :plant %><br />
+          <%= f.text_field :plant %>
+      </div>
+    <% end %>
+    <% if @mask[:profit_center] == true%>
   <div class="field">
     <%= f.label :profit_center %><br />
     <%= f.text_field :profit_center %>
   </div>
+    <% end %>
+    <% if @mask[:sap_matid] == true%>
   <div class="field">
     <%= f.label :sap_matid %><br />
     <%= f.text_field :sap_matid %>
   </div>
+    <% end %>
+    <% if @mask[:lts_matid] == true%>
   <div class="field">
     <%= f.label :lts_matid %><br />
     <%= f.text_field :lts_matid %>
   </div>
+    <% end %>
+    <% if @mask[:quantity] == true%>
   <div class="field">
     <%= f.label :quantity %><br />
     <%= f.text_field :quantity %>
   </div>
+    <% end %>
+    <% if @mask[:standard_cost] == true%>
   <div class="field">
     <%= f.label :standard_cost %><br />
     <%= f.text_field :standard_cost %>
   </div>
+    <% end %>
+    <% if @mask[:total] == true%>
   <div class="field">
     <%= f.label :total %><br />
     <%= f.text_field :total %>
   </div>
+    <% end %>
+    <% if @mask[:date] == true%>
   <div class="field">
     <%= f.label :date %><br />
     <%= f.text_field :date %>
   </div>
+    <% end %>
+    <% if @mask[:reserve] == true%>
   <div class="field">
     <%= f.label :reserve %><br />
     <%= f.text_field :reserve %>
   </div>
+    <% end %>
+    <% if @mask[:rma] == true%>
   <div class="field">
     <%= f.label :rma %><br />
     <%= f.text_field :rma %>
   </div>
+    <% end %>
+    <% if @mask[:customer_number] == true%>
   <div class="field">
     <%= f.label :customer_number %><br />
     <%= f.text_field :customer_number %>
   </div>
+    <% end %>
+    <% if @mask[:customer_details] == true%>
   <div class="field">
     <%= f.label :customer_details %><br />
     <%= f.text_field :customer_details %>
   </div>
+    <% end %>
+    <% if @mask[:total_std_cost] == true%>
   <div class="field">
     <%= f.label :total_std_cost %><br />
     <%= f.text_field :total_std_cost %>
   </div>
+    <% end %>
+    <% if @mask[:comment] == true%>
   <div class="field">
     <%= f.label :comment %><br />
     <%= f.text_field :comment %>
   </div>
+    <% end %>
   <div class="actions">
     <%= f.submit "Create SAS" %>
   </div>
