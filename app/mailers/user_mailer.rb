@@ -45,8 +45,8 @@ class UserMailer < ActionMailer::Base
     name = @user.fullname
     email = @user.email
     #resolve BP contact info
-    @bp_name = "Lori Hughes"
-    @bp_email = "lorilynn1988@gmail.com"
+    @bp_name = "Atmel Scrap Dist List"
+    @bp_email = "scrap_atmel@cso.atmel.com"
     mail(:to => "#{@bp_name} <#{@bp_email}>", :subject => "SAS - report of scrap incident")
     #open record and mark :sent as true
     @sa.sent = true
