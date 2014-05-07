@@ -52,4 +52,7 @@ class UserMailer < ActionMailer::Base
     @sa.sent = true
     @sa.save
   end
+  def setup_import_complete(recipient)
+    mail(:to => recipient.join(','), :subject => "SETUP - Daily Import Completed") 
+  end 
 end
