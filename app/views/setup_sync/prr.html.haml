@@ -18,15 +18,26 @@
   - if request.post?
     Filtered for 
     = params[:device].upcase
-/%a{"data-toggle" => "tooltip", :href => "#", :title => "Program"} hover over me
 %hr/
 %p
-  - form_tag "/setup_sync/prr?family=#{@family}" do
-    = label_tag 'device'
-    = select_tag(:device,options_from_collection_for_select(@devices,"name","name"))
-    %div= submit_tag 'Run Filter'
-  %table.table.table-hover
+  %table#prr.display{:cellspacing => "10", :width => "100%"}
     %thead
+      %tr
+        %th
+          Probe Setup
+        %th
+          Device
+        %th
+          Tab
+        %th
+          Location
+        %th
+          CP1
+        %th
+          CP2
+        %th
+          CP3
+    %tfoot
       %tr
         %th
           Probe Setup
@@ -62,4 +73,3 @@
           %td
             = raw highlight(s.cp3_match_flag)
             = s.cp3
-        %tr

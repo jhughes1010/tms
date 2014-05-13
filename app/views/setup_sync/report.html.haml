@@ -16,7 +16,7 @@
   Report
 %hr/
 %p
-  %table.table.table-hover
+  %table#prr.display{:cellspacing => "10", :width => "100%"}
     %thead
       %tr
         %th
@@ -57,4 +57,3 @@
           %td
             = raw highlight(s.cp3_match_flag)
             = s.cp3
-        %tr

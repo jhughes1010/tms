@@ -4,92 +4,19 @@
 		<title>
 			Memory BU Tools
 		</title> 
-				<%= stylesheet_link_tag "tms", :media => "all" %>
-				<%= stylesheet_link_tag "reset", :media=>"screen" %>
-				<%= stylesheet_link_tag "custom2", :media=>"screen" %>
+
 				<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript" charset="utf-8">
 		</script> -->
 		<%= csrf_meta_tag %>
 		<%= stylesheet_link_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/ui-lightness/jquery-ui.css", "application" %>
-		<%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" %>
-				<%= javascript_include_tag :defaults %>
-				<%= stylesheet_link_tag "bootstrap.min", :media=>"screen" %>
+		<%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" %>
+        <script src="http://cdn.datatables.net/1.10.0/js/jquery.dataTables.js"> </script>
+			
+        <%= javascript_include_tag :defaults %>
+		<%= stylesheet_link_tag "bootstrap.min", :media=>"screen" %>
+        <link rel="stylesheet" type="text/css" href="http://cdn.datatables.net/1.10.0/css/jquery.dataTables.css">	
 		
 		
-		<!-- Insert of Get image Demo starts here -->		
-	    <script type="text/javascript" src="//canvg.googlecode.com/svn/trunk/rgbcolor.js"></script> 
-	    <script type="text/javascript" src="//canvg.googlecode.com/svn/trunk/canvg.js"></script>
-	    <script>
-	      function getImgData(chartContainer) {
-	        var chartArea = chartContainer.getElementsByTagName('iframe')[0].
-	          contentDocument.getElementById('chartArea');
-	        var svg = chartArea.innerHTML;
-	        var doc = chartContainer.ownerDocument;
-	        var canvas = doc.createElement('canvas');
-	        canvas.setAttribute('width', chartArea.offsetWidth);
-	        canvas.setAttribute('height', chartArea.offsetHeight);
-
-
-	        canvas.setAttribute(
-	            'style',
-	            'position: absolute; ' +
-	            'top: ' + (-chartArea.offsetHeight * 2) + 'px;' +
-	            'left: ' + (-chartArea.offsetWidth * 2) + 'px;');
-	        doc.body.appendChild(canvas);
-	        canvg(canvas, svg);
-	        var imgData = canvas.toDataURL("image/png");
-	        canvas.parentNode.removeChild(canvas);
-	        return imgData;
-	      }
-
-	      function saveAsImg(chartContainer) {
-	        var imgData = getImgData(chartContainer);
-
-	        // Replacing the mime-type will force the browser to trigger a download
-	        // rather than displaying the image in the browser window.
-	        window.location = imgData.replace("image/png", "image/octet-stream");
-	      }
-
-	      function toImg(chartContainer, imgContainer) { 
-	        var doc = chartContainer.ownerDocument;
-	        var img = doc.createElement('img');
-	        img.src = getImgData(chartContainer);
-
-	        while (imgContainer.firstChild) {
-	          imgContainer.removeChild(imgContainer.firstChild);
-	        }
-	        imgContainer.appendChild(img);
-	      }
-	    </script>		
-<!-- Insert of GoogleChart Demo starts here -->		
-     <script type="text/javascript" src="//www.google.com/jsapi"></script>
-     <script type="text/javascript">
-       google.load('visualization', '1', {packages: ['corechart']});
-     </script>
-     <script type="text/javascript">
-       function drawVisualization() {
-		 //Data from controller
-		var js_char_title = '<%= @chart_title%>'
-	    var js_data = <%= @data.to_json.html_safe %>
-         // Some raw data (not necessarily accurate)
-         var data = google.visualization.arrayToDataTable(js_data);
-
-         var options = {
-           title : js_char_title,
-           vAxis: {title: "man-month"},
-           hAxis: {title: "Month"},
-		   vAxis: {maxValue: 2 },	
-           seriesType: "bars",
-		   isStacked: "true",
-           series: {5: {type: "line"}}
-         };
-
-         var chart = new google.visualization.ComboChart(document.getElementById('chart_div2'));
-         chart.draw(data, options);
-       }
-       google.setOnLoadCallback(drawVisualization);
-     </script>
-<!-- End of GoogleChart Demo -->			
 		
 		<link href='/images/favicon.ico' rel='shortcut icon'>
 	</head>
@@ -124,7 +51,6 @@
 		    </ul>
 		  </div><!-- /.navbar-collapse -->
 		</nav>	
-		<script src="javascripts/bootstrap.js"></script>
 		<div class="container-fluid">
             <div class="row">
                 <div class="col-md-1"></div>
