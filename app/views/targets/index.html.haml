@@ -11,44 +11,45 @@
   %a.btn.btn-primary{:button => "", :href => "/setup_sync/report?report=EPRO"} EPRO Entries
   %a.btn.btn-primary{:button => "", :href => "/setup_sync/report?report=RED"} RED Report
   %a.btn.btn-primary{:button => "", :href => "/setup_sync/report?report=x_flow"} X-Flows
-%table.table.table-hover
-  %tr
-    %th Family
-    %th Device
-    %th Tab
-    %th Mag cp1
-    %th Mag cp2
-    %th Mag cp3
-    %th Mag x64 cp1
-    %th Mag x64 cp2
-    %th Mag x64 cp3
-    %th Mav cp1
-    %th Mav cp2
-    %th Mav cp3
-    %th CR3 approved
-    %th
-    %th
-    %th
-  - @targets.each do |target|
+%table#prr.display{:cellspacing => "10", :width => "100%"}
+  %thead
     %tr
-      %td= target.family
-      %td= target.device
-      %td= target.tab
-      %td= target.mag_cp1
-      %td= target.mag_cp2
-      %td= target.mag_cp3
-      %td= target.mag_x64_cp1
-      %td= target.mag_x64_cp2
-      %td= target.mag_x64_cp3
-      %td= target.mav_cp1
-      %td= target.mav_cp2
-      %td= target.mav_cp3
-      %td
-        = raw checkbox(target.cr3)
-        %i.icon-search
-      %td= link_to 'Show', target,:class =>'btn btn-info'
-      %td= link_to raw('<span class="glyphicon glyphicon-edit"></span>'), edit_target_path(target)
-      %td= link_to raw('<span class="glyphicon glyphicon-remove"></span>'), target, :confirm => 'Are you sure?', :method => :delete
- 	  
+      %th Family
+      %th Device
+      %th Tab
+      %th Mag cp1
+      %th Mag cp2
+      %th Mag cp3
+      %th Mag x64 cp1
+      %th Mag x64 cp2
+      %th Mag x64 cp3
+      %th Mav cp1
+      %th Mav cp2
+      %th Mav cp3
+      %th CR3 approved
+      %th
+      %th
+      %th
+  %tbody
+    - @targets.each do |target|
+      %tr
+        %td= target.family
+        %td= target.device
+        %td= target.tab
+        %td= target.mag_cp1
+        %td= target.mag_cp2
+        %td= target.mag_cp3
+        %td= target.mag_x64_cp1
+        %td= target.mag_x64_cp2
+        %td= target.mag_x64_cp3
+        %td= target.mav_cp1
+        %td= target.mav_cp2
+        %td= target.mav_cp3
+        %td
+          = raw checkbox(target.cr3)
+          %i.icon-search
+        %td= link_to 'Show', target,:class =>'btn btn-info'
+        %td= link_to raw('<span class="glyphicon glyphicon-edit"></span>'), edit_target_path(target)
+        %td= link_to raw('<span class="glyphicon glyphicon-remove"></span>'), target, :confirm => 'Are you sure?', :method => :delete
 %br/
 = link_to 'New Target', new_target_path, :class =>'btn btn-primary'
