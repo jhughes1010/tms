@@ -21,5 +21,14 @@ jQuery(document).ready(function() {
   jQuery( "#cost_accordian" ).accordion({ heightStyle: 'content' },{ collapsible: true });
   jQuery( "#tabs" ).tabs({event: "mouseover", heightStyle: "fill" });
   jQuery( "#prr" ).dataTable();
+  
+  jQuery( "#sortable" ).sortable({
+  	axis: 'y',
+        update: function(event, ui){
+          var itm_arr = jQuery("#sortable").sortable('toArray');
+          var pobj = {categories: itm_arr};
+          jQuery.post("/priority/reorder", pobj);
+        }
+      });
 	});
 
