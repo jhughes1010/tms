@@ -1,6 +1,7 @@
 <h1>Listing can_mains</h1>
 
-<table width="95%">
+<table id="prr" class="display" cellspacing="0" width="100%">
+    <thead>
 <tr>
 <th>Can</th>
 <th>Internal</th>
@@ -20,6 +21,8 @@
 <th></th>
 <th></th>
 </tr>
+</thead>
+<tbody>
 
 <% @can_mains.each do |can_main| %>
   <tr>
@@ -44,6 +47,7 @@
   <% end %>
   </tr>
   <% end %>
+</tbody>
   </table>
 
   <br />
