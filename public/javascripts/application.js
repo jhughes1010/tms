@@ -20,7 +20,10 @@ jQuery(document).ready(function() {
   jQuery( "#accordion" ).accordion({ heightStyle: 'content' },{ collapsible: true, active: false });
   jQuery( "#cost_accordian" ).accordion({ heightStyle: 'content' },{ collapsible: true });
   jQuery( "#tabs" ).tabs({event: "mouseover", heightStyle: "fill" });
-  jQuery( "#prr" ).dataTable();
+  jQuery( "#prr" ).dataTable({
+            stateSave: true,
+            stateDuration: -1
+        });
   
   jQuery( "#sortable" ).sortable({
   	axis: 'y',
