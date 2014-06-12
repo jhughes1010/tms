@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :user_id %><br />
-	<%= f.select(:user_id,@assignees) %>
+	<%= f.select(:user_id,@assignees, :selected => session[:user_id]) %>
   </div>
   <div class="field">
     <%= f.label :start %><br />

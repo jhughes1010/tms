@@ -1,30 +1,67 @@
-<h1>Listing ptos</h1>
-
-<table class="table">
-  <tr>
-    <th>User</th>
-    <th>Start</th>
-    <th>End</th>
-    <th>Comments</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @ptos.each do |pto| %>
-  <tr>
-    <td><%= pto.user.fullname %></td>
-    <td><%= pto.start %></td>
-    <td><%= pto.finish %></td>
-    <td><%= pto.comments %></td>
-    <td><%= link_to 'Show', pto,:class =>'btn btn-info' %></td>
-    <td><%= link_to 'Edit', edit_pto_path(pto),:class =>'btn btn-warning' %></td>
-    <td><%= link_to 'Destroy', pto, :confirm => 'Are you sure?', :method => :delete,:class =>'btn btn-danger' %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Pto', new_pto_path %>
-<p><a href="/main/index">TMS Home</a></p>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <h1>
+            PTO Listing
+        </h1>
+        <table cellspacing='10' class='display' id='prr' width='100%'>
+            <thead>
+                <tr>
+                    <th>
+                        User
+                    </th>
+                    <th>
+                        Start
+                    </th>
+                    <th>
+                        End
+                    </th>
+                    <th>
+                        Comments
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @ptos.each do |pto| %>
+                <tr>
+                    <td>
+                        <%= pto.user.fullname %>
+                    </td>
+                    <td>
+                        <%= pto.start %>
+                    </td>
+                    <td>
+                        <%= pto.finish %>
+                    </td>
+                    <td>
+                        <%= pto.comments %>
+                    </td>
+                    <td>
+                        <%= link_to 'Show', pto,:class =>'btn btn-info' %>
+                    </td>
+                    <td>
+                        <%= link_to 'Edit', edit_pto_path(pto),:class =>'btn btn-warning' %>
+                    </td>
+                    <td>
+                        <%= link_to 'Destroy', pto, :confirm => 'Are you sure?', :method => :delete,:class =>'btn btn-danger' %>
+                    </td>
+                </tr><% end %>
+            </tbody>
+        </table>
+        <p>
+            <br>
+        </p>
+        <p>
+            <a href="/main/index">TMS Home</a>
+        </p>
+        <table>
+            <%= link_to 'New Pto', new_pto_path %>
+        </table>
+    </body>
+</html>

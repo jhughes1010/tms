@@ -24,6 +24,8 @@ jQuery(document).ready(function() {
             stateSave: true,
             stateDuration: -1
         });
+        
+  jQuery('table.disp').dataTable();
   
   jQuery( "#sortable" ).sortable({
   	axis: 'y',
