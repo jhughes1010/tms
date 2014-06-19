@@ -1,6 +1,8 @@
 class Task < ActiveRecord::Base
   belongs_to :requester, :class_name=>"User"
   belongs_to :assignee, :class_name=>"User"
+  
+  #after_save :set_priorities
 
   # scope :grouped, group(:assignee_id)
 
@@ -23,4 +25,31 @@ class Task < ActiveRecord::Base
   def self.all_active_manual_sort(id)
     t = self.where("tasks.complete = 'f' AND tasks.assignee_id = ?", id).order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*')
   end
+  
+  def set_priorities
+    #Can I refer to PriorityController
+    #unless @auth == 1
+      @te = User.get_te
+      @tsk = Task.all_active2
+      #Spread out priority numbers
+      @tsk.each_pair do |assignee_id, tasks|
+        priority=0
+        ##first_record_flag = 1
+        #get scd and duration for first entry for date completion estimates
+        date_complete = Date.today
+        tasks.each do |t|
+          #update record
+          t.duration = 0 if t.duration.nil?
+          duration = t.duration*7
+          t.scd = date_complete.next_day( duration )
+          t.priority=priority
+          t.save
+          #update variables for next record
+          date_complete = t.scd
+          priority = t.priority
+          priority +=1
+        end
+      end
+    end
+    #end
 end

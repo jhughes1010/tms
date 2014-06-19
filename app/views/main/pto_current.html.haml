@@ -29,10 +29,10 @@
         %td
           = pto.user.fullname
         %td
-          = pto.start.to_s(:short)
+          = pto.start
         %td
           - if(pto.finish != pto.start)
-            = pto.finish.to_s(:short)
+            = pto.finish
         %td
           = pto.comments
 %br/

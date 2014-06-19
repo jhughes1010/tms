@@ -25,7 +25,9 @@ jQuery(document).ready(function() {
             stateDuration: -1
         });
         
-  jQuery('table.disp').dataTable();
+  jQuery('table.disp').dataTable({
+          order: [[ 4, "asc" ]]
+      });
   
   jQuery( "#sortable" ).sortable({
   	axis: 'y',

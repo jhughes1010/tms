@@ -13,7 +13,12 @@
 
   <div class="field">
     <%= f.label :user_id %><br />
+    <% if @auth == 2 %>
+	<%= f.select(:user_id,@assignees ) %>
+    <% else %>
 	<%= f.select(:user_id,@assignees, :selected => session[:user_id]) %>
+    <% end %>
+
   </div>
   <div class="field">
     <%= f.label :start %><br />
