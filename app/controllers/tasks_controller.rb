@@ -50,6 +50,22 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
+  # GET /tasks/1/duplicate
+  def duplicate
+    #@auth = session[:user_auth]
+    #@requesters=User.requester_list
+    #@assignees=User.assignee_list
+    task = Task.find(params[:id])
+    copy = task.dup
+    copy.id = nil
+    copy.save
+    
+    #deliver the mail
+    UserMailer.task_entry_confirmation(session[:user_id],copy).deliver
+    UserMailer.task_entry_confirmation(1,copy).deliver
+    
+  end
+
   # POST /tasks
   # POST /tasks.xml
   def create

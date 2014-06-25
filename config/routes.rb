@@ -62,6 +62,11 @@ TMS::Application.routes.draw do
     end
   end
 
+  resources :tasks do
+    member do
+      get 'duplicate'
+    end
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
