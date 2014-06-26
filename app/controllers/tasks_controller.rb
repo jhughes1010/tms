@@ -5,7 +5,6 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.xml
   def index
-    #@tasks = Task.all
     @tasks = Task.all_active
 
     respond_to do |format|
@@ -17,7 +16,6 @@ class TasksController < ApplicationController
   # GET /tasks/1
   # GET /tasks/1.xml
   def show
-    #@auth = session[:user_auth]
     @task = Task.find(params[:id])
 
     respond_to do |format|
@@ -29,9 +27,6 @@ class TasksController < ApplicationController
   # GET /tasks/new
   # GET /tasks/new.xml
   def new
-    #@full_name=session[:user_fullname]
-    #@user_id=session[:user_id]
-    #@auth=session[:user_auth]
     @requesters=User.requester_list
     @assignees=User.assignee_list
     @task = Task.new
@@ -44,17 +39,17 @@ class TasksController < ApplicationController
 
   # GET /tasks/1/edit
   def edit
-    #@auth = session[:user_auth]
     @requesters=User.requester_list
     @assignees=User.assignee_list
     @task = Task.find(params[:id])
+
+    #deliver the mail
+    UserMailer.task_edit_confirmation(session[:user_id],@task).deliver
+    UserMailer.task_edit_confirmation(1,@task).deliver
   end
 
   # GET /tasks/1/duplicate
   def duplicate
-    #@auth = session[:user_auth]
-    #@requesters=User.requester_list
-    #@assignees=User.assignee_list
     task = Task.find(params[:id])
     copy = task.dup
     copy.id = nil
@@ -62,14 +57,12 @@ class TasksController < ApplicationController
     
     #deliver the mail
     UserMailer.task_entry_confirmation(session[:user_id],copy).deliver
-    UserMailer.task_entry_confirmation(1,copy).deliver
-    
+    UserMailer.task_entry_confirmation(1,copy).deliver    
   end
 
   # POST /tasks
   # POST /tasks.xml
   def create
-    #@full_name=session[:user_fullname]
     @task = Task.new(params[:task])
 
     respond_to do |format|

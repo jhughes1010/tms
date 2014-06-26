@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Class: ImportController</title>
+
+  <link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+  <script src="./js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="./app/controllers/import_controller_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="app/controllers/import_controller.rb">app/controllers/import_controller.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="ApplicationController.html">ApplicationController</a></p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-clear">#clear</a></li>
+          
+          <li><a href="#method-i-device">#device</a></li>
+          
+          <li><a href="#method-i-format_date">#format_date</a></li>
+          
+          <li><a href="#method-i-import_device">#import_device</a></li>
+          
+          <li><a href="#method-i-import_setup">#import_setup</a></li>
+          
+          <li><a href="#method-i-new_to_costing_db">#new_to_costing_db</a></li>
+          
+          <li><a href="#method-i-npi">#npi</a></li>
+          
+          <li><a href="#method-i-setup">#setup</a></li>
+          
+          <li><a href="#method-i-write_csv_data">#write_csv_data</a></li>
+          
+          <li><a href="#method-i-write_csv_data_device">#write_csv_data_device</a></li>
+          
+          <li><a href="#method-i-write_csv_data_setup">#write_csv_data_setup</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="./doc/README_FOR_APP.html">README_FOR_APP</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="./AdminController.html">AdminController</a></li>
+        
+          <li><a href="./AdminHelper.html">AdminHelper</a></li>
+        
+          <li><a href="./ApplicationController.html">ApplicationController</a></li>
+        
+          <li><a href="./ApplicationHelper.html">ApplicationHelper</a></li>
+        
+          <li><a href="./CanController.html">CanController</a></li>
+        
+          <li><a href="./CanHelper.html">CanHelper</a></li>
+        
+          <li><a href="./CanMain.html">CanMain</a></li>
+        
+          <li><a href="./CanMainsController.html">CanMainsController</a></li>
+        
+          <li><a href="./CanMainsHelper.html">CanMainsHelper</a></li>
+        
+          <li><a href="./CanSub.html">CanSub</a></li>
+        
+          <li><a href="./CanSubsController.html">CanSubsController</a></li>
+        
+          <li><a href="./CanSubsHelper.html">CanSubsHelper</a></li>
+        
+          <li><a href="./CostController.html">CostController</a></li>
+        
+          <li><a href="./CostHelper.html">CostHelper</a></li>
+        
+          <li><a href="./Costing.html">Costing</a></li>
+        
+          <li><a href="./CostingsController.html">CostingsController</a></li>
+        
+          <li><a href="./CostingsHelper.html">CostingsHelper</a></li>
+        
+          <li><a href="./Device.html">Device</a></li>
+        
+          <li><a href="./DevicesController.html">DevicesController</a></li>
+        
+          <li><a href="./DevicesHelper.html">DevicesHelper</a></li>
+        
+          <li><a href="./DynamicDelegator.html">DynamicDelegator</a></li>
+        
+          <li><a href="./Finnance.html">Finnance</a></li>
+        
+          <li><a href="./Hello.html">Hello</a></li>
+        
+          <li><a href="./ImportController.html">ImportController</a></li>
+        
+          <li><a href="./ImportHelper.html">ImportHelper</a></li>
+        
+          <li><a href="./ImportResourceController.html">ImportResourceController</a></li>
+        
+          <li><a href="./ImportResourceHelper.html">ImportResourceHelper</a></li>
+        
+          <li><a href="./MainController.html">MainController</a></li>
+        
+          <li><a href="./MainHelper.html">MainHelper</a></li>
+        
+          <li><a href="./PomodoroController.html">PomodoroController</a></li>
+        
+          <li><a href="./PomodoroHelper.html">PomodoroHelper</a></li>
+        
+          <li><a href="./PriorityController.html">PriorityController</a></li>
+        
+          <li><a href="./PriorityHelper.html">PriorityHelper</a></li>
+        
+          <li><a href="./Project.html">Project</a></li>
+        
+          <li><a href="./ProjectsController.html">ProjectsController</a></li>
+        
+          <li><a href="./ProjectsHelper.html">ProjectsHelper</a></li>
+        
+          <li><a href="./Pto.html">Pto</a></li>
+        
+          <li><a href="./PtosController.html">PtosController</a></li>
+        
+          <li><a href="./PtosHelper.html">PtosHelper</a></li>
+        
+          <li><a href="./Resource.html">Resource</a></li>
+        
+          <li><a href="./ResourceController.html">ResourceController</a></li>
+        
+          <li><a href="./ResourceHelper.html">ResourceHelper</a></li>
+        
+          <li><a href="./ResourcesController.html">ResourcesController</a></li>
+        
+          <li><a href="./ResourcesHelper.html">ResourcesHelper</a></li>
+        
+          <li><a href="./Sa.html">Sa</a></li>
+        
+          <li><a href="./SasController.html">SasController</a></li>
+        
+          <li><a href="./SasFrontController.html">SasFrontController</a></li>
+        
+          <li><a href="./SasFrontHelper.html">SasFrontHelper</a></li>
+        
+          <li><a href="./SasHelper.html">SasHelper</a></li>
+        
+          <li><a href="./Setup.html">Setup</a></li>
+        
+          <li><a href="./SetupSyncController.html">SetupSyncController</a></li>
+        
+          <li><a href="./SetupSyncHelper.html">SetupSyncHelper</a></li>
+        
+          <li><a href="./SetupTester.html">SetupTester</a></li>
+        
+          <li><a href="./SetupsController.html">SetupsController</a></li>
+        
+          <li><a href="./SetupsHelper.html">SetupsHelper</a></li>
+        
+          <li><a href="./Target.html">Target</a></li>
+        
+          <li><a href="./TargetsController.html">TargetsController</a></li>
+        
+          <li><a href="./TargetsHelper.html">TargetsHelper</a></li>
+        
+          <li><a href="./Task.html">Task</a></li>
+        
+          <li><a href="./TasksController.html">TasksController</a></li>
+        
+          <li><a href="./TasksHelper.html">TasksHelper</a></li>
+        
+          <li><a href="./TestProg.html">TestProg</a></li>
+        
+          <li><a href="./TestProgsController.html">TestProgsController</a></li>
+        
+          <li><a href="./TestProgsHelper.html">TestProgsHelper</a></li>
+        
+          <li><a href="./User.html">User</a></li>
+        
+          <li><a href="./UserMailer.html">UserMailer</a></li>
+        
+          <li><a href="./UsersController.html">UsersController</a></li>
+        
+          <li><a href="./UsersHelper.html">UsersHelper</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">ImportController</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="clear-method" class="method-detail ">
+          <a name="method-i-clear"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">clear</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="clear-source">
+<pre>
+<span class="ruby-comment"># File app/controllers/import_controller.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">clear</span>
+  <span class="ruby-constant">Costing</span>.<span class="ruby-identifier">delete_all</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- clear-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- clear-method -->
+
+      
+        <div id="device-method" class="method-detail ">
+          <a name="method-i-device"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">device</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="device-source">
+<pre>
+<span class="ruby-comment"># File app/controllers/import_controller.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">device</span>
+  <span class="ruby-identifier">puts</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;=============================================&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;CSV importer for ProberVision_setup.txt database&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;setup.txt List Import tool&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;=============================================&quot;</span>
+  <span class="ruby-constant">Device</span>.<span class="ruby-identifier">delete_all</span>
+  <span class="ruby-identifier">import_device</span>(<span class="ruby-string">&quot;2W&quot;</span>,<span class="ruby-string">&quot;import/2wire.txt&quot;</span>)
+  <span class="ruby-identifier">import_device</span>(<span class="ruby-string">&quot;3W&quot;</span>,<span class="ruby-string">&quot;import/3wire.txt&quot;</span>)
+  <span class="ruby-identifier">import_device</span>(<span class="ruby-string">&quot;SPI&quot;</span>,<span class="ruby-string">&quot;import/spi.txt&quot;</span>)
+  <span class="ruby-identifier">import_device</span>(<span class="ruby-string">&quot;CP&quot;</span>,<span class="ruby-string">&quot;import/CP.txt&quot;</span>)
+  <span class="ruby-identifier">import_device</span>(<span class="ruby-string">&quot;TS&quot;</span>,<span class="ruby-string">&quot;import/TS.txt&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- device-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- device-method -->
+
+      
+        <div id="format_date-method" class="method-detail ">
+          <a name="method-i-format_date"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">format_date</span><span
+              class="method-args">(date)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="format_date-source">
+<pre>
+<span class="ruby-comment"># File app/controllers/import_controller.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">format_date</span>(<span class="ruby-identifier">date</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">date</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">date</span> = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">strptime</span>(<span class="ruby-identifier">date</span>, <span class="ruby-string">&quot;%m/%d/%Y&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">date</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">date</span> = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>.<span class="ruby-identifier">next_year</span>(<span class="ruby-value">10</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Imported Date:&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">date</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">date</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- format_date-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- format_date-method -->
+
+      
+        <div id="import_device-method" class="method-detail ">
+          <a name="method-i-import_device"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">import_device</span><span
+              class="method-args">(family, path)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="import_device-source">
+<pre>
+<span class="ruby-comment"># File app/controllers/import_controller.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">import_device</span>(<span class="ruby-identifier">family</span>, <span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">family</span>
+  <span class="ruby-identifier">file</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">readlines</span>( <span class="ruby-identifier">path</span> )
+  <span class="ruby-identifier">file</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">write_csv_data_device</span>( <span class="ruby-identifier">f</span>, <span class="ruby-identifier">family</span> )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- import_device-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- import_device-method -->
+
+      
+        <div id="import_setup-method" class="method-detail ">
+          <a name="method-i-import_setup"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">import_setup</span><span
+              class="method-args">(location, path)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="import_setup-source">
+<pre>
+<span class="ruby-comment"># File app/controllers/import_controller.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">import_setup</span>(<span class="ruby-identifier">location</span>, <span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">location</span>
+  <span class="ruby-identifier">device_list</span> = <span class="ruby-constant">Device</span>.<span class="ruby-identifier">get_family</span>([<span class="ruby-string">&quot;2W&quot;</span>,<span class="ruby-string">&quot;3W&quot;</span>,<span class="ruby-string">&quot;SPI&quot;</span>,<span class="ruby-string">&quot;CP&quot;</span>,<span class="ruby-string">&quot;TS&quot;</span>])
+  <span class="ruby-identifier">list</span> = <span class="ruby-identifier">device_list</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">name</span> }
+  <span class="ruby-identifier">file</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">readlines</span>( <span class="ruby-identifier">path</span> )
+  <span class="ruby-identifier">header</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">file</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">write_csv_data_setup</span>( <span class="ruby-identifier">f</span>, <span class="ruby-identifier">location</span>, <span class="ruby-identifier">list</span> ) <span class="ruby-keyword">if</span> <span class="ruby-identifier">header</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">header</span> = <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- import_setup-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- import_setup-method -->
+
+      
+        <div id="new_to_costing_db-method" class="method-detail ">
+          <a name="method-i-new_to_costing_db"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">new_to_costing_db</span><span
+              class="method-args">(record, column_array)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="new_to_costing_db-source">
+<pre>
+<span class="ruby-comment"># File app/controllers/import_controller.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new_to_costing_db</span>(<span class="ruby-identifier">record</span>, <span class="ruby-identifier">column_array</span>)
+  <span class="ruby-comment">#create new record and write data fields</span>
+  <span class="ruby-identifier">r</span> = <span class="ruby-constant">Project</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">key</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">project</span> = <span class="ruby-identifier">record</span>[<span class="ruby-identifier">column_array</span>[<span class="ruby-value">3</span>]]
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">long_name</span> = <span class="ruby-identifier">record</span>[<span class="ruby-identifier">column_array</span>[<span class="ruby-value">0</span>]]
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">dr1</span> = <span class="ruby-identifier">format_date</span>(<span class="ruby-identifier">record</span>[<span class="ruby-identifier">column_array</span>[<span class="ruby-value">9</span>]])
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">dr2</span> = <span class="ruby-identifier">format_date</span>(<span class="ruby-identifier">record</span>[<span class="ruby-identifier">column_array</span>[<span class="ruby-value">11</span>]])
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">dr3</span> = <span class="ruby-identifier">format_date</span>(<span class="ruby-identifier">record</span>[<span class="ruby-identifier">column_array</span>[<span class="ruby-value">12</span>]])
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">dr4</span> = <span class="ruby-identifier">format_date</span>(<span class="ruby-identifier">record</span>[<span class="ruby-identifier">column_array</span>[<span class="ruby-value">13</span>]])
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">dr5</span> = <span class="ruby-identifier">format_date</span>(<span class="ruby-identifier">record</span>[<span class="ruby-identifier">column_array</span>[<span class="ruby-value">14</span>]])
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">record</span>[<span class="ruby-identifier">column_array</span>[<span class="ruby-value">0</span>]][<span class="ruby-string">&quot;_SE_&quot;</span>]
+    <span class="ruby-identifier">r</span>.<span class="ruby-identifier">owner</span> = <span class="ruby-string">&quot;Serial&quot;</span>
+  <span class="ruby-keyword">elsif</span>
+    <span class="ruby-identifier">record</span>[<span class="ruby-identifier">column_array</span>[<span class="ruby-value">0</span>]][<span class="ruby-string">&quot;_CP_&quot;</span>]
+    <span class="ruby-identifier">r</span>.<span class="ruby-identifier">owner</span> = <span class="ruby-string">&quot;Crypto&quot;</span>
+  <span class="ruby-keyword">elsif</span>
+    <span class="ruby-identifier">record</span>[<span class="ruby-identifier">column_array</span>[<span class="ruby-value">0</span>]][<span class="ruby-string">&quot;_DF_&quot;</span>]
+    <span class="ruby-identifier">r</span>.<span class="ruby-identifier">owner</span> = <span class="ruby-string">&quot;DataFlash&quot;</span>
+  <span class="ruby-keyword">elsif</span>
+    <span class="ruby-identifier">record</span>[<span class="ruby-identifier">column_array</span>[<span class="ruby-value">0</span>]][<span class="ruby-string">&quot;_BF_&quot;</span>]
+    <span class="ruby-identifier">r</span>.<span class="ruby-identifier">owner</span> = <span class="ruby-string">&quot;BIOSFlash&quot;</span>
+  <span class="ruby-keyword">elsif</span>
+    <span class="ruby-identifier">record</span>[<span class="ruby-identifier">column_array</span>[<span class="ruby-value">0</span>]][<span class="ruby-string">&quot;_AP_&quot;</span>]
+    <span class="ruby-identifier">r</span>.<span class="ruby-identifier">owner</span> = <span class="ruby-string">&quot;Analog&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- new_to_costing_db-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- new_to_costing_db-method -->
+
+      
+        <div id="npi-method" class="method-detail ">
+          <a name="method-i-npi"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">npi</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="npi-source">
+<pre>
+<span class="ruby-comment"># File app/controllers/import_controller.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">npi</span>
+  <span class="ruby-comment">#initial variables</span>
+  <span class="ruby-identifier">header</span> = <span class="ruby-value">0</span>
+  <span class="ruby-comment">#filenames</span>
+  <span class="ruby-identifier">import_file</span> = <span class="ruby-string">&quot;import/2013Q4_KeyProjects.csv&quot;</span>
+  <span class="ruby-identifier">puts</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;=============================================&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;CSV importer for Costing database&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Costing List Import tool&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;=============================================&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">import_file</span>
+  <span class="ruby-constant">Project</span>.<span class="ruby-identifier">delete_all</span>
+  <span class="ruby-identifier">arr_of_arrs</span> = <span class="ruby-constant">CSV</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">import_file</span>)
+  <span class="ruby-identifier">arr_of_arrs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">write_csv_data</span>(<span class="ruby-identifier">x</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">header</span> <span class="ruby-operator">&gt;=</span><span class="ruby-value">1</span>
+    <span class="ruby-identifier">header</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- npi-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- npi-method -->
+
+      
+        <div id="setup-method" class="method-detail ">
+          <a name="method-i-setup"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">setup</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="setup-source">
+<pre>
+<span class="ruby-comment"># File app/controllers/import_controller.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setup</span>
+  <span class="ruby-identifier">puts</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;=============================================&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;CSV importer for ProberVision_setup.txt database&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;setup.txt List Import tool&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;=============================================&quot;</span>
+  <span class="ruby-constant">Setup</span>.<span class="ruby-identifier">delete_all</span>
+  <span class="ruby-identifier">import_setup</span>(<span class="ruby-string">&quot;ACP&quot;</span>,<span class="ruby-string">&quot;import/pv_acp.txt&quot;</span>)
+  <span class="ruby-identifier">import_setup</span>(<span class="ruby-string">&quot;MEMP&quot;</span>,<span class="ruby-string">&quot;import/pv_memp.txt&quot;</span>)
+  <span class="ruby-constant">UserMailer</span>.<span class="ruby-identifier">setup_import_complete</span>([<span class="ruby-string">'james.hughes@atmel.com'</span>,<span class="ruby-string">'mark.chabica@atmel.com'</span>]).<span class="ruby-identifier">deliver</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- setup-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- setup-method -->
+
+      
+        <div id="write_csv_data-method" class="method-detail ">
+          <a name="method-i-write_csv_data"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">write_csv_data</span><span
+              class="method-args">(record)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="write_csv_data-source">
+<pre>
+<span class="ruby-comment"># File app/controllers/import_controller.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">write_csv_data</span>(<span class="ruby-identifier">record</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">record</span>[<span class="ruby-value">5</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Current Plan&quot;</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">record</span>
+    <span class="ruby-identifier">column_array</span>= [<span class="ruby-value">0</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>,<span class="ruby-value">4</span>,<span class="ruby-value">5</span>,<span class="ruby-value">6</span>,<span class="ruby-value">7</span>,<span class="ruby-value">8</span>,<span class="ruby-value">9</span>,<span class="ruby-value">10</span>,<span class="ruby-value">11</span>,<span class="ruby-value">12</span>,<span class="ruby-value">13</span>,<span class="ruby-value">14</span>]
+    <span class="ruby-identifier">new_to_costing_db</span>(<span class="ruby-identifier">record</span>, <span class="ruby-identifier">column_array</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- write_csv_data-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- write_csv_data-method -->
+
+      
+        <div id="write_csv_data_device-method" class="method-detail ">
+          <a name="method-i-write_csv_data_device"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">write_csv_data_device</span><span
+              class="method-args">(line, family )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="write_csv_data_device-source">
+<pre>
+<span class="ruby-comment"># File app/controllers/import_controller.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">write_csv_data_device</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">family</span> )
+  <span class="ruby-comment">#Split line into individual components</span>
+  <span class="ruby-identifier">record</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">strip</span>()
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">record</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-comment">#puts &quot;#{family}:#{record}&quot;</span>
+    <span class="ruby-comment">#write record</span>
+    <span class="ruby-identifier">r</span> = <span class="ruby-constant">Device</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">r</span>.<span class="ruby-identifier">productline</span> = <span class="ruby-identifier">family</span>
+    <span class="ruby-identifier">r</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">record</span>
+    <span class="ruby-identifier">r</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- write_csv_data_device-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- write_csv_data_device-method -->
+
+      
+        <div id="write_csv_data_setup-method" class="method-detail ">
+          <a name="method-i-write_csv_data_setup"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">write_csv_data_setup</span><span
+              class="method-args">(line, location, list )</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="write_csv_data_setup-source">
+<pre>
+<span class="ruby-comment"># File app/controllers/import_controller.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">write_csv_data_setup</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">location</span>, <span class="ruby-identifier">list</span> )
+  <span class="ruby-comment">#Split line into individual components</span>
+  <span class="ruby-identifier">record</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>()
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">record</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">record</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">device</span> = <span class="ruby-identifier">record</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">'_'</span>)
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">device</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">include?</span> <span class="ruby-string">&quot;---&quot;</span>
+        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">device</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">include?</span> <span class="ruby-string">&quot;***&quot;</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">device</span>[<span class="ruby-value">0</span>])
+            <span class="ruby-comment">#write record</span>
+            <span class="ruby-identifier">r</span> = <span class="ruby-constant">Setup</span>.<span class="ruby-identifier">new</span>
+            <span class="ruby-identifier">d</span> = <span class="ruby-constant">Device</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-identifier">device</span>[<span class="ruby-value">0</span>])
+            <span class="ruby-identifier">r</span>.<span class="ruby-identifier">family</span> = <span class="ruby-identifier">d</span>.<span class="ruby-identifier">productline</span>
+            <span class="ruby-identifier">r</span>.<span class="ruby-identifier">location</span> = <span class="ruby-identifier">location</span>
+            <span class="ruby-identifier">r</span>.<span class="ruby-identifier">device</span> = <span class="ruby-identifier">device</span>[<span class="ruby-value">0</span>]
+            <span class="ruby-identifier">r</span>.<span class="ruby-identifier">tab</span> = <span class="ruby-identifier">device</span>[<span class="ruby-value">1</span>]
+            <span class="ruby-identifier">r</span>.<span class="ruby-identifier">platform</span> = <span class="ruby-identifier">record</span>[<span class="ruby-value">2</span>]
+              <span class="ruby-keyword">if</span> <span class="ruby-identifier">record</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;HD&quot;</span>)
+                <span class="ruby-identifier">r</span>.<span class="ruby-identifier">vendor</span> =<span class="ruby-string">&quot;MAG&quot;</span>
+              <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">record</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;EPRO&quot;</span>)
+                <span class="ruby-identifier">r</span>.<span class="ruby-identifier">vendor</span> =<span class="ruby-string">&quot;EPRO&quot;</span>
+              <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">r</span>.<span class="ruby-identifier">vendor</span> =<span class="ruby-string">&quot;MAV&quot;</span>
+              <span class="ruby-keyword">end</span>
+            <span class="ruby-identifier">r</span>.<span class="ruby-identifier">parallelism</span> = <span class="ruby-identifier">record</span>[<span class="ruby-value">6</span>].<span class="ruby-identifier">downcase</span>
+            <span class="ruby-comment">#uppercase</span>
+            <span class="ruby-identifier">record</span>[<span class="ruby-value">10</span>] = <span class="ruby-identifier">record</span>[<span class="ruby-value">10</span>].<span class="ruby-identifier">upcase</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">record</span>[<span class="ruby-value">10</span>].<span class="ruby-identifier">nil?</span>
+            <span class="ruby-identifier">record</span>[<span class="ruby-value">11</span>] = <span class="ruby-identifier">record</span>[<span class="ruby-value">11</span>].<span class="ruby-identifier">upcase</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">record</span>[<span class="ruby-value">11</span>].<span class="ruby-identifier">nil?</span>
+            <span class="ruby-identifier">record</span>[<span class="ruby-value">12</span>] = <span class="ruby-identifier">record</span>[<span class="ruby-value">12</span>].<span class="ruby-identifier">upcase</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">record</span>[<span class="ruby-value">12</span>].<span class="ruby-identifier">nil?</span>
+            <span class="ruby-keyword">unless</span> <span class="ruby-identifier">record</span>[<span class="ruby-value">10</span>].<span class="ruby-identifier">nil?</span>
+              <span class="ruby-identifier">record</span>[<span class="ruby-value">10</span>] = <span class="ruby-identifier">record</span>[<span class="ruby-value">10</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;.ZIP&quot;</span>)[<span class="ruby-value">0</span>]
+              <span class="ruby-comment">#record[10] = temp[0]</span>
+            <span class="ruby-keyword">end</span>
+            <span class="ruby-identifier">r</span>.<span class="ruby-identifier">cp1</span> = <span class="ruby-identifier">record</span>[<span class="ruby-value">10</span>]
+            <span class="ruby-keyword">unless</span> <span class="ruby-identifier">record</span>[<span class="ruby-value">11</span>].<span class="ruby-identifier">nil?</span>
+              <span class="ruby-identifier">record</span>[<span class="ruby-value">11</span>] = <span class="ruby-identifier">record</span>[<span class="ruby-value">11</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;.ZIP&quot;</span>)[<span class="ruby-value">0</span>]
+              <span class="ruby-identifier">record</span>[<span class="ruby-value">11</span>] = <span class="ruby-identifier">record</span>[<span class="ruby-value">10</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">record</span>[<span class="ruby-value">11</span>].<span class="ruby-identifier">include?</span> <span class="ruby-string">&quot;SAME&quot;</span>
+            <span class="ruby-keyword">end</span>
+            <span class="ruby-identifier">r</span>.<span class="ruby-identifier">cp2</span> = <span class="ruby-identifier">record</span>[<span class="ruby-value">11</span>]
+            <span class="ruby-keyword">unless</span> <span class="ruby-identifier">record</span>[<span class="ruby-value">12</span>].<span class="ruby-identifier">nil?</span>
+              <span class="ruby-identifier">record</span>[<span class="ruby-value">12</span>] = <span class="ruby-identifier">record</span>[<span class="ruby-value">12</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;.ZIP&quot;</span>)[<span class="ruby-value">0</span>]
+              <span class="ruby-identifier">record</span>[<span class="ruby-value">12</span>] = <span class="ruby-identifier">record</span>[<span class="ruby-value">11</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">record</span>[<span class="ruby-value">12</span>].<span class="ruby-identifier">include?</span> <span class="ruby-string">&quot;SAME&quot;</span>
+            <span class="ruby-keyword">end</span>
+            <span class="ruby-identifier">r</span>.<span class="ruby-identifier">cp3</span> = <span class="ruby-identifier">record</span>[<span class="ruby-value">12</span>]
+            <span class="ruby-identifier">r</span>.<span class="ruby-identifier">save</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- write_csv_data_setup-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- write_csv_data_setup-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

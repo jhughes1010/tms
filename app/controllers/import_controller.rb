@@ -176,9 +176,5 @@ class ImportController < ApplicationController
       r.name = record
       r.save
     end
-    #end
-
-    #end
-    #end
   end
 end

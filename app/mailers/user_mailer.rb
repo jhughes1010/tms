@@ -13,10 +13,14 @@ class UserMailer < ActionMailer::Base
     @user = User.find(user_id)
     name = @user.fullname
     email = @user.email
-    #name="James Hughes"
-    #email="james.hughes@atmel.com"**
-    #attachments["rails.png"] = File.read("#{Rails.root}/public/images/rails.png")
     mail(:to => "#{name} <#{email}>", :subject => "TMS - New Task Entry Confirmation")
+  end
+  def task_edit_confirmation(user_id, task)
+    @task = task
+    @user = User.find(user_id)
+    name = @user.fullname
+    email = @user.email
+    mail(:to => "#{name} <#{email}>", :subject => "TMS - Task Edit Confirmation")
   end
   def pto_entry_confirmation(user_id, regarding_id, pto)
     @pto = pto

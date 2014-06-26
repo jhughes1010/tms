@@ -63,9 +63,9 @@
             
 
 		     
-				<%if flash[:notice] -%>
+				<%if flash[:notice] %>
 				<div id="notice">
-					<%=flash[:notice] %>
+					<%= flash[:notice] %>
 				</div>
 				<%end %>
 				<%= yield :layout %>

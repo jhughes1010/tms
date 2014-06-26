@@ -73,4 +73,5 @@
 	<p>This task was entered into TMS on <%=@task.created_at.to_date.to_s(:long) %>
 		</p>
 	<%= link_to 'Edit', edit_task_path(@task) %>
+    |
 	<%= link_to 'Back', tasks_path %>
