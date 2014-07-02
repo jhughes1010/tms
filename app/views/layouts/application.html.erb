@@ -13,7 +13,7 @@
 		<%= csrf_meta_tag %>
 		<%= stylesheet_link_tag "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/ui-lightness/jquery-ui.css", "application" %>
 		<%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" %>
--		<%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" %>
+		<%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js", "//ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js" %>
         <script src="http://cdn.datatables.net/1.10.0/js/jquery.dataTables.js"> </script>
         <%= javascript_include_tag :defaults %>
 		<%= stylesheet_link_tag "bootstrap.min", :media=>"screen" %>
@@ -43,7 +43,7 @@
 				<li class="<%= 'active' if params[:controller] == 'admin' %>" ><a href="/main/index">Home</a></li>
 	            <li class="<%= 'active' if params[:controller] == 'main' %>" ><a href="/main/project_active">TMS</a></li> 
 	            <li class="<%= 'active' if params[:controller] == 'sas' %>" ><a href="/sas_front/">SAS</a></li>
-	            <li class="<%= 'active' if params[:controller] == 'resource' %>" ><a href="/resource/key_projects">Resource Allocations</a></li>
+	            <!-- <li class="<%= 'active' if params[:controller] == 'resource' %>" ><a href="/resource/key_projects">Resource Allocations</a></li> -->
 			    <li class="<%= 'active' if params[:controller] == 'can_mains' %>" ><a href="/can_mains">CAN Db</a></li>
 			    <li class="<%= 'active' if params[:controller] == 'test_progs' %>" ><a href="/test_progs">Test Prog</a></li>
 			    <li class="<%= 'active' if params[:controller] == 'setup_sync' %>" ><a href="/setup_sync">SETUP</a></li>
@@ -52,7 +52,7 @@
 		    </ul>
 
 		    <ul class="nav navbar-nav navbar-right">
-		      <li>Logged in as <a href="#"><username><%=@full_name%></a></li>
+		      <li>Logged in as <%= @full_name%></li>
 		    </ul>
 		  </div><!-- /.navbar-collapse -->
 		</nav>	
@@ -60,23 +60,17 @@
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-11">
-            
-
-		     
-				<%if flash[:notice] %>
-				<div id="notice">
-					<%= flash[:notice] %>
-				</div>
-				<%end %>
-				<%= yield :layout %>
-		    
-
-		      <footer>
-		        <p>&copy; Atmel 2014</p>
-		      </footer>
-          </div>
+				  <%if flash[:notice] %>
+				    <div id="notice">
+					  <%= flash[:notice] %>
+				    </div>
+				  <%end %>
+				  <%= yield :layout %>
+		        <footer>
+		          <p>&copy; Atmel 2014</p>
+		        </footer>
+                </div>
+            </div>
 	    </div>
-	</div>
-
 	</body>
 </html>
