@@ -1,0 +1,109 @@
+<div class="btn-group">
+  <a class="btn btn-primary" href="/setup_sync/prr?family=2W">2 Wire</a>
+  <a class="btn btn-primary" href="/setup_sync/prr?family=3W">3 Wire</a>
+  <a class="btn btn-primary" href="/setup_sync/prr?family=SPI">SPI</a>
+  <a class="btn btn-primary" href="/setup_sync/prr?family=CP">Crypto</a>
+  <a class="btn btn-primary" href="/setup_sync/prr?family=TS">Temp Sensor</a>
+</div>
+<div class="btn-group">
+  <a class="btn btn-primary" href="/targets">Target</a>
+</div>
+<div class="btn-group">
+  <a class="btn btn-primary" href="/setup_sync/report?report=EPRO">EPRO Entries</a>
+  <a class="btn btn-primary" href="/setup_sync/report?report=RED">RED Report</a>
+  <a class="btn btn-primary" href="/setup_sync/report?report=x_flow">X-Flows</a>
+</div>
+<h2>Program Release Report</h2>
+<h3>
+  <%= @family %>
+  Products
+  <% if request.post? %>
+    Filtered for 
+    <%= params[:device].upcase %>
+  <% end %>
+</h3>
+<hr/>
+<p>
+  <table cellspacing="10" class="display" id="prr" width="100%">
+    <thead>
+      <tr>
+        <th>
+          Probe Setup
+        </th>
+        <th>
+          Device
+        </th>
+        <th>
+          Tab
+        </th>
+        <th>
+          Location
+        </th>
+        <th>
+          CP1
+        </th>
+        <th>
+          CP2
+        </th>
+        <th>
+          CP3
+        </th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <th>
+          Probe Setup
+        </th>
+        <th>
+          Device
+        </th>
+        <th>
+          Tab
+        </th>
+        <th>
+          Location
+        </th>
+        <th>
+          CP1
+        </th>
+        <th>
+          CP2
+        </th>
+        <th>
+          CP3
+        </th>
+      </tr>
+    </tfoot>
+    <tbody>
+      <% @device_setups.each do |s| %>
+        <tr>
+          <td>
+            <%= s.vendor+"_"+s.platform+"_"+s.parallelism %>
+          </td>
+          <td>
+            <%= s.device %>
+          </td>
+          <td>
+            <%= s.tab %>
+          </td>
+          <td>
+            <%= s.location %>
+          </td>
+          <td>
+            <%= raw highlight(s.cp1_match_flag) %>
+            <%= s.cp1 %>
+          </td>
+          <td>
+            <%= raw highlight(s.cp2_match_flag) %>
+            <%= s.cp2 %>
+          </td>
+          <td>
+            <%= raw highlight(s.cp3_match_flag) %>
+            <%= s.cp3 %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</p>
