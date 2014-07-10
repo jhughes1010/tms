@@ -1,0 +1,59 @@
+<div class="btn-group">
+  <a class="btn btn-primary" href="/main/pto_current">PTO 30 days</a>
+  <a class="btn btn-primary" href="/main/pto_current_90">PTO 90 days</a>
+  <a class="btn btn-info" href="/ptos/new">PTO Entry</a>
+</div>
+<div class="page-header">
+  <h1>
+    Near Term PTO
+    <small>
+      <%= @outlook %>
+      day outlook:
+      \#{@start.to_s(:long)} to #{@stop.to_s(:long)}
+    </small>
+  </h1>
+</div>
+<table cellspacing="10" class="display" id="prr" width="100%">
+  <thead>
+    <tr>
+      <th>
+        <b>User</b>
+      </th>
+      <th>
+        <b>Start</b>
+      </th>
+      <th>
+        <b>End</b>
+      </th>
+      <th>
+        <b>Comments</b>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @ptos.each do |pto| %>
+      <tr>
+        <td>
+          <%= pto.user.fullname %>
+        </td>
+        <td>
+          <%= pto.start %>
+        </td>
+        <td>
+          <% if(pto.finish != pto.start) %>
+            <%= pto.finish %>
+          <% end %>
+        </td>
+        <td>
+          <%= pto.comments %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br/>
+<!-- <haml:loud> link_to 'New Pto', new_pto_path </haml:loud>
+-->
+<p>
+  <a href="/main/index">TMS Home</a>
+</p>

@@ -1,0 +1,21 @@
+<%= render :partial =>"pill_navigation",:locals => {:active => "By_requester"} %>
+<%= render :partial =>"page_header",:locals => {:title => "Active Projects", :description => "ordered by requester and priority"} %>
+<div id="accordion">
+  <% @tasks.each_pair do |fullname, tasks| %>
+    <h3>
+      <a href="#">
+        <%= tasks[0].fullname %>
+      </a>
+    </h3>
+    <div>
+      <table cellspacing="0" class="disp" width="100%">
+        <thead>
+          <%= render :partial => "task_header" %>
+        </thead>
+        <tbody>
+          <%= render :partial => "task" , :collection => tasks %>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
+</div>

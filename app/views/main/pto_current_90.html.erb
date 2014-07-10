@@ -1,0 +1,66 @@
+<div class="btn-group">
+  <a class="btn btn-info" href="/main/pto_current">PTO 30 days</a>
+  <a class="btn btn-info" href="/main/pto_current_90">PTO 90 days</a>
+  <a class="btn btn-primary" href="/ptos/new">PTO Entry</a>
+</div>
+<div class="page-header">
+  <h1>
+    Long Term PTO Outlook
+    <small>
+      <%= @outlook %>
+      day outlook:
+      \#{@start.to_s(:long)} to #{@stop.to_s(:long)}
+    </small>
+  </h1>
+</div>
+<p></p>
+<hr/>
+<div id="product-list">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>
+          <b>User</b>
+        </th>
+        <th>
+          <b>Start</b>
+        </th>
+        <th>
+          <b>End</b>
+        </th>
+        <th>
+          <b>Comments</b>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @ptos.each do |pto| %>
+        <tr>
+          <td>
+            <%= pto.user.fullname %>
+          </td>
+          <td>
+            <%= pto.start.to_s(:short) %>
+          </td>
+          <td>
+            <%= pto.finish.to_s(:short) %>
+          </td>
+          <td>
+            <%= pto.comments %>
+          </td>
+          <!--
+            <td><haml:loud> link_to 'Show', pto </haml:loud></td>
+            <td><haml:loud> link_to 'Edit', edit_pto_path(pto) </haml:loud></td>
+            <td><haml:loud> link_to 'Destroy', pto, :confirm =&gt; 'Are you sure?', :method =&gt; :delete </haml:loud></td>
+          -->
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<br/>
+<!-- <haml:loud> link_to 'New Pto', new_pto_path </haml:loud>
+-->
+<p>
+  <a href="/main/index">TMS Home</a>
+</p>

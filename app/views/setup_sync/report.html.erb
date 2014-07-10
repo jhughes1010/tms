@@ -1,59 +1,85 @@
-.btn-group
-  %a.btn.btn-primary{:button => "", :href => "/setup_sync/prr?family=2W"} 2 Wire
-  %a.btn.btn-primary{:button => "", :href => "/setup_sync/prr?family=3W"} 3 Wire
-  %a.btn.btn-primary{:button => "", :href => "/setup_sync/prr?family=SPI"} SPI
-  %a.btn.btn-primary{:button => "", :href => "/setup_sync/prr?family=CP"} Crypto
-  %a.btn.btn-primary{:button => "", :href => "/setup_sync/prr?family=TS"} Temp Sensor
-.btn-group
-  %a.btn.btn-primary{:button => "", :href => "/targets"} Target
-.btn-group
-  %a.btn.btn-primary{:button => "", :href => "/setup_sync/report?report=EPRO"} EPRO Entries
-  %a.btn.btn-primary{:button => "", :href => "/setup_sync/report?report=RED"} RED Report
-  %a.btn.btn-primary{:button => "", :href => "/setup_sync/report?report=x_flow"} X-Flows
-
-%h2
-  = "#{@report} "
+<div class="btn-group">
+  <a class="btn btn-primary" href="/setup_sync/prr?family=2W">2 Wire</a>
+  <a class="btn btn-primary" href="/setup_sync/prr?family=3W">3 Wire</a>
+  <a class="btn btn-primary" href="/setup_sync/prr?family=SPI">SPI</a>
+  <a class="btn btn-primary" href="/setup_sync/prr?family=CP">Crypto</a>
+  <a class="btn btn-primary" href="/setup_sync/prr?family=TS">Temp Sensor</a>
+</div>
+<div class="btn-group">
+  <a class="btn btn-primary" href="/targets">Target</a>
+</div>
+<div class="btn-group">
+  <a class="btn btn-primary" href="/setup_sync/report?report=EPRO">EPRO Entries</a>
+  <a class="btn btn-primary" href="/setup_sync/report?report=RED">RED Report</a>
+  <a class="btn btn-primary" href="/setup_sync/report?report=x_flow">X-Flows</a>
+</div>
+<h2>
+  <%= "#{@report} " %>
   Report
-%hr/
-%p
-  %table#prr.display{:cellspacing => "10", :width => "100%"}
-    %thead
-      %tr
-        %th
+</h2>
+<hr/>
+<p>
+  <table cellspacing="10" class="display" id="prr" width="100%">
+    <thead>
+      <tr>
+        <th>
           Family
-        %th
+        </th>
+        <th>
           Probe Setup
-        %th
+        </th>
+        <th>
           Device
-        %th
+        </th>
+        <th>
           Tab
-        %th
+        </th>
+        <th>
           Location
-        %th
+        </th>
+        <th>
           CP1
-        %th
+        </th>
+        <th>
           CP2
-        %th
+        </th>
+        <th>
           CP3
-    %tbody
-      - @device_setups.each do |s|
-        %tr
-          %td
-            = s.family
-          %td
-            = s.vendor+"_"+s.platform+"_"+s.parallelism
-          %td
-            = s.device
-          %td
-            = s.tab
-          %td
-            = s.location
-          %td
-            = raw highlight(s.cp1_match_flag)
-            = s.cp1
-          %td
-            = raw highlight(s.cp2_match_flag)
-            = s.cp2
-          %td
-            = raw highlight(s.cp3_match_flag)
-            = s.cp3
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @device_setups.each do |s| %>
+        <tr>
+          <td>
+            <%= s.family %>
+          </td>
+          <td>
+            <%= s.vendor+"_"+s.platform+"_"+s.parallelism %>
+          </td>
+          <td>
+            <%= s.device %>
+          </td>
+          <td>
+            <%= s.tab %>
+          </td>
+          <td>
+            <%= s.location %>
+          </td>
+          <td>
+            <%= raw highlight(s.cp1_match_flag) %>
+            <%= s.cp1 %>
+          </td>
+          <td>
+            <%= raw highlight(s.cp2_match_flag) %>
+            <%= s.cp2 %>
+          </td>
+          <td>
+            <%= raw highlight(s.cp3_match_flag) %>
+            <%= s.cp3 %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</p>

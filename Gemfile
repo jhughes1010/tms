@@ -8,7 +8,6 @@ gem 'rails', '3.0.3'
 
 gem 'sqlite3', :require => 'sqlite3'
 gem 'fastercsv'
-gem 'haml'
 gem 'gchartrb'
 
 # Use unicorn as the web server
@@ -33,5 +32,4 @@ gem 'gchartrb'
 # group :development, :test do
 #   gem 'webrat'
 gem 'pdfkit'
-gem "haml"
 # end
