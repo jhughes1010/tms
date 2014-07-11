@@ -13,7 +13,7 @@
           <%= render :partial => "task_header" %>
         </thead>
         <tbody>
-          <%= render :partial => "task" , :collection => tasks     %>
+          <%= render :partial => "task" , :collection => tasks  %>
         </tbody>
       </table>
       <%= link_to "Reorder Tasks", "/priority/project_manual_priority?id=#{tasks[0].assignee_id}" %>

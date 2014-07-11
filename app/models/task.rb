@@ -15,11 +15,11 @@ class Task < ActiveRecord::Base
     find(:all, :order =>"id" , :conditions => "assignee_id IS NULL")
   end
   def self.all_active2
-    t = self.where("tasks.complete = 'f' AND tasks.assignee_id IS NOT NULL AND category < '5'").order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*')
+    t = self.where("tasks.complete = 'f' AND tasks.assignee_id IS NOT NULL AND category < '5'").order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*').includes("requester").includes("assignee")
     t.group_by(&:fullname)
   end
   def self.all_active_by_requester
-    t = self.where("tasks.complete = 'f' OR tasks.complete IS NULL AND tasks.requester_id IS NOT NULL").order("users.fullname, tasks.id").joins('INNER JOIN users ON users.id = tasks.requester_id').select('users.fullname, tasks.*')
+    t = self.where("tasks.complete = 'f' OR tasks.complete IS NULL AND tasks.requester_id IS NOT NULL").order("users.fullname, tasks.id").joins('INNER JOIN users ON users.id = tasks.requester_id').select('users.fullname, tasks.*').includes("requester").includes("assignee")
     t.group_by(&:fullname)
   end
   def self.all_active_manual_sort(id)
