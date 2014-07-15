@@ -4,14 +4,14 @@
   <a class="btn btn-info" href="/ptos/new">PTO Entry</a>
 </div>
 <div class="page-header">
-  <h1>
+  <h2>
     Near Term PTO
     <small>
       <%= @outlook %>
       day outlook:
-      \#{@start.to_s(:long)} to #{@stop.to_s(:long)}
+      <%= @start.to_s(:long) +' to ' + @stop.to_s(:long) %>
     </small>
-  </h1>
+  </h2>
 </div>
 <table cellspacing="10" class="display" id="prr" width="100%">
   <thead>

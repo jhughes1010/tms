@@ -7,9 +7,9 @@ class Task < ActiveRecord::Base
   # scope :grouped, group(:assignee_id)
 
 
-  def self.all_active
-    find(:all, :order =>"assignee_id, priority", :conditions => ["complete = ?",false])
-  end
+  #def self.all_active
+   # find(:all, :order =>"assignee_id, priority", :conditions => ["complete = ?",false])
+  #end
   def self.all_unassigned
     date=Date.today
     find(:all, :order =>"id" , :conditions => "assignee_id IS NULL")
