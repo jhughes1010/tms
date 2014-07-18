@@ -44,7 +44,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
 
     #deliver the mail
-    unless user_id == 1
+    unless session[:user_id] == 1
       UserMailer.task_edit_confirmation(session[:user_id],@task).deliver
       UserMailer.task_edit_confirmation(1,@task).deliver
     end
