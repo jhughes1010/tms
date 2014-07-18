@@ -1,4 +1,6 @@
 TMS::Application.routes.draw do
+  resources :test_times
+
   get "sas_front/index"
 
   get "sas_front/reports"

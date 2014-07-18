@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Device:</b>
+  <%= @test_time.device_id %>
+</p>
+
+<p>
+  <b>Paralllelism:</b>
+  <%= @test_time.paralllelism %>
+</p>
+
+<p>
+  <b>Time:</b>
+  <%= @test_time.time %>
+</p>
+
+<p>
+  <b>Operation:</b>
+  <%= @test_time.operation %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @test_time.date %>
+</p>
+
+
+<%= link_to 'Edit', edit_test_time_path(@test_time) %> |
+<%= link_to 'Back', test_times_path %>

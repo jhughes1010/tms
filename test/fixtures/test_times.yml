@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  device_id: 1
+  paralllelism: MyString
+  time: 1
+  operation: MyString
+  date: 2014-07-18
+
+two:
+  device_id: 1
+  paralllelism: MyString
+  time: 1
+  operation: MyString
+  date: 2014-07-18

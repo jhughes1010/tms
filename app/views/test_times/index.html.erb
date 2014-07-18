@@ -1,0 +1,37 @@
+<h2>Listing Test Times</h2>
+
+<table cellspacing="10" class="display" id="prr" width="100%">
+    <thead>
+  <tr>
+    <th>Device</th>
+    <th>Paralllelism</th>
+    <th>Time</th>
+    <th>Operation</th>
+    <th>Date</th>
+    <!-- <th></th>
+    <th></th>
+    <th></th> -->
+  </tr>
+</thead>
+<tbody>
+
+<% @test_times.each do |test_time| %>
+  <tr>
+    <td><%= test_time.device_id %></td>
+    <td><%= test_time.paralllelism %></td>
+    <td><%= test_time.time %></td>
+    <td><%= test_time.operation %></td>
+    <td><%= test_time.date %></td>
+    <!--
+    <td><%= link_to 'Show', test_time %></td>
+    <td><%= link_to 'Edit', edit_test_time_path(test_time) %></td>
+    <td><%= link_to 'Destroy', test_time, :confirm => 'Are you sure?', :method => :delete %></td>
+    -->
+  </tr>
+<% end %>
+<tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Test time', new_test_time_path %>
