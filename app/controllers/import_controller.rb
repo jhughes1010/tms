@@ -80,7 +80,7 @@ class ImportController < ApplicationController
     puts
     puts "============================================="
     puts "CSV importer for ProberVision_setup.txt database"
-    puts "setup.txt List Import tool"
+    puts "Device List Import tool"
     puts "============================================="
     Device.delete_all
     import_device("2W","import/2wire.txt")
@@ -107,5 +107,23 @@ class ImportController < ApplicationController
       r.name = record
       r.save
     end
+  end
+  def cp_time
+    puts
+    puts "============================================="
+    puts "Text file importer for time.rpt"
+    puts "Device CPx Import tool"
+    puts "============================================="
+
+    #Get all devices
+    @devices = Device.all
+    @devices.each do |d|
+      #call function to itterate through time.rpt files for each device
+      getDeviceFromTimeRpt(d)
+    end
+  end
+  def getDeviceFromTimeRpt(device)
+    #search time.rpt(s) for device entries and add to database
+    
   end
 end
