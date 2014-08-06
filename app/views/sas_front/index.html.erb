@@ -10,3 +10,8 @@
     </div>
 </div>
 <p>Report links will be here - TBD</p>
+
+
+<%= form_tag({action: :upload}, multipart: true) do %>
+  <%= file_field_tag 'xls spreadsheet' %>
+<% end %>

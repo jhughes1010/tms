@@ -142,8 +142,6 @@
         
           <li><a href="./CanSubsHelper.html">CanSubsHelper</a></li>
         
-          <li><a href="./CostController.html">CostController</a></li>
-        
           <li><a href="./CostHelper.html">CostHelper</a></li>
         
           <li><a href="./Costing.html">Costing</a></li>
@@ -167,8 +165,6 @@
           <li><a href="./ImportController.html">ImportController</a></li>
         
           <li><a href="./ImportHelper.html">ImportHelper</a></li>
-        
-          <li><a href="./ImportResourceController.html">ImportResourceController</a></li>
         
           <li><a href="./ImportResourceHelper.html">ImportResourceHelper</a></li>
         
@@ -198,11 +194,7 @@
         
           <li><a href="./Resource.html">Resource</a></li>
         
-          <li><a href="./ResourceController.html">ResourceController</a></li>
-        
           <li><a href="./ResourceHelper.html">ResourceHelper</a></li>
-        
-          <li><a href="./ResourcesController.html">ResourcesController</a></li>
         
           <li><a href="./ResourcesHelper.html">ResourcesHelper</a></li>
         
@@ -245,6 +237,12 @@
           <li><a href="./TestProgsController.html">TestProgsController</a></li>
         
           <li><a href="./TestProgsHelper.html">TestProgsHelper</a></li>
+        
+          <li><a href="./TestTime.html">TestTime</a></li>
+        
+          <li><a href="./TestTimesController.html">TestTimesController</a></li>
+        
+          <li><a href="./TestTimesHelper.html">TestTimesHelper</a></li>
         
           <li><a href="./User.html">User</a></li>
         
@@ -306,7 +304,7 @@
             
             <div class="method-source-code" id="create-source">
 <pre>
-<span class="ruby-comment"># File app/controllers/tasks_controller.rb, line 65</span>
+<span class="ruby-comment"># File app/controllers/tasks_controller.rb, line 67</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
   <span class="ruby-ivar">@task</span> = <span class="ruby-constant">Task</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:task</span>])
 
@@ -352,7 +350,7 @@
             
             <div class="method-source-code" id="destroy-source">
 <pre>
-<span class="ruby-comment"># File app/controllers/tasks_controller.rb, line 100</span>
+<span class="ruby-comment"># File app/controllers/tasks_controller.rb, line 102</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
   <span class="ruby-ivar">@task</span> = <span class="ruby-constant">Task</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
   <span class="ruby-ivar">@task</span>.<span class="ruby-identifier">destroy</span>
@@ -391,7 +389,7 @@
             
             <div class="method-source-code" id="duplicate-source">
 <pre>
-<span class="ruby-comment"># File app/controllers/tasks_controller.rb, line 52</span>
+<span class="ruby-comment"># File app/controllers/tasks_controller.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">duplicate</span>
   <span class="ruby-identifier">task</span> = <span class="ruby-constant">Task</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
   <span class="ruby-identifier">copy</span> = <span class="ruby-identifier">task</span>.<span class="ruby-identifier">dup</span>
@@ -438,8 +436,10 @@
   <span class="ruby-ivar">@task</span> = <span class="ruby-constant">Task</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 
   <span class="ruby-comment">#deliver the mail</span>
-  <span class="ruby-constant">UserMailer</span>.<span class="ruby-identifier">task_edit_confirmation</span>(<span class="ruby-identifier">session</span>[<span class="ruby-value">:user_id</span>],<span class="ruby-ivar">@task</span>).<span class="ruby-identifier">deliver</span>
-  <span class="ruby-constant">UserMailer</span>.<span class="ruby-identifier">task_edit_confirmation</span>(<span class="ruby-value">1</span>,<span class="ruby-ivar">@task</span>).<span class="ruby-identifier">deliver</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">session</span>[<span class="ruby-value">:user_id</span>] <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+    <span class="ruby-constant">UserMailer</span>.<span class="ruby-identifier">task_edit_confirmation</span>(<span class="ruby-identifier">session</span>[<span class="ruby-value">:user_id</span>],<span class="ruby-ivar">@task</span>).<span class="ruby-identifier">deliver</span>
+    <span class="ruby-constant">UserMailer</span>.<span class="ruby-identifier">task_edit_confirmation</span>(<span class="ruby-value">1</span>,<span class="ruby-ivar">@task</span>).<span class="ruby-identifier">deliver</span>
+  <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
             </div><!-- edit-source -->
             
@@ -586,7 +586,7 @@
             
             <div class="method-source-code" id="update-source">
 <pre>
-<span class="ruby-comment"># File app/controllers/tasks_controller.rb, line 84</span>
+<span class="ruby-comment"># File app/controllers/tasks_controller.rb, line 86</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
   <span class="ruby-ivar">@task</span> = <span class="ruby-constant">Task</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 
@@ -635,7 +635,7 @@
             
             <div class="method-source-code" id="set_useful_globals-source">
 <pre>
-<span class="ruby-comment"># File app/controllers/tasks_controller.rb, line 112</span>
+<span class="ruby-comment"># File app/controllers/tasks_controller.rb, line 114</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">set_useful_globals</span>
   <span class="ruby-ivar">@auth</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:user_auth</span>]
   <span class="ruby-ivar">@user_id</span>=<span class="ruby-identifier">session</span>[<span class="ruby-value">:user_id</span>]

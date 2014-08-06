@@ -1,29 +1,26 @@
-Thu, 26 Jun 2014 06:21:12 -0600
+Tue, 05 Aug 2014 05:03:39 -0600
 doc/README_FOR_APP	Mon, 13 Dec 2010 11:36:14 -0700
 app/controllers/admin_controller.rb	Wed, 05 Jan 2011 08:03:54 -0700
 app/controllers/application_controller.rb	Sun, 28 Apr 2013 15:12:41 -0600
 app/controllers/can_controller.rb	Sat, 20 Aug 2011 06:08:50 -0600
 app/controllers/can_mains_controller.rb	Fri, 15 Jun 2012 04:38:29 -0600
 app/controllers/can_subs_controller.rb	Fri, 08 Jul 2011 05:40:47 -0600
-app/controllers/cost_controller.rb	Wed, 11 Jan 2012 04:43:25 -0700
 app/controllers/costings_controller.rb	Thu, 05 Apr 2012 20:28:45 -0600
 app/controllers/devices_controller.rb	Mon, 13 Dec 2010 11:57:52 -0700
-app/controllers/import_controller.rb	Thu, 26 Jun 2014 06:20:59 -0600
-app/controllers/import_resource_controller.rb	Wed, 08 Feb 2012 19:21:51 -0700
-app/controllers/main_controller.rb	Mon, 21 May 2012 04:17:11 -0600
+app/controllers/import_controller.rb	Tue, 29 Jul 2014 05:19:50 -0600
+app/controllers/main_controller.rb	Tue, 29 Jul 2014 05:19:50 -0600
 app/controllers/pomodoro_controller.rb	Tue, 24 Jun 2014 05:28:16 -0600
 app/controllers/priority_controller.rb	Fri, 22 Feb 2013 02:25:55 -0700
 app/controllers/projects_controller.rb	Wed, 11 Jan 2012 04:43:14 -0700
 app/controllers/ptos_controller.rb	Tue, 05 Mar 2013 21:32:30 -0700
-app/controllers/resource_controller.rb	Sun, 09 Mar 2014 07:44:23 -0600
-app/controllers/resources_controller.rb	Wed, 21 Sep 2011 04:59:58 -0600
 app/controllers/sas_controller.rb	Mon, 28 Apr 2014 04:08:16 -0600
 app/controllers/sas_front_controller.rb	Fri, 25 Apr 2014 05:00:50 -0600
 app/controllers/setup_sync_controller.rb	Mon, 16 Sep 2013 19:50:13 -0600
 app/controllers/setups_controller.rb	Sat, 26 Jan 2013 08:39:35 -0700
 app/controllers/targets_controller.rb	Wed, 06 Feb 2013 04:21:29 -0700
-app/controllers/tasks_controller.rb	Thu, 26 Jun 2014 06:18:21 -0600
+app/controllers/tasks_controller.rb	Wed, 16 Jul 2014 19:53:20 -0600
 app/controllers/test_progs_controller.rb	Tue, 24 Jul 2012 05:42:30 -0600
+app/controllers/test_times_controller.rb	Fri, 18 Jul 2014 05:32:14 -0600
 app/controllers/users_controller.rb	Wed, 12 Jan 2011 08:03:03 -0700
 app/helpers/admin_helper.rb	Thu, 16 Dec 2010 05:06:49 -0700
 app/helpers/application_helper.rb	Mon, 13 Dec 2010 11:36:13 -0700
@@ -49,6 +46,7 @@ app/helpers/setups_helper.rb	Fri, 25 Jan 2013 04:31:45 -0700
 app/helpers/targets_helper.rb	Sat, 26 Jan 2013 07:33:35 -0700
 app/helpers/tasks_helper.rb	Mon, 13 Dec 2010 12:25:05 -0700
 app/helpers/test_progs_helper.rb	Sun, 22 Jul 2012 05:34:37 -0600
+app/helpers/test_times_helper.rb	Fri, 18 Jul 2014 05:32:14 -0600
 app/helpers/users_helper.rb	Mon, 13 Dec 2010 11:54:33 -0700
 app/mailers/user_mailer.rb	Thu, 26 Jun 2014 05:30:39 -0600
 app/models/can_main.rb	Sat, 20 Aug 2011 06:08:50 -0600
@@ -62,8 +60,9 @@ app/models/sa.rb	Tue, 29 Apr 2014 04:47:30 -0600
 app/models/scratchpad.rb	Sat, 27 Apr 2013 06:58:19 -0600
 app/models/setup.rb	Mon, 16 Sep 2013 20:03:34 -0600
 app/models/target.rb	Thu, 09 May 2013 05:50:43 -0600
-app/models/task.rb	Fri, 13 Jun 2014 04:30:09 -0600
+app/models/task.rb	Sat, 12 Jul 2014 04:44:50 -0600
 app/models/test_prog.rb	Fri, 12 Oct 2012 04:27:00 -0600
+app/models/test_time.rb	Fri, 18 Jul 2014 05:32:14 -0600
 app/models/user.rb	Sat, 14 Jan 2012 08:22:53 -0700
 lib/dynamic_delagator.rb	Wed, 11 Jan 2012 04:43:25 -0700
 lib/finance.rb	Fri, 31 Aug 2012 04:38:49 -0600

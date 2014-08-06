@@ -5,7 +5,7 @@
 <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
-  <title>Class: ResourcesController</title>
+  <title>Class: TestTimesController</title>
 
   <link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
 
@@ -34,8 +34,8 @@
         <div class="section-body">
           <ul>
           
-            <li><a href="./app/controllers/resources_controller_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="app/controllers/resources_controller.rb">app/controllers/resources_controller.rb</a></li>
+            <li><a href="./app/controllers/test_times_controller_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="app/controllers/test_times_controller.rb">app/controllers/test_times_controller.rb</a></li>
           
           </ul>
         </div>
@@ -138,8 +138,6 @@
         
           <li><a href="./CanSubsHelper.html">CanSubsHelper</a></li>
         
-          <li><a href="./CostController.html">CostController</a></li>
-        
           <li><a href="./CostHelper.html">CostHelper</a></li>
         
           <li><a href="./Costing.html">Costing</a></li>
@@ -163,8 +161,6 @@
           <li><a href="./ImportController.html">ImportController</a></li>
         
           <li><a href="./ImportHelper.html">ImportHelper</a></li>
-        
-          <li><a href="./ImportResourceController.html">ImportResourceController</a></li>
         
           <li><a href="./ImportResourceHelper.html">ImportResourceHelper</a></li>
         
@@ -194,11 +190,7 @@
         
           <li><a href="./Resource.html">Resource</a></li>
         
-          <li><a href="./ResourceController.html">ResourceController</a></li>
-        
           <li><a href="./ResourceHelper.html">ResourceHelper</a></li>
-        
-          <li><a href="./ResourcesController.html">ResourcesController</a></li>
         
           <li><a href="./ResourcesHelper.html">ResourcesHelper</a></li>
         
@@ -242,6 +234,12 @@
         
           <li><a href="./TestProgsHelper.html">TestProgsHelper</a></li>
         
+          <li><a href="./TestTime.html">TestTime</a></li>
+        
+          <li><a href="./TestTimesController.html">TestTimesController</a></li>
+        
+          <li><a href="./TestTimesHelper.html">TestTimesHelper</a></li>
+        
           <li><a href="./User.html">User</a></li>
         
           <li><a href="./UserMailer.html">UserMailer</a></li>
@@ -259,7 +257,7 @@
   </div>
 
   <div id="documentation">
-    <h1 class="class">ResourcesController</h1>
+    <h1 class="class">TestTimesController</h1>
 
     <div id="description" class="description">
       
@@ -296,23 +294,23 @@
 
           <div class="method-description">
             
-            <p>POST /resources POST /resources.xml</p>
+            <p>POST /test_times POST /test_times.xml</p>
             
 
             
             <div class="method-source-code" id="create-source">
 <pre>
-<span class="ruby-comment"># File app/controllers/resources_controller.rb, line 42</span>
+<span class="ruby-comment"># File app/controllers/test_times_controller.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
-  <span class="ruby-ivar">@resource</span> = <span class="ruby-constant">Resource</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:resource</span>])
+  <span class="ruby-ivar">@test_time</span> = <span class="ruby-constant">TestTime</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:test_time</span>])
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
-    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@resource</span>.<span class="ruby-identifier">save</span>
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span>(<span class="ruby-ivar">@resource</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Resource was successfully created.'</span>) }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@resource</span>, <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:created</span>, <span class="ruby-value">:location</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@resource</span> }
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@test_time</span>.<span class="ruby-identifier">save</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span>(<span class="ruby-ivar">@test_time</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Test time was successfully created.'</span>) }
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@test_time</span>, <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:created</span>, <span class="ruby-value">:location</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@test_time</span> }
     <span class="ruby-keyword">else</span>
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;new&quot;</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@resource</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:unprocessable_entity</span> }
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@test_time</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:unprocessable_entity</span> }
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
@@ -339,19 +337,19 @@
 
           <div class="method-description">
             
-            <p>DELETE /resources/1 DELETE /resources/1.xml</p>
+            <p>DELETE /test_times/1 DELETE /test_times/1.xml</p>
             
 
             
             <div class="method-source-code" id="destroy-source">
 <pre>
-<span class="ruby-comment"># File app/controllers/resources_controller.rb, line 74</span>
+<span class="ruby-comment"># File app/controllers/test_times_controller.rb, line 74</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
-  <span class="ruby-ivar">@resource</span> = <span class="ruby-constant">Resource</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
-  <span class="ruby-ivar">@resource</span>.<span class="ruby-identifier">destroy</span>
+  <span class="ruby-ivar">@test_time</span> = <span class="ruby-constant">TestTime</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@test_time</span>.<span class="ruby-identifier">destroy</span>
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">resources_url</span>) }
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">test_times_url</span>) }
     <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">head</span> <span class="ruby-value">:ok</span> }
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
@@ -378,15 +376,15 @@
 
           <div class="method-description">
             
-            <p>GET /resources/1/edit</p>
+            <p>GET /test_times/1/edit</p>
             
 
             
             <div class="method-source-code" id="edit-source">
 <pre>
-<span class="ruby-comment"># File app/controllers/resources_controller.rb, line 36</span>
+<span class="ruby-comment"># File app/controllers/test_times_controller.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>
-  <span class="ruby-ivar">@resource</span> = <span class="ruby-constant">Resource</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@test_time</span> = <span class="ruby-constant">TestTime</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 <span class="ruby-keyword">end</span></pre>
             </div><!-- edit-source -->
             
@@ -411,19 +409,19 @@
 
           <div class="method-description">
             
-            <p>GET /resources GET /resources.xml</p>
+            <p>GET /test_times GET /test_times.xml</p>
             
 
             
             <div class="method-source-code" id="index-source">
 <pre>
-<span class="ruby-comment"># File app/controllers/resources_controller.rb, line 4</span>
+<span class="ruby-comment"># File app/controllers/test_times_controller.rb, line 4</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
-  <span class="ruby-ivar">@resources</span> = <span class="ruby-constant">Resource</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@test_times</span> = <span class="ruby-constant">TestTime</span>.<span class="ruby-identifier">all</span>
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment"># index.html.erb</span>
-    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@resources</span> }
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@test_times</span> }
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
             </div><!-- index-source -->
@@ -449,19 +447,19 @@
 
           <div class="method-description">
             
-            <p>GET /resources/new GET /resources/new.xml</p>
+            <p>GET /test_times/new GET /test_times/new.xml</p>
             
 
             
             <div class="method-source-code" id="new-source">
 <pre>
-<span class="ruby-comment"># File app/controllers/resources_controller.rb, line 26</span>
+<span class="ruby-comment"># File app/controllers/test_times_controller.rb, line 26</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
-  <span class="ruby-ivar">@resource</span> = <span class="ruby-constant">Resource</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@test_time</span> = <span class="ruby-constant">TestTime</span>.<span class="ruby-identifier">new</span>
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment"># new.html.erb</span>
-    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@resource</span> }
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@test_time</span> }
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
             </div><!-- new-source -->
@@ -487,19 +485,19 @@
 
           <div class="method-description">
             
-            <p>GET /resources/1 GET /resources/1.xml</p>
+            <p>GET /test_times/1 GET /test_times/1.xml</p>
             
 
             
             <div class="method-source-code" id="show-source">
 <pre>
-<span class="ruby-comment"># File app/controllers/resources_controller.rb, line 15</span>
+<span class="ruby-comment"># File app/controllers/test_times_controller.rb, line 15</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
-  <span class="ruby-ivar">@resource</span> = <span class="ruby-constant">Resource</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@test_time</span> = <span class="ruby-constant">TestTime</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment"># show.html.erb</span>
-    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@resource</span> }
+    <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@test_time</span> }
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
             </div><!-- show-source -->
@@ -525,23 +523,23 @@
 
           <div class="method-description">
             
-            <p>PUT /resources/1 PUT /resources/1.xml</p>
+            <p>PUT /test_times/1 PUT /test_times/1.xml</p>
             
 
             
             <div class="method-source-code" id="update-source">
 <pre>
-<span class="ruby-comment"># File app/controllers/resources_controller.rb, line 58</span>
+<span class="ruby-comment"># File app/controllers/test_times_controller.rb, line 58</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
-  <span class="ruby-ivar">@resource</span> = <span class="ruby-constant">Resource</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+  <span class="ruby-ivar">@test_time</span> = <span class="ruby-constant">TestTime</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
-    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@resource</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:resource</span>])
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span>(<span class="ruby-ivar">@resource</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Resource was successfully updated.'</span>) }
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@test_time</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:test_time</span>])
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">redirect_to</span>(<span class="ruby-ivar">@test_time</span>, <span class="ruby-value">:notice</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Test time was successfully updated.'</span>) }
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">head</span> <span class="ruby-value">:ok</span> }
     <span class="ruby-keyword">else</span>
       <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> { <span class="ruby-identifier">render</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;edit&quot;</span> }
-      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@resource</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:unprocessable_entity</span> }
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span>  { <span class="ruby-identifier">render</span> <span class="ruby-value">:xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@test_time</span>.<span class="ruby-identifier">errors</span>, <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:unprocessable_entity</span> }
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>

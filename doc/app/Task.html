@@ -65,8 +65,6 @@
         <h3 class="section-header">Methods</h3>
         <ul class="link-list">
           
-          <li><a href="#method-c-all_active">::all_active</a></li>
-          
           <li><a href="#method-c-all_active2">::all_active2</a></li>
           
           <li><a href="#method-c-all_active_by_requester">::all_active_by_requester</a></li>
@@ -136,8 +134,6 @@
         
           <li><a href="./CanSubsHelper.html">CanSubsHelper</a></li>
         
-          <li><a href="./CostController.html">CostController</a></li>
-        
           <li><a href="./CostHelper.html">CostHelper</a></li>
         
           <li><a href="./Costing.html">Costing</a></li>
@@ -161,8 +157,6 @@
           <li><a href="./ImportController.html">ImportController</a></li>
         
           <li><a href="./ImportHelper.html">ImportHelper</a></li>
-        
-          <li><a href="./ImportResourceController.html">ImportResourceController</a></li>
         
           <li><a href="./ImportResourceHelper.html">ImportResourceHelper</a></li>
         
@@ -192,11 +186,7 @@
         
           <li><a href="./Resource.html">Resource</a></li>
         
-          <li><a href="./ResourceController.html">ResourceController</a></li>
-        
           <li><a href="./ResourceHelper.html">ResourceHelper</a></li>
-        
-          <li><a href="./ResourcesController.html">ResourcesController</a></li>
         
           <li><a href="./ResourcesHelper.html">ResourcesHelper</a></li>
         
@@ -240,6 +230,12 @@
         
           <li><a href="./TestProgsHelper.html">TestProgsHelper</a></li>
         
+          <li><a href="./TestTime.html">TestTime</a></li>
+        
+          <li><a href="./TestTimesController.html">TestTimesController</a></li>
+        
+          <li><a href="./TestTimesHelper.html">TestTimesHelper</a></li>
+        
           <li><a href="./User.html">User</a></li>
         
           <li><a href="./UserMailer.html">UserMailer</a></li>
@@ -281,39 +277,6 @@
         <h3 class="section-header">Public Class Methods</h3>
 
       
-        <div id="all_active-method" class="method-detail ">
-          <a name="method-c-all_active"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">all_active</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>scope :grouped, group(:assignee_id)</p>
-            
-
-            
-            <div class="method-source-code" id="all_active-source">
-<pre>
-<span class="ruby-comment"># File app/models/task.rb, line 10</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_active</span>
-  <span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;assignee_id, priority&quot;</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;complete = ?&quot;</span>,<span class="ruby-keyword">false</span>])
-<span class="ruby-keyword">end</span></pre>
-            </div><!-- all_active-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- all_active-method -->
-
-      
         <div id="all_active2-method" class="method-detail ">
           <a name="method-c-all_active2"></a>
 
@@ -335,7 +298,7 @@
 <pre>
 <span class="ruby-comment"># File app/models/task.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_active2</span>
-  <span class="ruby-identifier">t</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;tasks.complete = 'f' AND tasks.assignee_id IS NOT NULL AND category &lt; '5'&quot;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&quot;users.fullname, tasks.priority&quot;</span>).<span class="ruby-identifier">joins</span>(<span class="ruby-string">'INNER JOIN users ON users.id = tasks.assignee_id'</span>).<span class="ruby-identifier">select</span>(<span class="ruby-string">'users.fullname, tasks.*'</span>)
+  <span class="ruby-identifier">t</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;tasks.complete = 'f' AND tasks.assignee_id IS NOT NULL AND category &lt; '5'&quot;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&quot;users.fullname, tasks.priority&quot;</span>).<span class="ruby-identifier">joins</span>(<span class="ruby-string">'INNER JOIN users ON users.id = tasks.assignee_id'</span>).<span class="ruby-identifier">select</span>(<span class="ruby-string">'users.fullname, tasks.*'</span>).<span class="ruby-identifier">includes</span>(<span class="ruby-string">&quot;requester&quot;</span>).<span class="ruby-identifier">includes</span>(<span class="ruby-string">&quot;assignee&quot;</span>)
   <span class="ruby-identifier">t</span>.<span class="ruby-identifier">group_by</span>(&amp;<span class="ruby-value">:fullname</span>)
 <span class="ruby-keyword">end</span></pre>
             </div><!-- all_active2-source -->
@@ -369,7 +332,7 @@
 <pre>
 <span class="ruby-comment"># File app/models/task.rb, line 21</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all_active_by_requester</span>
-  <span class="ruby-identifier">t</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;tasks.complete = 'f' OR tasks.complete IS NULL AND tasks.requester_id IS NOT NULL&quot;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&quot;users.fullname, tasks.id&quot;</span>).<span class="ruby-identifier">joins</span>(<span class="ruby-string">'INNER JOIN users ON users.id = tasks.requester_id'</span>).<span class="ruby-identifier">select</span>(<span class="ruby-string">'users.fullname, tasks.*'</span>)
+  <span class="ruby-identifier">t</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;tasks.complete = 'f' OR tasks.complete IS NULL AND tasks.requester_id IS NOT NULL&quot;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&quot;users.fullname, tasks.id&quot;</span>).<span class="ruby-identifier">joins</span>(<span class="ruby-string">'INNER JOIN users ON users.id = tasks.requester_id'</span>).<span class="ruby-identifier">select</span>(<span class="ruby-string">'users.fullname, tasks.*'</span>).<span class="ruby-identifier">includes</span>(<span class="ruby-string">&quot;requester&quot;</span>).<span class="ruby-identifier">includes</span>(<span class="ruby-string">&quot;assignee&quot;</span>)
   <span class="ruby-identifier">t</span>.<span class="ruby-identifier">group_by</span>(&amp;<span class="ruby-value">:fullname</span>)
 <span class="ruby-keyword">end</span></pre>
             </div><!-- all_active_by_requester-source -->
@@ -428,7 +391,11 @@
 
           <div class="method-description">
             
-            
+            <p>def self.all_active</p>
+
+<pre>find(:all, :order =&gt;&quot;assignee_id, priority&quot;, :conditions =&gt; [&quot;complete = ?&quot;,false])</pre>
+
+<p>end</p>
             
 
             
