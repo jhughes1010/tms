@@ -11,6 +11,14 @@ class SasFrontController < ApplicationController
     #debug - hardcoded
     UserMailer.sas_mail(@user_id,@sa).deliver
   end
+  
+  def upload
+    uploaded_io = params[:spreadsheet]
+    puts "upload is being called"
+    File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+      file.write(uploaded_io.read)
+    end
+  end
   protected
 
   def set_useful_globals
