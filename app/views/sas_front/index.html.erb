@@ -13,5 +13,11 @@
 
 
 <%= form_tag({action: :upload}, multipart: true) do %>
+<p>
   <%= file_field_tag 'spreadsheet' %>
+</p>
+  
+  <p>
+  	<%= submit_tag "Upload" %>
+  </p>
 <% end %>

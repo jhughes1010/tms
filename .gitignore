@@ -8,3 +8,4 @@ tmp/**/*
 *.numbers
 import/*.*
 schema.rb
+/public/uploads/*.*

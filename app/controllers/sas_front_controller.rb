@@ -13,10 +13,10 @@ class SasFrontController < ApplicationController
   end
   
   def upload
-    uploaded_io = params[:spreadsheet]
+    @uploaded_io = params[:spreadsheet]
     puts "upload is being called"
-    File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
-      file.write(uploaded_io.read)
+    File.open(Rails.root.join('public', 'uploads', @uploaded_io.original_filename), 'wb') do |file|
+      file.write(@uploaded_io.read)
     end
   end
   protected
