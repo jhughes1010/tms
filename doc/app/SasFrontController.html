@@ -73,6 +73,8 @@
           
           <li><a href="#method-i-set_useful_globals">#set_useful_globals</a></li>
           
+          <li><a href="#method-i-upload">#upload</a></li>
+          
         </ul>
       </div>
       
@@ -374,6 +376,48 @@
         </div><!-- reports-method -->
 
       
+        <div id="upload-method" class="method-detail ">
+          <a name="method-i-upload"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">upload</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="upload-source">
+<pre>
+<span class="ruby-comment"># File app/controllers/sas_front_controller.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">upload</span>
+  <span class="ruby-comment">#clear the uploads folder - nothing is safe</span>
+  <span class="ruby-ivar">@uploaded_io</span> = <span class="ruby-identifier">params</span>[<span class="ruby-value">:spreadsheet</span>]
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;upload is being called&quot;</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">Rails</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'public'</span>, <span class="ruby-string">'uploads'</span>, <span class="ruby-ivar">@uploaded_io</span>.<span class="ruby-identifier">original_filename</span>), <span class="ruby-string">'wb'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">file</span>.<span class="ruby-identifier">write</span>(<span class="ruby-ivar">@uploaded_io</span>.<span class="ruby-identifier">read</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-regexp">/.xls/</span>.<span class="ruby-identifier">search</span>(<span class="ruby-ivar">@uploaded_io</span>.<span class="ruby-identifier">original_filename</span>)
+    <span class="ruby-comment">#do not process unless .xls is in the name</span>
+    
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- upload-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- upload-method -->
+
+      
       </div><!-- public-instance-method-details -->
     
       <div id="protected-instance-method-details" class="method-section section">
@@ -399,7 +443,7 @@
             
             <div class="method-source-code" id="set_useful_globals-source">
 <pre>
-<span class="ruby-comment"># File app/controllers/sas_front_controller.rb, line 16</span>
+<span class="ruby-comment"># File app/controllers/sas_front_controller.rb, line 29</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">set_useful_globals</span>
   <span class="ruby-ivar">@auth</span> = <span class="ruby-identifier">session</span>[<span class="ruby-value">:user_auth</span>]
   <span class="ruby-ivar">@user_id</span>=<span class="ruby-identifier">session</span>[<span class="ruby-value">:user_id</span>]
