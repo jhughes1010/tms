@@ -5,11 +5,14 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.xml
   def index
-    @tasks = Task.all_active
+    @tasks = Task.order(:id)
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @tasks }
+      #format.xml  { render :xml => @tasks }
+      format.csv { send_data @tasks.as_csv }
+      #format.csv { render text: @tasks.as_csv }
+      format.xls { send_data @tasks.as_csv(col_sep: "\t") }
     end
   end
 

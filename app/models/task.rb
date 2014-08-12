@@ -7,9 +7,9 @@ class Task < ActiveRecord::Base
   # scope :grouped, group(:assignee_id)
 
 
-  #def self.all_active
-   # find(:all, :order =>"assignee_id, priority", :conditions => ["complete = ?",false])
-  #end
+  def self.all_active
+    find(:all, :order =>"assignee_id, priority", :conditions => ["complete = ?",false])
+  end
   def self.all_unassigned
     date=Date.today
     find(:all, :order =>"id" , :conditions => "assignee_id IS NULL")
@@ -52,4 +52,12 @@ class Task < ActiveRecord::Base
       end
     end
     #end
+    def self.as_csv(options = {})
+      CSV.generate(options) do |csv|
+        csv << column_names
+        all.each do |task|
+          csv << task.attributes.values_at(*column_names)
+        end
+      end
+    end
 end

@@ -1,15 +1,17 @@
 <h2>Manual Priority for tasks</h2>
 <ul id="sortable">
-<% @tasks.each do |t| %>
-<li class="ui-state-default">
-<%= link_to t.id,t, :class =>'label label-primary'%>
-:
-<%= t.assignee.fullname %>
-:
-<%= t.requester.fullname %>
-:
-<%= t.device %>
-:
-<%= t.taskname.truncate(75) %>
+  <% @tasks.each do |t| %>
+    <div class="category" id="<%= t.id %>">
+      <li class="ui-state-default">
+      <%= link_to t.id,t, :class =>'label label-primary'%>
+          :
+          <%= t.assignee.fullname %>
+          :
+          <%= t.requester.fullname %>
+          :
+          <%= t.device %>
+          :
+          <%= t.taskname.truncate(75) %>
+      </div>
 <% end %>
 </ul>
