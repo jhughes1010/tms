@@ -1,6 +1,3 @@
 <p>The following TMS entry has been edited.</p>
-<p>Task ID: <%= @task.id %></p>
-<p>Task Name: <%= @task.taskname %></p>
-<p>Task Details: <%= @task.description %>
-<p>Requested completion date: <%=@task.tcd%>
+<%= render :partial => 'tms_record' %>
 <p>James Hughes</p>

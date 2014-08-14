@@ -26,15 +26,16 @@ jQuery(document).ready(function() {
         });
         
   jQuery('table.disp').dataTable({
-          order: [[ 4, "asc" ]]
+    stateSave: true,
+    order: [[ 4, "asc" ]]
       });
   
   jQuery( "#sortable" ).sortable({
   	axis: 'y',
-        update: function(event, ui){
-          var itm_arr = jQuery("#sortable").sortable('toArray');
-          var pobj = {categories: itm_arr};
-          jQuery.post("/priority/reorder", pobj);
+    update: function(event, ui){
+    var itm_arr = jQuery("#sortable").sortable('toArray');
+    var pobj = {categories: itm_arr};
+    jQuery.post("/priority/reorder", pobj);
         }
       });
 	});
