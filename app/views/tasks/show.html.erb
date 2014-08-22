@@ -1,3 +1,18 @@
+<h2>
+    <%if @task.accepted == false && @task.complete == false%>
+    <span class="label label-primary">Open</span> 
+    <% end %>
+    <%if @task.accepted == false && @task.complete == true%>
+    <span class="label label-warning">In Review</span>
+    <% end %>
+    <%if @task.accepted == true && @task.complete == true%>
+    <span class="label label-success">Closed</span>
+    <% end %>
+    <%if @task.accepted == true && @task.complete == false%>
+    <span class="label label-danger">Invalid Status</span>
+    <% end %>
+</h2>
+
 <p>
      <b>
          ID:
@@ -94,18 +109,7 @@
      </b>
      <%= @task.category %>
 </p>
-<p>
-     <b>
-         Complete:
-     </b>
-     <%= @task.complete %>
-</p>
-<p>
-     <b>
-         Accepted:
-     </b>
-     <%= @task.accepted %>
-</p>
+
 <hr>
 <p>
      This task was entered into TMS on
