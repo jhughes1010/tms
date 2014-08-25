@@ -14,11 +14,21 @@ class SasFrontController < ApplicationController
   
   def upload
     @uploaded_io = params[:spreadsheet]
-    puts "upload is being called"
     File.open(Rails.root.join('public', 'uploads', @uploaded_io.original_filename), 'wb') do |file|
       file.write(@uploaded_io.read)
     end
+    #write_records( file)
+    #send_mail( recipient, file)
   end
+  def send_mail( recipient, file)
+    
+  end
+  def write_records( file)
+    #open file
+    #itterate through lines while (r,c) is not nil
+    
+  end
+
   protected
 
   def set_useful_globals

@@ -31,4 +31,5 @@ gem 'gchartrb'
 # group :development, :test do
 #   gem 'webrat'
 gem 'pdfkit'
+gem 'roo'
 # end
