@@ -17,7 +17,7 @@ class SasFrontController < ApplicationController
     File.open(Rails.root.join('public', 'uploads', @uploaded_io.original_filename), 'wb') do |file|
       file.write(@uploaded_io.read)
     end
-    #write_records( file)
+    write_records( @uploaded_io)
     #send_mail( recipient, file)
   end
   def send_mail( recipient, file)
@@ -25,7 +25,14 @@ class SasFrontController < ApplicationController
   end
   def write_records( file)
     #open file
+    path = './public/uploads/'
+    file = path + file.original_filename
+    xls = Roo::Spreadsheet.open( file.to_s)
     #itterate through lines while (r,c) is not nil
+    xls.each_with_pagename do |name, sheet|
+      p name
+      p sheet.row(11)
+    end
     
   end
 
