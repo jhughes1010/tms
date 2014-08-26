@@ -31,7 +31,13 @@ class SasFrontController < ApplicationController
     #itterate through lines while (r,c) is not nil
     xls.each_with_pagename do |name, sheet|
       p name
-      p sheet.row(11)
+      row = 12
+      col = 1
+      while xls.cell(row, col) != nil do
+        current_row = sheet.row( row)
+        puts current_row[0]
+        row += 1
+      end
     end
     
   end
