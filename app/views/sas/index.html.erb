@@ -39,7 +39,7 @@
     <td><%= sa.quantity %></td>
     <td><%= sa.standard_cost %></td>
     <td><%= sa.total %></td>
-    <td><%= sa.date.to_s(:short) %></td>
+    <td><% unless sa.date == nil %><%= sa.date.to_s(:short) %> <% end %></td>
     <td><%= sa.reserve %></td>
     <td><%= sa.rma %></td>
     <td><%= sa.customer_number %></td>

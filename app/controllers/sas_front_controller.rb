@@ -35,12 +35,48 @@ class SasFrontController < ApplicationController
       col = 1
       while xls.cell(row, col) != nil do
         current_row = sheet.row( row)
-        puts current_row[0]
+        #puts current_row[0]
+        if name == "E_O Scrap"
+        eoScrap (current_row)
+      elsif name == "Abnormal Scrap"
+        abnormalScrap (current_row)
+      end
         row += 1
+
       end
     end
     
+
+    
   end
+
+  def eoScrap(row)
+    #create record and save it
+    record = Sa.new
+    record.sas_type = "Obsolete"
+    record.lot_number = row[0]
+    record.location = row[1]
+    record.profit_center = row[2]
+    record.sap_matid = row[3]
+    record.lts_matid = row[4]
+    record.quantity = row[5]
+    record.comment = row[10]
+    record.save  
+  end
+  
+  def abnormalScrap(row)
+    #create record and save it
+    record = Sa.new
+    record.lot_number = row[0]
+    record.location = row[1]
+    record.profit_center = row[2]
+    record.sap_matid = row[3]
+    record.lts_matid = row[4]
+    record.quantity = row[5]
+    record.comment = row[10]
+    record.save  
+  end
+
 
   protected
 
