@@ -19,6 +19,8 @@ class SasFrontController < ApplicationController
     end
     write_records( @uploaded_io)
     #send_mail( recipient, file)
+    UserMailer.sas_mail(['james.hughes@atmel.com','james.hughes@atmel.com'], @uploaded_io.original_filename).deliver
+    
   end
   def send_mail( recipient, file)
     
@@ -42,17 +44,21 @@ class SasFrontController < ApplicationController
         abnormalScrap (current_row)
       end
         row += 1
-
       end
     end
-    
-
-    
   end
+  
+  def deleteSa
+      Sa.delete_all
+      flash.now[:notice] = "SAS records deleted"
+      redirect_to(:action => "/main/sas_front/index")
+      
+    end
 
   def eoScrap(row)
     #create record and save it
     record = Sa.new
+    record.sent = true
     record.sas_type = "Obsolete"
     record.lot_number = row[0]
     record.location = row[1]
@@ -67,12 +73,15 @@ class SasFrontController < ApplicationController
   def abnormalScrap(row)
     #create record and save it
     record = Sa.new
+    record.sent = true
+    record.sas_type = "Abnormal"
     record.lot_number = row[0]
     record.location = row[1]
-    record.profit_center = row[2]
-    record.sap_matid = row[3]
-    record.lts_matid = row[4]
-    record.quantity = row[5]
+    record.plant = row[2]
+    record.profit_center = row[3]
+    record.sap_matid = row[4]
+    record.lts_matid = row[5]
+    record.quantity = row[6]
     record.comment = row[10]
     record.save  
   end

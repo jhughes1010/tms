@@ -5,6 +5,8 @@ TMS::Application.routes.draw do
 
   get "sas_front/reports"
 
+  get "sas_front/deleteSa"
+
   resources :sas
 
   resources :targets

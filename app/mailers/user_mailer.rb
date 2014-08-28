@@ -42,7 +42,7 @@ class UserMailer < ActionMailer::Base
     #send mail
     mail(:to => "#{name} <#{email}>", :subject => "TMS - My Task Summary: " + name)
   end
-  def sas_mail(user_id, sas_id)
+  def sas_mail_old(user_id, sas_id)
     @sa = Sa.find(sas_id)
     #nothing about the user is in play yet
     @user = User.find(user_id)
@@ -58,5 +58,11 @@ class UserMailer < ActionMailer::Base
   end
   def setup_import_complete(recipient)
     mail(:to => recipient.join(','), :subject => "SETUP - Daily Import Completed") 
+  end 
+  def sas_mail(recipient, attachment)
+    path = './public/uploads/'
+    file = path + attachment
+    attachments['scrap.xls'] = File.read(file)
+    mail(:to => recipient.join(','), :subject => "Scrap Event is attached") 
   end 
 end
