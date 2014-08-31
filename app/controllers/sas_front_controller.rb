@@ -59,6 +59,7 @@ class SasFrontController < ApplicationController
     #create record and save it
     record = Sa.new
     record.sent = true
+    record.date = Date.today()
     record.sas_type = "Obsolete"
     record.lot_number = row[0]
     record.location = row[1]
@@ -73,7 +74,8 @@ class SasFrontController < ApplicationController
   def abnormalScrap(row)
     #create record and save it
     record = Sa.new
-    record.sent = true
+    record.sent = true    
+    record.date = Date.today()
     record.sas_type = "Abnormal"
     record.lot_number = row[0]
     record.location = row[1]

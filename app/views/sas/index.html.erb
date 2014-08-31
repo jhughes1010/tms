@@ -1,6 +1,7 @@
 <h1>Listing SAS</h1>
 
-<table  class="table table-hover">
+      <table cellspacing="0" class="disp" width="100%">
+          <thead>
   <tr>
      <th><b>ID</b></th>	  
     <th><b>SAS Type</b></th>
@@ -24,7 +25,8 @@
     <th></th>
     <th></th>
   </tr>
-
+</thead>
+<tbody>
 <% @sas.each do |sa| %>
   <tr>
     <td><%= link_to sa.id, sa %></td>
@@ -39,7 +41,7 @@
     <td><%= sa.quantity %></td>
     <td><%= sa.standard_cost %></td>
     <td><%= sa.total %></td>
-    <td><% unless sa.date == nil %><%= sa.date.to_s(:short) %> <% end %></td>
+    <td><% unless sa.date == nil %><%= sa.date.strftime("%y-%m-%d") %> <% end %></td>
     <td><%= sa.reserve %></td>
     <td><%= sa.rma %></td>
     <td><%= sa.customer_number %></td>
@@ -50,6 +52,7 @@
     <td><%= link_to raw('<span class="glyphicon glyphicon-remove"></span>'), sa, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
+<tbody>
 </table>
 
 <br />
