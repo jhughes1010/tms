@@ -1,7 +1,10 @@
 <div class="btn-group">
-  <a class="btn btn-info" href="/main/pto_current">PTO 30 days</a>
-  <a class="btn btn-info" href="/main/pto_current_90">PTO 90 days</a>
-  <a class="btn btn-primary" href="/ptos/new">PTO Entry</a>
+  <a class="btn btn-primary" href="/main/pto_current">PTO 30 days</a>
+  <a class="btn btn-primary" href="/main/pto_current_90">PTO 90 days</a>
+  <a class="btn btn-info" href="/ptos/new">PTO Entry</a>
+  <% if @auth == 2 %>
+    <a class="btn btn-info" href="/ptos">PTO Raw Table</a>
+  <% end %>
 </div>
 <div class="page-header">
   <h2>
