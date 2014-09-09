@@ -1,4 +1,7 @@
 class Sa < ActiveRecord::Base
+
+  belongs_to :user
+
   def self.mask_set(entry)
     mask = Hash.new
     if entry == "Abnormal"

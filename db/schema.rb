@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140718113214) do
+ActiveRecord::Schema.define(:version => 20140909101942) do
 
   create_table "can_mains", :force => true do |t|
     t.string    "can"
@@ -167,6 +167,7 @@ ActiveRecord::Schema.define(:version => 20140718113214) do
     t.string   "sas_type"
     t.boolean  "sent"
     t.text     "comment"
+    t.integer  "user_id"
   end
 
   create_table "setups", :force => true do |t|

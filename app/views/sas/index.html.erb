@@ -5,6 +5,7 @@
   <tr>
      <th><b>ID</b></th>	  
     <th><b>SAS Type</b></th>
+    <th><b>Requester</b></th>
     <th><b>Sent</b></th>
     <th><b>Lot number</b></th>
     <th><b>Location</b></th>
@@ -31,6 +32,7 @@
   <tr>
     <td><%= link_to sa.id, sa %></td>
     <td><%= sa.sas_type %></td>
+    <td><%= sa.user.fullname %></td>
     <td><%=raw checkbox_mail(sa.sent)%></span></td>
     <td><%= sa.lot_number %></td>
     <td><%= sa.location %></td>

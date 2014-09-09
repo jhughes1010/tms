@@ -58,6 +58,7 @@ class SasFrontController < ApplicationController
   def eoScrap(row)
     #create record and save it
     record = Sa.new
+    record.user_id = @user_id
     record.sent = true
     record.date = Date.today()
     record.sas_type = "Obsolete"
@@ -74,6 +75,7 @@ class SasFrontController < ApplicationController
   def abnormalScrap(row)
     #create record and save it
     record = Sa.new
+    record.user_id = @user_id
     record.sent = true    
     record.date = Date.today()
     record.sas_type = "Abnormal"
