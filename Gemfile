@@ -32,4 +32,6 @@ gem 'gchartrb'
 #   gem 'webrat'
 gem 'pdfkit'
 gem 'roo'
+
+gem "iconv", "~> 1.0.3"
 # end

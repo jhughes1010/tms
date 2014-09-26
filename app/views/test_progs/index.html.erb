@@ -1,0 +1,76 @@
+<h2>
+	Engineering Experiment Programs
+</h2>
+<table cellspacing='10' class='display' id='prr' width='100%'>
+		<thead>
+		<tr>
+			<th>
+			   Engineer
+		    </th>
+			<th>
+			   Status
+		    </th>
+			<th>
+			   Program Name
+		    </th>
+			<th>
+			   CRS
+		    </th>
+			<th>
+			   Operation
+		    </th>
+			<th>
+			   Date Rx
+		    </th>
+			<th>
+			   Comments
+		    </th>
+			<th>
+			</th>
+			<th>
+			</th>
+			<%if @auth > 1 %>
+			<th>
+			</th>
+			<% end %>
+		</tr>
+	</thead>
+	<tbody>
+		<% @test_progs.each do |test_prog| %>
+		<tr>
+			<td>
+				<%= test_prog.engineer %>
+			</td>
+			<td>
+				<%= test_prog.status.upcase %>
+			</td>
+			<td>
+				<%= test_prog.prog_name.upcase %>
+			</td>
+			<td>
+				<%= test_prog.crs_number %>
+			</td>
+			<td>
+				<%= test_prog.operation %>
+			</td>
+			<td>
+				<%= test_prog.date_received %>
+			</td>
+			<td>
+				<%= test_prog.comments %>
+			</td>
+			<td>
+				<%= link_to 'Show', test_prog, :class => 'btn btn-info' %>
+			</td>
+			<td>
+				<%= link_to 'Edit', edit_test_prog_path(test_prog), :class => 'btn btn-warning' %>		
+			</td>
+			<% if @auth > 1 %>
+			<td>
+				<%= link_to 'Destroy', test_prog, :confirm => 'Are you sure?', :method => :delete, :class => 'btn btn-danger' %>
+			</td>
+			<% end %>
+		</tr>
+		<% end %>
+	</tbody>
+</table>

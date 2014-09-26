@@ -34,6 +34,7 @@ GEM
       abstract (>= 1.0.0)
     gchartrb (0.8)
     i18n (0.5.0)
+    iconv (1.0.4)
     mail (2.2.12)
       activesupport (>= 2.3.6)
       i18n (>= 0.4.0)
@@ -87,6 +88,7 @@ PLATFORMS
 
 DEPENDENCIES
   gchartrb
+  iconv (~> 1.0.3)
   pdfkit
   rails (= 3.0.3)
   roo
