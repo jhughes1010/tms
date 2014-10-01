@@ -4,4 +4,9 @@
   <a button class="btn btn-primary" href="/main/project_unassigned">Unassigned</a>
   <a button class="btn btn-primary" href="/priority/index">Priority Management</a>
   <a button class="btn btn-info" href="/tasks/new">New Task</a>
+  <% form_tag '/tasks/show' do %>
+    <%=label_tag 'tms', 'TMS Record Lookup' %>
+    <%=text_field_tag 'id'%>
+    <%= submit_tag 'Lookup' %>
+  <% end %>
 </div>

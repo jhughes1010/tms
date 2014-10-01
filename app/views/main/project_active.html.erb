@@ -1,5 +1,6 @@
 <%= render :partial =>"pill_navigation",:locals => {:active => "By_assignee"} %>
 <%= render :partial =>"page_header",:locals => {:title => "Active Projects", :description => "ordered by assignee and priority"} %>
+
 <div id="accordion">
   <% @tasks.each_pair do |fullname, tasks| %>
     <h3>
@@ -26,3 +27,5 @@
     <a button class="btn btn-primary" href="/tasks.csv">Export - CSV</a>
     <a button class="btn btn-primary" href="/tasks.xls">Export - XLS</a>
 </div>
+
+
