@@ -6,7 +6,11 @@
     <h3>
       <a href="#">
         <%= tasks[0].fullname %>
-        <span class="badge"><%= tasks.count%></span></a>
+        <span class="badge alert-info pull-right"><%= tasks.count%></span></a>
+        <span class="badge alert-warning"><%= @tasksCategoryCount[1][tasks[0].assignee_id]%></span></a>
+        <span class="badge alert-warning"><%= @tasksCategoryCount[2][tasks[0].assignee_id]%></span></a>
+        <span class="badge alert-warning"><%= @tasksCategoryCount[3][tasks[0].assignee_id]%></span></a>
+        <span class="badge alert-warning"><%= @tasksCategoryCount[4][tasks[0].assignee_id]%></span></a>
       </a>
     </h3>
     <div>
@@ -27,5 +31,3 @@
     <a button class="btn btn-primary" href="/tasks.csv">Export - CSV</a>
     <a button class="btn btn-primary" href="/tasks.xls">Export - XLS</a>
 </div>
-
-
