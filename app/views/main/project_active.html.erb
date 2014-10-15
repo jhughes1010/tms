@@ -7,10 +7,12 @@
       <a href="#">
         <%= tasks[0].fullname %>
         <span class="badge alert-info pull-right"><%= tasks.count%></span></a>
+        <% if @auth >1 %>
         <span class="badge alert-warning"><%= @tasksCategoryCount[1][tasks[0].assignee_id]%></span></a>
         <span class="badge alert-warning"><%= @tasksCategoryCount[2][tasks[0].assignee_id]%></span></a>
         <span class="badge alert-warning"><%= @tasksCategoryCount[3][tasks[0].assignee_id]%></span></a>
         <span class="badge alert-warning"><%= @tasksCategoryCount[4][tasks[0].assignee_id]%></span></a>
+        <% end %>
       </a>
     </h3>
     <div>
