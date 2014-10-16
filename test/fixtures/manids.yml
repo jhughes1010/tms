@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  device: MyString
+  customer: MyString
+  products: MyString
+  can_id: 1
+  mfgid: MyString
+  keyid: MyString
+
+two:
+  device: MyString
+  customer: MyString
+  products: MyString
+  can_id: 1
+  mfgid: MyString
+  keyid: MyString

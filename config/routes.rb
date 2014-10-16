@@ -1,4 +1,6 @@
 TMS::Application.routes.draw do
+  resources :manids
+
   resources :test_times
 
   get "sas_front/index"

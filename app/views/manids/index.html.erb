@@ -1,0 +1,37 @@
+<h1>Listing Manufacturing IDs</h1>
+
+<table cellspacing='10' class='display' id='prr' width='100%'>
+    <thead>
+  <tr>
+    <th>Device</th>
+    <th>Customer</th>
+    <th>Products</th>
+    <th>Can</th>
+    <th>Mfgid</th>
+    <th>Keyid</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+<% @manids.each do |manid| %>
+  <tr>
+    <td><%= manid.device %></td>
+    <td><%= manid.customer %></td>
+    <td><%= manid.products %></td>
+    <td><%= manid.can_id %></td>
+    <td><%= manid.mfgid %></td>
+    <td><%= manid.keyid %></td>
+    <td><%= link_to 'Show', manid, :class => "btn btn-primary" %></td>
+    <td><%= link_to 'Edit', edit_manid_path(manid), :class => "btn btn-warning" %></td>
+    <td><%= link_to 'Destroy', manid, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger" %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Manufacturing ID', new_manid_path , :class => "btn btn-primary"%>
+

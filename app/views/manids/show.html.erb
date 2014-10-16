@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Device:</b>
+  <%= @manid.device %>
+</p>
+
+<p>
+  <b>Customer:</b>
+  <%= @manid.customer %>
+</p>
+
+<p>
+  <b>Products:</b>
+  <%= @manid.products %>
+</p>
+
+<p>
+  <b>Can:</b>
+  <%= @manid.can_id %>
+</p>
+
+<p>
+  <b>Mfgid:</b>
+  <%= @manid.mfgid %>
+</p>
+
+<p>
+  <b>Keyid:</b>
+  <%= @manid.keyid %>
+</p>
+
+
+<%= link_to 'Edit', edit_manid_path(@manid) %> |
+<%= link_to 'Back', manids_path %>

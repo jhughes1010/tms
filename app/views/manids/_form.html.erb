@@ -1,0 +1,41 @@
+<%= form_for(@manid) do |f| %>
+  <% if @manid.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@manid.errors.count, "error") %> prohibited this manid from being saved:</h2>
+
+      <ul>
+      <% @manid.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :device %><br />
+    <%= f.text_field :device %>
+  </div>
+  <div class="field">
+    <%= f.label :customer %><br />
+    <%= f.text_field :customer %>
+  </div>
+  <div class="field">
+    <%= f.label :products %><br />
+    <%= f.text_field :products %>
+  </div>
+  <div class="field">
+    <%= f.label :can_id %><br />
+    <%= f.text_field :can_id %>
+  </div>
+  <div class="field">
+    <%= f.label :mfgid %><br />
+    <%= f.text_field :mfgid %>
+  </div>
+  <div class="field">
+    <%= f.label :keyid %><br />
+    <%= f.text_field :keyid %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
