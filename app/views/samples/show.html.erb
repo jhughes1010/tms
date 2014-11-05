@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Manid:</b>
+  <%= @sample.manid_id %>
+</p>
+
+<p>
+  <b>Dateexchange:</b>
+  <%= @sample.dateExchange %>
+</p>
+
+<p>
+  <b>Datesamples:</b>
+  <%= @sample.dateSamples %>
+</p>
+
+<p>
+  <b>Datecustapproval:</b>
+  <%= @sample.dateCustApproval %>
+</p>
+
+<p>
+  <b>Dateqaenable:</b>
+  <%= @sample.dateQAEnable %>
+</p>
+
+<p>
+  <b>Datereleaseproduction:</b>
+  <%= @sample.dateReleaseProduction %>
+</p>
+
+
+<%= link_to 'Edit', edit_sample_path(@sample) %> |
+<%= link_to 'Back', samples_path %>

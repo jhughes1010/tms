@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141016104323) do
+ActiveRecord::Schema.define(:version => 20141105182849) do
 
   create_table "can_mains", :force => true do |t|
     t.string    "can"
@@ -155,6 +155,17 @@ ActiveRecord::Schema.define(:version => 20141016104323) do
     t.timestamp "updated_at"
     t.string    "team"
     t.string    "product_line"
+  end
+
+  create_table "samples", :force => true do |t|
+    t.integer  "manid_id"
+    t.date     "dateExchange"
+    t.date     "dateSamples"
+    t.date     "dateCustApproval"
+    t.date     "dateQAEnable"
+    t.date     "dateReleaseProduction"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "sas", :force => true do |t|

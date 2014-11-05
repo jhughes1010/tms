@@ -1,4 +1,6 @@
 TMS::Application.routes.draw do
+  resources :samples
+
   resources :manids
 
   resources :test_times

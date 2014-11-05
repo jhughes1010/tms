@@ -1,0 +1,36 @@
+<h1>Customer Qualification Tracker</h1>
+
+<table cellspacing='10' class='display' id='prr' width='100%'>
+	<thead>
+		  <tr>
+    <th>Manid</th>
+    <th>Secret Exchange</th>
+    <th>Samples Sent</th>
+    <th>Customer Approval</th>
+    <th>QA Online</th>
+    <th>Production Release</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+<% @samples.each do |sample| %>
+  <tr>
+    <td><%= sample.manid_id %></td>
+    <td><%= sample.dateExchange %></td>
+    <td><%= sample.dateSamples %></td>
+    <td><%= sample.dateCustApproval %></td>
+    <td><%= sample.dateQAEnable %></td>
+    <td><%= sample.dateReleaseProduction %></td>
+    <td><%= link_to 'Show', sample %></td>
+    <td><%= link_to 'Edit', edit_sample_path(sample) %></td>
+    <td><%= link_to 'Destroy', sample, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Sample', new_sample_path %>

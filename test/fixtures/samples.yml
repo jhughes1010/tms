@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  manid_id: 1
+  dateExchange: 2014-11-05
+  dateSamples: 2014-11-05
+  dateCustApproval: 2014-11-05
+  dateQAEnable: 2014-11-05
+  dateReleaseProduction: 2014-11-05
+
+two:
+  manid_id: 1
+  dateExchange: 2014-11-05
+  dateSamples: 2014-11-05
+  dateCustApproval: 2014-11-05
+  dateQAEnable: 2014-11-05
+  dateReleaseProduction: 2014-11-05

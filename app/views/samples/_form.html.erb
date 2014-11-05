@@ -1,0 +1,41 @@
+<%= form_for(@sample) do |f| %>
+  <% if @sample.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sample.errors.count, "error") %> prohibited this sample from being saved:</h2>
+
+      <ul>
+      <% @sample.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :manid_id %><br />
+    <%= f.text_field :manid_id %>
+  </div>
+  <div class="field">
+    <%= f.label :dateExchange %><br />
+    <%= f.date_select :dateExchange %>
+  </div>
+  <div class="field">
+    <%= f.label :dateSamples %><br />
+    <%= f.date_select :dateSamples %>
+  </div>
+  <div class="field">
+    <%= f.label :dateCustApproval %><br />
+    <%= f.date_select :dateCustApproval %>
+  </div>
+  <div class="field">
+    <%= f.label :dateQAEnable %><br />
+    <%= f.date_select :dateQAEnable %>
+  </div>
+  <div class="field">
+    <%= f.label :dateReleaseProduction %><br />
+    <%= f.date_select :dateReleaseProduction %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
