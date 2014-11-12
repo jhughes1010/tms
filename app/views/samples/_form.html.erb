@@ -16,24 +16,24 @@
     <%= f.text_field :manid_id %>
   </div>
   <div class="field">
-    <%= f.label :dateExchange %><br />
-    <%= f.date_select :dateExchange %>
+    <%= f.label :dateExchange, 'Secret Exchange Date' %><br />
+    <%= f.text_field :dateExchange %>
   </div>
   <div class="field">
-    <%= f.label :dateSamples %><br />
-    <%= f.date_select :dateSamples %>
+    <%= f.label :dateSamples, 'Sample Delivery Date' %><br />
+    <%= f.text_field :dateSamples %>
   </div>
   <div class="field">
-    <%= f.label :dateCustApproval %><br />
-    <%= f.date_select :dateCustApproval %>
+    <%= f.label :dateCustApproval, 'Customer Approval Date' %><br />
+    <%= f.text_field :dateCustApproval %>
   </div>
   <div class="field">
-    <%= f.label :dateQAEnable %><br />
-    <%= f.date_select :dateQAEnable %>
+    <%= f.label :dateQAEnable, 'QA Online Date' %><br />
+    <%= f.text_field :dateQAEnable %>
   </div>
   <div class="field">
-    <%= f.label :dateReleaseProduction %><br />
-    <%= f.date_select :dateReleaseProduction %>
+    <%= f.label :dateReleaseProduction, 'Released to Production Date' %><br />
+    <%= f.text_field :dateReleaseProduction %>
   </div>
   <div class="actions">
     <%= f.submit %>
