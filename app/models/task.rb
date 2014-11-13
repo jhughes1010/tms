@@ -22,6 +22,10 @@ class Task < ActiveRecord::Base
     t = self.where("tasks.priority < ? AND tasks.complete = 'f' AND tasks.assignee_id IS NOT NULL AND category < '5'", priority ).order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*').includes("requester").includes("assignee")
     #t.group_by(&:fullname)
   end
+  def self.topActiveSerial( priority )
+    t = self.where("tasks.family IN ('2W','SPI', '3W') AND tasks.priority < ? AND tasks.complete = 'f' AND tasks.assignee_id IS NOT NULL AND category < '5'", priority ).order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*').includes("requester").includes("assignee")
+    #t.group_by(&:fullname)
+  end
   def self.all_active_by_requester
     t = self.where("tasks.complete = 'f' OR tasks.complete IS NULL AND tasks.requester_id IS NOT NULL").order("users.fullname, tasks.id").joins('INNER JOIN users ON users.id = tasks.requester_id').select('users.fullname, tasks.*').includes("requester").includes("assignee")
     t.group_by(&:fullname)

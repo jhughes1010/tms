@@ -1,2 +1,10 @@
-<h1>TaskFront#top3Serial</h1>
-<p>Find me in app/views/task_front/top3Serial.html.erb</p>
+<h2>Tasks: Top 3 Serial Assignments for all TEs</h2>
+
+<table cellspacing="0" class="disp" width="100%">
+    <thead>
+      <%= render :partial => "task_header" %>
+    </thead>
+    <tbody>
+     <%= render :partial => "task" , :collection => @tasks  %>
+    </tbody>
+</table>
