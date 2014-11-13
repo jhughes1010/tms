@@ -1,4 +1,6 @@
 TMS::Application.routes.draw do
+  get "front_samples/index"
+
   get "task_front/top3Serial"
 
   get "task_front/top3All"

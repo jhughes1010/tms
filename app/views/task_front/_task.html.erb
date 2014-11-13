@@ -1,36 +1,9 @@
 <tr>
-	
-		<td>
-			<%= link_to task.id,task, :class =>'label label-primary'%>
-		</td>
-					</td>
-					<td><small>
-						<%= task.assignee ? task.assignee.fullname : "UNASSIGNED" %>
-					</small></td>
-					<td>
-						<small>
-						<%= task.requester.fullname %>
-					</small>
-
-					<td><small>
-						<%= task.category %>
-					</small></td>
-					<td><small>
-						<%= task.priority %>
-					</td>
-					<td><small><%= task.family %></small></td>
-					<td><small><%= task.request_type %></small></td>
-					<td><small><%= task.operation %></small></td>
-					<td><small><%= task.device %></small></td>
-					<td><small><%= task.platform %></small></td>
-					<td><small>
-						<%= task.taskname %></small>
-					</td>
-					<td><small>
-						<%= task.scd %></small>
-					</td>
-					<td><small>
-						<%= task.duration %></small>
-					</td>
-				
-				</tr>
+	<td>
+		<small>
+			<%= task.assignee ? task.assignee.fullname : "UNASSIGNED" %>: &nbsp
+			<%= task.device %>: &nbsp
+			<%= task.taskname %>
+		</small>
+	</td>			
+</tr>

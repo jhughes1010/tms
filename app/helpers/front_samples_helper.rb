@@ -1,0 +1,2 @@
+module FrontSamplesHelper
+end
