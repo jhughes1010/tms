@@ -1,0 +1,2 @@
+module TaskFrontHelper
+end

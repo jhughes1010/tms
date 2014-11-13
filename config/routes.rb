@@ -1,4 +1,8 @@
 TMS::Application.routes.draw do
+  get "task_front/top3Serial"
+
+  get "task_front/top3All"
+
   resources :samples
 
   resources :manids

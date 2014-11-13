@@ -1,0 +1,10 @@
+<h2>Tasks: Top 3 Assignments for all TEs</h2>
+
+<table cellspacing="0" class="disp" width="100%">
+    <thead>
+      <%= render :partial => "task_header" %>
+    </thead>
+    <tbody>
+      <%= render :partial => "task" , :collection => @tasks  %>
+    </tbody>
+</table>
