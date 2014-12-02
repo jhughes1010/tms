@@ -1,3 +1,3 @@
 class Manid < ActiveRecord::Base
-  has_one :sample
+  belongs_to :sample
 end
