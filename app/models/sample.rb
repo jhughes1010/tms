@@ -1,5 +1,5 @@
 class Sample < ActiveRecord::Base
-  has_one: manid
+  has_one :manid
   
   def self.linked_tables
     t=self.order(manids.device).joins('INNER JOIN manids ON manids.id = samples.manid_id')
