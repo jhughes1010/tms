@@ -1,8 +1,28 @@
 <h2>Crypto Personalization Database</h2>
-<% @samples.each do |s|%>
-<% m = Manid.find(s.manid_id)%>
-<%= m.device %>
-<%= m.customer %>
-<%= m.can_id %>
-<%= s.dateExchange %>
-<% end %>
+<table cellspacing='10' class='display' id='prr' width='100%'>
+	<thead>
+		<tr>
+			<th>
+				Device
+			</th>
+			<th>
+				Customer
+			</th>
+			<th>
+				CAN
+			</th>
+			<th>
+				Sec Exchange
+			</th>
+			<th>
+			</th>
+			<th>
+			</th>
+			<th>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+			<%= render :partial => 'record', :collection => @samples %>
+	</tbody>
+</table>
