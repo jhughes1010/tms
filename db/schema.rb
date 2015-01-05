@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141105182849) do
+ActiveRecord::Schema.define(:version => 20150105120126) do
 
   create_table "can_mains", :force => true do |t|
     t.string    "can"
@@ -282,6 +282,7 @@ ActiveRecord::Schema.define(:version => 20141105182849) do
     t.timestamp "updated_at"
     t.string    "email"
     t.integer   "auth_level"
+    t.date      "passport"
   end
 
 end

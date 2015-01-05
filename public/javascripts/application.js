@@ -13,6 +13,8 @@ jQuery(document).ready(function() {
 
   jQuery("#sa_date").datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true });
 
+  jQuery("#user_passport").datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true });
+
   jQuery("#test_prog_date_received").datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true });
 
   jQuery("#pto_start").datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true });

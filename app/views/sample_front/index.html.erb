@@ -1,31 +1,9 @@
 <h2>Crypto Personalization Database</h2>
 <table cellspacing='10' class='display' id='prr' width='100%'>
 	<thead>
-		<tr>
-			<th>
-				Device
-			</th>
-			<th>
-				Customer
-			</th>
-			<th>
-				CAN
-			</th>
-			<th>
-				Sec Exchange
-			</th>
-			<th>
-				Samples Created
-			</th>
-			<th>
-				Customer Approval
-			</th>
-			<th>
-				Production and QA
-			</th>
-		</tr>
+        <%= render :partial => 'record_header' %>
 	</thead>
 	<tbody>
-			<%= render :partial => 'record', :collection => @samples %>
+	    <%= render :partial => 'record', :collection => @samples %>
 	</tbody>
 </table>
