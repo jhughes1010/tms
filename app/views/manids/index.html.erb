@@ -11,7 +11,7 @@
     <th>Keyid</th>
     <th></th>
     <th></th>
-    <th></th>
+    <!-- <th></th> -->
   </tr>
 </thead>
 <tbody>
@@ -23,14 +23,15 @@
     <td><%= manid.can_id %></td>
     <td><%= manid.mfgid %></td>
     <td><%= manid.keyid %></td>
-    <td><%= link_to 'Show', manid, :class => "btn btn-primary" %></td>
+    <td><%= link_to 'Create Qual Timeline', new_sample_path , :class => "btn btn-primary"%></td>
+    <!-- <td><%= link_to 'Show', manid, :class => "btn btn-primary" %></td> -->
     <td><%= link_to 'Edit', edit_manid_path(manid), :class => "btn btn-warning" %></td>
-    <td><%= link_to 'Destroy', manid, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger" %></td>
+    <!-- <td><%= link_to 'Destroy', manid, :confirm => 'Are you sure?', :method => :delete, :class => "btn btn-danger" %></td> -->
   </tr>
 <% end %>
 </tbody>
 </table>
-
+When creating a timeline record, please roll over the edit button of the record in question to get the manid record number from the URL bar.
 <br />
 
 <%= link_to 'New Manufacturing ID', new_manid_path , :class => "btn btn-primary"%>
