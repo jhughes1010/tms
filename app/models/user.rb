@@ -46,6 +46,10 @@ class User < ActiveRecord::Base
     find(:all, :order =>"fullname", :conditions => "department = '3210'")
   end
   
+  def self.passports(date)
+    self.where("passport < ?", date).select("fullname, passport")
+  end
+  
   private
     def password_non_blank
     errors.add(:password, "missing password") if hashed_password.blank?

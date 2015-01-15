@@ -65,6 +65,10 @@ class MainController < ApplicationController
     @start=@today
     @stop = @start+ @outlook
     @ptos=Pto.upcoming_range(@start,@stop)
+    #passport query
+    @passport_outlook = 12 #months
+    @passport_date = @today + @passport_outlook.months
+    @passports = User.passports(@passport_date)
   end
 
   def pto_current_90

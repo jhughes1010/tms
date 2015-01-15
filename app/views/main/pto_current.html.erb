@@ -55,8 +55,34 @@
   </tbody>
 </table>
 <br/>
-<!-- <haml:loud> link_to 'New Pto', new_pto_path </haml:loud>
--->
-<p>
-  <a href="/main/index">TMS Home</a>
-</p>
+<h2>Passports for renewal
+    <small>
+      <%= @passport_outlook %>
+      month outlook:
+      <%= @passport_date.to_s(:long) %>
+    </small>
+</h2>
+<table cellspacing="10" class="display" id="prr" width="100%">
+  <thead>
+    <tr>
+      <th>
+        <b>User</b>
+      </th>
+      <th>
+        <b>Passport Expiration</b>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @passports.each do |p| %>
+      <tr>
+        <td>
+          <%= p.fullname %>
+        </td>
+        <td>
+          <%= p.passport %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
