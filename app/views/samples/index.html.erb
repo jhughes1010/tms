@@ -19,10 +19,10 @@
 </thead>
 <tbody>
 <% @samples.each do |sample| %>
-@manid = Manid.find(sample.manid_id)
+<% manid = Manid.find(sample.manid_id) %>
   <tr>
-    <td><%= @manid.customer %></td>
-    <td><%= @manid.can_id %></td>
+    <td><%= manid.customer %></td>
+    <td><%= manid.can_id %></td>
     <td><%= sample.manid_id %></td>
     <td><%= sample.dateExchange %></td>
     <td><%= sample.dateSamples %></td>
