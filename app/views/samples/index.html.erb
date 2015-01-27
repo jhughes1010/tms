@@ -5,11 +5,10 @@
 		  <tr>
     <th>Customer</th>
     <th>CAN</th>
-    <th>Manid</th>
     <th>Secret Exchange</th>
     <th>Samples Sent</th>
     <th>Customer Approval</th>
-    <th>Production Release</th>
+    <th>FT Production Available</th>
     <th>QA Module Online</th>
     <th>CRS</th>
     <th></th>
@@ -23,12 +22,11 @@
   <tr>
     <td><%= manid.customer %></td>
     <td><%= manid.can_id %></td>
-    <td><%= sample.manid_id %></td>
     <td><%= sample.dateExchange %></td>
     <td><%= sample.dateSamples %></td>
     <td><%= sample.dateCustApproval %></td>
-    <td><%= sample.dateQAEnable %></td>
     <td><%= sample.dateReleaseProduction %></td>
+    <td><%= sample.dateQAEnable %></td>
     <td><%= sample.crs %></td>
     <td><%= link_to 'Show', sample %></td>
     <td><%= link_to 'Edit', edit_sample_path(sample) %></td>
