@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150126103848) do
+ActiveRecord::Schema.define(:version => 20150130113902) do
 
   create_table "can_mains", :force => true do |t|
     t.string    "can"
@@ -114,9 +114,9 @@ ActiveRecord::Schema.define(:version => 20150126103848) do
     t.string   "products"
     t.string   "can_id"
     t.string   "mfgid"
-    t.string   "keyid"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "protocol"
   end
 
   create_table "projects", :force => true do |t|
