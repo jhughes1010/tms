@@ -3,10 +3,10 @@
 		<small>
 			<%= task.assignee ? task.assignee.fullname : "UNASSIGNED" %>: &nbsp
 			:Priority <%= task.priority %>: &nbsp
+			:WW duration <%= task.duration %> &nbsp
 			<%= task.family %>: &nbsp
 			<%= task.device %>: &nbsp
-			<%= task.taskname %>&nbsp
-			:WW duration <%= task.duration %>
+			<%= task.taskname %>
 		</small>
 	</td>			
 </tr>
