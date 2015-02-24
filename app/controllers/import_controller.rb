@@ -15,7 +15,7 @@ class ImportController < ApplicationController
   end
   def import_setup(location, path)
     puts location
-    device_list = Device.get_family(["2W","3W","SPI","CP","TS"])
+    device_list = Device.get_family(["2Wire","3Wire","SPI","Crypto","TS"])
     list = device_list.map {|i| i.name }
     file = IO.readlines( path )
     header = 0
@@ -83,10 +83,10 @@ class ImportController < ApplicationController
     puts "Device List Import tool"
     puts "============================================="
     Device.delete_all
-    import_device("2W","import/2wire.txt")
-    import_device("3W","import/3wire.txt")
+    import_device("2Wire","import/2wire.txt")
+    import_device("3Wire","import/3wire.txt")
     import_device("SPI","import/spi.txt")
-    import_device("CP","import/CP.txt")
+    import_device("Crypto","import/CP.txt")
     import_device("TS","import/TS.txt")
   end
   def import_device(family, path)
