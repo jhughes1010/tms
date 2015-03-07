@@ -41,7 +41,7 @@ class Target < ActiveRecord::Base
 
   private
   def programs_uppercase
-    self.family.upcase!
+    #self.family.upcase!
     self.device.upcase!
     self.mav_cp1.upcase!
     self.mav_cp2.upcase!
