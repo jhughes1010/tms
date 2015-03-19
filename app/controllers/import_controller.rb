@@ -11,7 +11,7 @@ class ImportController < ApplicationController
     Setup.delete_all
     import_setup("ACP","import/pv_acp.txt")
     import_setup("MEMP","import/pv_memp.txt")
-    UserMailer.setup_import_complete(['james.hughes@atmel.com','mark.chabica@atmel.com']).deliver
+    UserMailer.setup_import_complete(['james.hughes@atmel.com','mark.chabica@atmel.com','michael.flanagan@atmel.com']).deliver
   end
   def import_setup(location, path)
     puts location
