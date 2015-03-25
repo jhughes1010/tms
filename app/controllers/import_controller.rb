@@ -24,7 +24,7 @@ class ImportController < ApplicationController
       header = 1
     end
   end
-  def write_csv_data_setup(line, location, list )f
+  def write_csv_data_setup(line, location, list )
     #Split line into individual components
     record = line.split()
     unless record.nil?
