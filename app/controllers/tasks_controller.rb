@@ -50,6 +50,7 @@ class TasksController < ApplicationController
     unless session[:user_id] == 1
       UserMailer.task_edit_confirmation(session[:user_id],@task).deliver
       UserMailer.task_edit_confirmation(1,@task).deliver
+      UserMailer.task_entry_confirmation(31,copy).deliver   #Michael Flanagan (yes this is bad, fix it)   
     end
   end
 
@@ -62,7 +63,8 @@ class TasksController < ApplicationController
     
     #deliver the mail
     UserMailer.task_entry_confirmation(session[:user_id],copy).deliver
-    UserMailer.task_entry_confirmation(1,copy).deliver    
+    UserMailer.task_entry_confirmation(1,copy).deliver    #James Hughes
+    UserMailer.task_entry_confirmation(31,copy).deliver   #Michael Flanagan (yes this is bad, fix it)   
   end
 
   # POST /tasks
