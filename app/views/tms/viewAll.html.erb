@@ -1,0 +1,10 @@
+<h2>Master View - Scratchpad area</h2>
+<h3>Record count: <%= @tasks.count %> </h3>
+<table cellspacing="0" class="disp compact" width="100%">
+        <thead>
+          <%= render :partial => "task_header" %>
+        </thead>
+        <tbody>
+          <%= render :partial => "task" , :collection => @tasks  %>
+        </tbody>
+</table>
