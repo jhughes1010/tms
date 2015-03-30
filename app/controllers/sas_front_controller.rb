@@ -19,7 +19,7 @@ class SasFrontController < ApplicationController
     end
     write_records( @uploaded_io)
     #send_mail( recipient, file)
-    UserMailer.sas_mail(['james.hughes@atmel.com', 'jeff.leasure@atmel.com', 'james.lutinski@atmel.com', 'jeanne.paling@atmel.com', 'jane.stang@atmel.com'], @uploaded_io.original_filename).deliver
+    UserMailer.sas_mail(['james.hughes@atmel.com', 'mike.flanagan@atmel.com', 'james.lutinski@atmel.com', 'karey.klaus@atmel.com', 'jane.stang@atmel.com'], @uploaded_io.original_filename).deliver
     
   end
   def send_mail( recipient, file)
@@ -64,10 +64,10 @@ class SasFrontController < ApplicationController
     record.sas_type = "Obsolete"
     record.lot_number = row[0]
     record.location = row[1]
-    record.profit_center = row[2]
+    #record.profit_center = row[2]
     record.sap_matid = row[3]
-    record.lts_matid = row[4]
-    record.quantity = row[5]
+    record.lts_matid = row[5]
+    record.quantity = row[6]
     record.comment = row[10]
     record.save  
   end
