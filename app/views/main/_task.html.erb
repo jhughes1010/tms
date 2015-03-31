@@ -4,32 +4,32 @@
 			<%= link_to task.id,task, :class =>'label label-primary'%>
 		</td>
 					<td>
-						<small>
+						
 						<%= task.requester.fullname %>
-					</small>
+					
 					</td>
-					<td><small>
+					<td>
 						<%= task.assignee ? task.assignee.fullname : "UNASSIGNED" %>
-					</small></td>
-					<td><small>
+					</td>
+					<td>
 						<%= task.category %>
-					</small></td>
-					<td><small>
+					</td>
+					<td>
 						<%= task.priority %>
 					</td>
-					<td><small><%= task.family %></small></td>
-					<td><small><%= task.request_type %></small></td>
-					<td><small><%= task.operation %></small></td>
-					<td><small><%= task.device %></small></td>
-					<td><small><%= task.platform %></small></td>
-					<td><small>
-						<%= task.taskname %></small>
+					<td><%= task.family %></td>
+					<td><%= task.request_type %></td>
+					<td><%= task.operation %></td>
+					<td><%= task.device %></td>
+					<td><%= task.platform %></td>
+					<td>
+						<a href="#" title="<%= task.description%>"><%= task.taskname%></a>
 					</td>
-					<td><small>
-						<%= task.scd %></small>
+					<td>
+						<%= task.scd %>
 					</td>
-					<td><small>
-						<%= task.duration %></small>
+					<td>
+						<%= task.duration %>
 					</td>
 				
 				</tr>

@@ -11,7 +11,8 @@
           :
           <%= t.device %>
           :
-          <%= t.taskname.truncate(75) %>
+          <a href="#" title="<%= t.description%>"><%= t.taskname.truncate(100)%></a>
+
       </div>
 <% end %>
 </ul>
