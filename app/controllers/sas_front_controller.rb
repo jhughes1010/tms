@@ -33,16 +33,21 @@ class SasFrontController < ApplicationController
     #itterate through lines while (r,c) is not nil
     xls.each_with_pagename do |name, sheet|
       p name
-      row = 12
-      col = 1
+      #better logic here?
+      row = 11
+      col = 2
+      if name == "Abnormal Scrap"
+        row = 12
+      end
       while xls.cell(row, col) != nil do
+        #better logic here?
         current_row = sheet.row( row)
         #puts current_row[0]
         if name == "E_O Scrap"
-        eoScrap (current_row)
-      elsif name == "Abnormal Scrap"
-        abnormalScrap (current_row)
-      end
+          eoScrap (current_row)
+        elsif name == "Abnormal Scrap"
+          abnormalScrap (current_row)
+        end
         row += 1
       end
     end
@@ -62,13 +67,12 @@ class SasFrontController < ApplicationController
     record.sent = true
     record.date = Date.today()
     record.sas_type = "Obsolete"
-    record.lot_number = row[0]
-    record.location = row[1]
-    #record.profit_center = row[2]
-    record.sap_matid = row[3]
-    record.lts_matid = row[5]
-    record.quantity = row[6]
-    record.comment = row[10]
+    record.lot_number = row[1]
+    record.location = row[2]
+    record.owner = row[4]
+    record.lts_matid = row[6]
+    record.quantity = row[7]
+    record.comment = row[12]
     record.save  
   end
   
@@ -77,16 +81,14 @@ class SasFrontController < ApplicationController
     record = Sa.new
     record.user_id = @user_id
     record.sent = true    
-    record.date = Date.today()
     record.sas_type = "Abnormal"
-    record.lot_number = row[0]
-    record.location = row[1]
-    record.plant = row[2]
-    record.profit_center = row[3]
-    record.sap_matid = row[4]
-    record.lts_matid = row[5]
-    record.quantity = row[6]
-    record.comment = row[10]
+    record.lot_number = row[1]
+    record.location = row[2]
+    record.owner = row[5]
+    record.lts_matid = row[7]
+    record.quantity = row[8]
+    record.date = row[12]
+    record.comment = row[13]
     record.save  
   end
 
