@@ -47,11 +47,10 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
 
     #deliver the mail
-    unless session[:user_id] == 1
-      UserMailer.task_edit_confirmation(session[:user_id],@task).deliver
-      UserMailer.task_edit_confirmation(1,@task).deliver
-      #UserMailer.task_entry_confirmation(31,@task).deliver   #Michael Flanagan (yes this is bad, fix it)   
-    end
+    #unless session[:user_id] == 31 || session[:user_id] == 1
+    #  UserMailer.task_edit_confirmation(session[:user_id],@task).deliver
+    #  UserMailer.task_edit_confirmation(1,@task).deliver
+    #end
   end
 
   # GET /tasks/1/duplicate
@@ -76,6 +75,12 @@ class TasksController < ApplicationController
       if @task.save
         format.html { redirect_to(@task, :notice => 'Task was successfully created.') }
         format.xml  { render :xml => @task, :status => :created, :location => @task }
+
+        #deliver the mail
+        unless session[:user_id] == 31 || session[:user_id] == 1
+          UserMailer.task_edit_confirmation(session[:user_id],@task).deliver
+          UserMailer.task_edit_confirmation(1,@task).deliver
+        end
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @task.errors, :status => :unprocessable_entity }
