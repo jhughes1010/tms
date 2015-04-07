@@ -1,4 +1,5 @@
 class SetupSyncController < ApplicationController
+  skip_filter :authorize
   before_filter :set_useful_globals
 
   def index

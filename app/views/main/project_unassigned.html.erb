@@ -10,3 +10,10 @@
 			<a href="/main/index">TMS Home</a><br>
 		</p>
 
+<ol id="selectable">
+    <% @tasks.each do |task|%>
+  <li class="ui-state-default"><%= task.id %></li>
+  <% end %>
+
+</ol>
+<br>
