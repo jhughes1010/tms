@@ -7,6 +7,8 @@ TMS::Application.routes.draw do
 
   get "task_front/top3All"
 
+  get "task_front/taskonetwo"
+
   resources :samples
 
   resources :manids

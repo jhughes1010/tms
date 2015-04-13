@@ -6,5 +6,17 @@ class TaskFrontController < ApplicationController
   def top3All
     @tasks = Task.topActive(3)
   end
+  
+  def taskonetwo
+    tasks = Task.all_active
+    tasks.each do |task|
+      if task.category == 1
+        task.category = 2
+        task.save
+      end
+    end
+    
+    
+  end
 
 end
