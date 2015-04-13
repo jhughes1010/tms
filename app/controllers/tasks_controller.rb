@@ -118,6 +118,18 @@ class TasksController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  #mark closed flag as TRUE and accepted flag as FALSE
+  def close
+    @task = Task.find(params[:id])
+    
+  end
+
+  #mark closed flag as TRUE and accepted flag as TRUE  
+  def accept
+    @task = Task.find(params[:id])
+    
+    
+  end
   
   protected
   

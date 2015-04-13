@@ -11,11 +11,11 @@ class ImportController < ApplicationController
     Setup.delete_all
     import_setup("ACP","import/pv_acp.txt")
     import_setup("MEMP","import/pv_memp.txt")
-    UserMailer.setup_import_complete(['james.hughes@atmel.com','mark.chabica@atmel.com','mike.flanagan@atmel.com']).deliver
+    UserMailer.setup_import_complete(['james.hughes@atmel.com','mark.chabica@atmel.com','mike.flanagan@atmel.com','francis.cordier@atmel.com']).deliver
   end
   def import_setup(location, path)
     puts location
-    device_list = Device.get_family(["2Wire","3Wire","SPI","Crypto","TS"])
+    device_list = Device.get_family(["2Wire","3Wire","SPI","Crypto","TS","AVR8","AVR32","ARM","XMEGA","Touch"])
     list = device_list.map {|i| i.name }
     file = IO.readlines( path )
     header = 0
@@ -88,6 +88,13 @@ class ImportController < ApplicationController
     import_device("SPI","import/spi.txt")
     import_device("Crypto","import/CP.txt")
     import_device("TS","import/TS.txt")
+    #AVR files
+    import_device("AVR8","import/AVR8.txt")
+    import_device("AVR32","import/AVR32.txt")
+    import_device("ARM","import/ARM.txt")
+    import_device("XMEGA","import/XMEGA.txt")
+    import_device("Touch","import/Touch.txt")
+    
   end
   def import_device(family, path)
     puts family
