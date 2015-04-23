@@ -34,10 +34,10 @@ class SasFrontController < ApplicationController
     xls.each_with_pagename do |name, sheet|
       p name
       #better logic here?
-      row = 11
+      row = 12
       col = 2
       if name == "Abnormal Scrap"
-        row = 12
+        row = 11
       end
       while xls.cell(row, col) != nil do
         #better logic here?
@@ -67,12 +67,12 @@ class SasFrontController < ApplicationController
     record.sent = true
     record.date = Date.today()
     record.sas_type = "Obsolete"
-    record.lot_number = row[1]
-    record.location = row[2]
-    record.owner = row[4]
-    record.lts_matid = row[6]
-    record.quantity = row[7]
-    record.comment = row[12]
+    record.lot_number = row[0]
+    record.location = row[1]
+    record.owner = row[3]
+    record.lts_matid = row[5]
+    record.quantity = row[6]
+    record.comment = row[11]
     record.save  
   end
   
@@ -82,13 +82,13 @@ class SasFrontController < ApplicationController
     record.user_id = @user_id
     record.sent = true    
     record.sas_type = "Abnormal"
-    record.lot_number = row[1]
-    record.location = row[2]
-    record.owner = row[5]
-    record.lts_matid = row[7]
-    record.quantity = row[8]
-    record.date = row[12]
-    record.comment = row[13]
+    record.lot_number = row[0]
+    record.location = row[1]
+    record.owner = row[4]
+    record.lts_matid = row[6]
+    record.quantity = row[7]
+    record.date = row[11]
+    record.comment = row[12]
     record.save  
   end
 
