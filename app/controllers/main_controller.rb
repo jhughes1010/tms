@@ -8,7 +8,7 @@ class MainController < ApplicationController
   end
 
   def project_active
-    @tasks = Task.all_active2
+  @tasks = Task.all_active2
     #@tasks = Task.topActive(3)
     @tasksCategoryCount = Array.new
     @tasksCategoryCount[1] = Task.categoryCount(1)

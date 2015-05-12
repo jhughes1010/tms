@@ -15,7 +15,7 @@ class ImportController < ApplicationController
   end
   def import_setup(location, path)
     puts location
-    device_list = Device.get_family(["2Wire","3Wire","SPI","Crypto","TS","AVR8","AVR32","ARM","XMEGA","Touch"])
+    device_list = Device.get_family(["2Wire","3Wire","SPI","Crypto","TS","AVR8","AVR32","ARM","C51","XMEGA","Touch"])
     list = device_list.map {|i| i.name }
     file = IO.readlines( path )
     header = 0
@@ -92,6 +92,7 @@ class ImportController < ApplicationController
     import_device("AVR8","import/AVR8.txt")
     import_device("AVR32","import/AVR32.txt")
     import_device("ARM","import/ARM.txt")
+    import_device("C51","import/C51.txt")
     import_device("XMEGA","import/XMEGA.txt")
     import_device("Touch","import/Touch.txt")
     
