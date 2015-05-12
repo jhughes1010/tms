@@ -19,7 +19,7 @@ class SasFrontController < ApplicationController
     end
     write_records( @uploaded_io)
     #send_mail( recipient, file)
-    UserMailer.sas_mail(['james.hughes@atmel.com', 'mike.flanagan@atmel.com', 'james.lutinski@atmel.com', 'karey.klaus@atmel.com', 'jane.stang@atmel.com'], @uploaded_io.original_filename).deliver
+    UserMailer.sas_mail(['james.hughes@atmel.com', 'mike.flanagan@atmel.com', 'james.lutinski@atmel.com', 'karey.klaus@atmel.com', 'jane.stang@atmel.com','dl-pen-fp-expedite@atmel.com'], @uploaded_io.original_filename).deliver
     
   end
   def send_mail( recipient, file)

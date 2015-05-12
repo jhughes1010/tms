@@ -92,7 +92,7 @@ class ImportController < ApplicationController
     import_device("AVR8","import/AVR8.txt")
     import_device("AVR32","import/AVR32.txt")
     import_device("ARM","import/ARM.txt")
-    import_device("C51","import/C51.txt")
+    import_device("C51","import/c51.txt")
     import_device("XMEGA","import/XMEGA.txt")
     import_device("Touch","import/Touch.txt")
     
