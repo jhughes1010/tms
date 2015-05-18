@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>TMS ID:</b>
+  <%= @task_log.task_id %>
+  <b>Comment:</b>
+  <%= @task_log.comment %>
+</p>
+
+
+<%= link_to 'Edit', edit_task_log_path(@task_log) %> |
+<%= link_to 'Back', task_logs_path %>

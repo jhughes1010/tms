@@ -1,4 +1,6 @@
 TMS::Application.routes.draw do
+  resources :task_logs
+
   get "sample_front/index"
 
   get "front_samples/index"

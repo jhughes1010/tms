@@ -1,0 +1,28 @@
+<h1>Task Logs</h1>
+
+        <table cellspacing='10' class='display' id='prr' width='100%'>
+			<thead>
+  <tr>
+    <th>TMS_ID</th>
+    <th>Comment</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+<tbody>
+<% @task_logs.each do |task_log| %>
+  <tr>
+    <td><%= task_log.task_id %></td>
+    <td><%= task_log.comment %></td>
+    <td><%= link_to 'Show', task_log %></td>
+    <td><%= link_to 'Edit', edit_task_log_path(task_log) %></td>
+    <td><%= link_to 'Destroy', task_log, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+<tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Task log', new_task_log_path %>
