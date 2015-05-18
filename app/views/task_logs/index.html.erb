@@ -4,6 +4,7 @@
 			<thead>
   <tr>
     <th>TMS_ID</th>
+    <th>Date</th>
     <th>Comment</th>
     <th></th>
     <th></th>
@@ -14,6 +15,7 @@
 <% @task_logs.each do |task_log| %>
   <tr>
     <td><%= task_log.task_id %></td>
+    <td><%= task_log.created_at.strftime('%Y/%m/%d') %></td>
     <td><%= task_log.comment %></td>
     <td><%= link_to 'Show', task_log %></td>
     <td><%= link_to 'Edit', edit_task_log_path(task_log) %></td>
