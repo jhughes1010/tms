@@ -70,17 +70,14 @@ class TasksController < ApplicationController
   # POST /tasks.xml
   def create
     @task = Task.new(params[:task])
+    
+    id = User.z_unassigned
+    @task.assignee_id = id
 
     respond_to do |format|
       if @task.save
         format.html { redirect_to(@task, :notice => 'Task was successfully created.') }
         format.xml  { render :xml => @task, :status => :created, :location => @task }
-
-        #deliver the mail
-        unless session[:user_id] == 31 || session[:user_id] == 1
-          UserMailer.task_edit_confirmation(session[:user_id],@task).deliver
-          UserMailer.task_edit_confirmation(1,@task).deliver
-        end
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @task.errors, :status => :unprocessable_entity }

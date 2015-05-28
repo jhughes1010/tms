@@ -50,6 +50,10 @@ class User < ActiveRecord::Base
     self.where("passport < ?", date).select("fullname, passport")
   end
   
+  def self.z_unassigned
+    self.where()
+  end
+  
   private
     def password_non_blank
     errors.add(:password, "missing password") if hashed_password.blank?
