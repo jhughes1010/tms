@@ -32,6 +32,12 @@ class MainController < ApplicationController
 
   def project_unassigned
     @tasks=Task.all_unassigned
+    @unassigned_user_id = User.unassigned_id
+    @tasks.each do |t|
+      task = Task.find(t.id)
+      task.assignee_id = @unassigned_user_id
+      task.save
+    end
   end
 
   def email_user_task_report
@@ -66,7 +72,7 @@ class MainController < ApplicationController
     @stop = @start+ @outlook
     @ptos=Pto.upcoming_range(@start,@stop)
     #passport query
-    @passport_outlook = 12 #months
+    @passport_outlook = 9 #months
     @passport_date = @today + @passport_outlook.months
     @passports = User.passports(@passport_date)
   end

@@ -15,7 +15,11 @@ class TaskFrontController < ApplicationController
         task.save
       end
     end
-    
+    def remap_unassigned
+      @unassigned_user_id = User.unassigned_id
+    end
+
+ 
     
   end
 
