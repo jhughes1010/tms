@@ -32,7 +32,7 @@ class TasksController < ApplicationController
   def new
     @requesters=User.requester_list
     @assignees=User.assignee_list
-    unassigned_user_id = User.unassigned_id
+    @unassigned_user_id = User.unassigned_id
     @task = Task.new
 
     respond_to do |format|

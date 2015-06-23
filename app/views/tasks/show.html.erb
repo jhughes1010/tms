@@ -110,20 +110,7 @@
      <%= @task.category %>
 </p>
 <hr>
-<h2>Add a comment:</h2>
-<%= form_for([@task, @task.task_logs.build]) do |f| %>
-  <p>
-    <%= f.label :commenter %><br>
-    <%= f.text_field :commenter %>
-  </p>
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-  <% end %>
+
 <hr>
 <p>
      This task was entered into TMS on
