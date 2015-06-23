@@ -50,8 +50,9 @@ class User < ActiveRecord::Base
     self.where("passport < ?", date).select("fullname, passport")
   end
   
-  def self.z_unassigned
-    self.where()
+  def self.unassigned_id
+    user = self.where("fullname = 'Z_Staged Not Assigned'").limit(1)
+    user[0].id
   end
   
   private

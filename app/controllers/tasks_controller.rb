@@ -32,6 +32,7 @@ class TasksController < ApplicationController
   def new
     @requesters=User.requester_list
     @assignees=User.assignee_list
+    unassigned_user_id = User.unassigned_id
     @task = Task.new
 
     respond_to do |format|
@@ -71,9 +72,6 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(params[:task])
     
-    id = User.z_unassigned
-    @task.assignee_id = id
-
     respond_to do |format|
       if @task.save
         format.html { redirect_to(@task, :notice => 'Task was successfully created.') }

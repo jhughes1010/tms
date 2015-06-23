@@ -19,6 +19,9 @@
 	<%end %>
 	<%= f.select(:requester_id,@requesters) %>
 </div>
+	<%if !@task.assignee_id %>
+	<%@task.assignee_id=unassigned_user_id%>
+	<%end %>
 <%if @auth==2 %>
 <div class="field">
 		<%= f.label :assignee_id, "Assignee" %>
