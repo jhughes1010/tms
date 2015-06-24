@@ -40,6 +40,10 @@ class Task < ActiveRecord::Base
     t
   end
   
+  def self.all_for_id(id)
+    self.where("tasks.assignee_id = ?" , id).select("tasks.*")
+  end
+  
   def set_priorities
     #Can I refer to PriorityController
     #unless @auth == 1

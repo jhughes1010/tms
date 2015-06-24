@@ -31,6 +31,7 @@ class MainController < ApplicationController
   end
 
   def project_unassigned
+    #reassign all unassigned tasks to Z_staged
     @tasks=Task.all_unassigned
     @unassigned_user_id = User.unassigned_id
     @tasks.each do |t|
@@ -38,6 +39,7 @@ class MainController < ApplicationController
       task.assignee_id = @unassigned_user_id
       task.save
     end
+    @tasks=Task.all_for_id(@unassigned_user_id)    
   end
 
   def email_user_task_report
