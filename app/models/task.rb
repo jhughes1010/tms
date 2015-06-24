@@ -41,7 +41,7 @@ class Task < ActiveRecord::Base
   end
   
   def self.all_for_id(id)
-    self.where("tasks.assignee_id = ?" , id).select("tasks.*")
+    self.where("tasks.assignee_id = ? AND "tasks.complete = 'f'" , id).select("tasks.*")
   end
   
   def set_priorities
