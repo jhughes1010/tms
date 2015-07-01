@@ -99,7 +99,7 @@ class SasFrontController < ApplicationController
   def set_useful_globals
     @auth = session[:user_auth]
     @user_id=session[:user_id]
-    @user=User.find(user_id)
+    @user=User.find(@user_id)
     @userEmail=@user.email
     @full_name=session[:user_fullname]
     @today=Date.today
