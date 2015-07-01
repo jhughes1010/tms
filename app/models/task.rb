@@ -44,6 +44,11 @@ class Task < ActiveRecord::Base
     self.where("tasks.assignee_id = ? AND tasks.complete = 'f'" , id).select("tasks.*")
   end
   
+  def self.recent(days)
+    date = Date.today - days
+    self.where("tasks.complete = 'f' OR (tasks.complete = 't' AND tasks.updated_at > ?)", date).select("tasks.*").order( "tasks.complete DESC, tasks.id")
+  end
+  
   def set_priorities
     #Can I refer to PriorityController
     #unless @auth == 1
