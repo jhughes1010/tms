@@ -18,6 +18,7 @@ class SetupSyncController < ApplicationController
     @report = params[:report]
 
     if @report == "RED"
+      @family_count = Setup.get_red_count
       @device_setups = Setup.get_setups_red
     elsif @report == "EPRO"
       @device_setups = Setup.get_setups_epro

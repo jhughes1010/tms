@@ -9,6 +9,10 @@ class Setup < ActiveRecord::Base
     t = self.where("(cp1_match_flag = '1' OR cp2_match_flag = '1' OR cp3_match_flag = '1') AND platform NOT IN ('EPRO','dualEPRO','quadEPRO')").order("family, device, tab, platform,  location ")
   end
 
+  def self.get_red_count
+    t = self.where("(cp1_match_flag = '1' OR cp2_match_flag = '1' OR cp3_match_flag = '1') AND platform NOT IN ('EPRO','dualEPRO','quadEPRO')").select("family").order("family").group("family").count
+  end
+  
   def self.get_setups_magnum(part)
     t = self.where("device in (?) AND platform NOT IN ('EPRO','dualEPRO','quadEPRO')", part).order("device, tab, platform,  location ")
   end
