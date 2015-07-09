@@ -6,11 +6,11 @@ class Setup < ActiveRecord::Base
   after_touch :set_match_flags
   
   def self.get_setups_red
-    t = self.where("(cp1_match_flag = '1' OR cp2_match_flag = '1' OR cp3_match_flag = '1') AND platform NOT IN ('EPRO','dualEPRO','quadEPRO')").order("family, device, tab, platform,  location ")
+    t = self.where("(cp1_match_flag = '1' OR cp2_match_flag = '1' OR cp3_match_flag = '1') AND platform NOT IN ('EPRO','dualEPRO','quadEPRO') AND family NOT IN ('AVR8','AVR32','ARM', 'C51', 'XMEGA', 'Touch')").order("family, device, tab, platform,  location ")
   end
 
   def self.get_red_count
-    t = self.where("(cp1_match_flag = '1' OR cp2_match_flag = '1' OR cp3_match_flag = '1') AND platform NOT IN ('EPRO','dualEPRO','quadEPRO')").select("family").order("family").group("family").count
+    t = self.where("(cp1_match_flag = '1' OR cp2_match_flag = '1' OR cp3_match_flag = '1') AND platform NOT IN ('EPRO','dualEPRO','quadEPRO') AND family NOT IN ('AVR8', 'AVR32', 'ARM', 'C51', 'XMEGA', 'Touch')" ).select("family").order("family").group("family").count
   end
   
   def self.get_setups_magnum(part)
