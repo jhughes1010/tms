@@ -31,12 +31,14 @@ jQuery(document).ready(function() {
   jQuery( "#tabs" ).tabs({event: "mouseover", heightStyle: "fill" });
   jQuery( "#prr" ).dataTable({
             stateSave: true,
-            stateDuration: -1
+            stateDuration: -1,
+	        lengthMenu: [[-1, 10, 25, 50],["All", 10, 25, 50]]
         });
         
   jQuery('table.disp').dataTable({
     stateSave: true,
-    order: [[ 4, "asc" ]]
+    order: [[ 4, "asc" ]],
+	  lengthMenu: [[-1, 10, 25, 50],["All", 10, 25, 50]]
       });
   
   jQuery( "#sortable" ).sortable({
