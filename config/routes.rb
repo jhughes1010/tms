@@ -1,4 +1,6 @@
 TMS::Application.routes.draw do
+  get "personalization/index"
+
   resources :task_logs
 
   get "sample_front/index"
