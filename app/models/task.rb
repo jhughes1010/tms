@@ -41,7 +41,7 @@ class Task < ActiveRecord::Base
   end
   
   def self.all_for_id(id)
-    self.where("tasks.assignee_id = ? AND tasks.complete IS NOT 't'" , id).select("tasks.*")
+    self.where("tasks.assignee_id = ? AND (tasks.complete = 'f' OR tasks.complete IS NULL)" , id).select("tasks.*")
   end
   
   def self.recent(days)
