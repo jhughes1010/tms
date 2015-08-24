@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>AddOwnerToProjects.html - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li class="file"><a href="../README.html">README</a>
+  
+    <li class="file"><a href="../Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../app/flow_thoughts_txt.html">flow_thoughts</a>
+  
+    <li class="file"><a href="../app/views/cost/_query_results_header_html_haml.html">_query_results_header.html.haml</a>
+  
+    <li class="file"><a href="../app/views/cost/query_html_haml.html">query.html.haml</a>
+  
+    <li class="file"><a href="../app/views/resource/_employee_details_html_haml.html">_employee_details.html.haml</a>
+  
+    <li class="file"><a href="../app/views/resource/_not_key_html_haml.html">_not_key.html.haml</a>
+  
+    <li class="file"><a href="../app/views/resource/_overbooked_html_haml.html">_overbooked.html.haml</a>
+  
+    <li class="file"><a href="../app/views/resource/_pill_navigation_html_haml.html">_pill_navigation.html.haml</a>
+  
+    <li class="file"><a href="../app/views/resource/_team_names_html_haml.html">_team_names.html.haml</a>
+  
+    <li class="file"><a href="../app/views/resource/actual_html_haml.html">actual.html.haml</a>
+  
+    <li class="file"><a href="../app/views/resource/availability_html_haml.html">availability.html.haml</a>
+  
+    <li class="file"><a href="../app/views/resource/employee_view_html_haml.html">employee_view.html.haml</a>
+  
+    <li class="file"><a href="../app/views/resource/key_project_summary_html_haml.html">key_project_summary.html.haml</a>
+  
+    <li class="file"><a href="../app/views/resource/rule_check_html_haml.html">rule_check.html.haml</a>
+  
+    <li class="file"><a href="../app/views/resource/variance_html_haml.html">variance.html.haml</a>
+  
+    <li class="file"><a href="../app/views/users/INDEXH~1_BAK.html">INDEXH~1.BAK</a>
+  
+    <li class="file"><a href="../config_ru.html">config.ru</a>
+  
+    <li class="file"><a href="../doc/ActionMailer_html.html">ActionMailer.html</a>
+  
+    <li class="file"><a href="../doc/ActiveRecord_html.html">ActiveRecord.html</a>
+  
+    <li class="file"><a href="../doc/ActiveSupport_html.html">ActiveSupport.html</a>
+  
+    <li class="file"><a href="../doc/ActiveSupport/TestCase_html.html">TestCase.html</a>
+  
+    <li class="file"><a href="../doc/AddColToSamples_html.html">AddColToSamples.html</a>
+  
+    <li class="file"><a href="../doc/AddColToUsers_html.html">AddColToUsers.html</a>
+  
+    <li class="file"><a href="../doc/AddColtoTasks_html.html">AddColtoTasks.html</a>
+  
+    <li class="file"><a href="../doc/AddCommentsToSas_html.html">AddCommentsToSas.html</a>
+  
+    <li class="file"><a href="../doc/AddCp3_html.html">AddCp3.html</a>
+  
+    <li class="file"><a href="../doc/AddCr3ToTargets_html.html">AddCr3ToTargets.html</a>
+  
+    <li class="file"><a href="../doc/AddCrs_html.html">AddCrs.html</a>
+  
+    <li class="file"><a href="../doc/AddDeviceToCosting_html.html">AddDeviceToCosting.html</a>
+  
+    <li class="file"><a href="../doc/AddDurationToTasks_html.html">AddDurationToTasks.html</a>
+  
+    <li class="file"><a href="../doc/AddEmail_html.html">AddEmail.html</a>
+  
+    <li class="file"><a href="../doc/AddFamilyToTasks_html.html">AddFamilyToTasks.html</a>
+  
+    <li class="file"><a href="../doc/AddFriendlyToProjects_html.html">AddFriendlyToProjects.html</a>
+  
+    <li class="file"><a href="../doc/AddGroupToResources_html.html">AddGroupToResources.html</a>
+  
+    <li class="file"><a href="../doc/AddIDtoTaskLogs_html.html">AddIDtoTaskLogs.html</a>
+  
+    <li class="file"><a href="../doc/AddMatchFlagsToSetup_html.html">AddMatchFlagsToSetup.html</a>
+  
+    <li class="file"><a href="../doc/AddOwner_html.html">AddOwner.html</a>
+  
+    <li class="file"><a href="../doc/AddOwnerToProjects_html.html">AddOwnerToProjects.html</a>
+  
+    <li class="file"><a href="../doc/AddParallelismToSetup_html.html">AddParallelismToSetup.html</a>
+  
+    <li class="file"><a href="../doc/AddPassportToUser_html.html">AddPassportToUser.html</a>
+  
+    <li class="file"><a href="../doc/AddProductToResources_html.html">AddProductToResources.html</a>
+  
+    <li class="file"><a href="../doc/AddProtocolManid_html.html">AddProtocolManid.html</a>
+  
+    <li class="file"><a href="../doc/AddResources_html.html">AddResources.html</a>
+  
+    <li class="file"><a href="../doc/AddTaskColumn_html.html">AddTaskColumn.html</a>
+  
+    <li class="file"><a href="../doc/AddToCosting_html.html">AddToCosting.html</a>
+  
+    <li class="file"><a href="../doc/AddUserToSas_html.html">AddUserToSas.html</a>
+  
+    <li class="file"><a href="../doc/AddVendorToSetups_html.html">AddVendorToSetups.html</a>
+  
+    <li class="file"><a href="../doc/AdminController_html.html">AdminController.html</a>
+  
+    <li class="file"><a href="../doc/AdminControllerTest_html.html">AdminControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/AdminHelper_html.html">AdminHelper.html</a>
+  
+    <li class="file"><a href="../doc/AdminHelperTest_html.html">AdminHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/ApplicationController_html.html">ApplicationController.html</a>
+  
+    <li class="file"><a href="../doc/ApplicationHelper_html.html">ApplicationHelper.html</a>
+  
+    <li class="file"><a href="../doc/BrowsingTest_html.html">BrowsingTest.html</a>
+  
+    <li class="file"><a href="../doc/CanController_html.html">CanController.html</a>
+  
+    <li class="file"><a href="../doc/CanControllerTest_html.html">CanControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/CanHelper_html.html">CanHelper.html</a>
+  
+    <li class="file"><a href="../doc/CanHelperTest_html.html">CanHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/CanMain_html.html">CanMain.html</a>
+  
+    <li class="file"><a href="../doc/CanMainTest_html.html">CanMainTest.html</a>
+  
+    <li class="file"><a href="../doc/CanMainsController_html.html">CanMainsController.html</a>
+  
+    <li class="file"><a href="../doc/CanMainsControllerTest_html.html">CanMainsControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/CanMainsHelper_html.html">CanMainsHelper.html</a>
+  
+    <li class="file"><a href="../doc/CanMainsHelperTest_html.html">CanMainsHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/CanSub_html.html">CanSub.html</a>
+  
+    <li class="file"><a href="../doc/CanSubTest_html.html">CanSubTest.html</a>
+  
+    <li class="file"><a href="../doc/CanSubsController_html.html">CanSubsController.html</a>
+  
+    <li class="file"><a href="../doc/CanSubsControllerTest_html.html">CanSubsControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/CanSubsHelper_html.html">CanSubsHelper.html</a>
+  
+    <li class="file"><a href="../doc/CanSubsHelperTest_html.html">CanSubsHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/ChangeTasks_html.html">ChangeTasks.html</a>
+  
+    <li class="file"><a href="../doc/CostControllerTest_html.html">CostControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/CostHelper_html.html">CostHelper.html</a>
+  
+    <li class="file"><a href="../doc/CostHelperTest_html.html">CostHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/Costing_html.html">Costing.html</a>
+  
+    <li class="file"><a href="../doc/CostingTest_html.html">CostingTest.html</a>
+  
+    <li class="file"><a href="../doc/CostingsController_html.html">CostingsController.html</a>
+  
+    <li class="file"><a href="../doc/CostingsControllerTest_html.html">CostingsControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/CostingsHelper_html.html">CostingsHelper.html</a>
+  
+    <li class="file"><a href="../doc/CostingsHelperTest_html.html">CostingsHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/Cpnaddmanid_html.html">Cpnaddmanid.html</a>
+  
+    <li class="file"><a href="../doc/CreateCanMains_html.html">CreateCanMains.html</a>
+  
+    <li class="file"><a href="../doc/CreateCanSubs_html.html">CreateCanSubs.html</a>
+  
+    <li class="file"><a href="../doc/CreateCostings_html.html">CreateCostings.html</a>
+  
+    <li class="file"><a href="../doc/CreateDevices_html.html">CreateDevices.html</a>
+  
+    <li class="file"><a href="../doc/CreateManids_html.html">CreateManids.html</a>
+  
+    <li class="file"><a href="../doc/CreateProjects_html.html">CreateProjects.html</a>
+  
+    <li class="file"><a href="../doc/CreatePtos_html.html">CreatePtos.html</a>
+  
+    <li class="file"><a href="../doc/CreateResources_html.html">CreateResources.html</a>
+  
+    <li class="file"><a href="../doc/CreateSamples_html.html">CreateSamples.html</a>
+  
+    <li class="file"><a href="../doc/CreateSas_html.html">CreateSas.html</a>
+  
+    <li class="file"><a href="../doc/CreateSetups_html.html">CreateSetups.html</a>
+  
+    <li class="file"><a href="../doc/CreateTargets_html.html">CreateTargets.html</a>
+  
+    <li class="file"><a href="../doc/CreateTaskLogs_html.html">CreateTaskLogs.html</a>
+  
+    <li class="file"><a href="../doc/CreateTasks_html.html">CreateTasks.html</a>
+  
+    <li class="file"><a href="../doc/CreateTestProgs_html.html">CreateTestProgs.html</a>
+  
+    <li class="file"><a href="../doc/CreateTestTimes_html.html">CreateTestTimes.html</a>
+  
+    <li class="file"><a href="../doc/CreateUsers_html.html">CreateUsers.html</a>
+  
+    <li class="file"><a href="../doc/Device_html.html">Device.html</a>
+  
+    <li class="file"><a href="../doc/DeviceTest_html.html">DeviceTest.html</a>
+  
+    <li class="file"><a href="../doc/DevicesController_html.html">DevicesController.html</a>
+  
+    <li class="file"><a href="../doc/DevicesControllerTest_html.html">DevicesControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/DevicesHelper_html.html">DevicesHelper.html</a>
+  
+    <li class="file"><a href="../doc/DevicesHelperTest_html.html">DevicesHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/DynamicDelegator_html.html">DynamicDelegator.html</a>
+  
+    <li class="file"><a href="../doc/Finnance_html.html">Finnance.html</a>
+  
+    <li class="file"><a href="../doc/FrontSamplesController_html.html">FrontSamplesController.html</a>
+  
+    <li class="file"><a href="../doc/FrontSamplesControllerTest_html.html">FrontSamplesControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/FrontSamplesHelper_html.html">FrontSamplesHelper.html</a>
+  
+    <li class="file"><a href="../doc/FrontSamplesHelperTest_html.html">FrontSamplesHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/Gemfile_html.html">Gemfile.html</a>
+  
+    <li class="file"><a href="../doc/Gemfile_lock_html.html">Gemfile_lock.html</a>
+  
+    <li class="file"><a href="../doc/Hello_html.html">Hello.html</a>
+  
+    <li class="file"><a href="../doc/ImportController_html.html">ImportController.html</a>
+  
+    <li class="file"><a href="../doc/ImportControllerTest_html.html">ImportControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/ImportHelper_html.html">ImportHelper.html</a>
+  
+    <li class="file"><a href="../doc/ImportHelperTest_html.html">ImportHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/ImportResourceControllerTest_html.html">ImportResourceControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/ImportResourceHelper_html.html">ImportResourceHelper.html</a>
+  
+    <li class="file"><a href="../doc/ImportResourceHelperTest_html.html">ImportResourceHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/MainController_html.html">MainController.html</a>
+  
+    <li class="file"><a href="../doc/MainControllerTest_html.html">MainControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/MainHelper_html.html">MainHelper.html</a>
+  
+    <li class="file"><a href="../doc/MainHelperTest_html.html">MainHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/Manid_html.html">Manid.html</a>
+  
+    <li class="file"><a href="../doc/ManidTest_html.html">ManidTest.html</a>
+  
+    <li class="file"><a href="../doc/ManidsController_html.html">ManidsController.html</a>
+  
+    <li class="file"><a href="../doc/ManidsControllerTest_html.html">ManidsControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/ManidsHelper_html.html">ManidsHelper.html</a>
+  
+    <li class="file"><a href="../doc/ManidsHelperTest_html.html">ManidsHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/Mime_html.html">Mime.html</a>
+  
+    <li class="file"><a href="../doc/Object_html.html">Object.html</a>
+  
+    <li class="file"><a href="../doc/PersonalizationController_html.html">PersonalizationController.html</a>
+  
+    <li class="file"><a href="../doc/PersonalizationControllerTest_html.html">PersonalizationControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/PersonalizationHelper_html.html">PersonalizationHelper.html</a>
+  
+    <li class="file"><a href="../doc/PersonalizationHelperTest_html.html">PersonalizationHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/PomodoroController_html.html">PomodoroController.html</a>
+  
+    <li class="file"><a href="../doc/PomodoroControllerTest_html.html">PomodoroControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/PomodoroHelper_html.html">PomodoroHelper.html</a>
+  
+    <li class="file"><a href="../doc/PomodoroHelperTest_html.html">PomodoroHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/PriorityController_html.html">PriorityController.html</a>
+  
+    <li class="file"><a href="../doc/PriorityControllerTest_html.html">PriorityControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/PriorityHelper_html.html">PriorityHelper.html</a>
+  
+    <li class="file"><a href="../doc/PriorityHelperTest_html.html">PriorityHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/Project_html.html">Project.html</a>
+  
+    <li class="file"><a href="../doc/ProjectTest_html.html">ProjectTest.html</a>
+  
+    <li class="file"><a href="../doc/ProjectsController_html.html">ProjectsController.html</a>
+  
+    <li class="file"><a href="../doc/ProjectsControllerTest_html.html">ProjectsControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/ProjectsHelper_html.html">ProjectsHelper.html</a>
+  
+    <li class="file"><a href="../doc/ProjectsHelperTest_html.html">ProjectsHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/Pto_html.html">Pto.html</a>
+  
+    <li class="file"><a href="../doc/PtoTest_html.html">PtoTest.html</a>
+  
+    <li class="file"><a href="../doc/PtosController_html.html">PtosController.html</a>
+  
+    <li class="file"><a href="../doc/PtosControllerTest_html.html">PtosControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/PtosHelper_html.html">PtosHelper.html</a>
+  
+    <li class="file"><a href="../doc/PtosHelperTest_html.html">PtosHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/README_html.html">README.html</a>
+  
+    <li class="file"><a href="../doc/Rakefile_html.html">Rakefile.html</a>
+  
+    <li class="file"><a href="../doc/Rename_html.html">Rename.html</a>
+  
+    <li class="file"><a href="../doc/RenameCan_html.html">RenameCan.html</a>
+  
+    <li class="file"><a href="../doc/RenameColtoTasks_html.html">RenameColtoTasks.html</a>
+  
+    <li class="file"><a href="../doc/RenameColumnsInTasks_html.html">RenameColumnsInTasks.html</a>
+  
+    <li class="file"><a href="../doc/RenameGroupInResources_html.html">RenameGroupInResources.html</a>
+  
+    <li class="file"><a href="../doc/RenameTestProgDateFieldType_html.html">RenameTestProgDateFieldType.html</a>
+  
+    <li class="file"><a href="../doc/Resource_html.html">Resource.html</a>
+  
+    <li class="file"><a href="../doc/ResourceControllerTest_html.html">ResourceControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/ResourceHelper_html.html">ResourceHelper.html</a>
+  
+    <li class="file"><a href="../doc/ResourceHelperTest_html.html">ResourceHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/ResourceTest_html.html">ResourceTest.html</a>
+  
+    <li class="file"><a href="../doc/ResourcesControllerTest_html.html">ResourcesControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/ResourcesHelper_html.html">ResourcesHelper.html</a>
+  
+    <li class="file"><a href="../doc/ResourcesHelperTest_html.html">ResourcesHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/Sa_html.html">Sa.html</a>
+  
+    <li class="file"><a href="../doc/SaTest_html.html">SaTest.html</a>
+  
+    <li class="file"><a href="../doc/Sample_html.html">Sample.html</a>
+  
+    <li class="file"><a href="../doc/SampleFrontController_html.html">SampleFrontController.html</a>
+  
+    <li class="file"><a href="../doc/SampleFrontControllerTest_html.html">SampleFrontControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/SampleFrontHelper_html.html">SampleFrontHelper.html</a>
+  
+    <li class="file"><a href="../doc/SampleFrontHelperTest_html.html">SampleFrontHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/SampleTest_html.html">SampleTest.html</a>
+  
+    <li class="file"><a href="../doc/SamplesController_html.html">SamplesController.html</a>
+  
+    <li class="file"><a href="../doc/SamplesControllerTest_html.html">SamplesControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/SamplesHelper_html.html">SamplesHelper.html</a>
+  
+    <li class="file"><a href="../doc/SamplesHelperTest_html.html">SamplesHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/SasController_html.html">SasController.html</a>
+  
+    <li class="file"><a href="../doc/SasControllerTest_html.html">SasControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/SasFrontController_html.html">SasFrontController.html</a>
+  
+    <li class="file"><a href="../doc/SasFrontControllerTest_html.html">SasFrontControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/SasFrontHelper_html.html">SasFrontHelper.html</a>
+  
+    <li class="file"><a href="../doc/SasFrontHelperTest_html.html">SasFrontHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/SasHelper_html.html">SasHelper.html</a>
+  
+    <li class="file"><a href="../doc/SasHelperTest_html.html">SasHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/SasSendFlag_html.html">SasSendFlag.html</a>
+  
+    <li class="file"><a href="../doc/Setup_html.html">Setup.html</a>
+  
+    <li class="file"><a href="../doc/SetupSyncController_html.html">SetupSyncController.html</a>
+  
+    <li class="file"><a href="../doc/SetupSyncControllerTest_html.html">SetupSyncControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/SetupSyncHelper_html.html">SetupSyncHelper.html</a>
+  
+    <li class="file"><a href="../doc/SetupSyncHelperTest_html.html">SetupSyncHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/SetupTest_html.html">SetupTest.html</a>
+  
+    <li class="file"><a href="../doc/SetupTester_html.html">SetupTester.html</a>
+  
+    <li class="file"><a href="../doc/SetupsController_html.html">SetupsController.html</a>
+  
+    <li class="file"><a href="../doc/SetupsControllerTest_html.html">SetupsControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/SetupsHelper_html.html">SetupsHelper.html</a>
+  
+    <li class="file"><a href="../doc/SetupsHelperTest_html.html">SetupsHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/TMS_html.html">TMS.html</a>
+  
+    <li class="file"><a href="../doc/TMS/Application_html.html">Application.html</a>
+  
+    <li class="file"><a href="../doc/TableUpdate_html.html">TableUpdate.html</a>
+  
+    <li class="file"><a href="../doc/Target_html.html">Target.html</a>
+  
+    <li class="file"><a href="../doc/TargetTest_html.html">TargetTest.html</a>
+  
+    <li class="file"><a href="../doc/TargetsController_html.html">TargetsController.html</a>
+  
+    <li class="file"><a href="../doc/TargetsControllerTest_html.html">TargetsControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/TargetsHelper_html.html">TargetsHelper.html</a>
+  
+    <li class="file"><a href="../doc/TargetsHelperTest_html.html">TargetsHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/Task_html.html">Task.html</a>
+  
+    <li class="file"><a href="../doc/TaskFrontController_html.html">TaskFrontController.html</a>
+  
+    <li class="file"><a href="../doc/TaskFrontControllerTest_html.html">TaskFrontControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/TaskFrontHelper_html.html">TaskFrontHelper.html</a>
+  
+    <li class="file"><a href="../doc/TaskFrontHelperTest_html.html">TaskFrontHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/TaskLog_html.html">TaskLog.html</a>
+  
+    <li class="file"><a href="../doc/TaskLogTest_html.html">TaskLogTest.html</a>
+  
+    <li class="file"><a href="../doc/TaskLogsController_html.html">TaskLogsController.html</a>
+  
+    <li class="file"><a href="../doc/TaskLogsControllerTest_html.html">TaskLogsControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/TaskLogsHelper_html.html">TaskLogsHelper.html</a>
+  
+    <li class="file"><a href="../doc/TaskLogsHelperTest_html.html">TaskLogsHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/TaskTest_html.html">TaskTest.html</a>
+  
+    <li class="file"><a href="../doc/TasksController_html.html">TasksController.html</a>
+  
+    <li class="file"><a href="../doc/TasksControllerTest_html.html">TasksControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/TasksHelper_html.html">TasksHelper.html</a>
+  
+    <li class="file"><a href="../doc/TasksHelperTest_html.html">TasksHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/TestProg_html.html">TestProg.html</a>
+  
+    <li class="file"><a href="../doc/TestProgTest_html.html">TestProgTest.html</a>
+  
+    <li class="file"><a href="../doc/TestProgsController_html.html">TestProgsController.html</a>
+  
+    <li class="file"><a href="../doc/TestProgsControllerTest_html.html">TestProgsControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/TestProgsHelper_html.html">TestProgsHelper.html</a>
+  
+    <li class="file"><a href="../doc/TestProgsHelperTest_html.html">TestProgsHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/TestTime_html.html">TestTime.html</a>
+  
+    <li class="file"><a href="../doc/TestTimeTest_html.html">TestTimeTest.html</a>
+  
+    <li class="file"><a href="../doc/TestTimesController_html.html">TestTimesController.html</a>
+  
+    <li class="file"><a href="../doc/TestTimesControllerTest_html.html">TestTimesControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/TestTimesHelper_html.html">TestTimesHelper.html</a>
+  
+    <li class="file"><a href="../doc/TestTimesHelperTest_html.html">TestTimesHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/TmsController_html.html">TmsController.html</a>
+  
+    <li class="file"><a href="../doc/TmsControllerTest_html.html">TmsControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/TmsHelper_html.html">TmsHelper.html</a>
+  
+    <li class="file"><a href="../doc/TmsHelperTest_html.html">TmsHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/Update_html.html">Update.html</a>
+  
+    <li class="file"><a href="../doc/User_html.html">User.html</a>
+  
+    <li class="file"><a href="../doc/UserMailer_html.html">UserMailer.html</a>
+  
+    <li class="file"><a href="../doc/UserMailerTest_html.html">UserMailerTest.html</a>
+  
+    <li class="file"><a href="../doc/UserTest_html.html">UserTest.html</a>
+  
+    <li class="file"><a href="../doc/UsersController_html.html">UsersController.html</a>
+  
+    <li class="file"><a href="../doc/UsersControllerTest_html.html">UsersControllerTest.html</a>
+  
+    <li class="file"><a href="../doc/UsersHelper_html.html">UsersHelper.html</a>
+  
+    <li class="file"><a href="../doc/UsersHelperTest_html.html">UsersHelperTest.html</a>
+  
+    <li class="file"><a href="../doc/app/flow_thoughts_txt_html.html">flow_thoughts_txt.html</a>
+  
+    <li class="file"><a href="../doc/app/views/cost/_query_results_header_html_haml_html.html">_query_results_header_html_haml.html</a>
+  
+    <li class="file"><a href="../doc/app/views/cost/query_html_haml_html.html">query_html_haml.html</a>
+  
+    <li class="file"><a href="../doc/app/views/resource/_employee_details_html_haml_html.html">_employee_details_html_haml.html</a>
+  
+    <li class="file"><a href="../doc/app/views/resource/_not_key_html_haml_html.html">_not_key_html_haml.html</a>
+  
+    <li class="file"><a href="../doc/app/views/resource/_overbooked_html_haml_html.html">_overbooked_html_haml.html</a>
+  
+    <li class="file"><a href="../doc/app/views/resource/_pill_navigation_html_haml_html.html">_pill_navigation_html_haml.html</a>
+  
+    <li class="file"><a href="../doc/app/views/resource/_team_names_html_haml_html.html">_team_names_html_haml.html</a>
+  
+    <li class="file"><a href="../doc/app/views/resource/actual_html_haml_html.html">actual_html_haml.html</a>
+  
+    <li class="file"><a href="../doc/app/views/resource/availability_html_haml_html.html">availability_html_haml.html</a>
+  
+    <li class="file"><a href="../doc/app/views/resource/employee_view_html_haml_html.html">employee_view_html_haml.html</a>
+  
+    <li class="file"><a href="../doc/app/views/resource/key_project_summary_html_haml_html.html">key_project_summary_html_haml.html</a>
+  
+    <li class="file"><a href="../doc/app/views/resource/rule_check_html_haml_html.html">rule_check_html_haml.html</a>
+  
+    <li class="file"><a href="../doc/app/views/resource/variance_html_haml_html.html">variance_html_haml.html</a>
+  
+    <li class="file"><a href="../doc/app/views/users/INDEXH~1_BAK_html.html">INDEXH~1_BAK.html</a>
+  
+    <li class="file"><a href="../doc/config_ru_html.html">config_ru.html</a>
+  
+    <li class="file"><a href="../doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="../doc/doc/created_rid_html.html">created_rid.html</a>
+  
+    <li class="file"><a href="../doc/importlogcsv_txt_html.html">importlogcsv_txt.html</a>
+  
+    <li class="file"><a href="../doc/index_html.html">index.html</a>
+  
+    <li class="file"><a href="../doc/install_html.html">install.html</a>
+  
+    <li class="file"><a href="../doc/js/darkfish_js.html">darkfish.js</a>
+  
+    <li class="file"><a href="../doc/js/jquery_js.html">jquery.js</a>
+  
+    <li class="file"><a href="../doc/js/search_js.html">search.js</a>
+  
+    <li class="file"><a href="../doc/log/development_log_html.html">development_log.html</a>
+  
+    <li class="file"><a href="../doc/rdoc_css.html">rdoc.css</a>
+  
+    <li class="file"><a href="../importlogcsv_txt.html">importlogcsv</a>
+  
+    <li class="file"><a href="../install.html">install</a>
+  
+    <li class="file"><a href="../log/development_log.html">development.log</a>
+  
+    <li class="file"><a href="../public/404_html.html">404.html</a>
+  
+    <li class="file"><a href="../public/422_html.html">422.html</a>
+  
+    <li class="file"><a href="../public/500_html.html">500.html</a>
+  
+    <li class="file"><a href="../public/favicon_ico.html">favicon.ico</a>
+  
+    <li class="file"><a href="../public/fonts/glyphicons-halflings-regular_svg.html">glyphicons-halflings-regular.svg</a>
+  
+    <li class="file"><a href="../public/index_html.html">index.html</a>
+  
+    <li class="file"><a href="../public/javascripts/application_js.html">application.js</a>
+  
+    <li class="file"><a href="../public/javascripts/bootstrap_js.html">bootstrap.js</a>
+  
+    <li class="file"><a href="../public/javascripts/bootstrap_min_js.html">bootstrap.min.js</a>
+  
+    <li class="file"><a href="../public/javascripts/controls_js.html">controls.js</a>
+  
+    <li class="file"><a href="../public/javascripts/dragdrop_js.html">dragdrop.js</a>
+  
+    <li class="file"><a href="../public/javascripts/effects_js.html">effects.js</a>
+  
+    <li class="file"><a href="../public/javascripts/prototype_js.html">prototype.js</a>
+  
+    <li class="file"><a href="../public/javascripts/rails_js.html">rails.js</a>
+  
+    <li class="file"><a href="../public/robots_txt.html">robots</a>
+  
+    <li class="file"><a href="../public/stylesheets/application_css.html">application.css</a>
+  
+    <li class="file"><a href="../public/stylesheets/bootstrap-responsive_css.html">bootstrap-responsive.css</a>
+  
+    <li class="file"><a href="../public/stylesheets/bootstrap-responsive_min_css.html">bootstrap-responsive.min.css</a>
+  
+    <li class="file"><a href="../public/stylesheets/bootstrap_css.html">bootstrap.css</a>
+  
+    <li class="file"><a href="../public/stylesheets/bootstrap_min_css.html">bootstrap.min.css</a>
+  
+    <li class="file"><a href="../public/stylesheets/custom2_css.html">custom2.css</a>
+  
+    <li class="file"><a href="../public/stylesheets/le-frog/jquery-ui-1_8_16_custom_css.html">jquery-ui-1.8.16.custom.css</a>
+  
+    <li class="file"><a href="../public/stylesheets/menu_css.html">menu.css</a>
+  
+    <li class="file"><a href="../public/stylesheets/reset_css.html">reset.css</a>
+  
+    <li class="file"><a href="../public/stylesheets/scaffold_css.html">scaffold.css</a>
+  
+    <li class="file"><a href="../public/stylesheets/tms_css.html">tms.css</a>
+  
+    <li class="file"><a href="../public/stylesheets/ui-darkness/jquery-ui-1_8_16_custom_css.html">jquery-ui-1.8.16.custom.css</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../ActionMailer.html">ActionMailer</a>
+  
+    <li><a href="../ActiveRecord.html">ActiveRecord</a>
+  
+    <li><a href="../ActiveSupport.html">ActiveSupport</a>
+  
+    <li><a href="../ActiveSupport/TestCase.html">ActiveSupport::TestCase</a>
+  
+    <li><a href="../AddColToSamples.html">AddColToSamples</a>
+  
+    <li><a href="../AddColToUsers.html">AddColToUsers</a>
+  
+    <li><a href="../AddColtoTasks.html">AddColtoTasks</a>
+  
+    <li><a href="../AddCommentsToSas.html">AddCommentsToSas</a>
+  
+    <li><a href="../AddCp3.html">AddCp3</a>
+  
+    <li><a href="../AddCr3ToTargets.html">AddCr3ToTargets</a>
+  
+    <li><a href="../AddCrs.html">AddCrs</a>
+  
+    <li><a href="../AddDeviceToCosting.html">AddDeviceToCosting</a>
+  
+    <li><a href="../AddDurationToTasks.html">AddDurationToTasks</a>
+  
+    <li><a href="../AddEmail.html">AddEmail</a>
+  
+    <li><a href="../AddFamilyToTasks.html">AddFamilyToTasks</a>
+  
+    <li><a href="../AddFriendlyToProjects.html">AddFriendlyToProjects</a>
+  
+    <li><a href="../AddGroupToResources.html">AddGroupToResources</a>
+  
+    <li><a href="../AddIDtoTaskLogs.html">AddIDtoTaskLogs</a>
+  
+    <li><a href="../AddMatchFlagsToSetup.html">AddMatchFlagsToSetup</a>
+  
+    <li><a href="../AddOwner.html">AddOwner</a>
+  
+    <li><a href="../AddOwnerToProjects.html">AddOwnerToProjects</a>
+  
+    <li><a href="../AddParallelismToSetup.html">AddParallelismToSetup</a>
+  
+    <li><a href="../AddPassportToUser.html">AddPassportToUser</a>
+  
+    <li><a href="../AddProductToResources.html">AddProductToResources</a>
+  
+    <li><a href="../AddProtocolManid.html">AddProtocolManid</a>
+  
+    <li><a href="../AddResources.html">AddResources</a>
+  
+    <li><a href="../AddTaskColumn.html">AddTaskColumn</a>
+  
+    <li><a href="../AddToCosting.html">AddToCosting</a>
+  
+    <li><a href="../AddUserToSas.html">AddUserToSas</a>
+  
+    <li><a href="../AddVendorToSetups.html">AddVendorToSetups</a>
+  
+    <li><a href="../AdminController.html">AdminController</a>
+  
+    <li><a href="../AdminControllerTest.html">AdminControllerTest</a>
+  
+    <li><a href="../AdminHelper.html">AdminHelper</a>
+  
+    <li><a href="../AdminHelperTest.html">AdminHelperTest</a>
+  
+    <li><a href="../ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="../ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="../BrowsingTest.html">BrowsingTest</a>
+  
+    <li><a href="../CanController.html">CanController</a>
+  
+    <li><a href="../CanControllerTest.html">CanControllerTest</a>
+  
+    <li><a href="../CanHelper.html">CanHelper</a>
+  
+    <li><a href="../CanHelperTest.html">CanHelperTest</a>
+  
+    <li><a href="../CanMain.html">CanMain</a>
+  
+    <li><a href="../CanMainTest.html">CanMainTest</a>
+  
+    <li><a href="../CanMainsController.html">CanMainsController</a>
+  
+    <li><a href="../CanMainsControllerTest.html">CanMainsControllerTest</a>
+  
+    <li><a href="../CanMainsHelper.html">CanMainsHelper</a>
+  
+    <li><a href="../CanMainsHelperTest.html">CanMainsHelperTest</a>
+  
+    <li><a href="../CanSub.html">CanSub</a>
+  
+    <li><a href="../CanSubTest.html">CanSubTest</a>
+  
+    <li><a href="../CanSubsController.html">CanSubsController</a>
+  
+    <li><a href="../CanSubsControllerTest.html">CanSubsControllerTest</a>
+  
+    <li><a href="../CanSubsHelper.html">CanSubsHelper</a>
+  
+    <li><a href="../CanSubsHelperTest.html">CanSubsHelperTest</a>
+  
+    <li><a href="../ChangeTasks.html">ChangeTasks</a>
+  
+    <li><a href="../CostControllerTest.html">CostControllerTest</a>
+  
+    <li><a href="../CostHelper.html">CostHelper</a>
+  
+    <li><a href="../CostHelperTest.html">CostHelperTest</a>
+  
+    <li><a href="../Costing.html">Costing</a>
+  
+    <li><a href="../CostingTest.html">CostingTest</a>
+  
+    <li><a href="../CostingsController.html">CostingsController</a>
+  
+    <li><a href="../CostingsControllerTest.html">CostingsControllerTest</a>
+  
+    <li><a href="../CostingsHelper.html">CostingsHelper</a>
+  
+    <li><a href="../CostingsHelperTest.html">CostingsHelperTest</a>
+  
+    <li><a href="../Cpnaddmanid.html">Cpnaddmanid</a>
+  
+    <li><a href="../CreateCanMains.html">CreateCanMains</a>
+  
+    <li><a href="../CreateCanSubs.html">CreateCanSubs</a>
+  
+    <li><a href="../CreateCostings.html">CreateCostings</a>
+  
+    <li><a href="../CreateDevices.html">CreateDevices</a>
+  
+    <li><a href="../CreateManids.html">CreateManids</a>
+  
+    <li><a href="../CreateProjects.html">CreateProjects</a>
+  
+    <li><a href="../CreatePtos.html">CreatePtos</a>
+  
+    <li><a href="../CreateResources.html">CreateResources</a>
+  
+    <li><a href="../CreateSamples.html">CreateSamples</a>
+  
+    <li><a href="../CreateSas.html">CreateSas</a>
+  
+    <li><a href="../CreateSetups.html">CreateSetups</a>
+  
+    <li><a href="../CreateTargets.html">CreateTargets</a>
+  
+    <li><a href="../CreateTaskLogs.html">CreateTaskLogs</a>
+  
+    <li><a href="../CreateTasks.html">CreateTasks</a>
+  
+    <li><a href="../CreateTestProgs.html">CreateTestProgs</a>
+  
+    <li><a href="../CreateTestTimes.html">CreateTestTimes</a>
+  
+    <li><a href="../CreateUsers.html">CreateUsers</a>
+  
+    <li><a href="../Device.html">Device</a>
+  
+    <li><a href="../DeviceTest.html">DeviceTest</a>
+  
+    <li><a href="../DevicesController.html">DevicesController</a>
+  
+    <li><a href="../DevicesControllerTest.html">DevicesControllerTest</a>
+  
+    <li><a href="../DevicesHelper.html">DevicesHelper</a>
+  
+    <li><a href="../DevicesHelperTest.html">DevicesHelperTest</a>
+  
+    <li><a href="../DynamicDelegator.html">DynamicDelegator</a>
+  
+    <li><a href="../Finnance.html">Finnance</a>
+  
+    <li><a href="../FrontSamplesController.html">FrontSamplesController</a>
+  
+    <li><a href="../FrontSamplesControllerTest.html">FrontSamplesControllerTest</a>
+  
+    <li><a href="../FrontSamplesHelper.html">FrontSamplesHelper</a>
+  
+    <li><a href="../FrontSamplesHelperTest.html">FrontSamplesHelperTest</a>
+  
+    <li><a href="../Hello.html">Hello</a>
+  
+    <li><a href="../ImportController.html">ImportController</a>
+  
+    <li><a href="../ImportControllerTest.html">ImportControllerTest</a>
+  
+    <li><a href="../ImportHelper.html">ImportHelper</a>
+  
+    <li><a href="../ImportHelperTest.html">ImportHelperTest</a>
+  
+    <li><a href="../ImportResourceControllerTest.html">ImportResourceControllerTest</a>
+  
+    <li><a href="../ImportResourceHelper.html">ImportResourceHelper</a>
+  
+    <li><a href="../ImportResourceHelperTest.html">ImportResourceHelperTest</a>
+  
+    <li><a href="../MainController.html">MainController</a>
+  
+    <li><a href="../MainControllerTest.html">MainControllerTest</a>
+  
+    <li><a href="../MainHelper.html">MainHelper</a>
+  
+    <li><a href="../MainHelperTest.html">MainHelperTest</a>
+  
+    <li><a href="../Manid.html">Manid</a>
+  
+    <li><a href="../ManidTest.html">ManidTest</a>
+  
+    <li><a href="../ManidsController.html">ManidsController</a>
+  
+    <li><a href="../ManidsControllerTest.html">ManidsControllerTest</a>
+  
+    <li><a href="../ManidsHelper.html">ManidsHelper</a>
+  
+    <li><a href="../ManidsHelperTest.html">ManidsHelperTest</a>
+  
+    <li><a href="../Mime.html">Mime</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../PersonalizationController.html">PersonalizationController</a>
+  
+    <li><a href="../PersonalizationControllerTest.html">PersonalizationControllerTest</a>
+  
+    <li><a href="../PersonalizationHelper.html">PersonalizationHelper</a>
+  
+    <li><a href="../PersonalizationHelperTest.html">PersonalizationHelperTest</a>
+  
+    <li><a href="../PomodoroController.html">PomodoroController</a>
+  
+    <li><a href="../PomodoroControllerTest.html">PomodoroControllerTest</a>
+  
+    <li><a href="../PomodoroHelper.html">PomodoroHelper</a>
+  
+    <li><a href="../PomodoroHelperTest.html">PomodoroHelperTest</a>
+  
+    <li><a href="../PriorityController.html">PriorityController</a>
+  
+    <li><a href="../PriorityControllerTest.html">PriorityControllerTest</a>
+  
+    <li><a href="../PriorityHelper.html">PriorityHelper</a>
+  
+    <li><a href="../PriorityHelperTest.html">PriorityHelperTest</a>
+  
+    <li><a href="../Project.html">Project</a>
+  
+    <li><a href="../ProjectTest.html">ProjectTest</a>
+  
+    <li><a href="../ProjectsController.html">ProjectsController</a>
+  
+    <li><a href="../ProjectsControllerTest.html">ProjectsControllerTest</a>
+  
+    <li><a href="../ProjectsHelper.html">ProjectsHelper</a>
+  
+    <li><a href="../ProjectsHelperTest.html">ProjectsHelperTest</a>
+  
+    <li><a href="../Pto.html">Pto</a>
+  
+    <li><a href="../PtoTest.html">PtoTest</a>
+  
+    <li><a href="../PtosController.html">PtosController</a>
+  
+    <li><a href="../PtosControllerTest.html">PtosControllerTest</a>
+  
+    <li><a href="../PtosHelper.html">PtosHelper</a>
+  
+    <li><a href="../PtosHelperTest.html">PtosHelperTest</a>
+  
+    <li><a href="../Rename.html">Rename</a>
+  
+    <li><a href="../RenameCan.html">RenameCan</a>
+  
+    <li><a href="../RenameColtoTasks.html">RenameColtoTasks</a>
+  
+    <li><a href="../RenameColumnsInTasks.html">RenameColumnsInTasks</a>
+  
+    <li><a href="../RenameGroupInResources.html">RenameGroupInResources</a>
+  
+    <li><a href="../RenameTestProgDateFieldType.html">RenameTestProgDateFieldType</a>
+  
+    <li><a href="../Resource.html">Resource</a>
+  
+    <li><a href="../ResourceControllerTest.html">ResourceControllerTest</a>
+  
+    <li><a href="../ResourceHelper.html">ResourceHelper</a>
+  
+    <li><a href="../ResourceHelperTest.html">ResourceHelperTest</a>
+  
+    <li><a href="../ResourceTest.html">ResourceTest</a>
+  
+    <li><a href="../ResourcesControllerTest.html">ResourcesControllerTest</a>
+  
+    <li><a href="../ResourcesHelper.html">ResourcesHelper</a>
+  
+    <li><a href="../ResourcesHelperTest.html">ResourcesHelperTest</a>
+  
+    <li><a href="../Sa.html">Sa</a>
+  
+    <li><a href="../SaTest.html">SaTest</a>
+  
+    <li><a href="../Sample.html">Sample</a>
+  
+    <li><a href="../SampleFrontController.html">SampleFrontController</a>
+  
+    <li><a href="../SampleFrontControllerTest.html">SampleFrontControllerTest</a>
+  
+    <li><a href="../SampleFrontHelper.html">SampleFrontHelper</a>
+  
+    <li><a href="../SampleFrontHelperTest.html">SampleFrontHelperTest</a>
+  
+    <li><a href="../SampleTest.html">SampleTest</a>
+  
+    <li><a href="../SamplesController.html">SamplesController</a>
+  
+    <li><a href="../SamplesControllerTest.html">SamplesControllerTest</a>
+  
+    <li><a href="../SamplesHelper.html">SamplesHelper</a>
+  
+    <li><a href="../SamplesHelperTest.html">SamplesHelperTest</a>
+  
+    <li><a href="../SasController.html">SasController</a>
+  
+    <li><a href="../SasControllerTest.html">SasControllerTest</a>
+  
+    <li><a href="../SasFrontController.html">SasFrontController</a>
+  
+    <li><a href="../SasFrontControllerTest.html">SasFrontControllerTest</a>
+  
+    <li><a href="../SasFrontHelper.html">SasFrontHelper</a>
+  
+    <li><a href="../SasFrontHelperTest.html">SasFrontHelperTest</a>
+  
+    <li><a href="../SasHelper.html">SasHelper</a>
+  
+    <li><a href="../SasHelperTest.html">SasHelperTest</a>
+  
+    <li><a href="../SasSendFlag.html">SasSendFlag</a>
+  
+    <li><a href="../Setup.html">Setup</a>
+  
+    <li><a href="../SetupSyncController.html">SetupSyncController</a>
+  
+    <li><a href="../SetupSyncControllerTest.html">SetupSyncControllerTest</a>
+  
+    <li><a href="../SetupSyncHelper.html">SetupSyncHelper</a>
+  
+    <li><a href="../SetupSyncHelperTest.html">SetupSyncHelperTest</a>
+  
+    <li><a href="../SetupTest.html">SetupTest</a>
+  
+    <li><a href="../SetupTester.html">SetupTester</a>
+  
+    <li><a href="../SetupsController.html">SetupsController</a>
+  
+    <li><a href="../SetupsControllerTest.html">SetupsControllerTest</a>
+  
+    <li><a href="../SetupsHelper.html">SetupsHelper</a>
+  
+    <li><a href="../SetupsHelperTest.html">SetupsHelperTest</a>
+  
+    <li><a href="../TMS.html">TMS</a>
+  
+    <li><a href="../TMS/Application.html">TMS::Application</a>
+  
+    <li><a href="../TableUpdate.html">TableUpdate</a>
+  
+    <li><a href="../Target.html">Target</a>
+  
+    <li><a href="../TargetTest.html">TargetTest</a>
+  
+    <li><a href="../TargetsController.html">TargetsController</a>
+  
+    <li><a href="../TargetsControllerTest.html">TargetsControllerTest</a>
+  
+    <li><a href="../TargetsHelper.html">TargetsHelper</a>
+  
+    <li><a href="../TargetsHelperTest.html">TargetsHelperTest</a>
+  
+    <li><a href="../Task.html">Task</a>
+  
+    <li><a href="../TaskFrontController.html">TaskFrontController</a>
+  
+    <li><a href="../TaskFrontControllerTest.html">TaskFrontControllerTest</a>
+  
+    <li><a href="../TaskFrontHelper.html">TaskFrontHelper</a>
+  
+    <li><a href="../TaskFrontHelperTest.html">TaskFrontHelperTest</a>
+  
+    <li><a href="../TaskLog.html">TaskLog</a>
+  
+    <li><a href="../TaskLogTest.html">TaskLogTest</a>
+  
+    <li><a href="../TaskLogsController.html">TaskLogsController</a>
+  
+    <li><a href="../TaskLogsControllerTest.html">TaskLogsControllerTest</a>
+  
+    <li><a href="../TaskLogsHelper.html">TaskLogsHelper</a>
+  
+    <li><a href="../TaskLogsHelperTest.html">TaskLogsHelperTest</a>
+  
+    <li><a href="../TaskTest.html">TaskTest</a>
+  
+    <li><a href="../TasksController.html">TasksController</a>
+  
+    <li><a href="../TasksControllerTest.html">TasksControllerTest</a>
+  
+    <li><a href="../TasksHelper.html">TasksHelper</a>
+  
+    <li><a href="../TasksHelperTest.html">TasksHelperTest</a>
+  
+    <li><a href="../TestProg.html">TestProg</a>
+  
+    <li><a href="../TestProgTest.html">TestProgTest</a>
+  
+    <li><a href="../TestProgsController.html">TestProgsController</a>
+  
+    <li><a href="../TestProgsControllerTest.html">TestProgsControllerTest</a>
+  
+    <li><a href="../TestProgsHelper.html">TestProgsHelper</a>
+  
+    <li><a href="../TestProgsHelperTest.html">TestProgsHelperTest</a>
+  
+    <li><a href="../TestTime.html">TestTime</a>
+  
+    <li><a href="../TestTimeTest.html">TestTimeTest</a>
+  
+    <li><a href="../TestTimesController.html">TestTimesController</a>
+  
+    <li><a href="../TestTimesControllerTest.html">TestTimesControllerTest</a>
+  
+    <li><a href="../TestTimesHelper.html">TestTimesHelper</a>
+  
+    <li><a href="../TestTimesHelperTest.html">TestTimesHelperTest</a>
+  
+    <li><a href="../TmsController.html">TmsController</a>
+  
+    <li><a href="../TmsControllerTest.html">TmsControllerTest</a>
+  
+    <li><a href="../TmsHelper.html">TmsHelper</a>
+  
+    <li><a href="../TmsHelperTest.html">TmsHelperTest</a>
+  
+    <li><a href="../Update.html">Update</a>
+  
+    <li><a href="../User.html">User</a>
+  
+    <li><a href="../UserMailer.html">UserMailer</a>
+  
+    <li><a href="../UserMailerTest.html">UserMailerTest</a>
+  
+    <li><a href="../UserTest.html">UserTest</a>
+  
+    <li><a href="../UsersController.html">UsersController</a>
+  
+    <li><a href="../UsersControllerTest.html">UsersControllerTest</a>
+  
+    <li><a href="../UsersHelper.html">UsersHelper</a>
+  
+    <li><a href="../UsersHelperTest.html">UsersHelperTest</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p>&lt;!DOCTYPE html&gt;</p>
+
+<p>&lt;html&gt; &lt;head&gt; &lt;meta content=“text/html; charset=UTF-8”
+http-equiv=“Content-Type”&gt;</p>
+
+<p>&lt;title&gt;class <a
+href="../AddOwnerToProjects.html">AddOwnerToProjects</a> - RDoc
+Documentation&lt;/title&gt;</p>
+
+<p>&lt;link type=“text/css” media=“screen” href=“./rdoc.css”
+rel=“stylesheet”&gt;</p>
+
+<p>&lt;script type=“text/javascript”&gt;</p>
+
+<pre>var rdoc_rel_prefix = &quot;./&quot;;</pre>
+
+<p>&lt;/script&gt;</p>
+
+<p>&lt;script type=“text/javascript” charset=“utf-8”
+src=“./js/jquery.js”&gt;&lt;/script&gt; &lt;script type=“text/javascript”
+charset=“utf-8” src=“./js/navigation.js”&gt;&lt;/script&gt; &lt;script
+type=“text/javascript” charset=“utf-8”
+src=“./js/search_index.js”&gt;&lt;/script&gt; &lt;script
+type=“text/javascript” charset=“utf-8”
+src=“./js/search.js”&gt;&lt;/script&gt; &lt;script type=“text/javascript”
+charset=“utf-8” src=“./js/searcher.js”&gt;&lt;/script&gt; &lt;script
+type=“text/javascript” charset=“utf-8”
+src=“./js/darkfish.js”&gt;&lt;/script&gt;</p>
+
+<p>&lt;body id=“top” class=“class”&gt; &lt;nav id=“metadata”&gt;</p>
+
+<pre>&lt;nav id=&quot;home-section&quot; class=&quot;section&quot;&gt;
+&lt;h3 class=&quot;section-header&quot;&gt;
+  &lt;a href=&quot;./index.html&quot;&gt;Home&lt;/a&gt;
+  &lt;a href=&quot;./table_of_contents.html#classes&quot;&gt;Classes&lt;/a&gt;
+  &lt;a href=&quot;./table_of_contents.html#methods&quot;&gt;Methods&lt;/a&gt;
+&lt;/h3&gt;</pre>
+
+<p>&lt;/nav&gt;</p>
+
+<pre>&lt;nav id=&quot;search-section&quot; class=&quot;section project-section&quot; class=&quot;initially-hidden&quot;&gt;
+&lt;form action=&quot;#&quot; method=&quot;get&quot; accept-charset=&quot;utf-8&quot;&gt;
+  &lt;h3 class=&quot;section-header&quot;&gt;
+    &lt;input type=&quot;text&quot; name=&quot;search&quot; placeholder=&quot;Search&quot; id=&quot;search-field&quot;
+           title=&quot;Type to search, Up and Down to navigate, Enter to load&quot;&gt;
+  &lt;/h3&gt;
+&lt;/form&gt;
+
+&lt;ul id=&quot;search-results&quot; class=&quot;initially-hidden&quot;&gt;&lt;/ul&gt;</pre>
+
+<p>&lt;/nav&gt;</p>
+
+<pre>&lt;div id=&quot;file-metadata&quot;&gt;
+  &lt;nav id=&quot;file-list-section&quot; class=&quot;section&quot;&gt;
+&lt;h3 class=&quot;section-header&quot;&gt;Defined In&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;db/migrate/20110919113438_add_owner_to_projects.rb
+&lt;/ul&gt;</pre>
+
+<p>&lt;/nav&gt;</p>
+
+<pre>&lt;/div&gt;
+
+&lt;div id=&quot;class-metadata&quot;&gt;
+
+  &lt;nav id=&quot;parent-class-section&quot; class=&quot;section&quot;&gt;
+&lt;h3 class=&quot;section-header&quot;&gt;Parent&lt;/h3&gt;
+
+&lt;p class=&quot;link&quot;&gt;ActiveRecord::Migration</pre>
+
+<p>&lt;/nav&gt;</p>
+
+<pre>&lt;!-- Method Quickref --&gt;</pre>
+
+<p>&lt;nav id=“method-list-section” class=“section”&gt;</p>
+
+<pre>&lt;h3 class=&quot;section-header&quot;&gt;Methods&lt;/h3&gt;
+
+&lt;ul class=&quot;link-list&quot;&gt;
+
+  &lt;li &gt;&lt;a href=&quot;#method-c-down&quot;&gt;::down&lt;/a&gt;
+
+  &lt;li &gt;&lt;a href=&quot;#method-c-up&quot;&gt;::up&lt;/a&gt;
+
+&lt;/ul&gt;</pre>
+
+<p>&lt;/nav&gt;</p>
+
+<pre>&lt;/div&gt;
+
+&lt;div id=&quot;project-metadata&quot;&gt;
+  &lt;nav id=&quot;fileindex-section&quot; class=&quot;section project-section&quot;&gt;
+&lt;h3 class=&quot;section-header&quot;&gt;Pages&lt;/h3&gt;
+
+&lt;ul&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./Gemfile.html&quot;&gt;Gemfile&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./Gemfile_lock.html&quot;&gt;Gemfile.lock&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./README.html&quot;&gt;README&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./Rakefile.html&quot;&gt;Rakefile&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./app/flow_thoughts_txt.html&quot;&gt;flow_thoughts&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./app/views/cost/_query_results_header_html_haml.html&quot;&gt;_query_results_header.html.haml&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./app/views/cost/query_html_haml.html&quot;&gt;query.html.haml&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./app/views/resource/_employee_details_html_haml.html&quot;&gt;_employee_details.html.haml&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./app/views/resource/_not_key_html_haml.html&quot;&gt;_not_key.html.haml&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./app/views/resource/_overbooked_html_haml.html&quot;&gt;_overbooked.html.haml&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./app/views/resource/_pill_navigation_html_haml.html&quot;&gt;_pill_navigation.html.haml&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./app/views/resource/_team_names_html_haml.html&quot;&gt;_team_names.html.haml&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./app/views/resource/actual_html_haml.html&quot;&gt;actual.html.haml&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./app/views/resource/availability_html_haml.html&quot;&gt;availability.html.haml&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./app/views/resource/employee_view_html_haml.html&quot;&gt;employee_view.html.haml&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./app/views/resource/key_project_summary_html_haml.html&quot;&gt;key_project_summary.html.haml&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./app/views/resource/rule_check_html_haml.html&quot;&gt;rule_check.html.haml&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./app/views/resource/variance_html_haml.html&quot;&gt;variance.html.haml&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./app/views/users/INDEXH~1_BAK.html&quot;&gt;INDEXH~1.BAK&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./config_ru.html&quot;&gt;config.ru&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./doc/created_rid.html&quot;&gt;created.rid&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./importlogcsv_txt.html&quot;&gt;importlogcsv&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./install.html&quot;&gt;install&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./log/development_log.html&quot;&gt;development.log&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/404_html.html&quot;&gt;404.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/422_html.html&quot;&gt;422.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/500_html.html&quot;&gt;500.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/favicon_ico.html&quot;&gt;favicon.ico&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/fonts/glyphicons-halflings-regular_svg.html&quot;&gt;glyphicons-halflings-regular.svg&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/index_html.html&quot;&gt;index.html&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/javascripts/application_js.html&quot;&gt;application.js&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/javascripts/bootstrap_js.html&quot;&gt;bootstrap.js&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/javascripts/bootstrap_min_js.html&quot;&gt;bootstrap.min.js&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/javascripts/controls_js.html&quot;&gt;controls.js&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/javascripts/dragdrop_js.html&quot;&gt;dragdrop.js&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/javascripts/effects_js.html&quot;&gt;effects.js&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/javascripts/prototype_js.html&quot;&gt;prototype.js&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/javascripts/rails_js.html&quot;&gt;rails.js&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/robots_txt.html&quot;&gt;robots&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/stylesheets/application_css.html&quot;&gt;application.css&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/stylesheets/bootstrap-responsive_css.html&quot;&gt;bootstrap-responsive.css&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/stylesheets/bootstrap-responsive_min_css.html&quot;&gt;bootstrap-responsive.min.css&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/stylesheets/bootstrap_css.html&quot;&gt;bootstrap.css&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/stylesheets/bootstrap_min_css.html&quot;&gt;bootstrap.min.css&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/stylesheets/custom2_css.html&quot;&gt;custom2.css&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/stylesheets/le-frog/jquery-ui-1_8_16_custom_css.html&quot;&gt;jquery-ui-1.8.16.custom.css&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/stylesheets/menu_css.html&quot;&gt;menu.css&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/stylesheets/reset_css.html&quot;&gt;reset.css&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/stylesheets/scaffold_css.html&quot;&gt;scaffold.css&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/stylesheets/tms_css.html&quot;&gt;tms.css&lt;/a&gt;
+
+  &lt;li class=&quot;file&quot;&gt;&lt;a href=&quot;./public/stylesheets/ui-darkness/jquery-ui-1_8_16_custom_css.html&quot;&gt;jquery-ui-1.8.16.custom.css&lt;/a&gt;
+
+&lt;/ul&gt;</pre>
+
+<p>&lt;/nav&gt;</p>
+
+<pre>  &lt;nav id=&quot;classindex-section&quot; class=&quot;section project-section&quot;&gt;
+&lt;h3 class=&quot;section-header&quot;&gt;Class and Module Index&lt;/h3&gt;
+
+&lt;ul class=&quot;link-list&quot;&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ActionMailer.html&quot;&gt;ActionMailer&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ActiveRecord.html&quot;&gt;ActiveRecord&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ActiveSupport.html&quot;&gt;ActiveSupport&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ActiveSupport/TestCase.html&quot;&gt;ActiveSupport::TestCase&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddColToSamples.html&quot;&gt;AddColToSamples&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddColToUsers.html&quot;&gt;AddColToUsers&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddColtoTasks.html&quot;&gt;AddColtoTasks&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddCommentsToSas.html&quot;&gt;AddCommentsToSas&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddCp3.html&quot;&gt;AddCp3&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddCr3ToTargets.html&quot;&gt;AddCr3ToTargets&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddCrs.html&quot;&gt;AddCrs&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddDeviceToCosting.html&quot;&gt;AddDeviceToCosting&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddDurationToTasks.html&quot;&gt;AddDurationToTasks&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddEmail.html&quot;&gt;AddEmail&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddFamilyToTasks.html&quot;&gt;AddFamilyToTasks&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddFriendlyToProjects.html&quot;&gt;AddFriendlyToProjects&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddGroupToResources.html&quot;&gt;AddGroupToResources&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddIDtoTaskLogs.html&quot;&gt;AddIDtoTaskLogs&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddMatchFlagsToSetup.html&quot;&gt;AddMatchFlagsToSetup&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddOwner.html&quot;&gt;AddOwner&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddOwnerToProjects.html&quot;&gt;AddOwnerToProjects&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddParallelismToSetup.html&quot;&gt;AddParallelismToSetup&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddPassportToUser.html&quot;&gt;AddPassportToUser&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddProductToResources.html&quot;&gt;AddProductToResources&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddProtocolManid.html&quot;&gt;AddProtocolManid&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddResources.html&quot;&gt;AddResources&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddTaskColumn.html&quot;&gt;AddTaskColumn&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddToCosting.html&quot;&gt;AddToCosting&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddUserToSas.html&quot;&gt;AddUserToSas&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AddVendorToSetups.html&quot;&gt;AddVendorToSetups&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AdminController.html&quot;&gt;AdminController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AdminControllerTest.html&quot;&gt;AdminControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AdminHelper.html&quot;&gt;AdminHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./AdminHelperTest.html&quot;&gt;AdminHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ApplicationController.html&quot;&gt;ApplicationController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ApplicationHelper.html&quot;&gt;ApplicationHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./BrowsingTest.html&quot;&gt;BrowsingTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CanController.html&quot;&gt;CanController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CanControllerTest.html&quot;&gt;CanControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CanHelper.html&quot;&gt;CanHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CanHelperTest.html&quot;&gt;CanHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CanMain.html&quot;&gt;CanMain&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CanMainTest.html&quot;&gt;CanMainTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CanMainsController.html&quot;&gt;CanMainsController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CanMainsControllerTest.html&quot;&gt;CanMainsControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CanMainsHelper.html&quot;&gt;CanMainsHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CanMainsHelperTest.html&quot;&gt;CanMainsHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CanSub.html&quot;&gt;CanSub&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CanSubTest.html&quot;&gt;CanSubTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CanSubsController.html&quot;&gt;CanSubsController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CanSubsControllerTest.html&quot;&gt;CanSubsControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CanSubsHelper.html&quot;&gt;CanSubsHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CanSubsHelperTest.html&quot;&gt;CanSubsHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ChangeTasks.html&quot;&gt;ChangeTasks&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CostControllerTest.html&quot;&gt;CostControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CostHelper.html&quot;&gt;CostHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CostHelperTest.html&quot;&gt;CostHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./Costing.html&quot;&gt;Costing&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CostingTest.html&quot;&gt;CostingTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CostingsController.html&quot;&gt;CostingsController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CostingsControllerTest.html&quot;&gt;CostingsControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CostingsHelper.html&quot;&gt;CostingsHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CostingsHelperTest.html&quot;&gt;CostingsHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./Cpnaddmanid.html&quot;&gt;Cpnaddmanid&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CreateCanMains.html&quot;&gt;CreateCanMains&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CreateCanSubs.html&quot;&gt;CreateCanSubs&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CreateCostings.html&quot;&gt;CreateCostings&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CreateDevices.html&quot;&gt;CreateDevices&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CreateManids.html&quot;&gt;CreateManids&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CreateProjects.html&quot;&gt;CreateProjects&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CreatePtos.html&quot;&gt;CreatePtos&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CreateResources.html&quot;&gt;CreateResources&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CreateSamples.html&quot;&gt;CreateSamples&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CreateSas.html&quot;&gt;CreateSas&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CreateSetups.html&quot;&gt;CreateSetups&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CreateTargets.html&quot;&gt;CreateTargets&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CreateTaskLogs.html&quot;&gt;CreateTaskLogs&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CreateTasks.html&quot;&gt;CreateTasks&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CreateTestProgs.html&quot;&gt;CreateTestProgs&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CreateTestTimes.html&quot;&gt;CreateTestTimes&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./CreateUsers.html&quot;&gt;CreateUsers&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./Device.html&quot;&gt;Device&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./DeviceTest.html&quot;&gt;DeviceTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./DevicesController.html&quot;&gt;DevicesController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./DevicesControllerTest.html&quot;&gt;DevicesControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./DevicesHelper.html&quot;&gt;DevicesHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./DevicesHelperTest.html&quot;&gt;DevicesHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./DynamicDelegator.html&quot;&gt;DynamicDelegator&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./Finnance.html&quot;&gt;Finnance&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./FrontSamplesController.html&quot;&gt;FrontSamplesController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./FrontSamplesControllerTest.html&quot;&gt;FrontSamplesControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./FrontSamplesHelper.html&quot;&gt;FrontSamplesHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./FrontSamplesHelperTest.html&quot;&gt;FrontSamplesHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./Hello.html&quot;&gt;Hello&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ImportController.html&quot;&gt;ImportController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ImportControllerTest.html&quot;&gt;ImportControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ImportHelper.html&quot;&gt;ImportHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ImportHelperTest.html&quot;&gt;ImportHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ImportResourceControllerTest.html&quot;&gt;ImportResourceControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ImportResourceHelper.html&quot;&gt;ImportResourceHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ImportResourceHelperTest.html&quot;&gt;ImportResourceHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./MainController.html&quot;&gt;MainController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./MainControllerTest.html&quot;&gt;MainControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./MainHelper.html&quot;&gt;MainHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./MainHelperTest.html&quot;&gt;MainHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./Manid.html&quot;&gt;Manid&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ManidTest.html&quot;&gt;ManidTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ManidsController.html&quot;&gt;ManidsController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ManidsControllerTest.html&quot;&gt;ManidsControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ManidsHelper.html&quot;&gt;ManidsHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ManidsHelperTest.html&quot;&gt;ManidsHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./Mime.html&quot;&gt;Mime&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./Object.html&quot;&gt;Object&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./PersonalizationController.html&quot;&gt;PersonalizationController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./PersonalizationControllerTest.html&quot;&gt;PersonalizationControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./PersonalizationHelper.html&quot;&gt;PersonalizationHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./PersonalizationHelperTest.html&quot;&gt;PersonalizationHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./PomodoroController.html&quot;&gt;PomodoroController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./PomodoroControllerTest.html&quot;&gt;PomodoroControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./PomodoroHelper.html&quot;&gt;PomodoroHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./PomodoroHelperTest.html&quot;&gt;PomodoroHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./PriorityController.html&quot;&gt;PriorityController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./PriorityControllerTest.html&quot;&gt;PriorityControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./PriorityHelper.html&quot;&gt;PriorityHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./PriorityHelperTest.html&quot;&gt;PriorityHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./Project.html&quot;&gt;Project&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ProjectTest.html&quot;&gt;ProjectTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ProjectsController.html&quot;&gt;ProjectsController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ProjectsControllerTest.html&quot;&gt;ProjectsControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ProjectsHelper.html&quot;&gt;ProjectsHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ProjectsHelperTest.html&quot;&gt;ProjectsHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./Pto.html&quot;&gt;Pto&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./PtoTest.html&quot;&gt;PtoTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./PtosController.html&quot;&gt;PtosController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./PtosControllerTest.html&quot;&gt;PtosControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./PtosHelper.html&quot;&gt;PtosHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./PtosHelperTest.html&quot;&gt;PtosHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./Rename.html&quot;&gt;Rename&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./RenameCan.html&quot;&gt;RenameCan&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./RenameColtoTasks.html&quot;&gt;RenameColtoTasks&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./RenameColumnsInTasks.html&quot;&gt;RenameColumnsInTasks&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./RenameGroupInResources.html&quot;&gt;RenameGroupInResources&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./RenameTestProgDateFieldType.html&quot;&gt;RenameTestProgDateFieldType&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./Resource.html&quot;&gt;Resource&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ResourceControllerTest.html&quot;&gt;ResourceControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ResourceHelper.html&quot;&gt;ResourceHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ResourceHelperTest.html&quot;&gt;ResourceHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ResourceTest.html&quot;&gt;ResourceTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ResourcesControllerTest.html&quot;&gt;ResourcesControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ResourcesHelper.html&quot;&gt;ResourcesHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./ResourcesHelperTest.html&quot;&gt;ResourcesHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./Sa.html&quot;&gt;Sa&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SaTest.html&quot;&gt;SaTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./Sample.html&quot;&gt;Sample&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SampleFrontController.html&quot;&gt;SampleFrontController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SampleFrontControllerTest.html&quot;&gt;SampleFrontControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SampleFrontHelper.html&quot;&gt;SampleFrontHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SampleFrontHelperTest.html&quot;&gt;SampleFrontHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SampleTest.html&quot;&gt;SampleTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SamplesController.html&quot;&gt;SamplesController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SamplesControllerTest.html&quot;&gt;SamplesControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SamplesHelper.html&quot;&gt;SamplesHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SamplesHelperTest.html&quot;&gt;SamplesHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SasController.html&quot;&gt;SasController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SasControllerTest.html&quot;&gt;SasControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SasFrontController.html&quot;&gt;SasFrontController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SasFrontControllerTest.html&quot;&gt;SasFrontControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SasFrontHelper.html&quot;&gt;SasFrontHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SasFrontHelperTest.html&quot;&gt;SasFrontHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SasHelper.html&quot;&gt;SasHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SasHelperTest.html&quot;&gt;SasHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SasSendFlag.html&quot;&gt;SasSendFlag&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./Setup.html&quot;&gt;Setup&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SetupSyncController.html&quot;&gt;SetupSyncController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SetupSyncControllerTest.html&quot;&gt;SetupSyncControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SetupSyncHelper.html&quot;&gt;SetupSyncHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SetupSyncHelperTest.html&quot;&gt;SetupSyncHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SetupTest.html&quot;&gt;SetupTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SetupTester.html&quot;&gt;SetupTester&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SetupsController.html&quot;&gt;SetupsController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SetupsControllerTest.html&quot;&gt;SetupsControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SetupsHelper.html&quot;&gt;SetupsHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./SetupsHelperTest.html&quot;&gt;SetupsHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TMS.html&quot;&gt;TMS&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TMS/Application.html&quot;&gt;TMS::Application&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TableUpdate.html&quot;&gt;TableUpdate&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./Target.html&quot;&gt;Target&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TargetTest.html&quot;&gt;TargetTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TargetsController.html&quot;&gt;TargetsController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TargetsControllerTest.html&quot;&gt;TargetsControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TargetsHelper.html&quot;&gt;TargetsHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TargetsHelperTest.html&quot;&gt;TargetsHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./Task.html&quot;&gt;Task&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TaskFrontController.html&quot;&gt;TaskFrontController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TaskFrontControllerTest.html&quot;&gt;TaskFrontControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TaskFrontHelper.html&quot;&gt;TaskFrontHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TaskFrontHelperTest.html&quot;&gt;TaskFrontHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TaskLog.html&quot;&gt;TaskLog&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TaskLogTest.html&quot;&gt;TaskLogTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TaskLogsController.html&quot;&gt;TaskLogsController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TaskLogsControllerTest.html&quot;&gt;TaskLogsControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TaskLogsHelper.html&quot;&gt;TaskLogsHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TaskLogsHelperTest.html&quot;&gt;TaskLogsHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TaskTest.html&quot;&gt;TaskTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TasksController.html&quot;&gt;TasksController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TasksControllerTest.html&quot;&gt;TasksControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TasksHelper.html&quot;&gt;TasksHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TasksHelperTest.html&quot;&gt;TasksHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TestProg.html&quot;&gt;TestProg&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TestProgTest.html&quot;&gt;TestProgTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TestProgsController.html&quot;&gt;TestProgsController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TestProgsControllerTest.html&quot;&gt;TestProgsControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TestProgsHelper.html&quot;&gt;TestProgsHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TestProgsHelperTest.html&quot;&gt;TestProgsHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TestTime.html&quot;&gt;TestTime&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TestTimeTest.html&quot;&gt;TestTimeTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TestTimesController.html&quot;&gt;TestTimesController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TestTimesControllerTest.html&quot;&gt;TestTimesControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TestTimesHelper.html&quot;&gt;TestTimesHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TestTimesHelperTest.html&quot;&gt;TestTimesHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TmsController.html&quot;&gt;TmsController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TmsControllerTest.html&quot;&gt;TmsControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TmsHelper.html&quot;&gt;TmsHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./TmsHelperTest.html&quot;&gt;TmsHelperTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./Update.html&quot;&gt;Update&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./User.html&quot;&gt;User&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./UserMailer.html&quot;&gt;UserMailer&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./UserMailerTest.html&quot;&gt;UserMailerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./UserTest.html&quot;&gt;UserTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./UsersController.html&quot;&gt;UsersController&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./UsersControllerTest.html&quot;&gt;UsersControllerTest&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./UsersHelper.html&quot;&gt;UsersHelper&lt;/a&gt;
+
+  &lt;li&gt;&lt;a href=&quot;./UsersHelperTest.html&quot;&gt;UsersHelperTest&lt;/a&gt;
+
+&lt;/ul&gt;</pre>
+
+<p>&lt;/nav&gt;</p>
+
+<pre>&lt;/div&gt;</pre>
+
+<p>&lt;/nav&gt;</p>
+
+<p>&lt;div id=“documentation”&gt;</p>
+
+<pre>&lt;h1 class=&quot;class&quot;&gt;class AddOwnerToProjects&lt;/h1&gt;
+
+&lt;div id=&quot;description&quot; class=&quot;description&quot;&gt;
+
+&lt;/div&gt;&lt;!-- description --&gt;
+
+&lt;section id=&quot;5Buntitled-5D&quot; class=&quot;documentation-section&quot;&gt;
+
+  &lt;!-- Methods --&gt;
+
+   &lt;section id=&quot;public-class-5Buntitled-5D-method-details&quot; class=&quot;method-section section&quot;&gt;
+    &lt;h3 class=&quot;section-header&quot;&gt;Public Class Methods&lt;/h3&gt;
+
+    &lt;div id=&quot;method-c-down&quot; class=&quot;method-detail &quot;&gt;
+
+      &lt;div class=&quot;method-heading&quot;&gt;
+        &lt;span class=&quot;method-name&quot;&gt;down&lt;/span&gt;&lt;span
+          class=&quot;method-args&quot;&gt;()&lt;/span&gt;
+
+        &lt;span class=&quot;method-click-advice&quot;&gt;click to toggle source&lt;/span&gt;
+
+      &lt;/div&gt;
+
+      &lt;div class=&quot;method-description&quot;&gt;
+
+        &lt;div class=&quot;method-source-code&quot; id=&quot;down-source&quot;&gt;
+          &lt;pre&gt;&lt;span class=&quot;ruby-comment&quot;&gt;# File db/migrate/20110919113438_add_owner_to_projects.rb, line 6&lt;/span&gt;
+</pre>
+
+<p>&lt;span class=“ruby-keyword”&gt;def&lt;/span&gt; &lt;span
+class=“ruby-keyword”&gt;self&lt;/span&gt;.&lt;span
+class=“ruby-identifier”&gt;down&lt;/span&gt;</p>
+
+<pre>&lt;span class=&quot;ruby-identifier&quot;&gt;remove_column&lt;/span&gt; &lt;span class=&quot;ruby-value&quot;&gt;:projects&lt;/span&gt;, &lt;span class=&quot;ruby-value&quot;&gt;:owner&lt;/span&gt;</pre>
+
+<p>&lt;span class=“ruby-keyword”&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>    &lt;/div&gt;&lt;!-- down-source --&gt;
+
+  &lt;/div&gt;
+
+&lt;/div&gt;&lt;!-- down-method --&gt;
+
+&lt;div id=&quot;method-c-up&quot; class=&quot;method-detail &quot;&gt;
+
+  &lt;div class=&quot;method-heading&quot;&gt;
+    &lt;span class=&quot;method-name&quot;&gt;up&lt;/span&gt;&lt;span
+      class=&quot;method-args&quot;&gt;()&lt;/span&gt;
+
+    &lt;span class=&quot;method-click-advice&quot;&gt;click to toggle source&lt;/span&gt;
+
+  &lt;/div&gt;
+
+  &lt;div class=&quot;method-description&quot;&gt;
+
+    &lt;div class=&quot;method-source-code&quot; id=&quot;up-source&quot;&gt;
+      &lt;pre&gt;&lt;span class=&quot;ruby-comment&quot;&gt;# File db/migrate/20110919113438_add_owner_to_projects.rb, line 2&lt;/span&gt;</pre>
+
+<p>&lt;span class=“ruby-keyword”&gt;def&lt;/span&gt; &lt;span
+class=“ruby-keyword”&gt;self&lt;/span&gt;.&lt;span
+class=“ruby-identifier”&gt;up&lt;/span&gt;</p>
+
+<pre>&lt;span class=&quot;ruby-identifier&quot;&gt;add_column&lt;/span&gt; &lt;span class=&quot;ruby-value&quot;&gt;:projects&lt;/span&gt;, &lt;span class=&quot;ruby-value&quot;&gt;:owner&lt;/span&gt;, &lt;span class=&quot;ruby-value&quot;&gt;:string&lt;/span&gt;</pre>
+
+<p>&lt;span class=“ruby-keyword”&gt;end&lt;/span&gt;&lt;/pre&gt;</p>
+
+<pre>        &lt;/div&gt;&lt;!-- up-source --&gt;
+
+      &lt;/div&gt;
+
+    &lt;/div&gt;&lt;!-- up-method --&gt;
+
+  &lt;/section&gt;&lt;!-- public-class-method-details --&gt;
+
+&lt;/section&gt;&lt;!-- 5Buntitled-5D --&gt;</pre>
+
+<p>&lt;/div&gt;&lt;!– documentation –&gt;</p>
+
+<p>&lt;footer id=“validator-badges”&gt;</p>
+
+<pre>&lt;p&gt;&lt;a href=&quot;http://validator.w3.org/check/referer&quot;&gt;[Validate]&lt;/a&gt;
+&lt;p&gt;Generated by &lt;a href=&quot;https://github.com/rdoc/rdoc&quot;&gt;RDoc&lt;/a&gt; 4.0.0.
+&lt;p&gt;Generated with the &lt;a href=&quot;http://deveiate.org/projects/Darkfish-Rdoc/&quot;&gt;Darkfish Rdoc Generator&lt;/a&gt; 3.</pre>
+
+<p>&lt;/footer&gt;</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
