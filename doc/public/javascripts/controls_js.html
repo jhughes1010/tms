@@ -1,0 +1,1156 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>controls.js - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../../README.html">README</a>
+  
+    <li><a href="../../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../../app/flow_thoughts_txt.html">flow_thoughts</a>
+  
+    <li><a href="../../app/views/cost/_query_results_header_html_haml.html">_query_results_header.html.haml</a>
+  
+    <li><a href="../../app/views/cost/query_html_haml.html">query.html.haml</a>
+  
+    <li><a href="../../app/views/resource/_employee_details_html_haml.html">_employee_details.html.haml</a>
+  
+    <li><a href="../../app/views/resource/_not_key_html_haml.html">_not_key.html.haml</a>
+  
+    <li><a href="../../app/views/resource/_overbooked_html_haml.html">_overbooked.html.haml</a>
+  
+    <li><a href="../../app/views/resource/_pill_navigation_html_haml.html">_pill_navigation.html.haml</a>
+  
+    <li><a href="../../app/views/resource/_team_names_html_haml.html">_team_names.html.haml</a>
+  
+    <li><a href="../../app/views/resource/actual_html_haml.html">actual.html.haml</a>
+  
+    <li><a href="../../app/views/resource/availability_html_haml.html">availability.html.haml</a>
+  
+    <li><a href="../../app/views/resource/employee_view_html_haml.html">employee_view.html.haml</a>
+  
+    <li><a href="../../app/views/resource/key_project_summary_html_haml.html">key_project_summary.html.haml</a>
+  
+    <li><a href="../../app/views/resource/rule_check_html_haml.html">rule_check.html.haml</a>
+  
+    <li><a href="../../app/views/resource/variance_html_haml.html">variance.html.haml</a>
+  
+    <li><a href="../../app/views/users/INDEXH~1_BAK.html">INDEXH~1.BAK</a>
+  
+    <li><a href="../../config_ru.html">config.ru</a>
+  
+    <li><a href="../../importlogcsv_txt.html">importlogcsv</a>
+  
+    <li><a href="../../install.html">install</a>
+  
+    <li><a href="../../log/development_log.html">development.log</a>
+  
+    <li><a href="../../public/404_html.html">404.html</a>
+  
+    <li><a href="../../public/422_html.html">422.html</a>
+  
+    <li><a href="../../public/500_html.html">500.html</a>
+  
+    <li><a href="../../public/favicon_ico.html">favicon.ico</a>
+  
+    <li><a href="../../public/fonts/glyphicons-halflings-regular_svg.html">glyphicons-halflings-regular.svg</a>
+  
+    <li><a href="../../public/index_html.html">index.html</a>
+  
+    <li><a href="../../public/javascripts/application_js.html">application.js</a>
+  
+    <li><a href="../../public/javascripts/bootstrap_js.html">bootstrap.js</a>
+  
+    <li><a href="../../public/javascripts/bootstrap_min_js.html">bootstrap.min.js</a>
+  
+    <li><a href="../../public/javascripts/controls_js.html">controls.js</a>
+  
+    <li><a href="../../public/javascripts/dragdrop_js.html">dragdrop.js</a>
+  
+    <li><a href="../../public/javascripts/effects_js.html">effects.js</a>
+  
+    <li><a href="../../public/javascripts/prototype_js.html">prototype.js</a>
+  
+    <li><a href="../../public/javascripts/rails_js.html">rails.js</a>
+  
+    <li><a href="../../public/robots_txt.html">robots</a>
+  
+    <li><a href="../../public/stylesheets/application_css.html">application.css</a>
+  
+    <li><a href="../../public/stylesheets/bootstrap-responsive_css.html">bootstrap-responsive.css</a>
+  
+    <li><a href="../../public/stylesheets/bootstrap-responsive_min_css.html">bootstrap-responsive.min.css</a>
+  
+    <li><a href="../../public/stylesheets/bootstrap_css.html">bootstrap.css</a>
+  
+    <li><a href="../../public/stylesheets/bootstrap_min_css.html">bootstrap.min.css</a>
+  
+    <li><a href="../../public/stylesheets/custom2_css.html">custom2.css</a>
+  
+    <li><a href="../../public/stylesheets/le-frog/jquery-ui-1_8_16_custom_css.html">jquery-ui-1.8.16.custom.css</a>
+  
+    <li><a href="../../public/stylesheets/menu_css.html">menu.css</a>
+  
+    <li><a href="../../public/stylesheets/reset_css.html">reset.css</a>
+  
+    <li><a href="../../public/stylesheets/scaffold_css.html">scaffold.css</a>
+  
+    <li><a href="../../public/stylesheets/tms_css.html">tms.css</a>
+  
+    <li><a href="../../public/stylesheets/ui-darkness/jquery-ui-1_8_16_custom_css.html">jquery-ui-1.8.16.custom.css</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page public/javascripts/controls.js">
+
+<p>// script.aculo.us controls.js v1.8.3, Thu Oct 08 11:23:33 +0200 2009</p>
+
+<p>// Copyright © 2005-2009 Thomas Fuchs (<a
+href="http://script.aculo.us">script.aculo.us</a>, <a
+href="http://mir.aculo.us">mir.aculo.us</a>) //           © 2005-2009 Ivan
+Krstic (<a
+href="http://blogs.law.harvard.edu/ivan">blogs.law.harvard.edu/ivan</a>) //
+© 2005-2009 Jon Tirsen (<a href="http://www.tirsen.com">www.tirsen.com</a>)
+// Contributors: //  Richard Livsey //  Rahul Bhargava //  Rob Wills // //
+script.aculo.us is freely distributable under the terms of an MIT-style
+license. // For details, see the script.aculo.us web site: <a
+href="http://script.aculo.us">script.aculo.us</a>/</p>
+
+<p>// Autocompleter.Base handles all the autocompletion functionality //
+that&#39;s independent of the data source for autocompletion. This //
+includes drawing the autocompletion menu, observing keyboard // and mouse
+events, and similar. // // Specific autocompleters need to provide, at the
+very least, // a getUpdatedChoices function that will be invoked every time
+// the text inside the monitored textbox changes. This method // should get
+the text for which to provide autocompletion by // invoking
+this.getToken(), NOT by directly accessing // this.element.value. This is
+to allow incremental tokenized // autocompletion. Specific auto-completion
+logic (AJAX, etc) // belongs in getUpdatedChoices. // // Tokenized
+incremental autocompletion is enabled automatically // when an
+autocompleter is instantiated with the &#39;tokens&#39; option // in the
+options parameter, e.g.: // new
+Ajax.Autocompleter(&#39;id&#39;,&#39;upd&#39;, &#39;/url/&#39;, { tokens:
+&#39;,&#39; }); // will incrementally autocomplete with a comma as the
+token. // Additionally, &#39;,&#39; in the above example can be replaced
+with // a token array, e.g. { tokens: [&#39;,&#39;, &#39;n&#39;] } which //
+enables autocompletion on multiple tokens. This is most // useful when one
+of the tokens is n (a newline), as it // allows smart autocompletion after
+linebreaks.</p>
+
+<p>if(typeof Effect == &#39;undefined&#39;)</p>
+
+<pre class="ruby"><span class="ruby-identifier">throw</span>(<span class="ruby-string">&quot;controls.js requires including script.aculo.us&#39; effects.js library&quot;</span>);
+</pre>
+
+<p>var Autocompleter = { }; Autocompleter.Base = Class.create({</p>
+
+<pre>baseInitialize: function(element, update, options) {
+  element          = $(element);
+  this.element     = element;
+  this.update      = $(update);
+  this.hasFocus    = false;
+  this.changed     = false;
+  this.active      = false;
+  this.index       = 0;
+  this.entryCount  = 0;
+  this.oldElementValue = this.element.value;
+
+  if(this.setOptions)
+    this.setOptions(options);
+  else
+    this.options = options || { };
+
+  this.options.paramName    = this.options.paramName || this.element.name;
+  this.options.tokens       = this.options.tokens || [];
+  this.options.frequency    = this.options.frequency || 0.4;
+  this.options.minChars     = this.options.minChars || 1;
+  this.options.onShow       = this.options.onShow ||
+    function(element, update){
+      if(!update.style.position || update.style.position==&#39;absolute&#39;) {
+        update.style.position = &#39;absolute&#39;;
+        Position.clone(element, update, {
+          setHeight: false,
+          offsetTop: element.offsetHeight
+        });
+      }
+      Effect.Appear(update,{duration:0.15});
+    };
+  this.options.onHide = this.options.onHide ||
+    function(element, update){ new Effect.Fade(update,{duration:0.15}) };
+
+  if(typeof(this.options.tokens) == &#39;string&#39;)
+    this.options.tokens = new Array(this.options.tokens);
+  // Force carriage returns as token delimiters anyway
+  if (!this.options.tokens.include(&#39;\n&#39;))
+    this.options.tokens.push(&#39;\n&#39;);
+
+  this.observer = null;
+
+  this.element.setAttribute(&#39;autocomplete&#39;,&#39;off&#39;);
+
+  Element.hide(this.update);
+
+  Event.observe(this.element, &#39;blur&#39;, this.onBlur.bindAsEventListener(this));
+  Event.observe(this.element, &#39;keydown&#39;, this.onKeyPress.bindAsEventListener(this));
+},
+
+show: function() {
+  if(Element.getStyle(this.update, &#39;display&#39;)==&#39;none&#39;) this.options.onShow(this.element, this.update);
+  if(!this.iefix &amp;&amp;
+    (Prototype.Browser.IE) &amp;&amp;
+    (Element.getStyle(this.update, &#39;position&#39;)==&#39;absolute&#39;)) {
+    new Insertion.After(this.update,
+     &#39;&lt;iframe id=&quot;&#39; + this.update.id + &#39;_iefix&quot; &#39;+
+     &#39;style=&quot;display:none;position:absolute;filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0);&quot; &#39; +
+     &#39;src=&quot;javascript:false;&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;&#39;);
+    this.iefix = $(this.update.id+&#39;_iefix&#39;);
+  }
+  if(this.iefix) setTimeout(this.fixIEOverlapping.bind(this), 50);
+},
+
+fixIEOverlapping: function() {
+  Position.clone(this.update, this.iefix, {setTop:(!this.update.style.height)});
+  this.iefix.style.zIndex = 1;
+  this.update.style.zIndex = 2;
+  Element.show(this.iefix);
+},
+
+hide: function() {
+  this.stopIndicator();
+  if(Element.getStyle(this.update, &#39;display&#39;)!=&#39;none&#39;) this.options.onHide(this.element, this.update);
+  if(this.iefix) Element.hide(this.iefix);
+},
+
+startIndicator: function() {
+  if(this.options.indicator) Element.show(this.options.indicator);
+},
+
+stopIndicator: function() {
+  if(this.options.indicator) Element.hide(this.options.indicator);
+},
+
+onKeyPress: function(event) {
+  if(this.active)
+    switch(event.keyCode) {
+     case Event.KEY_TAB:
+     case Event.KEY_RETURN:
+       this.selectEntry();
+       Event.stop(event);
+     case Event.KEY_ESC:
+       this.hide();
+       this.active = false;
+       Event.stop(event);
+       return;
+     case Event.KEY_LEFT:
+     case Event.KEY_RIGHT:
+       return;
+     case Event.KEY_UP:
+       this.markPrevious();
+       this.render();
+       Event.stop(event);
+       return;
+     case Event.KEY_DOWN:
+       this.markNext();
+       this.render();
+       Event.stop(event);
+       return;
+    }
+   else
+     if(event.keyCode==Event.KEY_TAB || event.keyCode==Event.KEY_RETURN ||
+       (Prototype.Browser.WebKit &gt; 0 &amp;&amp; event.keyCode == 0)) return;
+
+  this.changed = true;
+  this.hasFocus = true;
+
+  if(this.observer) clearTimeout(this.observer);
+    this.observer =
+      setTimeout(this.onObserverEvent.bind(this), this.options.frequency*1000);
+},
+
+activate: function() {
+  this.changed = false;
+  this.hasFocus = true;
+  this.getUpdatedChoices();
+},
+
+onHover: function(event) {
+  var element = Event.findElement(event, &#39;LI&#39;);
+  if(this.index != element.autocompleteIndex)
+  {
+      this.index = element.autocompleteIndex;
+      this.render();
+  }
+  Event.stop(event);
+},
+
+onClick: function(event) {
+  var element = Event.findElement(event, &#39;LI&#39;);
+  this.index = element.autocompleteIndex;
+  this.selectEntry();
+  this.hide();
+},
+
+onBlur: function(event) {
+  // needed to make click events working
+  setTimeout(this.hide.bind(this), 250);
+  this.hasFocus = false;
+  this.active = false;
+},
+
+render: function() {
+  if(this.entryCount &gt; 0) {
+    for (var i = 0; i &lt; this.entryCount; i++)
+      this.index==i ?
+        Element.addClassName(this.getEntry(i),&quot;selected&quot;) :
+        Element.removeClassName(this.getEntry(i),&quot;selected&quot;);
+    if(this.hasFocus) {
+      this.show();
+      this.active = true;
+    }
+  } else {
+    this.active = false;
+    this.hide();
+  }
+},
+
+markPrevious: function() {
+  if(this.index &gt; 0) this.index--;
+    else this.index = this.entryCount-1;
+  this.getEntry(this.index).scrollIntoView(true);
+},
+
+markNext: function() {
+  if(this.index &lt; this.entryCount-1) this.index++;
+    else this.index = 0;
+  this.getEntry(this.index).scrollIntoView(false);
+},
+
+getEntry: function(index) {
+  return this.update.firstChild.childNodes[index];
+},
+
+getCurrentEntry: function() {
+  return this.getEntry(this.index);
+},
+
+selectEntry: function() {
+  this.active = false;
+  this.updateElement(this.getCurrentEntry());
+},
+
+updateElement: function(selectedElement) {
+  if (this.options.updateElement) {
+    this.options.updateElement(selectedElement);
+    return;
+  }
+  var value = &#39;&#39;;
+  if (this.options.select) {
+    var nodes = $(selectedElement).select(&#39;.&#39; + this.options.select) || [];
+    if(nodes.length&gt;0) value = Element.collectTextNodes(nodes[0], this.options.select);
+  } else
+    value = Element.collectTextNodesIgnoreClass(selectedElement, &#39;informal&#39;);
+
+  var bounds = this.getTokenBounds();
+  if (bounds[0] != -1) {
+    var newValue = this.element.value.substr(0, bounds[0]);
+    var whitespace = this.element.value.substr(bounds[0]).match(/^\s+/);
+    if (whitespace)
+      newValue += whitespace[0];
+    this.element.value = newValue + value + this.element.value.substr(bounds[1]);
+  } else {
+    this.element.value = value;
+  }
+  this.oldElementValue = this.element.value;
+  this.element.focus();
+
+  if (this.options.afterUpdateElement)
+    this.options.afterUpdateElement(this.element, selectedElement);
+},
+
+updateChoices: function(choices) {
+  if(!this.changed &amp;&amp; this.hasFocus) {
+    this.update.innerHTML = choices;
+    Element.cleanWhitespace(this.update);
+    Element.cleanWhitespace(this.update.down());
+
+    if(this.update.firstChild &amp;&amp; this.update.down().childNodes) {
+      this.entryCount =
+        this.update.down().childNodes.length;
+      for (var i = 0; i &lt; this.entryCount; i++) {
+        var entry = this.getEntry(i);
+        entry.autocompleteIndex = i;
+        this.addObservers(entry);
+      }
+    } else {
+      this.entryCount = 0;
+    }
+
+    this.stopIndicator();
+    this.index = 0;
+
+    if(this.entryCount==1 &amp;&amp; this.options.autoSelect) {
+      this.selectEntry();
+      this.hide();
+    } else {
+      this.render();
+    }
+  }
+},
+
+addObservers: function(element) {
+  Event.observe(element, &quot;mouseover&quot;, this.onHover.bindAsEventListener(this));
+  Event.observe(element, &quot;click&quot;, this.onClick.bindAsEventListener(this));
+},
+
+onObserverEvent: function() {
+  this.changed = false;
+  this.tokenBounds = null;
+  if(this.getToken().length&gt;=this.options.minChars) {
+    this.getUpdatedChoices();
+  } else {
+    this.active = false;
+    this.hide();
+  }
+  this.oldElementValue = this.element.value;
+},
+
+getToken: function() {
+  var bounds = this.getTokenBounds();
+  return this.element.value.substring(bounds[0], bounds[1]).strip();
+},
+
+getTokenBounds: function() {
+  if (null != this.tokenBounds) return this.tokenBounds;
+  var value = this.element.value;
+  if (value.strip().empty()) return [-1, 0];
+  var diff = arguments.callee.getFirstDifferencePos(value, this.oldElementValue);
+  var offset = (diff == this.oldElementValue.length ? 1 : 0);
+  var prevTokenPos = -1, nextTokenPos = value.length;
+  var tp;
+  for (var index = 0, l = this.options.tokens.length; index &lt; l; ++index) {
+    tp = value.lastIndexOf(this.options.tokens[index], diff + offset - 1);
+    if (tp &gt; prevTokenPos) prevTokenPos = tp;
+    tp = value.indexOf(this.options.tokens[index], diff + offset);
+    if (-1 != tp &amp;&amp; tp &lt; nextTokenPos) nextTokenPos = tp;
+  }
+  return (this.tokenBounds = [prevTokenPos + 1, nextTokenPos]);
+}</pre>
+
+<p>});</p>
+
+<p>Autocompleter.Base.prototype.getTokenBounds.getFirstDifferencePos =
+function(newS, oldS) {</p>
+
+<pre>var boundary = Math.min(newS.length, oldS.length);
+for (var index = 0; index &lt; boundary; ++index)
+  if (newS[index] != oldS[index])
+    return index;
+return boundary;</pre>
+
+<p>};</p>
+
+<p>Ajax.Autocompleter = Class.create(Autocompleter.Base, {</p>
+
+<pre>initialize: function(element, update, url, options) {
+  this.baseInitialize(element, update, options);
+  this.options.asynchronous  = true;
+  this.options.onComplete    = this.onComplete.bind(this);
+  this.options.defaultParams = this.options.parameters || null;
+  this.url                   = url;
+},
+
+getUpdatedChoices: function() {
+  this.startIndicator();
+
+  var entry = encodeURIComponent(this.options.paramName) + &#39;=&#39; +
+    encodeURIComponent(this.getToken());
+
+  this.options.parameters = this.options.callback ?
+    this.options.callback(this.element, entry) : entry;
+
+  if(this.options.defaultParams)
+    this.options.parameters += &#39;&amp;&#39; + this.options.defaultParams;
+
+  new Ajax.Request(this.url, this.options);
+},
+
+onComplete: function(request) {
+  this.updateChoices(request.responseText);
+}</pre>
+
+<p>});</p>
+
+<p>// The local array autocompleter. Used when you&#39;d prefer to // inject
+an array of autocompletion options into the page, rather // than sending
+out Ajax queries, which can be quite slow sometimes. // // The constructor
+takes four parameters. The first two are, as usual, // the id of the
+monitored textbox, and id of the autocompletion menu. // The third is the
+array you want to autocomplete from, and the fourth // is the options
+block. // // Extra local autocompletion options: // - choices - How many
+autocompletion choices to offer // // - partialSearch - If false, the
+autocompleter will match entered //                    text only at the
+beginning of strings in the //                    autocomplete array.
+Defaults to true, which will //                    match text at the
+beginning of any <strong>word</strong> in the //                    strings
+in the autocomplete array. If you want to //                    search
+anywhere in the string, additionally set //                    the option
+fullSearch to true (default: off). // // - fullSsearch - Search anywhere in
+autocomplete array strings. // // - partialChars - How many characters to
+enter before triggering //                   a partial match (unlike
+minChars, which defines //                   how many characters are
+required to do any match //                   at all). Defaults to 2. // //
+- ignoreCase - Whether to ignore case when autocompleting. //              
+Defaults to true. // // It&#39;s possible to pass in a custom function as
+the &#39;selector&#39; // option, if you prefer to write your own
+autocompletion logic. // In that case, the other options above will not
+apply unless // you support them.</p>
+
+<p>Autocompleter.Local = Class.create(Autocompleter.Base, {</p>
+
+<pre>initialize: function(element, update, array, options) {
+  this.baseInitialize(element, update, options);
+  this.options.array = array;
+},
+
+getUpdatedChoices: function() {
+  this.updateChoices(this.options.selector(this));
+},
+
+setOptions: function(options) {
+  this.options = Object.extend({
+    choices: 10,
+    partialSearch: true,
+    partialChars: 2,
+    ignoreCase: true,
+    fullSearch: false,
+    selector: function(instance) {
+      var ret       = []; // Beginning matches
+      var partial   = []; // Inside matches
+      var entry     = instance.getToken();
+      var count     = 0;
+
+      for (var i = 0; i &lt; instance.options.array.length &amp;&amp;
+        ret.length &lt; instance.options.choices ; i++) {
+
+        var elem = instance.options.array[i];
+        var foundPos = instance.options.ignoreCase ?
+          elem.toLowerCase().indexOf(entry.toLowerCase()) :
+          elem.indexOf(entry);
+
+        while (foundPos != -1) {
+          if (foundPos == 0 &amp;&amp; elem.length != entry.length) {
+            ret.push(&quot;&lt;li&gt;&lt;strong&gt;&quot; + elem.substr(0, entry.length) + &quot;&lt;/strong&gt;&quot; +
+              elem.substr(entry.length) + &quot;&lt;/li&gt;&quot;);
+            break;
+          } else if (entry.length &gt;= instance.options.partialChars &amp;&amp;
+            instance.options.partialSearch &amp;&amp; foundPos != -1) {
+            if (instance.options.fullSearch || /\s/.test(elem.substr(foundPos-1,1))) {
+              partial.push(&quot;&lt;li&gt;&quot; + elem.substr(0, foundPos) + &quot;&lt;strong&gt;&quot; +
+                elem.substr(foundPos, entry.length) + &quot;&lt;/strong&gt;&quot; + elem.substr(
+                foundPos + entry.length) + &quot;&lt;/li&gt;&quot;);
+              break;
+            }
+          }
+
+          foundPos = instance.options.ignoreCase ?
+            elem.toLowerCase().indexOf(entry.toLowerCase(), foundPos + 1) :
+            elem.indexOf(entry, foundPos + 1);
+
+        }
+      }
+      if (partial.length)
+        ret = ret.concat(partial.slice(0, instance.options.choices - ret.length));
+      return &quot;&lt;ul&gt;&quot; + ret.join(&#39;&#39;) + &quot;&lt;/ul&gt;&quot;;
+    }
+  }, options || { });
+}</pre>
+
+<p>});</p>
+
+<p>// AJAX in-place editor and collection editor // Full rewrite by Christophe
+Porteneuve &lt;tdd@tddsworld.com&gt; (April 2007).</p>
+
+<p>// Use this if you notice weird scrolling problems on some browsers, // the
+DOM might be a bit confused when this gets called so do this // waits 1 ms
+(with setTimeout) until it does the activation Field.scrollFreeActivate =
+function(field) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">setTimeout</span>(<span class="ruby-identifier">function</span>() {
+  <span class="ruby-constant">Field</span>.<span class="ruby-identifier">activate</span>(<span class="ruby-identifier">field</span>);
+}, <span class="ruby-value">1</span>);
+</pre>
+
+<p>};</p>
+
+<p>Ajax.InPlaceEditor = Class.create({</p>
+
+<pre>initialize: function(element, url, options) {
+  this.url = url;
+  this.element = element = $(element);
+  this.prepareOptions();
+  this._controls = { };
+  arguments.callee.dealWithDeprecatedOptions(options); // DEPRECATION LAYER!!!
+  Object.extend(this.options, options || { });
+  if (!this.options.formId &amp;&amp; this.element.id) {
+    this.options.formId = this.element.id + &#39;-inplaceeditor&#39;;
+    if ($(this.options.formId))
+      this.options.formId = &#39;&#39;;
+  }
+  if (this.options.externalControl)
+    this.options.externalControl = $(this.options.externalControl);
+  if (!this.options.externalControl)
+    this.options.externalControlOnly = false;
+  this._originalBackground = this.element.getStyle(&#39;background-color&#39;) || &#39;transparent&#39;;
+  this.element.title = this.options.clickToEditText;
+  this._boundCancelHandler = this.handleFormCancellation.bind(this);
+  this._boundComplete = (this.options.onComplete || Prototype.emptyFunction).bind(this);
+  this._boundFailureHandler = this.handleAJAXFailure.bind(this);
+  this._boundSubmitHandler = this.handleFormSubmission.bind(this);
+  this._boundWrapperHandler = this.wrapUp.bind(this);
+  this.registerListeners();
+},
+checkForEscapeOrReturn: function(e) {
+  if (!this._editing || e.ctrlKey || e.altKey || e.shiftKey) return;
+  if (Event.KEY_ESC == e.keyCode)
+    this.handleFormCancellation(e);
+  else if (Event.KEY_RETURN == e.keyCode)
+    this.handleFormSubmission(e);
+},
+createControl: function(mode, handler, extraClasses) {
+  var control = this.options[mode + &#39;Control&#39;];
+  var text = this.options[mode + &#39;Text&#39;];
+  if (&#39;button&#39; == control) {
+    var btn = document.createElement(&#39;input&#39;);
+    btn.type = &#39;submit&#39;;
+    btn.value = text;
+    btn.className = &#39;editor_&#39; + mode + &#39;_button&#39;;
+    if (&#39;cancel&#39; == mode)
+      btn.onclick = this._boundCancelHandler;
+    this._form.appendChild(btn);
+    this._controls[mode] = btn;
+  } else if (&#39;link&#39; == control) {
+    var link = document.createElement(&#39;a&#39;);
+    link.href = &#39;#&#39;;
+    link.appendChild(document.createTextNode(text));
+    link.onclick = &#39;cancel&#39; == mode ? this._boundCancelHandler : this._boundSubmitHandler;
+    link.className = &#39;editor_&#39; + mode + &#39;_link&#39;;
+    if (extraClasses)
+      link.className += &#39; &#39; + extraClasses;
+    this._form.appendChild(link);
+    this._controls[mode] = link;
+  }
+},
+createEditField: function() {
+  var text = (this.options.loadTextURL ? this.options.loadingText : this.getText());
+  var fld;
+  if (1 &gt;= this.options.rows &amp;&amp; !/\r|\n/.test(this.getText())) {
+    fld = document.createElement(&#39;input&#39;);
+    fld.type = &#39;text&#39;;
+    var size = this.options.size || this.options.cols || 0;
+    if (0 &lt; size) fld.size = size;
+  } else {
+    fld = document.createElement(&#39;textarea&#39;);
+    fld.rows = (1 &gt;= this.options.rows ? this.options.autoRows : this.options.rows);
+    fld.cols = this.options.cols || 40;
+  }
+  fld.name = this.options.paramName;
+  fld.value = text; // No HTML breaks conversion anymore
+  fld.className = &#39;editor_field&#39;;
+  if (this.options.submitOnBlur)
+    fld.onblur = this._boundSubmitHandler;
+  this._controls.editor = fld;
+  if (this.options.loadTextURL)
+    this.loadExternalText();
+  this._form.appendChild(this._controls.editor);
+},
+createForm: function() {
+  var ipe = this;
+  function addText(mode, condition) {
+    var text = ipe.options[&#39;text&#39; + mode + &#39;Controls&#39;];
+    if (!text || condition === false) return;
+    ipe._form.appendChild(document.createTextNode(text));
+  };
+  this._form = $(document.createElement(&#39;form&#39;));
+  this._form.id = this.options.formId;
+  this._form.addClassName(this.options.formClassName);
+  this._form.onsubmit = this._boundSubmitHandler;
+  this.createEditField();
+  if (&#39;textarea&#39; == this._controls.editor.tagName.toLowerCase())
+    this._form.appendChild(document.createElement(&#39;br&#39;));
+  if (this.options.onFormCustomization)
+    this.options.onFormCustomization(this, this._form);
+  addText(&#39;Before&#39;, this.options.okControl || this.options.cancelControl);
+  this.createControl(&#39;ok&#39;, this._boundSubmitHandler);
+  addText(&#39;Between&#39;, this.options.okControl &amp;&amp; this.options.cancelControl);
+  this.createControl(&#39;cancel&#39;, this._boundCancelHandler, &#39;editor_cancel&#39;);
+  addText(&#39;After&#39;, this.options.okControl || this.options.cancelControl);
+},
+destroy: function() {
+  if (this._oldInnerHTML)
+    this.element.innerHTML = this._oldInnerHTML;
+  this.leaveEditMode();
+  this.unregisterListeners();
+},
+enterEditMode: function(e) {
+  if (this._saving || this._editing) return;
+  this._editing = true;
+  this.triggerCallback(&#39;onEnterEditMode&#39;);
+  if (this.options.externalControl)
+    this.options.externalControl.hide();
+  this.element.hide();
+  this.createForm();
+  this.element.parentNode.insertBefore(this._form, this.element);
+  if (!this.options.loadTextURL)
+    this.postProcessEditField();
+  if (e) Event.stop(e);
+},
+enterHover: function(e) {
+  if (this.options.hoverClassName)
+    this.element.addClassName(this.options.hoverClassName);
+  if (this._saving) return;
+  this.triggerCallback(&#39;onEnterHover&#39;);
+},
+getText: function() {
+  return this.element.innerHTML.unescapeHTML();
+},
+handleAJAXFailure: function(transport) {
+  this.triggerCallback(&#39;onFailure&#39;, transport);
+  if (this._oldInnerHTML) {
+    this.element.innerHTML = this._oldInnerHTML;
+    this._oldInnerHTML = null;
+  }
+},
+handleFormCancellation: function(e) {
+  this.wrapUp();
+  if (e) Event.stop(e);
+},
+handleFormSubmission: function(e) {
+  var form = this._form;
+  var value = $F(this._controls.editor);
+  this.prepareSubmission();
+  var params = this.options.callback(form, value) || &#39;&#39;;
+  if (Object.isString(params))
+    params = params.toQueryParams();
+  params.editorId = this.element.id;
+  if (this.options.htmlResponse) {
+    var options = Object.extend({ evalScripts: true }, this.options.ajaxOptions);
+    Object.extend(options, {
+      parameters: params,
+      onComplete: this._boundWrapperHandler,
+      onFailure: this._boundFailureHandler
+    });
+    new Ajax.Updater({ success: this.element }, this.url, options);
+  } else {
+    var options = Object.extend({ method: &#39;get&#39; }, this.options.ajaxOptions);
+    Object.extend(options, {
+      parameters: params,
+      onComplete: this._boundWrapperHandler,
+      onFailure: this._boundFailureHandler
+    });
+    new Ajax.Request(this.url, options);
+  }
+  if (e) Event.stop(e);
+},
+leaveEditMode: function() {
+  this.element.removeClassName(this.options.savingClassName);
+  this.removeForm();
+  this.leaveHover();
+  this.element.style.backgroundColor = this._originalBackground;
+  this.element.show();
+  if (this.options.externalControl)
+    this.options.externalControl.show();
+  this._saving = false;
+  this._editing = false;
+  this._oldInnerHTML = null;
+  this.triggerCallback(&#39;onLeaveEditMode&#39;);
+},
+leaveHover: function(e) {
+  if (this.options.hoverClassName)
+    this.element.removeClassName(this.options.hoverClassName);
+  if (this._saving) return;
+  this.triggerCallback(&#39;onLeaveHover&#39;);
+},
+loadExternalText: function() {
+  this._form.addClassName(this.options.loadingClassName);
+  this._controls.editor.disabled = true;
+  var options = Object.extend({ method: &#39;get&#39; }, this.options.ajaxOptions);
+  Object.extend(options, {
+    parameters: &#39;editorId=&#39; + encodeURIComponent(this.element.id),
+    onComplete: Prototype.emptyFunction,
+    onSuccess: function(transport) {
+      this._form.removeClassName(this.options.loadingClassName);
+      var text = transport.responseText;
+      if (this.options.stripLoadedTextTags)
+        text = text.stripTags();
+      this._controls.editor.value = text;
+      this._controls.editor.disabled = false;
+      this.postProcessEditField();
+    }.bind(this),
+    onFailure: this._boundFailureHandler
+  });
+  new Ajax.Request(this.options.loadTextURL, options);
+},
+postProcessEditField: function() {
+  var fpc = this.options.fieldPostCreation;
+  if (fpc)
+    $(this._controls.editor)[&#39;focus&#39; == fpc ? &#39;focus&#39; : &#39;activate&#39;]();
+},
+prepareOptions: function() {
+  this.options = Object.clone(Ajax.InPlaceEditor.DefaultOptions);
+  Object.extend(this.options, Ajax.InPlaceEditor.DefaultCallbacks);
+  [this._extraDefaultOptions].flatten().compact().each(function(defs) {
+    Object.extend(this.options, defs);
+  }.bind(this));
+},
+prepareSubmission: function() {
+  this._saving = true;
+  this.removeForm();
+  this.leaveHover();
+  this.showSaving();
+},
+registerListeners: function() {
+  this._listeners = { };
+  var listener;
+  $H(Ajax.InPlaceEditor.Listeners).each(function(pair) {
+    listener = this[pair.value].bind(this);
+    this._listeners[pair.key] = listener;
+    if (!this.options.externalControlOnly)
+      this.element.observe(pair.key, listener);
+    if (this.options.externalControl)
+      this.options.externalControl.observe(pair.key, listener);
+  }.bind(this));
+},
+removeForm: function() {
+  if (!this._form) return;
+  this._form.remove();
+  this._form = null;
+  this._controls = { };
+},
+showSaving: function() {
+  this._oldInnerHTML = this.element.innerHTML;
+  this.element.innerHTML = this.options.savingText;
+  this.element.addClassName(this.options.savingClassName);
+  this.element.style.backgroundColor = this._originalBackground;
+  this.element.show();
+},
+triggerCallback: function(cbName, arg) {
+  if (&#39;function&#39; == typeof this.options[cbName]) {
+    this.options[cbName](this, arg);
+  }
+},
+unregisterListeners: function() {
+  $H(this._listeners).each(function(pair) {
+    if (!this.options.externalControlOnly)
+      this.element.stopObserving(pair.key, pair.value);
+    if (this.options.externalControl)
+      this.options.externalControl.stopObserving(pair.key, pair.value);
+  }.bind(this));
+},
+wrapUp: function(transport) {
+  this.leaveEditMode();
+  // Can&#39;t use triggerCallback due to backward compatibility: requires
+  // binding + direct element
+  this._boundComplete(transport, this.element);
+}</pre>
+
+<p>});</p>
+
+<p>Object.extend(Ajax.InPlaceEditor.prototype, {</p>
+
+<pre>dispose: Ajax.InPlaceEditor.prototype.destroy</pre>
+
+<p>});</p>
+
+<p>Ajax.InPlaceCollectionEditor = Class.create(Ajax.InPlaceEditor, {</p>
+
+<pre>initialize: function($super, element, url, options) {
+  this._extraDefaultOptions = Ajax.InPlaceCollectionEditor.DefaultOptions;
+  $super(element, url, options);
+},
+
+createEditField: function() {
+  var list = document.createElement(&#39;select&#39;);
+  list.name = this.options.paramName;
+  list.size = 1;
+  this._controls.editor = list;
+  this._collection = this.options.collection || [];
+  if (this.options.loadCollectionURL)
+    this.loadCollection();
+  else
+    this.checkForExternalText();
+  this._form.appendChild(this._controls.editor);
+},
+
+loadCollection: function() {
+  this._form.addClassName(this.options.loadingClassName);
+  this.showLoadingText(this.options.loadingCollectionText);
+  var options = Object.extend({ method: &#39;get&#39; }, this.options.ajaxOptions);
+  Object.extend(options, {
+    parameters: &#39;editorId=&#39; + encodeURIComponent(this.element.id),
+    onComplete: Prototype.emptyFunction,
+    onSuccess: function(transport) {
+      var js = transport.responseText.strip();
+      if (!/^\[.*\]$/.test(js)) // TODO: improve sanity check
+        throw(&#39;Server returned an invalid collection representation.&#39;);
+      this._collection = eval(js);
+      this.checkForExternalText();
+    }.bind(this),
+    onFailure: this.onFailure
+  });
+  new Ajax.Request(this.options.loadCollectionURL, options);
+},
+
+showLoadingText: function(text) {
+  this._controls.editor.disabled = true;
+  var tempOption = this._controls.editor.firstChild;
+  if (!tempOption) {
+    tempOption = document.createElement(&#39;option&#39;);
+    tempOption.value = &#39;&#39;;
+    this._controls.editor.appendChild(tempOption);
+    tempOption.selected = true;
+  }
+  tempOption.update((text || &#39;&#39;).stripScripts().stripTags());
+},
+
+checkForExternalText: function() {
+  this._text = this.getText();
+  if (this.options.loadTextURL)
+    this.loadExternalText();
+  else
+    this.buildOptionList();
+},
+
+loadExternalText: function() {
+  this.showLoadingText(this.options.loadingText);
+  var options = Object.extend({ method: &#39;get&#39; }, this.options.ajaxOptions);
+  Object.extend(options, {
+    parameters: &#39;editorId=&#39; + encodeURIComponent(this.element.id),
+    onComplete: Prototype.emptyFunction,
+    onSuccess: function(transport) {
+      this._text = transport.responseText.strip();
+      this.buildOptionList();
+    }.bind(this),
+    onFailure: this.onFailure
+  });
+  new Ajax.Request(this.options.loadTextURL, options);
+},
+
+buildOptionList: function() {
+  this._form.removeClassName(this.options.loadingClassName);
+  this._collection = this._collection.map(function(entry) {
+    return 2 === entry.length ? entry : [entry, entry].flatten();
+  });
+  var marker = (&#39;value&#39; in this.options) ? this.options.value : this._text;
+  var textFound = this._collection.any(function(entry) {
+    return entry[0] == marker;
+  }.bind(this));
+  this._controls.editor.update(&#39;&#39;);
+  var option;
+  this._collection.each(function(entry, index) {
+    option = document.createElement(&#39;option&#39;);
+    option.value = entry[0];
+    option.selected = textFound ? entry[0] == marker : 0 == index;
+    option.appendChild(document.createTextNode(entry[1]));
+    this._controls.editor.appendChild(option);
+  }.bind(this));
+  this._controls.editor.disabled = false;
+  Field.scrollFreeActivate(this._controls.editor);
+}</pre>
+
+<p>});</p>
+
+<p>//**** DEPRECATION LAYER FOR <a href="Collection">InPlace</a>Editor! ****
+//**** This only  exists for a while,  in order to  let **** //**** users
+adapt to  the new API.  Read up on the new **** //**** API and convert your
+code to it ASAP!            ****</p>
+
+<p>Ajax.InPlaceEditor.prototype.initialize.dealWithDeprecatedOptions =
+function(options) {</p>
+
+<pre>if (!options) return;
+function fallback(name, expr) {
+  if (name in options || expr === undefined) return;
+  options[name] = expr;
+};
+fallback(&#39;cancelControl&#39;, (options.cancelLink ? &#39;link&#39; : (options.cancelButton ? &#39;button&#39; :
+  options.cancelLink == options.cancelButton == false ? false : undefined)));
+fallback(&#39;okControl&#39;, (options.okLink ? &#39;link&#39; : (options.okButton ? &#39;button&#39; :
+  options.okLink == options.okButton == false ? false : undefined)));
+fallback(&#39;highlightColor&#39;, options.highlightcolor);
+fallback(&#39;highlightEndColor&#39;, options.highlightendcolor);</pre>
+
+<p>};</p>
+
+<p>Object.extend(Ajax.InPlaceEditor, {</p>
+
+<pre>DefaultOptions: {
+  ajaxOptions: { },
+  autoRows: 3,                                // Use when multi-line w/ rows == 1
+  cancelControl: &#39;link&#39;,                      // &#39;link&#39;|&#39;button&#39;|false
+  cancelText: &#39;cancel&#39;,
+  clickToEditText: &#39;Click to edit&#39;,
+  externalControl: null,                      // id|elt
+  externalControlOnly: false,
+  fieldPostCreation: &#39;activate&#39;,              // &#39;activate&#39;|&#39;focus&#39;|false
+  formClassName: &#39;inplaceeditor-form&#39;,
+  formId: null,                               // id|elt
+  highlightColor: &#39;#ffff99&#39;,
+  highlightEndColor: &#39;#ffffff&#39;,
+  hoverClassName: &#39;&#39;,
+  htmlResponse: true,
+  loadingClassName: &#39;inplaceeditor-loading&#39;,
+  loadingText: &#39;Loading...&#39;,
+  okControl: &#39;button&#39;,                        // &#39;link&#39;|&#39;button&#39;|false
+  okText: &#39;ok&#39;,
+  paramName: &#39;value&#39;,
+  rows: 1,                                    // If 1 and multi-line, uses autoRows
+  savingClassName: &#39;inplaceeditor-saving&#39;,
+  savingText: &#39;Saving...&#39;,
+  size: 0,
+  stripLoadedTextTags: false,
+  submitOnBlur: false,
+  textAfterControls: &#39;&#39;,
+  textBeforeControls: &#39;&#39;,
+  textBetweenControls: &#39;&#39;
+},
+DefaultCallbacks: {
+  callback: function(form) {
+    return Form.serialize(form);
+  },
+  onComplete: function(transport, element) {
+    // For backward compatibility, this one is bound to the IPE, and passes
+    // the element directly.  It was too often customized, so we don&#39;t break it.
+    new Effect.Highlight(element, {
+      startcolor: this.options.highlightColor, keepBackgroundImage: true });
+  },
+  onEnterEditMode: null,
+  onEnterHover: function(ipe) {
+    ipe.element.style.backgroundColor = ipe.options.highlightColor;
+    if (ipe._effect)
+      ipe._effect.cancel();
+  },
+  onFailure: function(transport, ipe) {
+    alert(&#39;Error communication with the server: &#39; + transport.responseText.stripTags());
+  },
+  onFormCustomization: null, // Takes the IPE and its generated form, after editor, before controls.
+  onLeaveEditMode: null,
+  onLeaveHover: function(ipe) {
+    ipe._effect = new Effect.Highlight(ipe.element, {
+      startcolor: ipe.options.highlightColor, endcolor: ipe.options.highlightEndColor,
+      restorecolor: ipe._originalBackground, keepBackgroundImage: true
+    });
+  }
+},
+Listeners: {
+  click: &#39;enterEditMode&#39;,
+  keydown: &#39;checkForEscapeOrReturn&#39;,
+  mouseover: &#39;enterHover&#39;,
+  mouseout: &#39;leaveHover&#39;
+}</pre>
+
+<p>});</p>
+
+<p>Ajax.InPlaceCollectionEditor.DefaultOptions = {</p>
+
+<pre>loadingCollectionText: &#39;Loading options...&#39;</pre>
+
+<p>};</p>
+
+<p>// Delayed observer, like Form.Element.Observer, // but waits for delay
+after last key input // Ideal for live-search fields</p>
+
+<p>Form.Element.DelayedObserver = Class.create({</p>
+
+<pre>initialize: function(element, delay, callback) {
+  this.delay     = delay || 0.5;
+  this.element   = $(element);
+  this.callback  = callback;
+  this.timer     = null;
+  this.lastValue = $F(this.element);
+  Event.observe(this.element,&#39;keyup&#39;,this.delayedListener.bindAsEventListener(this));
+},
+delayedListener: function(event) {
+  if(this.lastValue == $F(this.element)) return;
+  if(this.timer) clearTimeout(this.timer);
+  this.timer = setTimeout(this.onTimerEvent.bind(this), this.delay * 1000);
+  this.lastValue = $F(this.element);
+},
+onTimerEvent: function() {
+  this.timer = null;
+  this.callback(this.element, $F(this.element));
+}</pre>
+
+<p>});</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

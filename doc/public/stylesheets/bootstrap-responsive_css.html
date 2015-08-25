@@ -1,0 +1,1327 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>bootstrap-responsive.css - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../../README.html">README</a>
+  
+    <li><a href="../../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../../app/flow_thoughts_txt.html">flow_thoughts</a>
+  
+    <li><a href="../../app/views/cost/_query_results_header_html_haml.html">_query_results_header.html.haml</a>
+  
+    <li><a href="../../app/views/cost/query_html_haml.html">query.html.haml</a>
+  
+    <li><a href="../../app/views/resource/_employee_details_html_haml.html">_employee_details.html.haml</a>
+  
+    <li><a href="../../app/views/resource/_not_key_html_haml.html">_not_key.html.haml</a>
+  
+    <li><a href="../../app/views/resource/_overbooked_html_haml.html">_overbooked.html.haml</a>
+  
+    <li><a href="../../app/views/resource/_pill_navigation_html_haml.html">_pill_navigation.html.haml</a>
+  
+    <li><a href="../../app/views/resource/_team_names_html_haml.html">_team_names.html.haml</a>
+  
+    <li><a href="../../app/views/resource/actual_html_haml.html">actual.html.haml</a>
+  
+    <li><a href="../../app/views/resource/availability_html_haml.html">availability.html.haml</a>
+  
+    <li><a href="../../app/views/resource/employee_view_html_haml.html">employee_view.html.haml</a>
+  
+    <li><a href="../../app/views/resource/key_project_summary_html_haml.html">key_project_summary.html.haml</a>
+  
+    <li><a href="../../app/views/resource/rule_check_html_haml.html">rule_check.html.haml</a>
+  
+    <li><a href="../../app/views/resource/variance_html_haml.html">variance.html.haml</a>
+  
+    <li><a href="../../app/views/users/INDEXH~1_BAK.html">INDEXH~1.BAK</a>
+  
+    <li><a href="../../config_ru.html">config.ru</a>
+  
+    <li><a href="../../importlogcsv_txt.html">importlogcsv</a>
+  
+    <li><a href="../../install.html">install</a>
+  
+    <li><a href="../../log/development_log.html">development.log</a>
+  
+    <li><a href="../../public/404_html.html">404.html</a>
+  
+    <li><a href="../../public/422_html.html">422.html</a>
+  
+    <li><a href="../../public/500_html.html">500.html</a>
+  
+    <li><a href="../../public/favicon_ico.html">favicon.ico</a>
+  
+    <li><a href="../../public/fonts/glyphicons-halflings-regular_svg.html">glyphicons-halflings-regular.svg</a>
+  
+    <li><a href="../../public/index_html.html">index.html</a>
+  
+    <li><a href="../../public/javascripts/application_js.html">application.js</a>
+  
+    <li><a href="../../public/javascripts/bootstrap_js.html">bootstrap.js</a>
+  
+    <li><a href="../../public/javascripts/bootstrap_min_js.html">bootstrap.min.js</a>
+  
+    <li><a href="../../public/javascripts/controls_js.html">controls.js</a>
+  
+    <li><a href="../../public/javascripts/dragdrop_js.html">dragdrop.js</a>
+  
+    <li><a href="../../public/javascripts/effects_js.html">effects.js</a>
+  
+    <li><a href="../../public/javascripts/prototype_js.html">prototype.js</a>
+  
+    <li><a href="../../public/javascripts/rails_js.html">rails.js</a>
+  
+    <li><a href="../../public/robots_txt.html">robots</a>
+  
+    <li><a href="../../public/stylesheets/application_css.html">application.css</a>
+  
+    <li><a href="../../public/stylesheets/bootstrap-responsive_css.html">bootstrap-responsive.css</a>
+  
+    <li><a href="../../public/stylesheets/bootstrap-responsive_min_css.html">bootstrap-responsive.min.css</a>
+  
+    <li><a href="../../public/stylesheets/bootstrap_css.html">bootstrap.css</a>
+  
+    <li><a href="../../public/stylesheets/bootstrap_min_css.html">bootstrap.min.css</a>
+  
+    <li><a href="../../public/stylesheets/custom2_css.html">custom2.css</a>
+  
+    <li><a href="../../public/stylesheets/le-frog/jquery-ui-1_8_16_custom_css.html">jquery-ui-1.8.16.custom.css</a>
+  
+    <li><a href="../../public/stylesheets/menu_css.html">menu.css</a>
+  
+    <li><a href="../../public/stylesheets/reset_css.html">reset.css</a>
+  
+    <li><a href="../../public/stylesheets/scaffold_css.html">scaffold.css</a>
+  
+    <li><a href="../../public/stylesheets/tms_css.html">tms.css</a>
+  
+    <li><a href="../../public/stylesheets/ui-darkness/jquery-ui-1_8_16_custom_css.html">jquery-ui-1.8.16.custom.css</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page public/stylesheets/bootstrap-responsive.css">
+
+<pre>!
+ Bootstrap Responsive v2.3.0
+
+ Copyright 2012 Twitter, Inc
+ Licensed under the Apache License v2.0
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Designed and built with all the love in the world @twitter by @mdo and @fat.</pre>
+
+<p>.clearfix {</p>
+
+<pre>zoom: 1;</pre>
+
+<p>}</p>
+
+<p>.clearfix:before, .clearfix:after {</p>
+
+<pre>display: table;
+line-height: 0;
+content: &quot;&quot;;</pre>
+
+<p>}</p>
+
+<p>.clearfix:after {</p>
+
+<pre>clear: both;</pre>
+
+<p>}</p>
+
+<p>.hide-text {</p>
+
+<pre>font: 0/0 a;
+color: transparent;
+text-shadow: none;
+background-color: transparent;
+border: 0;</pre>
+
+<p>}</p>
+
+<p>.input-block-level {</p>
+
+<pre>display: block;
+width: 100%;
+min-height: 30px;
+-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+        box-sizing: border-box;</pre>
+
+<p>}</p>
+
+<p>@-ms-viewport {</p>
+
+<pre>width: device-width;</pre>
+
+<p>}</p>
+
+<p>.hidden {</p>
+
+<pre>display: none;
+visibility: hidden;</pre>
+
+<p>}</p>
+
+<p>.visible-phone {</p>
+
+<pre>display: none !important;</pre>
+
+<p>}</p>
+
+<p>.visible-tablet {</p>
+
+<pre>display: none !important;</pre>
+
+<p>}</p>
+
+<p>.hidden-desktop {</p>
+
+<pre>display: none !important;</pre>
+
+<p>}</p>
+
+<p>.visible-desktop {</p>
+
+<pre>display: inherit !important;</pre>
+
+<p>}</p>
+
+<p>@media (min-width: 768px) and (max-width: 979px) {</p>
+
+<pre>.hidden-desktop {
+  display: inherit !important;
+}
+.visible-desktop {
+  display: none !important ;
+}
+.visible-tablet {
+  display: inherit !important;
+}
+.hidden-tablet {
+  display: none !important;
+}</pre>
+
+<p>}</p>
+
+<p>@media (max-width: 767px) {</p>
+
+<pre>.hidden-desktop {
+  display: inherit !important;
+}
+.visible-desktop {
+  display: none !important;
+}
+.visible-phone {
+  display: inherit !important;
+}
+.hidden-phone {
+  display: none !important;
+}</pre>
+
+<p>}</p>
+
+<p>.visible-print {</p>
+
+<pre>display: none !important;</pre>
+
+<p>}</p>
+
+<p>@media print {</p>
+
+<pre>.visible-print {
+  display: inherit !important;
+}
+.hidden-print {
+  display: none !important;
+}</pre>
+
+<p>}</p>
+
+<p>@media (min-width: 1200px) {</p>
+
+<pre>.row {
+  margin-left: -30px;
+   zoom: 1;
+}
+.row:before,
+.row:after {
+  display: table;
+  line-height: 0;
+  content: &quot;&quot;;
+}
+.row:after {
+  clear: both;
+}
+[class*=&quot;span&quot;] {
+  float: left;
+  min-height: 1px;
+  margin-left: 30px;
+}
+.container,
+.navbar-static-top .container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+  width: 1170px;
+}
+.span12 {
+  width: 1170px;
+}
+.span11 {
+  width: 1070px;
+}
+.span10 {
+  width: 970px;
+}
+.span9 {
+  width: 870px;
+}
+.span8 {
+  width: 770px;
+}
+.span7 {
+  width: 670px;
+}
+.span6 {
+  width: 570px;
+}
+.span5 {
+  width: 470px;
+}
+.span4 {
+  width: 370px;
+}
+.span3 {
+  width: 270px;
+}
+.span2 {
+  width: 170px;
+}
+.span1 {
+  width: 70px;
+}
+.offset12 {
+  margin-left: 1230px;
+}
+.offset11 {
+  margin-left: 1130px;
+}
+.offset10 {
+  margin-left: 1030px;
+}
+.offset9 {
+  margin-left: 930px;
+}
+.offset8 {
+  margin-left: 830px;
+}
+.offset7 {
+  margin-left: 730px;
+}
+.offset6 {
+  margin-left: 630px;
+}
+.offset5 {
+  margin-left: 530px;
+}
+.offset4 {
+  margin-left: 430px;
+}
+.offset3 {
+  margin-left: 330px;
+}
+.offset2 {
+  margin-left: 230px;
+}
+.offset1 {
+  margin-left: 130px;
+}
+.row-fluid {
+  width: 100%;
+   zoom: 1;
+}
+.row-fluid:before,
+.row-fluid:after {
+  display: table;
+  line-height: 0;
+  content: &quot;&quot;;
+}
+.row-fluid:after {
+  clear: both;
+}
+.row-fluid [class*=&quot;span&quot;] {
+  display: block;
+  float: left;
+  width: 100%;
+  min-height: 30px;
+  margin-left: 2.564102564102564%;
+   margin-left: 2.5109110747408616%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.row-fluid [class*=&quot;span&quot;]:first-child {
+  margin-left: 0;
+}
+.row-fluid .controls-row [class*=&quot;span&quot;] + [class*=&quot;span&quot;] {
+  margin-left: 2.564102564102564%;
+}
+.row-fluid .span12 {
+  width: 100%;
+   width: 99.94680851063829%;
+}
+.row-fluid .span11 {
+  width: 91.45299145299145%;
+   width: 91.39979996362975%;
+}
+.row-fluid .span10 {
+  width: 82.90598290598291%;
+   width: 82.8527914166212%;
+}
+.row-fluid .span9 {
+  width: 74.35897435897436%;
+   width: 74.30578286961266%;
+}
+.row-fluid .span8 {
+  width: 65.81196581196582%;
+   width: 65.75877432260411%;
+}
+.row-fluid .span7 {
+  width: 57.26495726495726%;
+   width: 57.21176577559556%;
+}
+.row-fluid .span6 {
+  width: 48.717948717948715%;
+   width: 48.664757228587014%;
+}
+.row-fluid .span5 {
+  width: 40.17094017094017%;
+   width: 40.11774868157847%;
+}
+.row-fluid .span4 {
+  width: 31.623931623931625%;
+   width: 31.570740134569924%;
+}
+.row-fluid .span3 {
+  width: 23.076923076923077%;
+   width: 23.023731587561375%;
+}
+.row-fluid .span2 {
+  width: 14.52991452991453%;
+   width: 14.476723040552828%;
+}
+.row-fluid .span1 {
+  width: 5.982905982905983%;
+   width: 5.929714493544281%;
+}
+.row-fluid .offset12 {
+  margin-left: 105.12820512820512%;
+   margin-left: 105.02182214948171%;
+}
+.row-fluid .offset12:first-child {
+  margin-left: 102.56410256410257%;
+   margin-left: 102.45771958537915%;
+}
+.row-fluid .offset11 {
+  margin-left: 96.58119658119658%;
+   margin-left: 96.47481360247316%;
+}
+.row-fluid .offset11:first-child {
+  margin-left: 94.01709401709402%;
+   margin-left: 93.91071103837061%;
+}
+.row-fluid .offset10 {
+  margin-left: 88.03418803418803%;
+   margin-left: 87.92780505546462%;
+}
+.row-fluid .offset10:first-child {
+  margin-left: 85.47008547008548%;
+   margin-left: 85.36370249136206%;
+}
+.row-fluid .offset9 {
+  margin-left: 79.48717948717949%;
+   margin-left: 79.38079650845607%;
+}
+.row-fluid .offset9:first-child {
+  margin-left: 76.92307692307693%;
+   margin-left: 76.81669394435352%;
+}
+.row-fluid .offset8 {
+  margin-left: 70.94017094017094%;
+   margin-left: 70.83378796144753%;
+}
+.row-fluid .offset8:first-child {
+  margin-left: 68.37606837606839%;
+   margin-left: 68.26968539734497%;
+}
+.row-fluid .offset7 {
+  margin-left: 62.393162393162385%;
+   margin-left: 62.28677941443899%;
+}
+.row-fluid .offset7:first-child {
+  margin-left: 59.82905982905982%;
+   margin-left: 59.72267685033642%;
+}
+.row-fluid .offset6 {
+  margin-left: 53.84615384615384%;
+   margin-left: 53.739770867430444%;
+}
+.row-fluid .offset6:first-child {
+  margin-left: 51.28205128205128%;
+   margin-left: 51.175668303327875%;
+}
+.row-fluid .offset5 {
+  margin-left: 45.299145299145295%;
+   margin-left: 45.1927623204219%;
+}
+.row-fluid .offset5:first-child {
+  margin-left: 42.73504273504273%;
+   margin-left: 42.62865975631933%;
+}
+.row-fluid .offset4 {
+  margin-left: 36.75213675213675%;
+   margin-left: 36.645753773413354%;
+}
+.row-fluid .offset4:first-child {
+  margin-left: 34.18803418803419%;
+   margin-left: 34.081651209310785%;
+}
+.row-fluid .offset3 {
+  margin-left: 28.205128205128204%;
+   margin-left: 28.0987452264048%;
+}
+.row-fluid .offset3:first-child {
+  margin-left: 25.641025641025642%;
+   margin-left: 25.53464266230224%;
+}
+.row-fluid .offset2 {
+  margin-left: 19.65811965811966%;
+   margin-left: 19.551736679396257%;
+}
+.row-fluid .offset2:first-child {
+  margin-left: 17.094017094017094%;
+   margin-left: 16.98763411529369%;
+}
+.row-fluid .offset1 {
+  margin-left: 11.11111111111111%;
+   margin-left: 11.004728132387708%;
+}
+.row-fluid .offset1:first-child {
+  margin-left: 8.547008547008547%;
+   margin-left: 8.440625568285142%;
+}
+input,
+textarea,
+.uneditable-input {
+  margin-left: 0;
+}
+.controls-row [class*=&quot;span&quot;] + [class*=&quot;span&quot;] {
+  margin-left: 30px;
+}
+input.span12,
+textarea.span12,
+.uneditable-input.span12 {
+  width: 1156px;
+}
+input.span11,
+textarea.span11,
+.uneditable-input.span11 {
+  width: 1056px;
+}
+input.span10,
+textarea.span10,
+.uneditable-input.span10 {
+  width: 956px;
+}
+input.span9,
+textarea.span9,
+.uneditable-input.span9 {
+  width: 856px;
+}
+input.span8,
+textarea.span8,
+.uneditable-input.span8 {
+  width: 756px;
+}
+input.span7,
+textarea.span7,
+.uneditable-input.span7 {
+  width: 656px;
+}
+input.span6,
+textarea.span6,
+.uneditable-input.span6 {
+  width: 556px;
+}
+input.span5,
+textarea.span5,
+.uneditable-input.span5 {
+  width: 456px;
+}
+input.span4,
+textarea.span4,
+.uneditable-input.span4 {
+  width: 356px;
+}
+input.span3,
+textarea.span3,
+.uneditable-input.span3 {
+  width: 256px;
+}
+input.span2,
+textarea.span2,
+.uneditable-input.span2 {
+  width: 156px;
+}
+input.span1,
+textarea.span1,
+.uneditable-input.span1 {
+  width: 56px;
+}
+.thumbnails {
+  margin-left: -30px;
+}
+.thumbnails &gt; li {
+  margin-left: 30px;
+}
+.row-fluid .thumbnails {
+  margin-left: 0;
+}</pre>
+
+<p>}</p>
+
+<p>@media (min-width: 768px) and (max-width: 979px) {</p>
+
+<pre>.row {
+  margin-left: -20px;
+   zoom: 1;
+}
+.row:before,
+.row:after {
+  display: table;
+  line-height: 0;
+  content: &quot;&quot;;
+}
+.row:after {
+  clear: both;
+}
+[class*=&quot;span&quot;] {
+  float: left;
+  min-height: 1px;
+  margin-left: 20px;
+}
+.container,
+.navbar-static-top .container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+  width: 724px;
+}
+.span12 {
+  width: 724px;
+}
+.span11 {
+  width: 662px;
+}
+.span10 {
+  width: 600px;
+}
+.span9 {
+  width: 538px;
+}
+.span8 {
+  width: 476px;
+}
+.span7 {
+  width: 414px;
+}
+.span6 {
+  width: 352px;
+}
+.span5 {
+  width: 290px;
+}
+.span4 {
+  width: 228px;
+}
+.span3 {
+  width: 166px;
+}
+.span2 {
+  width: 104px;
+}
+.span1 {
+  width: 42px;
+}
+.offset12 {
+  margin-left: 764px;
+}
+.offset11 {
+  margin-left: 702px;
+}
+.offset10 {
+  margin-left: 640px;
+}
+.offset9 {
+  margin-left: 578px;
+}
+.offset8 {
+  margin-left: 516px;
+}
+.offset7 {
+  margin-left: 454px;
+}
+.offset6 {
+  margin-left: 392px;
+}
+.offset5 {
+  margin-left: 330px;
+}
+.offset4 {
+  margin-left: 268px;
+}
+.offset3 {
+  margin-left: 206px;
+}
+.offset2 {
+  margin-left: 144px;
+}
+.offset1 {
+  margin-left: 82px;
+}
+.row-fluid {
+  width: 100%;
+   zoom: 1;
+}
+.row-fluid:before,
+.row-fluid:after {
+  display: table;
+  line-height: 0;
+  content: &quot;&quot;;
+}
+.row-fluid:after {
+  clear: both;
+}
+.row-fluid [class*=&quot;span&quot;] {
+  display: block;
+  float: left;
+  width: 100%;
+  min-height: 30px;
+  margin-left: 2.7624309392265194%;
+   margin-left: 2.709239449864817%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.row-fluid [class*=&quot;span&quot;]:first-child {
+  margin-left: 0;
+}
+.row-fluid .controls-row [class*=&quot;span&quot;] + [class*=&quot;span&quot;] {
+  margin-left: 2.7624309392265194%;
+}
+.row-fluid .span12 {
+  width: 100%;
+   width: 99.94680851063829%;
+}
+.row-fluid .span11 {
+  width: 91.43646408839778%;
+   width: 91.38327259903608%;
+}
+.row-fluid .span10 {
+  width: 82.87292817679558%;
+   width: 82.81973668743387%;
+}
+.row-fluid .span9 {
+  width: 74.30939226519337%;
+   width: 74.25620077583166%;
+}
+.row-fluid .span8 {
+  width: 65.74585635359117%;
+   width: 65.69266486422946%;
+}
+.row-fluid .span7 {
+  width: 57.18232044198895%;
+   width: 57.12912895262725%;
+}
+.row-fluid .span6 {
+  width: 48.61878453038674%;
+   width: 48.56559304102504%;
+}
+.row-fluid .span5 {
+  width: 40.05524861878453%;
+   width: 40.00205712942283%;
+}
+.row-fluid .span4 {
+  width: 31.491712707182323%;
+   width: 31.43852121782062%;
+}
+.row-fluid .span3 {
+  width: 22.92817679558011%;
+   width: 22.87498530621841%;
+}
+.row-fluid .span2 {
+  width: 14.3646408839779%;
+   width: 14.311449394616199%;
+}
+.row-fluid .span1 {
+  width: 5.801104972375691%;
+   width: 5.747913483013988%;
+}
+.row-fluid .offset12 {
+  margin-left: 105.52486187845304%;
+   margin-left: 105.41847889972962%;
+}
+.row-fluid .offset12:first-child {
+  margin-left: 102.76243093922652%;
+   margin-left: 102.6560479605031%;
+}
+.row-fluid .offset11 {
+  margin-left: 96.96132596685082%;
+   margin-left: 96.8549429881274%;
+}
+.row-fluid .offset11:first-child {
+  margin-left: 94.1988950276243%;
+   margin-left: 94.09251204890089%;
+}
+.row-fluid .offset10 {
+  margin-left: 88.39779005524862%;
+   margin-left: 88.2914070765252%;
+}
+.row-fluid .offset10:first-child {
+  margin-left: 85.6353591160221%;
+   margin-left: 85.52897613729868%;
+}
+.row-fluid .offset9 {
+  margin-left: 79.8342541436464%;
+   margin-left: 79.72787116492299%;
+}
+.row-fluid .offset9:first-child {
+  margin-left: 77.07182320441989%;
+   margin-left: 76.96544022569647%;
+}
+.row-fluid .offset8 {
+  margin-left: 71.2707182320442%;
+   margin-left: 71.16433525332079%;
+}
+.row-fluid .offset8:first-child {
+  margin-left: 68.50828729281768%;
+   margin-left: 68.40190431409427%;
+}
+.row-fluid .offset7 {
+  margin-left: 62.70718232044199%;
+   margin-left: 62.600799341718584%;
+}
+.row-fluid .offset7:first-child {
+  margin-left: 59.94475138121547%;
+   margin-left: 59.838368402492065%;
+}
+.row-fluid .offset6 {
+  margin-left: 54.14364640883978%;
+   margin-left: 54.037263430116376%;
+}
+.row-fluid .offset6:first-child {
+  margin-left: 51.38121546961326%;
+   margin-left: 51.27483249088986%;
+}
+.row-fluid .offset5 {
+  margin-left: 45.58011049723757%;
+   margin-left: 45.47372751851417%;
+}
+.row-fluid .offset5:first-child {
+  margin-left: 42.81767955801105%;
+   margin-left: 42.71129657928765%;
+}
+.row-fluid .offset4 {
+  margin-left: 37.01657458563536%;
+   margin-left: 36.91019160691196%;
+}
+.row-fluid .offset4:first-child {
+  margin-left: 34.25414364640884%;
+   margin-left: 34.14776066768544%;
+}
+.row-fluid .offset3 {
+  margin-left: 28.45303867403315%;
+   margin-left: 28.346655695309746%;
+}
+.row-fluid .offset3:first-child {
+  margin-left: 25.69060773480663%;
+   margin-left: 25.584224756083227%;
+}
+.row-fluid .offset2 {
+  margin-left: 19.88950276243094%;
+   margin-left: 19.783119783707537%;
+}
+.row-fluid .offset2:first-child {
+  margin-left: 17.12707182320442%;
+   margin-left: 17.02068884448102%;
+}
+.row-fluid .offset1 {
+  margin-left: 11.32596685082873%;
+   margin-left: 11.219583872105325%;
+}
+.row-fluid .offset1:first-child {
+  margin-left: 8.56353591160221%;
+   margin-left: 8.457152932878806%;
+}
+input,
+textarea,
+.uneditable-input {
+  margin-left: 0;
+}
+.controls-row [class*=&quot;span&quot;] + [class*=&quot;span&quot;] {
+  margin-left: 20px;
+}
+input.span12,
+textarea.span12,
+.uneditable-input.span12 {
+  width: 710px;
+}
+input.span11,
+textarea.span11,
+.uneditable-input.span11 {
+  width: 648px;
+}
+input.span10,
+textarea.span10,
+.uneditable-input.span10 {
+  width: 586px;
+}
+input.span9,
+textarea.span9,
+.uneditable-input.span9 {
+  width: 524px;
+}
+input.span8,
+textarea.span8,
+.uneditable-input.span8 {
+  width: 462px;
+}
+input.span7,
+textarea.span7,
+.uneditable-input.span7 {
+  width: 400px;
+}
+input.span6,
+textarea.span6,
+.uneditable-input.span6 {
+  width: 338px;
+}
+input.span5,
+textarea.span5,
+.uneditable-input.span5 {
+  width: 276px;
+}
+input.span4,
+textarea.span4,
+.uneditable-input.span4 {
+  width: 214px;
+}
+input.span3,
+textarea.span3,
+.uneditable-input.span3 {
+  width: 152px;
+}
+input.span2,
+textarea.span2,
+.uneditable-input.span2 {
+  width: 90px;
+}
+input.span1,
+textarea.span1,
+.uneditable-input.span1 {
+  width: 28px;
+}</pre>
+
+<p>}</p>
+
+<p>@media (max-width: 767px) {</p>
+
+<pre>body {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.navbar-fixed-top,
+.navbar-fixed-bottom,
+.navbar-static-top {
+  margin-right: -20px;
+  margin-left: -20px;
+}
+.container-fluid {
+  padding: 0;
+}
+.dl-horizontal dt {
+  float: none;
+  width: auto;
+  clear: none;
+  text-align: left;
+}
+.dl-horizontal dd {
+  margin-left: 0;
+}
+.container {
+  width: auto;
+}
+.row-fluid {
+  width: 100%;
+}
+.row,
+.thumbnails {
+  margin-left: 0;
+}
+.thumbnails &gt; li {
+  float: none;
+  margin-left: 0;
+}
+[class*=&quot;span&quot;],
+.uneditable-input[class*=&quot;span&quot;],
+.row-fluid [class*=&quot;span&quot;] {
+  display: block;
+  float: none;
+  width: 100%;
+  margin-left: 0;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.span12,
+.row-fluid .span12 {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.row-fluid [class*=&quot;offset&quot;]:first-child {
+  margin-left: 0;
+}
+.input-large,
+.input-xlarge,
+.input-xxlarge,
+input[class*=&quot;span&quot;],
+select[class*=&quot;span&quot;],
+textarea[class*=&quot;span&quot;],
+.uneditable-input {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.input-prepend input,
+.input-append input,
+.input-prepend input[class*=&quot;span&quot;],
+.input-append input[class*=&quot;span&quot;] {
+  display: inline-block;
+  width: auto;
+}
+.controls-row [class*=&quot;span&quot;] + [class*=&quot;span&quot;] {
+  margin-left: 0;
+}
+.modal {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  left: 20px;
+  width: auto;
+  margin: 0;
+}
+.modal.fade {
+  top: -100px;
+}
+.modal.fade.in {
+  top: 20px;
+}</pre>
+
+<p>}</p>
+
+<p>@media (max-width: 480px) {</p>
+
+<pre>.nav-collapse {
+  -webkit-transform: translate3d(0, 0, 0);
+}
+.page-header h1 small {
+  display: block;
+  line-height: 20px;
+}
+input[type=&quot;checkbox&quot;],
+input[type=&quot;radio&quot;] {
+  border: 1px solid #ccc;
+}
+.form-horizontal .control-label {
+  float: none;
+  width: auto;
+  padding-top: 0;
+  text-align: left;
+}
+.form-horizontal .controls {
+  margin-left: 0;
+}
+.form-horizontal .control-list {
+  padding-top: 0;
+}
+.form-horizontal .form-actions {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.media .pull-left,
+.media .pull-right {
+  display: block;
+  float: none;
+  margin-bottom: 10px;
+}
+.media-object {
+  margin-right: 0;
+  margin-left: 0;
+}
+.modal {
+  top: 10px;
+  right: 10px;
+  left: 10px;
+}
+.modal-header .close {
+  padding: 10px;
+  margin: -10px;
+}
+.carousel-caption {
+  position: static;
+}</pre>
+
+<p>}</p>
+
+<p>@media (max-width: 979px) {</p>
+
+<pre>body {
+  padding-top: 0;
+}
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  position: static;
+}
+.navbar-fixed-top {
+  margin-bottom: 20px;
+}
+.navbar-fixed-bottom {
+  margin-top: 20px;
+}
+.navbar-fixed-top .navbar-inner,
+.navbar-fixed-bottom .navbar-inner {
+  padding: 5px;
+}
+.navbar .container {
+  width: auto;
+  padding: 0;
+}
+.navbar .brand {
+  padding-right: 10px;
+  padding-left: 10px;
+  margin: 0 0 0 -5px;
+}
+.nav-collapse {
+  clear: both;
+}
+.nav-collapse .nav {
+  float: none;
+  margin: 0 0 10px;
+}
+.nav-collapse .nav &gt; li {
+  float: none;
+}
+.nav-collapse .nav &gt; li &gt; a {
+  margin-bottom: 2px;
+}
+.nav-collapse .nav &gt; .divider-vertical {
+  display: none;
+}
+.nav-collapse .nav .nav-header {
+  color: #777777;
+  text-shadow: none;
+}
+.nav-collapse .nav &gt; li &gt; a,
+.nav-collapse .dropdown-menu a {
+  padding: 9px 15px;
+  font-weight: bold;
+  color: #777777;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+}
+.nav-collapse .btn {
+  padding: 4px 10px 4px;
+  font-weight: normal;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+.nav-collapse .dropdown-menu li + li a {
+  margin-bottom: 2px;
+}
+.nav-collapse .nav &gt; li &gt; a:hover,
+.nav-collapse .nav &gt; li &gt; a:focus,
+.nav-collapse .dropdown-menu a:hover,
+.nav-collapse .dropdown-menu a:focus {
+  background-color: #f2f2f2;
+}
+.navbar-inverse .nav-collapse .nav &gt; li &gt; a,
+.navbar-inverse .nav-collapse .dropdown-menu a {
+  color: #999999;
+}
+.navbar-inverse .nav-collapse .nav &gt; li &gt; a:hover,
+.navbar-inverse .nav-collapse .nav &gt; li &gt; a:focus,
+.navbar-inverse .nav-collapse .dropdown-menu a:hover,
+.navbar-inverse .nav-collapse .dropdown-menu a:focus {
+  background-color: #111111;
+}
+.nav-collapse.in .btn-group {
+  padding: 0;
+  margin-top: 5px;
+}
+.nav-collapse .dropdown-menu {
+  position: static;
+  top: auto;
+  left: auto;
+  display: none;
+  float: none;
+  max-width: none;
+  padding: 0;
+  margin: 0 15px;
+  background-color: transparent;
+  border: none;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
+  -webkit-box-shadow: none;
+     -moz-box-shadow: none;
+          box-shadow: none;
+}
+.nav-collapse .open &gt; .dropdown-menu {
+  display: block;
+}
+.nav-collapse .dropdown-menu:before,
+.nav-collapse .dropdown-menu:after {
+  display: none;
+}
+.nav-collapse .dropdown-menu .divider {
+  display: none;
+}
+.nav-collapse .nav &gt; li &gt; .dropdown-menu:before,
+.nav-collapse .nav &gt; li &gt; .dropdown-menu:after {
+  display: none;
+}
+.nav-collapse .navbar-form,
+.nav-collapse .navbar-search {
+  float: none;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
+     -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
+          box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+.navbar-inverse .nav-collapse .navbar-form,
+.navbar-inverse .nav-collapse .navbar-search {
+  border-top-color: #111111;
+  border-bottom-color: #111111;
+}
+.navbar .nav-collapse .nav.pull-right {
+  float: none;
+  margin-left: 0;
+}
+.nav-collapse,
+.nav-collapse.collapse {
+  height: 0;
+  overflow: hidden;
+}
+.navbar .btn-navbar {
+  display: block;
+}
+.navbar-static .navbar-inner {
+  padding-right: 10px;
+  padding-left: 10px;
+}</pre>
+
+<p>}</p>
+
+<p>@media (min-width: 980px) {</p>
+
+<pre>.nav-collapse.collapse {
+  height: auto !important;
+  overflow: visible !important;
+}</pre>
+
+<p>}</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

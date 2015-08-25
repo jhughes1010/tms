@@ -1,0 +1,7039 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>bootstrap.css - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script src="../../js/jquery.js"></script>
+<script src="../../js/darkfish.js"></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../../README.html">README</a>
+  
+    <li><a href="../../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../../app/flow_thoughts_txt.html">flow_thoughts</a>
+  
+    <li><a href="../../app/views/cost/_query_results_header_html_haml.html">_query_results_header.html.haml</a>
+  
+    <li><a href="../../app/views/cost/query_html_haml.html">query.html.haml</a>
+  
+    <li><a href="../../app/views/resource/_employee_details_html_haml.html">_employee_details.html.haml</a>
+  
+    <li><a href="../../app/views/resource/_not_key_html_haml.html">_not_key.html.haml</a>
+  
+    <li><a href="../../app/views/resource/_overbooked_html_haml.html">_overbooked.html.haml</a>
+  
+    <li><a href="../../app/views/resource/_pill_navigation_html_haml.html">_pill_navigation.html.haml</a>
+  
+    <li><a href="../../app/views/resource/_team_names_html_haml.html">_team_names.html.haml</a>
+  
+    <li><a href="../../app/views/resource/actual_html_haml.html">actual.html.haml</a>
+  
+    <li><a href="../../app/views/resource/availability_html_haml.html">availability.html.haml</a>
+  
+    <li><a href="../../app/views/resource/employee_view_html_haml.html">employee_view.html.haml</a>
+  
+    <li><a href="../../app/views/resource/key_project_summary_html_haml.html">key_project_summary.html.haml</a>
+  
+    <li><a href="../../app/views/resource/rule_check_html_haml.html">rule_check.html.haml</a>
+  
+    <li><a href="../../app/views/resource/variance_html_haml.html">variance.html.haml</a>
+  
+    <li><a href="../../app/views/users/INDEXH~1_BAK.html">INDEXH~1.BAK</a>
+  
+    <li><a href="../../config_ru.html">config.ru</a>
+  
+    <li><a href="../../importlogcsv_txt.html">importlogcsv</a>
+  
+    <li><a href="../../install.html">install</a>
+  
+    <li><a href="../../log/development_log.html">development.log</a>
+  
+    <li><a href="../../public/404_html.html">404.html</a>
+  
+    <li><a href="../../public/422_html.html">422.html</a>
+  
+    <li><a href="../../public/500_html.html">500.html</a>
+  
+    <li><a href="../../public/favicon_ico.html">favicon.ico</a>
+  
+    <li><a href="../../public/fonts/glyphicons-halflings-regular_svg.html">glyphicons-halflings-regular.svg</a>
+  
+    <li><a href="../../public/index_html.html">index.html</a>
+  
+    <li><a href="../../public/javascripts/application_js.html">application.js</a>
+  
+    <li><a href="../../public/javascripts/bootstrap_js.html">bootstrap.js</a>
+  
+    <li><a href="../../public/javascripts/bootstrap_min_js.html">bootstrap.min.js</a>
+  
+    <li><a href="../../public/javascripts/controls_js.html">controls.js</a>
+  
+    <li><a href="../../public/javascripts/dragdrop_js.html">dragdrop.js</a>
+  
+    <li><a href="../../public/javascripts/effects_js.html">effects.js</a>
+  
+    <li><a href="../../public/javascripts/prototype_js.html">prototype.js</a>
+  
+    <li><a href="../../public/javascripts/rails_js.html">rails.js</a>
+  
+    <li><a href="../../public/robots_txt.html">robots</a>
+  
+    <li><a href="../../public/stylesheets/application_css.html">application.css</a>
+  
+    <li><a href="../../public/stylesheets/bootstrap-responsive_css.html">bootstrap-responsive.css</a>
+  
+    <li><a href="../../public/stylesheets/bootstrap-responsive_min_css.html">bootstrap-responsive.min.css</a>
+  
+    <li><a href="../../public/stylesheets/bootstrap_css.html">bootstrap.css</a>
+  
+    <li><a href="../../public/stylesheets/bootstrap_min_css.html">bootstrap.min.css</a>
+  
+    <li><a href="../../public/stylesheets/custom2_css.html">custom2.css</a>
+  
+    <li><a href="../../public/stylesheets/le-frog/jquery-ui-1_8_16_custom_css.html">jquery-ui-1.8.16.custom.css</a>
+  
+    <li><a href="../../public/stylesheets/menu_css.html">menu.css</a>
+  
+    <li><a href="../../public/stylesheets/reset_css.html">reset.css</a>
+  
+    <li><a href="../../public/stylesheets/scaffold_css.html">scaffold.css</a>
+  
+    <li><a href="../../public/stylesheets/tms_css.html">tms.css</a>
+  
+    <li><a href="../../public/stylesheets/ui-darkness/jquery-ui-1_8_16_custom_css.html">jquery-ui-1.8.16.custom.css</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page public/stylesheets/bootstrap.css">
+
+<pre>!
+ Bootstrap v2.3.1
+
+ Copyright 2012 Twitter, Inc
+ Licensed under the Apache License v2.0
+ http://www.apache.org/licenses/LICENSE-2.0
+
+ Designed and built with all the love in the world @twitter by @mdo and @fat.</pre>
+
+<p>.clearfix {</p>
+
+<pre>zoom: 1;</pre>
+
+<p>} .clearfix:before, .clearfix:after {</p>
+
+<pre>display: table;
+content: &quot;&quot;;
+line-height: 0;</pre>
+
+<p>} .clearfix:after {</p>
+
+<pre>clear: both;</pre>
+
+<p>} .hide-text {</p>
+
+<pre>font: 0/0 a;
+color: transparent;
+text-shadow: none;
+background-color: transparent;
+border: 0;</pre>
+
+<p>} .input-block-level {</p>
+
+<pre>display: block;
+width: 100%;
+min-height: 30px;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;</pre>
+
+<p>} article, aside, details, figcaption, figure, footer, header, hgroup, nav,
+section {</p>
+
+<pre>display: block;</pre>
+
+<p>} audio, canvas, video {</p>
+
+<pre>display: inline-block;
+ display: inline;
+ zoom: 1;</pre>
+
+<p>} <a href="controls">audio:not(</a>) {</p>
+
+<pre>display: none;</pre>
+
+<p>} html {</p>
+
+<pre>font-size: 100%;
+-webkit-text-size-adjust: 100%;
+-ms-text-size-adjust: 100%;</pre>
+
+<p>} a:focus {</p>
+
+<pre>outline: thin dotted #333;
+outline: 5px auto -webkit-focus-ring-color;
+outline-offset: -2px;</pre>
+
+<p>} a:hover, a:active {</p>
+
+<pre>outline: 0;</pre>
+
+<p>} sub, sup {</p>
+
+<pre>position: relative;
+font-size: 75%;
+line-height: 0;
+vertical-align: baseline;</pre>
+
+<p>} sup {</p>
+
+<pre>top: -0.5em;</pre>
+
+<p>} sub {</p>
+
+<pre>bottom: -0.25em;</pre>
+
+<p>} img {</p>
+
+<pre>   Responsive images (ensure images don&#39;t scale beyond their parents)   
+
+max-width: 100%;
+/* Part 1: Set a maxium relative to the parent */
+
+width: auto\9;
+/* IE7-8 need help adjusting responsive images */
+
+height: auto;
+/* Part 2: Scale the height according to the width, otherwise you get stretching */
+
+vertical-align: middle;
+border: 0;
+-ms-interpolation-mode: bicubic;</pre>
+
+<p>} map_canvas img, .google-maps img {</p>
+
+<pre>max-width: none;</pre>
+
+<p>} button, input, select, textarea {</p>
+
+<pre>margin: 0;
+font-size: 100%;
+vertical-align: middle;</pre>
+
+<p>} button, input {</p>
+
+<pre> overflow: visible;
+line-height: normal;</pre>
+
+<p>} button::-moz-focus-inner, input::-moz-focus-inner {</p>
+
+<pre>padding: 0;
+border: 0;</pre>
+
+<p>} button, html <a href="type="button"">input</a>, <a
+href="type="reset"">input</a>, <a href="type="submit"">input</a> {</p>
+
+<pre>-webkit-appearance: button;
+cursor: pointer;</pre>
+
+<p>} label, select, button, <a href="type="button"">input</a>, <a
+href="type="reset"">input</a>, <a href="type="submit"">input</a>, <a
+href="type="radio"">input</a>, <a href="type="checkbox"">input</a> {</p>
+
+<pre>cursor: pointer;</pre>
+
+<p>} <a href="type="search"">input</a> {</p>
+
+<pre>-webkit-box-sizing: content-box;
+-moz-box-sizing: content-box;
+box-sizing: content-box;
+-webkit-appearance: textfield;</pre>
+
+<p>} <a href="type="search"">input</a>::-webkit-search-decoration, <a
+href="type="search"">input</a>::-webkit-search-cancel-button {</p>
+
+<pre>-webkit-appearance: none;</pre>
+
+<p>} textarea {</p>
+
+<pre>overflow: auto;
+vertical-align: top;</pre>
+
+<p>} @media print {</p>
+
+<pre>  {
+  text-shadow: none !important;
+  color: #000 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+a,
+a:visited {
+  text-decoration: underline;
+}
+a[href]:after {
+  content: &quot; (&quot; attr(href) &quot;)&quot;;
+}
+abbr[title]:after {
+  content: &quot; (&quot; attr(title) &quot;)&quot;;
+}
+.ir a:after,
+a[href^=&quot;javascript:&quot;]:after,
+a[href^=&quot;#&quot;]:after {
+  content: &quot;&quot;;
+}
+pre,
+blockquote {
+  border: 1px solid #999;
+  page-break-inside: avoid;
+}
+thead {
+  display: table-header-group;
+}
+tr,
+img {
+  page-break-inside: avoid;
+}
+img {
+  max-width: 100% !important;
+}
+@page  {
+  margin: 0.5cm;
+}
+p,
+h2,
+h3 {
+  orphans: 3;
+  widows: 3;
+}
+h2,
+h3 {
+  page-break-after: avoid;
+}</pre>
+
+<p>} body {</p>
+
+<pre>margin: 0;
+font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+font-size: 10px;
+line-height: 20px;
+color: #333333;
+background-color: #ffffff;</pre>
+
+<p>} a {</p>
+
+<pre>color: #0088cc;
+text-decoration: none;</pre>
+
+<p>} a:hover, a:focus {</p>
+
+<pre>color: #005580;
+text-decoration: underline;</pre>
+
+<p>} .img-rounded {</p>
+
+<pre>-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;</pre>
+
+<p>} .img-polaroid {</p>
+
+<pre>padding: 4px;
+background-color: #fff;
+border: 1px solid #ccc;
+border: 1px solid rgba(0, 0, 0, 0.2);
+-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);</pre>
+
+<p>} .img-circle {</p>
+
+<pre>-webkit-border-radius: 500px;
+-moz-border-radius: 500px;
+border-radius: 500px;</pre>
+
+<p>} .row {</p>
+
+<pre>margin-left: -20px;
+ zoom: 1;</pre>
+
+<p>} .row:before, .row:after {</p>
+
+<pre>display: table;
+content: &quot;&quot;;
+line-height: 0;</pre>
+
+<p>} .row:after {</p>
+
+<pre>clear: both;</pre>
+
+<p>}</p>
+<dl class="rdoc-list label-list"><dt>class*=“span”
+<dd>
+<p>{</p>
+</dd></dl>
+
+<pre>float: left;
+min-height: 1px;
+margin-left: 20px;</pre>
+
+<p>} .container, .navbar-static-top .container, .navbar-fixed-top .container,
+.navbar-fixed-bottom .container {</p>
+
+<pre>width: 940px;</pre>
+
+<p>} .span12 {</p>
+
+<pre>width: 940px;</pre>
+
+<p>} .span11 {</p>
+
+<pre>width: 860px;</pre>
+
+<p>} .span10 {</p>
+
+<pre>width: 780px;</pre>
+
+<p>} .span9 {</p>
+
+<pre>width: 700px;</pre>
+
+<p>} .span8 {</p>
+
+<pre>width: 620px;</pre>
+
+<p>} .span7 {</p>
+
+<pre>width: 540px;</pre>
+
+<p>} .span6 {</p>
+
+<pre>width: 460px;</pre>
+
+<p>} .span5 {</p>
+
+<pre>width: 380px;</pre>
+
+<p>} .span4 {</p>
+
+<pre>width: 300px;</pre>
+
+<p>} .span3 {</p>
+
+<pre>width: 220px;</pre>
+
+<p>} .span2 {</p>
+
+<pre>width: 140px;</pre>
+
+<p>} .span1 {</p>
+
+<pre>width: 60px;</pre>
+
+<p>} .offset12 {</p>
+
+<pre>margin-left: 980px;</pre>
+
+<p>} .offset11 {</p>
+
+<pre>margin-left: 900px;</pre>
+
+<p>} .offset10 {</p>
+
+<pre>margin-left: 820px;</pre>
+
+<p>} .offset9 {</p>
+
+<pre>margin-left: 740px;</pre>
+
+<p>} .offset8 {</p>
+
+<pre>margin-left: 660px;</pre>
+
+<p>} .offset7 {</p>
+
+<pre>margin-left: 580px;</pre>
+
+<p>} .offset6 {</p>
+
+<pre>margin-left: 500px;</pre>
+
+<p>} .offset5 {</p>
+
+<pre>margin-left: 420px;</pre>
+
+<p>} .offset4 {</p>
+
+<pre>margin-left: 340px;</pre>
+
+<p>} .offset3 {</p>
+
+<pre>margin-left: 260px;</pre>
+
+<p>} .offset2 {</p>
+
+<pre>margin-left: 180px;</pre>
+
+<p>} .offset1 {</p>
+
+<pre>margin-left: 100px;</pre>
+
+<p>} .row-fluid {</p>
+
+<pre>width: 100%;
+ zoom: 1;</pre>
+
+<p>} .row-fluid:before, .row-fluid:after {</p>
+
+<pre>display: table;
+content: &quot;&quot;;
+line-height: 0;</pre>
+
+<p>} .row-fluid:after {</p>
+
+<pre>clear: both;</pre>
+
+<p>} .row-fluid [class*=“span”] {</p>
+
+<pre>display: block;
+width: 100%;
+min-height: 30px;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+float: left;
+margin-left: 2.127659574468085%;
+ margin-left: 2.074468085106383%;</pre>
+
+<p>} .row-fluid [class*=“span”]:first-child {</p>
+
+<pre>margin-left: 0;</pre>
+
+<p>} .row-fluid .controls-row [class*=“span”] + [class*=“span”] {</p>
+
+<pre>margin-left: 2.127659574468085%;</pre>
+
+<p>} .row-fluid .span12 {</p>
+
+<pre>width: 100%;
+ width: 99.94680851063829%;</pre>
+
+<p>} .row-fluid .span11 {</p>
+
+<pre>width: 91.48936170212765%;
+ width: 91.43617021276594%;</pre>
+
+<p>} .row-fluid .span10 {</p>
+
+<pre>width: 82.97872340425532%;
+ width: 82.92553191489361%;</pre>
+
+<p>} .row-fluid .span9 {</p>
+
+<pre>width: 74.46808510638297%;
+ width: 74.41489361702126%;</pre>
+
+<p>} .row-fluid .span8 {</p>
+
+<pre>width: 65.95744680851064%;
+ width: 65.90425531914893%;</pre>
+
+<p>} .row-fluid .span7 {</p>
+
+<pre>width: 57.44680851063829%;
+ width: 57.39361702127659%;</pre>
+
+<p>} .row-fluid .span6 {</p>
+
+<pre>width: 48.93617021276595%;
+ width: 48.88297872340425%;</pre>
+
+<p>} .row-fluid .span5 {</p>
+
+<pre>width: 40.42553191489362%;
+ width: 40.37234042553192%;</pre>
+
+<p>} .row-fluid .span4 {</p>
+
+<pre>width: 31.914893617021278%;
+ width: 31.861702127659576%;</pre>
+
+<p>} .row-fluid .span3 {</p>
+
+<pre>width: 23.404255319148934%;
+ width: 23.351063829787233%;</pre>
+
+<p>} .row-fluid .span2 {</p>
+
+<pre>width: 14.893617021276595%;
+ width: 14.840425531914894%;</pre>
+
+<p>} .row-fluid .span1 {</p>
+
+<pre>width: 6.382978723404255%;
+ width: 6.329787234042553%;</pre>
+
+<p>} .row-fluid .offset12 {</p>
+
+<pre>margin-left: 104.25531914893617%;
+ margin-left: 104.14893617021275%;</pre>
+
+<p>} .row-fluid .offset12:first-child {</p>
+
+<pre>margin-left: 102.12765957446808%;
+ margin-left: 102.02127659574467%;</pre>
+
+<p>} .row-fluid .offset11 {</p>
+
+<pre>margin-left: 95.74468085106382%;
+ margin-left: 95.6382978723404%;</pre>
+
+<p>} .row-fluid .offset11:first-child {</p>
+
+<pre>margin-left: 93.61702127659574%;
+ margin-left: 93.51063829787232%;</pre>
+
+<p>} .row-fluid .offset10 {</p>
+
+<pre>margin-left: 87.23404255319149%;
+ margin-left: 87.12765957446807%;</pre>
+
+<p>} .row-fluid .offset10:first-child {</p>
+
+<pre>margin-left: 85.1063829787234%;
+ margin-left: 84.99999999999999%;</pre>
+
+<p>} .row-fluid .offset9 {</p>
+
+<pre>margin-left: 78.72340425531914%;
+ margin-left: 78.61702127659572%;</pre>
+
+<p>} .row-fluid .offset9:first-child {</p>
+
+<pre>margin-left: 76.59574468085106%;
+ margin-left: 76.48936170212764%;</pre>
+
+<p>} .row-fluid .offset8 {</p>
+
+<pre>margin-left: 70.2127659574468%;
+ margin-left: 70.10638297872339%;</pre>
+
+<p>} .row-fluid .offset8:first-child {</p>
+
+<pre>margin-left: 68.08510638297872%;
+ margin-left: 67.9787234042553%;</pre>
+
+<p>} .row-fluid .offset7 {</p>
+
+<pre>margin-left: 61.70212765957446%;
+ margin-left: 61.59574468085106%;</pre>
+
+<p>} .row-fluid .offset7:first-child {</p>
+
+<pre>margin-left: 59.574468085106375%;
+ margin-left: 59.46808510638297%;</pre>
+
+<p>} .row-fluid .offset6 {</p>
+
+<pre>margin-left: 53.191489361702125%;
+ margin-left: 53.085106382978715%;</pre>
+
+<p>} .row-fluid .offset6:first-child {</p>
+
+<pre>margin-left: 51.063829787234035%;
+ margin-left: 50.95744680851063%;</pre>
+
+<p>} .row-fluid .offset5 {</p>
+
+<pre>margin-left: 44.68085106382979%;
+ margin-left: 44.57446808510638%;</pre>
+
+<p>} .row-fluid .offset5:first-child {</p>
+
+<pre>margin-left: 42.5531914893617%;
+ margin-left: 42.4468085106383%;</pre>
+
+<p>} .row-fluid .offset4 {</p>
+
+<pre>margin-left: 36.170212765957444%;
+ margin-left: 36.06382978723405%;</pre>
+
+<p>} .row-fluid .offset4:first-child {</p>
+
+<pre>margin-left: 34.04255319148936%;
+ margin-left: 33.93617021276596%;</pre>
+
+<p>} .row-fluid .offset3 {</p>
+
+<pre>margin-left: 27.659574468085104%;
+ margin-left: 27.5531914893617%;</pre>
+
+<p>} .row-fluid .offset3:first-child {</p>
+
+<pre>margin-left: 25.53191489361702%;
+ margin-left: 25.425531914893618%;</pre>
+
+<p>} .row-fluid .offset2 {</p>
+
+<pre>margin-left: 19.148936170212764%;
+ margin-left: 19.04255319148936%;</pre>
+
+<p>} .row-fluid .offset2:first-child {</p>
+
+<pre>margin-left: 17.02127659574468%;
+ margin-left: 16.914893617021278%;</pre>
+
+<p>} .row-fluid .offset1 {</p>
+
+<pre>margin-left: 10.638297872340425%;
+ margin-left: 10.53191489361702%;</pre>
+
+<p>} .row-fluid .offset1:first-child {</p>
+
+<pre>margin-left: 8.51063829787234%;
+ margin-left: 8.404255319148938%;</pre>
+
+<p>} [class*=“span”].hide, .row-fluid [class*=“span”].hide {</p>
+
+<pre>display: none;</pre>
+
+<p>} [class*=“span”].pull-right, .row-fluid [class*=“span”].pull-right {</p>
+
+<pre>float: right;</pre>
+
+<p>} .container {</p>
+
+<pre>margin-right: auto;
+margin-left: auto;
+ zoom: 1;</pre>
+
+<p>} .container:before, .container:after {</p>
+
+<pre>display: table;
+content: &quot;&quot;;
+line-height: 0;</pre>
+
+<p>} .container:after {</p>
+
+<pre>clear: both;</pre>
+
+<p>} .container-fluid {</p>
+
+<pre>padding-right: 20px;
+padding-left: 20px;
+ zoom: 1;</pre>
+
+<p>} .container-fluid:before, .container-fluid:after {</p>
+
+<pre>display: table;
+content: &quot;&quot;;
+line-height: 0;</pre>
+
+<p>} .container-fluid:after {</p>
+
+<pre>clear: both;</pre>
+
+<p>} p {</p>
+
+<pre>margin: 0 0 10px;</pre>
+
+<p>} .lead {</p>
+
+<pre>margin-bottom: 20px;
+font-size: 15px;
+font-weight: 200;
+line-height: 30px;</pre>
+
+<p>} small {</p>
+
+<pre>font-size: 85%;</pre>
+
+<p>} strong {</p>
+
+<pre>font-weight: bold;</pre>
+
+<p>} em {</p>
+
+<pre>font-style: italic;</pre>
+
+<p>} cite {</p>
+
+<pre>font-style: normal;</pre>
+
+<p>} .muted {</p>
+
+<pre>color: #999999;</pre>
+
+<p>} a.muted:hover, a.muted:focus {</p>
+
+<pre>color: #808080;</pre>
+
+<p>} .text-warning {</p>
+
+<pre>color: #c09853;</pre>
+
+<p>} a.text-warning:hover, a.text-warning:focus {</p>
+
+<pre>color: #a47e3c;</pre>
+
+<p>} .text-error {</p>
+
+<pre>color: #b94a48;</pre>
+
+<p>} a.text-error:hover, a.text-error:focus {</p>
+
+<pre>color: #953b39;</pre>
+
+<p>} .text-info {</p>
+
+<pre>color: #3a87ad;</pre>
+
+<p>} a.text-info:hover, a.text-info:focus {</p>
+
+<pre>color: #2d6987;</pre>
+
+<p>} .text-success {</p>
+
+<pre>color: #468847;</pre>
+
+<p>} a.text-success:hover, a.text-success:focus {</p>
+
+<pre>color: #356635;</pre>
+
+<p>} .text-left {</p>
+
+<pre>text-align: left;</pre>
+
+<p>} .text-right {</p>
+
+<pre>text-align: right;</pre>
+
+<p>} .text-center {</p>
+
+<pre>text-align: center;</pre>
+
+<p>} h1, h2, h3, h4, h5, h6 {</p>
+
+<pre>margin: 10px 0;
+font-family: inherit;
+font-weight: bold;
+line-height: 20px;
+color: inherit;
+text-rendering: optimizelegibility;</pre>
+
+<p>} h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {</p>
+
+<pre>font-weight: normal;
+line-height: 1;
+color: #999999;</pre>
+
+<p>} h1, h2, h3 {</p>
+
+<pre>line-height: 40px;</pre>
+
+<p>} h1 {</p>
+
+<pre>font-size: 27.5px;</pre>
+
+<p>} h2 {</p>
+
+<pre>font-size: 22.5px;</pre>
+
+<p>} h3 {</p>
+
+<pre>font-size: 17.5px;</pre>
+
+<p>} h4 {</p>
+
+<pre>font-size: 12.5px;</pre>
+
+<p>} h5 {</p>
+
+<pre>font-size: 10px;</pre>
+
+<p>} h6 {</p>
+
+<pre>font-size: 8.5px;</pre>
+
+<p>} h1 small {</p>
+
+<pre>font-size: 17.5px;</pre>
+
+<p>} h2 small {</p>
+
+<pre>font-size: 12.5px;</pre>
+
+<p>} h3 small {</p>
+
+<pre>font-size: 10px;</pre>
+
+<p>} h4 small {</p>
+
+<pre>font-size: 10px;</pre>
+
+<p>} .page-header {</p>
+
+<pre>padding-bottom: 9px;
+margin: 20px 0 30px;
+border-bottom: 1px solid #eeeeee;</pre>
+
+<p>} ul, ol {</p>
+
+<pre>padding: 0;
+margin: 0 0 10px 25px;</pre>
+
+<p>} ul ul, ul ol, ol ol, ol ul {</p>
+
+<pre>margin-bottom: 0;</pre>
+
+<p>} li {</p>
+
+<pre>line-height: 20px;</pre>
+
+<p>} ul.unstyled, ol.unstyled {</p>
+
+<pre>margin-left: 0;
+list-style: none;</pre>
+
+<p>} ul.inline, ol.inline {</p>
+
+<pre>margin-left: 0;
+list-style: none;</pre>
+
+<p>} ul.inline &gt; li, ol.inline &gt; li {</p>
+
+<pre>display: inline-block;
+ display: inline;
+/* IE7 inline-block hack */
+
+ zoom: 1;
+padding-left: 5px;
+padding-right: 5px;</pre>
+
+<p>} dl {</p>
+
+<pre>margin-bottom: 20px;</pre>
+
+<p>} dt, dd {</p>
+
+<pre>line-height: 20px;</pre>
+
+<p>} dt {</p>
+
+<pre>font-weight: bold;</pre>
+
+<p>} dd {</p>
+
+<pre>margin-left: 10px;</pre>
+
+<p>} .dl-horizontal {</p>
+
+<pre>zoom: 1;</pre>
+
+<p>} .dl-horizontal:before, .dl-horizontal:after {</p>
+
+<pre>display: table;
+content: &quot;&quot;;
+line-height: 0;</pre>
+
+<p>} .dl-horizontal:after {</p>
+
+<pre>clear: both;</pre>
+
+<p>} .dl-horizontal dt {</p>
+
+<pre>float: left;
+width: 160px;
+clear: left;
+text-align: right;
+overflow: hidden;
+text-overflow: ellipsis;
+white-space: nowrap;</pre>
+
+<p>} .dl-horizontal dd {</p>
+
+<pre>margin-left: 180px;</pre>
+
+<p>} hr {</p>
+
+<pre>margin: 20px 0;
+border: 0;
+border-top: 1px solid #eeeeee;
+border-bottom: 1px solid #ffffff;</pre>
+
+<p>} <a href="title">abbr</a>, <a href="data-original-title">abbr</a> {</p>
+
+<pre>cursor: help;
+border-bottom: 1px dotted #999999;</pre>
+
+<p>} abbr.initialism {</p>
+
+<pre>font-size: 90%;
+text-transform: uppercase;</pre>
+
+<p>} blockquote {</p>
+
+<pre>padding: 0 0 0 15px;
+margin: 0 0 20px;
+border-left: 5px solid #eeeeee;</pre>
+
+<p>} blockquote p {</p>
+
+<pre>margin-bottom: 0;
+font-size: 12.5px;
+font-weight: 300;
+line-height: 1.25;</pre>
+
+<p>} blockquote small {</p>
+
+<pre>display: block;
+line-height: 20px;
+color: #999999;</pre>
+
+<p>} blockquote small:before {</p>
+
+<pre>content: &#39;\2014 \00A0&#39;;</pre>
+
+<p>} blockquote.pull-right {</p>
+
+<pre>float: right;
+padding-right: 15px;
+padding-left: 0;
+border-right: 5px solid #eeeeee;
+border-left: 0;</pre>
+
+<p>} blockquote.pull-right p, blockquote.pull-right small {</p>
+
+<pre>text-align: right;</pre>
+
+<p>} blockquote.pull-right small:before {</p>
+
+<pre>content: &#39;&#39;;</pre>
+
+<p>} blockquote.pull-right small:after {</p>
+
+<pre>content: &#39;\00A0 \2014&#39;;</pre>
+
+<p>} q:before, q:after, blockquote:before, blockquote:after {</p>
+
+<pre>content: &quot;&quot;;</pre>
+
+<p>} address {</p>
+
+<pre>display: block;
+margin-bottom: 20px;
+font-style: normal;
+line-height: 20px;</pre>
+
+<p>} code, pre {</p>
+
+<pre>padding: 0 3px 2px;
+font-family: Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;
+font-size: 8px;
+color: #333333;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;</pre>
+
+<p>} code {</p>
+
+<pre>padding: 2px 4px;
+color: #d14;
+background-color: #f7f7f9;
+border: 1px solid #e1e1e8;
+white-space: nowrap;</pre>
+
+<p>} pre {</p>
+
+<pre>display: block;
+padding: 9.5px;
+margin: 0 0 10px;
+font-size: 9px;
+line-height: 20px;
+word-break: break-all;
+word-wrap: break-word;
+white-space: pre;
+white-space: pre-wrap;
+background-color: #f5f5f5;
+border: 1px solid #ccc;
+border: 1px solid rgba(0, 0, 0, 0.15);
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;</pre>
+
+<p>} pre.prettyprint {</p>
+
+<pre>margin-bottom: 20px;</pre>
+
+<p>} pre code {</p>
+
+<pre>padding: 0;
+color: inherit;
+white-space: pre;
+white-space: pre-wrap;
+background-color: transparent;
+border: 0;</pre>
+
+<p>} .pre-scrollable {</p>
+
+<pre>max-height: 340px;
+overflow-y: scroll;</pre>
+
+<p>} .label, .badge {</p>
+
+<pre>display: inline-block;
+padding: 2px 4px;
+font-size: 8.459999999999999px;
+font-weight: bold;
+line-height: 14px;
+color: #ffffff;
+vertical-align: baseline;
+white-space: nowrap;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+background-color: #999999;</pre>
+
+<p>} .label {</p>
+
+<pre>-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;</pre>
+
+<p>} .badge {</p>
+
+<pre>padding-left: 9px;
+padding-right: 9px;
+-webkit-border-radius: 9px;
+-moz-border-radius: 9px;
+border-radius: 9px;</pre>
+
+<p>} .label:empty, .badge:empty {</p>
+
+<pre>display: none;</pre>
+
+<p>} a.label:hover, a.label:focus, a.badge:hover, a.badge:focus {</p>
+
+<pre>color: #ffffff;
+text-decoration: none;
+cursor: pointer;</pre>
+
+<p>} .label-important, .badge-important {</p>
+
+<pre>background-color: #b94a48;</pre>
+
+<p>} .<a href="href">label-important</a>, .<a href="href">badge-important</a>
+{</p>
+
+<pre>background-color: #953b39;</pre>
+
+<p>} .label-warning, .badge-warning {</p>
+
+<pre>background-color: #f89406;</pre>
+
+<p>} .<a href="href">label-warning</a>, .<a href="href">badge-warning</a> {</p>
+
+<pre>background-color: #c67605;</pre>
+
+<p>} .label-success, .badge-success {</p>
+
+<pre>background-color: #468847;</pre>
+
+<p>} .<a href="href">label-success</a>, .<a href="href">badge-success</a> {</p>
+
+<pre>background-color: #356635;</pre>
+
+<p>} .label-info, .badge-info {</p>
+
+<pre>background-color: #3a87ad;</pre>
+
+<p>} .<a href="href">label-info</a>, .<a href="href">badge-info</a> {</p>
+
+<pre>background-color: #2d6987;</pre>
+
+<p>} .label-inverse, .badge-inverse {</p>
+
+<pre>background-color: #333333;</pre>
+
+<p>} .<a href="href">label-inverse</a>, .<a href="href">badge-inverse</a> {</p>
+
+<pre>background-color: #1a1a1a;</pre>
+
+<p>} .btn .label, .btn .badge {</p>
+
+<pre>position: relative;
+top: -1px;</pre>
+
+<p>} .btn-mini .label, .btn-mini .badge {</p>
+
+<pre>top: 0;</pre>
+
+<p>} table {</p>
+
+<pre>max-width: 100%;
+background-color: transparent;
+border-collapse: collapse;
+border-spacing: 0;</pre>
+
+<p>} .table {</p>
+
+<pre>width: 100%;
+margin-bottom: 20px;</pre>
+
+<p>} .table th, .table td {</p>
+
+<pre>padding: 8px;
+line-height: 20px;
+text-align: left;
+vertical-align: top;
+border-top: 1px solid #dddddd;</pre>
+
+<p>} .table th {</p>
+
+<pre>font-weight: bold;</pre>
+
+<p>} .table thead th {</p>
+
+<pre>vertical-align: bottom;</pre>
+
+<p>} .table caption + thead tr:first-child th, .table caption + thead
+tr:first-child td, .table colgroup + thead tr:first-child th, .table
+colgroup + thead tr:first-child td, .table thead:first-child tr:first-child
+th, .table thead:first-child tr:first-child td {</p>
+
+<pre>border-top: 0;</pre>
+
+<p>} .table tbody + tbody {</p>
+
+<pre>border-top: 2px solid #dddddd;</pre>
+
+<p>} .table .table {</p>
+
+<pre>background-color: #ffffff;</pre>
+
+<p>} .table-condensed th, .table-condensed td {</p>
+
+<pre>padding: 4px 5px;</pre>
+
+<p>} .table-bordered {</p>
+
+<pre>border: 1px solid #dddddd;
+border-collapse: separate;
+ border-collapse: collapse;
+border-left: 0;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;</pre>
+
+<p>} .table-bordered th, .table-bordered td {</p>
+
+<pre>border-left: 1px solid #dddddd;</pre>
+
+<p>} .table-bordered caption + thead tr:first-child th, .table-bordered
+caption + tbody tr:first-child th, .table-bordered caption + tbody
+tr:first-child td, .table-bordered colgroup + thead tr:first-child th,
+.table-bordered colgroup + tbody tr:first-child th, .table-bordered
+colgroup + tbody tr:first-child td, .table-bordered thead:first-child
+tr:first-child th, .table-bordered tbody:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child td {</p>
+
+<pre>border-top: 0;</pre>
+
+<p>} .table-bordered thead:first-child tr:first-child &gt; th:first-child,
+.table-bordered tbody:first-child tr:first-child &gt; td:first-child,
+.table-bordered tbody:first-child tr:first-child &gt; th:first-child {</p>
+
+<pre>-webkit-border-top-left-radius: 4px;
+-moz-border-radius-topleft: 4px;
+border-top-left-radius: 4px;</pre>
+
+<p>} .table-bordered thead:first-child tr:first-child &gt; th:last-child,
+.table-bordered tbody:first-child tr:first-child &gt; td:last-child,
+.table-bordered tbody:first-child tr:first-child &gt; th:last-child {</p>
+
+<pre>-webkit-border-top-right-radius: 4px;
+-moz-border-radius-topright: 4px;
+border-top-right-radius: 4px;</pre>
+
+<p>} .table-bordered thead:last-child tr:last-child &gt; th:first-child,
+.table-bordered tbody:last-child tr:last-child &gt; td:first-child,
+.table-bordered tbody:last-child tr:last-child &gt; th:first-child,
+.table-bordered tfoot:last-child tr:last-child &gt; td:first-child,
+.table-bordered tfoot:last-child tr:last-child &gt; th:first-child {</p>
+
+<pre>-webkit-border-bottom-left-radius: 4px;
+-moz-border-radius-bottomleft: 4px;
+border-bottom-left-radius: 4px;</pre>
+
+<p>} .table-bordered thead:last-child tr:last-child &gt; th:last-child,
+.table-bordered tbody:last-child tr:last-child &gt; td:last-child,
+.table-bordered tbody:last-child tr:last-child &gt; th:last-child,
+.table-bordered tfoot:last-child tr:last-child &gt; td:last-child,
+.table-bordered tfoot:last-child tr:last-child &gt; th:last-child {</p>
+
+<pre>-webkit-border-bottom-right-radius: 4px;
+-moz-border-radius-bottomright: 4px;
+border-bottom-right-radius: 4px;</pre>
+
+<p>} .table-bordered tfoot + tbody:last-child tr:last-child td:first-child {</p>
+
+<pre>-webkit-border-bottom-left-radius: 0;
+-moz-border-radius-bottomleft: 0;
+border-bottom-left-radius: 0;</pre>
+
+<p>} .table-bordered tfoot + tbody:last-child tr:last-child td:last-child {</p>
+
+<pre>-webkit-border-bottom-right-radius: 0;
+-moz-border-radius-bottomright: 0;
+border-bottom-right-radius: 0;</pre>
+
+<p>} .table-bordered caption + thead tr:first-child th:first-child,
+.table-bordered caption + tbody tr:first-child td:first-child,
+.table-bordered colgroup + thead tr:first-child th:first-child,
+.table-bordered colgroup + tbody tr:first-child td:first-child {</p>
+
+<pre>-webkit-border-top-left-radius: 4px;
+-moz-border-radius-topleft: 4px;
+border-top-left-radius: 4px;</pre>
+
+<p>} .table-bordered caption + thead tr:first-child th:last-child,
+.table-bordered caption + tbody tr:first-child td:last-child,
+.table-bordered colgroup + thead tr:first-child th:last-child,
+.table-bordered colgroup + tbody tr:first-child td:last-child {</p>
+
+<pre>-webkit-border-top-right-radius: 4px;
+-moz-border-radius-topright: 4px;
+border-top-right-radius: 4px;</pre>
+
+<p>} .table-striped tbody &gt; tr:nth-child(odd) &gt; td, .table-striped tbody
+&gt; tr:nth-child(odd) &gt; th {</p>
+
+<pre>background-color: #f9f9f9;</pre>
+
+<p>} .table-hover tbody tr:hover &gt; td, .table-hover tbody tr:hover &gt; th
+{</p>
+
+<pre>background-color: #f5f5f5;</pre>
+
+<p>} table <a href="class*="span"">td</a>, table <a
+href="class*="span"">th</a>, .row-fluid table <a
+href="class*="span"">td</a>, .row-fluid table <a
+href="class*="span"">th</a> {</p>
+
+<pre>display: table-cell;
+float: none;
+margin-left: 0;</pre>
+
+<p>} .table td.span1, .table th.span1 {</p>
+
+<pre>float: none;
+width: 44px;
+margin-left: 0;</pre>
+
+<p>} .table td.span2, .table th.span2 {</p>
+
+<pre>float: none;
+width: 124px;
+margin-left: 0;</pre>
+
+<p>} .table td.span3, .table th.span3 {</p>
+
+<pre>float: none;
+width: 204px;
+margin-left: 0;</pre>
+
+<p>} .table td.span4, .table th.span4 {</p>
+
+<pre>float: none;
+width: 284px;
+margin-left: 0;</pre>
+
+<p>} .table td.span5, .table th.span5 {</p>
+
+<pre>float: none;
+width: 364px;
+margin-left: 0;</pre>
+
+<p>} .table td.span6, .table th.span6 {</p>
+
+<pre>float: none;
+width: 444px;
+margin-left: 0;</pre>
+
+<p>} .table td.span7, .table th.span7 {</p>
+
+<pre>float: none;
+width: 524px;
+margin-left: 0;</pre>
+
+<p>} .table td.span8, .table th.span8 {</p>
+
+<pre>float: none;
+width: 604px;
+margin-left: 0;</pre>
+
+<p>} .table td.span9, .table th.span9 {</p>
+
+<pre>float: none;
+width: 684px;
+margin-left: 0;</pre>
+
+<p>} .table td.span10, .table th.span10 {</p>
+
+<pre>float: none;
+width: 764px;
+margin-left: 0;</pre>
+
+<p>} .table td.span11, .table th.span11 {</p>
+
+<pre>float: none;
+width: 844px;
+margin-left: 0;</pre>
+
+<p>} .table td.span12, .table th.span12 {</p>
+
+<pre>float: none;
+width: 924px;
+margin-left: 0;</pre>
+
+<p>} .table tbody tr.success &gt; td {</p>
+
+<pre>background-color: #dff0d8;</pre>
+
+<p>} .table tbody tr.error &gt; td {</p>
+
+<pre>background-color: #f2dede;</pre>
+
+<p>} .table tbody tr.warning &gt; td {</p>
+
+<pre>background-color: #fcf8e3;</pre>
+
+<p>} .table tbody tr.info &gt; td {</p>
+
+<pre>background-color: #d9edf7;</pre>
+
+<p>} .table-hover tbody tr.success:hover &gt; td {</p>
+
+<pre>background-color: #d0e9c6;</pre>
+
+<p>} .table-hover tbody tr.error:hover &gt; td {</p>
+
+<pre>background-color: #ebcccc;</pre>
+
+<p>} .table-hover tbody tr.warning:hover &gt; td {</p>
+
+<pre>background-color: #faf2cc;</pre>
+
+<p>} .table-hover tbody tr.info:hover &gt; td {</p>
+
+<pre>background-color: #c4e3f3;</pre>
+
+<p>} form {</p>
+
+<pre>margin: 0 0 20px;</pre>
+
+<p>} fieldset {</p>
+
+<pre>padding: 0;
+margin: 0;
+border: 0;</pre>
+
+<p>} legend {</p>
+
+<pre>display: block;
+width: 100%;
+padding: 0;
+margin-bottom: 20px;
+font-size: 15px;
+line-height: 40px;
+color: #333333;
+border: 0;
+border-bottom: 1px solid #e5e5e5;</pre>
+
+<p>} legend small {</p>
+
+<pre>font-size: 15px;
+color: #999999;</pre>
+
+<p>} label, input, button, select, textarea {</p>
+
+<pre>font-size: 10px;
+font-weight: normal;
+line-height: 20px;</pre>
+
+<p>} input, button, select, textarea {</p>
+
+<pre>font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;</pre>
+
+<p>} label {</p>
+
+<pre>display: block;
+margin-bottom: 5px;</pre>
+
+<p>} select, textarea, <a href="type="text"">input</a>, <a
+href="type="password"">input</a>, <a href="type="datetime"">input</a>, <a
+href="type="datetime-local"">input</a>, <a href="type="date"">input</a>, <a
+href="type="month"">input</a>, <a href="type="time"">input</a>, <a
+href="type="week"">input</a>, <a href="type="number"">input</a>, <a
+href="type="email"">input</a>, <a href="type="url"">input</a>, <a
+href="type="search"">input</a>, <a href="type="tel"">input</a>, <a
+href="type="color"">input</a>, .uneditable-input {</p>
+
+<pre>display: inline-block;
+height: 20px;
+padding: 4px 6px;
+margin-bottom: 10px;
+font-size: 10px;
+line-height: 20px;
+color: #555555;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+vertical-align: middle;</pre>
+
+<p>} input, textarea, .uneditable-input {</p>
+
+<pre>width: 206px;</pre>
+
+<p>} textarea {</p>
+
+<pre>height: auto;</pre>
+
+<p>} textarea, <a href="type="text"">input</a>, <a
+href="type="password"">input</a>, <a href="type="datetime"">input</a>, <a
+href="type="datetime-local"">input</a>, <a href="type="date"">input</a>, <a
+href="type="month"">input</a>, <a href="type="time"">input</a>, <a
+href="type="week"">input</a>, <a href="type="number"">input</a>, <a
+href="type="email"">input</a>, <a href="type="url"">input</a>, <a
+href="type="search"">input</a>, <a href="type="tel"">input</a>, <a
+href="type="color"">input</a>, .uneditable-input {</p>
+
+<pre>background-color: #ffffff;
+border: 1px solid #cccccc;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+-webkit-transition: border linear .2s, box-shadow linear .2s;
+-moz-transition: border linear .2s, box-shadow linear .2s;
+-o-transition: border linear .2s, box-shadow linear .2s;
+transition: border linear .2s, box-shadow linear .2s;</pre>
+
+<p>} textarea:focus, <a href="type="text"">input</a>:focus, <a
+href="type="password"">input</a>:focus, <a
+href="type="datetime"">input</a>:focus, <a
+href="type="datetime-local"">input</a>:focus, <a
+href="type="date"">input</a>:focus, <a href="type="month"">input</a>:focus,
+<a href="type="time"">input</a>:focus, <a
+href="type="week"">input</a>:focus, <a
+href="type="number"">input</a>:focus, <a
+href="type="email"">input</a>:focus, <a href="type="url"">input</a>:focus,
+<a href="type="search"">input</a>:focus, <a
+href="type="tel"">input</a>:focus, <a href="type="color"">input</a>:focus,
+.uneditable-input:focus {</p>
+
+<pre>border-color: rgba(82, 168, 236, 0.8);
+outline: 0;
+outline: thin dotted \9;
+/* IE6-9 */
+
+-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);
+box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(82,168,236,.6);</pre>
+
+<p>} <a href="type="radio"">input</a>, <a href="type="checkbox"">input</a> {</p>
+
+<pre>margin: 4px 0 0;
+ margin-top: 0;
+/* IE7 */
+
+margin-top: 1px \9;
+/* IE8-9 */
+
+line-height: normal;</pre>
+
+<p>} <a href="type="file"">input</a>, <a href="type="image"">input</a>, <a
+href="type="submit"">input</a>, <a href="type="reset"">input</a>, <a
+href="type="button"">input</a>, <a href="type="radio"">input</a>, <a
+href="type="checkbox"">input</a> {</p>
+
+<pre>width: auto;</pre>
+
+<p>} select, <a href="type="file"">input</a> {</p>
+
+<pre>height: 30px;
+/* In IE7, the height of the select element cannot be changed by height, only font-size */
+
+ margin-top: 4px;
+/* For IE7, add top margin to align select with labels */
+
+line-height: 30px;</pre>
+
+<p>} select {</p>
+
+<pre>width: 220px;
+border: 1px solid #cccccc;
+background-color: #ffffff;</pre>
+
+<p>} <a href="multiple">select</a>, <a href="size">select</a> {</p>
+
+<pre>height: auto;</pre>
+
+<p>} select:focus, <a href="type="file"">input</a>:focus, <a
+href="type="radio"">input</a>:focus, <a
+href="type="checkbox"">input</a>:focus {</p>
+
+<pre>outline: thin dotted #333;
+outline: 5px auto -webkit-focus-ring-color;
+outline-offset: -2px;</pre>
+
+<p>} .uneditable-input, .uneditable-textarea {</p>
+
+<pre>color: #999999;
+background-color: #fcfcfc;
+border-color: #cccccc;
+-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
+-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
+box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.025);
+cursor: not-allowed;</pre>
+
+<p>} .uneditable-input {</p>
+
+<pre>overflow: hidden;
+white-space: nowrap;</pre>
+
+<p>} .uneditable-textarea {</p>
+
+<pre>width: auto;
+height: auto;</pre>
+
+<p>} input:-moz-placeholder, textarea:-moz-placeholder {</p>
+
+<pre>color: #999999;</pre>
+
+<p>} input:-ms-input-placeholder, textarea:-ms-input-placeholder {</p>
+
+<pre>color: #999999;</pre>
+
+<p>} input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {</p>
+
+<pre>color: #999999;</pre>
+
+<p>} .radio, .checkbox {</p>
+
+<pre>min-height: 20px;
+padding-left: 20px;</pre>
+
+<p>} .radio <a href="type="radio"">input</a>, .checkbox <a
+href="type="checkbox"">input</a> {</p>
+
+<pre>float: left;
+margin-left: -20px;</pre>
+
+<p>} .controls &gt; .radio:first-child, .controls &gt; .checkbox:first-child {</p>
+
+<pre>padding-top: 5px;</pre>
+
+<p>} .radio.inline, .checkbox.inline {</p>
+
+<pre>display: inline-block;
+padding-top: 5px;
+margin-bottom: 0;
+vertical-align: middle;</pre>
+
+<p>} .radio.inline + .radio.inline, .checkbox.inline + .checkbox.inline {</p>
+
+<pre>margin-left: 10px;</pre>
+
+<p>} .input-mini {</p>
+
+<pre>width: 60px;</pre>
+
+<p>} .input-small {</p>
+
+<pre>width: 90px;</pre>
+
+<p>} .input-medium {</p>
+
+<pre>width: 150px;</pre>
+
+<p>} .input-large {</p>
+
+<pre>width: 210px;</pre>
+
+<p>} .input-xlarge {</p>
+
+<pre>width: 270px;</pre>
+
+<p>} .input-xxlarge {</p>
+
+<pre>width: 530px;</pre>
+
+<p>} <a href="class*="span"">input</a>, <a href="class*="span"">select</a>, <a
+href="class*="span"">textarea</a>, .<a
+href="class*="span"">uneditable-input</a>, .row-fluid <a
+href="class*="span"">input</a>, .row-fluid <a
+href="class*="span"">select</a>, .row-fluid <a
+href="class*="span"">textarea</a>, .row-fluid .<a
+href="class*="span"">uneditable-input</a> {</p>
+
+<pre>float: none;
+margin-left: 0;</pre>
+
+<p>} .input-append <a href="class*="span"">input</a>, .input-append .<a
+href="class*="span"">uneditable-input</a>, .input-prepend <a
+href="class*="span"">input</a>, .input-prepend .<a
+href="class*="span"">uneditable-input</a>, .row-fluid <a
+href="class*="span"">input</a>, .row-fluid <a
+href="class*="span"">select</a>, .row-fluid <a
+href="class*="span"">textarea</a>, .row-fluid .<a
+href="class*="span"">uneditable-input</a>, .row-fluid .input-prepend
+[class*=“span”], .row-fluid .input-append [class*=“span”] {</p>
+
+<pre>display: inline-block;</pre>
+
+<p>} input, textarea, .uneditable-input {</p>
+
+<pre>margin-left: 0;</pre>
+
+<p>} .controls-row [class*=“span”] + [class*=“span”] {</p>
+
+<pre>margin-left: 20px;</pre>
+
+<p>} input.span12, textarea.span12, .uneditable-input.span12 {</p>
+
+<pre>width: 926px;</pre>
+
+<p>} input.span11, textarea.span11, .uneditable-input.span11 {</p>
+
+<pre>width: 846px;</pre>
+
+<p>} input.span10, textarea.span10, .uneditable-input.span10 {</p>
+
+<pre>width: 766px;</pre>
+
+<p>} input.span9, textarea.span9, .uneditable-input.span9 {</p>
+
+<pre>width: 686px;</pre>
+
+<p>} input.span8, textarea.span8, .uneditable-input.span8 {</p>
+
+<pre>width: 606px;</pre>
+
+<p>} input.span7, textarea.span7, .uneditable-input.span7 {</p>
+
+<pre>width: 526px;</pre>
+
+<p>} input.span6, textarea.span6, .uneditable-input.span6 {</p>
+
+<pre>width: 446px;</pre>
+
+<p>} input.span5, textarea.span5, .uneditable-input.span5 {</p>
+
+<pre>width: 366px;</pre>
+
+<p>} input.span4, textarea.span4, .uneditable-input.span4 {</p>
+
+<pre>width: 286px;</pre>
+
+<p>} input.span3, textarea.span3, .uneditable-input.span3 {</p>
+
+<pre>width: 206px;</pre>
+
+<p>} input.span2, textarea.span2, .uneditable-input.span2 {</p>
+
+<pre>width: 126px;</pre>
+
+<p>} input.span1, textarea.span1, .uneditable-input.span1 {</p>
+
+<pre>width: 46px;</pre>
+
+<p>} .controls-row {</p>
+
+<pre>zoom: 1;</pre>
+
+<p>} .controls-row:before, .controls-row:after {</p>
+
+<pre>display: table;
+content: &quot;&quot;;
+line-height: 0;</pre>
+
+<p>} .controls-row:after {</p>
+
+<pre>clear: both;</pre>
+
+<p>} .controls-row [class*=“span”], .row-fluid .controls-row [class*=“span”] {</p>
+
+<pre>float: left;</pre>
+
+<p>} .controls-row .<a href="class*="span"">checkbox</a>, .controls-row .<a
+href="class*="span"">radio</a> {</p>
+
+<pre>padding-top: 5px;</pre>
+
+<p>} <a href="disabled">input</a>, <a href="disabled">select</a>, <a
+href="disabled">textarea</a>, <a href="readonly">input</a>, <a
+href="readonly">select</a>, <a href="readonly">textarea</a> {</p>
+
+<pre>cursor: not-allowed;
+background-color: #eeeeee;</pre>
+
+<p>} <a href="type="radio"">input</a>[disabled], <a
+href="type="checkbox"">input</a>[disabled], <a
+href="type="radio"">input</a>[readonly], <a
+href="type="checkbox"">input</a>[readonly] {</p>
+
+<pre>background-color: transparent;</pre>
+
+<p>} .control-group.warning .control-label, .control-group.warning
+.help-block, .control-group.warning .help-inline {</p>
+
+<pre>color: #c09853;</pre>
+
+<p>} .control-group.warning .checkbox, .control-group.warning .radio,
+.control-group.warning input, .control-group.warning select,
+.control-group.warning textarea {</p>
+
+<pre>color: #c09853;</pre>
+
+<p>} .control-group.warning input, .control-group.warning select,
+.control-group.warning textarea {</p>
+
+<pre>border-color: #c09853;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);</pre>
+
+<p>} .control-group.warning input:focus, .control-group.warning select:focus,
+.control-group.warning textarea:focus {</p>
+
+<pre>border-color: #a47e3c;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e;
+-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e;
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #dbc59e;</pre>
+
+<p>} .control-group.warning .input-prepend .add-on, .control-group.warning
+.input-append .add-on {</p>
+
+<pre>color: #c09853;
+background-color: #fcf8e3;
+border-color: #c09853;</pre>
+
+<p>} .control-group.error .control-label, .control-group.error .help-block,
+.control-group.error .help-inline {</p>
+
+<pre>color: #b94a48;</pre>
+
+<p>} .control-group.error .checkbox, .control-group.error .radio,
+.control-group.error input, .control-group.error select,
+.control-group.error textarea {</p>
+
+<pre>color: #b94a48;</pre>
+
+<p>} .control-group.error input, .control-group.error select,
+.control-group.error textarea {</p>
+
+<pre>border-color: #b94a48;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);</pre>
+
+<p>} .control-group.error input:focus, .control-group.error select:focus,
+.control-group.error textarea:focus {</p>
+
+<pre>border-color: #953b39;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #d59392;</pre>
+
+<p>} .control-group.error .input-prepend .add-on, .control-group.error
+.input-append .add-on {</p>
+
+<pre>color: #b94a48;
+background-color: #f2dede;
+border-color: #b94a48;</pre>
+
+<p>} .control-group.success .control-label, .control-group.success
+.help-block, .control-group.success .help-inline {</p>
+
+<pre>color: #468847;</pre>
+
+<p>} .control-group.success .checkbox, .control-group.success .radio,
+.control-group.success input, .control-group.success select,
+.control-group.success textarea {</p>
+
+<pre>color: #468847;</pre>
+
+<p>} .control-group.success input, .control-group.success select,
+.control-group.success textarea {</p>
+
+<pre>border-color: #468847;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);</pre>
+
+<p>} .control-group.success input:focus, .control-group.success select:focus,
+.control-group.success textarea:focus {</p>
+
+<pre>border-color: #356635;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
+-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7aba7b;</pre>
+
+<p>} .control-group.success .input-prepend .add-on, .control-group.success
+.input-append .add-on {</p>
+
+<pre>color: #468847;
+background-color: #dff0d8;
+border-color: #468847;</pre>
+
+<p>} .control-group.info .control-label, .control-group.info .help-block,
+.control-group.info .help-inline {</p>
+
+<pre>color: #3a87ad;</pre>
+
+<p>} .control-group.info .checkbox, .control-group.info .radio,
+.control-group.info input, .control-group.info select, .control-group.info
+textarea {</p>
+
+<pre>color: #3a87ad;</pre>
+
+<p>} .control-group.info input, .control-group.info select,
+.control-group.info textarea {</p>
+
+<pre>border-color: #3a87ad;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);</pre>
+
+<p>} .control-group.info input:focus, .control-group.info select:focus,
+.control-group.info textarea:focus {</p>
+
+<pre>border-color: #2d6987;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7ab5d3;
+-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7ab5d3;
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #7ab5d3;</pre>
+
+<p>} .control-group.info .input-prepend .add-on, .control-group.info
+.input-append .add-on {</p>
+
+<pre>color: #3a87ad;
+background-color: #d9edf7;
+border-color: #3a87ad;</pre>
+
+<p>} input:focus:invalid, textarea:focus:invalid, select:focus:invalid {</p>
+
+<pre>color: #b94a48;
+border-color: #ee5f5b;</pre>
+
+<p>} input:focus:invalid:focus, textarea:focus:invalid:focus,
+select:focus:invalid:focus {</p>
+
+<pre>border-color: #e9322d;
+-webkit-box-shadow: 0 0 6px #f8b9b7;
+-moz-box-shadow: 0 0 6px #f8b9b7;
+box-shadow: 0 0 6px #f8b9b7;</pre>
+
+<p>} .form-actions {</p>
+
+<pre>padding: 19px 20px 20px;
+margin-top: 20px;
+margin-bottom: 20px;
+background-color: #f5f5f5;
+border-top: 1px solid #e5e5e5;
+ zoom: 1;</pre>
+
+<p>} .form-actions:before, .form-actions:after {</p>
+
+<pre>display: table;
+content: &quot;&quot;;
+line-height: 0;</pre>
+
+<p>} .form-actions:after {</p>
+
+<pre>clear: both;</pre>
+
+<p>} .help-block, .help-inline {</p>
+
+<pre>color: #595959;</pre>
+
+<p>} .help-block {</p>
+
+<pre>display: block;
+margin-bottom: 10px;</pre>
+
+<p>} .help-inline {</p>
+
+<pre>display: inline-block;
+ display: inline;
+/* IE7 inline-block hack */
+
+ zoom: 1;
+vertical-align: middle;
+padding-left: 5px;</pre>
+
+<p>} .input-append, .input-prepend {</p>
+
+<pre>display: inline-block;
+margin-bottom: 10px;
+vertical-align: middle;
+font-size: 0;
+white-space: nowrap;</pre>
+
+<p>} .input-append input, .input-prepend input, .input-append select,
+.input-prepend select, .input-append .uneditable-input, .input-prepend
+.uneditable-input, .input-append .dropdown-menu, .input-prepend
+.dropdown-menu, .input-append .popover, .input-prepend .popover {</p>
+
+<pre>font-size: 10px;</pre>
+
+<p>} .input-append input, .input-prepend input, .input-append select,
+.input-prepend select, .input-append .uneditable-input, .input-prepend
+.uneditable-input {</p>
+
+<pre>position: relative;
+margin-bottom: 0;
+ margin-left: 0;
+vertical-align: top;
+-webkit-border-radius: 0 4px 4px 0;
+-moz-border-radius: 0 4px 4px 0;
+border-radius: 0 4px 4px 0;</pre>
+
+<p>} .input-append input:focus, .input-prepend input:focus, .input-append
+select:focus, .input-prepend select:focus, .input-append
+.uneditable-input:focus, .input-prepend .uneditable-input:focus {</p>
+
+<pre>z-index: 2;</pre>
+
+<p>} .input-append .add-on, .input-prepend .add-on {</p>
+
+<pre>display: inline-block;
+width: auto;
+height: 20px;
+min-width: 16px;
+padding: 4px 5px;
+font-size: 10px;
+font-weight: normal;
+line-height: 20px;
+text-align: center;
+text-shadow: 0 1px 0 #ffffff;
+background-color: #eeeeee;
+border: 1px solid #ccc;</pre>
+
+<p>} .input-append .add-on, .input-prepend .add-on, .input-append .btn,
+.input-prepend .btn, .input-append .btn-group &gt; .dropdown-toggle,
+.input-prepend .btn-group &gt; .dropdown-toggle {</p>
+
+<pre>vertical-align: top;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;</pre>
+
+<p>} .input-append .active, .input-prepend .active {</p>
+
+<pre>background-color: #a9dba9;
+border-color: #46a546;</pre>
+
+<p>} .input-prepend .add-on, .input-prepend .btn {</p>
+
+<pre>margin-right: -1px;</pre>
+
+<p>} .input-prepend .add-on:first-child, .input-prepend .btn:first-child {</p>
+
+<pre>-webkit-border-radius: 4px 0 0 4px;
+-moz-border-radius: 4px 0 0 4px;
+border-radius: 4px 0 0 4px;</pre>
+
+<p>} .input-append input, .input-append select, .input-append
+.uneditable-input {</p>
+
+<pre>-webkit-border-radius: 4px 0 0 4px;
+-moz-border-radius: 4px 0 0 4px;
+border-radius: 4px 0 0 4px;</pre>
+
+<p>} .input-append input + .btn-group .btn:last-child, .input-append select +
+.btn-group .btn:last-child, .input-append .uneditable-input + .btn-group
+.btn:last-child {</p>
+
+<pre>-webkit-border-radius: 0 4px 4px 0;
+-moz-border-radius: 0 4px 4px 0;
+border-radius: 0 4px 4px 0;</pre>
+
+<p>} .input-append .add-on, .input-append .btn, .input-append .btn-group {</p>
+
+<pre>margin-left: -1px;</pre>
+
+<p>} .input-append .add-on:last-child, .input-append .btn:last-child,
+.input-append .btn-group:last-child &gt; .dropdown-toggle {</p>
+
+<pre>-webkit-border-radius: 0 4px 4px 0;
+-moz-border-radius: 0 4px 4px 0;
+border-radius: 0 4px 4px 0;</pre>
+
+<p>} .input-prepend.input-append input, .input-prepend.input-append select,
+.input-prepend.input-append .uneditable-input {</p>
+
+<pre>-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;</pre>
+
+<p>} .input-prepend.input-append input + .btn-group .btn,
+.input-prepend.input-append select + .btn-group .btn,
+.input-prepend.input-append .uneditable-input + .btn-group .btn {</p>
+
+<pre>-webkit-border-radius: 0 4px 4px 0;
+-moz-border-radius: 0 4px 4px 0;
+border-radius: 0 4px 4px 0;</pre>
+
+<p>} .input-prepend.input-append .add-on:first-child,
+.input-prepend.input-append .btn:first-child {</p>
+
+<pre>margin-right: -1px;
+-webkit-border-radius: 4px 0 0 4px;
+-moz-border-radius: 4px 0 0 4px;
+border-radius: 4px 0 0 4px;</pre>
+
+<p>} .input-prepend.input-append .add-on:last-child,
+.input-prepend.input-append .btn:last-child {</p>
+
+<pre>margin-left: -1px;
+-webkit-border-radius: 0 4px 4px 0;
+-moz-border-radius: 0 4px 4px 0;
+border-radius: 0 4px 4px 0;</pre>
+
+<p>} .input-prepend.input-append .btn-group:first-child {</p>
+
+<pre>margin-left: 0;</pre>
+
+<p>} input.search-query {</p>
+
+<pre>padding-right: 14px;
+padding-right: 4px \9;
+padding-left: 14px;
+padding-left: 4px \9;
+/* IE7-8 doesn&#39;t have border-radius, so don&#39;t indent the padding */
+
+margin-bottom: 0;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;</pre>
+
+<p>} /* Allow for input prepend/append in search forms */ .form-search
+.input-append .search-query, .form-search .input-prepend .search-query {</p>
+
+<pre>-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;</pre>
+
+<p>} .form-search .input-append .search-query {</p>
+
+<pre>-webkit-border-radius: 14px 0 0 14px;
+-moz-border-radius: 14px 0 0 14px;
+border-radius: 14px 0 0 14px;</pre>
+
+<p>} .form-search .input-append .btn {</p>
+
+<pre>-webkit-border-radius: 0 14px 14px 0;
+-moz-border-radius: 0 14px 14px 0;
+border-radius: 0 14px 14px 0;</pre>
+
+<p>} .form-search .input-prepend .search-query {</p>
+
+<pre>-webkit-border-radius: 0 14px 14px 0;
+-moz-border-radius: 0 14px 14px 0;
+border-radius: 0 14px 14px 0;</pre>
+
+<p>} .form-search .input-prepend .btn {</p>
+
+<pre>-webkit-border-radius: 14px 0 0 14px;
+-moz-border-radius: 14px 0 0 14px;
+border-radius: 14px 0 0 14px;</pre>
+
+<p>} .form-search input, .form-inline input, .form-horizontal input,
+.form-search textarea, .form-inline textarea, .form-horizontal textarea,
+.form-search select, .form-inline select, .form-horizontal select,
+.form-search .help-inline, .form-inline .help-inline, .form-horizontal
+.help-inline, .form-search .uneditable-input, .form-inline
+.uneditable-input, .form-horizontal .uneditable-input, .form-search
+.input-prepend, .form-inline .input-prepend, .form-horizontal
+.input-prepend, .form-search .input-append, .form-inline .input-append,
+.form-horizontal .input-append {</p>
+
+<pre>display: inline-block;
+ display: inline;
+/* IE7 inline-block hack */
+
+ zoom: 1;
+margin-bottom: 0;
+vertical-align: middle;</pre>
+
+<p>} .form-search .hide, .form-inline .hide, .form-horizontal .hide {</p>
+
+<pre>display: none;</pre>
+
+<p>} .form-search label, .form-inline label, .form-search .btn-group,
+.form-inline .btn-group {</p>
+
+<pre>display: inline-block;</pre>
+
+<p>} .form-search .input-append, .form-inline .input-append, .form-search
+.input-prepend, .form-inline .input-prepend {</p>
+
+<pre>margin-bottom: 0;</pre>
+
+<p>} .form-search .radio, .form-search .checkbox, .form-inline .radio,
+.form-inline .checkbox {</p>
+
+<pre>padding-left: 0;
+margin-bottom: 0;
+vertical-align: middle;</pre>
+
+<p>} .form-search .radio <a href="type="radio"">input</a>, .form-search
+.checkbox <a href="type="checkbox"">input</a>, .form-inline .radio <a
+href="type="radio"">input</a>, .form-inline .checkbox <a
+href="type="checkbox"">input</a> {</p>
+
+<pre>float: left;
+margin-right: 3px;
+margin-left: 0;</pre>
+
+<p>} .control-group {</p>
+
+<pre>margin-bottom: 10px;</pre>
+
+<p>} legend + .control-group {</p>
+
+<pre>margin-top: 20px;
+-webkit-margin-top-collapse: separate;</pre>
+
+<p>} .form-horizontal .control-group {</p>
+
+<pre>margin-bottom: 20px;
+ zoom: 1;</pre>
+
+<p>} .form-horizontal .control-group:before, .form-horizontal
+.control-group:after {</p>
+
+<pre>display: table;
+content: &quot;&quot;;
+line-height: 0;</pre>
+
+<p>} .form-horizontal .control-group:after {</p>
+
+<pre>clear: both;</pre>
+
+<p>} .form-horizontal .control-label {</p>
+
+<pre>float: left;
+width: 160px;
+padding-top: 5px;
+text-align: right;</pre>
+
+<p>} .form-horizontal .controls {</p>
+
+<pre> display: inline-block;
+ padding-left: 20px;
+margin-left: 180px;
+ margin-left: 0;</pre>
+
+<p>} .form-horizontal .controls:first-child {</p>
+
+<pre>padding-left: 180px;</pre>
+
+<p>} .form-horizontal .help-block {</p>
+
+<pre>margin-bottom: 0;</pre>
+
+<p>} .form-horizontal input + .help-block, .form-horizontal select +
+.help-block, .form-horizontal textarea + .help-block, .form-horizontal
+.uneditable-input + .help-block, .form-horizontal .input-prepend +
+.help-block, .form-horizontal .input-append + .help-block {</p>
+
+<pre>margin-top: 10px;</pre>
+
+<p>} .form-horizontal .form-actions {</p>
+
+<pre>padding-left: 180px;</pre>
+
+<p>} .btn {</p>
+
+<pre>display: inline-block;
+ display: inline;
+/* IE7 inline-block hack */
+
+ zoom: 1;
+padding: 4px 12px;
+margin-bottom: 0;
+font-size: 10px;
+line-height: 20px;
+text-align: center;
+vertical-align: middle;
+cursor: pointer;
+color: #333333;
+text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+background-color: #f5f5f5;
+background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ffffffff&#39;, endColorstr=&#39;#ffe6e6e6&#39;, GradientType=0);
+border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+ background-color: #e6e6e6;
+/* Darken IE7 buttons by default so they stand out more given they won&#39;t have borders */
+
+filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+border: 1px solid #cccccc;
+ border: 0;
+border-bottom-color: #b3b3b3;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+ margin-left: .3em;
+-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);</pre>
+
+<p>} .btn:hover, .btn:focus, .btn:active, .btn.active, .btn.disabled, .<a
+href="disabled">btn</a> {</p>
+
+<pre>color: #333333;
+background-color: #e6e6e6;
+ background-color: #d9d9d9;</pre>
+
+<p>} .btn:active, .btn.active {</p>
+
+<pre>background-color: #cccccc \9;</pre>
+
+<p>} .btn:first-child {</p>
+
+<pre>margin-left: 0;</pre>
+
+<p>} .btn:hover, .btn:focus {</p>
+
+<pre>color: #333333;
+text-decoration: none;
+background-position: 0 -15px;
+-webkit-transition: background-position 0.1s linear;
+-moz-transition: background-position 0.1s linear;
+-o-transition: background-position 0.1s linear;
+transition: background-position 0.1s linear;</pre>
+
+<p>} .btn:focus {</p>
+
+<pre>outline: thin dotted #333;
+outline: 5px auto -webkit-focus-ring-color;
+outline-offset: -2px;</pre>
+
+<p>} .btn.active, .btn:active {</p>
+
+<pre>background-image: none;
+outline: 0;
+-webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+-moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);</pre>
+
+<p>} .btn.disabled, .<a href="disabled">btn</a> {</p>
+
+<pre>cursor: default;
+background-image: none;
+opacity: 0.65;
+filter: alpha(opacity=65);
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;</pre>
+
+<p>} .btn-large {</p>
+
+<pre>padding: 11px 19px;
+font-size: 12.5px;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;</pre>
+
+<p>} .btn-large [class^=“icon-”], .btn-large [class*=“ icon-”] {</p>
+
+<pre>margin-top: 4px;</pre>
+
+<p>} .btn-small {</p>
+
+<pre>padding: 2px 10px;
+font-size: 8.5px;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;</pre>
+
+<p>} .btn-small [class^=“icon-”], .btn-small [class*=“ icon-”] {</p>
+
+<pre>margin-top: 0;</pre>
+
+<p>} .btn-mini [class^=“icon-”], .btn-mini [class*=“ icon-”] {</p>
+
+<pre>margin-top: -1px;</pre>
+
+<p>} .btn-mini {</p>
+
+<pre>padding: 0 6px;
+font-size: 7.5px;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;</pre>
+
+<p>} .btn-block {</p>
+
+<pre>display: block;
+width: 100%;
+padding-left: 0;
+padding-right: 0;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;</pre>
+
+<p>} .btn-block + .btn-block {</p>
+
+<pre>margin-top: 5px;</pre>
+
+<p>} <a href="type="submit"">input</a>.btn-block, <a
+href="type="reset"">input</a>.btn-block, <a
+href="type="button"">input</a>.btn-block {</p>
+
+<pre>width: 100%;</pre>
+
+<p>} .btn-primary.active, .btn-warning.active, .btn-danger.active,
+.btn-success.active, .btn-info.active, .btn-inverse.active {</p>
+
+<pre>color: rgba(255, 255, 255, 0.75);</pre>
+
+<p>} .btn-primary {</p>
+
+<pre>color: #ffffff;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+background-color: #006dcc;
+background-image: -moz-linear-gradient(top, #0088cc, #0044cc);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));
+background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
+background-image: -o-linear-gradient(top, #0088cc, #0044cc);
+background-image: linear-gradient(to bottom, #0088cc, #0044cc);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff0088cc&#39;, endColorstr=&#39;#ff0044cc&#39;, GradientType=0);
+border-color: #0044cc #0044cc #002a80;
+border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+ background-color: #0044cc;
+/* Darken IE7 buttons by default so they stand out more given they won&#39;t have borders */
+
+filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);</pre>
+
+<p>} .btn-primary:hover, .btn-primary:focus, .btn-primary:active,
+.btn-primary.active, .btn-primary.disabled, .<a
+href="disabled">btn-primary</a> {</p>
+
+<pre>color: #ffffff;
+background-color: #0044cc;
+ background-color: #003bb3;</pre>
+
+<p>} .btn-primary:active, .btn-primary.active {</p>
+
+<pre>background-color: #003399 \9;</pre>
+
+<p>} .btn-warning {</p>
+
+<pre>color: #ffffff;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+background-color: #faa732;
+background-image: -moz-linear-gradient(top, #fbb450, #f89406);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));
+background-image: -webkit-linear-gradient(top, #fbb450, #f89406);
+background-image: -o-linear-gradient(top, #fbb450, #f89406);
+background-image: linear-gradient(to bottom, #fbb450, #f89406);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#fffbb450&#39;, endColorstr=&#39;#fff89406&#39;, GradientType=0);
+border-color: #f89406 #f89406 #ad6704;
+border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+ background-color: #f89406;
+/* Darken IE7 buttons by default so they stand out more given they won&#39;t have borders */
+
+filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);</pre>
+
+<p>} .btn-warning:hover, .btn-warning:focus, .btn-warning:active,
+.btn-warning.active, .btn-warning.disabled, .<a
+href="disabled">btn-warning</a> {</p>
+
+<pre>color: #ffffff;
+background-color: #f89406;
+ background-color: #df8505;</pre>
+
+<p>} .btn-warning:active, .btn-warning.active {</p>
+
+<pre>background-color: #c67605 \9;</pre>
+
+<p>} .btn-danger {</p>
+
+<pre>color: #ffffff;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+background-color: #da4f49;
+background-image: -moz-linear-gradient(top, #ee5f5b, #bd362f);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));
+background-image: -webkit-linear-gradient(top, #ee5f5b, #bd362f);
+background-image: -o-linear-gradient(top, #ee5f5b, #bd362f);
+background-image: linear-gradient(to bottom, #ee5f5b, #bd362f);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ffee5f5b&#39;, endColorstr=&#39;#ffbd362f&#39;, GradientType=0);
+border-color: #bd362f #bd362f #802420;
+border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+ background-color: #bd362f;
+/* Darken IE7 buttons by default so they stand out more given they won&#39;t have borders */
+
+filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);</pre>
+
+<p>} .btn-danger:hover, .btn-danger:focus, .btn-danger:active,
+.btn-danger.active, .btn-danger.disabled, .<a
+href="disabled">btn-danger</a> {</p>
+
+<pre>color: #ffffff;
+background-color: #bd362f;
+ background-color: #a9302a;</pre>
+
+<p>} .btn-danger:active, .btn-danger.active {</p>
+
+<pre>background-color: #942a25 \9;</pre>
+
+<p>} .btn-success {</p>
+
+<pre>color: #ffffff;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+background-color: #5bb75b;
+background-image: -moz-linear-gradient(top, #62c462, #51a351);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#51a351));
+background-image: -webkit-linear-gradient(top, #62c462, #51a351);
+background-image: -o-linear-gradient(top, #62c462, #51a351);
+background-image: linear-gradient(to bottom, #62c462, #51a351);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff62c462&#39;, endColorstr=&#39;#ff51a351&#39;, GradientType=0);
+border-color: #51a351 #51a351 #387038;
+border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+ background-color: #51a351;
+/* Darken IE7 buttons by default so they stand out more given they won&#39;t have borders */
+
+filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);</pre>
+
+<p>} .btn-success:hover, .btn-success:focus, .btn-success:active,
+.btn-success.active, .btn-success.disabled, .<a
+href="disabled">btn-success</a> {</p>
+
+<pre>color: #ffffff;
+background-color: #51a351;
+ background-color: #499249;</pre>
+
+<p>} .btn-success:active, .btn-success.active {</p>
+
+<pre>background-color: #408140 \9;</pre>
+
+<p>} .btn-info {</p>
+
+<pre>color: #ffffff;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+background-color: #49afcd;
+background-image: -moz-linear-gradient(top, #5bc0de, #2f96b4);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#2f96b4));
+background-image: -webkit-linear-gradient(top, #5bc0de, #2f96b4);
+background-image: -o-linear-gradient(top, #5bc0de, #2f96b4);
+background-image: linear-gradient(to bottom, #5bc0de, #2f96b4);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff5bc0de&#39;, endColorstr=&#39;#ff2f96b4&#39;, GradientType=0);
+border-color: #2f96b4 #2f96b4 #1f6377;
+border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+ background-color: #2f96b4;
+/* Darken IE7 buttons by default so they stand out more given they won&#39;t have borders */
+
+filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);</pre>
+
+<p>} .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active,
+.btn-info.disabled, .<a href="disabled">btn-info</a> {</p>
+
+<pre>color: #ffffff;
+background-color: #2f96b4;
+ background-color: #2a85a0;</pre>
+
+<p>} .btn-info:active, .btn-info.active {</p>
+
+<pre>background-color: #24748c \9;</pre>
+
+<p>} .btn-inverse {</p>
+
+<pre>color: #ffffff;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+background-color: #363636;
+background-image: -moz-linear-gradient(top, #444444, #222222);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#444444), to(#222222));
+background-image: -webkit-linear-gradient(top, #444444, #222222);
+background-image: -o-linear-gradient(top, #444444, #222222);
+background-image: linear-gradient(to bottom, #444444, #222222);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff444444&#39;, endColorstr=&#39;#ff222222&#39;, GradientType=0);
+border-color: #222222 #222222 #000000;
+border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+ background-color: #222222;
+/* Darken IE7 buttons by default so they stand out more given they won&#39;t have borders */
+
+filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);</pre>
+
+<p>} .btn-inverse:hover, .btn-inverse:focus, .btn-inverse:active,
+.btn-inverse.active, .btn-inverse.disabled, .<a
+href="disabled">btn-inverse</a> {</p>
+
+<pre>color: #ffffff;
+background-color: #222222;
+ background-color: #151515;</pre>
+
+<p>} .btn-inverse:active, .btn-inverse.active {</p>
+
+<pre>background-color: #080808 \9;</pre>
+
+<p>} button.btn, <a href="type="submit"">input</a>.btn {</p>
+
+<pre>padding-top: 3px;
+padding-bottom: 3px;</pre>
+
+<p>} button.btn::-moz-focus-inner, <a
+href="type="submit"">input</a>.btn::-moz-focus-inner {</p>
+
+<pre>padding: 0;
+border: 0;</pre>
+
+<p>} button.btn.btn-large, <a href="type="submit"">input</a>.btn.btn-large {</p>
+
+<pre>padding-top: 7px;
+padding-bottom: 7px;</pre>
+
+<p>} button.btn.btn-small, <a href="type="submit"">input</a>.btn.btn-small {</p>
+
+<pre>padding-top: 3px;
+padding-bottom: 3px;</pre>
+
+<p>} button.btn.btn-mini, <a href="type="submit"">input</a>.btn.btn-mini {</p>
+
+<pre>padding-top: 1px;
+padding-bottom: 1px;</pre>
+
+<p>} .btn-link, .btn-<a href="../../active">active</a>, .<a
+href="disabled">btn-link</a> {</p>
+
+<pre>background-color: transparent;
+background-image: none;
+-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;</pre>
+
+<p>} .btn-link {</p>
+
+<pre>border-color: transparent;
+cursor: pointer;
+color: #0088cc;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;</pre>
+
+<p>} .btn-<a href="../../hover">hover</a>, .btn-<a
+href="../../focus">focus</a> {</p>
+
+<pre>color: #005580;
+text-decoration: underline;
+background-color: transparent;</pre>
+
+<p>} .<a href="disabled">btn-link</a>:hover, .<a
+href="disabled">btn-link</a>:focus {</p>
+
+<pre>color: #333333;
+text-decoration: none;</pre>
+
+<p>} [class^=“icon-”],</p>
+<dl class="rdoc-list label-list"><dt>class*=“ icon-”
+<dd>
+<p>{</p>
+</dd></dl>
+
+<pre>display: inline-block;
+width: 14px;
+height: 14px;
+ margin-right: .3em;
+line-height: 14px;
+vertical-align: text-top;
+background-image: url(&quot;../img/glyphicons-halflings.png&quot;);
+background-position: 14px 14px;
+background-repeat: no-repeat;
+margin-top: 1px;</pre>
+
+<p>} /* White icons with optional class, or on hover/focus/active states of
+certain elements */ .icon-white, .nav-pills &gt; .active &gt; a &gt;
+[class^=“icon-”], .nav-pills &gt; .active &gt; a &gt; [class*=“ icon-”],
+.nav-list &gt; .active &gt; a &gt; [class^=“icon-”], .nav-list &gt; .active
+&gt; a &gt; [class*=“ icon-”], .navbar-inverse .nav &gt; .active &gt; a
+&gt; [class^=“icon-”], .navbar-inverse .nav &gt; .active &gt; a &gt;
+[class*=“ icon-”], .dropdown-menu &gt; li &gt; a:hover &gt;
+[class^=“icon-”], .dropdown-menu &gt; li &gt; a:focus &gt;
+[class^=“icon-”], .dropdown-menu &gt; li &gt; a:hover &gt; [class*=“
+icon-”], .dropdown-menu &gt; li &gt; a:focus &gt; [class*=“ icon-”],
+.dropdown-menu &gt; .active &gt; a &gt; [class^=“icon-”], .dropdown-menu
+&gt; .active &gt; a &gt; [class*=“ icon-”], .dropdown-submenu:hover &gt; a
+&gt; [class^=“icon-”], .dropdown-submenu:focus &gt; a &gt;
+[class^=“icon-”], .dropdown-submenu:hover &gt; a &gt; [class*=“ icon-”],
+.dropdown-submenu:focus &gt; a &gt; [class*=“ icon-”] {</p>
+
+<pre>background-image: url(&quot;../img/glyphicons-halflings-white.png&quot;);</pre>
+
+<p>} .icon-glass {</p>
+
+<pre>background-position: 0      0;</pre>
+
+<p>} .icon-music {</p>
+
+<pre>background-position: -24px 0;</pre>
+
+<p>} .icon-search {</p>
+
+<pre>background-position: -48px 0;</pre>
+
+<p>} .icon-envelope {</p>
+
+<pre>background-position: -72px 0;</pre>
+
+<p>} .icon-heart {</p>
+
+<pre>background-position: -96px 0;</pre>
+
+<p>} .icon-star {</p>
+
+<pre>background-position: -120px 0;</pre>
+
+<p>} .icon-star-empty {</p>
+
+<pre>background-position: -144px 0;</pre>
+
+<p>} .icon-user {</p>
+
+<pre>background-position: -168px 0;</pre>
+
+<p>} .icon-film {</p>
+
+<pre>background-position: -192px 0;</pre>
+
+<p>} .icon-th-large {</p>
+
+<pre>background-position: -216px 0;</pre>
+
+<p>} .icon-th {</p>
+
+<pre>background-position: -240px 0;</pre>
+
+<p>} .icon-th-list {</p>
+
+<pre>background-position: -264px 0;</pre>
+
+<p>} .icon-ok {</p>
+
+<pre>background-position: -288px 0;</pre>
+
+<p>} .icon-remove {</p>
+
+<pre>background-position: -312px 0;</pre>
+
+<p>} .icon-zoom-in {</p>
+
+<pre>background-position: -336px 0;</pre>
+
+<p>} .icon-zoom-out {</p>
+
+<pre>background-position: -360px 0;</pre>
+
+<p>} .icon-off {</p>
+
+<pre>background-position: -384px 0;</pre>
+
+<p>} .icon-signal {</p>
+
+<pre>background-position: -408px 0;</pre>
+
+<p>} .icon-cog {</p>
+
+<pre>background-position: -432px 0;</pre>
+
+<p>} .icon-trash {</p>
+
+<pre>background-position: -456px 0;</pre>
+
+<p>} .icon-home {</p>
+
+<pre>background-position: 0 -24px;</pre>
+
+<p>} .icon-file {</p>
+
+<pre>background-position: -24px -24px;</pre>
+
+<p>} .icon-time {</p>
+
+<pre>background-position: -48px -24px;</pre>
+
+<p>} .icon-road {</p>
+
+<pre>background-position: -72px -24px;</pre>
+
+<p>} .icon-download-alt {</p>
+
+<pre>background-position: -96px -24px;</pre>
+
+<p>} .icon-download {</p>
+
+<pre>background-position: -120px -24px;</pre>
+
+<p>} .icon-upload {</p>
+
+<pre>background-position: -144px -24px;</pre>
+
+<p>} .icon-inbox {</p>
+
+<pre>background-position: -168px -24px;</pre>
+
+<p>} .icon-play-circle {</p>
+
+<pre>background-position: -192px -24px;</pre>
+
+<p>} .icon-repeat {</p>
+
+<pre>background-position: -216px -24px;</pre>
+
+<p>} .icon-refresh {</p>
+
+<pre>background-position: -240px -24px;</pre>
+
+<p>} .icon-list-alt {</p>
+
+<pre>background-position: -264px -24px;</pre>
+
+<p>} .icon-lock {</p>
+
+<pre>background-position: -287px -24px;</pre>
+
+<p>} .icon-flag {</p>
+
+<pre>background-position: -312px -24px;</pre>
+
+<p>} .icon-headphones {</p>
+
+<pre>background-position: -336px -24px;</pre>
+
+<p>} .icon-volume-off {</p>
+
+<pre>background-position: -360px -24px;</pre>
+
+<p>} .icon-volume-down {</p>
+
+<pre>background-position: -384px -24px;</pre>
+
+<p>} .icon-volume-up {</p>
+
+<pre>background-position: -408px -24px;</pre>
+
+<p>} .icon-qrcode {</p>
+
+<pre>background-position: -432px -24px;</pre>
+
+<p>} .icon-barcode {</p>
+
+<pre>background-position: -456px -24px;</pre>
+
+<p>} .icon-tag {</p>
+
+<pre>background-position: 0 -48px;</pre>
+
+<p>} .icon-tags {</p>
+
+<pre>background-position: -25px -48px;</pre>
+
+<p>} .icon-book {</p>
+
+<pre>background-position: -48px -48px;</pre>
+
+<p>} .icon-bookmark {</p>
+
+<pre>background-position: -72px -48px;</pre>
+
+<p>} .icon-print {</p>
+
+<pre>background-position: -96px -48px;</pre>
+
+<p>} .icon-camera {</p>
+
+<pre>background-position: -120px -48px;</pre>
+
+<p>} .icon-font {</p>
+
+<pre>background-position: -144px -48px;</pre>
+
+<p>} .icon-bold {</p>
+
+<pre>background-position: -167px -48px;</pre>
+
+<p>} .icon-italic {</p>
+
+<pre>background-position: -192px -48px;</pre>
+
+<p>} .icon-text-height {</p>
+
+<pre>background-position: -216px -48px;</pre>
+
+<p>} .icon-text-width {</p>
+
+<pre>background-position: -240px -48px;</pre>
+
+<p>} .icon-align-left {</p>
+
+<pre>background-position: -264px -48px;</pre>
+
+<p>} .icon-align-center {</p>
+
+<pre>background-position: -288px -48px;</pre>
+
+<p>} .icon-align-right {</p>
+
+<pre>background-position: -312px -48px;</pre>
+
+<p>} .icon-align-justify {</p>
+
+<pre>background-position: -336px -48px;</pre>
+
+<p>} .icon-list {</p>
+
+<pre>background-position: -360px -48px;</pre>
+
+<p>} .icon-indent-left {</p>
+
+<pre>background-position: -384px -48px;</pre>
+
+<p>} .icon-indent-right {</p>
+
+<pre>background-position: -408px -48px;</pre>
+
+<p>} .icon-facetime-video {</p>
+
+<pre>background-position: -432px -48px;</pre>
+
+<p>} .icon-picture {</p>
+
+<pre>background-position: -456px -48px;</pre>
+
+<p>} .icon-pencil {</p>
+
+<pre>background-position: 0 -72px;</pre>
+
+<p>} .icon-map-marker {</p>
+
+<pre>background-position: -24px -72px;</pre>
+
+<p>} .icon-adjust {</p>
+
+<pre>background-position: -48px -72px;</pre>
+
+<p>} .icon-tint {</p>
+
+<pre>background-position: -72px -72px;</pre>
+
+<p>} .icon-edit {</p>
+
+<pre>background-position: -96px -72px;</pre>
+
+<p>} .icon-share {</p>
+
+<pre>background-position: -120px -72px;</pre>
+
+<p>} .icon-check {</p>
+
+<pre>background-position: -144px -72px;</pre>
+
+<p>} .icon-move {</p>
+
+<pre>background-position: -168px -72px;</pre>
+
+<p>} .icon-step-backward {</p>
+
+<pre>background-position: -192px -72px;</pre>
+
+<p>} .icon-fast-backward {</p>
+
+<pre>background-position: -216px -72px;</pre>
+
+<p>} .icon-backward {</p>
+
+<pre>background-position: -240px -72px;</pre>
+
+<p>} .icon-play {</p>
+
+<pre>background-position: -264px -72px;</pre>
+
+<p>} .icon-pause {</p>
+
+<pre>background-position: -288px -72px;</pre>
+
+<p>} .icon-stop {</p>
+
+<pre>background-position: -312px -72px;</pre>
+
+<p>} .icon-forward {</p>
+
+<pre>background-position: -336px -72px;</pre>
+
+<p>} .icon-fast-forward {</p>
+
+<pre>background-position: -360px -72px;</pre>
+
+<p>} .icon-step-forward {</p>
+
+<pre>background-position: -384px -72px;</pre>
+
+<p>} .icon-eject {</p>
+
+<pre>background-position: -408px -72px;</pre>
+
+<p>} .icon-chevron-left {</p>
+
+<pre>background-position: -432px -72px;</pre>
+
+<p>} .icon-chevron-right {</p>
+
+<pre>background-position: -456px -72px;</pre>
+
+<p>} .icon-plus-sign {</p>
+
+<pre>background-position: 0 -96px;</pre>
+
+<p>} .icon-minus-sign {</p>
+
+<pre>background-position: -24px -96px;</pre>
+
+<p>} .icon-remove-sign {</p>
+
+<pre>background-position: -48px -96px;</pre>
+
+<p>} .icon-ok-sign {</p>
+
+<pre>background-position: -72px -96px;</pre>
+
+<p>} .icon-question-sign {</p>
+
+<pre>background-position: -96px -96px;</pre>
+
+<p>} .icon-info-sign {</p>
+
+<pre>background-position: -120px -96px;</pre>
+
+<p>} .icon-screenshot {</p>
+
+<pre>background-position: -144px -96px;</pre>
+
+<p>} .icon-remove-circle {</p>
+
+<pre>background-position: -168px -96px;</pre>
+
+<p>} .icon-ok-circle {</p>
+
+<pre>background-position: -192px -96px;</pre>
+
+<p>} .icon-ban-circle {</p>
+
+<pre>background-position: -216px -96px;</pre>
+
+<p>} .icon-arrow-left {</p>
+
+<pre>background-position: -240px -96px;</pre>
+
+<p>} .icon-arrow-right {</p>
+
+<pre>background-position: -264px -96px;</pre>
+
+<p>} .icon-arrow-up {</p>
+
+<pre>background-position: -289px -96px;</pre>
+
+<p>} .icon-arrow-down {</p>
+
+<pre>background-position: -312px -96px;</pre>
+
+<p>} .icon-share-alt {</p>
+
+<pre>background-position: -336px -96px;</pre>
+
+<p>} .icon-resize-full {</p>
+
+<pre>background-position: -360px -96px;</pre>
+
+<p>} .icon-resize-small {</p>
+
+<pre>background-position: -384px -96px;</pre>
+
+<p>} .icon-plus {</p>
+
+<pre>background-position: -408px -96px;</pre>
+
+<p>} .icon-minus {</p>
+
+<pre>background-position: -433px -96px;</pre>
+
+<p>} .icon-asterisk {</p>
+
+<pre>background-position: -456px -96px;</pre>
+
+<p>} .icon-exclamation-sign {</p>
+
+<pre>background-position: 0 -120px;</pre>
+
+<p>} .icon-gift {</p>
+
+<pre>background-position: -24px -120px;</pre>
+
+<p>} .icon-leaf {</p>
+
+<pre>background-position: -48px -120px;</pre>
+
+<p>} .icon-fire {</p>
+
+<pre>background-position: -72px -120px;</pre>
+
+<p>} .icon-eye-open {</p>
+
+<pre>background-position: -96px -120px;</pre>
+
+<p>} .icon-eye-close {</p>
+
+<pre>background-position: -120px -120px;</pre>
+
+<p>} .icon-warning-sign {</p>
+
+<pre>background-position: -144px -120px;</pre>
+
+<p>} .icon-plane {</p>
+
+<pre>background-position: -168px -120px;</pre>
+
+<p>} .icon-calendar {</p>
+
+<pre>background-position: -192px -120px;</pre>
+
+<p>} .icon-random {</p>
+
+<pre>background-position: -216px -120px;
+width: 16px;</pre>
+
+<p>} .icon-comment {</p>
+
+<pre>background-position: -240px -120px;</pre>
+
+<p>} .icon-magnet {</p>
+
+<pre>background-position: -264px -120px;</pre>
+
+<p>} .icon-chevron-up {</p>
+
+<pre>background-position: -288px -120px;</pre>
+
+<p>} .icon-chevron-down {</p>
+
+<pre>background-position: -313px -119px;</pre>
+
+<p>} .icon-retweet {</p>
+
+<pre>background-position: -336px -120px;</pre>
+
+<p>} .icon-shopping-cart {</p>
+
+<pre>background-position: -360px -120px;</pre>
+
+<p>} .icon-folder-close {</p>
+
+<pre>background-position: -384px -120px;
+width: 16px;</pre>
+
+<p>} .icon-folder-open {</p>
+
+<pre>background-position: -408px -120px;
+width: 16px;</pre>
+
+<p>} .icon-resize-vertical {</p>
+
+<pre>background-position: -432px -119px;</pre>
+
+<p>} .icon-resize-horizontal {</p>
+
+<pre>background-position: -456px -118px;</pre>
+
+<p>} .icon-hdd {</p>
+
+<pre>background-position: 0 -144px;</pre>
+
+<p>} .icon-bullhorn {</p>
+
+<pre>background-position: -24px -144px;</pre>
+
+<p>} .icon-bell {</p>
+
+<pre>background-position: -48px -144px;</pre>
+
+<p>} .icon-certificate {</p>
+
+<pre>background-position: -72px -144px;</pre>
+
+<p>} .icon-thumbs-up {</p>
+
+<pre>background-position: -96px -144px;</pre>
+
+<p>} .icon-thumbs-down {</p>
+
+<pre>background-position: -120px -144px;</pre>
+
+<p>} .icon-hand-right {</p>
+
+<pre>background-position: -144px -144px;</pre>
+
+<p>} .icon-hand-left {</p>
+
+<pre>background-position: -168px -144px;</pre>
+
+<p>} .icon-hand-up {</p>
+
+<pre>background-position: -192px -144px;</pre>
+
+<p>} .icon-hand-down {</p>
+
+<pre>background-position: -216px -144px;</pre>
+
+<p>} .icon-circle-arrow-right {</p>
+
+<pre>background-position: -240px -144px;</pre>
+
+<p>} .icon-circle-arrow-left {</p>
+
+<pre>background-position: -264px -144px;</pre>
+
+<p>} .icon-circle-arrow-up {</p>
+
+<pre>background-position: -288px -144px;</pre>
+
+<p>} .icon-circle-arrow-down {</p>
+
+<pre>background-position: -312px -144px;</pre>
+
+<p>} .icon-globe {</p>
+
+<pre>background-position: -336px -144px;</pre>
+
+<p>} .icon-wrench {</p>
+
+<pre>background-position: -360px -144px;</pre>
+
+<p>} .icon-tasks {</p>
+
+<pre>background-position: -384px -144px;</pre>
+
+<p>} .icon-filter {</p>
+
+<pre>background-position: -408px -144px;</pre>
+
+<p>} .icon-briefcase {</p>
+
+<pre>background-position: -432px -144px;</pre>
+
+<p>} .icon-fullscreen {</p>
+
+<pre>background-position: -456px -144px;</pre>
+
+<p>} .btn-group {</p>
+
+<pre>position: relative;
+display: inline-block;
+ display: inline;
+/* IE7 inline-block hack */
+
+ zoom: 1;
+font-size: 0;
+vertical-align: middle;
+white-space: nowrap;
+ margin-left: .3em;</pre>
+
+<p>} .btn-group:first-child {</p>
+
+<pre>margin-left: 0;</pre>
+
+<p>} .btn-group + .btn-group {</p>
+
+<pre>margin-left: 5px;</pre>
+
+<p>} .btn-toolbar {</p>
+
+<pre>font-size: 0;
+margin-top: 10px;
+margin-bottom: 10px;</pre>
+
+<p>} .btn-toolbar &gt; .btn + .btn, .btn-toolbar &gt; .btn-group + .btn,
+.btn-toolbar &gt; .btn + .btn-group {</p>
+
+<pre>margin-left: 5px;</pre>
+
+<p>} .btn-group &gt; .btn {</p>
+
+<pre>position: relative;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;</pre>
+
+<p>} .btn-group &gt; .btn + .btn {</p>
+
+<pre>margin-left: -1px;</pre>
+
+<p>} .btn-group &gt; .btn, .btn-group &gt; .dropdown-menu, .btn-group &gt;
+.popover {</p>
+
+<pre>font-size: 10px;</pre>
+
+<p>} .btn-group &gt; .btn-mini {</p>
+
+<pre>font-size: 7.5px;</pre>
+
+<p>} .btn-group &gt; .btn-small {</p>
+
+<pre>font-size: 8.5px;</pre>
+
+<p>} .btn-group &gt; .btn-large {</p>
+
+<pre>font-size: 12.5px;</pre>
+
+<p>} .btn-group &gt; .btn:first-child {</p>
+
+<pre>margin-left: 0;
+-webkit-border-top-left-radius: 4px;
+-moz-border-radius-topleft: 4px;
+border-top-left-radius: 4px;
+-webkit-border-bottom-left-radius: 4px;
+-moz-border-radius-bottomleft: 4px;
+border-bottom-left-radius: 4px;</pre>
+
+<p>} .btn-group &gt; .btn:last-child, .btn-group &gt; .dropdown-toggle {</p>
+
+<pre>-webkit-border-top-right-radius: 4px;
+-moz-border-radius-topright: 4px;
+border-top-right-radius: 4px;
+-webkit-border-bottom-right-radius: 4px;
+-moz-border-radius-bottomright: 4px;
+border-bottom-right-radius: 4px;</pre>
+
+<p>} .btn-group &gt; .btn.large:first-child {</p>
+
+<pre>margin-left: 0;
+-webkit-border-top-left-radius: 6px;
+-moz-border-radius-topleft: 6px;
+border-top-left-radius: 6px;
+-webkit-border-bottom-left-radius: 6px;
+-moz-border-radius-bottomleft: 6px;
+border-bottom-left-radius: 6px;</pre>
+
+<p>} .btn-group &gt; .btn.large:last-child, .btn-group &gt;
+.large.dropdown-toggle {</p>
+
+<pre>-webkit-border-top-right-radius: 6px;
+-moz-border-radius-topright: 6px;
+border-top-right-radius: 6px;
+-webkit-border-bottom-right-radius: 6px;
+-moz-border-radius-bottomright: 6px;
+border-bottom-right-radius: 6px;</pre>
+
+<p>} .btn-group &gt; .btn:hover, .btn-group &gt; .btn:focus, .btn-group &gt;
+.btn:active, .btn-group &gt; .btn.active {</p>
+
+<pre>z-index: 2;</pre>
+
+<p>} .btn-group .dropdown-toggle:active, .btn-group.open .dropdown-toggle {</p>
+
+<pre>outline: 0;</pre>
+
+<p>} .btn-group &gt; .btn + .dropdown-toggle {</p>
+
+<pre>padding-left: 8px;
+padding-right: 8px;
+-webkit-box-shadow: inset 1px 0 0 rgba(255,255,255,.125), inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+-moz-box-shadow: inset 1px 0 0 rgba(255,255,255,.125), inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+box-shadow: inset 1px 0 0 rgba(255,255,255,.125), inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05);
+ padding-top: 5px;
+ padding-bottom: 5px;</pre>
+
+<p>} .btn-group &gt; .btn-mini + .dropdown-toggle {</p>
+
+<pre>padding-left: 5px;
+padding-right: 5px;
+ padding-top: 2px;
+ padding-bottom: 2px;</pre>
+
+<p>} .btn-group &gt; .btn-small + .dropdown-toggle {</p>
+
+<pre>padding-top: 5px;
+padding-bottom: 4px;</pre>
+
+<p>} .btn-group &gt; .btn-large + .dropdown-toggle {</p>
+
+<pre>padding-left: 12px;
+padding-right: 12px;
+ padding-top: 7px;
+ padding-bottom: 7px;</pre>
+
+<p>} .btn-group.open .dropdown-toggle {</p>
+
+<pre>background-image: none;
+-webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+-moz-box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);
+box-shadow: inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05);</pre>
+
+<p>} .btn-group.open .btn.dropdown-toggle {</p>
+
+<pre>background-color: #e6e6e6;</pre>
+
+<p>} .btn-group.open .btn-primary.dropdown-toggle {</p>
+
+<pre>background-color: #0044cc;</pre>
+
+<p>} .btn-group.open .btn-warning.dropdown-toggle {</p>
+
+<pre>background-color: #f89406;</pre>
+
+<p>} .btn-group.open .btn-danger.dropdown-toggle {</p>
+
+<pre>background-color: #bd362f;</pre>
+
+<p>} .btn-group.open .btn-success.dropdown-toggle {</p>
+
+<pre>background-color: #51a351;</pre>
+
+<p>} .btn-group.open .btn-info.dropdown-toggle {</p>
+
+<pre>background-color: #2f96b4;</pre>
+
+<p>} .btn-group.open .btn-inverse.dropdown-toggle {</p>
+
+<pre>background-color: #222222;</pre>
+
+<p>} .btn .caret {</p>
+
+<pre>margin-top: 8px;
+margin-left: 0;</pre>
+
+<p>} .btn-large .caret {</p>
+
+<pre>margin-top: 6px;</pre>
+
+<p>} .btn-large .caret {</p>
+
+<pre>border-left-width: 5px;
+border-right-width: 5px;
+border-top-width: 5px;</pre>
+
+<p>} .btn-mini .caret, .btn-small .caret {</p>
+
+<pre>margin-top: 8px;</pre>
+
+<p>} .dropup .btn-large .caret {</p>
+
+<pre>border-bottom-width: 5px;</pre>
+
+<p>} .btn-primary .caret, .btn-warning .caret, .btn-danger .caret, .btn-info
+.caret, .btn-success .caret, .btn-inverse .caret {</p>
+
+<pre>border-top-color: #ffffff;
+border-bottom-color: #ffffff;</pre>
+
+<p>} .btn-group-vertical {</p>
+
+<pre>display: inline-block;
+ display: inline;
+/* IE7 inline-block hack */
+
+ zoom: 1;</pre>
+
+<p>} .btn-group-vertical &gt; .btn {</p>
+
+<pre>display: block;
+float: none;
+max-width: 100%;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;</pre>
+
+<p>} .btn-group-vertical &gt; .btn + .btn {</p>
+
+<pre>margin-left: 0;
+margin-top: -1px;</pre>
+
+<p>} .btn-group-vertical &gt; .btn:first-child {</p>
+
+<pre>-webkit-border-radius: 4px 4px 0 0;
+-moz-border-radius: 4px 4px 0 0;
+border-radius: 4px 4px 0 0;</pre>
+
+<p>} .btn-group-vertical &gt; .btn:last-child {</p>
+
+<pre>-webkit-border-radius: 0 0 4px 4px;
+-moz-border-radius: 0 0 4px 4px;
+border-radius: 0 0 4px 4px;</pre>
+
+<p>} .btn-group-vertical &gt; .btn-large:first-child {</p>
+
+<pre>-webkit-border-radius: 6px 6px 0 0;
+-moz-border-radius: 6px 6px 0 0;
+border-radius: 6px 6px 0 0;</pre>
+
+<p>} .btn-group-vertical &gt; .btn-large:last-child {</p>
+
+<pre>-webkit-border-radius: 0 0 6px 6px;
+-moz-border-radius: 0 0 6px 6px;
+border-radius: 0 0 6px 6px;</pre>
+
+<p>} .nav {</p>
+
+<pre>margin-left: 0;
+margin-bottom: 20px;
+list-style: none;</pre>
+
+<p>} .nav &gt; li &gt; a {</p>
+
+<pre>display: block;</pre>
+
+<p>} .nav &gt; li &gt; a:hover, .nav &gt; li &gt; a:focus {</p>
+
+<pre>text-decoration: none;
+background-color: #eeeeee;</pre>
+
+<p>} .nav &gt; li &gt; a &gt; img {</p>
+
+<pre>max-width: none;</pre>
+
+<p>} .nav &gt; .pull-right {</p>
+
+<pre>float: right;</pre>
+
+<p>} .nav-header {</p>
+
+<pre>display: block;
+padding: 3px 15px;
+font-size: 11px;
+font-weight: bold;
+line-height: 20px;
+color: #999999;
+text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+text-transform: uppercase;</pre>
+
+<p>} .nav li + .nav-header {</p>
+
+<pre>margin-top: 9px;</pre>
+
+<p>} .nav-list {</p>
+
+<pre>padding-left: 15px;
+padding-right: 15px;
+margin-bottom: 0;</pre>
+
+<p>} .nav-list &gt; li &gt; a, .nav-list .nav-header {</p>
+
+<pre>margin-left: -15px;
+margin-right: -15px;
+text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);</pre>
+
+<p>} .nav-list &gt; li &gt; a {</p>
+
+<pre>padding: 3px 15px;</pre>
+
+<p>} .nav-list &gt; .active &gt; a, .nav-list &gt; .active &gt; a:hover,
+.nav-list &gt; .active &gt; a:focus {</p>
+
+<pre>color: #ffffff;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+background-color: #0088cc;</pre>
+
+<p>} .nav-list [class^=“icon-”], .nav-list [class*=“ icon-”] {</p>
+
+<pre>margin-right: 2px;</pre>
+
+<p>} .nav-list .divider {</p>
+
+<pre> width: 100%;
+height: 1px;
+margin: 9px 1px;
+ margin: -5px 0 5px;
+overflow: hidden;
+background-color: #e5e5e5;
+border-bottom: 1px solid #ffffff;</pre>
+
+<p>} .nav-tabs, .nav-pills {</p>
+
+<pre>zoom: 1;</pre>
+
+<p>} .nav-tabs:before, .nav-pills:before, .nav-tabs:after, .nav-pills:after {</p>
+
+<pre>display: table;
+content: &quot;&quot;;
+line-height: 0;</pre>
+
+<p>} .nav-tabs:after, .nav-pills:after {</p>
+
+<pre>clear: both;</pre>
+
+<p>} .nav-tabs &gt; li, .nav-pills &gt; li {</p>
+
+<pre>float: left;</pre>
+
+<p>} .nav-tabs &gt; li &gt; a, .nav-pills &gt; li &gt; a {</p>
+
+<pre>padding-right: 12px;
+padding-left: 12px;
+margin-right: 2px;
+line-height: 14px;</pre>
+
+<p>} .nav-tabs {</p>
+
+<pre>border-bottom: 1px solid #ddd;</pre>
+
+<p>} .nav-tabs &gt; li {</p>
+
+<pre>margin-bottom: -1px;</pre>
+
+<p>} .nav-tabs &gt; li &gt; a {</p>
+
+<pre>padding-top: 8px;
+padding-bottom: 8px;
+line-height: 20px;
+border: 1px solid transparent;
+-webkit-border-radius: 4px 4px 0 0;
+-moz-border-radius: 4px 4px 0 0;
+border-radius: 4px 4px 0 0;</pre>
+
+<p>} .nav-tabs &gt; li &gt; a:hover, .nav-tabs &gt; li &gt; a:focus {</p>
+
+<pre>border-color: #eeeeee #eeeeee #dddddd;</pre>
+
+<p>} .nav-tabs &gt; .active &gt; a, .nav-tabs &gt; .active &gt; a:hover,
+.nav-tabs &gt; .active &gt; a:focus {</p>
+
+<pre>color: #555555;
+background-color: #ffffff;
+border: 1px solid #ddd;
+border-bottom-color: transparent;
+cursor: default;</pre>
+
+<p>} .nav-pills &gt; li &gt; a {</p>
+
+<pre>padding-top: 8px;
+padding-bottom: 8px;
+margin-top: 2px;
+margin-bottom: 2px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;</pre>
+
+<p>} .nav-pills &gt; .active &gt; a, .nav-pills &gt; .active &gt; a:hover,
+.nav-pills &gt; .active &gt; a:focus {</p>
+
+<pre>color: #ffffff;
+background-color: #0088cc;</pre>
+
+<p>} .nav-stacked &gt; li {</p>
+
+<pre>float: none;</pre>
+
+<p>} .nav-stacked &gt; li &gt; a {</p>
+
+<pre>margin-right: 0;</pre>
+
+<p>} .nav-tabs.nav-stacked {</p>
+
+<pre>border-bottom: 0;</pre>
+
+<p>} .nav-tabs.nav-stacked &gt; li &gt; a {</p>
+
+<pre>border: 1px solid #ddd;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;</pre>
+
+<p>} .nav-tabs.nav-stacked &gt; li:first-child &gt; a {</p>
+
+<pre>-webkit-border-top-right-radius: 4px;
+-moz-border-radius-topright: 4px;
+border-top-right-radius: 4px;
+-webkit-border-top-left-radius: 4px;
+-moz-border-radius-topleft: 4px;
+border-top-left-radius: 4px;</pre>
+
+<p>} .nav-tabs.nav-stacked &gt; li:last-child &gt; a {</p>
+
+<pre>-webkit-border-bottom-right-radius: 4px;
+-moz-border-radius-bottomright: 4px;
+border-bottom-right-radius: 4px;
+-webkit-border-bottom-left-radius: 4px;
+-moz-border-radius-bottomleft: 4px;
+border-bottom-left-radius: 4px;</pre>
+
+<p>} .nav-tabs.nav-stacked &gt; li &gt; a:hover, .nav-tabs.nav-stacked &gt; li
+&gt; a:focus {</p>
+
+<pre>border-color: #ddd;
+z-index: 2;</pre>
+
+<p>} .nav-pills.nav-stacked &gt; li &gt; a {</p>
+
+<pre>margin-bottom: 3px;</pre>
+
+<p>} .nav-pills.nav-stacked &gt; li:last-child &gt; a {</p>
+
+<pre>margin-bottom: 1px;</pre>
+
+<p>} .nav-tabs .dropdown-menu {</p>
+
+<pre>-webkit-border-radius: 0 0 6px 6px;
+-moz-border-radius: 0 0 6px 6px;
+border-radius: 0 0 6px 6px;</pre>
+
+<p>} .nav-pills .dropdown-menu {</p>
+
+<pre>-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;</pre>
+
+<p>} .nav .dropdown-toggle .caret {</p>
+
+<pre>border-top-color: #0088cc;
+border-bottom-color: #0088cc;
+margin-top: 6px;</pre>
+
+<p>} .nav .dropdown-toggle:hover .caret, .nav .dropdown-toggle:focus .caret {</p>
+
+<pre>border-top-color: #005580;
+border-bottom-color: #005580;</pre>
+
+<p>} /* move down carets for tabs */ .nav-tabs .dropdown-toggle .caret {</p>
+
+<pre>margin-top: 8px;</pre>
+
+<p>} .nav .active .dropdown-toggle .caret {</p>
+
+<pre>border-top-color: #fff;
+border-bottom-color: #fff;</pre>
+
+<p>} .nav-tabs .active .dropdown-toggle .caret {</p>
+
+<pre>border-top-color: #555555;
+border-bottom-color: #555555;</pre>
+
+<p>} .nav &gt; .dropdown.active &gt; a:hover, .nav &gt; .dropdown.active &gt;
+a:focus {</p>
+
+<pre>cursor: pointer;</pre>
+
+<p>} .nav-tabs .open .dropdown-toggle, .nav-pills .open .dropdown-toggle, .nav
+&gt; li.dropdown.open.active &gt; a:hover, .nav &gt;
+li.dropdown.open.active &gt; a:focus {</p>
+
+<pre>color: #ffffff;
+background-color: #999999;
+border-color: #999999;</pre>
+
+<p>} .nav li.dropdown.open .caret, .nav li.dropdown.open.active .caret, .nav
+li.dropdown.open a:hover .caret, .nav li.dropdown.open a:focus .caret {</p>
+
+<pre>border-top-color: #ffffff;
+border-bottom-color: #ffffff;
+opacity: 1;
+filter: alpha(opacity=100);</pre>
+
+<p>} .tabs-stacked .open &gt; a:hover, .tabs-stacked .open &gt; a:focus {</p>
+
+<pre>border-color: #999999;</pre>
+
+<p>} .tabbable {</p>
+
+<pre>zoom: 1;</pre>
+
+<p>} .tabbable:before, .tabbable:after {</p>
+
+<pre>display: table;
+content: &quot;&quot;;
+line-height: 0;</pre>
+
+<p>} .tabbable:after {</p>
+
+<pre>clear: both;</pre>
+
+<p>} .tab-content {</p>
+
+<pre>overflow: auto;</pre>
+
+<p>} .tabs-below &gt; .nav-tabs, .tabs-right &gt; .nav-tabs, .tabs-left &gt;
+.nav-tabs {</p>
+
+<pre>border-bottom: 0;</pre>
+
+<p>} .tab-content &gt; .tab-pane, .pill-content &gt; .pill-pane {</p>
+
+<pre>display: none;</pre>
+
+<p>} .tab-content &gt; .active, .pill-content &gt; .active {</p>
+
+<pre>display: block;</pre>
+
+<p>} .tabs-below &gt; .nav-tabs {</p>
+
+<pre>border-top: 1px solid #ddd;</pre>
+
+<p>} .tabs-below &gt; .nav-tabs &gt; li {</p>
+
+<pre>margin-top: -1px;
+margin-bottom: 0;</pre>
+
+<p>} .tabs-below &gt; .nav-tabs &gt; li &gt; a {</p>
+
+<pre>-webkit-border-radius: 0 0 4px 4px;
+-moz-border-radius: 0 0 4px 4px;
+border-radius: 0 0 4px 4px;</pre>
+
+<p>} .tabs-below &gt; .nav-tabs &gt; li &gt; a:hover, .tabs-below &gt;
+.nav-tabs &gt; li &gt; a:focus {</p>
+
+<pre>border-bottom-color: transparent;
+border-top-color: #ddd;</pre>
+
+<p>} .tabs-below &gt; .nav-tabs &gt; .active &gt; a, .tabs-below &gt;
+.nav-tabs &gt; .active &gt; a:hover, .tabs-below &gt; .nav-tabs &gt;
+.active &gt; a:focus {</p>
+
+<pre>border-color: transparent #ddd #ddd #ddd;</pre>
+
+<p>} .tabs-left &gt; .nav-tabs &gt; li, .tabs-right &gt; .nav-tabs &gt; li {</p>
+
+<pre>float: none;</pre>
+
+<p>} .tabs-left &gt; .nav-tabs &gt; li &gt; a, .tabs-right &gt; .nav-tabs &gt;
+li &gt; a {</p>
+
+<pre>min-width: 74px;
+margin-right: 0;
+margin-bottom: 3px;</pre>
+
+<p>} .tabs-left &gt; .nav-tabs {</p>
+
+<pre>float: left;
+margin-right: 19px;
+border-right: 1px solid #ddd;</pre>
+
+<p>} .tabs-left &gt; .nav-tabs &gt; li &gt; a {</p>
+
+<pre>margin-right: -1px;
+-webkit-border-radius: 4px 0 0 4px;
+-moz-border-radius: 4px 0 0 4px;
+border-radius: 4px 0 0 4px;</pre>
+
+<p>} .tabs-left &gt; .nav-tabs &gt; li &gt; a:hover, .tabs-left &gt; .nav-tabs
+&gt; li &gt; a:focus {</p>
+
+<pre>border-color: #eeeeee #dddddd #eeeeee #eeeeee;</pre>
+
+<p>} .tabs-left &gt; .nav-tabs .active &gt; a, .tabs-left &gt; .nav-tabs
+.active &gt; a:hover, .tabs-left &gt; .nav-tabs .active &gt; a:focus {</p>
+
+<pre>border-color: #ddd transparent #ddd #ddd;
+ border-right-color: #ffffff;</pre>
+
+<p>} .tabs-right &gt; .nav-tabs {</p>
+
+<pre>float: right;
+margin-left: 19px;
+border-left: 1px solid #ddd;</pre>
+
+<p>} .tabs-right &gt; .nav-tabs &gt; li &gt; a {</p>
+
+<pre>margin-left: -1px;
+-webkit-border-radius: 0 4px 4px 0;
+-moz-border-radius: 0 4px 4px 0;
+border-radius: 0 4px 4px 0;</pre>
+
+<p>} .tabs-right &gt; .nav-tabs &gt; li &gt; a:hover, .tabs-right &gt;
+.nav-tabs &gt; li &gt; a:focus {</p>
+
+<pre>border-color: #eeeeee #eeeeee #eeeeee #dddddd;</pre>
+
+<p>} .tabs-right &gt; .nav-tabs .active &gt; a, .tabs-right &gt; .nav-tabs
+.active &gt; a:hover, .tabs-right &gt; .nav-tabs .active &gt; a:focus {</p>
+
+<pre>border-color: #ddd #ddd #ddd transparent;
+ border-left-color: #ffffff;</pre>
+
+<p>} .nav &gt; .disabled &gt; a {</p>
+
+<pre>color: #999999;</pre>
+
+<p>} .nav &gt; .disabled &gt; a:hover, .nav &gt; .disabled &gt; a:focus {</p>
+
+<pre>text-decoration: none;
+background-color: transparent;
+cursor: default;</pre>
+
+<p>} .navbar {</p>
+
+<pre>overflow: visible;
+margin-bottom: 20px;
+ position: relative;
+ z-index: 2;</pre>
+
+<p>} .navbar-inner {</p>
+
+<pre>min-height: 40px;
+padding-left: 20px;
+padding-right: 20px;
+background-color: #fafafa;
+background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#f2f2f2));
+background-image: -webkit-linear-gradient(top, #ffffff, #f2f2f2);
+background-image: -o-linear-gradient(top, #ffffff, #f2f2f2);
+background-image: linear-gradient(to bottom, #ffffff, #f2f2f2);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ffffffff&#39;, endColorstr=&#39;#fff2f2f2&#39;, GradientType=0);
+border: 1px solid #d4d4d4;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+ zoom: 1;</pre>
+
+<p>} .navbar-inner:before, .navbar-inner:after {</p>
+
+<pre>display: table;
+content: &quot;&quot;;
+line-height: 0;</pre>
+
+<p>} .navbar-inner:after {</p>
+
+<pre>clear: both;</pre>
+
+<p>} .navbar .container {</p>
+
+<pre>width: auto;</pre>
+
+<p>} .nav-collapse.collapse {</p>
+
+<pre>height: auto;
+overflow: visible;</pre>
+
+<p>} .navbar .brand {</p>
+
+<pre>float: left;
+display: block;
+padding: 10px 20px 10px;
+margin-left: -20px;
+font-size: 20px;
+font-weight: 200;
+color: #777777;
+text-shadow: 0 1px 0 #ffffff;</pre>
+
+<p>} .navbar .brand:hover, .navbar .brand:focus {</p>
+
+<pre>text-decoration: none;</pre>
+
+<p>} .navbar-text {</p>
+
+<pre>margin-bottom: 0;
+line-height: 40px;
+color: #777777;</pre>
+
+<p>} .navbar-link {</p>
+
+<pre>color: #777777;</pre>
+
+<p>} .navbar-<a href="../../hover">hover</a>, .navbar-<a
+href="../../focus">focus</a> {</p>
+
+<pre>color: #333333;</pre>
+
+<p>} .navbar .divider-vertical {</p>
+
+<pre>height: 40px;
+margin: 0 9px;
+border-left: 1px solid #f2f2f2;
+border-right: 1px solid #ffffff;</pre>
+
+<p>} .navbar .btn, .navbar .btn-group {</p>
+
+<pre>margin-top: 5px;</pre>
+
+<p>} .navbar .btn-group .btn, .navbar .input-prepend .btn, .navbar
+.input-append .btn, .navbar .input-prepend .btn-group, .navbar
+.input-append .btn-group {</p>
+
+<pre>margin-top: 0;</pre>
+
+<p>} .navbar-form {</p>
+
+<pre>margin-bottom: 0;
+ zoom: 1;</pre>
+
+<p>} .navbar-form:before, .navbar-form:after {</p>
+
+<pre>display: table;
+content: &quot;&quot;;
+line-height: 0;</pre>
+
+<p>} .navbar-form:after {</p>
+
+<pre>clear: both;</pre>
+
+<p>} .navbar-form input, .navbar-form select, .navbar-form .radio,
+.navbar-form .checkbox {</p>
+
+<pre>margin-top: 5px;</pre>
+
+<p>} .navbar-form input, .navbar-form select, .navbar-form .btn {</p>
+
+<pre>display: inline-block;
+margin-bottom: 0;</pre>
+
+<p>} .navbar-form <a href="type="image"">input</a>, .navbar-form <a
+href="type="checkbox"">input</a>, .navbar-form <a
+href="type="radio"">input</a> {</p>
+
+<pre>margin-top: 3px;</pre>
+
+<p>} .navbar-form .input-append, .navbar-form .input-prepend {</p>
+
+<pre>margin-top: 5px;
+white-space: nowrap;</pre>
+
+<p>} .navbar-form .input-append input, .navbar-form .input-prepend input {</p>
+
+<pre>margin-top: 0;</pre>
+
+<p>} .navbar-search {</p>
+
+<pre>position: relative;
+float: left;
+margin-top: 5px;
+margin-bottom: 0;</pre>
+
+<p>} .navbar-search .search-query {</p>
+
+<pre>margin-bottom: 0;
+padding: 4px 14px;
+font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+font-size: 13px;
+font-weight: normal;
+line-height: 1;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;</pre>
+
+<p>} .navbar-static-top {</p>
+
+<pre>position: static;
+margin-bottom: 0;</pre>
+
+<p>} .navbar-static-top .navbar-inner {</p>
+
+<pre>-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;</pre>
+
+<p>} .navbar-fixed-top, .navbar-fixed-bottom {</p>
+
+<pre>position: fixed;
+right: 0;
+left: 0;
+z-index: 1030;
+margin-bottom: 0;</pre>
+
+<p>} .navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {</p>
+
+<pre>border-width: 0 0 1px;</pre>
+
+<p>} .navbar-fixed-bottom .navbar-inner {</p>
+
+<pre>border-width: 1px 0 0;</pre>
+
+<p>} .navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {</p>
+
+<pre>padding-left: 0;
+padding-right: 0;
+-webkit-border-radius: 0;
+-moz-border-radius: 0;
+border-radius: 0;</pre>
+
+<p>} .navbar-static-top .container, .navbar-fixed-top .container,
+.navbar-fixed-bottom .container {</p>
+
+<pre>width: 940px;</pre>
+
+<p>} .navbar-fixed-top {</p>
+
+<pre>top: 0;</pre>
+
+<p>} .navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {</p>
+
+<pre>-webkit-box-shadow: 0 1px 10px rgba(0,0,0,.1);
+-moz-box-shadow: 0 1px 10px rgba(0,0,0,.1);
+box-shadow: 0 1px 10px rgba(0,0,0,.1);</pre>
+
+<p>} .navbar-fixed-bottom {</p>
+
+<pre>bottom: 0;</pre>
+
+<p>} .navbar-fixed-bottom .navbar-inner {</p>
+
+<pre>-webkit-box-shadow: 0 -1px 10px rgba(0,0,0,.1);
+-moz-box-shadow: 0 -1px 10px rgba(0,0,0,.1);
+box-shadow: 0 -1px 10px rgba(0,0,0,.1);</pre>
+
+<p>} .navbar .nav {</p>
+
+<pre>position: relative;
+left: 0;
+display: block;
+float: left;
+margin: 0 10px 0 0;</pre>
+
+<p>} .navbar .nav.pull-right {</p>
+
+<pre>float: right;
+margin-right: 0;</pre>
+
+<p>} .navbar .nav &gt; li {</p>
+
+<pre>float: left;</pre>
+
+<p>} .navbar .nav &gt; li &gt; a {</p>
+
+<pre>float: none;
+padding: 10px 15px 10px;
+color: #777777;
+text-decoration: none;
+text-shadow: 0 1px 0 #ffffff;</pre>
+
+<p>} .navbar .nav .dropdown-toggle .caret {</p>
+
+<pre>margin-top: 8px;</pre>
+
+<p>} .navbar .nav &gt; li &gt; a:focus, .navbar .nav &gt; li &gt; a:hover {</p>
+
+<pre>background-color: transparent;
+color: #333333;
+text-decoration: none;</pre>
+
+<p>} .navbar .nav &gt; .active &gt; a, .navbar .nav &gt; .active &gt; a:hover,
+.navbar .nav &gt; .active &gt; a:focus {</p>
+
+<pre>color: #555555;
+text-decoration: none;
+background-color: #e5e5e5;
+-webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+-moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
+box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);</pre>
+
+<p>} .navbar .btn-navbar {</p>
+
+<pre>display: none;
+float: right;
+padding: 7px 10px;
+margin-left: 5px;
+margin-right: 5px;
+color: #ffffff;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+background-color: #ededed;
+background-image: -moz-linear-gradient(top, #f2f2f2, #e5e5e5);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#e5e5e5));
+background-image: -webkit-linear-gradient(top, #f2f2f2, #e5e5e5);
+background-image: -o-linear-gradient(top, #f2f2f2, #e5e5e5);
+background-image: linear-gradient(to bottom, #f2f2f2, #e5e5e5);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#fff2f2f2&#39;, endColorstr=&#39;#ffe5e5e5&#39;, GradientType=0);
+border-color: #e5e5e5 #e5e5e5 #bfbfbf;
+border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+ background-color: #e5e5e5;
+/* Darken IE7 buttons by default so they stand out more given they won&#39;t have borders */
+
+filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075);
+-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075);
+box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075);</pre>
+
+<p>} .navbar .btn-navbar:hover, .navbar .btn-navbar:focus, .navbar
+.btn-navbar:active, .navbar .btn-navbar.active, .navbar
+.btn-navbar.disabled, .navbar .<a href="disabled">btn-navbar</a> {</p>
+
+<pre>color: #ffffff;
+background-color: #e5e5e5;
+ background-color: #d9d9d9;</pre>
+
+<p>} .navbar .btn-navbar:active, .navbar .btn-navbar.active {</p>
+
+<pre>background-color: #cccccc \9;</pre>
+
+<p>} .navbar .btn-navbar .icon-bar {</p>
+
+<pre>display: block;
+width: 18px;
+height: 2px;
+background-color: #f5f5f5;
+-webkit-border-radius: 1px;
+-moz-border-radius: 1px;
+border-radius: 1px;
+-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+-moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);</pre>
+
+<p>} .btn-navbar .icon-bar + .icon-bar {</p>
+
+<pre>margin-top: 3px;</pre>
+
+<p>} .navbar .nav &gt; li &gt; .dropdown-menu:before {</p>
+
+<pre>content: &#39;&#39;;
+display: inline-block;
+border-left: 7px solid transparent;
+border-right: 7px solid transparent;
+border-bottom: 7px solid #ccc;
+border-bottom-color: rgba(0, 0, 0, 0.2);
+position: absolute;
+top: -7px;
+left: 9px;</pre>
+
+<p>} .navbar .nav &gt; li &gt; .dropdown-menu:after {</p>
+
+<pre>content: &#39;&#39;;
+display: inline-block;
+border-left: 6px solid transparent;
+border-right: 6px solid transparent;
+border-bottom: 6px solid #ffffff;
+position: absolute;
+top: -6px;
+left: 10px;</pre>
+
+<p>} .navbar-fixed-bottom .nav &gt; li &gt; .dropdown-menu:before {</p>
+
+<pre>border-top: 7px solid #ccc;
+border-top-color: rgba(0, 0, 0, 0.2);
+border-bottom: 0;
+bottom: -7px;
+top: auto;</pre>
+
+<p>} .navbar-fixed-bottom .nav &gt; li &gt; .dropdown-menu:after {</p>
+
+<pre>border-top: 6px solid #ffffff;
+border-bottom: 0;
+bottom: -6px;
+top: auto;</pre>
+
+<p>} .navbar .nav li.dropdown &gt; a:hover .caret, .navbar .nav li.dropdown
+&gt; a:focus .caret {</p>
+
+<pre>border-top-color: #333333;
+border-bottom-color: #333333;</pre>
+
+<p>} .navbar .nav li.dropdown.open &gt; .dropdown-toggle, .navbar .nav
+li.dropdown.active &gt; .dropdown-toggle, .navbar .nav
+li.dropdown.open.active &gt; .dropdown-toggle {</p>
+
+<pre>background-color: #e5e5e5;
+color: #555555;</pre>
+
+<p>} .navbar .nav li.dropdown &gt; .dropdown-toggle .caret {</p>
+
+<pre>border-top-color: #777777;
+border-bottom-color: #777777;</pre>
+
+<p>} .navbar .nav li.dropdown.open &gt; .dropdown-toggle .caret, .navbar .nav
+li.dropdown.active &gt; .dropdown-toggle .caret, .navbar .nav
+li.dropdown.open.active &gt; .dropdown-toggle .caret {</p>
+
+<pre>border-top-color: #555555;
+border-bottom-color: #555555;</pre>
+
+<p>} .navbar .pull-right &gt; li &gt; .dropdown-menu, .navbar .nav &gt; li
+&gt; .dropdown-menu.pull-right {</p>
+
+<pre>left: auto;
+right: 0;</pre>
+
+<p>} .navbar .pull-right &gt; li &gt; .dropdown-menu:before, .navbar .nav &gt;
+li &gt; .dropdown-menu.pull-right:before {</p>
+
+<pre>left: auto;
+right: 12px;</pre>
+
+<p>} .navbar .pull-right &gt; li &gt; .dropdown-menu:after, .navbar .nav &gt;
+li &gt; .dropdown-menu.pull-right:after {</p>
+
+<pre>left: auto;
+right: 13px;</pre>
+
+<p>} .navbar .pull-right &gt; li &gt; .dropdown-menu .dropdown-menu, .navbar
+.nav &gt; li &gt; .dropdown-menu.pull-right .dropdown-menu {</p>
+
+<pre>left: auto;
+right: 100%;
+margin-left: 0;
+margin-right: -1px;
+-webkit-border-radius: 6px 0 6px 6px;
+-moz-border-radius: 6px 0 6px 6px;
+border-radius: 6px 0 6px 6px;</pre>
+
+<p>} .navbar-inverse .navbar-inner {</p>
+
+<pre>background-color: #1b1b1b;
+background-image: -moz-linear-gradient(top, #222222, #111111);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222222), to(#111111));
+background-image: -webkit-linear-gradient(top, #222222, #111111);
+background-image: -o-linear-gradient(top, #222222, #111111);
+background-image: linear-gradient(to bottom, #222222, #111111);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff222222&#39;, endColorstr=&#39;#ff111111&#39;, GradientType=0);
+border-color: #252525;</pre>
+
+<p>} .navbar-inverse .brand, .navbar-inverse .nav &gt; li &gt; a {</p>
+
+<pre>color: #999999;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);</pre>
+
+<p>} .navbar-inverse .brand:hover, .navbar-inverse .nav &gt; li &gt; a:hover,
+.navbar-inverse .brand:focus, .navbar-inverse .nav &gt; li &gt; a:focus {</p>
+
+<pre>color: #ffffff;</pre>
+
+<p>} .navbar-inverse .brand {</p>
+
+<pre>color: #999999;</pre>
+
+<p>} .navbar-inverse .navbar-text {</p>
+
+<pre>color: #999999;</pre>
+
+<p>} .navbar-inverse .nav &gt; li &gt; a:focus, .navbar-inverse .nav &gt; li
+&gt; a:hover {</p>
+
+<pre>background-color: transparent;
+color: #ffffff;</pre>
+
+<p>} .navbar-inverse .nav .active &gt; a, .navbar-inverse .nav .active &gt;
+a:hover, .navbar-inverse .nav .active &gt; a:focus {</p>
+
+<pre>color: #ffffff;
+background-color: #111111;</pre>
+
+<p>} .navbar-inverse .navbar-link {</p>
+
+<pre>color: #999999;</pre>
+
+<p>} .navbar-inverse .navbar-<a href="../../hover">hover</a>, .navbar-inverse
+.navbar-<a href="../../focus">focus</a> {</p>
+
+<pre>color: #ffffff;</pre>
+
+<p>} .navbar-inverse .divider-vertical {</p>
+
+<pre>border-left-color: #111111;
+border-right-color: #222222;</pre>
+
+<p>} .navbar-inverse .nav li.dropdown.open &gt; .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.active &gt; .dropdown-toggle,
+.navbar-inverse .nav li.dropdown.open.active &gt; .dropdown-toggle {</p>
+
+<pre>background-color: #111111;
+color: #ffffff;</pre>
+
+<p>} .navbar-inverse .nav li.dropdown &gt; a:hover .caret, .navbar-inverse
+.nav li.dropdown &gt; a:focus .caret {</p>
+
+<pre>border-top-color: #ffffff;
+border-bottom-color: #ffffff;</pre>
+
+<p>} .navbar-inverse .nav li.dropdown &gt; .dropdown-toggle .caret {</p>
+
+<pre>border-top-color: #999999;
+border-bottom-color: #999999;</pre>
+
+<p>} .navbar-inverse .nav li.dropdown.open &gt; .dropdown-toggle .caret,
+.navbar-inverse .nav li.dropdown.active &gt; .dropdown-toggle .caret,
+.navbar-inverse .nav li.dropdown.open.active &gt; .dropdown-toggle .caret {</p>
+
+<pre>border-top-color: #ffffff;
+border-bottom-color: #ffffff;</pre>
+
+<p>} .navbar-inverse .navbar-search .search-query {</p>
+
+<pre>color: #ffffff;
+background-color: #515151;
+border-color: #111111;
+-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
+-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
+box-shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.15);
+-webkit-transition: none;
+-moz-transition: none;
+-o-transition: none;
+transition: none;</pre>
+
+<p>} .navbar-inverse .navbar-search .search-query:-moz-placeholder {</p>
+
+<pre>color: #cccccc;</pre>
+
+<p>} .navbar-inverse .navbar-search .search-query:-ms-input-placeholder {</p>
+
+<pre>color: #cccccc;</pre>
+
+<p>} .navbar-inverse .navbar-search .search-query::-webkit-input-placeholder {</p>
+
+<pre>color: #cccccc;</pre>
+
+<p>} .navbar-inverse .navbar-search .search-query:focus, .navbar-inverse
+.navbar-search .search-query.focused {</p>
+
+<pre>padding: 5px 15px;
+color: #333333;
+text-shadow: 0 1px 0 #ffffff;
+background-color: #ffffff;
+border: 0;
+-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+-moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+outline: 0;</pre>
+
+<p>} .navbar-inverse .btn-navbar {</p>
+
+<pre>color: #ffffff;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+background-color: #0e0e0e;
+background-image: -moz-linear-gradient(top, #151515, #040404);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#151515), to(#040404));
+background-image: -webkit-linear-gradient(top, #151515, #040404);
+background-image: -o-linear-gradient(top, #151515, #040404);
+background-image: linear-gradient(to bottom, #151515, #040404);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff151515&#39;, endColorstr=&#39;#ff040404&#39;, GradientType=0);
+border-color: #040404 #040404 #000000;
+border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+ background-color: #040404;
+/* Darken IE7 buttons by default so they stand out more given they won&#39;t have borders */
+
+filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);</pre>
+
+<p>} .navbar-inverse .btn-navbar:hover, .navbar-inverse .btn-navbar:focus,
+.navbar-inverse .btn-navbar:active, .navbar-inverse .btn-navbar.active,
+.navbar-inverse .btn-navbar.disabled, .navbar-inverse .<a
+href="disabled">btn-navbar</a> {</p>
+
+<pre>color: #ffffff;
+background-color: #040404;
+ background-color: #000000;</pre>
+
+<p>} .navbar-inverse .btn-navbar:active, .navbar-inverse .btn-navbar.active {</p>
+
+<pre>background-color: #000000 \9;</pre>
+
+<p>} .breadcrumb {</p>
+
+<pre>padding: 8px 15px;
+margin: 0 0 20px;
+list-style: none;
+background-color: #f5f5f5;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;</pre>
+
+<p>} .breadcrumb &gt; li {</p>
+
+<pre>display: inline-block;
+ display: inline;
+/* IE7 inline-block hack */
+
+ zoom: 1;
+text-shadow: 0 1px 0 #ffffff;</pre>
+
+<p>} .breadcrumb &gt; li &gt; .divider {</p>
+
+<pre>padding: 0 5px;
+color: #ccc;</pre>
+
+<p>} .breadcrumb &gt; .active {</p>
+
+<pre>color: #999999;</pre>
+
+<p>} .pagination {</p>
+
+<pre>margin: 20px 0;</pre>
+
+<p>} .pagination ul {</p>
+
+<pre>display: inline-block;
+ display: inline;
+/* IE7 inline-block hack */
+
+ zoom: 1;
+margin-left: 0;
+margin-bottom: 0;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);</pre>
+
+<p>} .pagination ul &gt; li {</p>
+
+<pre>display: inline;</pre>
+
+<p>} .pagination ul &gt; li &gt; a, .pagination ul &gt; li &gt; span {</p>
+
+<pre>float: left;
+padding: 4px 12px;
+line-height: 20px;
+text-decoration: none;
+background-color: #ffffff;
+border: 1px solid #dddddd;
+border-left-width: 0;</pre>
+
+<p>} .pagination ul &gt; li &gt; a:hover, .pagination ul &gt; li &gt; a:focus,
+.pagination ul &gt; .active &gt; a, .pagination ul &gt; .active &gt; span {</p>
+
+<pre>background-color: #f5f5f5;</pre>
+
+<p>} .pagination ul &gt; .active &gt; a, .pagination ul &gt; .active &gt; span
+{</p>
+
+<pre>color: #999999;
+cursor: default;</pre>
+
+<p>} .pagination ul &gt; .disabled &gt; span, .pagination ul &gt; .disabled
+&gt; a, .pagination ul &gt; .disabled &gt; a:hover, .pagination ul &gt;
+.disabled &gt; a:focus {</p>
+
+<pre>color: #999999;
+background-color: transparent;
+cursor: default;</pre>
+
+<p>} .pagination ul &gt; li:first-child &gt; a, .pagination ul &gt;
+li:first-child &gt; span {</p>
+
+<pre>border-left-width: 1px;
+-webkit-border-top-left-radius: 4px;
+-moz-border-radius-topleft: 4px;
+border-top-left-radius: 4px;
+-webkit-border-bottom-left-radius: 4px;
+-moz-border-radius-bottomleft: 4px;
+border-bottom-left-radius: 4px;</pre>
+
+<p>} .pagination ul &gt; li:last-child &gt; a, .pagination ul &gt;
+li:last-child &gt; span {</p>
+
+<pre>-webkit-border-top-right-radius: 4px;
+-moz-border-radius-topright: 4px;
+border-top-right-radius: 4px;
+-webkit-border-bottom-right-radius: 4px;
+-moz-border-radius-bottomright: 4px;
+border-bottom-right-radius: 4px;</pre>
+
+<p>} .pagination-centered {</p>
+
+<pre>text-align: center;</pre>
+
+<p>} .pagination-right {</p>
+
+<pre>text-align: right;</pre>
+
+<p>} .pagination-large ul &gt; li &gt; a, .pagination-large ul &gt; li &gt;
+span {</p>
+
+<pre>padding: 11px 19px;
+font-size: 12.5px;</pre>
+
+<p>} .pagination-large ul &gt; li:first-child &gt; a, .pagination-large ul
+&gt; li:first-child &gt; span {</p>
+
+<pre>-webkit-border-top-left-radius: 6px;
+-moz-border-radius-topleft: 6px;
+border-top-left-radius: 6px;
+-webkit-border-bottom-left-radius: 6px;
+-moz-border-radius-bottomleft: 6px;
+border-bottom-left-radius: 6px;</pre>
+
+<p>} .pagination-large ul &gt; li:last-child &gt; a, .pagination-large ul &gt;
+li:last-child &gt; span {</p>
+
+<pre>-webkit-border-top-right-radius: 6px;
+-moz-border-radius-topright: 6px;
+border-top-right-radius: 6px;
+-webkit-border-bottom-right-radius: 6px;
+-moz-border-radius-bottomright: 6px;
+border-bottom-right-radius: 6px;</pre>
+
+<p>} .pagination-mini ul &gt; li:first-child &gt; a, .pagination-small ul &gt;
+li:first-child &gt; a, .pagination-mini ul &gt; li:first-child &gt; span,
+.pagination-small ul &gt; li:first-child &gt; span {</p>
+
+<pre>-webkit-border-top-left-radius: 3px;
+-moz-border-radius-topleft: 3px;
+border-top-left-radius: 3px;
+-webkit-border-bottom-left-radius: 3px;
+-moz-border-radius-bottomleft: 3px;
+border-bottom-left-radius: 3px;</pre>
+
+<p>} .pagination-mini ul &gt; li:last-child &gt; a, .pagination-small ul &gt;
+li:last-child &gt; a, .pagination-mini ul &gt; li:last-child &gt; span,
+.pagination-small ul &gt; li:last-child &gt; span {</p>
+
+<pre>-webkit-border-top-right-radius: 3px;
+-moz-border-radius-topright: 3px;
+border-top-right-radius: 3px;
+-webkit-border-bottom-right-radius: 3px;
+-moz-border-radius-bottomright: 3px;
+border-bottom-right-radius: 3px;</pre>
+
+<p>} .pagination-small ul &gt; li &gt; a, .pagination-small ul &gt; li &gt;
+span {</p>
+
+<pre>padding: 2px 10px;
+font-size: 8.5px;</pre>
+
+<p>} .pagination-mini ul &gt; li &gt; a, .pagination-mini ul &gt; li &gt; span
+{</p>
+
+<pre>padding: 0 6px;
+font-size: 7.5px;</pre>
+
+<p>} .pager {</p>
+
+<pre>margin: 20px 0;
+list-style: none;
+text-align: center;
+ zoom: 1;</pre>
+
+<p>} .pager:before, .pager:after {</p>
+
+<pre>display: table;
+content: &quot;&quot;;
+line-height: 0;</pre>
+
+<p>} .pager:after {</p>
+
+<pre>clear: both;</pre>
+
+<p>} .pager li {</p>
+
+<pre>display: inline;</pre>
+
+<p>} .pager li &gt; a, .pager li &gt; span {</p>
+
+<pre>display: inline-block;
+padding: 5px 14px;
+background-color: #fff;
+border: 1px solid #ddd;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;</pre>
+
+<p>} .pager li &gt; a:hover, .pager li &gt; a:focus {</p>
+
+<pre>text-decoration: none;
+background-color: #f5f5f5;</pre>
+
+<p>} .pager .next &gt; a, .pager .next &gt; span {</p>
+
+<pre>float: right;</pre>
+
+<p>} .pager .previous &gt; a, .pager .previous &gt; span {</p>
+
+<pre>float: left;</pre>
+
+<p>} .pager .disabled &gt; a, .pager .disabled &gt; a:hover, .pager .disabled
+&gt; a:focus, .pager .disabled &gt; span {</p>
+
+<pre>color: #999999;
+background-color: #fff;
+cursor: default;</pre>
+
+<p>} .thumbnails {</p>
+
+<pre>margin-left: -20px;
+list-style: none;
+ zoom: 1;</pre>
+
+<p>} .thumbnails:before, .thumbnails:after {</p>
+
+<pre>display: table;
+content: &quot;&quot;;
+line-height: 0;</pre>
+
+<p>} .thumbnails:after {</p>
+
+<pre>clear: both;</pre>
+
+<p>} .row-fluid .thumbnails {</p>
+
+<pre>margin-left: 0;</pre>
+
+<p>} .thumbnails &gt; li {</p>
+
+<pre>float: left;
+margin-bottom: 20px;
+margin-left: 20px;</pre>
+
+<p>} .thumbnail {</p>
+
+<pre>display: block;
+padding: 4px;
+line-height: 20px;
+border: 1px solid #ddd;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+box-shadow: 0 1px 3px rgba(0, 0, 0, 0.055);
+-webkit-transition: all 0.2s ease-in-out;
+-moz-transition: all 0.2s ease-in-out;
+-o-transition: all 0.2s ease-in-out;
+transition: all 0.2s ease-in-out;</pre>
+
+<p>} a.thumbnail:hover, a.thumbnail:focus {</p>
+
+<pre>border-color: #0088cc;
+-webkit-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+-moz-box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);
+box-shadow: 0 1px 4px rgba(0, 105, 214, 0.25);</pre>
+
+<p>} .thumbnail &gt; img {</p>
+
+<pre>display: block;
+max-width: 100%;
+margin-left: auto;
+margin-right: auto;</pre>
+
+<p>} .thumbnail .caption {</p>
+
+<pre>padding: 9px;
+color: #555555;</pre>
+
+<p>} .alert {</p>
+
+<pre>padding: 8px 35px 8px 14px;
+margin-bottom: 20px;
+text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+background-color: #fcf8e3;
+border: 1px solid #fbeed5;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;</pre>
+
+<p>} .alert, .alert h4 {</p>
+
+<pre>color: #c09853;</pre>
+
+<p>} .alert h4 {</p>
+
+<pre>margin: 0;</pre>
+
+<p>} .alert .close {</p>
+
+<pre>position: relative;
+top: -2px;
+right: -21px;
+line-height: 20px;</pre>
+
+<p>} .alert-success {</p>
+
+<pre>background-color: #dff0d8;
+border-color: #d6e9c6;
+color: #468847;</pre>
+
+<p>} .alert-success h4 {</p>
+
+<pre>color: #468847;</pre>
+
+<p>} .alert-danger, .alert-error {</p>
+
+<pre>background-color: #f2dede;
+border-color: #eed3d7;
+color: #b94a48;</pre>
+
+<p>} .alert-danger h4, .alert-error h4 {</p>
+
+<pre>color: #b94a48;</pre>
+
+<p>} .alert-info {</p>
+
+<pre>background-color: #d9edf7;
+border-color: #bce8f1;
+color: #3a87ad;</pre>
+
+<p>} .alert-info h4 {</p>
+
+<pre>color: #3a87ad;</pre>
+
+<p>} .alert-block {</p>
+
+<pre>padding-top: 14px;
+padding-bottom: 14px;</pre>
+
+<p>} .alert-block &gt; p, .alert-block &gt; ul {</p>
+
+<pre>margin-bottom: 0;</pre>
+
+<p>} .alert-block p + p {</p>
+
+<pre>margin-top: 5px;</pre>
+
+<p>} @-webkit-keyframes progress-bar-stripes {</p>
+
+<pre>from {
+  background-position: 40px 0;
+}
+to {
+  background-position: 0 0;
+}</pre>
+
+<p>} @-moz-keyframes progress-bar-stripes {</p>
+
+<pre>from {
+  background-position: 40px 0;
+}
+to {
+  background-position: 0 0;
+}</pre>
+
+<p>} @-ms-keyframes progress-bar-stripes {</p>
+
+<pre>from {
+  background-position: 40px 0;
+}
+to {
+  background-position: 0 0;
+}</pre>
+
+<p>} @-o-keyframes progress-bar-stripes {</p>
+
+<pre>from {
+  background-position: 0 0;
+}
+to {
+  background-position: 40px 0;
+}</pre>
+
+<p>} @keyframes progress-bar-stripes {</p>
+
+<pre>from {
+  background-position: 40px 0;
+}
+to {
+  background-position: 0 0;
+}</pre>
+
+<p>} .progress {</p>
+
+<pre>overflow: hidden;
+height: 20px;
+margin-bottom: 20px;
+background-color: #f7f7f7;
+background-image: -moz-linear-gradient(top, #f5f5f5, #f9f9f9);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f5f5), to(#f9f9f9));
+background-image: -webkit-linear-gradient(top, #f5f5f5, #f9f9f9);
+background-image: -o-linear-gradient(top, #f5f5f5, #f9f9f9);
+background-image: linear-gradient(to bottom, #f5f5f5, #f9f9f9);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#fff5f5f5&#39;, endColorstr=&#39;#fff9f9f9&#39;, GradientType=0);
+-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;</pre>
+
+<p>} .progress .bar {</p>
+
+<pre>width: 0%;
+height: 100%;
+color: #ffffff;
+float: left;
+font-size: 12px;
+text-align: center;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+background-color: #0e90d2;
+background-image: -moz-linear-gradient(top, #149bdf, #0480be);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#149bdf), to(#0480be));
+background-image: -webkit-linear-gradient(top, #149bdf, #0480be);
+background-image: -o-linear-gradient(top, #149bdf, #0480be);
+background-image: linear-gradient(to bottom, #149bdf, #0480be);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff149bdf&#39;, endColorstr=&#39;#ff0480be&#39;, GradientType=0);
+-webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+-moz-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+-webkit-transition: width 0.6s ease;
+-moz-transition: width 0.6s ease;
+-o-transition: width 0.6s ease;
+transition: width 0.6s ease;</pre>
+
+<p>} .progress .bar + .bar {</p>
+
+<pre>-webkit-box-shadow: inset 1px 0 0 rgba(0,0,0,.15), inset 0 -1px 0 rgba(0,0,0,.15);
+-moz-box-shadow: inset 1px 0 0 rgba(0,0,0,.15), inset 0 -1px 0 rgba(0,0,0,.15);
+box-shadow: inset 1px 0 0 rgba(0,0,0,.15), inset 0 -1px 0 rgba(0,0,0,.15);</pre>
+
+<p>} .progress-striped .bar {</p>
+
+<pre>background-color: #149bdf;
+background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+-webkit-background-size: 40px 40px;
+-moz-background-size: 40px 40px;
+-o-background-size: 40px 40px;
+background-size: 40px 40px;</pre>
+
+<p>} .progress.active .bar {</p>
+
+<pre>-webkit-animation: progress-bar-stripes 2s linear infinite;
+-moz-animation: progress-bar-stripes 2s linear infinite;
+-ms-animation: progress-bar-stripes 2s linear infinite;
+-o-animation: progress-bar-stripes 2s linear infinite;
+animation: progress-bar-stripes 2s linear infinite;</pre>
+
+<p>} .progress-danger .bar, .progress .bar-danger {</p>
+
+<pre>background-color: #dd514c;
+background-image: -moz-linear-gradient(top, #ee5f5b, #c43c35);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#c43c35));
+background-image: -webkit-linear-gradient(top, #ee5f5b, #c43c35);
+background-image: -o-linear-gradient(top, #ee5f5b, #c43c35);
+background-image: linear-gradient(to bottom, #ee5f5b, #c43c35);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ffee5f5b&#39;, endColorstr=&#39;#ffc43c35&#39;, GradientType=0);</pre>
+
+<p>} .progress-danger.progress-striped .bar, .progress-striped .bar-danger {</p>
+
+<pre>background-color: #ee5f5b;
+background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);</pre>
+
+<p>} .progress-success .bar, .progress .bar-success {</p>
+
+<pre>background-color: #5eb95e;
+background-image: -moz-linear-gradient(top, #62c462, #57a957);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#62c462), to(#57a957));
+background-image: -webkit-linear-gradient(top, #62c462, #57a957);
+background-image: -o-linear-gradient(top, #62c462, #57a957);
+background-image: linear-gradient(to bottom, #62c462, #57a957);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff62c462&#39;, endColorstr=&#39;#ff57a957&#39;, GradientType=0);</pre>
+
+<p>} .progress-success.progress-striped .bar, .progress-striped .bar-success {</p>
+
+<pre>background-color: #62c462;
+background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);</pre>
+
+<p>} .progress-info .bar, .progress .bar-info {</p>
+
+<pre>background-color: #4bb1cf;
+background-image: -moz-linear-gradient(top, #5bc0de, #339bb9);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#339bb9));
+background-image: -webkit-linear-gradient(top, #5bc0de, #339bb9);
+background-image: -o-linear-gradient(top, #5bc0de, #339bb9);
+background-image: linear-gradient(to bottom, #5bc0de, #339bb9);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff5bc0de&#39;, endColorstr=&#39;#ff339bb9&#39;, GradientType=0);</pre>
+
+<p>} .progress-info.progress-striped .bar, .progress-striped .bar-info {</p>
+
+<pre>background-color: #5bc0de;
+background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);</pre>
+
+<p>} .progress-warning .bar, .progress .bar-warning {</p>
+
+<pre>background-color: #faa732;
+background-image: -moz-linear-gradient(top, #fbb450, #f89406);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));
+background-image: -webkit-linear-gradient(top, #fbb450, #f89406);
+background-image: -o-linear-gradient(top, #fbb450, #f89406);
+background-image: linear-gradient(to bottom, #fbb450, #f89406);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#fffbb450&#39;, endColorstr=&#39;#fff89406&#39;, GradientType=0);</pre>
+
+<p>} .progress-warning.progress-striped .bar, .progress-striped .bar-warning {</p>
+
+<pre>background-color: #fbb450;
+background-image: -webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
+background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);</pre>
+
+<p>} .hero-unit {</p>
+
+<pre>padding: 60px;
+margin-bottom: 30px;
+font-size: 18px;
+font-weight: 200;
+line-height: 30px;
+color: inherit;
+background-color: #eeeeee;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;</pre>
+
+<p>} .hero-unit h1 {</p>
+
+<pre>margin-bottom: 0;
+font-size: 60px;
+line-height: 1;
+color: inherit;
+letter-spacing: -1px;</pre>
+
+<p>} .hero-unit li {</p>
+
+<pre>line-height: 30px;</pre>
+
+<p>} .media, .media-body {</p>
+
+<pre>overflow: hidden;
+ overflow: visible;
+zoom: 1;</pre>
+
+<p>} .media, .media .media {</p>
+
+<pre>margin-top: 15px;</pre>
+
+<p>} .media:first-child {</p>
+
+<pre>margin-top: 0;</pre>
+
+<p>} .media-object {</p>
+
+<pre>display: block;</pre>
+
+<p>} .media-heading {</p>
+
+<pre>margin: 0 0 5px;</pre>
+
+<p>} .media &gt; .pull-left {</p>
+
+<pre>margin-right: 10px;</pre>
+
+<p>} .media &gt; .pull-right {</p>
+
+<pre>margin-left: 10px;</pre>
+
+<p>} .media-list {</p>
+
+<pre>margin-left: 0;
+list-style: none;</pre>
+
+<p>} .tooltip {</p>
+
+<pre>position: absolute;
+z-index: 1030;
+display: block;
+visibility: visible;
+font-size: 11px;
+line-height: 1.4;
+opacity: 0;
+filter: alpha(opacity=0);</pre>
+
+<p>} .tooltip.in {</p>
+
+<pre>opacity: 0.8;
+filter: alpha(opacity=80);</pre>
+
+<p>} .tooltip.top {</p>
+
+<pre>margin-top: -3px;
+padding: 5px 0;</pre>
+
+<p>} .tooltip.right {</p>
+
+<pre>margin-left: 3px;
+padding: 0 5px;</pre>
+
+<p>} .tooltip.bottom {</p>
+
+<pre>margin-top: 3px;
+padding: 5px 0;</pre>
+
+<p>} .tooltip.left {</p>
+
+<pre>margin-left: -3px;
+padding: 0 5px;</pre>
+
+<p>} .tooltip-inner {</p>
+
+<pre>max-width: 200px;
+padding: 8px;
+color: #ffffff;
+text-align: center;
+text-decoration: none;
+background-color: #000000;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;</pre>
+
+<p>} .tooltip-arrow {</p>
+
+<pre>position: absolute;
+width: 0;
+height: 0;
+border-color: transparent;
+border-style: solid;</pre>
+
+<p>} .tooltip.top .tooltip-arrow {</p>
+
+<pre>bottom: 0;
+left: 50%;
+margin-left: -5px;
+border-width: 5px 5px 0;
+border-top-color: #000000;</pre>
+
+<p>} .tooltip.right .tooltip-arrow {</p>
+
+<pre>top: 50%;
+left: 0;
+margin-top: -5px;
+border-width: 5px 5px 5px 0;
+border-right-color: #000000;</pre>
+
+<p>} .tooltip.left .tooltip-arrow {</p>
+
+<pre>top: 50%;
+right: 0;
+margin-top: -5px;
+border-width: 5px 0 5px 5px;
+border-left-color: #000000;</pre>
+
+<p>} .tooltip.bottom .tooltip-arrow {</p>
+
+<pre>top: 0;
+left: 50%;
+margin-left: -5px;
+border-width: 0 5px 5px;
+border-bottom-color: #000000;</pre>
+
+<p>} .popover {</p>
+
+<pre>position: absolute;
+top: 0;
+left: 0;
+z-index: 1010;
+display: none;
+max-width: 276px;
+padding: 1px;
+text-align: left;
+background-color: #ffffff;
+-webkit-background-clip: padding-box;
+-moz-background-clip: padding;
+background-clip: padding-box;
+border: 1px solid #ccc;
+border: 1px solid rgba(0, 0, 0, 0.2);
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+white-space: normal;</pre>
+
+<p>} .popover.top {</p>
+
+<pre>margin-top: -10px;</pre>
+
+<p>} .popover.right {</p>
+
+<pre>margin-left: 10px;</pre>
+
+<p>} .popover.bottom {</p>
+
+<pre>margin-top: 10px;</pre>
+
+<p>} .popover.left {</p>
+
+<pre>margin-left: -10px;</pre>
+
+<p>} .popover-title {</p>
+
+<pre>margin: 0;
+padding: 8px 14px;
+font-size: 14px;
+font-weight: normal;
+line-height: 18px;
+background-color: #f7f7f7;
+border-bottom: 1px solid #ebebeb;
+-webkit-border-radius: 5px 5px 0 0;
+-moz-border-radius: 5px 5px 0 0;
+border-radius: 5px 5px 0 0;</pre>
+
+<p>} .popover-title:empty {</p>
+
+<pre>display: none;</pre>
+
+<p>} .popover-content {</p>
+
+<pre>padding: 9px 14px;</pre>
+
+<p>} .popover .arrow, .popover .arrow:after {</p>
+
+<pre>position: absolute;
+display: block;
+width: 0;
+height: 0;
+border-color: transparent;
+border-style: solid;</pre>
+
+<p>} .popover .arrow {</p>
+
+<pre>border-width: 11px;</pre>
+
+<p>} .popover .arrow:after {</p>
+
+<pre>border-width: 10px;
+content: &quot;&quot;;</pre>
+
+<p>} .popover.top .arrow {</p>
+
+<pre>left: 50%;
+margin-left: -11px;
+border-bottom-width: 0;
+border-top-color: #999;
+border-top-color: rgba(0, 0, 0, 0.25);
+bottom: -11px;</pre>
+
+<p>} .popover.top .arrow:after {</p>
+
+<pre>bottom: 1px;
+margin-left: -10px;
+border-bottom-width: 0;
+border-top-color: #ffffff;</pre>
+
+<p>} .popover.right .arrow {</p>
+
+<pre>top: 50%;
+left: -11px;
+margin-top: -11px;
+border-left-width: 0;
+border-right-color: #999;
+border-right-color: rgba(0, 0, 0, 0.25);</pre>
+
+<p>} .popover.right .arrow:after {</p>
+
+<pre>left: 1px;
+bottom: -10px;
+border-left-width: 0;
+border-right-color: #ffffff;</pre>
+
+<p>} .popover.bottom .arrow {</p>
+
+<pre>left: 50%;
+margin-left: -11px;
+border-top-width: 0;
+border-bottom-color: #999;
+border-bottom-color: rgba(0, 0, 0, 0.25);
+top: -11px;</pre>
+
+<p>} .popover.bottom .arrow:after {</p>
+
+<pre>top: 1px;
+margin-left: -10px;
+border-top-width: 0;
+border-bottom-color: #ffffff;</pre>
+
+<p>} .popover.left .arrow {</p>
+
+<pre>top: 50%;
+right: -11px;
+margin-top: -11px;
+border-right-width: 0;
+border-left-color: #999;
+border-left-color: rgba(0, 0, 0, 0.25);</pre>
+
+<p>} .popover.left .arrow:after {</p>
+
+<pre>right: 1px;
+border-right-width: 0;
+border-left-color: #ffffff;
+bottom: -10px;</pre>
+
+<p>} .modal-backdrop {</p>
+
+<pre>position: fixed;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+z-index: 1040;
+background-color: #000000;</pre>
+
+<p>} .modal-backdrop.fade {</p>
+
+<pre>opacity: 0;</pre>
+
+<p>} .modal-backdrop, .modal-backdrop.fade.in {</p>
+
+<pre>opacity: 0.8;
+filter: alpha(opacity=80);</pre>
+
+<p>} .modal {</p>
+
+<pre>position: fixed;
+top: 10%;
+left: 50%;
+z-index: 1050;
+width: 560px;
+margin-left: -280px;
+background-color: #ffffff;
+border: 1px solid #999;
+border: 1px solid rgba(0, 0, 0, 0.3);
+ border: 1px solid #999;
+/* IE6-7 */
+
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+-webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+-webkit-background-clip: padding-box;
+-moz-background-clip: padding-box;
+background-clip: padding-box;
+outline: none;</pre>
+
+<p>} .modal.fade {</p>
+
+<pre>-webkit-transition: opacity .3s linear, top .3s ease-out;
+-moz-transition: opacity .3s linear, top .3s ease-out;
+-o-transition: opacity .3s linear, top .3s ease-out;
+transition: opacity .3s linear, top .3s ease-out;
+top: -25%;</pre>
+
+<p>} .modal.fade.in {</p>
+
+<pre>top: 10%;</pre>
+
+<p>} .modal-header {</p>
+
+<pre>padding: 9px 15px;
+border-bottom: 1px solid #eee;</pre>
+
+<p>} .modal-header .close {</p>
+
+<pre>margin-top: 2px;</pre>
+
+<p>} .modal-header h3 {</p>
+
+<pre>margin: 0;
+line-height: 30px;</pre>
+
+<p>} .modal-body {</p>
+
+<pre>position: relative;
+overflow-y: auto;
+max-height: 400px;
+padding: 15px;</pre>
+
+<p>} .modal-form {</p>
+
+<pre>margin-bottom: 0;</pre>
+
+<p>} .modal-footer {</p>
+
+<pre>padding: 14px 15px 15px;
+margin-bottom: 0;
+text-align: right;
+background-color: #f5f5f5;
+border-top: 1px solid #ddd;
+-webkit-border-radius: 0 0 6px 6px;
+-moz-border-radius: 0 0 6px 6px;
+border-radius: 0 0 6px 6px;
+-webkit-box-shadow: inset 0 1px 0 #ffffff;
+-moz-box-shadow: inset 0 1px 0 #ffffff;
+box-shadow: inset 0 1px 0 #ffffff;
+ zoom: 1;</pre>
+
+<p>} .modal-footer:before, .modal-footer:after {</p>
+
+<pre>display: table;
+content: &quot;&quot;;
+line-height: 0;</pre>
+
+<p>} .modal-footer:after {</p>
+
+<pre>clear: both;</pre>
+
+<p>} .modal-footer .btn + .btn {</p>
+
+<pre>margin-left: 5px;
+margin-bottom: 0;</pre>
+
+<p>} .modal-footer .btn-group .btn + .btn {</p>
+
+<pre>margin-left: -1px;</pre>
+
+<p>} .modal-footer .btn-block + .btn-block {</p>
+
+<pre>margin-left: 0;</pre>
+
+<p>} .dropup, .dropdown {</p>
+
+<pre>position: relative;</pre>
+
+<p>} .dropdown-toggle {</p>
+
+<pre>margin-bottom: -3px;</pre>
+
+<p>} .dropdown-toggle:active, .open .dropdown-toggle {</p>
+
+<pre>outline: 0;</pre>
+
+<p>} .caret {</p>
+
+<pre>display: inline-block;
+width: 0;
+height: 0;
+vertical-align: top;
+border-top: 4px solid #000000;
+border-right: 4px solid transparent;
+border-left: 4px solid transparent;
+content: &quot;&quot;;</pre>
+
+<p>} .dropdown .caret {</p>
+
+<pre>margin-top: 8px;
+margin-left: 2px;</pre>
+
+<p>} .dropdown-menu {</p>
+
+<pre>position: absolute;
+top: 100%;
+left: 0;
+z-index: 1000;
+display: none;
+float: left;
+min-width: 160px;
+padding: 5px 0;
+margin: 2px 0 0;
+list-style: none;
+background-color: #ffffff;
+border: 1px solid #ccc;
+border: 1px solid rgba(0, 0, 0, 0.2);
+ border-right-width: 2px;
+ border-bottom-width: 2px;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;
+-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+-webkit-background-clip: padding-box;
+-moz-background-clip: padding;
+background-clip: padding-box;</pre>
+
+<p>} .dropdown-menu.pull-right {</p>
+
+<pre>right: 0;
+left: auto;</pre>
+
+<p>} .dropdown-menu .divider {</p>
+
+<pre> width: 100%;
+height: 1px;
+margin: 9px 1px;
+ margin: -5px 0 5px;
+overflow: hidden;
+background-color: #e5e5e5;
+border-bottom: 1px solid #ffffff;</pre>
+
+<p>} .dropdown-menu &gt; li &gt; a {</p>
+
+<pre>display: block;
+padding: 3px 20px;
+clear: both;
+font-weight: normal;
+line-height: 20px;
+color: #333333;
+white-space: nowrap;</pre>
+
+<p>} .dropdown-menu &gt; li &gt; a:hover, .dropdown-menu &gt; li &gt; a:focus,
+.dropdown-submenu:hover &gt; a, .dropdown-submenu:focus &gt; a {</p>
+
+<pre>text-decoration: none;
+color: #ffffff;
+background-color: #0081c2;
+background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
+background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
+background-image: -o-linear-gradient(top, #0088cc, #0077b3);
+background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff0088cc&#39;, endColorstr=&#39;#ff0077b3&#39;, GradientType=0);</pre>
+
+<p>} .dropdown-menu &gt; .active &gt; a, .dropdown-menu &gt; .active &gt;
+a:hover, .dropdown-menu &gt; .active &gt; a:focus {</p>
+
+<pre>color: #ffffff;
+text-decoration: none;
+outline: 0;
+background-color: #0081c2;
+background-image: -moz-linear-gradient(top, #0088cc, #0077b3);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0077b3));
+background-image: -webkit-linear-gradient(top, #0088cc, #0077b3);
+background-image: -o-linear-gradient(top, #0088cc, #0077b3);
+background-image: linear-gradient(to bottom, #0088cc, #0077b3);
+background-repeat: repeat-x;
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=&#39;#ff0088cc&#39;, endColorstr=&#39;#ff0077b3&#39;, GradientType=0);</pre>
+
+<p>} .dropdown-menu &gt; .disabled &gt; a, .dropdown-menu &gt; .disabled &gt;
+a:hover, .dropdown-menu &gt; .disabled &gt; a:focus {</p>
+
+<pre>color: #999999;</pre>
+
+<p>} .dropdown-menu &gt; .disabled &gt; a:hover, .dropdown-menu &gt; .disabled
+&gt; a:focus {</p>
+
+<pre>text-decoration: none;
+background-color: transparent;
+background-image: none;
+filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+cursor: default;</pre>
+
+<p>} .open {</p>
+
+<pre>z-index: 1000;</pre>
+
+<p>} .open &gt; .dropdown-menu {</p>
+
+<pre>display: block;</pre>
+
+<p>} .pull-right &gt; .dropdown-menu {</p>
+
+<pre>right: 0;
+left: auto;</pre>
+
+<p>} .dropup .caret, .navbar-fixed-bottom .dropdown .caret {</p>
+
+<pre>border-top: 0;
+border-bottom: 4px solid #000000;
+content: &quot;&quot;;</pre>
+
+<p>} .dropup .dropdown-menu, .navbar-fixed-bottom .dropdown .dropdown-menu {</p>
+
+<pre>top: auto;
+bottom: 100%;
+margin-bottom: 1px;</pre>
+
+<p>} .dropdown-submenu {</p>
+
+<pre>position: relative;</pre>
+
+<p>} .dropdown-submenu &gt; .dropdown-menu {</p>
+
+<pre>top: 0;
+left: 100%;
+margin-top: -6px;
+margin-left: -1px;
+-webkit-border-radius: 0 6px 6px 6px;
+-moz-border-radius: 0 6px 6px 6px;
+border-radius: 0 6px 6px 6px;</pre>
+
+<p>} .dropdown-submenu:hover &gt; .dropdown-menu {</p>
+
+<pre>display: block;</pre>
+
+<p>} .dropup .dropdown-submenu &gt; .dropdown-menu {</p>
+
+<pre>top: auto;
+bottom: 0;
+margin-top: 0;
+margin-bottom: -2px;
+-webkit-border-radius: 5px 5px 5px 0;
+-moz-border-radius: 5px 5px 5px 0;
+border-radius: 5px 5px 5px 0;</pre>
+
+<p>} .dropdown-submenu &gt; a:after {</p>
+
+<pre>display: block;
+content: &quot; &quot;;
+float: right;
+width: 0;
+height: 0;
+border-color: transparent;
+border-style: solid;
+border-width: 5px 0 5px 5px;
+border-left-color: #cccccc;
+margin-top: 5px;
+margin-right: -10px;</pre>
+
+<p>} .dropdown-submenu:hover &gt; a:after {</p>
+
+<pre>border-left-color: #ffffff;</pre>
+
+<p>} .dropdown-submenu.pull-left {</p>
+
+<pre>float: none;</pre>
+
+<p>} .dropdown-submenu.pull-left &gt; .dropdown-menu {</p>
+
+<pre>left: -100%;
+margin-left: 10px;
+-webkit-border-radius: 6px 0 6px 6px;
+-moz-border-radius: 6px 0 6px 6px;
+border-radius: 6px 0 6px 6px;</pre>
+
+<p>} .dropdown .dropdown-menu .nav-header {</p>
+
+<pre>padding-left: 20px;
+padding-right: 20px;</pre>
+
+<p>} .typeahead {</p>
+
+<pre>z-index: 1051;
+margin-top: 2px;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;</pre>
+
+<p>} .accordion {</p>
+
+<pre>margin-bottom: 20px;</pre>
+
+<p>} .accordion-group {</p>
+
+<pre>margin-bottom: 2px;
+border: 1px solid #e5e5e5;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;</pre>
+
+<p>} .accordion-heading {</p>
+
+<pre>border-bottom: 0;</pre>
+
+<p>} .accordion-heading .accordion-toggle {</p>
+
+<pre>display: block;
+padding: 8px 15px;</pre>
+
+<p>} .accordion-toggle {</p>
+
+<pre>cursor: pointer;</pre>
+
+<p>} .accordion-inner {</p>
+
+<pre>padding: 9px 15px;
+border-top: 1px solid #e5e5e5;</pre>
+
+<p>} .carousel {</p>
+
+<pre>position: relative;
+margin-bottom: 20px;
+line-height: 1;</pre>
+
+<p>} .carousel-inner {</p>
+
+<pre>overflow: hidden;
+width: 100%;
+position: relative;</pre>
+
+<p>} .carousel-inner &gt; .item {</p>
+
+<pre>display: none;
+position: relative;
+-webkit-transition: 0.6s ease-in-out left;
+-moz-transition: 0.6s ease-in-out left;
+-o-transition: 0.6s ease-in-out left;
+transition: 0.6s ease-in-out left;</pre>
+
+<p>} .carousel-inner &gt; .item &gt; img, .carousel-inner &gt; .item &gt; a
+&gt; img {</p>
+
+<pre>display: block;
+line-height: 1;</pre>
+
+<p>} .carousel-inner &gt; .active, .carousel-inner &gt; .next, .carousel-inner
+&gt; .prev {</p>
+
+<pre>display: block;</pre>
+
+<p>} .carousel-inner &gt; .active {</p>
+
+<pre>left: 0;</pre>
+
+<p>} .carousel-inner &gt; .next, .carousel-inner &gt; .prev {</p>
+
+<pre>position: absolute;
+top: 0;
+width: 100%;</pre>
+
+<p>} .carousel-inner &gt; .next {</p>
+
+<pre>left: 100%;</pre>
+
+<p>} .carousel-inner &gt; .prev {</p>
+
+<pre>left: -100%;</pre>
+
+<p>} .carousel-inner &gt; .next.left, .carousel-inner &gt; .prev.right {</p>
+
+<pre>left: 0;</pre>
+
+<p>} .carousel-inner &gt; .active.left {</p>
+
+<pre>left: -100%;</pre>
+
+<p>} .carousel-inner &gt; .active.right {</p>
+
+<pre>left: 100%;</pre>
+
+<p>} .carousel-control {</p>
+
+<pre>position: absolute;
+top: 40%;
+left: 15px;
+width: 40px;
+height: 40px;
+margin-top: -20px;
+font-size: 60px;
+font-weight: 100;
+line-height: 30px;
+color: #ffffff;
+text-align: center;
+background: #222222;
+border: 3px solid #ffffff;
+-webkit-border-radius: 23px;
+-moz-border-radius: 23px;
+border-radius: 23px;
+opacity: 0.5;
+filter: alpha(opacity=50);</pre>
+
+<p>} .carousel-control.right {</p>
+
+<pre>left: auto;
+right: 15px;</pre>
+
+<p>} .carousel-control:hover, .carousel-control:focus {</p>
+
+<pre>color: #ffffff;
+text-decoration: none;
+opacity: 0.9;
+filter: alpha(opacity=90);</pre>
+
+<p>} .carousel-indicators {</p>
+
+<pre>position: absolute;
+top: 15px;
+right: 15px;
+z-index: 5;
+margin: 0;
+list-style: none;</pre>
+
+<p>} .carousel-indicators li {</p>
+
+<pre>display: block;
+float: left;
+width: 10px;
+height: 10px;
+margin-left: 5px;
+text-indent: -999px;
+background-color: #ccc;
+background-color: rgba(255, 255, 255, 0.25);
+border-radius: 5px;</pre>
+
+<p>} .carousel-indicators .active {</p>
+
+<pre>background-color: #fff;</pre>
+
+<p>} .carousel-caption {</p>
+
+<pre>position: absolute;
+left: 0;
+right: 0;
+bottom: 0;
+padding: 15px;
+background: #333333;
+background: rgba(0, 0, 0, 0.75);</pre>
+
+<p>} .carousel-caption h4, .carousel-caption p {</p>
+
+<pre>color: #ffffff;
+line-height: 20px;</pre>
+
+<p>} .carousel-caption h4 {</p>
+
+<pre>margin: 0 0 5px;</pre>
+
+<p>} .carousel-caption p {</p>
+
+<pre>margin-bottom: 0;</pre>
+
+<p>} .well {</p>
+
+<pre>min-height: 20px;
+padding: 19px;
+margin-bottom: 20px;
+background-color: #f5f5f5;
+border: 1px solid #e3e3e3;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);</pre>
+
+<p>} .well blockquote {</p>
+
+<pre>border-color: #ddd;
+border-color: rgba(0, 0, 0, 0.15);</pre>
+
+<p>} .well-large {</p>
+
+<pre>padding: 24px;
+-webkit-border-radius: 6px;
+-moz-border-radius: 6px;
+border-radius: 6px;</pre>
+
+<p>} .well-small {</p>
+
+<pre>padding: 9px;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;</pre>
+
+<p>} .close {</p>
+
+<pre>float: right;
+font-size: 20px;
+font-weight: bold;
+line-height: 20px;
+color: #000000;
+text-shadow: 0 1px 0 #ffffff;
+opacity: 0.2;
+filter: alpha(opacity=20);</pre>
+
+<p>} .close:hover, .close:focus {</p>
+
+<pre>color: #000000;
+text-decoration: none;
+cursor: pointer;
+opacity: 0.4;
+filter: alpha(opacity=40);</pre>
+
+<p>} button.close {</p>
+
+<pre>padding: 0;
+cursor: pointer;
+background: transparent;
+border: 0;
+-webkit-appearance: none;</pre>
+
+<p>} .pull-right {</p>
+
+<pre>float: right;</pre>
+
+<p>} .pull-left {</p>
+
+<pre>float: left;</pre>
+
+<p>} .hide {</p>
+
+<pre>display: none;</pre>
+
+<p>} .show {</p>
+
+<pre>display: block;</pre>
+
+<p>} .invisible {</p>
+
+<pre>visibility: hidden;</pre>
+
+<p>} .affix {</p>
+
+<pre>position: fixed;</pre>
+
+<p>} .fade {</p>
+
+<pre>opacity: 0;
+-webkit-transition: opacity 0.15s linear;
+-moz-transition: opacity 0.15s linear;
+-o-transition: opacity 0.15s linear;
+transition: opacity 0.15s linear;</pre>
+
+<p>} .fade.in {</p>
+
+<pre>opacity: 1;</pre>
+
+<p>} .collapse {</p>
+
+<pre>position: relative;
+height: 0;
+overflow: hidden;
+-webkit-transition: height 0.35s ease;
+-moz-transition: height 0.35s ease;
+-o-transition: height 0.35s ease;
+transition: height 0.35s ease;</pre>
+
+<p>} .collapse.in {</p>
+
+<pre>height: auto;</pre>
+
+<p>} @-ms-viewport {</p>
+
+<pre>width: device-width;</pre>
+
+<p>} .hidden {</p>
+
+<pre>display: none;
+visibility: hidden;</pre>
+
+<p>} .visible-phone {</p>
+
+<pre>display: none !important;</pre>
+
+<p>} .visible-tablet {</p>
+
+<pre>display: none !important;</pre>
+
+<p>} .hidden-desktop {</p>
+
+<pre>display: none !important;</pre>
+
+<p>} .visible-desktop {</p>
+
+<pre>display: inherit !important;</pre>
+
+<p>} @media (min-width: 768px) and (max-width: 979px) {</p>
+
+<pre>.hidden-desktop {
+  display: inherit !important;
+}
+.visible-desktop {
+  display: none !important ;
+}
+.visible-tablet {
+  display: inherit !important;
+}
+.hidden-tablet {
+  display: none !important;
+}</pre>
+
+<p>} @media (max-width: 767px) {</p>
+
+<pre>.hidden-desktop {
+  display: inherit !important;
+}
+.visible-desktop {
+  display: none !important;
+}
+.visible-phone {
+  display: inherit !important;
+}
+.hidden-phone {
+  display: none !important;
+}</pre>
+
+<p>} .visible-print {</p>
+
+<pre>display: none !important;</pre>
+
+<p>} @media print {</p>
+
+<pre>.visible-print {
+  display: inherit !important;
+}
+.hidden-print {
+  display: none !important;
+}</pre>
+
+<p>} @media (max-width: 767px) {</p>
+
+<pre>body {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.navbar-fixed-top,
+.navbar-fixed-bottom,
+.navbar-static-top {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.container-fluid {
+  padding: 0;
+}
+.dl-horizontal dt {
+  float: none;
+  clear: none;
+  width: auto;
+  text-align: left;
+}
+.dl-horizontal dd {
+  margin-left: 0;
+}
+.container {
+  width: auto;
+}
+.row-fluid {
+  width: 100%;
+}
+.row,
+.thumbnails {
+  margin-left: 0;
+}
+.thumbnails &gt; li {
+  float: none;
+  margin-left: 0;
+}
+[class*=&quot;span&quot;],
+.uneditable-input[class*=&quot;span&quot;],
+.row-fluid [class*=&quot;span&quot;] {
+  float: none;
+  display: block;
+  width: 100%;
+  margin-left: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.span12,
+.row-fluid .span12 {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.row-fluid [class*=&quot;offset&quot;]:first-child {
+  margin-left: 0;
+}
+.input-large,
+.input-xlarge,
+.input-xxlarge,
+input[class*=&quot;span&quot;],
+select[class*=&quot;span&quot;],
+textarea[class*=&quot;span&quot;],
+.uneditable-input {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.input-prepend input,
+.input-append input,
+.input-prepend input[class*=&quot;span&quot;],
+.input-append input[class*=&quot;span&quot;] {
+  display: inline-block;
+  width: auto;
+}
+.controls-row [class*=&quot;span&quot;] + [class*=&quot;span&quot;] {
+  margin-left: 0;
+}
+.modal {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  width: auto;
+  margin: 0;
+}
+.modal.fade {
+  top: -100px;
+}
+.modal.fade.in {
+  top: 20px;
+}</pre>
+
+<p>} @media (max-width: 480px) {</p>
+
+<pre>.nav-collapse {
+  -webkit-transform: translate3d(0, 0, 0);
+}
+.page-header h1 small {
+  display: block;
+  line-height: 20px;
+}
+input[type=&quot;checkbox&quot;],
+input[type=&quot;radio&quot;] {
+  border: 1px solid #ccc;
+}
+.form-horizontal .control-label {
+  float: none;
+  width: auto;
+  padding-top: 0;
+  text-align: left;
+}
+.form-horizontal .controls {
+  margin-left: 0;
+}
+.form-horizontal .control-list {
+  padding-top: 0;
+}
+.form-horizontal .form-actions {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.media .pull-left,
+.media .pull-right {
+  float: none;
+  display: block;
+  margin-bottom: 10px;
+}
+.media-object {
+  margin-right: 0;
+  margin-left: 0;
+}
+.modal {
+  top: 10px;
+  left: 10px;
+  right: 10px;
+}
+.modal-header .close {
+  padding: 10px;
+  margin: -10px;
+}
+.carousel-caption {
+  position: static;
+}</pre>
+
+<p>} @media (min-width: 768px) and (max-width: 979px) {</p>
+
+<pre>.row {
+  margin-left: -20px;
+   zoom: 1;
+}
+.row:before,
+.row:after {
+  display: table;
+  content: &quot;&quot;;
+  line-height: 0;
+}
+.row:after {
+  clear: both;
+}
+[class*=&quot;span&quot;] {
+  float: left;
+  min-height: 1px;
+  margin-left: 20px;
+}
+.container,
+.navbar-static-top .container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+  width: 724px;
+}
+.span12 {
+  width: 724px;
+}
+.span11 {
+  width: 662px;
+}
+.span10 {
+  width: 600px;
+}
+.span9 {
+  width: 538px;
+}
+.span8 {
+  width: 476px;
+}
+.span7 {
+  width: 414px;
+}
+.span6 {
+  width: 352px;
+}
+.span5 {
+  width: 290px;
+}
+.span4 {
+  width: 228px;
+}
+.span3 {
+  width: 166px;
+}
+.span2 {
+  width: 104px;
+}
+.span1 {
+  width: 42px;
+}
+.offset12 {
+  margin-left: 764px;
+}
+.offset11 {
+  margin-left: 702px;
+}
+.offset10 {
+  margin-left: 640px;
+}
+.offset9 {
+  margin-left: 578px;
+}
+.offset8 {
+  margin-left: 516px;
+}
+.offset7 {
+  margin-left: 454px;
+}
+.offset6 {
+  margin-left: 392px;
+}
+.offset5 {
+  margin-left: 330px;
+}
+.offset4 {
+  margin-left: 268px;
+}
+.offset3 {
+  margin-left: 206px;
+}
+.offset2 {
+  margin-left: 144px;
+}
+.offset1 {
+  margin-left: 82px;
+}
+.row-fluid {
+  width: 100%;
+   zoom: 1;
+}
+.row-fluid:before,
+.row-fluid:after {
+  display: table;
+  content: &quot;&quot;;
+  line-height: 0;
+}
+.row-fluid:after {
+  clear: both;
+}
+.row-fluid [class*=&quot;span&quot;] {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 2.7624309392265194%;
+   margin-left: 2.709239449864817%;
+}
+.row-fluid [class*=&quot;span&quot;]:first-child {
+  margin-left: 0;
+}
+.row-fluid .controls-row [class*=&quot;span&quot;] + [class*=&quot;span&quot;] {
+  margin-left: 2.7624309392265194%;
+}
+.row-fluid .span12 {
+  width: 100%;
+   width: 99.94680851063829%;
+}
+.row-fluid .span11 {
+  width: 91.43646408839778%;
+   width: 91.38327259903608%;
+}
+.row-fluid .span10 {
+  width: 82.87292817679558%;
+   width: 82.81973668743387%;
+}
+.row-fluid .span9 {
+  width: 74.30939226519337%;
+   width: 74.25620077583166%;
+}
+.row-fluid .span8 {
+  width: 65.74585635359117%;
+   width: 65.69266486422946%;
+}
+.row-fluid .span7 {
+  width: 57.18232044198895%;
+   width: 57.12912895262725%;
+}
+.row-fluid .span6 {
+  width: 48.61878453038674%;
+   width: 48.56559304102504%;
+}
+.row-fluid .span5 {
+  width: 40.05524861878453%;
+   width: 40.00205712942283%;
+}
+.row-fluid .span4 {
+  width: 31.491712707182323%;
+   width: 31.43852121782062%;
+}
+.row-fluid .span3 {
+  width: 22.92817679558011%;
+   width: 22.87498530621841%;
+}
+.row-fluid .span2 {
+  width: 14.3646408839779%;
+   width: 14.311449394616199%;
+}
+.row-fluid .span1 {
+  width: 5.801104972375691%;
+   width: 5.747913483013988%;
+}
+.row-fluid .offset12 {
+  margin-left: 105.52486187845304%;
+   margin-left: 105.41847889972962%;
+}
+.row-fluid .offset12:first-child {
+  margin-left: 102.76243093922652%;
+   margin-left: 102.6560479605031%;
+}
+.row-fluid .offset11 {
+  margin-left: 96.96132596685082%;
+   margin-left: 96.8549429881274%;
+}
+.row-fluid .offset11:first-child {
+  margin-left: 94.1988950276243%;
+   margin-left: 94.09251204890089%;
+}
+.row-fluid .offset10 {
+  margin-left: 88.39779005524862%;
+   margin-left: 88.2914070765252%;
+}
+.row-fluid .offset10:first-child {
+  margin-left: 85.6353591160221%;
+   margin-left: 85.52897613729868%;
+}
+.row-fluid .offset9 {
+  margin-left: 79.8342541436464%;
+   margin-left: 79.72787116492299%;
+}
+.row-fluid .offset9:first-child {
+  margin-left: 77.07182320441989%;
+   margin-left: 76.96544022569647%;
+}
+.row-fluid .offset8 {
+  margin-left: 71.2707182320442%;
+   margin-left: 71.16433525332079%;
+}
+.row-fluid .offset8:first-child {
+  margin-left: 68.50828729281768%;
+   margin-left: 68.40190431409427%;
+}
+.row-fluid .offset7 {
+  margin-left: 62.70718232044199%;
+   margin-left: 62.600799341718584%;
+}
+.row-fluid .offset7:first-child {
+  margin-left: 59.94475138121547%;
+   margin-left: 59.838368402492065%;
+}
+.row-fluid .offset6 {
+  margin-left: 54.14364640883978%;
+   margin-left: 54.037263430116376%;
+}
+.row-fluid .offset6:first-child {
+  margin-left: 51.38121546961326%;
+   margin-left: 51.27483249088986%;
+}
+.row-fluid .offset5 {
+  margin-left: 45.58011049723757%;
+   margin-left: 45.47372751851417%;
+}
+.row-fluid .offset5:first-child {
+  margin-left: 42.81767955801105%;
+   margin-left: 42.71129657928765%;
+}
+.row-fluid .offset4 {
+  margin-left: 37.01657458563536%;
+   margin-left: 36.91019160691196%;
+}
+.row-fluid .offset4:first-child {
+  margin-left: 34.25414364640884%;
+   margin-left: 34.14776066768544%;
+}
+.row-fluid .offset3 {
+  margin-left: 28.45303867403315%;
+   margin-left: 28.346655695309746%;
+}
+.row-fluid .offset3:first-child {
+  margin-left: 25.69060773480663%;
+   margin-left: 25.584224756083227%;
+}
+.row-fluid .offset2 {
+  margin-left: 19.88950276243094%;
+   margin-left: 19.783119783707537%;
+}
+.row-fluid .offset2:first-child {
+  margin-left: 17.12707182320442%;
+   margin-left: 17.02068884448102%;
+}
+.row-fluid .offset1 {
+  margin-left: 11.32596685082873%;
+   margin-left: 11.219583872105325%;
+}
+.row-fluid .offset1:first-child {
+  margin-left: 8.56353591160221%;
+   margin-left: 8.457152932878806%;
+}
+input,
+textarea,
+.uneditable-input {
+  margin-left: 0;
+}
+.controls-row [class*=&quot;span&quot;] + [class*=&quot;span&quot;] {
+  margin-left: 20px;
+}
+input.span12,
+textarea.span12,
+.uneditable-input.span12 {
+  width: 710px;
+}
+input.span11,
+textarea.span11,
+.uneditable-input.span11 {
+  width: 648px;
+}
+input.span10,
+textarea.span10,
+.uneditable-input.span10 {
+  width: 586px;
+}
+input.span9,
+textarea.span9,
+.uneditable-input.span9 {
+  width: 524px;
+}
+input.span8,
+textarea.span8,
+.uneditable-input.span8 {
+  width: 462px;
+}
+input.span7,
+textarea.span7,
+.uneditable-input.span7 {
+  width: 400px;
+}
+input.span6,
+textarea.span6,
+.uneditable-input.span6 {
+  width: 338px;
+}
+input.span5,
+textarea.span5,
+.uneditable-input.span5 {
+  width: 276px;
+}
+input.span4,
+textarea.span4,
+.uneditable-input.span4 {
+  width: 214px;
+}
+input.span3,
+textarea.span3,
+.uneditable-input.span3 {
+  width: 152px;
+}
+input.span2,
+textarea.span2,
+.uneditable-input.span2 {
+  width: 90px;
+}
+input.span1,
+textarea.span1,
+.uneditable-input.span1 {
+  width: 28px;
+}</pre>
+
+<p>} @media (min-width: 1200px) {</p>
+
+<pre>.row {
+  margin-left: -30px;
+   zoom: 1;
+}
+.row:before,
+.row:after {
+  display: table;
+  content: &quot;&quot;;
+  line-height: 0;
+}
+.row:after {
+  clear: both;
+}
+[class*=&quot;span&quot;] {
+  float: left;
+  min-height: 1px;
+  margin-left: 30px;
+}
+.container,
+.navbar-static-top .container,
+.navbar-fixed-top .container,
+.navbar-fixed-bottom .container {
+  width: 1170px;
+}
+.span12 {
+  width: 1170px;
+}
+.span11 {
+  width: 1070px;
+}
+.span10 {
+  width: 970px;
+}
+.span9 {
+  width: 870px;
+}
+.span8 {
+  width: 770px;
+}
+.span7 {
+  width: 670px;
+}
+.span6 {
+  width: 570px;
+}
+.span5 {
+  width: 470px;
+}
+.span4 {
+  width: 370px;
+}
+.span3 {
+  width: 270px;
+}
+.span2 {
+  width: 170px;
+}
+.span1 {
+  width: 70px;
+}
+.offset12 {
+  margin-left: 1230px;
+}
+.offset11 {
+  margin-left: 1130px;
+}
+.offset10 {
+  margin-left: 1030px;
+}
+.offset9 {
+  margin-left: 930px;
+}
+.offset8 {
+  margin-left: 830px;
+}
+.offset7 {
+  margin-left: 730px;
+}
+.offset6 {
+  margin-left: 630px;
+}
+.offset5 {
+  margin-left: 530px;
+}
+.offset4 {
+  margin-left: 430px;
+}
+.offset3 {
+  margin-left: 330px;
+}
+.offset2 {
+  margin-left: 230px;
+}
+.offset1 {
+  margin-left: 130px;
+}
+.row-fluid {
+  width: 100%;
+   zoom: 1;
+}
+.row-fluid:before,
+.row-fluid:after {
+  display: table;
+  content: &quot;&quot;;
+  line-height: 0;
+}
+.row-fluid:after {
+  clear: both;
+}
+.row-fluid [class*=&quot;span&quot;] {
+  display: block;
+  width: 100%;
+  min-height: 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  margin-left: 2.564102564102564%;
+   margin-left: 2.5109110747408616%;
+}
+.row-fluid [class*=&quot;span&quot;]:first-child {
+  margin-left: 0;
+}
+.row-fluid .controls-row [class*=&quot;span&quot;] + [class*=&quot;span&quot;] {
+  margin-left: 2.564102564102564%;
+}
+.row-fluid .span12 {
+  width: 100%;
+   width: 99.94680851063829%;
+}
+.row-fluid .span11 {
+  width: 91.45299145299145%;
+   width: 91.39979996362975%;
+}
+.row-fluid .span10 {
+  width: 82.90598290598291%;
+   width: 82.8527914166212%;
+}
+.row-fluid .span9 {
+  width: 74.35897435897436%;
+   width: 74.30578286961266%;
+}
+.row-fluid .span8 {
+  width: 65.81196581196582%;
+   width: 65.75877432260411%;
+}
+.row-fluid .span7 {
+  width: 57.26495726495726%;
+   width: 57.21176577559556%;
+}
+.row-fluid .span6 {
+  width: 48.717948717948715%;
+   width: 48.664757228587014%;
+}
+.row-fluid .span5 {
+  width: 40.17094017094017%;
+   width: 40.11774868157847%;
+}
+.row-fluid .span4 {
+  width: 31.623931623931625%;
+   width: 31.570740134569924%;
+}
+.row-fluid .span3 {
+  width: 23.076923076923077%;
+   width: 23.023731587561375%;
+}
+.row-fluid .span2 {
+  width: 14.52991452991453%;
+   width: 14.476723040552828%;
+}
+.row-fluid .span1 {
+  width: 5.982905982905983%;
+   width: 5.929714493544281%;
+}
+.row-fluid .offset12 {
+  margin-left: 105.12820512820512%;
+   margin-left: 105.02182214948171%;
+}
+.row-fluid .offset12:first-child {
+  margin-left: 102.56410256410257%;
+   margin-left: 102.45771958537915%;
+}
+.row-fluid .offset11 {
+  margin-left: 96.58119658119658%;
+   margin-left: 96.47481360247316%;
+}
+.row-fluid .offset11:first-child {
+  margin-left: 94.01709401709402%;
+   margin-left: 93.91071103837061%;
+}
+.row-fluid .offset10 {
+  margin-left: 88.03418803418803%;
+   margin-left: 87.92780505546462%;
+}
+.row-fluid .offset10:first-child {
+  margin-left: 85.47008547008548%;
+   margin-left: 85.36370249136206%;
+}
+.row-fluid .offset9 {
+  margin-left: 79.48717948717949%;
+   margin-left: 79.38079650845607%;
+}
+.row-fluid .offset9:first-child {
+  margin-left: 76.92307692307693%;
+   margin-left: 76.81669394435352%;
+}
+.row-fluid .offset8 {
+  margin-left: 70.94017094017094%;
+   margin-left: 70.83378796144753%;
+}
+.row-fluid .offset8:first-child {
+  margin-left: 68.37606837606839%;
+   margin-left: 68.26968539734497%;
+}
+.row-fluid .offset7 {
+  margin-left: 62.393162393162385%;
+   margin-left: 62.28677941443899%;
+}
+.row-fluid .offset7:first-child {
+  margin-left: 59.82905982905982%;
+   margin-left: 59.72267685033642%;
+}
+.row-fluid .offset6 {
+  margin-left: 53.84615384615384%;
+   margin-left: 53.739770867430444%;
+}
+.row-fluid .offset6:first-child {
+  margin-left: 51.28205128205128%;
+   margin-left: 51.175668303327875%;
+}
+.row-fluid .offset5 {
+  margin-left: 45.299145299145295%;
+   margin-left: 45.1927623204219%;
+}
+.row-fluid .offset5:first-child {
+  margin-left: 42.73504273504273%;
+   margin-left: 42.62865975631933%;
+}
+.row-fluid .offset4 {
+  margin-left: 36.75213675213675%;
+   margin-left: 36.645753773413354%;
+}
+.row-fluid .offset4:first-child {
+  margin-left: 34.18803418803419%;
+   margin-left: 34.081651209310785%;
+}
+.row-fluid .offset3 {
+  margin-left: 28.205128205128204%;
+   margin-left: 28.0987452264048%;
+}
+.row-fluid .offset3:first-child {
+  margin-left: 25.641025641025642%;
+   margin-left: 25.53464266230224%;
+}
+.row-fluid .offset2 {
+  margin-left: 19.65811965811966%;
+   margin-left: 19.551736679396257%;
+}
+.row-fluid .offset2:first-child {
+  margin-left: 17.094017094017094%;
+   margin-left: 16.98763411529369%;
+}
+.row-fluid .offset1 {
+  margin-left: 11.11111111111111%;
+   margin-left: 11.004728132387708%;
+}
+.row-fluid .offset1:first-child {
+  margin-left: 8.547008547008547%;
+   margin-left: 8.440625568285142%;
+}
+input,
+textarea,
+.uneditable-input {
+  margin-left: 0;
+}
+.controls-row [class*=&quot;span&quot;] + [class*=&quot;span&quot;] {
+  margin-left: 30px;
+}
+input.span12,
+textarea.span12,
+.uneditable-input.span12 {
+  width: 1156px;
+}
+input.span11,
+textarea.span11,
+.uneditable-input.span11 {
+  width: 1056px;
+}
+input.span10,
+textarea.span10,
+.uneditable-input.span10 {
+  width: 956px;
+}
+input.span9,
+textarea.span9,
+.uneditable-input.span9 {
+  width: 856px;
+}
+input.span8,
+textarea.span8,
+.uneditable-input.span8 {
+  width: 756px;
+}
+input.span7,
+textarea.span7,
+.uneditable-input.span7 {
+  width: 656px;
+}
+input.span6,
+textarea.span6,
+.uneditable-input.span6 {
+  width: 556px;
+}
+input.span5,
+textarea.span5,
+.uneditable-input.span5 {
+  width: 456px;
+}
+input.span4,
+textarea.span4,
+.uneditable-input.span4 {
+  width: 356px;
+}
+input.span3,
+textarea.span3,
+.uneditable-input.span3 {
+  width: 256px;
+}
+input.span2,
+textarea.span2,
+.uneditable-input.span2 {
+  width: 156px;
+}
+input.span1,
+textarea.span1,
+.uneditable-input.span1 {
+  width: 56px;
+}
+.thumbnails {
+  margin-left: -30px;
+}
+.thumbnails &gt; li {
+  margin-left: 30px;
+}
+.row-fluid .thumbnails {
+  margin-left: 0;
+}</pre>
+
+<p>} @media (max-width: 979px) {</p>
+
+<pre>body {
+  padding-top: 0;
+}
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  position: static;
+}
+.navbar-fixed-top {
+  margin-bottom: 20px;
+}
+.navbar-fixed-bottom {
+  margin-top: 20px;
+}
+.navbar-fixed-top .navbar-inner,
+.navbar-fixed-bottom .navbar-inner {
+  padding: 5px;
+}
+.navbar .container {
+  width: auto;
+  padding: 0;
+}
+.navbar .brand {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0 0 0 -5px;
+}
+.nav-collapse {
+  clear: both;
+}
+.nav-collapse .nav {
+  float: none;
+  margin: 0 0 10px;
+}
+.nav-collapse .nav &gt; li {
+  float: none;
+}
+.nav-collapse .nav &gt; li &gt; a {
+  margin-bottom: 2px;
+}
+.nav-collapse .nav &gt; .divider-vertical {
+  display: none;
+}
+.nav-collapse .nav .nav-header {
+  color: #777777;
+  text-shadow: none;
+}
+.nav-collapse .nav &gt; li &gt; a,
+.nav-collapse .dropdown-menu a {
+  padding: 9px 15px;
+  font-weight: bold;
+  color: #777777;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.nav-collapse .btn {
+  padding: 4px 10px 4px;
+  font-weight: normal;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.nav-collapse .dropdown-menu li + li a {
+  margin-bottom: 2px;
+}
+.nav-collapse .nav &gt; li &gt; a:hover,
+.nav-collapse .nav &gt; li &gt; a:focus,
+.nav-collapse .dropdown-menu a:hover,
+.nav-collapse .dropdown-menu a:focus {
+  background-color: #f2f2f2;
+}
+.navbar-inverse .nav-collapse .nav &gt; li &gt; a,
+.navbar-inverse .nav-collapse .dropdown-menu a {
+  color: #999999;
+}
+.navbar-inverse .nav-collapse .nav &gt; li &gt; a:hover,
+.navbar-inverse .nav-collapse .nav &gt; li &gt; a:focus,
+.navbar-inverse .nav-collapse .dropdown-menu a:hover,
+.navbar-inverse .nav-collapse .dropdown-menu a:focus {
+  background-color: #111111;
+}
+.nav-collapse.in .btn-group {
+  margin-top: 5px;
+  padding: 0;
+}
+.nav-collapse .dropdown-menu {
+  position: static;
+  top: auto;
+  left: auto;
+  float: none;
+  display: none;
+  max-width: none;
+  margin: 0 15px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.nav-collapse .open &gt; .dropdown-menu {
+  display: block;
+}
+.nav-collapse .dropdown-menu:before,
+.nav-collapse .dropdown-menu:after {
+  display: none;
+}
+.nav-collapse .dropdown-menu .divider {
+  display: none;
+}
+.nav-collapse .nav &gt; li &gt; .dropdown-menu:before,
+.nav-collapse .nav &gt; li &gt; .dropdown-menu:after {
+  display: none;
+}
+.nav-collapse .navbar-form,
+.nav-collapse .navbar-search {
+  float: none;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-top: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
+}
+.navbar-inverse .nav-collapse .navbar-form,
+.navbar-inverse .nav-collapse .navbar-search {
+  border-top-color: #111111;
+  border-bottom-color: #111111;
+}
+.navbar .nav-collapse .nav.pull-right {
+  float: none;
+  margin-left: 0;
+}
+.nav-collapse,
+.nav-collapse.collapse {
+  overflow: hidden;
+  height: 0;
+}
+.navbar .btn-navbar {
+  display: block;
+}
+.navbar-static .navbar-inner {
+  padding-left: 10px;
+  padding-right: 10px;
+}</pre>
+
+<p>} @media (min-width: 980px) {</p>
+
+<pre>.nav-collapse.collapse {
+  height: auto !important;
+  overflow: visible !important;
+}</pre>
+
+<p>}</p>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
