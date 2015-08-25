@@ -2,6 +2,7 @@ class ImportController < ApplicationController
 
   require "csv"
 
+  #entry point for setup.txt import
   def setup
     puts
     puts "============================================="
@@ -75,6 +76,16 @@ class ImportController < ApplicationController
       end
     end
   end
+  #refactored variant
+  def write_csv_data_setup_variant(line, location, list )
+    #Split line into individual components
+    record = line.split()
+    if setup_valid(record)
+        format_array(record)
+        save_array_db(record)
+    end
+  end  
+  #entry point for device.txt import for each family (2wire.txt, spi,txt, etc)
   def device
     puts
     puts "============================================="
