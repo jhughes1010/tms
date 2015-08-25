@@ -55,7 +55,6 @@ class ImportController < ApplicationController
               record[12].upcase! unless record[12].nil?
               unless record[10].nil?
                 record[10] = record[10].split(".ZIP")[0]
-                #record[10] = temp[0]
               end
               r.cp1 = record[10]
               unless record[11].nil?
@@ -105,33 +104,12 @@ class ImportController < ApplicationController
     end
   end
   def write_csv_data_device(line, family )
-    #Split line into individual components
     record = line.strip()
     unless record.nil?
-      #puts "#{family}:#{record}"
-      #write record
       r = Device.new
       r.productline = family
       r.name = record
       r.save
     end
-  end
-  def cp_time
-    puts
-    puts "============================================="
-    puts "Text file importer for time.rpt"
-    puts "Device CPx Import tool"
-    puts "============================================="
-
-    #Get all devices
-    @devices = Device.all
-    @devices.each do |d|
-      #call function to itterate through time.rpt files for each device
-      getDeviceFromTimeRpt(d)
-    end
-  end
-  def getDeviceFromTimeRpt(device)
-    #search time.rpt(s) for device entries and add to database
-    
   end
 end

@@ -1,4 +1,4 @@
-Tue, 25 Aug 2015 04:25:56 -0600
+Tue, 25 Aug 2015 05:10:45 -0600
 ./app/controllers/admin_controller.rb	Tue, 04 Aug 2015 21:15:21 -0600
 ./app/controllers/application_controller.rb	Tue, 04 Aug 2015 21:15:21 -0600
 ./app/controllers/can_controller.rb	Tue, 04 Aug 2015 21:15:21 -0600
@@ -7,7 +7,7 @@ Tue, 25 Aug 2015 04:25:56 -0600
 ./app/controllers/costings_controller.rb	Tue, 04 Aug 2015 21:15:21 -0600
 ./app/controllers/devices_controller.rb	Tue, 04 Aug 2015 21:15:21 -0600
 ./app/controllers/front_samples_controller.rb	Tue, 04 Aug 2015 21:15:21 -0600
-./app/controllers/import_controller.rb	Tue, 04 Aug 2015 21:15:21 -0600
+./app/controllers/import_controller.rb	Tue, 25 Aug 2015 05:10:25 -0600
 ./app/controllers/main_controller.rb	Tue, 04 Aug 2015 21:15:21 -0600
 ./app/controllers/manids_controller.rb	Tue, 04 Aug 2015 21:15:21 -0600
 ./app/controllers/personalization_controller.rb	Wed, 12 Aug 2015 04:48:17 -0600
@@ -366,7 +366,6 @@ Tue, 25 Aug 2015 04:25:56 -0600
 ./importlogcsv.txt	Tue, 04 Aug 2015 21:15:21 -0600
 ./install	Tue, 04 Aug 2015 21:15:21 -0600
 ./lib/dynamic_delagator.rb	Tue, 04 Aug 2015 21:15:21 -0600
-./lib/finance.rb	Tue, 04 Aug 2015 21:15:21 -0600
 ./lib/SetupTester.rb	Tue, 04 Aug 2015 21:15:21 -0600
 ./log/development.log	Wed, 12 Aug 2015 04:00:48 -0600
 ./public/404.html	Tue, 04 Aug 2015 21:15:21 -0600

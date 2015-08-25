@@ -70,11 +70,7 @@
 
   <ul class="link-list" role="directory">
     
-    <li ><a href="#method-i-cp_time">#cp_time</a>
-    
     <li ><a href="#method-i-device">#device</a>
-    
-    <li ><a href="#method-i-getDeviceFromTimeRpt">#getDeviceFromTimeRpt</a>
     
     <li ><a href="#method-i-import_device">#import_device</a>
     
@@ -120,50 +116,6 @@
        </header>
 
     
-      <div id="method-i-cp_time" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">cp_time</span><span
-            class="method-args">()</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-          
-
-          
-          <div class="method-source-code" id="cp_time-source">
-            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 119</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">cp_time</span>
-  <span class="ruby-identifier">puts</span>
-  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;=============================================&quot;</span>
-  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Text file importer for time.rpt&quot;</span>
-  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Device CPx Import tool&quot;</span>
-  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;=============================================&quot;</span>
-
-  <span class="ruby-comment">#Get all devices</span>
-  <span class="ruby-ivar">@devices</span> = <span class="ruby-constant">Device</span>.<span class="ruby-identifier">all</span>
-  <span class="ruby-ivar">@devices</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span>
-    <span class="ruby-comment">#call function to itterate through time.rpt files for each device</span>
-    <span class="ruby-identifier">getDeviceFromTimeRpt</span>(<span class="ruby-identifier">d</span>)
-  <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
       <div id="method-i-device" class="method-detail ">
         
         <div class="method-heading">
@@ -183,7 +135,7 @@
 
           
           <div class="method-source-code" id="device-source">
-            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 79</span>
+            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 78</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">device</span>
   <span class="ruby-identifier">puts</span>
   <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;=============================================&quot;</span>
@@ -215,40 +167,6 @@
       </div>
 
     
-      <div id="method-i-getDeviceFromTimeRpt" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">getDeviceFromTimeRpt</span><span
-            class="method-args">(device)</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-          
-
-          
-          <div class="method-source-code" id="getDeviceFromTimeRpt-source">
-            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 133</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">getDeviceFromTimeRpt</span>(<span class="ruby-identifier">device</span>)
-  <span class="ruby-comment">#search time.rpt(s) for device entries and add to database</span>
-  
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
       <div id="method-i-import_device" class="method-detail ">
         
         <div class="method-heading">
@@ -268,7 +186,7 @@
 
           
           <div class="method-source-code" id="import_device-source">
-            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 100</span>
+            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 99</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">import_device</span>(<span class="ruby-identifier">family</span>, <span class="ruby-identifier">path</span>)
   <span class="ruby-identifier">puts</span> <span class="ruby-identifier">family</span>
   <span class="ruby-identifier">file</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">readlines</span>( <span class="ruby-identifier">path</span> )
@@ -387,13 +305,10 @@
 
           
           <div class="method-source-code" id="write_csv_data_device-source">
-            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 107</span>
+            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 106</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">write_csv_data_device</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">family</span> )
-  <span class="ruby-comment">#Split line into individual components</span>
   <span class="ruby-identifier">record</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">strip</span>()
   <span class="ruby-keyword">unless</span> <span class="ruby-identifier">record</span>.<span class="ruby-identifier">nil?</span>
-    <span class="ruby-comment">#puts &quot;#{family}:#{record}&quot;</span>
-    <span class="ruby-comment">#write record</span>
     <span class="ruby-identifier">r</span> = <span class="ruby-constant">Device</span>.<span class="ruby-identifier">new</span>
     <span class="ruby-identifier">r</span>.<span class="ruby-identifier">productline</span> = <span class="ruby-identifier">family</span>
     <span class="ruby-identifier">r</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">record</span>
@@ -461,7 +376,6 @@
             <span class="ruby-identifier">record</span>[<span class="ruby-value">12</span>].<span class="ruby-identifier">upcase!</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">record</span>[<span class="ruby-value">12</span>].<span class="ruby-identifier">nil?</span>
             <span class="ruby-keyword">unless</span> <span class="ruby-identifier">record</span>[<span class="ruby-value">10</span>].<span class="ruby-identifier">nil?</span>
               <span class="ruby-identifier">record</span>[<span class="ruby-value">10</span>] = <span class="ruby-identifier">record</span>[<span class="ruby-value">10</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;.ZIP&quot;</span>)[<span class="ruby-value">0</span>]
-              <span class="ruby-comment">#record[10] = temp[0]</span>
             <span class="ruby-keyword">end</span>
             <span class="ruby-identifier">r</span>.<span class="ruby-identifier">cp1</span> = <span class="ruby-identifier">record</span>[<span class="ruby-value">10</span>]
             <span class="ruby-keyword">unless</span> <span class="ruby-identifier">record</span>[<span class="ruby-value">11</span>].<span class="ruby-identifier">nil?</span>
