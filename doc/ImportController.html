@@ -78,6 +78,12 @@
     
     <li ><a href="#method-i-setup">#setup</a>
     
+    <li ><a href="#method-i-setup_invalid">#setup_invalid</a>
+    
+    <li ><a href="#method-i-setup_record_format">#setup_record_format</a>
+    
+    <li ><a href="#method-i-setup_save_record">#setup_save_record</a>
+    
     <li ><a href="#method-i-write_csv_data_device">#write_csv_data_device</a>
     
     <li ><a href="#method-i-write_csv_data_setup">#write_csv_data_setup</a>
@@ -131,13 +137,13 @@
 
         <div class="method-description">
           
-          <p>entry point for device.txt import for each family (2wire.txt, spi,txt, etc)</p>
+          
           
           
 
           
           <div class="method-source-code" id="device-source">
-            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 89</span>
+            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">device</span>
   <span class="ruby-identifier">puts</span>
   <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;=============================================&quot;</span>
@@ -158,84 +164,6 @@
   <span class="ruby-identifier">import_device</span>(<span class="ruby-string">&quot;XMEGA&quot;</span>,<span class="ruby-string">&quot;import/XMEGA.txt&quot;</span>)
   <span class="ruby-identifier">import_device</span>(<span class="ruby-string">&quot;Touch&quot;</span>,<span class="ruby-string">&quot;import/Touch.txt&quot;</span>)
   
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
-      <div id="method-i-import_device" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">import_device</span><span
-            class="method-args">(family, path)</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-          
-
-          
-          <div class="method-source-code" id="import_device-source">
-            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 110</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">import_device</span>(<span class="ruby-identifier">family</span>, <span class="ruby-identifier">path</span>)
-  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">family</span>
-  <span class="ruby-identifier">file</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">readlines</span>( <span class="ruby-identifier">path</span> )
-  <span class="ruby-identifier">file</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">write_csv_data_device</span>( <span class="ruby-identifier">f</span>, <span class="ruby-identifier">family</span> )
-  <span class="ruby-keyword">end</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
-      <div id="method-i-import_setup" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">import_setup</span><span
-            class="method-args">(location, path)</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          
-          
-          
-
-          
-          <div class="method-source-code" id="import_setup-source">
-            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 17</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">import_setup</span>(<span class="ruby-identifier">location</span>, <span class="ruby-identifier">path</span>)
-  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">location</span>
-  <span class="ruby-identifier">device_list</span> = <span class="ruby-constant">Device</span>.<span class="ruby-identifier">get_family</span>([<span class="ruby-string">&quot;2Wire&quot;</span>,<span class="ruby-string">&quot;3Wire&quot;</span>,<span class="ruby-string">&quot;SPI&quot;</span>,<span class="ruby-string">&quot;Crypto&quot;</span>,<span class="ruby-string">&quot;TS&quot;</span>,<span class="ruby-string">&quot;AVR8&quot;</span>,<span class="ruby-string">&quot;AVR32&quot;</span>,<span class="ruby-string">&quot;ARM&quot;</span>,<span class="ruby-string">&quot;C51&quot;</span>,<span class="ruby-string">&quot;XMEGA&quot;</span>,<span class="ruby-string">&quot;Touch&quot;</span>])
-  <span class="ruby-identifier">list</span> = <span class="ruby-identifier">device_list</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">name</span> }
-  <span class="ruby-identifier">file</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">readlines</span>( <span class="ruby-identifier">path</span> )
-  <span class="ruby-identifier">header</span> = <span class="ruby-value">0</span>
-  <span class="ruby-identifier">file</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">write_csv_data_setup</span>( <span class="ruby-identifier">f</span>, <span class="ruby-identifier">location</span>, <span class="ruby-identifier">list</span> ) <span class="ruby-keyword">if</span> <span class="ruby-identifier">header</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
-    <span class="ruby-identifier">header</span> = <span class="ruby-value">1</span>
-  <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -288,6 +216,208 @@
       </div>
 
     
+    </section>
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Protected Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-import_device" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">import_device</span><span
+            class="method-args">(family, path)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>entry point for device.txt import for each family (2wire.txt, spi,txt, etc)</p>
+          
+          
+
+          
+          <div class="method-source-code" id="import_device-source">
+            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">import_device</span>(<span class="ruby-identifier">family</span>, <span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">family</span>
+  <span class="ruby-identifier">file</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">readlines</span>( <span class="ruby-identifier">path</span> )
+  <span class="ruby-identifier">file</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">write_csv_data_device</span>( <span class="ruby-identifier">f</span>, <span class="ruby-identifier">family</span> )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-import_setup" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">import_setup</span><span
+            class="method-args">(location, path)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="import_setup-source">
+            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">import_setup</span>(<span class="ruby-identifier">location</span>, <span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">location</span>
+  <span class="ruby-identifier">device_list</span> = <span class="ruby-constant">Device</span>.<span class="ruby-identifier">get_family</span>([<span class="ruby-string">&quot;2Wire&quot;</span>,<span class="ruby-string">&quot;3Wire&quot;</span>,<span class="ruby-string">&quot;SPI&quot;</span>,<span class="ruby-string">&quot;Crypto&quot;</span>,<span class="ruby-string">&quot;TS&quot;</span>,<span class="ruby-string">&quot;AVR8&quot;</span>,<span class="ruby-string">&quot;AVR32&quot;</span>,<span class="ruby-string">&quot;ARM&quot;</span>,<span class="ruby-string">&quot;C51&quot;</span>,<span class="ruby-string">&quot;XMEGA&quot;</span>,<span class="ruby-string">&quot;Touch&quot;</span>])
+  <span class="ruby-identifier">list</span> = <span class="ruby-identifier">device_list</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">name</span> }
+  <span class="ruby-identifier">file</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">readlines</span>( <span class="ruby-identifier">path</span> )
+  <span class="ruby-identifier">header</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">file</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">write_csv_data_setup</span>( <span class="ruby-identifier">f</span>, <span class="ruby-identifier">location</span>, <span class="ruby-identifier">list</span> ) <span class="ruby-keyword">if</span> <span class="ruby-identifier">header</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">header</span> = <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-setup_invalid" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setup_invalid</span><span
+            class="method-args">(record)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="setup_invalid-source">
+            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setup_invalid</span>(<span class="ruby-identifier">record</span>)
+  <span class="ruby-identifier">invalid_flag</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">result_flag</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">record</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">result_flag</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">record</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">result_flag</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">device</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">include?</span> <span class="ruby-string">&quot;---&quot;</span>
+  <span class="ruby-identifier">result_flag</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">device</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">include?</span> <span class="ruby-string">&quot;***&quot;</span>
+  <span class="ruby-identifier">invalid_flag</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-setup_record_format" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setup_record_format</span><span
+            class="method-args">(record)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="setup_record_format-source">
+            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setup_record_format</span>(<span class="ruby-identifier">record</span>)
+  
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-setup_save_record" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setup_save_record</span><span
+            class="method-args">(record)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="setup_save_record-source">
+            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setup_save_record</span>(<span class="ruby-identifier">record</span>)
+  <span class="ruby-comment">#write record</span>
+  <span class="ruby-identifier">r</span> = <span class="ruby-constant">Setup</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">d</span> = <span class="ruby-constant">Device</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-identifier">device</span>[<span class="ruby-value">0</span>])
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">family</span> = <span class="ruby-identifier">d</span>.<span class="ruby-identifier">productline</span>
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">location</span> = <span class="ruby-identifier">location</span>
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">device</span> = <span class="ruby-identifier">device</span>[<span class="ruby-value">0</span>]
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">tab</span> = <span class="ruby-identifier">device</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">platform</span> = <span class="ruby-identifier">record</span>[<span class="ruby-value">2</span>]
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">parallelism</span> = <span class="ruby-identifier">record</span>[<span class="ruby-value">6</span>].<span class="ruby-identifier">downcase</span>
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">cp1</span> = <span class="ruby-identifier">record</span>[<span class="ruby-value">10</span>]
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">cp2</span> = <span class="ruby-identifier">record</span>[<span class="ruby-value">11</span>]
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">cp3</span> = <span class="ruby-identifier">record</span>[<span class="ruby-value">12</span>]
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
       <div id="method-i-write_csv_data_device" class="method-detail ">
         
         <div class="method-heading">
@@ -307,7 +437,7 @@
 
           
           <div class="method-source-code" id="write_csv_data_device-source">
-            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 117</span>
+            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 111</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">write_csv_data_device</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">family</span> )
   <span class="ruby-identifier">record</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">strip</span>()
   <span class="ruby-keyword">unless</span> <span class="ruby-identifier">record</span>.<span class="ruby-identifier">nil?</span>
@@ -346,7 +476,7 @@
 
           
           <div class="method-source-code" id="write_csv_data_setup-source">
-            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 28</span>
+            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 51</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">write_csv_data_setup</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">location</span>, <span class="ruby-identifier">list</span> )
   <span class="ruby-comment">#Split line into individual components</span>
   <span class="ruby-identifier">record</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>()
@@ -427,13 +557,13 @@
 
           
           <div class="method-source-code" id="write_csv_data_setup_variant-source">
-            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 80</span>
+            <pre><span class="ruby-comment"># File app/controllers/import_controller.rb, line 121</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">write_csv_data_setup_variant</span>(<span class="ruby-identifier">line</span>, <span class="ruby-identifier">location</span>, <span class="ruby-identifier">list</span> )
   <span class="ruby-comment">#Split line into individual components</span>
   <span class="ruby-identifier">record</span> = <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>()
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">setup_valid</span>(<span class="ruby-identifier">record</span>)
-      <span class="ruby-identifier">format_array</span>(<span class="ruby-identifier">record</span>)
-      <span class="ruby-identifier">save_array_db</span>(<span class="ruby-identifier">record</span>)
+      <span class="ruby-identifier">setup_record_format</span>(<span class="ruby-identifier">record</span>)
+      <span class="ruby-identifier">setup_save_record</span>(<span class="ruby-identifier">record</span>)
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div>
