@@ -41,7 +41,7 @@ class ImportController < ApplicationController
     puts location
     device_list = Device.get_family(["2Wire","3Wire","SPI","Crypto","TS","AVR8","AVR32","ARM","C51","XMEGA","Touch"])
     list = device_list.map {|i| i.name }
-    modified = File.mtime
+    modified = File.mtime (path)
     file = IO.readlines( path )
     header = 0
     file.each do |f|
