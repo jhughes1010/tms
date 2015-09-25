@@ -5,6 +5,11 @@
 		</td>
 					<td>
 						
+					    <%if task.accepted == false && task.complete == true%>
+					    <span class="label label-warning">In Review</span>
+					    <% end %>
+						
+
 						<%= task.requester.fullname %>
 					
 					</td>
