@@ -48,6 +48,17 @@ class Task < ActiveRecord::Base
     date = Date.today - days
     self.where("tasks.complete = 'f' OR (tasks.complete = 't' AND tasks.updated_at > ?)", date).select("tasks.*").order( "tasks.complete DESC, tasks.id")
   end
+  def self.completenotaccepted(days)
+    date = Date.today - days
+    tasks = self.where("tasks.complete = 't' AND tasks.accepted IS NOT 't' AND tasks.updated_at < ?", date).select("tasks.*").order( "tasks.id")
+    tasks.each do |t|
+      #update record
+      t.accepted = 't'
+      t.save
+    end
+  end
+  
+  
   
   def set_priorities
     #Can I refer to PriorityController
