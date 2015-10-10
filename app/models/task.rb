@@ -50,7 +50,7 @@ class Task < ActiveRecord::Base
   end
   def self.completenotaccepted(days)
     date = Date.today - days
-    tasks = self.where("tasks.complete = 't' AND tasks.accepted IS NOT 't' AND tasks.updated_at < ?", date).select("tasks.*").order( "tasks.id")
+    tasks = self.where("tasks.complete = 't' AND tasks.accepted != 't' AND tasks.updated_at < ?", date).select("tasks.*").order( "tasks.id")
     tasks.each do |t|
       #update record
       t.accepted = 't'
