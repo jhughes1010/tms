@@ -6,9 +6,15 @@
         <a href="#" title="<%= task.description%>"><%= task.taskname%></a>
     </td>
     <td>
-        <%= task.complete%>
-    </td>
-    <td>
-        <%= task.accepted%>
+		<%if !task.complete%>
+		<span class="label label-primary">Open</span>
+		<%elsif%>
+		<%if !task.accepted%>
+		<span class="label label-warning">In Review</span>
+		<%elsif%>
+		<span class="label label-success">Completed</span>
+		<%end%>
+		
+		<%end%>
     </td>
 </tr>
