@@ -40,10 +40,10 @@ class UserMailer < ActionMailer::Base
     @active=list
     @user=User.find(user_id)
     name=@user.fullname
-    #email="james.hughes@atmel.com"
     email=@user.email
+    #email="james.hughes@atmel.com"
     #send mail
-    mail(:to => "#{name} <#{email}>", :subject => "TMS - My Task Summary: " + name)
+    mail(:to => "#{name} <#{email}>",:cc => "james.hughes@atmel.com", :subject => "TMS - My Task Summary: " + name)
   end
 
   def setup_import_complete(recipient)
