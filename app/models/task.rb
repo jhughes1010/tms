@@ -33,7 +33,9 @@ class Task < ActiveRecord::Base
   def self.all_active_manual_sort(id)
     t = self.where("tasks.complete = 'f' AND tasks.assignee_id = ?", id).order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*')
   end
-  
+  def self.all_active_requested_by(id)
+    t = self.where("tasks.accepted = 'f' AND tasks.complete = 't' AND tasks.requester_id = ?", id).order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*')
+  end
   def self.categoryCount(category)
     t = self.where("tasks.complete = 'f' AND tasks.assignee_id IS NOT NULL AND category = ?",category).order("tasks.assignee_id").select('tasks.assignee_id').group('assignee_id').count
     t.default = 0
@@ -57,9 +59,7 @@ class Task < ActiveRecord::Base
       t.save
     end
   end
-  
-  
-  
+
   def set_priorities
     #Can I refer to PriorityController
     #unless @auth == 1

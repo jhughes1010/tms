@@ -37,13 +37,13 @@ class UserMailer < ActionMailer::Base
 
   def daily_report(user_id, list)
     #test case
-    @active=list
+    @review=list
     @user=User.find(user_id)
     name=@user.fullname
     email=@user.email
     #email="james.hughes@atmel.com"
     #send mail
-    mail(:to => "#{name} <#{email}>",:cc => "james.hughes@atmel.com", :subject => "TMS - My Task Summary: " + name)
+    mail(:to => "#{name} <#{email}>",:cc => "james.hughes@atmel.com, john.groat@atmel.com", :subject => "TMS - My Task Summary: " + name)
   end
 
   def setup_import_complete(recipient)

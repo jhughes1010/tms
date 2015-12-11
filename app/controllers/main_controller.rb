@@ -46,13 +46,16 @@ class MainController < ApplicationController
     @users=User.all
     #loop through users
     @users.each do |u|
-      @us=u
+      #@us=u
       #u=1
       #get 3 queries for report
-      @active = Task.all_active_assigned_to(u)
-      if @active.count >0
+      #active
+      review = Task.all_active_requested_by(u)
+      #closed
+    
+      if review.count >0
 
-        UserMailer.daily_report(u,@active).deliver
+        UserMailer.daily_report(u,review).deliver
       end
     end
   end

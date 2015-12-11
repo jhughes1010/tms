@@ -1,8 +1,32 @@
-<h1>Test Request Report</h1>
-<h2>Open Tasks assigned by <%=@user.fullname%></h2>
- <% @active.each do |a| %>
- <%=a.assignee.fullname if a.assignee %>:
- <%=a.taskname%><br>
-<%end%>
+<h1>Test Request Summary Report for <%=@user.fullname%></h1>
 <h2>Tasks Needing Acceptance</h2>
-<h2>Closed Tasks (within last 2 weeks)</h2>
+<table border ="1" style="width:100%">
+</tr>
+    <th>
+        TMS ID
+    </th>
+    <th>
+        ASSIGNEE
+    </th>
+    <th>
+        TASK DESCRIPTION
+    </th>
+</tr>
+ <% @review.each do |r| %>
+     <tr>
+         <td>
+             <%=r.id%>
+         </td>
+            
+         <td>
+             <%=r.assignee.fullname if r.assignee %>
+         </td>
+         <td>
+             <%=r.taskname%>
+         </td>
+     </tr>
+<%end%>
+</table>
+Please login to BU Tools and marks these TMS entries as complete as you are satisfied, or CRS is at CR3 or beyond.
+<h2>Open Tasks</h2>
+<!-- ><h2>Closed Tasks (within last 2 weeks)</h2> -->
