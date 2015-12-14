@@ -1,3 +1,14 @@
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+</style>
+
+
 <h2>
     <%if @task.accepted == false && @task.complete == false%>
     <span class="label label-primary">Open</span> 
@@ -12,106 +23,121 @@
     <span class="label label-danger">Invalid Status</span>
     <% end %>
 </h2>
+<table style="width:100%">
+    <colgroup>
+      <col span="3" style="background-color:antiquewhite">
+    </colgroup>
+	<tr>
+		<th><h3>Overview<h3></th>
+		<th><h3>Details<h3></th>
+		<th><h3>Completion Targets<h3></th>
+	</tr>
+    <tr>
+		<td>
+			<p>
+			     <b>
+			         ID:
+			     </b>
 
-<p>
-     <b>
-         ID:
-     </b>
+			     <%= link_to @task.id,@task %>
+			</p>
+			<p>
+			     <b>
+			         Requester:
+			     </b>
 
-     <%= link_to @task.id,@task %>
-</p>
-<p>
-     <b>
-         Requester:
-     </b>
+			     <%= @task.requester.fullname %>
+			</p>
+			<p>
+			     <b>
+			         Assignee:
+			     </b>
 
-     <%= @task.requester.fullname %>
-</p>
-<p>
-     <b>
-         Assignee:
-     </b>
-
-     <%= @task.assignee ? @task.assignee.fullname : "UNASSIGNED" %>
-</p>
-<p>
-     <b>
-         Taskname:
-     </b>
-     <%= @task.taskname %>
-</p>
-<p>
-     <%= @task.description %>
-</p>
-<p>
-     <b>
-         Family:
-     </b>
-     <%= @task.family %>
-</p>
-<p>
-     <b>
-         Device:
-     </b>
-     <%= @task.device %>
-</p>
-<p>
-     <b>
-         Type:
-     </b>
-     <%= @task.request_type %>
-</p>
-<p>
-     <b>
-         Operation:
-     </b>
-     <%= @task.operation %>
-</p>
-<p>
-     <b>
-         Platform:
-     </b>
-     <%= @task.platform %>
-</p>
-<p>
-     <b>
-         Target Complete:
-     </b>
-     <%= @task.tcd %>
-</p>
-<p>
-     <b>
-         Schedule Complete:
-     </b>
-     <%= @task.scd %>
-</p>
-<p>
-     <b>
-         Actual Complete:
-     </b>
-     <%= @task.acd %>
-</p>
-<p>
-     <b>
-         Duration:
-     </b>
-     <%= @task.duration %>
-</p>
-<p>
-     <b>
-         Priority:
-     </b>
-     <%= @task.priority %>
-</p>
-<p>
-     <b>
-         Category:
-     </b>
-     <%= @task.category %>
-</p>
-<hr>
-
-<hr>
+			     <%= @task.assignee ? @task.assignee.fullname : "UNASSIGNED" %>
+			</p>
+			<p>
+			     <b>
+			         Taskname:
+			     </b>
+			     <%= @task.taskname %>
+			</p>
+			<p>
+			     <b>
+			         Family:
+			     </b>
+			     <%= @task.family %>
+			</p>
+			<p>
+			     <b>
+			         Device:
+			     </b>
+			     <%= @task.device %>
+			</p>
+			<p>
+			     <b>
+			         Type:
+			     </b>
+			     <%= @task.request_type %>
+			</p>
+			<p>
+			     <b>
+			         Operation:
+			     </b>
+			     <%= @task.operation %>
+			</p>
+			<p>
+			     <b>
+			         Platform:
+			     </b>
+			     <%= @task.platform %>
+			</p>
+		</td>
+		<td width="50%">
+			<p>
+			     <%= @task.description %>
+			</p>
+		</td>
+		<td>
+			<p>
+			     <b>
+			         Target Complete:
+			     </b>
+			     <%= @task.tcd %>
+			</p>
+			<p>
+			     <b>
+			         Schedule Complete:
+			     </b>
+			     <%= @task.scd %>
+			</p>
+			<p>
+			     <b>
+			         Actual Complete:
+			     </b>
+			     <%= @task.acd %>
+			</p>
+			<p>
+			     <b>
+			         Duration:
+			     </b>
+			     <%= @task.duration %>
+			</p>
+			<p>
+			     <b>
+			         Priority:
+			     </b>
+			     <%= @task.priority %>
+			</p>
+			<p>
+			     <b>
+			         Category:
+			     </b>
+			     <%= @task.category %>
+			</p>
+			
+		</td>
+    </tr>
+</table>
 <p>
      This task was entered into TMS on
      <%=@task.created_at.to_date.to_s(:long) %>

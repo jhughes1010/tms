@@ -1,3 +1,13 @@
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+</style>
+
 <%= form_for(@task) do |f| %>
 <% if @task.errors.any? %>
 <div id="error_explanation">
@@ -11,106 +21,126 @@
 	</ul>
 </div>
 <% end %>
-<div class="field">
-	<%= f.label :requester_id, "Requester" %>
-	<%if !@task.requester_id %>
-	<%@task.requester_id=@user_id%>
-	<%@task.tcd = Date.today.next_month %>
-	<%end %>
-	<%= f.select(:requester_id,@requesters) %>
-</div>
-	<%if !@task.assignee_id %>
-	<%@task.assignee_id = @unassigned_user_id%>
-	<%end %>
-<%if @auth==2 %>
-<div class="field">
-		<%= f.label :assignee_id, "Assignee" %>
-<%= f.select(:assignee_id,@assignees) %>
-</div>
-<%end %>
-<div class="field">
-	<%= f.label :taskname %>
-	<br/>
-	<%= f.text_field :taskname %>
-</div>
-<div class="field">
-	<%= f.label :family %>
-	<br/>
-	<%= f.select( :family, %w{Other 2W 3W SPI Crypto}) %>
-</div>
-<div class="field">
-	<%= f.label :device %>
-	<br/>
-	<%= f.text_field :device %>
-</div>
-<div class="field">
-	<%= f.label :operation %>
-	<br/>
-	<%= f.select( :operation, %w{CPx FT QA Fuse Engineering Software_Tool}) %>
-</div>
-<div class="field">
-	<%= f.label :request_type %>
-	<br/>
-	<%= f.select( :request_type, %w{Choose Cost_Reduction Capacity New_Device Coverage Engineering }) %>
-</div>
-<div class="field">
-	<%= f.label :platform %>
-	<br/>
-	<%= f.select( :platform, %w{Magnum Maverick Eagle EPRO BitMapR Other}) %>
-</div>
-<div class="field">
-	<%= f.label :description %>
-	<br/>
-	<%= f.text_area :description %>
-</div>
-<div class="field">
-	<%= f.label :tcd, 'Target Completion Date' %>
-	<br/>
-	<%= f.text_field :tcd%>
-</div>
+<table style="width:100%">
+    <colgroup>
+      <col span="3" style="background-color:antiquewhite">
+    </colgroup>
+	<tr>
+		<th><h3>Overview<h3></th>
+		<th><h3>Details<h3></th>
+		<th><h3>Completion Targets<h3></th>
+	</tr>
+	<tr>
+		<td>
+			<div class="field">
+				<%= f.label :requester_id, "Requester" %>
+				<%if !@task.requester_id %>
+				<%@task.requester_id=@user_id%>
+				<%@task.tcd = Date.today.next_month %>
+				<%end %>
+				<br/>
+				<%= f.select(:requester_id,@requesters) %>
+			</div>
+				<%if !@task.assignee_id %>
+				<%@task.assignee_id = @unassigned_user_id%>
+				<%end %>
+			<%if @auth==2 %>
+			<div class="field">
+					<%= f.label :assignee_id, "Assignee" %>
+			<%= f.select(:assignee_id,@assignees) %>
+			</div>
+			<%end %>
+			<div class="field">
+				<%= f.label :taskname %>
+				<br/>
+				<%= f.text_field :taskname %>
+			</div>
+			<div class="field">
+				<%= f.label :family %>
+				<br/>
+				<%= f.select( :family, %w{Other 2W 3W SPI Crypto}) %>
+			</div>
+			<div class="field">
+				<%= f.label :device %>
+				<br/>
+				<%= f.text_field :device %>
+			</div>
+			<div class="field">
+				<%= f.label :operation %>
+				<br/>
+				<%= f.select( :operation, %w{CPx FT QA Fuse Engineering Software_Tool}) %>
+			</div>
+			<div class="field">
+				<%= f.label :request_type %>
+				<br/>
+				<%= f.select( :request_type, %w{Choose Cost_Reduction Capacity New_Device Coverage Engineering }) %>
+			</div>
+			<div class="field">
+				<%= f.label :platform %>
+				<br/>
+				<%= f.select( :platform, %w{Magnum Maverick Eagle EPRO BitMapR Other}) %>
+			</div>
+		</td>
+		<td>
+			<div class="field">
+				<%= f.label :description %>
+				<br/>
+				<%= f.text_area :description %>
+			</div>
+		</td>
+		<td>
+			<div class="field">
+				<%= f.label :tcd, 'Target Completion Date' %>
+				<br/>
+				<%= f.text_field :tcd%>
+			</div>
 
-<%if @auth==2 %>
-<div class="field">
-	<%= f.label :scd, 'Scheduled Completion Date' %>
-	<br/>
-	<%= f.text_field :scd%>
-	<br/>
-</div>
-<div class="field">
-	<%= f.label :acd, 'Actual Completion Date' %>
-	<br/>
-	<%= f.text_field :acd%>
-</div>
-<div class="field">
-	<%= f.label :duration %>
-	<br/>
-	<%= f.text_field :duration %>
-</div>
-<div class="field">
-	<%= f.label :priority %>
-	<br/>
-	<%= f.text_field :priority %>
-</div>
-<%end%>
-<div class="field">
-<%= f.label :category %>
+			<%if @auth==2 %>
+			<div class="field">
+				<%= f.label :scd, 'Scheduled Completion Date' %>
+				<br/>
+				<%= f.text_field :scd%>
+				<br/>
+			</div>
+			<div class="field">
+				<%= f.label :acd, 'Actual Completion Date' %>
+				<br/>
+				<%= f.text_field :acd%>
+			</div>
+			<div class="field">
+				<%= f.label :duration %>
+				<br/>
+				<%= f.text_field :duration %>
+			</div>
+			<div class="field">
+				<%= f.label :priority %>
+				<br/>
+				<%= f.text_field :priority %>
+			</div>
+			<%end%>
+			<div class="field">
+			<%= f.label :category %>
+			<br/>
 
-<%= f.text_field :category %>
-</div>
-Category Legend: 1= Important & Urgent, 2= Important & Not_Urgent, 4 = Not Important & Not Urgent"
-<br><br>
-<%if @auth==2 %>
-<div class="field">
-	<%= f.label :complete %>
+			<%= f.text_field :category %>
+			</div>
+			<h6>Category Legend: 1= Important & Urgent, 2= Important & Not_Urgent, 4 = Not Important & Not Urgent"</h6>
+			<br><br>
+			<%if @auth==2 %>
+			<div class="field">
+				<%= f.label :complete %>
 
-	<%= f.check_box :complete %>
-</div>
-<div class="field">
-	<%= f.label :accepted %>
+				<%= f.check_box :complete %>
+			</div>
+			<% end %>
+			<div class="field">
+				<%= f.label :accepted %>
 
-	<%= f.check_box :accepted %>
-</div>
-<% end %>
+				<%= f.check_box :accepted %>
+			</div>
+		</td>
+	</tr>
+</table>
 <div class="actions">
 	<%= f.submit %>
 <% end %>
