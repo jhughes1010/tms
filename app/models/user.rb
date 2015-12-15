@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
   
   validate  :password_non_blank
   
+  scope :product_engineer, -> {where ("department = '3371'")}
+  scope :test_engineer, -> {where ("department = '3210'")}
+  
   
   def password
     @password
@@ -35,15 +38,17 @@ class User < ActiveRecord::Base
     end
     user
   end
+  
   def self.requester_list
-    find(:all, :order =>"fullname").map {|u| [u.fullname, u.id]}
+    self.order("fullname").map {|u| [u.fullname, u.id]}
   end
+  
   def self.assignee_list
-    find(:all, :order =>"fullname", :conditions => "department = '3210'").map {|u| [u.fullname, u.id]}
+    self.test_engineer.order("fullname").map {|u| [u.fullname, u.id]}
   end
+  
   def self.get_te
-  # self.group("fullname").having("department = '3210'").order("fullname")
-    find(:all, :order =>"fullname", :conditions => "department = '3210'")
+    self.test_engineer.order("fullname")
   end
   
   def self.passports(date)

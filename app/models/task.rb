@@ -48,7 +48,7 @@ class Task < ActiveRecord::Base
   
   def self.recent(days)
     date = Date.today - days
-    self.where("tasks.complete = 'f' OR (tasks.complete = 't' AND tasks.updated_at > ?) OR tasks.accepted = 'f'", date).select("tasks.*").order( "tasks.complete DESC, tasks.accepted DESC, tasks.id")
+    self.where("tasks.complete = 'f' OR (tasks.complete = 't' AND tasks.updated_at > ?) OR tasks.accepted = 'f'", date).select("tasks.*").order( "tasks.complete DESC, tasks.accepted DESC, tasks.family ,tasks.id")
   end
   def self.completenotaccepted(days)
     date = Date.today - days
