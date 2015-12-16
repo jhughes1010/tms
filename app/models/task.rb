@@ -4,7 +4,7 @@ class Task < ActiveRecord::Base
   
   #after_save :set_priorities
 
-  # scope :grouped, group(:assignee_id)
+  scope :active, -> {where ("tasks.complete = 'f'")}
 
 
   def self.all_active
@@ -15,15 +15,15 @@ class Task < ActiveRecord::Base
     find(:all, :order =>"id" , :conditions => "assignee_id IS NULL")
   end
   def self.all_active2
-    t = self.where("tasks.complete = 'f' AND tasks.assignee_id IS NOT NULL AND category < '5'").order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*').includes("requester").includes("assignee")
+    t = self.active.where("tasks.assignee_id IS NOT NULL AND category < '5'").order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*').includes("requester").includes("assignee")
     t.group_by(&:fullname)
   end
   def self.topActive( priority )
-    t = self.where("tasks.priority < ? AND tasks.complete = 'f' AND tasks.assignee_id IS NOT NULL AND category < '5'", priority ).order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*').includes("requester").includes("assignee")
+    t = self.active.where("tasks.priority < ? AND tasks.assignee_id IS NOT NULL AND category < '5'", priority ).order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*').includes("requester").includes("assignee")
     #t.group_by(&:fullname)
   end
   def self.topActiveSerial( priority )
-    t = self.where("tasks.family IN ('2W','SPI', '3W') AND tasks.priority < ? AND tasks.complete = 'f' AND tasks.assignee_id IS NOT NULL AND category < '5'", priority ).order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*').includes("requester").includes("assignee")
+    t = self.active.where("tasks.family IN ('2W','SPI', '3W') AND tasks.priority < ? AND tasks.complete = 'f' AND tasks.assignee_id IS NOT NULL AND category < '5'", priority ).order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*').includes("requester").includes("assignee")
     #t.group_by(&:fullname)
   end
   def self.all_active_by_requester
@@ -31,13 +31,13 @@ class Task < ActiveRecord::Base
     t.group_by(&:fullname)
   end
   def self.all_active_manual_sort(id)
-    t = self.where("tasks.complete = 'f' AND tasks.assignee_id = ?", id).order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*')
+    t = self.active.where("tasks.assignee_id = ?", id).order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*')
   end
   def self.all_active_requested_by(id)
     t = self.where("tasks.accepted = 'f' AND tasks.complete = 't' AND tasks.requester_id = ?", id).order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*')
   end
   def self.categoryCount(category)
-    t = self.where("tasks.complete = 'f' AND tasks.assignee_id IS NOT NULL AND category = ?",category).order("tasks.assignee_id").select('tasks.assignee_id').group('assignee_id').count
+    t = self.active.where("tasks.assignee_id IS NOT NULL AND category = ?",category).order("tasks.assignee_id").select('tasks.assignee_id').group('assignee_id').count
     t.default = 0
     t
   end
