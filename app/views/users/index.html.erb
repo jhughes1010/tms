@@ -1,6 +1,6 @@
 <h1>Listing users</h1>
 
-<table>
+<table style="width:100%">
   <tr>
   <th>ID</th>
     <th>Fullname</th>
@@ -9,6 +9,7 @@
     <!--<th>Hashed password</th>
     <th>Salt</th> -->
     <th>Department</th>
+    <th>Team</th>
     <th>email</th>
     <th></th>
     <th></th>
@@ -23,6 +24,7 @@
    <!-- <td><%= user.hashed_password %></td>
     <td><%= user.salt %></td> -->
     <td><%= user.department %></td>
+    <td><%=user.team %></td>
     <td><%= user.email %></td>
 	    <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>

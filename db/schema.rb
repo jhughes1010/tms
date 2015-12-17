@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150731132430) do
+ActiveRecord::Schema.define(:version => 20151217111950) do
 
   create_table "can_mains", :force => true do |t|
     t.string    "can"
@@ -293,6 +293,7 @@ ActiveRecord::Schema.define(:version => 20150731132430) do
     t.string    "email"
     t.integer   "auth_level"
     t.date      "passport"
+    t.string    "team"
   end
 
 end
