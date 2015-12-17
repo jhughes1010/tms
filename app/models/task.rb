@@ -4,55 +4,110 @@ class Task < ActiveRecord::Base
   
   #after_save :set_priorities
 
-  scope :active, -> {where ("tasks.complete = 'f'")}
+  scope :active, -> {where ("tasks.complete = 'f' OR tasks.complete IS NULL")}
+  scope :serial, -> {where ("tasks.family IN ('2W', 'SPI', '3W')")}
+  scope :crypto, -> {where ("tasks.family IN ('Crypto')")}
 
 
   def self.all_active
-    find(:all, :order =>"assignee_id, priority", :conditions => ["complete = ?",false])
+    #find(:all, :order =>"assignee_id, priority", :conditions => ["complete = ?",false])
+    self.active
+      .order("assignee_id, priority")
   end
+  
   def self.all_unassigned
     date=Date.today
-    find(:all, :order =>"id" , :conditions => "assignee_id IS NULL")
+    #find(:all, :order =>"id" , :conditions => "assignee_id IS NULL")
+    self.where("assignee_id IS NULL")
+      .order("id")
   end
+  
   def self.all_active2
-    t = self.active.where("tasks.assignee_id IS NOT NULL AND category < '5'").order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*').includes("requester").includes("assignee")
+    t = self.active
+      .where("tasks.assignee_id IS NOT NULL AND category < '5'")
+      .joins('INNER JOIN users ON users.id = tasks.assignee_id')
+      .order("users.fullname, tasks.priority")
+      .select('users.fullname, tasks.*')
+      .includes("requester")
+      .includes("assignee")
     t.group_by(&:fullname)
   end
-  def self.topActive( priority )
-    t = self.active.where("tasks.priority < ? AND tasks.assignee_id IS NOT NULL AND category < '5'", priority ).order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*').includes("requester").includes("assignee")
-    #t.group_by(&:fullname)
+  
+  def self.topActiveCrypto( priority )
+    t = self.crypto
+      .active
+      .where("tasks.priority < ? AND tasks.assignee_id IS NOT NULL AND category < '5'", priority )
+      .joins('INNER JOIN users ON users.id = tasks.assignee_id')
+      .order("users.fullname, tasks.priority")
+      .select('users.fullname, tasks.*')
+      .includes("requester")
+      .includes("assignee")
   end
+  
   def self.topActiveSerial( priority )
-    t = self.active.where("tasks.family IN ('2W','SPI', '3W') AND tasks.priority < ? AND tasks.complete = 'f' AND tasks.assignee_id IS NOT NULL AND category < '5'", priority ).order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*').includes("requester").includes("assignee")
-    #t.group_by(&:fullname)
+    t = self.serial
+      .active
+      .where("tasks.priority < ? AND tasks.assignee_id IS NOT NULL AND category < '5'", priority )
+      .joins('INNER JOIN users ON users.id = tasks.assignee_id')
+      .order("users.fullname, tasks.priority")
+      .select('users.fullname, tasks.*')
+      .includes("requester")
+      .includes("assignee")
   end
+  
   def self.all_active_by_requester
-    t = self.where("tasks.accepted = 'f' OR tasks.accepted IS NULL AND tasks.requester_id IS NOT NULL").order("users.fullname, tasks.accepted, tasks.id").joins('INNER JOIN users ON users.id = tasks.requester_id').select('users.fullname, tasks.*').includes("requester").includes("assignee")
+    t = self.where("tasks.accepted = 'f' OR tasks.accepted IS NULL AND tasks.requester_id IS NOT NULL")
+      .joins('INNER JOIN users ON users.id = tasks.requester_id')
+      .order("users.fullname, tasks.accepted, tasks.id")
+      .select('users.fullname, tasks.*')
+      .includes("requester")
+      .includes("assignee")
     t.group_by(&:fullname)
   end
+  
   def self.all_active_manual_sort(id)
-    t = self.active.where("tasks.assignee_id = ?", id).order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*')
+    t = self.active
+      .where("tasks.assignee_id = ?", id)
+      .joins('INNER JOIN users ON users.id = tasks.assignee_id')
+      .order("users.fullname, tasks.priority")
+      .select('users.fullname, tasks.*')
   end
+  
   def self.all_active_requested_by(id)
-    t = self.where("tasks.accepted = 'f' AND tasks.complete = 't' AND tasks.requester_id = ?", id).order("users.fullname, tasks.priority").joins('INNER JOIN users ON users.id = tasks.assignee_id').select('users.fullname, tasks.*')
+    t = self.where("tasks.accepted = 'f' AND tasks.complete = 't' AND tasks.requester_id = ?", id)
+      .joins('INNER JOIN users ON users.id = tasks.assignee_id')
+      .order("users.fullname, tasks.priority")
+      .select('users.fullname, tasks.*')
   end
+  
   def self.categoryCount(category)
-    t = self.active.where("tasks.assignee_id IS NOT NULL AND category = ?",category).order("tasks.assignee_id").select('tasks.assignee_id').group('assignee_id').count
+    t = self.active
+      .where("tasks.assignee_id IS NOT NULL AND category = ?",category)
+      .order("tasks.assignee_id")
+      .select('tasks.assignee_id')
+      .group('assignee_id').count
     t.default = 0
     t
   end
-  
+  #current usage - unassigned tasks
   def self.all_for_id(id)
-    self.where("tasks.assignee_id = ? AND (tasks.complete = 'f' OR tasks.complete IS NULL)" , id).select("tasks.*")
+    self.active
+      .where("tasks.assignee_id = ?" , id)
+      .select("tasks.*")
   end
   
   def self.recent(days)
     date = Date.today - days
-    self.where("tasks.complete = 'f' OR (tasks.complete = 't' AND tasks.updated_at > ?) OR tasks.accepted = 'f'", date).select("tasks.*").order( "tasks.complete DESC, tasks.accepted DESC, tasks.family ,tasks.id")
+    self.where("tasks.complete = 'f' OR (tasks.complete = 't' AND tasks.updated_at > ?) OR tasks.accepted = 'f'", date)
+      .order( "tasks.complete DESC, tasks.accepted DESC, tasks.family ,tasks.id")
+      .select("tasks.*")
   end
+  #this method is for cleanup of stale records in 'review limbo'
   def self.completenotaccepted(days)
     date = Date.today - days
-    tasks = self.where("tasks.complete = 't' AND tasks.accepted != 't' AND tasks.updated_at < ?", date).select("tasks.*").order( "tasks.id")
+    tasks = self.where("tasks.complete = 't' AND tasks.accepted != 't' AND tasks.updated_at < ?", date)
+      .order( "tasks.id")
+      .select("tasks.*")
     tasks.each do |t|
       #update record
       t.accepted = 't'

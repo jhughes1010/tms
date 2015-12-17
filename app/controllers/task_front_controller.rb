@@ -3,8 +3,8 @@ class TaskFrontController < ApplicationController
     @tasks = Task.topActiveSerial(3)
   end
 
-  def top3All
-    @tasks = Task.topActive(3)
+  def top3Crypto
+    @tasks = Task.topActiveCrypto(3)
   end
   
   def taskonetwo
