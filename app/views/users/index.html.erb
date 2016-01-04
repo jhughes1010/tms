@@ -1,4 +1,7 @@
-<h1>Listing users</h1>
+<h1>
+    <%=@team%>
+    <%=@title%>
+</h1>
 
 <table style="width:100%">
   <tr>
@@ -26,9 +29,11 @@
     <td><%= user.department %></td>
     <td><%=user.team %></td>
     <td><%= user.email %></td>
-	    <td><%= link_to 'Show', user %></td>
+    <%if @auth < 1%>
+	<td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end%>
   </tr>
 <% end %>
 </table>

@@ -18,6 +18,9 @@ class User < ActiveRecord::Base
   scope :product_engineer, -> {where ("department = '3371'")}
   scope :test_engineer, -> {where ("department = '3210'")}
   
+  scope :crypto, -> {where ("team = 'Crypto'")}
+  scope :memory, -> {where ("team = 'Memory'")}
+  
   
   def password
     @password

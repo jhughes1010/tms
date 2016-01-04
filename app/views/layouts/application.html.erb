@@ -39,7 +39,7 @@
         </script>
 	</head>
 	<body>
-		<nav class="navbar navbar" role="navigation">
+		<nav class="navbar navbar-inverse" role="navigation">
 		  <!-- Brand and toggle get grouped for better mobile display -->
 		  <div class="navbar-header">
 		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -63,12 +63,14 @@
 			    <li class="<%= 'active' if params[:controller] == 'test_progs' %>" ><a href="/test_progs">Test Prog</a></li>
 			    <li class="<%= 'active' if params[:controller] == 'setup_sync' %>" ><a href="/setup_sync">SETUP</a></li>
 			    <!-- <li class="<%= 'active' if params[:controller] == 'test_times' %>" ><a href="/test_times">Test Times</a></li> -->
+				<li class="<%= 'active' if params[:controller] == 'user' %>" ><a href="/users/roster">Roster</a></li>
 				<li class="<%= 'active' if params[:controller] == 'pto' %>" ><a href="/main/pto_current">PTO</a></li>
 				<!-- <li class="<%= 'active' if params[:controller] == 'pomodoro' %>" ><a href="/pomodoro">Pomodoro</a></li> -->
 		    </ul>
 
 		    <ul class="nav navbar-nav navbar-right">
-		      <li>Logged in as <%= @full_name%></li>
+                <button type="button" class="btn btn-primary btn-xs">
+		      <li>Logged in as <%= @full_name%></li></button>
 		    </ul>
 		  </div><!-- /.navbar-collapse -->
 		</nav>	
@@ -83,7 +85,7 @@
 				  <%end %>
 				  <%= yield :layout %>
 		        <footer>
-		          <p>&copy; Atmel 2015</p>
+		          <p>&copy; Atmel 2016</p>
 		        </footer>
                 </div>
             </div>

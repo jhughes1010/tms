@@ -12,6 +12,8 @@ TMS::Application.routes.draw do
   get "task_front/top3All"
 
   get "task_front/taskonetwo"
+  
+  get "users/roster"
 
   resources :samples
 

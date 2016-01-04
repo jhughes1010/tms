@@ -1,7 +1,22 @@
 class UsersController < ApplicationController
+  
+  
+  before_filter :set_useful_globals
+  
   # GET /users
   # GET /users.xml
+  def roster
+    @title = "Team Roster"
+    if @team == "Crypto"
+    @users = User.crypto.order("department, fullname")
+  elsif @team == "Memory"
+    @users = User.memory
+  end
+  render "index"
+  end
+  
   def index
+    @title = "All Users"
     @users = User.find(:all, :order => "department, fullname") ##jh department, name")
     
     respond_to do |format|
@@ -93,5 +108,17 @@ class UsersController < ApplicationController
   end
   #
   #email debug
+  
+  protected
+
+  def set_useful_globals
+    @auth = session[:user_auth]
+    @user_id=session[:user_id]
+    @full_name=session[:user_fullname]
+    @team = session[:user_team]
+    @today=Date.today
+    @today.to_s(:long)
+  end
+  
   
 end

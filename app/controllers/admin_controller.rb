@@ -7,6 +7,7 @@ class AdminController < ApplicationController
         session[:user_name]=user.name
         session[:user_fullname]=user.fullname
         session[:user_auth]=user.auth_level
+        session[:user_team]=user.team
         #session[:user_auth]=user.authlevel
         flash.now[:notice] = "You are IN!!"
         redirect_to(:action => "/main/index")
