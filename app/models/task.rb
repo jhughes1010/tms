@@ -27,7 +27,7 @@ class Task < ActiveRecord::Base
       .where("tasks.assignee_id IS NOT NULL AND category < '5'")
       .joins('INNER JOIN users ON users.id = tasks.assignee_id')
       .order("users.fullname, tasks.priority")
-      .select('users.fullname, tasks.*')
+      .select('users.*, tasks.*')
       .includes("requester")
       .includes("assignee")
     t.group_by(&:fullname)

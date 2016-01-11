@@ -3,9 +3,11 @@
 
 <div id="accordion">
   <% @tasks.each_pair do |fullname, tasks| %>
+    <% if @team == tasks[0].team || tasks[0].team == 'ACP'%>
     <h3>
       <a href="#">
-        <%= tasks[0].fullname %>
+        <%= tasks[0].fullname %>:
+        <%= tasks[0].team %>
         <span class="badge alert-info pull-right"><%= tasks.count%></span></a>
         <% if @auth >1 %>
         <span class="badge alert-warning"><%= @tasksCategoryCount[1][tasks[0].assignee_id]%></span></a>
@@ -26,6 +28,7 @@
       </table>
       <%= link_to "Reorder Tasks", "/priority/project_manual_priority?id=#{tasks[0].assignee_id}" %>
     </div>
+    <%end%>
   <% end %>
 </div>
 <br>

@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
   scope :crypto, -> {where ("team = 'Crypto'")}
   scope :memory, -> {where ("team = 'Memory'")}
   
+  scope :team, ->(grp) { where("team = ?", grp) }
+  
   
   def password
     @password

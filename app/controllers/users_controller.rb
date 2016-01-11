@@ -6,13 +6,8 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.xml
   def roster
-    @title = "Team Roster"
-    if @team == "Crypto"
-    @users = User.crypto.order("department, fullname")
-  elsif @team == "Memory"
-    @users = User.memory
-  end
-  render "index"
+    @users = User.team(@team).order("department, fullname")
+    render "index"
   end
   
   def index

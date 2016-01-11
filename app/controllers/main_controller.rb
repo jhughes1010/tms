@@ -8,8 +8,7 @@ class MainController < ApplicationController
   end
 
   def project_active
-  @tasks = Task.all_active2
-    #@tasks = Task.topActive(3)
+    @tasks = Task.all_active2
     @tasksCategoryCount = Array.new
     @tasksCategoryCount[1] = Task.categoryCount(1)
     @tasksCategoryCount[2] = Task.categoryCount(2)
@@ -114,6 +113,7 @@ class MainController < ApplicationController
     @auth = session[:user_auth]
     @user_id=session[:user_id]
     @full_name=session[:user_fullname]
+    @team = session[:user_team]
     @today=Date.today
     @today.to_s(:long)
   end
