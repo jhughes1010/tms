@@ -52,7 +52,7 @@ class UserMailer < ActionMailer::Base
   def sas_mail(recipient, attachment)
     path = './public/uploads/'
     file = path + attachment
-    attachments['scrap.xls'] = File.read(file)
+    attachments['scrap.xlsx'] = File.read(file)
     mail(:to => recipient.join(','), :subject => "Scrap Event is attached") 
   end 
 end
