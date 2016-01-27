@@ -1,0 +1,2 @@
+module RngHelper
+end
