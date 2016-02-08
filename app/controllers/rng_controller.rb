@@ -1,4 +1,6 @@
 class RngController < ApplicationController
+  
+  skip_filter :authorize
 
   require 'socket'
   require 'timeout'
