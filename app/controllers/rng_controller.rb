@@ -1,18 +1,29 @@
 class RngController < ApplicationController
+
+  require 'socket'
+  require 'timeout'
+
   def index
 
-    require 'socket'
 
+
+    @IPHash = {"10.95.111.200" => "Pass","10.95.111.201" => "Pass", "10.95.111.202" => "Pass", "10.95.111.203" => "Pass", "10.95.111.41" => "Pass" } 
+    #@IPHash = {"10.95.111.200" => "Pass"}
+    @IPHash.each {|k,v|
+      puts"Key #{k} and value #{v}"
+      #}
+    #@IPList=["10.95.111.200","10.95.111.201","10.95.111.203","10.95.111.204","10.95.111.41"]
+    #@IPFlag=Array.new(5,"Pass")
+    #position=0
+    #@IPList.each do |ip|
+      
     s = UDPSocket.new
-    s.connect("10.95.111.200", 10001)
-    #loop do
-      s.send("rng", 0)
-      response, remote = s.recvfrom(100)
+    s.connect(k, 10001)
 
-      # response is <status,random number> where
-      # status is 0 if there was an error generating the random
-      # status is 1 if the random was generated
-      # random number is 32 byte hex string (64 characters) or 0 if there was an error
+      s.send("rng", 0)
+      
+      (Timeout.timeout(1) {response, remote = s.recvfrom(100)}) rescue @passFlag = "Fail"
+      unless @passFlag == "Fail"
       parts = response.split(",")
 
       if parts[0] == '1'
@@ -22,13 +33,14 @@ class RngController < ApplicationController
         puts "Error generating random number"
         @passFlag = "Fail"
       end
+    else
+      @passFlag = "Fail"
+    end
 
-      sleep 0.5
-      #end
-    
-    
-    
-    
-  end
+    s.close
+    @IPHash[k] = @passFLag
+    puts "Key #{@IPHash[k]} for #{k} with #{@passFlag}"
+  }
+end
 
 end

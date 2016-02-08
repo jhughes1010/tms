@@ -1,10 +1,8 @@
-<h2>RNG server status</h2>
-Server at 10.95.111.200 is
-<%=@passFlag%>
+<h1>RNG server status</h1>
+
+<% @IPHash.each do |key,value|%>
+IP address: <%=key%> 
+<%=value%>
+
 <br>
-Server at 10.95.111.201 is
-<%=@passFlag%>
-<br>
-Server at 10.95.111.41 is
-<%=@passFlag%>
-<br>
+<%end%>
