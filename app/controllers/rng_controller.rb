@@ -25,7 +25,7 @@ class RngController < ApplicationController
           @passFlag = "Pass"
         else
           puts "Error generating random number"
-          @passFlag = "Fail - RNG error code, no valid number. Please researt Pi and server."
+          @passFlag = "Fail - RNG error code, no valid number. Please restart Pi and server."
         end
       end
       s.close
