@@ -10,6 +10,8 @@
     <th>Can</th>
     <th>Mfgid</th>
     <th>Protocol</th>
+    <th>Sales POC</th>
+    <th>Apps POC</th>
     <th></th>
     <th></th>
     <!-- <th></th> -->
@@ -25,6 +27,8 @@
     <td><%= manid.can_id %></td>
     <td><%= manid.mfgid %></td>
     <td><%= manid.protocol %></td>
+    <td><%= manid.pocmkt %></td>
+    <td><%= manid.pocapp %></td>
     <td><%= link_to 'Create Qual Timeline', new_sample_path , :class => "btn btn-primary"%></td>
     <!-- <td><%= link_to 'Show', manid, :class => "btn btn-primary" %></td> -->
     <td><%= link_to 'Edit', edit_manid_path(manid), :class => "btn btn-warning" %></td>
