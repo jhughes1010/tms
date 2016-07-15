@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160627171250) do
+ActiveRecord::Schema.define(:version => 20160715152528) do
 
   create_table "can_mains", :force => true do |t|
     t.string    "can"
@@ -171,6 +171,7 @@ ActiveRecord::Schema.define(:version => 20160627171250) do
     t.datetime "updated_at"
     t.string   "crs"
     t.string   "status"
+    t.date     "target"
   end
 
   create_table "sas", :force => true do |t|

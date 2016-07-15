@@ -5,6 +5,7 @@ jQuery(document).ready(function() {
     jQuery("#sample_dateSamples").datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true });
     jQuery("#sample_dateCustApproval").datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true });
     jQuery("#sample_dateQAEnable").datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true });
+    jQuery("#sample_target").datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true });
     jQuery("#sample_dateReleaseProduction").datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true });
 
   jQuery("#task_tcd").datepicker({ dateFormat: 'yy-mm-dd', changeMonth: true, changeYear: true });
