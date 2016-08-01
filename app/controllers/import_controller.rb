@@ -12,7 +12,7 @@ class ImportController < ApplicationController
     Setup.delete_all
     @ACPmodified = import_setup("ACP","import/pv_acp.txt")
     @MEMPmodified = import_setup("MEMP","import/pv_memp.txt")
-    UserMailer.setup_import_complete(['james.hughes@atmel.com','mark.chabica@atmel.com','mike.flanagan@atmel.com','francis.cordier@atmel.com','emmanuel.espinocilla@atmel.com','john.groat@atmel.com']).deliver
+    UserMailer.setup_import_complete(['james.hughes@atmel.com','mark.chabica@atmel.com','francis.cordier@atmel.com','emmanuel.espinocilla@atmel.com','john.groat@atmel.com']).deliver
   end
   def device
     puts
