@@ -32,6 +32,19 @@ class Task < ActiveRecord::Base
       .includes("assignee")
     t.group_by(&:fullname)
   end
+
+  def self.all_active2_90
+    date = Date.today.next_day(89)
+    t = self.active
+      .where("tasks.assignee_id IS NOT NULL AND category < '5' and tasks.scd < ?", date)
+      .joins('INNER JOIN users ON users.id = tasks.assignee_id')
+      .order("users.fullname, tasks.priority")
+      .select('users.*, tasks.*')
+      .includes("requester")
+      .includes("assignee")
+    t.group_by(&:fullname)
+  end
+  
   
   def self.topActiveCrypto( priority )
     t = self.crypto
@@ -79,10 +92,20 @@ class Task < ActiveRecord::Base
       .order("users.fullname, tasks.priority")
       .select('users.fullname, tasks.*')
   end
-  
+
   def self.categoryCount(category)
     t = self.active
       .where("tasks.assignee_id IS NOT NULL AND category = ?",category)
+      .order("tasks.assignee_id")
+      .select('tasks.assignee_id')
+      .group('assignee_id').count
+    t.default = 0
+    t
+  end  
+  def self.categoryCount90(category)
+    date = Date.today.next_day(89)
+    t = self.active
+      .where("tasks.assignee_id IS NOT NULL AND category = ? and scd < ?",category, date)
       .order("tasks.assignee_id")
       .select('tasks.assignee_id')
       .group('assignee_id').count

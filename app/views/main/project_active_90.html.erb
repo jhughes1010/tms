@@ -1,0 +1,45 @@
+<h2>90 Day Outlook</h2>
+<%= render :partial =>"pill_navigation",:locals => {:active => "By_assignee"} %>
+<%= render :partial =>"page_header",:locals => {:title => "Active Projects", :description => "ordered by assignee and priority"} %>
+
+<div id="accordion">
+  <% @tasks.each_pair do |fullname, tasks| %>
+    <% if @team == tasks[0].team || tasks[0].team == 'ACP'%>
+    <h3>
+      <a href="#">
+        <%= tasks[0].fullname %>:
+        <%= tasks[0].team %>
+        <span class="badge alert-info pull-right"><%= tasks.count%></span></a>
+        <% if @auth >1 %>
+        <span class="badge alert-warning"><%= @tasksCategoryCount[1][tasks[0].assignee_id]%></span></a>
+        <span class="badge alert-warning"><%= @tasksCategoryCount[2][tasks[0].assignee_id]%></span></a>
+        <span class="badge alert-warning"><%= @tasksCategoryCount[3][tasks[0].assignee_id]%></span></a>
+        <span class="badge alert-warning"><%= @tasksCategoryCount[4][tasks[0].assignee_id]%></span></a>
+        <% end %>
+      </a>
+    </h3>
+    <div>
+      <table cellspacing="0" class="disp compact" width="100%">
+        <thead>
+          <%= render :partial => "task_header" %>
+        </thead>
+        <tbody>
+          <%= render :partial => "task" , :collection => tasks  %>
+        </tbody>
+      </table>
+      <%= link_to "Reorder Tasks", "/priority/project_manual_priority?id=#{tasks[0].assignee_id}" %>
+    </div>
+    <%end%>
+  <% end %>
+</div>
+<br>
+<div class="btn-group">
+    <a button class="btn btn-primary" href="/main/export_to_csv">Export - CSV</a>
+</div>
+
+<% if @auth >1 %>
+    <div class="btn-group">
+        <a button class="btn btn-danger" href="/task_front/top3Serial">Top 3 Serial</a>
+        <a button class="btn btn-danger" href="/task_front/top3Crypto">Top 3 Crypto</a>
+    </div>
+<% end %>
