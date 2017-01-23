@@ -1,4 +1,5 @@
 <h2>By Assignee - 90 Day Outlook</h2>
+<h6> <%=Date.today.to_s(:long)%> - <%=Date.today.next_day(89).to_s(:long)%></h6>
 <%= render :partial =>"pill_navigation",:locals => {:active => "By_assignee"} %>
 <%= render :partial =>"page_header",:locals => {:title => "Active Projects", :description => "ordered by assignee and priority"} %>
 
