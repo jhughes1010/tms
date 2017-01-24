@@ -9,7 +9,7 @@
         <%= tasks[0].fullname %>:
         <%= tasks[0].team %>
         <span class="badge alert-info pull-right"><%= tasks.count%></span></a>
-        <% if @auth >1 %>
+        <% if @auth >9 %>
         <span class="badge alert-warning"><%= @tasksCategoryCount[1][tasks[0].assignee_id]%></span></a>
         <span class="badge alert-warning"><%= @tasksCategoryCount[2][tasks[0].assignee_id]%></span></a>
         <span class="badge alert-warning"><%= @tasksCategoryCount[3][tasks[0].assignee_id]%></span></a>

@@ -10,10 +10,10 @@ class MainController < ApplicationController
   def project_active
     @tasks = Task.all_active2
     @tasksCategoryCount = Array.new
-    @tasksCategoryCount[1] = Task.categoryCount(1)
-    @tasksCategoryCount[2] = Task.categoryCount(2)
-    @tasksCategoryCount[3] = Task.categoryCount(3)
-    @tasksCategoryCount[4] = Task.categoryCount(4)
+    #@tasksCategoryCount[1] = Task.categoryCount(1)
+    #@tasksCategoryCount[2] = Task.categoryCount(2)
+    #@tasksCategoryCount[3] = Task.categoryCount(3)
+    #@tasksCategoryCount[4] = Task.categoryCount(4)
   end
 
   def project_active_90
