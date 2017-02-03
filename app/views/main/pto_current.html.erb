@@ -6,55 +6,6 @@
     <a class="btn btn-info" href="/ptos">PTO Raw Table</a>
   <% end %>
 </div>
-<div class="page-header">
-  <h2>
-    Near Term PTO
-    <small>
-      <%= @outlook %>
-      day outlook:
-      <%= @start.to_s(:long) +' to ' + @stop.to_s(:long) %>
-    </small>
-  </h2>
-</div>
-<table cellspacing="10" class="display" id="prr" width="100%">
-  <thead>
-    <tr>
-      <th>
-        <b>User</b>
-      </th>
-      <th>
-        <b>Start</b>
-      </th>
-      <th>
-        <b>End</b>
-      </th>
-      <th>
-        <b>Comments</b>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @ptos.each do |pto| %>
-      <tr>
-        <td>
-          <%= pto.user.fullname %>
-        </td>
-        <td>
-          <%= pto.start %>
-        </td>
-        <td>
-          <% if(pto.finish != pto.start) %>
-            <%= pto.finish %>
-          <% end %>
-        </td>
-        <td>
-          <%= pto.comments %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<br/>
 <h2>Passports for renewal
     <small>
       <%= @passport_outlook %>

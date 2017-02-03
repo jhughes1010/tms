@@ -80,21 +80,9 @@ class MainController < ApplicationController
   end
 
   def pto_current
-    @outlook = 30
-    @start=@today
-    @stop = @start+ @outlook
-    @ptos=Pto.upcoming_range(@start,@stop)
-    #passport query
     @passport_outlook = 9 #months
     @passport_date = @today + @passport_outlook.months
     @passports = User.passports(@passport_date)
-  end
-
-  def pto_current_90
-    @outlook = 90
-    @start=@today
-    @stop = @start+ @outlook
-    @ptos=Pto.upcoming_range(@start,@stop)
   end
 
   def export_to_csv
