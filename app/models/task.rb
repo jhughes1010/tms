@@ -172,4 +172,12 @@ class Task < ActiveRecord::Base
         end
       end
     end
+    def self.gerald(userID)
+      tasks=self.where("assignee_id = ? and priority > 7 and complete !='t'",userID)
+      tasks.each do |t|
+        t.assignee_id=24
+        t.save
+      end
+      
+    end
 end
