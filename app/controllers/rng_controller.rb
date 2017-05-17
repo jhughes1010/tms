@@ -6,7 +6,7 @@ class RngController < ApplicationController
   require 'timeout'
 
   def index
-    @IPHash = {"10.95.111.200" => "Pass","10.95.111.201" => "Pass", "10.95.111.202" => "Pass", "10.95.111.203" => "Pass", "10.95.111.41" => "Pass" } 
+    @IPHash = {"10.95.111.200" => "Pass","10.95.111.201" => "Pass", "10.164.21.241" => "Pass", "10.164.21.242" => "Pass", "10.95.111.41" => "Pass" } 
     @IPHash.each {|k,v|
       s = UDPSocket.new
       s.connect(k, 10001)
